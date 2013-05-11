@@ -1,0 +1,34 @@
+<article class="post type-post status-publish format-standard hentry">
+    {{#if image}}
+    <figure class="post-thumb">
+        <img width="550" height="250" src="/content/images/{{image}}" class="attachment-post-thumbnail wp-post-image" alt="ghostpost">
+    </figure>
+    {{/if}}
+    <div class="wrap">
+        <header>
+            <h2 class="entry-title h1"><a href="/{{slug}}" rel="bookmark">{{title}}</a></h2>
+            <span class="entry-meta">Published on <time class="updated" datetime="{{dateFormat createdAt format='YYYY-MM-DD'}}">{{dateFormat createdAt format='DD MMMM YYYY'}}</time></span>
+        </header>
+
+        <section class="entry-content">
+            {{{contentHtml}}}
+        </section>
+
+        <footer class="entry-footer">
+            <section class="entry-meta">
+                <h5>Published</h5>
+                <time class="updated" datetime="{{dateFormat createdAt format='YYYY-MM-DD'}}">{{dateFormat createdAt format='DD MMMM YYYY'}}</time>
+                <h5>Share</h5>
+                <ul class="share">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </section>
+            <section class="comments">
+                <h4>What do you think?</h4>
+                <p>Rather than having a comments section where you'll never know if I'm actually reading or not... why not talk to me <a href="http://twitter.com/JohnONolan">on Twitter</a>? I'll definitely read your comment, and I'll probably reply, too!</p>
+            </section>
+            <div class="clearfix"></div>
+        </footer>
+    </div>
+</article>

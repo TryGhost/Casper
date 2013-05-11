@@ -1,0 +1,1244 @@
+/*
+ * Theme Name: Casper
+ * Theme URI: http://tryghost.org
+ * Description: The default Ghost theme for personal blogging.
+ * Author: Ghost
+ * Author URI: http://tryghost.org;
+ * Version:1.0
+ */
+
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+/*
+   1.   Includes
+   2.   Something
+   3.   Something else
+ */
+
+/* ==========================================================================
+   1. Includes
+   ========================================================================== */
+
+@import url(normalize.css);
+@import url(boilerplate.css);
+@import url(fonts.css);
+
+/* ==========================================================================
+   2. Typography
+   ========================================================================== */
+
+body {
+    color: #333;
+    font-style: normal;
+    font-weight: 400;
+    font-family: Georgia;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: galette;
+    text-transform: uppercase;
+}
+
+h1, .h1 {
+    font-size: 69px;
+    line-height: 75px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+h2, .h2 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 34px;
+    line-height: 34px;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+h3, .h3 {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 1.5em 0 6px 0;
+    font-weight: normal;
+}
+
+h4, .h4 {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 1.5em 0 6px 0;
+    font-weight: normal;
+}
+
+h5, .h5 {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 1.5em 0 6px 0;
+    font-weight: normal;
+}
+
+h6, .h6 {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 1.5em 0 6px 0;
+    font-weight: normal;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color:#333;
+    text-decoration: none;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color:#222;
+}
+
+small {
+    font-family: sans-serif;
+    font-size: 11px;
+    color:#aaa;
+}
+
+blockquote {
+    margin:1.5em 0;
+    padding:0 0 0 1.5em;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    text-align: left;
+    border-left:#eee 8px solid;
+}
+
+pre code {
+    display: block;
+    padding:1em 0;
+    border-top:#dadada 1px solid;
+    border-bottom: #dadada 1px solid;
+    background: #f5f5f5;
+    position: relative;
+}
+
+pre code:before {
+    content: " ";
+    border-top:#dadada 1px solid;
+    border-bottom: #dadada 1px solid;
+    background: #f5f5f5;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    right:100%;
+    width: 9999px;
+}
+
+pre code:after {
+    content: " ";
+    border-top:#dadada 1px solid;
+    border-bottom: #dadada 1px solid;
+    background: #f5f5f5;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left:100%;
+    width: 9999px;
+}
+
+figure {
+    position: relative;
+}
+
+figcaption {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:8px 10px;
+    font-size: 12px;
+    font-family: sans-serif;
+    background: rgba(0,0,0,0.5);
+    color:#e4e4e4;
+    -webkit-transition: background .5s, color .5s;
+    -moz-transition: background .5s, color .5s;
+    -ms-transition: background .5s, color .5s;
+    transition: background .5s, color .5s;
+}
+
+figcaption a {
+    color:#fff;
+}
+
+figure:hover figcaption {
+    background: rgba(0,0,0,0.7);
+    color:#efefef;
+    -webkit-transition: background .5s, color .5s;
+    -moz-transition: background .5s, color .5s;
+    -ms-transition: background .5s, color .5s;
+    transition: background .5s, color .5s;
+}
+
+input, textarea {
+    -webkit-appearance: none;
+    outline: none;
+}
+
+input[type="text"],
+textarea {
+    height:20px;
+    padding:8px;
+    font-size: 14px;
+    text-shadow:none;
+    background: #fff;
+    border:#dadada 1px solid;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #aaa;
+}
+
+input[type="submit"] {
+    height:38px;
+    padding: 0;
+    color:#fff;
+    font-size: 14px;
+    text-shadow:none;
+    border:#000 1px solid;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    background: #222;
+    background: -moz-linear-gradient(bottom, #000, #333);
+    background: -webkit-gradient(linear, left bottom, left top, from(#000), to(#333));
+}
+
+input[type="submit"]:hover {
+    cursor:pointer;
+    background: #444;
+    background: -moz-linear-gradient(bottom, #111, #444);
+    background: -webkit-gradient(linear, left bottom, left top, from(#111), to(#444));
+}
+
+/* ==========================================================================
+   3. Layout
+   ========================================================================== */
+
+body {
+    background:#ececee url(../img/texture.png) top left repeat;
+}
+
+body > header {
+    width:280px;
+    padding:60px;
+    position: fixed;
+    top: 0;
+    right:0;
+    bottom:0;
+}
+
+section.content {
+    margin-right:400px;
+    background:#fff;
+    overflow: hidden; /*hide the :before :after elements on the entry header and footer*/
+    -webkit-box-shadow: rgba(0,0,0,0.1) 1px 0 10px;
+    -moz-box-shadow: rgba(0,0,0,0.1) 1px 0 10px;
+    -ms-box-shadow: rgba(0,0,0,0.1) 1px 0 10px;
+    box-shadow: rgba(0,0,0,0.1) 1px 0 10px;
+}
+
+/* Generic wrapper to control content width */
+
+.wrap {
+    max-width:640px;
+    padding:0 60px;
+    margin:0 auto;
+}
+
+/* ==========================================================================
+   4. Header/Sidebar
+   ========================================================================== */
+
+body > header {
+    font-family: sans-serif;
+    font-size:14px;
+    color:rgba(0,0,0,0.45);
+}
+
+#logo {
+    display: block;
+    margin-bottom:25px;
+}
+
+#logo img {
+    max-width: 280px;
+    height:auto;
+}
+
+.blog-icon {
+    display: inline;
+    width:12px;
+    height:12px;
+    margin:0 0 0 5px;
+    vertical-align: baseline;
+}
+
+#title {
+    font-family: Galette, sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-style: normal;
+    font-weight: normal;
+    color:#333;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#site-navigation ul {
+    padding: 0;
+    position: relative;
+    z-index: 500;
+}
+
+#site-navigation ul li {
+    border-top:rgba(0,0,0,0.1) 1px solid;
+    margin: 0;
+    line-height: 1.3em;
+}
+
+#site-navigation ul li:first-child {
+    border:none;
+}
+
+#site-navigation ul li a {
+    display: block;
+    padding:10px 0;
+    color:#333;
+    text-decoration: none;
+    background:transparent;
+    -webkit-transition: padding-left .25s, background .25s;
+    -moz-transition: padding-left .25s, background .25s;
+    -ms-transition: padding-left .25s, background .25s;
+    transition: padding-left .25s, background .25s;
+}
+
+#site-navigation ul li a:hover {
+    padding-left: 10px;
+    background: rgba(0,0,0,0.05);
+    -webkit-transition: padding-left .25s, background .25s;
+    -moz-transition: padding-left .25s, background .25s;
+    -ms-transition: padding-left .25s, background .25s;
+    transition: padding-left .25s, background .25s;
+}
+
+#site-navigation ul li.current-menu-item a {
+    padding-left:28px;
+    background: rgba(0,0,0,0.05) url(../img/icon.png) 10px 14px no-repeat;
+    background-size: 10px;
+}
+
+#ghost {
+    display: block;
+    height:30px;
+    width:30px;
+    text-indent: -9999px;
+    position: absolute;
+    z-index: 999;
+    top: 10px;
+    left:10px;
+    background:rgba(0,0,0,0.1) url(../img/ghost.png) 8px 8px no-repeat;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#ghost:hover {
+    background-color:rgba(0,0,0,0.3);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+/* ==========================================================================
+   5. Post Content
+   ========================================================================== */
+
+.post-thumb {
+    margin-bottom:-115px; /* Pull the article header+title up over the post image */
+    min-height:115px; /* Make post layout look normal while image is loading */
+}
+
+.post-thumb img {
+    width:100%;
+    height:auto;
+}
+
+.hentry header {
+    margin:35px 0 0 0;
+    padding:25px 0 0 30px;
+    background: #fff;
+    position: relative;
+    left:-30px;
+    z-index: 300;
+}
+
+.hentry header:after {
+    content: " ";
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:100%;
+    width: 9999px;
+}
+
+.entry-title {
+    margin-top:0;
+}
+
+.entry-meta {
+    font-style: italic;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    color:#666;
+}
+
+.entry-meta time {
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.hentry header .entry-meta time {
+    display: inline;
+}
+
+.entry-content {
+    padding-bottom: 60px;
+}
+
+.entry-content p {
+    margin-bottom: 0px;
+    text-indent: 16px;
+}
+
+.entry-content blockquote p {
+    text-indent: -4px;
+}
+
+.entry-content p:nth-of-type(1) {
+    text-indent: 0px;
+}
+
+/* Introduction/Kicker */
+.post .entry-content p:nth-of-type(1),
+.kicker {
+    margin-bottom: 25px;
+    line-height: 33px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.post .entry-content div p:nth-of-type(1),
+.post .entry-content blockquote p:nth-of-type(1) {
+    margin-bottom: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+}
+
+/* First paragraph after Introduction */
+.entry-content p:nth-of-type(2),
+.introduction {
+    text-indent: 0px;
+}
+
+/* Tombstone */
+.post .entry-content p:last-child:after,
+.tombstone {
+    content: "";
+    display: inline-block;
+    width:11px;
+    height:11px;
+    margin:0 0 0 8px;
+    vertical-align: baseline;
+    background: url(../img/icon.png) bottom right no-repeat;
+    background-size: 11px 11px;
+}
+/* Prevent Tombstone from appearing in nested elements */
+.entry-content * p:after {display: none!important;}
+
+.entry-content figure {
+    margin: 1.5em 0;
+}
+
+.entry-content figure img {
+    width:100%;
+    height:auto;
+}
+
+.hfeed {
+    padding-bottom: 1px;
+}
+
+.hfeed .entry-content ol,
+.hfeed .entry-content ul,
+.hfeed .entry-content dl {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+}
+
+.hfeed .entry-content li {
+    max-width: none;
+    padding:0;
+    margin:5px 0 0 0;
+}
+
+.entry-footer {
+    border-top:#dadada 1px solid;
+    border-bottom: #dadada 1px solid;
+    position: relative;
+    font-size:11px;
+    line-height:17px;
+    color:#666;
+}
+
+.entry-footer h4 {
+    font-family: Galette, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-style: normal;
+    color:#aaa;
+    line-height:16px;
+    margin:0 0 12px 0;
+}
+
+.entry-footer h5 {
+    font-family: Galette, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-style: normal;
+    color:#aaa;
+    margin:13px 0 0 0;
+}
+
+.entry-footer h5:first-child {
+    margin:0;
+}
+
+.entry-footer .entry-meta {
+    font-size:11px;
+    line-height:17px;
+}
+
+.entry-footer p {
+    margin:0;
+}
+
+.entry-footer .share {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    letter-spacing: 0;
+}
+
+.entry-footer .share li {
+    float:left;
+    padding:0 0 0 3px;
+}
+
+.entry-footer .share li:after {
+    content: " \2022 "; /* Hex reference for &bull; bullet point to divide list items */
+}
+
+.entry-footer .share li:last-child:after {
+    content: none;
+}
+
+.entry-footer .share li:first-child {
+    padding-left:0;
+    border:none;
+}
+
+.entry-footer:before {
+    content: "";
+    border-top:#dadada 1px solid;
+    border-bottom: #dadada 1px solid;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    right:100%;
+    width: 9999px;
+}
+.entry-footer:after {
+    content: "";
+    border-top:#dadada 1px solid;
+    border-bottom: #dadada 1px solid;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left:100%;
+    width: 9999px;
+}
+
+.entry-footer .entry-meta {
+    width:30%;
+    padding: 4% 5% 4% 0;
+    float:left;
+    -webkit-box-shadow:#dadada 1px 0 0;
+    -moz-box-shadow:#dadada 1px 0 0;
+    -ms-box-shadow:#dadada 1px 0 0;
+    box-shadow:#dadada 1px 0 0;
+}
+
+.entry-footer .comments {
+    width:60%;
+    padding: 4% 0 4% 5%;
+    float:left;
+    -webkit-box-shadow:#dadada 1px 0 0 inset;
+    -moz-box-shadow:#dadada 1px 0 0 inset;
+    -ms-box-shadow:#dadada 1px 0 0 inset;
+    box-shadow:#dadada 1px 0 0 inset;
+}
+
+/* ==========================================================================
+   6. Single Post
+   ========================================================================== */
+
+
+/* ==========================================================================
+   6. Page
+   ========================================================================== */
+
+.error404 section.content {
+    padding:100px 0 140px 0;
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   7. Post Feed
+   ========================================================================== */
+
+.hfeed {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hfeed li {
+    max-width: 640px;
+    margin-top:0;
+}
+
+.hfeed li.featured {
+    max-width: none;
+    padding:0;
+}
+
+.hfeed .entry-title {
+    margin-bottom:0;
+}
+
+.hfeed .hentry {
+    margin-bottom:40px;
+}
+
+.hfeed .updated {
+    display: block;
+    color:#aaa;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.hfeed .featured .updated {
+    display: inline;
+    color: inherit;
+    font-size: inherit;
+    line-height: 12px!important;
+}
+
+#pagination {
+    height:32px;
+    padding:40px;
+    border-top:#dadada 1px solid;
+    text-align: center;
+    color: #aaa;
+}
+
+#pagination a {
+    display: inline-block;
+    padding:8px 12px;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    text-decoration: none;
+    color:#fff;
+    border:#000 1px solid;
+    background: #222;
+    position: relative;
+    left: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.previous-page {
+    float:right;
+}
+
+.next-page {
+    float:left;
+}
+
+#pagination .next-page a:hover {
+    left:-40px;
+    padding-left:52px;
+    margin-right:-40px;
+    border-radius: 0 5px 5px 0;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+#pagination .previous-page a:hover {
+    left:40px;
+    padding-right:52px;
+    margin-left:-40px;
+    border-radius: 5px 0 0 5px;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.page-number {
+    display: inline-block;
+    padding:9px 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+}
+
+.loading {
+    padding:0 0 0 40px;
+    line-height: 34px;
+    opacity:0.4;
+    background: url(../img/loading.gif) top left no-repeat;
+}
+
+#infscr-loading {
+    text-align: center;
+}
+
+/* ==========================================================================
+   x. Archive
+   ========================================================================== */
+
+.archive section.content,
+.search section.content,
+.paged section.content {
+    padding-top:60px;
+}
+
+.archive .hfeed {
+    margin:0 0 80px 0;
+    padding-bottom: 1px;
+    box-shadow:#dadada 2px 0 0 inset;
+    position: relative;
+}
+
+.archive .hfeed:after {
+    content: " ";
+    background: #dadada;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 9999px;
+    height:2px;
+}
+
+.archive .hfeed li {
+    overflow: hidden; /* Hide the dots assigned to each li on timeline view with :before */
+}
+
+.archive .hfeed .timestamp {
+    max-width: none;
+    padding:0;
+    margin-bottom:40px;
+    list-style: none;
+    display: inline-block;
+    height:60px;
+    font-family: galette, sans-serif;
+    font-size: 50px;
+    line-height: 70px;
+    color:#ccc;
+    background: #fff;
+    position: relative;
+    left:-30px;
+    overflow: visible; /*Show the extra border added to the right of timestamps with :after */
+}
+
+.archive .hfeed .timestamp:after {
+    content: " ";
+    background: #dadada;
+    position: absolute;
+    top: 30px;
+    left:110%;
+    width: 9999px;
+    height:2px;
+}
+
+.archive .hfeed .hentry {
+    padding-left: 30px;
+    position:relative;
+}
+
+.archive .hfeed .hentry:before {
+    content: " ";
+    display: block;
+    width:12px;
+    height:12px;
+    border-radius:15px;
+    background:#dadada;
+    position: absolute;
+    top:23px;
+    left:-5px;
+}
+
+#searchform {
+    position: relative;
+    margin-bottom: 60px;
+    padding-right:128px;
+}
+
+#searchform #s {
+    display:inline-block;
+    width:100%;
+}
+
+#searchform #searchsubmit {
+    width:100px;
+    display: inline-block;
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+/* ==========================================================================
+   x. Media Queries
+   ========================================================================== */
+
+/*
+ * Large Screen Devices
+ */
+
+@media only screen and (min-width: 1500px) {
+
+    body > header {
+        left:0;
+        padding:100px;
+    }
+
+    section.content {
+        max-width: 1100px;
+        margin: 60px 100px 60px 480px;
+    }
+
+}
+
+/*
+ * Tablets
+ */
+
+@media only screen and (max-width: 1100px) {
+
+    body > header {
+        width:140px;
+        padding:30px;
+    }
+
+    #logo img {
+        max-width: 140px;
+    }
+
+    #title {
+        font-size: 25px;
+        line-height: 25px;
+        margin:0px 0 0 0;
+    }
+
+    section.content {
+        margin-right:200px;
+    }
+
+    .wrap {
+        padding:0 30px;
+    }
+
+    .archive section.content,
+    .search section.content,
+    .paged section.content {
+        padding-top:30px;
+    }
+
+    .post-thumb {
+        margin-bottom:0;
+    }
+
+    .hentry header {
+        margin:0 0 0 0;
+    }
+
+    .hentry header:after {
+        display:none;
+    }
+
+    .entry-content {
+        padding-bottom: 40px;
+    }
+
+    #pagination {
+        padding:30px;
+    }
+
+    .nav-previous {
+        top:30px;
+        left:30px;
+    }
+
+    .nav-next {
+        top:30px;
+        right:30px;
+    }
+
+    #searchform {
+        margin-bottom:35px;
+    }
+
+    #sidebar #searchform  #s{
+        font-size: 12px;
+    }
+
+    .archive .hfeed .timestamp {
+        left:-15px;
+    }
+
+    .error404 section.content {
+        padding:80px 0 100px 0;
+    }
+
+}
+
+/*
+ * Small Tablets
+ */
+
+@media only screen and (max-width: 900px) {
+
+    h1, .h1 {
+        font-size: 54px;
+        line-height: 63px;
+    }
+
+    h2, .h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .archive .hfeed .hentry:before {
+        top:19px;
+    }
+
+}
+
+/*
+ * Mobile Devices
+ */
+
+@media only screen and (max-width: 700px) {
+
+    h1, .h1 {
+        font-size: 40px;
+        line-height: 46px;
+    }
+
+    h2, .h2 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    h3, .h3 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    h4, .h4 {
+        font-size: 16px;
+        line-height: 26px;
+        margin: 1.5em 0 6px 0;
+    }
+
+    h5, .h5 {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 1.5em 0 6px 0;
+    }
+
+    h6, .h6 {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 1.5em 0 6px 0;
+    }
+
+    /* Introduction/Kicker */
+    .post .entry-content p:nth-of-type(1) {
+        margin-bottom: 20px;
+        line-height: 29px;
+        font-size: 20px;
+    }
+
+    body > header {
+        position: relative;
+        width:auto;
+        padding:20px 20px 0 20px;
+    }
+
+    #logo {
+        float:left;
+        margin: 0 20px 0 0;
+    }
+
+    #logo img {
+        max-width:75px;
+    }
+
+    #title {
+        font-size: 20px;
+        line-height: 20px;
+        margin:10px 0 0 0;
+    }
+
+    #description {
+        max-width: 460px;
+        font-size:1em;
+        line-height: 1.2em;
+        margin: 5px 0 0 0;
+    }
+
+    #site-navigation ul {
+        margin: 20px 0 0 0;
+    }
+
+    #site-navigation ul:after {
+        content: " ";
+        display: table;
+        clear:both;
+    }
+
+    #site-navigation ul li {
+        border:none;
+        float:left;
+    }
+
+    #site-navigation ul li a {
+        padding: 8px 10px;
+        color:#333;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        transition: none;
+    }
+
+    #site-navigation ul li a:hover {
+        padding: 8px 10px;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        transition: none;
+    }
+
+    #site-navigation ul li.current-menu-item a {
+        padding: 8px 10px;
+        background: #fff;
+    }
+
+    #ghost {
+        display: none;
+    }
+
+    section.content {
+        margin:0;
+    }
+
+    .wrap {
+        padding:0 20px;
+    }
+
+    .archive section.content,
+    .search section.content,
+    .paged section.content {
+        padding-top:20px;
+    }
+
+    .entry-content {
+        padding-bottom: 30px;
+    }
+
+    #pagination {
+        padding:20px;
+    }
+
+    .extended {
+        display: none;
+    }
+
+    #searchform {
+        margin-bottom:25px;
+    }
+
+    .archive .hfeed .hentry {
+        padding-left: 20px;
+    }
+
+    .archive .hfeed .hentry:before {
+        top:14px;
+        left:-6px;
+    }
+
+    .archive .hfeed .timestamp {
+        left:-3px;
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+
+    .error404 section.content {
+        padding:30px 0 50px 0;
+    }
+
+}
+
+/*
+ * Very Small Devices
+ */
+
+@media only screen and (max-width: 400px) {
+
+    h1, .h1 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    h2, .h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    h3, .h3 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    h4, .h4 {
+        font-size: 15px;
+        line-height: 25px;
+        margin: 1.5em 0 6px 0;
+    }
+
+    h5, .h5 {
+        font-size: 13px;
+        line-height: 16px;
+        margin: 1.5em 0 6px 0;
+    }
+
+    h6, .h6 {
+        font-size: 12px;
+        line-height: 16px;
+        margin: 1.5em 0 6px 0;
+    }
+
+    #logo img {
+        max-width: 60px;
+    }
+
+    #description {
+        font-size:0.9em;
+        line-height: 1.1em;
+    }
+
+    #site-navigation {
+        font-size: 13px;
+    }
+
+    .hfeed .hentry {
+        margin-bottom: 30px;
+    }
+
+    .hfeed .updated {
+        font-size: 13px;
+    }
+
+    .archive .hfeed .hentry:before {
+        top:12px;
+        left:-7px;
+    }
+
+    .entry-footer .entry-meta{
+        width:100%;
+        padding:2em 0;
+        box-shadow: none;
+    }
+
+    .entry-footer .comments {
+        width:100%;
+        padding:2em 0;
+        border-top:#dadada 1px dashed;
+        box-shadow: none;
+    }
+
+    .page-number {display:none;}
+
+}
+
+/* ==========================================================================
+   DO NOT ADD ANY CODE BELOW THIS POINT
+   ========================================================================== */

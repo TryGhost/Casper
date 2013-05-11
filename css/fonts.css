@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'galette';
+    src: url('../fonts/galette-med-webfont.eot');
+    src: url('../fonts/galette-med-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/galette-med-webfont.woff') format('woff'),
+         url('../fonts/galette-med-webfont.ttf') format('truetype'),
+         url('../fonts/galette-med-webfont.svg#galetteregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
