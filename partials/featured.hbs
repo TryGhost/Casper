@@ -7,17 +7,17 @@
     <div class="wrap">
         <header>
             <h2 class="entry-title h1"><a href="/{{slug}}" rel="bookmark">{{title}}</a></h2>
-            <span class="entry-meta">Published on <time class="updated" datetime="{{dateFormat createdAt format='YYYY-MM-DD'}}">{{dateFormat createdAt format='DD MMMM YYYY'}}</time></span>
+            <span class="entry-meta">Published on <time class="updated" datetime="{{dateFormat created_at format='YYYY-MM-DD'}}">{{dateFormat created_at format='DD MMMM YYYY'}}</time></span>
         </header>
 
         <section class="entry-content">
-            {{{contentHtml}}}
+            {{{content_html}}}
         </section>
 
         <footer class="entry-footer">
             <section class="entry-meta">
                 <h5>Published</h5>
-                <time class="updated" datetime="{{dateFormat createdAt format='YYYY-MM-DD'}}">{{dateFormat createdAt format='DD MMMM YYYY'}}</time>
+                <time class="updated" datetime="{{dateFormat created_at format='YYYY-MM-DD'}}">{{dateFormat created_at format='DD MMMM YYYY'}}</time>
                 <h5>Share</h5>
                 <ul class="share">
                     <li><a href="#">Twitter</a></li>
