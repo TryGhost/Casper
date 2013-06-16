@@ -1,13 +1,15 @@
 {{!< default}}
 <section class="content">
     <ul class="hfeed">
-        {{#features}}
-            <li class="featured">
-                {{> featured}}
-            </li>
-        {{/features}}
-        {{#posts}}
-            {{> post}}
-        {{/posts}}
+        {{#foreach posts}}
+            {{#if @first}}
+                <li class="featured">
+                    {{> full-post}}
+                </li>
+            {{else}}
+                {{> list-post}}
+            {{/if}}
+        {{/foreach}}
     </ul>
+
 </section>
