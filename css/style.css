@@ -361,31 +361,6 @@ body > header {
     background-size: 10px;
 }
 
-#ghost {
-    display: block;
-    height:30px;
-    width:30px;
-    text-indent: -9999px;
-    position: absolute;
-    z-index: 999;
-    top: 10px;
-    left:10px;
-    background:rgba(0,0,0,0.1) url(../img/ghost.png) 8px 8px no-repeat;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-#ghost:hover {
-    background-color:rgba(0,0,0,0.3);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-
 /* ==========================================================================
    5. Post Content
    ========================================================================== */
