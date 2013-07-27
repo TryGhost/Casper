@@ -1,831 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta charset="utf-8">
-  <title>
-  JohnONolan / Casper 
-  / source  / css / fonts / galette-med-webfont.svg
- &mdash; Bitbucket
-</title>
-  <link rel="icon" type="image/png" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/img/favicon.png">
-  <meta id="bb-canon-url" name="bb-canon-url" content="https://bitbucket.org">
-  
-  
-<link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/compressed/css/acebb1beb454.css" type="text/css" />
-<link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/compressed/css/e8be34c6090b.css" type="text/css" />
-
-  <!--[if lt IE 9]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/css/aui/aui-ie.css" media="all"><![endif]-->
-  <!--[if IE 9]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/css/aui/aui-ie9.css" media="all"><![endif]-->
-  <!--[if IE]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/css/aui-overrides-ie.css" media="all"><![endif]-->
-  <meta name="description" content=""/>
-  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Bitbucket" />
-  
-  <link href="/JohnONolan/casper/rss?token=21b2d996077daf426102c1594ef1db36" rel="alternate nofollow" type="application/rss+xml" title="RSS feed for Casper" />
-
-<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
-<body class="aui-layout production "
-      >
-<script type="text/javascript" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/compressed/js/e98deabf8a2e.js"></script>
-<div id="page">
-  <div id="wrapper">
-    
-    <header id="header" role="banner">
-      
-      <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
-        <div class="aui-header-inner">
-          <div class="aui-header-primary">
-            <h1 class="aui-header-logo aui-header-logo-bitbucket">
-              <a href="/" class="aui-nav-imagelink">
-                <span class="aui-header-logo-device">Bitbucket</span>
-              </a>
-            </h1>
-            <script id="repo-dropdown-template" type="text/html">
-  
-
-[[#hasViewed]]
-  <div class="aui-dropdown2-section">
-    <strong class="viewed">Recently viewed</strong>
-    <ul class="aui-list-truncate">
-      [[#viewed]]
-        <li class="[[#is_private]]private[[/is_private]][[^is_private]]public[[/is_private]] repository">
-          <a href="[[url]]" title="[[owner]]/[[name]]" class=" aui-icon-container">
-            <img class="repo-avatar size16" src="[[{avatar}]]" alt="[[owner]]/[[name]] avatar"/>
-            [[owner]] / [[name]]
-          </a>
-        </li>
-      [[/viewed]]
-    </ul>
-  </div>
-[[/hasViewed]]
-[[#hasUpdated]]
-<div class="aui-dropdown2-section">
-  <strong class="updated">Recently updated</strong>
-  <ul class="aui-list-truncate">
-    [[#updated]]
-    <li class="[[#is_private]]private[[/is_private]][[^is_private]]public[[/is_private]] repository">
-      <a href="[[url]]" title="[[owner]]/[[name]]" class=" aui-icon-container">
-        <img class="repo-avatar size16" src="[[{avatar}]]" alt="[[owner]]/[[name]] avatar"/>
-        [[owner]] / [[name]]
-      </a>
-    </li>
-    [[/updated]]
-  </ul>
-</div>
-[[/hasUpdated]]
-
-</script>
-            <ul role="menu" class="aui-nav">
-              
-                <li>
-                  <a class="aui-dropdown2-trigger aui-dropdown2-trigger selected"
-                     aria-owns="repo-dropdown" aria-haspopup="true" href="/repo/mine " id="repositories-dropdown-trigger">
-                    Repositories
-                    <span class="aui-icon-dropdown"></span>
-                  </a>
-                  <nav id="repo-dropdown" class="aui-dropdown2 aui-style-default">
-                    <div id="repo-dropdown-recent"></div>
-                    <div class="aui-dropdown2-section">
-                      <ul>
-                        <li>
-                          <a href="/repo/create" class="new-repository" id="create-repo-link">
-                            Create repository
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/repo/import" class="import-repository" id="import-repo-link">
-                            Import repository
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </nav>
-                </li>
-                <li>
-                  <a class="aui-button aui-button-primary aui-style" href="/repo/create" id="repo-create-cta">
-                    Create
-                  </a>
-                </li>
-              
-            </ul>
-          </div>
-          <div class="aui-header-secondary">
-            <ul role="menu" class="aui-nav">
-              <li>
-                <form action="/repo/all" method="get" class="aui-quicksearch">
-                  <label for="search-query" class="assistive">owner/repository</label>
-                  <input  id="search-query" class="search" type="text" placeholder="owner/repository" name="name">
-                </form>
-              </li>
-              <li>
-                <a class="aui-dropdown2-trigger"aria-controls="header-help-dropdown" aria-owns="header-help-dropdown"
-                   aria-haspopup="true" data-container="#header .aui-header-inner" href="#header-help-dropdown">
-                  <span class="aui-icon aui-icon-small aui-iconfont-help">Help</span><span class="aui-icon-dropdown"></span>
-                </a>
-                <nav id="header-help-dropdown" class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" aria-hidden="true">
-                  <div class="aui-dropdown2-section">
-                    <ul>
-                      <li>
-                        <a href="/whats-new" id="features-link">
-                          What's new
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="aui-dropdown2-section">
-                    <ul>
-                      <li><a href="https://confluence.atlassian.com/display/BITBUCKET/bitbucket+Documentation+Home" target="_blank">Documentation</a></li>
-                      <li><a href="https://confluence.atlassian.com/display/BITBUCKET/bitbucket+101" target="_blank">Bitbucket 101</a></li>
-                      <li><a href="https://confluence.atlassian.com/display/BBKB/Bitbucket+Knowledge+Base+Home" target="_blank">Knowledge base</a></li>
-                    </ul>
-                  </div>
-                  <div class="aui-dropdown2-section">
-                    <ul>
-                      <li><a href="https://answers.atlassian.com/tags/bitbucket/" target="_blank">Bitbucket on Atlassian Answers</a></li>
-                      <li><a href="/support">Support</a></li>
-                    </ul>
-                  </div>
-                </nav>
-              </li>
-              
-              
-                <li>
-                  <a class="aui-dropdown2-trigger"
-                     aria-owns="user-dropdown" aria-haspopup="true" data-container="#header .aui-header-inner"
-                     href="/ErisDS" title="ErisDS" id="user-dropdown-trigger">
-                    <div class="aui-avatar aui-avatar-small">
-                        <div class="aui-avatar-inner">
-                            <img src="https://secure.gravatar.com/avatar/cb82ccb3c72846f4e111348b8d5a01e5?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F8907ccc5f331%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&amp;s=32" alt="ErisDS" height="24" width="24" />
-                        </div>
-                    </div>
-                  </a>
-                  <nav id="user-dropdown" class="aui-dropdown2 aui-style-default" aria-hidden="true">
-                    <div class="aui-dropdown2-section">
-                      <ul>
-                        <li>
-                          <a href="/ErisDS" id="profile-link">View profile</a>
-                        </li>
-                        <li>
-                          <a href="/account/user/ErisDS/" id="account-link">Manage account</a>
-                        </li>
-                        <li>
-                          <a href="/account/notifications/" id="inbox-link">Inbox <span id="inbox-unread-count"></span></a>
-                        </li>
-                        <li>
-                          <a href="/account/signout/">Log out</a>
-                        </li>
-                      </ul>
-                    </div>
-                      <div class="aui-dropdown2-section" id="account-admin-links">
-                        <strong>Teams</strong>
-                          <ul class="aui-list-truncate">
-                          </ul>
-                        </div>
-                      <div class="aui-dropdown2-section">
-                          <ul>
-                              <li>
-                                  <a href="#general-invite" class='general-invite-link'>Invite a friend</a>
-                              </li>
-                          </ul>
-                      </div>
-                      
-                      <div class="aui-dropdown2-section">
-                        <ul>
-                          <li>
-                            <a href="/account/create-team/" id="create-team-link">Create team</a>
-                          </li>
-                          <li>
-                            <a href="/account/user/ErisDS/convert-team/">Convert to team</a>
-                          </li>
-                        </ul>
-                      </div>
-                    
-                  </nav>
-                </li>
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-      <header id="account-warning" role="banner"
-              class="aui-message-banner warning ">
-        <div class="center-content">
-          <span class="aui-icon aui-icon-warning"></span>
-          <span class="message">
-            
-          </span>
-        </div>
-      </header>
-    
-      <header id="aui-message-bar">
-        
-      </header>
-    
-    
-  <header id="repo-warning" role="banner" class="aui-message-banner warning">
-    <div class="center-content">
-      <span class="aui-icon aui-icon-warning"></span>
-      <span class="message">
-      </span>
-    </div>
-  </header>
-  <script id="repo-warning-template" type="text/html">
-  
-
-
-
-
-  This repository's ownership is pending transfer to <a href="/[[username]]">[[username]]</a>.
-  Visit the <a href="/JohnONolan/casper/admin/transfer">transfer repository page</a> to view more details.
-
-
-</script>
-  <header id="repo-header" class="subhead row">
-    <div class="center-content">
-      <div class="repo-summary">
-        <a class="repo-avatar-link" href="/JohnONolan/casper">
-          <span class="repo-avatar-container size64" title="JohnONolan/Casper">
-  <img alt="JohnONolan/Casper" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/img/language-avatars/default_64.png">
-</span>
-
-          
-          <span class="locked" rel="tooltip" title="Private repository" data-placement="bottom"></span>
-          
-        </a>
-        <h1><a class="repo-link" href="/JohnONolan/casper">Casper</a></h1>
-        <ul class="repo-metadata clearfix">
-          <li>
-            <a class="user" href="/JohnONolan">
-              <span class="icon user">User icon</span>
-              <span>JohnONolan</span>
-            </a>
-          </li>
-          
-          
-          <li class="social">
-            <a class="follow" id="repo-follow"
-               rel="nofollow"
-               href="/JohnONolan/casper/follow">
-              <span class="icon follow">Follow icon</span>
-              <span class="text">Follow</span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      <div id="repo-toolbar" class="bb-toolbar">
-        
-        <div class="aui-buttons">
-          <a id="repo-clone-button" class="aui-button aui-style" href="https://ErisDS@bitbucket.org/JohnONolan/casper.git">
-            <span class="icon clone">Clone icon</span>
-            <span>Clone</span>
-            <span class="aui-icon-dropdown"></span>
-          </a>
-          <a id="fork-button" class="aui-button aui-style"
-             href="/JohnONolan/casper/fork">
-            <span class="icon fork">Fork icon</span>
-            <span>Fork</span>
-          </a>
-        </div>
-        <div class="aui-buttons">
-          <a id="compare-button" class="aui-button aui-style"
-             href="/JohnONolan/casper/compare">
-            <span class="icon compare">Compare icon</span>
-            <span>Compare</span>
-          </a>
-          <a id="pull-request-button" class="aui-button aui-style"
-             href="/JohnONolan/casper/pull-request/new">
-            <span class="icon pull-request">Pull request icon</span>
-            <span>Pull request</span>
-          </a>
-        </div>
-        
-        
-
-<div id="repo-clone-dialog" class="clone-dialog hidden">
-  
-<div class="clone-url">
-  <div class="aui-buttons">
-    <a href="https://ErisDS@bitbucket.org/JohnONolan/casper.git"
-       class="aui-button aui-style aui-dropdown2-trigger" aria-haspopup="true"
-       aria-owns="clone-url-dropdown-header">
-      <span class="dropdown-text">HTTPS</span>
-    </a>
-    <div id="clone-url-dropdown-header" class="aui-dropdown2 aui-style-default">
-      <ul class="aui-list-truncate">
-        <li>
-          <a href="https://ErisDS@bitbucket.org/JohnONolan/casper.git"
-            
-              data-command="git clone https://ErisDS@bitbucket.org/JohnONolan/casper.git"
-            
-            class="item-link https">HTTPS
-          </a>
-        </li>
-        <li>
-          <a href="ssh://git@bitbucket.org/JohnONolan/casper.git"
-            
-              data-command="git clone git@bitbucket.org:JohnONolan/casper.git"
-            
-            class="item-link ssh">SSH
-          </a>
-        </li>
-      </ul>
-    </div>
-    <input type="text" readonly="readonly" value="git clone https://ErisDS@bitbucket.org/JohnONolan/casper.git">
-  </div>
-  
-  <p>Need help cloning? Visit
-     <a href="https://confluence.atlassian.com/x/cgozDQ" target="_blank">Bitbucket 101</a>.</p>
-  
-</div>
-
-
-  
-  
-  
-
-<div class="clone-in-sourcetree"
-  data-https-url="https://ErisDS@bitbucket.org/JohnONolan/casper.git"
-  data-ssh-url="ssh://git@bitbucket.org/JohnONolan/casper.git">
-  <p><button class="aui-button aui-style aui-button-primary">Clone in SourceTree</button></p>
-
-  <p>
-    
-      
-        <a href="http://www.sourcetreeapp.com" target="_blank">SourceTree</a>
-        is a free Mac client by Atlassian for Git, Mercurial, and Subversion.
-      
-    
-  </p>
-</div>
-
-  
-</div>
-
-      </div>
-    </div>
-    <div class="clearfix"></div>
-  </header>
-  <nav id="repo-tabs" class="aui-navgroup aui-navgroup-horizontal aui-navgroup-horizontal-roomy">
-    <div class="aui-navgroup-inner">
-      <div class="aui-navgroup-primary">
-        <ul class="aui-nav">
-          
-            <li>
-              <a href="/JohnONolan/casper/overview" id="repo-overview-link">Overview</a>
-            </li>
-          
-          
-            <li class="aui-nav-selected">
-              <a href="/JohnONolan/casper/src" id="repo-source-link">Source</a>
-            </li>
-          
-          
-            <li>
-              <a href="/JohnONolan/casper/commits" id="repo-commits-link">
-                Commits
-              </a>
-            </li>
-          
-          
-            <li>
-              <a href="/JohnONolan/casper/pull-requests" id="repo-pullrequests-link">
-                Pull requests
-                
-                  
-                
-              </a>
-            </li>
-          
-          
-            
-          
-            <li id="issues-tab" class="
-              
-                
-              
-            ">
-              <a href="/JohnONolan/casper/issues?status=new&amp;status=open" id="repo-issues-link">
-                Issues
-                
-                  
-                    <span class="aui-badge">1</span>
-                  
-                
-              </a>
-            </li>
-            <li id="wiki-tab" class="
-                
-                  hidden
-                
-              ">
-              <a href="/JohnONolan/casper/wiki" id="repo-wiki-link">Wiki</a>
-            </li>
-          
-            <li>
-            <a href="/JohnONolan/casper/downloads" id="repo-downloads-link">
-              Downloads
-              
-                
-              
-            </a>
-            </li>
-          
-        </ul>
-      </div>
-      <div class="aui-navgroup-secondary">
-        <ul class="aui-nav">
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-    <div id="content" role="main">
-      
-  <div id="repo-content">
-    
-  <div id="source-container">
-    
-
-
-
-<header id="source-path">
-  
-  <div class="labels labels-csv">
-    
-      <div class="aui-buttons">
-        <button data-branches-tags-url="/api/1.0/repositories/JohnONolan/casper/branches-tags"
-                class="aui-button aui-style branch-dialog-trigger" title="master">
-          
-            
-              <span class="branch icon">Branch</span>
-            
-            <span class="name">master</span>
-          
-          <span class="aui-icon-dropdown"></span>
-        </button>
-      </div>
-    
-  </div>
-  
-  
-    <div class="view-switcher">
-      <div class="aui-buttons">
-        
-          <a href="/JohnONolan/casper/src/0b79f5f4e8a2/css/fonts/galette-med-webfont.svg?at=master"
-             class="aui-button aui-style pjax-trigger" aria-pressed="true">
-            Source
-          </a>
-          <a href="/JohnONolan/casper/diff/css/fonts/galette-med-webfont.svg?diff2=0b79f5f4e8a2&at=master"
-             class="aui-button aui-style pjax-trigger"
-             title="Diff to previous change">
-            Diff
-          </a>
-          <a href="/JohnONolan/casper/history-node/0b79f5f4e8a2/css/fonts/galette-med-webfont.svg?at=master"
-             class="aui-button aui-style pjax-trigger">
-            History
-          </a>
-        
-      </div>
-    </div>
-  
-  <h1>
-    <a href="/JohnONolan/casper/src/0b79f5f4e8a2?at=master"
-       class="pjax-trigger" title="[u&#39;css&#39;, u&#39;fonts&#39;, u&#39;galette-med-webfont.svg&#39;]">Casper</a> /
-    
-      
-        
-          
-            <a href="/JohnONolan/casper/src/0b79f5f4e8a2/css?at=master"
-               class="pjax-trigger">css</a> /
-          
-        
-      
-    
-      
-        
-          
-            <a href="/JohnONolan/casper/src/0b79f5f4e8a2/css/fonts?at=master"
-               class="pjax-trigger">fonts</a> /
-          
-        
-      
-    
-      
-        
-          <span>galette-med-webfont.svg</span>
-        
-      
-    
-  </h1>
-  
-    
-    
-  
-  <div class="clearfix"></div>
-</header>
-
-
-  
-    <div id="source-view">
-      <div class="toolbar">
-        <div class="primary">
-          <div class="aui-buttons">
-            
-              <button id="file-history-trigger" class="aui-button aui-style changeset-info"
-                      data-changeset="0b79f5f4e8a236f99a30a7fa95f0dc9db7e931a2"
-                      data-path="css/fonts/galette-med-webfont.svg"
-                      data-current="0b79f5f4e8a236f99a30a7fa95f0dc9db7e931a2">
-                
-                   
-
-<img class="avatar avatar16" src="https://secure.gravatar.com/avatar/75e958a6674a7d68fe0d575fb235116c?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F8907ccc5f331%2Fimg%2Fdefault_avatar%2F16%2Fuser_blue.png&amp;s=16" alt="John O'Nolan avatar" />
-<span class="changeset-hash">0b79f5f</span>
-<time datetime="2013-02-16T14:57:05+00:00" class="timestamp"></time>
-<span class="aui-icon-dropdown"></span>
-
-                
-              </button>
-            
-          </div>
-        </div>
-          <div class="secondary">
-            
-            <div class="aui-buttons">
-              
-              <a href="/JohnONolan/casper/full-commit/0b79f5f4e8a2/css/fonts/galette-med-webfont.svg" class="aui-button aui-style"
-                 title="View full commit 0b79f5f">Full commit</a>
-              
-              <a href="/JohnONolan/casper/raw/0b79f5f4e8a236f99a30a7fa95f0dc9db7e931a2/css/fonts/galette-med-webfont.svg"
-                 class="aui-button aui-style">Raw</a>
-            </div>
-          </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-
-    
-      <div id="inline-image">
-          <img src="/JohnONolan/casper/raw/0b79f5f4e8a236f99a30a7fa95f0dc9db7e931a2/css/fonts/galette-med-webfont.svg" alt="">
-      </div>
-    
-  
-
-
-  <script id="source-changeset" type="text/html">
-  
-
-<a href="/JohnONolan/casper/src/[[raw_node]]/css/fonts/galette-med-webfont.svg?at=master"
-   class="[[#selected]]highlight[[/selected]]"
-   data-hash="[[node]]">
-  [[#author.username]]
-    <img class="avatar avatar16" src="[[author.avatar]]"/>
-    <span class="author" title="[[raw_author]]">[[author.display_name]]</span>
-  [[/author.username]]
-  [[^author.username]]
-    <img class="avatar avatar16" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/img/default_avatar/16/user_blue.png"/>
-    <span class="author unmapped" title="[[raw_author]]">[[author]]</span>
-  [[/author.username]]
-  <time datetime="[[utctimestamp]]" data-title="true">[[utctimestamp]]</time>
-  <span class="message">[[message]]</span>
-</a>
-
-</script>
-  <script id="embed-template" type="text/html">
-  
-
-<form class="aui embed">
-  <label for="embed-code">Embed this source in another page:</label>
-  <input type="text" readonly="true" value="&lt;script src=&quot;[[url]]&quot;&gt;&lt;/script&gt;" id="embed-code">
-</form>
-
-</script>
-
-
-<div class="mask"></div>
-
-
-
-  <script id="branch-dialog-template" type="text/html">
-  
-
-<div class="tabbed-filter-widget branch-dialog">
-  <div class="tabbed-filter">
-    <input placeholder="Filter branches" class="filter-box" autosave="branch-dropdown-2121860" type="text">
-    [[^ignoreTags]]
-      <div class="aui-tabs horizontal-tabs aui-tabs-disabled filter-tabs">
-        <ul class="tabs-menu">
-          <li class="menu-item active-tab"><a href="#branches">Branches</a></li>
-          <li class="menu-item"><a href="#tags">Tags</a></li>
-        </ul>
-      </div>
-    [[/ignoreTags]]
-  </div>
-  
-    <div class="tab-pane active-pane" id="branches" data-filter-placeholder="Filter branches">
-      <ol class="filter-list">
-        <li class="empty-msg">No matching branches</li>
-        [[#branches]]
-          [[#hasMultipleHeads]]
-            [[#heads]]
-              <li class="comprev filter-item">
-                <a href="/JohnONolan/casper/src/[[changeset]]/css/fonts/galette-med-webfont.svg?at=[[safeName]]"
-                   title="[[name]]">
-                  [[name]] ([[shortChangeset]])
-                </a>
-              </li>
-            [[/heads]]
-          [[/hasMultipleHeads]]
-          [[^hasMultipleHeads]]
-            <li class="comprev filter-item">
-              <a href="/JohnONolan/casper/src/[[changeset]]/css/fonts/galette-med-webfont.svg?at=[[safeName]]" title="[[name]]">
-                [[name]]
-              </a>
-            </li>
-          [[/hasMultipleHeads]]
-        [[/branches]]
-      </ol>
-    </div>
-    <div class="tab-pane" id="tags" data-filter-placeholder="Filter tags">
-      <ol class="filter-list">
-        <li class="empty-msg">No matching tags</li>
-        [[#tags]]
-          <li class="comprev filter-item">
-            <a href="/JohnONolan/casper/src/[[changeset]]/css/fonts/galette-med-webfont.svg?at=[[safeName]]" title="[[name]]">
-              [[name]]
-            </a>
-          </li>
-        [[/tags]]
-      </ol>
-    </div>
-  
-</div>
-
-</script>
-
-
-
-  </div>
-
-  </div>
-  
-    
-
-<form id="file-search-form" action="#"
-  
-  data-revision="0b79f5f4e8a236f99a30a7fa95f0dc9db7e931a2"
-  data-branch="master">
-  <input type="text" id="file-search-query" class="loading">
-  <div id="filtered-files"></div>
-  <div class="tip"><em>Tip:</em> Filter by directory path e.g. <strong>/media app.js</strong> to search for public<strong>/media/app.js</strong>.</div>
-  <div class="tip"><em>Tip:</em> Use camelCasing e.g. <strong>ProjME</strong> to search for <strong>ProjectModifiedE</strong>vent.java.</div>
-  <div class="tip"><em>Tip:</em> Filter by extension type e.g. <strong>/repo .js</strong> to search for all <strong>.js</strong> files in the <strong>/repo</strong> directory.</div>
-  <div class="tip"><em>Tip:</em> Separate your search with spaces e.g. <strong>/ssh pom.xml</strong> to search for src<strong>/ssh/pom.xml</strong>.</div>
-  <div class="tip"><em>Tip:</em> Use ↑ and ↓ arrow keys to navigate and <strong>return</strong> to view the file.</div>
-  <div class="tip mod-osx"><em>Tip:</em> You can also navigate files with <strong>Ctrl+j</strong> <em>(next)</em> and <strong>Ctrl+k</strong> <em>(previous)</em> and view the file with <strong>Ctrl+o</strong>.</div>
-  <div class="tip mod-win"><em>Tip:</em> You can also navigate files with <strong>Alt+j</strong> <em>(next)</em> and <strong>Alt+k</strong> <em>(previous)</em> and view the file with <strong>Alt+o</strong>.</div>
-  <script id="filtered-files-template" type="text/html">
-  
-
-<table class="aui bb-list">
-  <thead>
-    <tr class="assistive">
-      <th class="name">Filename</th>
-    </tr>
-  </thead>
-  <tbody>
-    [[#files]]
-    <tr class="iterable-item">
-      <td class="name [[#isDirectory]]directory[[/isDirectory]]">
-        <a href="/JohnONolan/casper/src/[[node]]/[[name]][[#branch]]?at=[[branch]][[/branch]]"
-           title="[[name]]" class="execute" tabindex="-1">
-          [[&highlightedName]]
-        </a>
-      </td>
-    </tr>
-    [[/files]]
-  </tbody>
-</table>
-
-</script>
-</form>
-
-  
-
-    </div>
-  </div>
-  <footer id="footer" role="contentinfo">
-    <section class="footer-body">
-      <ul>
-        <li><a href="http://blog.bitbucket.org">Blog</a></li>
-        <li><a href="//bitbucket.org/site/master/issues/new">Report a bug</a></li>
-        <li><a href="/support">Support</a></li>
-        <li><a href="http://confluence.atlassian.com/display/BITBUCKET">Documentation</a></li>
-        <li><a href="http://confluence.atlassian.com/x/IYBGDQ">API</a></li>
-        <li><a href="http://groups.google.com/group/bitbucket-users">Forum</a></li>
-        <li><a href="http://status.bitbucket.org/">Server status</a></li>
-        <li><a href="http://www.atlassian.com/hosted/terms.jsp">Terms of service</a></li>
-        <li><a href="http://www.atlassian.com/about/privacy.jsp">Privacy policy</a></li>
-      </ul>
-      <ul>
-        
-        <li><a href="http://git-scm.com/">Git 1.7.10.3</a></li>
-        <li><a href="http://mercurial.selenic.com/">Mercurial 2.2.2</a></li>
-        <li><a href="https://www.djangoproject.com/">Django 1.3.1</a></li>
-        <li><a href="http://www.python.org/">Python 2.7.3</a></li>
-        <li><a href="#">68e03d903b65 / 8907ccc5f331 @ bitbucket16</a></li>
-      </ul>
-    </section>
-  </footer>
-</div>
-
-<script type="text/javascript" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/compressed/js/f48c93f171ac.js"></script>
-
-<!-- This script exists purely for the benefit of our selenium tests -->
-<script>
-  setTimeout(function () {
-    BB.JsLoaded = true;
-  }, 3000);
-</script>
-
-
-
-<script>
-  (function (window) {
-    // Base URL to use for non-CNAME URLs.
-    BB.baseUrl = 'https://bitbucket.org';
-
-    BB.images = {
-      invitation: 'https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/img/icons/fugue/card_address.png',
-      noAvatar: 'https://d3oaxc4q5k2d6q.cloudfront.net/m/8907ccc5f331/img/default_avatar/16/user_blue.png'
-    };
-    BB.user = {"username": "ErisDS", "displayName": "Hannah Wolfe", "firstName": "Hannah", "avatarUrl": "https://secure.gravatar.com/avatar/cb82ccb3c72846f4e111348b8d5a01e5?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F8907ccc5f331%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png\u0026s=32", "lastName": "Wolfe", "isTeam": false, "isSshEnabled": false, "isKbdShortcutsEnabled": true, "id": 819867, "isAuthenticated": true};
-    BB.repo || (BB.repo = {});
-    
-      BB.repo.id = 2121860;
-      BB.repo.scm = 'git';
-      
-      
-        BB.repo.language = null;
-        BB.repo.pygmentsLanguage = null;
-      
-      
-        BB.repo.slug = 'casper';
-      
-      
-        BB.repo.owner = {};
-        BB.repo.owner.username = 'JohnONolan';
-        BB.repo.owner.is_team = false;
-      
-      
-        BB.repo.creator = {};
-        BB.repo.creator.username = 'JohnONolan';
-      
-      // Coerce `BB.repo` to a string to get
-      // "davidchambers/mango" or whatever.
-      BB.repo.toString = function () {
-        return BB.cname ? this.slug : '{owner.username}/{slug}'.format(this);
-      }
-      
-        BB.changeset = '0b79f5f4e8a236f99a30a7fa95f0dc9db7e931a2'
-      
-      
-    
-    window.setInterval(BB.localize, 60 * 1000);
-    $(document).on('ready pjax:end', function () { BB.localize(); });
-  })(window);
-</script>
-
-
-<script>
-    // Bitbucket Google Analytics
-    // NOTE: these will not fire in development. In debug mode it just logs them to console.
-    (function (window) {
-        // Track the main pageview to the Bitbucket GA account.
-        BB.gaqPush(['_trackPageview']);
-        // Track the main pageview to the Atlassian GA account.
-        BB.gaqPush(['atl._trackPageview']);
-
-        
-
-
-        
-
-        // Include GA commands from sub-templates
-        
-
-        (function () {
-            var ga = document.createElement('script');
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            ga.setAttribute('async', 'true');
-            document.documentElement.firstChild.appendChild(ga);
-        }());
-    })(window);
-</script>
-
-
-
-<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-1.newrelic.com","7d4a9813d0","295788","MgMDYhcHDUJVVEIKWAtJJ0MLBRdYW1kZAV4RBBRVDgMXH1VHRhAZFwMRWVdIFVhRQEVZUQwKBFQXCRRCUQ==",0,227,new Date().getTime(),"","","","",""]);</script></body>
-</html>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata></metadata>
+<defs>
+<font id="galetteregular" horiz-adv-x="1146" >
+<font-face units-per-em="2048" ascent="1536" descent="-512" />
+<missing-glyph horiz-adv-x="450" />
+<glyph unicode="&#xfb01;" horiz-adv-x="942" d="M123 0v1155q0 117 83.5 198t203.5 81h409v-144h-409q-50 0 -86.5 -40t-36.5 -95v-131h245v-143h-245v-881h-164zM655 0v1024h164v-1024h-164z" />
+<glyph unicode="&#xfb02;" horiz-adv-x="942" d="M123 0v1155q0 117 83.5 198t203.5 81h409v-1434h-164v1290h-245q-50 0 -86.5 -40t-36.5 -95v-131h245v-143h-245v-881h-164z" />
+<glyph horiz-adv-x="2048" />
+<glyph horiz-adv-x="2048" />
+<glyph unicode="&#xd;" horiz-adv-x="2048" />
+<glyph unicode=" "  horiz-adv-x="450" />
+<glyph unicode="&#x09;" horiz-adv-x="450" />
+<glyph unicode="&#xa0;" horiz-adv-x="450" />
+<glyph unicode="!" horiz-adv-x="430" d="M123 0v184h184v-184h-184zM133 328v1106h164v-1106h-164z" />
+<glyph unicode="&#x22;" horiz-adv-x="696" d="M123 1044v390h164v-390h-164zM410 1044v390h163v-390h-163z" />
+<glyph unicode="#" horiz-adv-x="1228" d="M82 410v143h246v328h-246v143h246v410h164v-410h245v410h164v-410h246v-143h-246v-328h246v-143h-246v-410h-164v410h-245v-410h-164v410h-246zM492 553h245v328h-245v-328z" />
+<glyph unicode="$" horiz-adv-x="1085" d="M82 1096q0 141 100.5 239.5t241.5 98.5h47v102h164v-102h287v-144h-287v-434l31 -6q147 -31 241 -149t94 -271q0 -162 -105 -282.5t-261 -143.5v-188h-164v184h-348v143h348v592l-123 27q-119 26 -192.5 117.5t-73.5 216.5zM246 1096q0 -65 41 -120.5t102 -68.5l82 -18 v401h-29q-80 0 -138 -57.5t-58 -136.5zM635 156q89 27 147 103t58 171t-59.5 174t-145.5 98v-546z" />
+<glyph unicode="%" horiz-adv-x="1474" d="M82 1126q0 128 90 218t217 90t217 -90t90 -218t-90 -217.5t-217 -89.5t-217 89.5t-90 217.5zM205 0l889 1434h176l-889 -1434h-176zM225 1126q0 -67 48 -115t116 -48t116 48t48 115q0 68 -48.5 116t-115.5 48t-115.5 -48t-48.5 -116zM778 307q0 127 90 217t217 90 q128 0 218 -90t90 -217t-90 -217t-218 -90q-127 0 -217 90t-90 217zM922 307q0 -68 48 -116t115 -48t115.5 48.5t48.5 115.5t-48.5 115.5t-115.5 48.5t-115 -48t-48 -116z" />
+<glyph unicode="&#x26;" horiz-adv-x="1249" d="M102 416v153q0 90 42 168.5t114 130.5q-54 45 -85.5 110.5t-31.5 137.5q0 132 93 225t225 93h565v-144h-545q-70 0 -121 -51.5t-51 -122.5t48.5 -124.5t115.5 -53.5h389v188h164v-188h164v-145h-164v-793h-487q-114 0 -214 55t-160.5 151.5t-60.5 209.5zM268 412 q0 -110 79.5 -189.5t189.5 -79.5h323v650h-381q-87 0 -149 -62t-62 -149v-170z" />
+<glyph unicode="'" horiz-adv-x="409" d="M123 1044v390h164v-390h-164z" />
+<glyph unicode="(" horiz-adv-x="593" d="M123 389v473q0 114 27.5 225.5t66.5 189t78 138.5t67 91l27 30h164q-11 -12 -29 -33.5t-63.5 -92t-81 -145t-64 -185.5t-28.5 -220v-471q0 -109 27.5 -218.5t66.5 -188.5t78 -142t67 -95l27 -32h-164q-11 11 -29 31.5t-63.5 88.5t-81 141.5t-64 186.5t-28.5 228z" />
+<glyph unicode=")" horiz-adv-x="593" d="M41 -287q11 12 29 33.5t63.5 92t81 145t64 185.5t28.5 220v471q0 109 -27.5 218.5t-66.5 188.5t-78 142t-67 95l-27 32h164q11 -11 29 -31.5t63.5 -88t81 -141t64 -186.5t28.5 -227v-473q0 -115 -27.5 -227t-66.5 -189.5t-78 -138.5t-67 -91l-27 -30h-164z" />
+<glyph unicode="*" horiz-adv-x="942" d="M80 1087l51 158l268 -96l-8 285h164l-10 -285l266 96l53 -160l-270 -75q143 -186 174 -224l-135 -98l-160 238l-158 -238l-137 96l176 226z" />
+<glyph unicode="+" d="M82 451v143h410v430h163v-430h410v-143h-410v-451h-163v451h-410z" />
+<glyph unicode="," horiz-adv-x="430" d="M123 184h184l-20 -430h-164v430z" />
+<glyph unicode="-" horiz-adv-x="675" d="M82 451v143h512v-143h-512z" />
+<glyph unicode="." horiz-adv-x="430" d="M123 0v184h184v-184h-184z" />
+<glyph unicode="/" horiz-adv-x="819" d="M41 0l565 1434h172l-565 -1434h-172z" />
+<glyph unicode="0" horiz-adv-x="1126" d="M102 375v684q0 155 111 265t266 110h170q155 0 265 -110t110 -265v-684q0 -155 -110 -265t-265 -110h-170q-155 0 -266 110t-111 265zM266 356q0 -88 62.5 -150.5t150.5 -62.5h170q86 0 148.5 62.5t62.5 150.5v721q0 86 -62.5 149.5t-148.5 63.5h-170q-87 0 -150 -63 t-63 -150v-721z" />
+<glyph unicode="1" horiz-adv-x="512" d="M61 1290v144h328v-1434h-164v1290h-164z" />
+<glyph unicode="2" horiz-adv-x="1126" d="M123 0v442q0 145 95 261t233 147l286 63q63 13 103.5 66t40.5 119q0 78 -57 135t-136 57h-483v144h504q138 0 236.5 -99t98.5 -237q0 -119 -76 -211t-190 -117l-286 -63q-89 -20 -147 -95.5t-58 -169.5v-299h717v-143h-881z" />
+<glyph unicode="3" horiz-adv-x="1024" d="M61 0v143h451q110 0 188 78.5t78 188.5v172q0 86 -62.5 148.5t-148.5 62.5h-424v145h430q67 0 115.5 53.5t48.5 124.5t-50 122.5t-120 51.5h-506v144h527q132 0 222.5 -93t90.5 -225q0 -73 -34 -140t-89 -106q71 -47 117.5 -133t46.5 -176v-145q0 -113 -59 -209 t-158 -151.5t-213 -55.5h-451z" />
+<glyph unicode="4" horiz-adv-x="1105" d="M41 389l553 1045h184l-483 -902h442v492h164v-492h143v-143h-143v-389h-164v389h-696z" />
+<glyph unicode="5" horiz-adv-x="1085" d="M123 0v143h430q112 0 189 78t77 189v172q0 86 -62.5 148.5t-148.5 62.5h-485v641h778v-144h-614v-352h317q155 0 267 -111t112 -266v-151q0 -168 -127.5 -289t-302.5 -121h-430z" />
+<glyph unicode="6" horiz-adv-x="1126" d="M102 414v645q0 155 111 265t266 110h463v-144h-463q-87 0 -149 -63t-62 -150v-139h381q155 0 265 -110t110 -265v-149q0 -113 -59.5 -208.5t-159.5 -150.5t-215 -55h-53q-114 0 -214 54.5t-160.5 150t-60.5 209.5zM268 412q0 -110 79.5 -189.5t189.5 -79.5h53 q112 0 191 79t79 190v170q0 86 -62.5 148.5t-148.5 62.5h-381v-381z" />
+<glyph unicode="7" horiz-adv-x="983" d="M41 0l651 1290h-631v144h881l-721 -1434h-180z" />
+<glyph unicode="8" horiz-adv-x="1126" d="M102 416v145q0 89 46 170t118 133q-55 44 -89 112t-34 140q0 132 92 225t224 93h211q130 0 221.5 -93t91.5 -225q0 -72 -34 -140t-89 -112q72 -52 118 -133t46 -170v-145q0 -172 -127 -294t-303 -122h-62q-114 0 -213 55.5t-158 151.5t-59 209zM266 410q0 -109 76.5 -188 t183.5 -79h76q107 0 182.5 79t75.5 188v172q0 86 -62.5 148.5t-148.5 62.5h-170q-88 0 -150.5 -62.5t-62.5 -148.5v-172zM307 1116q0 -71 48.5 -124.5t115.5 -53.5h184q67 0 115.5 53.5t48.5 124.5t-50 122.5t-120 51.5h-170q-70 0 -121 -51.5t-51 -122.5z" />
+<glyph unicode="9" horiz-adv-x="1105" d="M82 1024v35q0 155 110 265t265 110h172q155 0 265 -110t110 -265v-649q0 -172 -127.5 -291t-303.5 -119h-409v143h409q110 0 188.5 78.5t78.5 188.5v235h-383q-155 0 -265 111t-110 268zM246 1004q0 -87 62.5 -151.5t148.5 -64.5h383v289q0 87 -62 150t-149 63h-172 q-86 0 -148.5 -63.5t-62.5 -149.5v-73z" />
+<glyph unicode=":" horiz-adv-x="430" d="M123 0v184h184v-184h-184zM123 840v184h184v-184h-184z" />
+<glyph unicode=";" horiz-adv-x="430" d="M123 184h184l-20 -430h-164v430zM123 840v184h184v-184h-184z" />
+<glyph unicode="&#x3c;" horiz-adv-x="1064" d="M82 457v110l901 477v-153l-717 -379l717 -379v-153z" />
+<glyph unicode="=" d="M82 266v144h983v-144h-983zM82 635v143h983v-143h-983z" />
+<glyph unicode="&#x3e;" horiz-adv-x="1064" d="M82 -20v153l717 379l-717 379v153l901 -477v-110z" />
+<glyph unicode="?" horiz-adv-x="983" d="M82 1290v144h491q138 0 238 -100t100 -238q0 -119 -73 -208t-183 -114l-235 -53q-57 -12 -95 -60t-38 -108v-225h-164v225q0 107 71 192.5t175 110.5l235 55q60 14 102 67.5t42 117.5q0 78 -58 136t-137 58h-471zM113 0v184h184v-184h-184z" />
+<glyph unicode="@" horiz-adv-x="1515" d="M102 532v451q0 93 35.5 176.5t96 143.5t144 95.5t175.5 35.5h410q188 0 319 -131t131 -320v-397q0 -117 -80 -198t-196 -81h-428q-116 0 -197.5 81t-81.5 198v321q0 91 64 155t155 64h406v-675h61q56 0 94.5 38.5t38.5 94.5v399q0 127 -89.5 217t-217.5 90h-369 q-127 0 -217 -90t-90 -217v-451q0 -160 114.5 -274.5t274.5 -114.5h697v-143h-717q-109 0 -207.5 41.5t-170 112.5t-113.5 170t-42 208zM594 584q0 -55 39.5 -94t93.5 -39h164v532h-221q-31 0 -53.5 -22.5t-22.5 -53.5v-323z" />
+<glyph unicode="A" d="M41 0l451 1434h163l451 -1434h-172l-133 430h-455l-133 -430h-172zM389 573h367l-183 594z" />
+<glyph unicode="B" horiz-adv-x="1126" d="M123 0v1434h541q133 0 226 -94t93 -228q0 -74 -36.5 -142.5t-92.5 -105.5q84 -45 137 -143.5t53 -202.5v-98q0 -173 -123 -296.5t-296 -123.5h-502zM287 143h338q103 0 179.5 76.5t76.5 179.5v140q0 104 -76.5 179t-179.5 75h-338v-650zM287 938h356q72 0 124 51.5 t52 122.5q0 72 -52 125t-124 53h-356v-352z" />
+<glyph unicode="C" horiz-adv-x="1024" d="M102 518v535q0 158 111.5 269.5t269.5 111.5h480v-144h-480q-88 0 -152.5 -64.5t-64.5 -152.5v-573q0 -146 105 -251.5t250 -105.5h342v-143h-342q-141 0 -260.5 69t-189 188.5t-69.5 260.5z" />
+<glyph unicode="D" d="M123 0v1434h539q159 0 270.5 -110.5t111.5 -268.5v-537q0 -106 -41 -202t-111 -165t-167 -110t-203 -41h-399zM287 143h245q145 0 247 105t102 252v575q0 88 -62.5 151.5t-150.5 63.5h-381v-1147z" />
+<glyph unicode="E" horiz-adv-x="1024" d="M123 0v1434h840v-144h-676v-352h594v-145h-594v-650h676v-143h-840z" />
+<glyph unicode="F" horiz-adv-x="1024" d="M123 0v1434h840v-144h-676v-352h594v-145h-594v-793h-164z" />
+<glyph unicode="G" d="M102 518v535q0 158 111.5 269.5t269.5 111.5h500v-144h-500q-88 0 -152.5 -64.5t-64.5 -152.5v-573q0 -146 105.5 -251.5t251.5 -105.5h237v650h-287v145h451v-938h-401q-142 0 -262 69t-189.5 188.5t-69.5 260.5z" />
+<glyph unicode="H" horiz-adv-x="1167" d="M123 0v1434h164v-496h594v496h163v-1434h-163v793h-594v-793h-164z" />
+<glyph unicode="I" horiz-adv-x="409" d="M123 0v1434h164v-1434h-164z" />
+<glyph unicode="J" horiz-adv-x="573" d="M51 -20v143q96 0 166 64.5t70 152.5v1094h164v-1074q0 -158 -117 -269t-283 -111z" />
+<glyph unicode="K" horiz-adv-x="1208" d="M123 0v1434h164v-1434h-164zM287 850l635 584h225l-645 -594l655 -840h-207z" />
+<glyph unicode="L" horiz-adv-x="1044" d="M123 0v1434h164v-1291h696v-143h-860z" />
+<glyph unicode="M" horiz-adv-x="1290" d="M123 0v1434h174l348 -607l348 607h174v-1434h-163v1126l-359 -614l-358 614v-1126h-164z" />
+<glyph unicode="N" horiz-adv-x="1167" d="M123 0v1434h170l588 -1106v1106h163v-1434h-167l-590 1106v-1106h-164z" />
+<glyph unicode="O" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q157 0 267.5 -111.5t110.5 -269.5v-613q0 -183 -127.5 -311.5t-310.5 -128.5h-63q-183 0 -312 128.5t-129 311.5zM266 420q0 -114 81.5 -195.5t195.5 -81.5h63q113 0 194 81.5t81 195.5v653q0 88 -63.5 152.5t-151.5 64.5 h-187q-87 0 -150 -64.5t-63 -152.5v-653z" />
+<glyph unicode="P" horiz-adv-x="1085" d="M123 0v1434h573q134 0 231 -94.5t97 -227.5t-97 -226t-231 -93h-409v-793h-164zM287 938h395q71 0 124.5 52t53.5 122q0 72 -53.5 125t-124.5 53h-395v-352z" />
+<glyph unicode="Q" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q157 0 267.5 -111.5t110.5 -269.5v-613q0 -90 -35 -172t-96 -143l131 -166l-108 -82l-133 170q-89 -47 -197 -47h-63q-183 0 -312 128.5t-129 311.5zM266 420q0 -114 81.5 -195.5t195.5 -81.5h63q56 0 105 21l-158 203 l109 82l157 -203q62 79 62 174v653q0 88 -63.5 152.5t-151.5 64.5h-187q-87 0 -150 -64.5t-63 -152.5v-653z" />
+<glyph unicode="R" horiz-adv-x="1126" d="M123 0v1434h582q133 0 226 -93t93 -227q0 -123 -85.5 -216t-205.5 -105q36 -25 55 -76l297 -717h-180l-272 668q-27 63 -81 94t-122 31h-143v-793h-164zM287 938h397q70 0 122 52.5t52 123.5q0 72 -51.5 124t-122.5 52h-397v-352z" />
+<glyph unicode="S" horiz-adv-x="1085" d="M82 1096q0 141 100.5 239.5t241.5 98.5h498v-144h-480q-80 0 -138 -57.5t-58 -136.5q0 -64 41.5 -120.5t101.5 -68.5l277 -57q147 -31 241 -149t94 -271q0 -178 -125.5 -304t-304.5 -126h-448v143h430q117 0 202 84.5t85 202.5q0 95 -59.5 174t-145.5 98l-287 60 q-119 25 -192.5 117.5t-73.5 216.5z" />
+<glyph unicode="T" horiz-adv-x="1044" d="M61 1290v144h922v-144h-379v-1290h-164v1290h-379z" />
+<glyph unicode="U" horiz-adv-x="1167" d="M123 440v994h164v-1014q0 -114 81 -195.5t195 -81.5h43q114 0 194.5 81.5t80.5 195.5v1014h163v-994q0 -183 -127.5 -311.5t-310.5 -128.5h-43q-183 0 -311.5 128.5t-128.5 311.5z" />
+<glyph unicode="V" d="M41 1434h172l360 -1168l361 1168h172l-451 -1434h-163z" />
+<glyph unicode="W" horiz-adv-x="2037" d="M41 1434h172l360 -1168l361 1168h172l360 -1168l361 1168h172l-451 -1434h-164l-364 1167l-365 -1167h-163z" />
+<glyph unicode="X" horiz-adv-x="1044" d="M41 0l389 756l-348 678h184l256 -502l256 502h185l-349 -678l390 -756h-185l-297 584l-297 -584h-184z" />
+<glyph unicode="Y" horiz-adv-x="1064" d="M41 1434h188l303 -512l304 512h188l-410 -676v-758h-163v758z" />
+<glyph unicode="Z" horiz-adv-x="1003" d="M41 0l676 1290h-635v144h891l-676 -1291h645v-143h-901z" />
+<glyph unicode="[" horiz-adv-x="614" d="M123 -287v1823h430v-143h-266v-1536h266v-144h-430z" />
+<glyph unicode="\" horiz-adv-x="819" d="M41 1434h172l565 -1434h-172z" />
+<glyph unicode="]" horiz-adv-x="614" d="M61 -143h267v1536h-267v143h431v-1823h-431v144z" />
+<glyph unicode="^" horiz-adv-x="1126" d="M61 532l431 902h143l430 -902h-160l-342 728l-342 -728h-160z" />
+<glyph unicode="_" horiz-adv-x="983" d="M0 -143h983v-144h-983v144z" />
+<glyph unicode="`" horiz-adv-x="675" d="M102 1434h174l287 -287h-174z" />
+<glyph unicode="a" horiz-adv-x="962" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q116 0 196.5 -79.5t80.5 -194.5v-750h-482q-119 0 -197.5 81t-78.5 198zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82q-42 -11 -69 -46.5t-27 -84.5z" />
+<glyph unicode="b" horiz-adv-x="983" d="M123 0v1434h164v-410h315q117 0 198 -80t81 -196v-353q0 -164 -116 -279.5t-280 -115.5h-362zM287 143h198q95 0 163.5 68.5t68.5 163.5v391q0 47 -34 81t-81 34h-315v-738z" />
+<glyph unicode="c" horiz-adv-x="860" d="M102 375v373q0 116 81 196t198 80h418v-143h-418q-47 0 -81 -34t-34 -81v-410q0 -88 62.5 -150.5t148.5 -62.5h322v-143h-322q-155 0 -265 110t-110 265z" />
+<glyph unicode="d" horiz-adv-x="983" d="M102 395v353q0 116 81 196t198 80h315v410h164v-1434h-362q-164 0 -280 115.5t-116 279.5zM266 375q0 -95 68.5 -163.5t163.5 -68.5h198v738h-315q-47 0 -81 -34t-34 -81v-391z" />
+<glyph unicode="e" horiz-adv-x="942" d="M102 395v353q0 115 83.5 195.5t203.5 80.5h184q120 0 203.5 -80.5t83.5 -195.5q0 -95 -64.5 -173t-158.5 -100l-371 -90v-10q0 -95 67.5 -163.5t162.5 -68.5h323v-143h-323q-164 0 -279 115.5t-115 279.5zM266 537l334 81q42 9 69 44t27 86q0 54 -36.5 93.5t-86.5 39.5 h-184q-51 0 -87 -39.5t-36 -93.5v-211z" />
+<glyph unicode="f" horiz-adv-x="614" d="M123 0v1155q0 117 83 198t204 81h143v-144h-143q-51 0 -87 -39.5t-36 -95.5v-131h266v-143h-266v-881h-164z" />
+<glyph unicode="g" horiz-adv-x="983" d="M102 375v373q0 115 80.5 195.5t196.5 80.5h481v-1106q0 -164 -115 -276.5t-280 -112.5h-240v143h240q95 0 163 68.5t68 163.5v96h-219q-155 0 -265 110t-110 265zM266 356q0 -88 61.5 -150.5t149.5 -62.5h219v738h-317q-47 0 -80 -34t-33 -81v-410z" />
+<glyph unicode="h" horiz-adv-x="1003" d="M123 0v1434h164v-410h315q117 0 198 -80t81 -196v-748h-164v766q0 47 -34 81t-81 34h-315v-881h-164z" />
+<glyph unicode="i" horiz-adv-x="409" d="M123 0v1024h164v-1024h-164zM123 1229v205h164v-205h-164z" />
+<glyph unicode="j" horiz-adv-x="409" d="M-133 -328q106 0 181 68.5t75 163.5v1120h164v-1106q0 -163 -123 -276t-297 -113v143zM123 1229v205h164v-205h-164z" />
+<glyph unicode="k" horiz-adv-x="1024" d="M123 0v1434h164v-1434h-164zM287 512l483 512h213l-491 -512l491 -512h-213z" />
+<glyph unicode="l" horiz-adv-x="409" d="M123 0v1434h164v-1434h-164z" />
+<glyph unicode="m" horiz-adv-x="1597" d="M123 0v1024h102l62 -92q92 92 225 92h92q70 0 132.5 -33.5t103.5 -89.5q51 58 122.5 90.5t149.5 32.5h86q116 0 196.5 -80.5t80.5 -195.5v-748h-164v766q0 47 -33.5 81t-79.5 34h-86q-95 0 -163 -68.5t-68 -163.5v-649h-164v766q0 47 -33.5 81t-79.5 34h-92 q-95 0 -160 -68t-65 -164v-649h-164z" />
+<glyph unicode="n" horiz-adv-x="1003" d="M123 0v1024h102l62 -92q92 92 231 92h84q117 0 198 -80t81 -196v-748h-164v766q0 47 -34 81t-81 34h-84q-95 0 -163 -68.5t-68 -163.5v-649h-164z" />
+<glyph unicode="o" horiz-adv-x="983" d="M102 317v431q0 115 80.5 195.5t196.5 80.5h225q116 0 196.5 -80.5t80.5 -195.5v-431q0 -132 -92 -224.5t-224 -92.5h-147q-132 0 -224 92.5t-92 224.5zM266 297q0 -63 44.5 -108.5t107.5 -45.5h147q63 0 107.5 45.5t44.5 108.5v469q0 47 -33 81t-80 34h-225 q-46 0 -79.5 -34t-33.5 -81v-469z" />
+<glyph unicode="p" horiz-adv-x="983" d="M123 -471v1495h479q117 0 198 -80t81 -196v-353q0 -164 -116 -279.5t-280 -115.5h-198v-471h-164zM287 143h198q95 0 163.5 68.5t68.5 163.5v391q0 47 -34 81t-81 34h-315v-738z" />
+<glyph unicode="q" horiz-adv-x="983" d="M102 395v353q0 116 81 196t198 80h479v-1495h-164v471h-198q-164 0 -280 115.5t-116 279.5zM266 375q0 -95 68.5 -163.5t163.5 -68.5h198v738h-315q-47 0 -81 -34t-34 -81v-391z" />
+<glyph unicode="r" horiz-adv-x="819" d="M123 0v1024h102l62 -92q92 92 225 92h246v-143h-246q-93 0 -159 -66.5t-66 -159.5v-655h-164z" />
+<glyph unicode="s" horiz-adv-x="921" d="M82 748q0 115 83.5 195.5t203.5 80.5h409v-143h-409q-50 0 -86.5 -39.5t-36.5 -93.5q0 -48 26.5 -83.5t67.5 -46.5l274 -71q98 -25 162 -99.5t64 -171.5q0 -115 -83.5 -195.5t-203.5 -80.5h-451v143h451q50 0 86.5 39.5t36.5 93.5q0 52 -28 87t-75 47l-266 67 q-99 26 -162 98.5t-63 172.5z" />
+<glyph unicode="t" horiz-adv-x="593" d="M123 274v1160h164v-410h245v-143h-245v-607q0 -54 36 -92.5t87 -38.5h122v-143h-122q-121 0 -204 79t-83 195z" />
+<glyph unicode="u" horiz-adv-x="1003" d="M123 276v748h164v-766q0 -47 33.5 -81t80.5 -34h84q95 0 163.5 68.5t68.5 163.5v649h164v-1024h-103l-61 92q-92 -92 -232 -92h-84q-117 0 -197.5 80t-80.5 196z" />
+<glyph unicode="v" horiz-adv-x="901" d="M41 1024h172l238 -768l237 768h172l-328 -1024h-163z" />
+<glyph unicode="w" horiz-adv-x="1536" d="M41 1024h172l238 -768l237 768h160l237 -768l238 768h172l-328 -1024h-163l-238 735l-234 -735h-163z" />
+<glyph unicode="x" horiz-adv-x="880" d="M41 0l307 512l-307 512h184l215 -358q146 241 215 358h185l-308 -512l308 -512h-185l-215 358q-84 -142 -215 -358h-184z" />
+<glyph unicode="y" horiz-adv-x="1003" d="M123 276v748h164v-768q0 -47 33.5 -80t80.5 -33h78q96 0 167 66t71 160v655h164v-1106q0 -161 -117.5 -275t-282.5 -114h-235v143h239q95 0 163.5 68.5t68.5 163.5v188q-44 -44 -108.5 -68t-129.5 -24h-78q-117 0 -197.5 80t-80.5 196z" />
+<glyph unicode="z" horiz-adv-x="870" d="M41 0l512 881h-492v143h764l-512 -881h496v-143h-768z" />
+<glyph unicode="{" horiz-adv-x="614" d="M61 553v143h41q47 0 80 32.5t33 78.5v412q0 132 98.5 224.5t239.5 92.5v-143q-73 0 -123.5 -45.5t-50.5 -108.5v-412q0 -118 -98 -202q98 -84 98 -203v-412q0 -63 50.5 -108t123.5 -45v-144q-141 0 -239.5 93t-98.5 225v411q0 46 -33 78.5t-80 32.5h-41z" />
+<glyph unicode="|" horiz-adv-x="409" d="M123 0v1536h164v-1536h-164z" />
+<glyph unicode="}" horiz-adv-x="614" d="M61 -143q73 0 124 45t51 108v412q0 119 98 203q-98 84 -98 202v412q0 63 -51 108.5t-124 45.5v143q141 0 239.5 -92.5t98.5 -224.5v-412q0 -46 33 -78.5t80 -32.5h41v-143h-41q-47 0 -80 -32.5t-33 -78.5v-411q0 -132 -98.5 -225t-239.5 -93v144z" />
+<glyph unicode="~" horiz-adv-x="1085" d="M82 451q0 105 78.5 180.5t177.5 75.5q54 0 104 -23t88.5 -56t74 -66t75 -56t78.5 -23q36 0 69 34t33 77h144q0 -105 -78.5 -180.5t-177.5 -75.5q-54 0 -104 23t-88.5 56t-74 65.5t-75 55.5t-78.5 23q-37 0 -70 -33.5t-33 -76.5h-143z" />
+<glyph unicode="&#xa1;" horiz-adv-x="430" d="M123 1249v185h184v-185h-184zM133 0v1106h164v-1106h-164z" />
+<glyph unicode="&#xa2;" horiz-adv-x="901" d="M102 375v373q0 116 81 196t198 80h90v102h164v-102h205v-143h-205v-738h205v-143h-205v-184h-164v184q-101 1 -186 51.5t-134 136.5t-49 187zM266 356q0 -86 60 -149t145 -64v738h-90q-47 0 -81 -34t-34 -81v-410z" />
+<glyph unicode="&#xa3;" horiz-adv-x="1064" d="M82 0v143q97 0 166 61.5t69 149.5v439h-235v145h235v127q0 155 109.5 262t265.5 107h291v-144h-293q-86 0 -147.5 -62.5t-61.5 -148.5v-141h502v-145h-502v-424q0 -129 -82 -226h584v-143h-901z" />
+<glyph unicode="&#xa4;" horiz-adv-x="1105" d="M86 262l96 125q-49 71 -49 172v352q0 81 49 152q-76 96 -96 123l127 100l90 -117q45 19 107 19h286q60 0 105 -19l92 117l127 -98l-96 -125q49 -71 49 -152v-352q0 -96 -49 -172q14 -18 48 -63t48 -62l-127 -100l-92 117q-65 -35 -144 -35h-208q-74 0 -146 37l-90 -119z M297 541q0 -63 44.5 -108.5t107.5 -45.5h208q63 0 107.5 45.5t44.5 108.5v389q0 47 -33.5 80.5t-79.5 33.5h-286q-46 0 -79.5 -33.5t-33.5 -80.5v-389z" />
+<glyph unicode="&#xa5;" horiz-adv-x="1064" d="M41 1434h188l303 -492l304 492h188l-309 -496h237v-145h-329l-9 -15v-164h338v-143h-338v-471h-163v471h-359v143h359v164l-11 15h-348v145h258z" />
+<glyph unicode="&#xa6;" horiz-adv-x="409" d="M123 0v614h164v-614h-164zM123 922v614h164v-614h-164z" />
+<glyph unicode="&#xa7;" horiz-adv-x="942" d="M82 748q0 132 102 215q-100 77 -100 200q0 114 83.5 192.5t203.5 78.5h407v-144h-407q-50 0 -86.5 -37t-36.5 -90q0 -46 29.5 -84t70.5 -47l287 -69q101 -25 163 -102.5t62 -180.5q0 -122 -108 -209q88 -81 88 -197q0 -111 -84 -192.5t-203 -81.5h-451v143h451 q50 0 86.5 39.5t36.5 93.5q0 46 -29 81t-72 46l-268 68q-99 26 -162 99.5t-63 177.5zM246 748q0 -48 30.5 -88.5t71.5 -49.5l225 -57q48 2 85.5 41t37.5 92q0 46 -29.5 86t-70.5 49l-227 53q-48 -2 -85.5 -39t-37.5 -87z" />
+<glyph unicode="&#xa8;" horiz-adv-x="737" d="M102 1178v163h164v-163h-164zM471 1178v163h164v-163h-164z" />
+<glyph unicode="&#xa9;" horiz-adv-x="1515" d="M102 532v447q0 93 36 177t96.5 145t144.5 97t176 36h406q123 0 227 -60.5t164.5 -165.5t60.5 -229v-447q0 -146 -70.5 -268.5t-192.5 -193t-267 -70.5h-250q-221 0 -376 155t-155 377zM266 532q0 -160 113.5 -274.5t273.5 -114.5h209q160 0 273.5 114.5t113.5 274.5v447 q0 128 -91 219.5t-218 91.5h-365q-127 0 -218 -91.5t-91 -219.5v-447zM430 586v321q0 91 64 155t155 64h375v-135h-360q-37 0 -63 -26.5t-26 -63.5v-307q0 -63 44.5 -108.5t107.5 -45.5h297v-133h-315q-116 0 -197.5 81t-81.5 198z" />
+<glyph unicode="&#xaa;" horiz-adv-x="675" d="M82 983q0 61 38.5 108t100.5 64l203 53v54q0 19 -13.5 34t-33.5 15h-254v123h260q76 0 128 -54t52 -131v-450h-297q-78 0 -131 54t-53 130zM211 987q0 -26 17 -45.5t38 -19.5h158v168l-166 -41q-22 -6 -34.5 -23.5t-12.5 -38.5z" />
+<glyph unicode="&#xab;" horiz-adv-x="962" d="M61 512l287 410h178l-286 -410l286 -410h-178zM430 512l287 410h178l-287 -410l287 -410h-178z" />
+<glyph unicode="&#xac;" horiz-adv-x="1187" d="M82 594v143h983v-430h-164v287h-819z" />
+<glyph unicode="&#xad;" horiz-adv-x="675" d="M82 451v143h512v-143h-512z" />
+<glyph unicode="&#xae;" horiz-adv-x="1515" d="M102 532v447q0 93 36 177t96.5 145t144.5 97t176 36h406q123 0 227 -60.5t164.5 -165.5t60.5 -229v-447q0 -146 -70.5 -268.5t-192.5 -193t-267 -70.5h-250q-221 0 -376 155t-155 377zM266 532q0 -160 113.5 -274.5t273.5 -114.5h209q160 0 273.5 114.5t113.5 274.5v447 q0 128 -91 219.5t-218 91.5h-365q-127 0 -218 -91.5t-91 -219.5v-447zM471 307v819h354q86 0 147.5 -61t61.5 -147q0 -66 -42.5 -121.5t-104.5 -79.5l200 -410h-157l-170 359q-20 45 -72 45h-63v-404h-154zM625 840h180q30 0 53 21t23 54t-23 54.5t-53 21.5h-180v-151z" />
+<glyph unicode="&#xaf;" horiz-adv-x="696" d="M113 1167v123h471v-123h-471z" />
+<glyph unicode="&#xb0;" horiz-adv-x="757" d="M113 1167q0 110 78 188.5t188 78.5t188 -78.5t78 -188.5t-78 -188t-188 -78t-188 78t-78 188zM256 1167q0 -51 36 -87t87 -36t87 36t36 87t-36 87t-87 36t-87 -36t-36 -87z" />
+<glyph unicode="&#xb1;" d="M82 0v143h983v-143h-983zM82 573v144h410v348h163v-348h410v-144h-410v-348h-163v348h-410z" />
+<glyph unicode="&#xb2;" horiz-adv-x="675" d="M102 717v205q0 80 48.5 143t125.5 82l127 31q18 5 33 24t15 41q0 26 -20.5 47t-45.5 21h-242v123h252q82 0 140.5 -57t58.5 -134q0 -67 -42 -118t-106 -66l-118 -29q-34 -7 -58 -39t-24 -69v-82h327v-123h-471z" />
+<glyph unicode="&#xb3;" horiz-adv-x="634" d="M82 717v123h231q42 0 72.5 29.5t30.5 72.5v62q0 30 -21.5 50.5t-52.5 20.5h-219v123h225q20 0 36.5 16.5t16.5 38.5q0 23 -15.5 40.5t-37.5 17.5h-266v123h266q74 0 132.5 -54t58.5 -127q0 -30 -16 -63t-40 -55q76 -69 76 -146v-43q0 -94 -75.5 -161.5t-172.5 -67.5h-229 z" />
+<glyph unicode="&#xb4;" horiz-adv-x="675" d="M102 1147l287 287h174l-284 -287h-177z" />
+<glyph unicode="&#xb6;" horiz-adv-x="1126" d="M82 1167q0 112 77.5 189.5t188.5 77.5h656v-1434h-164v1290h-185v-1290h-163v901h-144q-110 0 -188 78t-78 188zM246 1167q0 -50 36 -86.5t87 -36.5h123v246h-123q-51 0 -87 -36t-36 -87z" />
+<glyph unicode="&#xb7;" horiz-adv-x="430" d="M123 635v184h184v-184h-184z" />
+<glyph unicode="&#xb8;" horiz-adv-x="614" d="M113 -262q100 -49 163 -49q38 0 65.5 22t27.5 53q0 38 -24 60t-58 22h-103l72 174h123l-41 -81q69 -8 116.5 -61.5t47.5 -123.5q0 -76 -58.5 -130t-136.5 -54q-45 0 -93.5 11t-74.5 23l-26 11v123z" />
+<glyph unicode="&#xb9;" horiz-adv-x="430" d="M82 1311v123h225v-717h-143v594h-82z" />
+<glyph unicode="&#xba;" horiz-adv-x="696" d="M102 1006v247q0 77 52 129t129 52h133q75 0 126.5 -52.5t51.5 -128.5v-247q0 -87 -59 -147t-146 -60h-88q-85 0 -142 60t-57 147zM236 989q0 -28 18 -47.5t47 -19.5h90q29 0 49.5 19.5t20.5 47.5v277q0 17 -13 31t-30 14h-135q-20 0 -33.5 -13.5t-13.5 -31.5v-277z" />
+<glyph unicode="&#xbb;" horiz-adv-x="962" d="M68 102l286 410l-286 410h178l286 -410l-286 -410h-178zM436 102l287 410l-287 410h178l287 -410l-287 -410h-178z" />
+<glyph unicode="&#xbc;" d="M61 0l768 1434h164l-768 -1434h-164zM82 1311v123h225v-717h-143v594h-82zM512 184l287 533h157l-221 -410h105v123h143v-123h82v-123h-82v-184h-143v184h-328z" />
+<glyph unicode="&#xbd;" horiz-adv-x="1249" d="M61 0l768 1434h164l-768 -1434h-164zM82 1311v123h225v-717h-143v594h-82zM676 0v205q0 80 48.5 143t125.5 82l127 31q18 5 32.5 24t14.5 41q0 26 -20.5 47t-45.5 21h-241v123h252q82 0 140 -57t58 -134q0 -67 -41.5 -118t-105.5 -66l-119 -29q-34 -7 -58 -39t-24 -69 v-82h328v-123h-471z" />
+<glyph unicode="&#xbe;" horiz-adv-x="1249" d="M82 717v123h199q42 0 72 29t30 73v62q0 30 -21.5 50.5t-52.5 20.5h-186v123h192q21 0 37.5 17t16.5 38q0 23 -16 40.5t-38 17.5h-233v123h233q74 0 132.5 -54t58.5 -127q0 -30 -15.5 -63t-39.5 -55q75 -68 75 -146v-43q0 -94 -75 -161.5t-172 -67.5h-197zM180 0l768 1434 h164l-768 -1434h-164zM614 184l287 533h158l-221 -410h104v123h143v-123h82v-123h-82v-184h-143v184h-328z" />
+<glyph unicode="&#xbf;" horiz-adv-x="983" d="M82 338q0 119 73 207.5t183 113.5l235 54q57 12 95.5 60t38.5 108v225h163v-225q0 -107 -70.5 -192.5t-174.5 -110.5l-236 -56q-60 -14 -101.5 -67t-41.5 -117q0 -78 57.5 -136.5t136.5 -58.5h471v-143h-491q-138 0 -238 100t-100 238zM696 1249v185h185v-185h-185z" />
+<glyph unicode="&#xc0;" d="M41 0l451 1434h163l451 -1434h-172l-133 430h-455l-133 -430h-172zM344 1843h174l287 -287h-174zM389 573h367l-183 594z" />
+<glyph unicode="&#xc1;" d="M41 0l451 1434h163l451 -1434h-172l-133 430h-455l-133 -430h-172zM385 1556l287 287h174l-285 -287h-176zM389 573h367l-183 594z" />
+<glyph unicode="&#xc2;" d="M41 0l451 1434h163l451 -1434h-172l-133 430h-455l-133 -430h-172zM246 1556l327 328l328 -328h-174l-154 154l-153 -154h-174zM389 573h367l-183 594z" />
+<glyph unicode="&#xc3;" d="M41 0l451 1434h163l451 -1434h-172l-133 430h-455l-133 -430h-172zM256 1649q0 90 47.5 147t142.5 57q35 0 67.5 -16.5t56.5 -39.5t46 -46.5t45.5 -40t45.5 -16.5q30 0 50.5 23.5t20.5 54.5h113q0 -90 -48 -147.5t-143 -57.5q-43 0 -82.5 25t-64.5 54.5t-55.5 54.5 t-57.5 25q-30 0 -50.5 -23t-20.5 -54h-113zM389 573h367l-183 594z" />
+<glyph unicode="&#xc4;" d="M41 0l451 1434h163l451 -1434h-172l-133 430h-455l-133 -430h-172zM307 1556v164h164v-164h-164zM389 573h367l-183 594zM676 1556v164h164v-164h-164z" />
+<glyph unicode="&#xc5;" d="M41 0l451 1434h163l451 -1434h-172l-133 430h-455l-133 -430h-172zM358 1751q0 89 63 152t152 63t152 -63t63 -152t-63 -152t-152 -63t-152 63t-63 152zM389 573h367l-183 594zM471 1751q0 -43 29.5 -72.5t72.5 -29.5t73 29.5t30 72.5t-30 72.5t-73 29.5t-72.5 -29.5 t-29.5 -72.5z" />
+<glyph unicode="&#xc6;" horiz-adv-x="1720" d="M41 0l573 1434h1045v-144h-844l76 -352h686v-145h-655l141 -650h596v-143h-731l-94 430h-453l-172 -430h-168zM436 573h367q-23 110 -66 303.5t-63 288.5z" />
+<glyph unicode="&#xc7;" horiz-adv-x="1024" d="M102 518v535q0 158 111.5 269.5t269.5 111.5h480v-144h-480q-88 0 -152.5 -64.5t-64.5 -152.5v-573q0 -146 105 -251.5t250 -105.5h342v-143h-277l-31 -61q69 -8 116.5 -61.5t47.5 -123.5q0 -76 -58.5 -130t-135.5 -54q-45 0 -94 11t-75 23l-26 11v123q101 -49 164 -49 q38 0 65 22t27 53q0 38 -24 60t-58 22h-102l63 156q-196 20 -329.5 168t-133.5 348z" />
+<glyph unicode="&#xc8;" horiz-adv-x="1024" d="M123 0v1434h840v-144h-676v-352h594v-145h-594v-650h676v-143h-840zM303 1843h174l287 -287h-174z" />
+<glyph unicode="&#xc9;" horiz-adv-x="1024" d="M123 0v1434h840v-144h-676v-352h594v-145h-594v-650h676v-143h-840zM365 1556l286 287h174l-284 -287h-176z" />
+<glyph unicode="&#xca;" horiz-adv-x="1024" d="M123 0v1434h840v-144h-676v-352h594v-145h-594v-650h676v-143h-840zM215 1556l328 328l327 -328h-174l-153 154l-154 -154h-174z" />
+<glyph unicode="&#xcb;" horiz-adv-x="1024" d="M123 0v1434h840v-144h-676v-352h594v-145h-594v-650h676v-143h-840zM276 1556v164h164v-164h-164zM645 1556v164h164v-164h-164z" />
+<glyph unicode="&#xcc;" horiz-adv-x="409" d="M-51 1843h174l164 -164v-123h-54zM123 0v1434h164v-1434h-164z" />
+<glyph unicode="&#xcd;" horiz-adv-x="409" d="M123 0v1434h164v-1434h-164zM123 1556v123l164 164h174l-285 -287h-53z" />
+<glyph unicode="&#xce;" horiz-adv-x="409" d="M0 1556v123l205 205l205 -205v-123h-52l-153 154l-154 -154h-51zM123 0v1434h164v-1434h-164z" />
+<glyph unicode="&#xcf;" horiz-adv-x="409" d="M0 1556v164h154v-164h-154zM123 0v1434h164v-1434h-164zM256 1556v164h154v-164h-154z" />
+<glyph unicode="&#xd0;" horiz-adv-x="1269" d="M61 793v145h185v496h538q158 0 270.5 -111.5t112.5 -269.5v-535q0 -106 -41 -202t-111 -165t-166 -110t-202 -41h-401v793h-185zM410 143h245q145 0 247 101.5t102 247.5v585q0 87 -64 150t-152 63h-378v-352h184v-145h-184v-650z" />
+<glyph unicode="&#xd1;" horiz-adv-x="1167" d="M123 0v1434h170l588 -1106v1106h163v-1434h-167l-590 1106v-1106h-164zM266 1649q0 90 48 147t143 57q43 0 82.5 -25t64.5 -54.5t55.5 -54.5t57.5 -25q30 0 50.5 23.5t20.5 54.5h113q0 -91 -47.5 -148t-142.5 -57q-43 0 -82.5 25t-64.5 54.5t-55.5 54.5t-57.5 25 q-30 0 -51 -23t-21 -54h-113z" />
+<glyph unicode="&#xd2;" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q157 0 267.5 -111.5t110.5 -269.5v-613q0 -183 -127.5 -311.5t-310.5 -128.5h-63q-183 0 -312 128.5t-129 311.5zM266 420q0 -114 81.5 -195.5t195.5 -81.5h63q113 0 194 81.5t81 195.5v653q0 88 -63.5 152.5t-151.5 64.5 h-187q-87 0 -150 -64.5t-63 -152.5v-653zM342 1843h174l287 -287h-174z" />
+<glyph unicode="&#xd3;" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q157 0 267.5 -111.5t110.5 -269.5v-613q0 -183 -127.5 -311.5t-310.5 -128.5h-63q-183 0 -312 128.5t-129 311.5zM266 420q0 -114 81.5 -195.5t195.5 -81.5h63q113 0 194 81.5t81 195.5v653q0 88 -63.5 152.5t-151.5 64.5 h-187q-87 0 -150 -64.5t-63 -152.5v-653zM385 1556l287 287h174l-285 -287h-176z" />
+<glyph unicode="&#xd4;" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q157 0 267.5 -111.5t110.5 -269.5v-613q0 -183 -127.5 -311.5t-310.5 -128.5h-63q-183 0 -312 128.5t-129 311.5zM246 1556l327 328l328 -328h-174l-154 154l-153 -154h-174zM266 420q0 -114 81.5 -195.5t195.5 -81.5h63 q113 0 194 81.5t81 195.5v653q0 88 -63.5 152.5t-151.5 64.5h-187q-87 0 -150 -64.5t-63 -152.5v-653z" />
+<glyph unicode="&#xd5;" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q157 0 267.5 -111.5t110.5 -269.5v-613q0 -183 -127.5 -311.5t-310.5 -128.5h-63q-183 0 -312 128.5t-129 311.5zM256 1649q0 90 47.5 147t142.5 57q35 0 67.5 -16.5t56.5 -39.5t46 -46.5t45.5 -40t45.5 -16.5 q30 0 50.5 23.5t20.5 54.5h113q0 -90 -48 -147.5t-143 -57.5q-43 0 -82.5 25t-64.5 54.5t-55.5 54.5t-57.5 25q-30 0 -50.5 -23t-20.5 -54h-113zM266 420q0 -114 81.5 -195.5t195.5 -81.5h63q113 0 194 81.5t81 195.5v653q0 88 -63.5 152.5t-151.5 64.5h-187 q-87 0 -150 -64.5t-63 -152.5v-653z" />
+<glyph unicode="&#xd6;" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q157 0 267.5 -111.5t110.5 -269.5v-613q0 -183 -127.5 -311.5t-310.5 -128.5h-63q-183 0 -312 128.5t-129 311.5zM266 420q0 -114 81.5 -195.5t195.5 -81.5h63q113 0 194 81.5t81 195.5v653q0 88 -63.5 152.5t-151.5 64.5 h-187q-87 0 -150 -64.5t-63 -152.5v-653zM307 1556v164h164v-164h-164zM676 1556v164h164v-164h-164z" />
+<glyph unicode="&#xd7;" d="M61 113l400 399l-400 399l113 113l399 -399l400 399l112 -113l-399 -399l399 -399l-112 -113l-400 399l-399 -399z" />
+<glyph unicode="&#xd8;" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h183q38 0 96 -15l49 117h172l-78 -188q65 -54 102 -131t37 -164v-613q0 -183 -127.5 -311.5t-310.5 -128.5h-63q-95 0 -181 39l-67 -162h-172l104 254q-125 128 -125 309zM266 420q0 -65 29 -125l412 991q-24 4 -41 4h-187 q-87 0 -150 -64.5t-63 -152.5v-653zM418 172q60 -29 125 -29h63q113 0 194 81.5t81 195.5v653q0 68 -39 123z" />
+<glyph unicode="&#xd9;" horiz-adv-x="1167" d="M123 440v994h164v-1014q0 -114 81 -195.5t195 -81.5h43q114 0 194.5 81.5t80.5 195.5v1014h163v-994q0 -183 -127.5 -311.5t-310.5 -128.5h-43q-183 0 -311.5 128.5t-128.5 311.5zM352 1843h174l287 -287h-174z" />
+<glyph unicode="&#xda;" horiz-adv-x="1167" d="M123 440v994h164v-1014q0 -114 81 -195.5t195 -81.5h43q114 0 194.5 81.5t80.5 195.5v1014h163v-994q0 -183 -127.5 -311.5t-310.5 -128.5h-43q-183 0 -311.5 128.5t-128.5 311.5zM395 1556l287 287h174l-285 -287h-176z" />
+<glyph unicode="&#xdb;" horiz-adv-x="1167" d="M123 440v994h164v-1014q0 -114 81 -195.5t195 -81.5h43q114 0 194.5 81.5t80.5 195.5v1014h163v-994q0 -183 -127.5 -311.5t-310.5 -128.5h-43q-183 0 -311.5 128.5t-128.5 311.5zM256 1556l328 328l327 -328h-174l-153 154l-154 -154h-174z" />
+<glyph unicode="&#xdc;" horiz-adv-x="1167" d="M123 440v994h164v-1014q0 -114 81 -195.5t195 -81.5h43q114 0 194.5 81.5t80.5 195.5v1014h163v-994q0 -183 -127.5 -311.5t-310.5 -128.5h-43q-183 0 -311.5 128.5t-128.5 311.5zM317 1556v164h164v-164h-164zM686 1556v164h164v-164h-164z" />
+<glyph unicode="&#xdd;" horiz-adv-x="1064" d="M41 1434h188l303 -512l304 512h188l-410 -676v-758h-163v758zM344 1556l287 287h174l-285 -287h-176z" />
+<glyph unicode="&#xde;" horiz-adv-x="1085" d="M123 0v1434h164v-297h336q157 0 269 -110.5t112 -268.5v-41q0 -157 -112 -268t-269 -111h-336v-338h-164zM287 483h340q88 0 150.5 62.5t62.5 150.5v82q0 88 -62.5 151.5t-150.5 63.5h-340v-510z" />
+<glyph unicode="&#xdf;" horiz-adv-x="962" d="M123 0v1155q0 117 83 198t204 81h61q121 0 204 -81t83 -198v-274h-111q-36 -3 -61 -31t-25 -64q0 -31 22 -60t52 -36q114 -28 186 -120t72 -214q0 -145 -98.5 -250.5t-241.5 -105.5h-133v143h119q80 0 135 63.5t55 149.5q0 68 -42.5 123t-106.5 74q-77 21 -130 85.5 t-53 147.5q0 86 57 155.5t140 82.5v131q0 56 -36 95.5t-87 39.5h-61q-51 0 -87 -39.5t-36 -95.5v-1155h-164z" />
+<glyph unicode="&#xe0;" horiz-adv-x="962" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q116 0 196.5 -79.5t80.5 -194.5v-750h-482q-119 0 -197.5 81t-78.5 198zM242 1434h174l286 -287h-174zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82q-42 -11 -69 -46.5t-27 -84.5 z" />
+<glyph unicode="&#xe1;" horiz-adv-x="962" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q116 0 196.5 -79.5t80.5 -194.5v-750h-482q-119 0 -197.5 81t-78.5 198zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82q-42 -11 -69 -46.5t-27 -84.5zM303 1147l287 287h174 l-285 -287h-176z" />
+<glyph unicode="&#xe2;" horiz-adv-x="962" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q116 0 196.5 -79.5t80.5 -194.5v-750h-482q-119 0 -197.5 81t-78.5 198zM164 1147l328 328l327 -328h-174l-153 153l-154 -153h-174zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82 q-42 -11 -69 -46.5t-27 -84.5z" />
+<glyph unicode="&#xe3;" horiz-adv-x="962" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q116 0 196.5 -79.5t80.5 -194.5v-750h-482q-119 0 -197.5 81t-78.5 198zM164 1239q0 91 47.5 148t142.5 57q43 0 82.5 -25t64.5 -55t55.5 -55t57.5 -25q30 0 51 23.5t21 54.5h113 q0 -90 -48 -147.5t-143 -57.5q-43 0 -82.5 25t-64.5 55t-55.5 55t-57.5 25q-30 0 -51 -23.5t-21 -54.5h-112zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82q-42 -11 -69 -46.5t-27 -84.5z" />
+<glyph unicode="&#xe4;" horiz-adv-x="962" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q116 0 196.5 -79.5t80.5 -194.5v-750h-482q-119 0 -197.5 81t-78.5 198zM215 1167v164h164v-164h-164zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82q-42 -11 -69 -46.5t-27 -84.5 zM584 1167v164h164v-164h-164z" />
+<glyph unicode="&#xe5;" horiz-adv-x="962" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q116 0 196.5 -79.5t80.5 -194.5v-750h-482q-119 0 -197.5 81t-78.5 198zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82q-42 -11 -69 -46.5t-27 -84.5zM266 1341q0 89 63 152 t152 63t152 -63t63 -152t-63 -152t-152 -63t-152 63t-63 152zM379 1341q0 -43 29.5 -72.5t72.5 -29.5t73 29.5t30 72.5t-30 73t-73 30t-72.5 -30t-29.5 -73z" />
+<glyph unicode="&#xe6;" horiz-adv-x="1515" d="M82 279q0 93 65 169.5t160 100.5l369 88v131q0 47 -33.5 80t-79.5 33h-399v143h399q115 0 197 -82q82 82 203 82h184q120 0 203.5 -80.5t83.5 -195.5q0 -97 -65 -174t-159 -99l-370 -90v-20q3 -93 69.5 -157.5t159.5 -64.5h324v-143h-324q-128 0 -229 72v-72h-482 q-119 0 -197.5 81t-78.5 198zM246 279q0 -55 32 -95.5t80 -40.5h318v349l-334 -82q-42 -11 -69 -46.5t-27 -84.5zM840 537l334 81q43 9 69.5 43.5t26.5 86.5q0 54 -36.5 93.5t-86.5 39.5h-184q-49 0 -84.5 -36.5t-38.5 -86.5v-221z" />
+<glyph unicode="&#xe7;" horiz-adv-x="860" d="M102 375v373q0 116 81 196t198 80h418v-143h-418q-47 0 -81 -34t-34 -81v-410q0 -88 62.5 -150.5t148.5 -62.5h322v-143h-254l-31 -61q69 -8 116.5 -61.5t47.5 -123.5q0 -76 -58.5 -130t-136.5 -54q-45 0 -93.5 11t-74.5 23l-26 11v123q101 -49 164 -49q38 0 65 22t27 53 q0 38 -24 60t-58 22h-103l64 158q-137 19 -229.5 124t-92.5 247z" />
+<glyph unicode="&#xe8;" horiz-adv-x="942" d="M102 395v353q0 115 83.5 195.5t203.5 80.5h184q120 0 203.5 -80.5t83.5 -195.5q0 -95 -64.5 -173t-158.5 -100l-371 -90v-10q0 -95 67.5 -163.5t162.5 -68.5h323v-143h-323q-164 0 -279 115.5t-115 279.5zM240 1434h174l286 -287h-174zM266 537l334 81q42 9 69 44t27 86 q0 54 -36.5 93.5t-86.5 39.5h-184q-51 0 -87 -39.5t-36 -93.5v-211z" />
+<glyph unicode="&#xe9;" horiz-adv-x="942" d="M102 395v353q0 115 83.5 195.5t203.5 80.5h184q120 0 203.5 -80.5t83.5 -195.5q0 -95 -64.5 -173t-158.5 -100l-371 -90v-10q0 -95 67.5 -163.5t162.5 -68.5h323v-143h-323q-164 0 -279 115.5t-115 279.5zM266 537l334 81q42 9 69 44t27 86q0 54 -36.5 93.5t-86.5 39.5 h-184q-51 0 -87 -39.5t-36 -93.5v-211zM303 1147l287 287h174l-285 -287h-176z" />
+<glyph unicode="&#xea;" horiz-adv-x="942" d="M102 395v353q0 115 83.5 195.5t203.5 80.5h184q120 0 203.5 -80.5t83.5 -195.5q0 -95 -64.5 -173t-158.5 -100l-371 -90v-10q0 -95 67.5 -163.5t162.5 -68.5h323v-143h-323q-164 0 -279 115.5t-115 279.5zM154 1147l327 328l328 -328h-174l-154 153l-153 -153h-174z M266 537l334 81q42 9 69 44t27 86q0 54 -36.5 93.5t-86.5 39.5h-184q-51 0 -87 -39.5t-36 -93.5v-211z" />
+<glyph unicode="&#xeb;" horiz-adv-x="942" d="M102 395v353q0 115 83.5 195.5t203.5 80.5h184q120 0 203.5 -80.5t83.5 -195.5q0 -95 -64.5 -173t-158.5 -100l-371 -90v-10q0 -95 67.5 -163.5t162.5 -68.5h323v-143h-323q-164 0 -279 115.5t-115 279.5zM215 1167v164h164v-164h-164zM266 537l334 81q42 9 69 44t27 86 q0 54 -36.5 93.5t-86.5 39.5h-184q-51 0 -87 -39.5t-36 -93.5v-211zM584 1167v164h164v-164h-164z" />
+<glyph unicode="&#xec;" horiz-adv-x="409" d="M0 1341v93h82l205 -205v-82h-94zM123 0v1024h164v-1024h-164z" />
+<glyph unicode="&#xed;" horiz-adv-x="409" d="M123 0v1024h164v-1024h-164zM123 1147v82l205 205h82v-93l-193 -194h-94z" />
+<glyph unicode="&#xee;" horiz-adv-x="409" d="M51 1147v174l154 154l153 -154v-174l-153 153zM123 0v1024h164v-1024h-164z" />
+<glyph unicode="&#xef;" horiz-adv-x="409" d="M20 1167v164h144v-164h-144zM123 0v1024h164v-1024h-164zM246 1167v164h143v-164h-143z" />
+<glyph unicode="&#xf0;" horiz-adv-x="1003" d="M102 375v272q0 132 93 224t225 92h166q83 0 151 -41v102q0 58 -26 115l-179 -115v143l103 66q-73 57 -164 57h-287v144h287q166 0 293 -117l178 117v-144l-102 -67q61 -99 61 -219v-629q0 -155 -110 -265t-265 -110h-49q-155 0 -265 110t-110 265zM266 354q0 -87 62 -149 t149 -62h49q88 0 149.5 61.5t61.5 149.5v312q0 63 -44 108t-107 45h-166q-63 0 -108.5 -45t-45.5 -108v-312z" />
+<glyph unicode="&#xf1;" horiz-adv-x="1003" d="M123 0v1024h102l62 -92q92 92 231 92h84q117 0 198 -80t81 -196v-748h-164v766q0 47 -34 81t-81 34h-84q-95 0 -163 -68.5t-68 -163.5v-649h-164zM184 1239q0 90 48 147.5t143 57.5q43 0 82.5 -25t64.5 -55t55.5 -55t57.5 -25q30 0 51 23.5t21 54.5h112q0 -91 -47.5 -148 t-142.5 -57q-43 0 -82.5 25t-64.5 55t-55.5 55t-57.5 25q-30 0 -51 -23.5t-21 -54.5h-113z" />
+<glyph unicode="&#xf2;" horiz-adv-x="983" d="M102 317v431q0 115 80.5 195.5t196.5 80.5h225q116 0 196.5 -80.5t80.5 -195.5v-431q0 -132 -92 -224.5t-224 -92.5h-147q-132 0 -224 92.5t-92 224.5zM252 1434h174l287 -287h-174zM266 297q0 -63 44.5 -108.5t107.5 -45.5h147q63 0 107.5 45.5t44.5 108.5v469 q0 47 -33 81t-80 34h-225q-46 0 -79.5 -34t-33.5 -81v-469z" />
+<glyph unicode="&#xf3;" horiz-adv-x="983" d="M102 317v431q0 115 80.5 195.5t196.5 80.5h225q116 0 196.5 -80.5t80.5 -195.5v-431q0 -132 -92 -224.5t-224 -92.5h-147q-132 0 -224 92.5t-92 224.5zM266 297q0 -63 44.5 -108.5t107.5 -45.5h147q63 0 107.5 45.5t44.5 108.5v469q0 47 -33 81t-80 34h-225 q-46 0 -79.5 -34t-33.5 -81v-469zM313 1147l287 287h174l-285 -287h-176z" />
+<glyph unicode="&#xf4;" horiz-adv-x="983" d="M102 317v431q0 115 80.5 195.5t196.5 80.5h225q116 0 196.5 -80.5t80.5 -195.5v-431q0 -132 -92 -224.5t-224 -92.5h-147q-132 0 -224 92.5t-92 224.5zM164 1147l328 328l327 -328h-174l-153 153l-154 -153h-174zM266 297q0 -63 44.5 -108.5t107.5 -45.5h147 q63 0 107.5 45.5t44.5 108.5v469q0 47 -33 81t-80 34h-225q-46 0 -79.5 -34t-33.5 -81v-469z" />
+<glyph unicode="&#xf5;" horiz-adv-x="983" d="M102 317v431q0 115 80.5 195.5t196.5 80.5h225q116 0 196.5 -80.5t80.5 -195.5v-431q0 -132 -92 -224.5t-224 -92.5h-147q-132 0 -224 92.5t-92 224.5zM174 1239q0 90 48 147.5t143 57.5q43 0 82.5 -25t64.5 -55t55.5 -55t57.5 -25q30 0 50.5 23.5t20.5 54.5h113 q0 -90 -48 -147.5t-143 -57.5q-43 0 -82.5 25t-64.5 55t-55.5 55t-57.5 25q-30 0 -50.5 -23.5t-20.5 -54.5h-113zM266 297q0 -63 44.5 -108.5t107.5 -45.5h147q63 0 107.5 45.5t44.5 108.5v469q0 47 -33 81t-80 34h-225q-46 0 -79.5 -34t-33.5 -81v-469z" />
+<glyph unicode="&#xf6;" horiz-adv-x="983" d="M102 317v431q0 115 80.5 195.5t196.5 80.5h225q116 0 196.5 -80.5t80.5 -195.5v-431q0 -132 -92 -224.5t-224 -92.5h-147q-132 0 -224 92.5t-92 224.5zM225 1167v164h164v-164h-164zM266 297q0 -63 44.5 -108.5t107.5 -45.5h147q63 0 107.5 45.5t44.5 108.5v469 q0 47 -33 81t-80 34h-225q-46 0 -79.5 -34t-33.5 -81v-469zM594 1167v164h164v-164h-164z" />
+<glyph unicode="&#xf7;" horiz-adv-x="1126" d="M82 451v143h962v-143h-962zM471 143v185h184v-185h-184zM471 717v184h184v-184h-184z" />
+<glyph unicode="&#xf8;" horiz-adv-x="983" d="M92 -123l107 211q-97 94 -97 229v431q0 115 80.5 195.5t196.5 80.5h225q26 0 66 -8l57 110h164l-92 -182q82 -85 82 -196v-431q0 -132 -92 -224.5t-224 -92.5h-147q-48 0 -92 12l-70 -135h-164zM266 297q0 -35 10 -57l326 641h-223q-46 0 -79.5 -34t-33.5 -81v-469z M393 145q8 -2 25 -2h147q63 0 107.5 45.5t44.5 108.5v469q0 10 -2 14z" />
+<glyph unicode="&#xf9;" horiz-adv-x="1003" d="M123 276v748h164v-766q0 -47 33.5 -81t80.5 -34h84q95 0 163.5 68.5t68.5 163.5v649h164v-1024h-103l-61 92q-92 -92 -232 -92h-84q-117 0 -197.5 80t-80.5 196zM262 1434h174l287 -287h-174z" />
+<glyph unicode="&#xfa;" horiz-adv-x="1003" d="M123 276v748h164v-766q0 -47 33.5 -81t80.5 -34h84q95 0 163.5 68.5t68.5 163.5v649h164v-1024h-103l-61 92q-92 -92 -232 -92h-84q-117 0 -197.5 80t-80.5 196zM324 1147l286 287h174l-284 -287h-176z" />
+<glyph unicode="&#xfb;" horiz-adv-x="1003" d="M123 276v748h164v-766q0 -47 33.5 -81t80.5 -34h84q95 0 163.5 68.5t68.5 163.5v649h164v-1024h-103l-61 92q-92 -92 -232 -92h-84q-117 0 -197.5 80t-80.5 196zM174 1147l328 328l327 -328h-174l-153 153l-154 -153h-174z" />
+<glyph unicode="&#xfc;" horiz-adv-x="1003" d="M123 276v748h164v-766q0 -47 33.5 -81t80.5 -34h84q95 0 163.5 68.5t68.5 163.5v649h164v-1024h-103l-61 92q-92 -92 -232 -92h-84q-117 0 -197.5 80t-80.5 196zM236 1167v164h163v-164h-163zM604 1167v164h164v-164h-164z" />
+<glyph unicode="&#xfd;" horiz-adv-x="1003" d="M123 276v748h164v-768q0 -47 33.5 -80t80.5 -33h78q96 0 167 66t71 160v655h164v-1106q0 -161 -117.5 -275t-282.5 -114h-235v143h239q95 0 163.5 68.5t68.5 163.5v188q-44 -44 -108.5 -68t-129.5 -24h-78q-117 0 -197.5 80t-80.5 196zM313 1147l287 287h174l-285 -287 h-176z" />
+<glyph unicode="&#xfe;" horiz-adv-x="1003" d="M123 -471v1905h164v-441q48 31 114 31h224q115 0 195.5 -80t80.5 -196v-431q0 -132 -91.5 -224.5t-223.5 -92.5h-146q-91 0 -153 47v-518h-164zM287 297q0 -63 45 -108.5t108 -45.5h146q63 0 107 45.5t44 108.5v469q0 47 -33 81t-79 34h-224q-46 0 -80 -31t-34 -72v-481z " />
+<glyph unicode="&#xff;" horiz-adv-x="1003" d="M123 276v748h164v-768q0 -47 33.5 -80t80.5 -33h78q96 0 167 66t71 160v655h164v-1106q0 -161 -117.5 -275t-282.5 -114h-235v143h239q95 0 163.5 68.5t68.5 163.5v188q-44 -44 -108.5 -68t-129.5 -24h-78q-117 0 -197.5 80t-80.5 196zM236 1167v164h163v-164h-163z M604 1167v164h164v-164h-164z" />
+<glyph unicode="&#x152;" horiz-adv-x="1761" d="M102 440v613q0 158 111.5 269.5t269.5 111.5h1217v-144h-676v-352h594v-145h-594v-650h676v-143h-840v102q-120 -102 -272 -102h-45q-183 0 -312 128.5t-129 311.5zM268 420q0 -114 80.5 -195.5t194.5 -81.5h45q112 0 192 81.5t80 195.5v870h-377q-88 0 -151.5 -62.5 t-63.5 -150.5v-657z" />
+<glyph unicode="&#x153;" horiz-adv-x="1556" d="M102 317v431q0 115 80.5 195.5t196.5 80.5h225q116 0 195 -82q85 82 205 82h184q120 0 203.5 -80.5t83.5 -195.5q0 -98 -65 -174.5t-159 -98.5l-370 -90v-20q3 -93 69.5 -157.5t159.5 -64.5h324v-143h-324q-174 0 -291 127q-43 -59 -110 -93t-144 -34h-147 q-132 0 -224 92.5t-92 224.5zM266 297q0 -63 44.5 -108.5t107.5 -45.5h147q63 0 107.5 45.5t44.5 108.5v469q0 47 -33 81t-80 34h-225q-46 0 -79.5 -34t-33.5 -81v-469zM881 537l333 81q43 9 70 43t27 87q0 54 -36.5 93.5t-86.5 39.5h-184q-51 0 -87 -39.5t-36 -93.5v-211z " />
+<glyph unicode="&#x178;" horiz-adv-x="1064" d="M41 1434h188l303 -512l304 512h188l-410 -676v-758h-163v758zM266 1556v164h164v-164h-164zM635 1556v164h164v-164h-164z" />
+<glyph unicode="&#x2c6;" horiz-adv-x="860" d="M102 1147l328 328l328 -328h-174l-154 153l-154 -153h-174z" />
+<glyph unicode="&#x2dc;" horiz-adv-x="860" d="M113 1239q0 91 47.5 148t142.5 57q43 0 82.5 -25t64.5 -55t55.5 -55t57.5 -25q30 0 51 23.5t21 54.5h113q0 -90 -48 -147.5t-143 -57.5q-43 0 -82.5 25t-64.5 55t-55.5 55t-57.5 25q-30 0 -51 -23.5t-21 -54.5h-112z" />
+<glyph unicode="&#x2000;" horiz-adv-x="983" />
+<glyph unicode="&#x2001;" horiz-adv-x="1966" />
+<glyph unicode="&#x2002;" horiz-adv-x="983" />
+<glyph unicode="&#x2003;" horiz-adv-x="1966" />
+<glyph unicode="&#x2004;" horiz-adv-x="655" />
+<glyph unicode="&#x2005;" horiz-adv-x="491" />
+<glyph unicode="&#x2006;" horiz-adv-x="327" />
+<glyph unicode="&#x2007;" horiz-adv-x="327" />
+<glyph unicode="&#x2008;" horiz-adv-x="245" />
+<glyph unicode="&#x2009;" horiz-adv-x="393" />
+<glyph unicode="&#x200a;" horiz-adv-x="109" />
+<glyph unicode="&#x2010;" horiz-adv-x="675" d="M82 451v143h512v-143h-512z" />
+<glyph unicode="&#x2011;" horiz-adv-x="675" d="M82 451v143h512v-143h-512z" />
+<glyph unicode="&#x2012;" horiz-adv-x="675" d="M82 451v143h512v-143h-512z" />
+<glyph unicode="&#x2013;" horiz-adv-x="880" d="M82 451v143h717v-143h-717z" />
+<glyph unicode="&#x2014;" horiz-adv-x="1597" d="M82 451v143h1434v-143h-1434z" />
+<glyph unicode="&#x2018;" horiz-adv-x="409" d="M102 1024l21 410h164v-410h-185z" />
+<glyph unicode="&#x2019;" horiz-adv-x="409" d="M123 1024v410h184l-20 -410h-164z" />
+<glyph unicode="&#x201a;" horiz-adv-x="409" d="M123 184h184l-20 -409h-164v409z" />
+<glyph unicode="&#x201c;" horiz-adv-x="716" d="M102 1024l21 410h164v-410h-185zM410 1024l20 410h164v-410h-184z" />
+<glyph unicode="&#x201d;" horiz-adv-x="716" d="M123 1024v410h184l-20 -410h-164zM430 1024v410h184l-20 -410h-164z" />
+<glyph unicode="&#x201e;" horiz-adv-x="716" d="M123 184h184l-20 -409h-164v409zM430 184h184l-20 -409h-164v409z" />
+<glyph unicode="&#x2022;" horiz-adv-x="614" d="M82 717q0 94 65.5 159.5t159.5 65.5t159.5 -65.5t65.5 -159.5t-65.5 -159.5t-159.5 -65.5t-159.5 65.5t-65.5 159.5z" />
+<glyph unicode="&#x2026;" horiz-adv-x="1269" d="M123 0v184h184v-184h-184zM543 0v184h184v-184h-184zM963 0v184h184v-184h-184z" />
+<glyph unicode="&#x202f;" horiz-adv-x="393" />
+<glyph unicode="&#x2039;" horiz-adv-x="593" d="M61 512l287 410h178l-286 -410l286 -410h-178z" />
+<glyph unicode="&#x203a;" horiz-adv-x="593" d="M68 102l286 410l-286 410h178l286 -410l-286 -410h-178z" />
+<glyph unicode="&#x205f;" horiz-adv-x="491" />
+<glyph unicode="&#x20ac;" horiz-adv-x="1085" d="M61 502v143h144v215h-144v144h144v55q0 155 110 265t265 110h444v-144h-444q-86 0 -148.5 -63.5t-62.5 -149.5v-73h614v-144h-614v-215h614v-143h-614q2 -144 103.5 -251.5t244.5 -107.5h307v-143h-307q-134 0 -249.5 69.5t-185 184.5t-77.5 248h-144z" />
+<glyph unicode="&#x2122;" horiz-adv-x="1310" d="M61 1311v123h492v-123h-174v-594h-143v594h-175zM614 717v717h134l163 -287l164 287h133v-717h-143v432l-154 -260l-153 260v-432h-144z" />
+<glyph unicode="&#xe000;" horiz-adv-x="1024" d="M0 0v1024h1024v-1024h-1024z" />
+</font>
+</defs></svg> 
