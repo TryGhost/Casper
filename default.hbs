@@ -7,9 +7,13 @@
 
     <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <link rel="icon"
+          type="image/png"
+          href="http://example.com/myicon.png">
 </head>
 <body>
     <header>
+        {{#if settings.logo}}<a id="logo" href="/"><img src="{{settings.logo}}" alt="Logo"></a>{{/if}}
         <a id="title" href="/">{{settings.title}}</a>
         <p id="description">{{settings.description}}</p>
         <div class="clearfix"></div>
