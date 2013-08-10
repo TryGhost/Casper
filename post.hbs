@@ -1,24 +1,17 @@
 {{!< default}}
-<section class="content">
+
+<main class="content" role="main">
     {{#post}}
 
-        <article class="post type-post status-publish format-standard hentry">
-            {{#if image}}
-            <figure class="post-thumb">
-                <img width="550" height="250" src="/content/images/{{image}}" class="attachment-post-thumbnail wp-post-image" alt="ghostpost">
-            </figure>
-            {{/if}}
-            <div class="wrap">
-                <header>
-                    <h2 class="entry-title h1"><a href="/{{slug}}" rel="bookmark">{{title}}</a></h2>
-                    <span class="entry-meta">Published on <time class="updated" datetime="{{dateFormat published_at format='YYYY-MM-DD'}}">{{dateFormat published_at format='DD MMMM YYYY'}}</time></span>
-                </header>
-
-                <section class="entry-content">
-                    {{content}}
-                </section>
-            </div>
+        <article class="post">
+            <header>
+                <span class="entry-meta">Published on <time class="updated" datetime="{{dateFormat published_at format='YYYY-MM-DD'}}">{{dateFormat published_at format='DD MMMM YYYY'}}</time></span>
+                <h1>{{title}}</h1>
+            </header>
+            <section class="entry-content">
+                {{content}}
+            </section>
         </article>
         
     {{/post}}
-</section>
+</main>
