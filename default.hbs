@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>{{settings.title}} | {{settings.description}}</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-
+    {{! Document Settings }}
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    {{! Page Meta }}
+    <title>{{settings.title}}</title>
+    <meta name="description" content="{{settings.description}}" />
+    
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
 </head>
 <body>
-    <header>
-        {{#if settings.logo}}<a id="logo" href="/"><img src="{{settings.logo}}" alt="Logo"></a>{{/if}}
-        <a id="title" href="/">{{settings.title}}</a>
-        <p id="description">{{settings.description}}</p>
-        <div class="clearfix"></div>
-    </header>
+    
+    {{! This is where shit gets real }}
     {{{body}}}
+
 </body>
 </html>
