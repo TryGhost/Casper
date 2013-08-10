@@ -2,13 +2,12 @@
 <section class="content">
     <ul class="hfeed">
         {{#foreach posts}}
-            {{#if @first}}
-                <li class="featured">
-                    {{> full-post}}
-                </li>
-            {{else}}
-                {{> list-post}}
-            {{/if}}
+            <li class="wrap">
+                <article class="post type-post status-publish format-standard hentry">
+                    <h2 class="entry-title"><a href="/{{slug}}" rel="bookmark">{{title}}</a></h2>
+                    <time class="updated" datetime="2012-05-03">{{dateFormat published_at format="MMMM DD, YYYY"}}</time>
+                </article>
+            </li>
         {{/foreach}}
     </ul>
     {{paginate}}
