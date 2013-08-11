@@ -1,17 +1,44 @@
 {{!< default}}
 
 <main class="content" role="main">
+
     {{#post}}
 
-        <article class="post">
-            <header>
-                <span class="entry-meta">Published on <time class="updated" datetime="{{dateFormat published_at format='YYYY-MM-DD'}}">{{dateFormat published_at format='DD MMMM YYYY'}}</time></span>
-                <h1>{{title}}</h1>
-            </header>
-            <section class="entry-content">
-                {{content}}
+    <article class="post">
+
+        <header class="post-header">
+            <span class="post-meta"><a href="#">John O'Nolan</a> on <a href="#">What I Learned Building...</a></span>
+            <h1 class="post-title">{{title}}</h1>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <footer class="post-footer">
+            <section class="user-meta">
+                <img class="user-image" src="http://f.cl.ly/items/2Y3p1W3R0k0t0C2e0Y3f/user.png" alt="User" />
+                <span class="user-name">John O'Nolan</span>
+                <span class="user-bio">A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes to write.</span>
+            </section>
+            <section class="publish-meta">
+                <span class="publish-heading">Published</span>
+                <time class="publish-date" datetime="{{dateFormat published_at format='YYYY-MM-DD'}}">{{dateFormat published_at format='DD MMMM YYYY'}}</time>
+            </section>
+        </footer>
+
+    </article>
+
+    {{/post}}
+
+    <footer class="related-footer">
+        <article class="related-post">
+            <h2 class="related-title">The Future of Mankind Depends on Your Voice</h2>
+            <span class="related-meta">John O'Nolan on The Future</span>
+            <section class="related-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip...</p>
             </section>
         </article>
-        
-    {{/post}}
+    </footer>
+
 </main>

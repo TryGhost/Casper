@@ -18,13 +18,20 @@
    1. General
    ========================================================================== */
 
-html {font-size: 62.5%;}
+html {
+    font-size: 62.5%;
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 2.0rem;
     line-height: 1.6em;
     color: #50585D;
+}
+
+h1, h2, h3
+h4, h5, h6 {
+    margin:0;
 }
 
 h1 {
@@ -33,11 +40,123 @@ h1 {
     letter-spacing: -1px;
 }
 
+p {
+}
+
+a {
+    color: #4a4a4a;
+}
+
+a:hover {
+    color: #57A3E8;
+}
+
 /* ==========================================================================
    1. General
    ========================================================================== */
 
+.content {
+    padding-top:120px;
+}
+
 .post {
     max-width: 700px;
     margin: 0 auto;
+}
+
+.post-meta {
+    font-size: 1.4rem;
+    color: #9EABB3;
+}
+
+.post-meta a {
+    color: #9EABB3;
+    text-decoration: none;
+}
+
+.post-meta a:hover {
+    text-decoration: underline;
+}
+
+.post-footer {
+    position: relative;
+    padding: 4rem 100px 0 0;
+    margin: 4rem 0 0 0;
+    border-top: #DDE6EB 1px solid;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+}
+
+.user-meta {
+    position: relative;
+    padding: 0.3rem 40px 0 100px;
+    min-height: 77px;
+}
+
+.user-image {
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.user-name {
+    display: block;
+    font-weight: bold;
+}
+
+.user-bio {
+    display: block;
+    max-width: 440px;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+}
+
+.publish-meta {
+    position: absolute;
+    top:0;
+    right:0;
+    padding: 4.3rem 0 4rem 0;
+    text-align: right;
+}
+
+.publish-heading {
+    display: block;
+    font-weight: bold;
+}
+
+.publish-date {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+}
+
+.related-footer {
+    margin: 4rem 0 0 0;
+    padding: 4rem 0;
+    border-top: #DDE6EB 1px solid;
+    background: #F2F5F7;
+}
+
+.related-post {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.related-title {
+    font-size: 2.2rem;
+    opacity:0.9;
+}
+
+.related-meta {
+    font-size: 1.4rem;
+    color: #9EABB3;
+}
+
+.related-content {
+    font-size: 1.8rem;
+    opacity:0.9;
+}
+
+.related-content p {
+    margin:0;
 }
