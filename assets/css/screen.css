@@ -162,11 +162,12 @@ a:hover {
     line-height: 2.4rem;
     border-radius: 50px;
     background: #fff;
-    transition: all 0.25s;
+    transition: box-shadow 0.5s;
 }
 
 .subscribe:hover {
     box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
+    transition: box-shadow 0.25s;
 }
 
 .related-post {
