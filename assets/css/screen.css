@@ -29,6 +29,18 @@ body {
     color: #50585D;
 }
 
+::-moz-selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
+::selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
 h1, h2, h3
 h4, h5, h6 {
     margin:0;
@@ -81,7 +93,7 @@ a:hover {
 .post-footer {
     position: relative;
     padding: 4rem 100px 0 0;
-    margin: 4rem 0 0 0;
+    margin: 6rem 0 0 0;
     border-top: #DDE6EB 1px solid;
     font-size: 1.6rem;
     line-height: 1.5em;
@@ -131,10 +143,30 @@ a:hover {
 }
 
 .related-footer {
-    margin: 4rem 0 0 0;
-    padding: 4rem 0;
+    position: relative;
+    margin: 6rem 0 0 0;
+    padding: 6rem 0;
     border-top: #DDE6EB 1px solid;
     background: #F2F5F7;
+}
+
+.subscribe {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top:-14px;
+    left:50%;
+    margin-left: -14px;
+    border: #DDE6EB 1px solid;
+    text-align: center;
+    line-height: 2.4rem;
+    border-radius: 50px;
+    background: #fff;
+    transition: all 0.25s;
+}
+
+.subscribe:hover {
+    box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
 }
 
 .related-post {
