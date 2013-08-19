@@ -76,6 +76,22 @@ a:hover {
     margin: 0 auto;
 }
 
+.post-title {
+    /* Breaking for long words in preview region */
+    word-break: break-word;
+    word-break: break-all;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+}
+
+.post-content {
+    /* Breaking for long words in preview region */
+    word-break: break-word;
+    word-break: break-all;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+}
+
 .post-meta {
     font-size: 1.4rem;
     color: #9EABB3;
