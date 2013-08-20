@@ -1,18 +1,29 @@
 {{!< default}}
+
+<header id="sitehead">
+
+    <div class="wrap">
+        <h1>John O'Nolan</h1>
+        <h2>A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes to write.</h2>
+    </div>
+
+</header>
+
 <main class="content" role="main">
-    <ul class="hfeed">
 
-        {{#foreach posts}}
+    {{#foreach posts}}
 
-            <li class="wrap">
-                <article class="post">
-                    <h2 class="entry-title"><a href="/{{slug}}" rel="bookmark">{{title}}</a></h2>
-                    <time datetime="2012-05-03">{{dateFormat published_at format="MMMM DD, YYYY"}}</time>
-                </article>
-            </li>
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="/{{slug}}">{{title}}</a></h2>
+            <span class="post-meta"><time datetime="2012-05-03">23 Aug 2013</time> in <a href="#">What I Learned Building...</a></span>
+        </header>
+        <section class="post-excerpt">
+            {{content words="50"}}
+        </section>
+    </article>
 
-        {{/foreach}}
+    {{/foreach}}
 
-    </ul>
     {{paginate}}
 </main>
