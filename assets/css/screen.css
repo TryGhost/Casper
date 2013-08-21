@@ -27,6 +27,8 @@ body {
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #50585D;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 ::-moz-selection {
@@ -108,10 +110,6 @@ a:hover {
 .post {
     max-width: 700px;
     margin: 0 auto;
-    
-    /* Break long words to new line */
-    word-break: break-word;
-    hyphens: auto;
 }
 
 .post-title {
