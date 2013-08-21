@@ -45,7 +45,9 @@ body {
 
 h1, h2, h3
 h4, h5, h6 {
-    margin:0;
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin-top: 0;
 }
 
 h1 {
@@ -54,7 +56,13 @@ h1 {
     letter-spacing: -1px;
 }
 
-p {
+p, ul, ol {
+    margin: 1.6em 0;
+}
+
+ol ol, ul ul,
+ul ol, ol ul {
+    margin: 0.4em 0;
 }
 
 a {
@@ -63,6 +71,165 @@ a {
 
 a:hover {
     color: #57A3E8;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #efefef;
+    margin: 3.2em 0;
+    padding: 0;
+}
+
+blockquote {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    padding: 0 1.6em 0 1.6em;
+    border-left: #4a4a4a 0.6em solid;
+}
+
+blockquote p {
+    margin:0.8em 0;
+    font-size:1.2em;
+    font-weight: 300;
+}
+
+blockquote small {
+    display: inline-block;
+    margin: 0.8em 0 0.8em 1.5em;;
+    font-size:0.9em;
+    color: #ccc;
+}
+
+blockquote small:before { content: '\2014 \00A0'; }
+
+blockquote cite {
+    font-weight:bold;
+}
+
+blockquote cite a { font-weight: normal; }
+
+
+dl {
+    margin: 1.6em 0;
+}
+
+dl dt {
+    float: left;
+    width: 180px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-bottom: 1em
+}
+
+dl dd {
+    margin-left: 200px;
+    margin-bottom: 1em
+}
+
+mark {
+    background-color: #ffc336;
+}
+
+code, tt {
+    font-family: Inconsolata, monospace, sans-serif;
+    font-size: 0.85em;
+    white-space: pre;
+    background: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    padding: 1px 3px;
+}
+
+pre {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    background: #ccc;
+    border: 1px solid #aaa;
+    width: 100%;
+    padding: 10px;
+    font-family: Inconsolata, monospace, sans-serif;
+    font-size: 0.9em;
+    white-space: pre;
+    overflow: auto;
+    border-radius: 3px;
+}
+
+pre code, tt {
+    font-size: inherit;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+kbd {
+    display: inline-block;
+    margin-bottom: 0.4em;
+    padding: 1px 8px;
+    border: #ccc 1px solid;
+    color: #666;
+    text-shadow: #fff 0 1px 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    background: #f4f4f4;
+    border-radius: 4px;
+    box-shadow: 
+        0 1px 0 rgba(0, 0, 0, 0.2), 
+        0 1px 0 0 #fff inset;
+}
+
+table {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    width:100%;
+    max-width: 100%;
+    background-color: transparent;
+}
+
+table th,
+table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #efefef;
+}
+
+table th { color: #000; }
+
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+table tbody + tbody { border-top: 2px solid #efefef; }
+
+table table table { background-color: #fff; }
+
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th {
+    background-color: #f6f6f6;
+}
+
+table.plain {
+    tbody > tr:nth-child(odd) > td,
+    tbody > tr:nth-child(odd) > th {
+        background: transparent;
+    }
 }
 
 /* ==========================================================================
@@ -74,7 +241,7 @@ a:hover {
     height: 700px;
     text-align: center;
     color: #fff;
-    background: #4a4a4a url(http://cdn.travelllll.com/wp-content/uploads/2013/04/index.jpg) center center;
+    background: #4a4a4a url(http: //cdn.travelllll.com/wp-content/uploads/2013/04/index.jpg) center center;
     background-size: cover;
     position: relative;
 }
@@ -155,8 +322,8 @@ a:hover {
 
 .user-image {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 }
 
 .user-name {
@@ -173,8 +340,8 @@ a:hover {
 
 .publish-meta {
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     padding: 4.3rem 0 4rem 0;
     text-align: right;
 }
@@ -202,8 +369,8 @@ a:hover {
     width: 28px;
     height: 28px;
     position: absolute;
-    top:-14px;
-    left:50%;
+    top: -14px;
+    left: 50%;
     margin-left: -14px;
     border: #DDE6EB 1px solid;
     text-align: center;
@@ -225,7 +392,7 @@ a:hover {
 
 .related-title {
     font-size: 2.2rem;
-    opacity:0.9;
+    opacity: 0.9;
 }
 
 .related-meta {
@@ -235,9 +402,9 @@ a:hover {
 
 .related-content {
     font-size: 1.8rem;
-    opacity:0.9;
+    opacity: 0.9;
 }
 
 .related-content p {
-    margin:0;
+    margin: 0;
 }
