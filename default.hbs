@@ -8,12 +8,16 @@
     {{! Page Meta }}
     <title>{{settings.title}}</title>
     <meta name="description" content="{{settings.description}}" />
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="assets/css/screen.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:100|Open+Sans:400italic,700,400">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400">
 </head>
-<body>
+<body class="{{bodyclass}}">
     
     {{! This is where shit gets real }}
     {{{body}}}
