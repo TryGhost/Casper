@@ -270,10 +270,33 @@ table.plain {
     position: relative;
     width: 100%;
     height: 60%;
+    margin-bottom: 5rem;
     text-align: center;
     color: #fff;
     background: #303538 url(http://f.cl.ly/items/1N2205280l2u1l0h190o/bg.jpg) no-repeat center center;
     background-size: cover;
+}
+
+#ghost {
+    display: block;
+    width: 20px;
+    height: 18px;
+    padding: 4px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 950;
+    opacity: 0.4;
+    color: #fff;
+    text-indent: -9999px;
+    text-decoration: none;
+    background: rgba(0,0,0,0.2) url(../img/ghost.png) 4px 4px no-repeat;
+    border-radius: 2px;
+    transition: opacity ease 0.5s;
+}
+
+#ghost:hover {
+    opacity: 1;
 }
 
 #blog-icon {
@@ -287,6 +310,45 @@ table.plain {
     border-radius: 100%;
     overflow: hidden;
     background: #303538;
+}
+
+/* Create dark overlay state for blog icon */
+#blog-icon:before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 930;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    transition: background ease 0.5s;
+}
+
+/* On the post template, show the dark overlay on hover */
+.post-template #blog-icon:hover:before {
+    background: rgba(0,0,0,0.4);
+}
+
+/* Create home icon for blog icon overlay */
+#blog-icon:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 950;
+    background: url(../img/home.png) center center no-repeat;
+    opacity:0;
+    transition: opacity ease 0.5s;
+}
+
+/* On the post template, show the home icon overlay on hover */
+.post-template #blog-icon:hover:after {
+    opacity: 1;
 }
 
 #blog-icon img {
@@ -325,13 +387,21 @@ table.plain {
     padding-top: 120px;
 }
 
+.post-template .post {
+    border-bottom: none;
+}
+
+.post-template .post:after {
+    display: none;
+}
+
 .post {
     position: relative;
     width:80%;
     max-width: 700px;
     border-bottom: #DDE6EB 1px solid;
-    margin: 3.2em auto;
-    padding-bottom: 1.6em;
+    margin: 3rem auto;
+    padding-bottom: 3rem;
     word-break: break-word;
     hyphens: auto;
 }
@@ -359,6 +429,10 @@ table.plain {
 
 .post-title a {
     text-decoration: none;
+}
+
+.post-excerpt p {
+    margin: 0;
 }
 
 .post-content {
@@ -544,12 +618,17 @@ table.plain {
         line-height: 1.6em;
     }
 
+    #ghost {
+        top: 16px;
+        right: 16px;
+    }
+
     #blog-icon {
         
     }
 
     #site-head .wrap {
-        margin: 0 16px -30px 16px;
+        margin: 0 16px -40px 16px;
         width: auto;
     }
 
