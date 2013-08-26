@@ -21,18 +21,21 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+    
+    {{! Your Ghost watermark in the top right corner}}
+    <a id="ghost" href="/ghost/">Ghost</a>
 
-    <figure id="blog-icon">
-        <a href="/" title="Home">
-            <img src="http://f.cl.ly/items/1O1o3n05373h222G101k/gravatar-j7-100.jpg" alt="John" />
-        </a>
-    </figure>
+    {{! Your blog icon in the top left corner }}
+    <a id="blog-icon" href="/">
+        <img src="http://f.cl.ly/items/1O1o3n05373h222G101k/gravatar-j7-100.jpg" alt="John" />
+    </a>
 
-    {{! This is where shit gets real }}
+    {{! Everything else gets inserted here }}
     {{{body}}}
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
+
     <script type="text/javascript" src="assets/js/index.js"></script>
 
 </body>

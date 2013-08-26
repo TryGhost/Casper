@@ -7,25 +7,14 @@
     <article class="{{post_class}}">
 
         <header class="post-header">
-            <span class="post-meta"><a href="#">John O'Nolan</a> on <a href="#">What I Learned Building...</a></span>
+            
             <h1 class="post-title">{{title}}</h1>
+            <span class="post-meta"><a href="/">John O'Nolan</a>, <time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> on <a href="#">What I Learned Building...</a></span>
         </header>
 
         <section class="post-content">
             {{content}}
         </section>
-
-        <footer class="post-footer">
-            <section class="user-meta">
-                <img class="user-image" src="http://f.cl.ly/items/2Y3p1W3R0k0t0C2e0Y3f/user.png" alt="User" />
-                <span class="user-name">John O'Nolan</span>
-                <span class="user-bio">A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes to write.</span>
-            </section>
-            <section class="publish-meta">
-                <span class="publish-heading">Published</span>
-                <time class="publish-date" datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time>
-            </section>
-        </footer>
 
     </article>
 
