@@ -1,21 +1,17 @@
 {{!< default}}
 
-<header id="sitehead">
-    <figure class="blog-icon">
-        <img src="http://f.cl.ly/items/1O1o3n05373h222G101k/gravatar-j7-100.jpg" alt="John" />
-    </figure>
+<header id="site-head">
     <div class="wrap">
-        <h1>John O'Nolan</h1>
-        <h2>A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes to write.</h2>
+        <h1 class="blog-title">{{settings.title}}</h1>
+        <h2 class="blog-description">A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.</h2>
     </div>
-
 </header>
 
 <main class="content" role="main">
 
     {{#foreach posts}}
 
-    <article class="post">
+    <article class="{{post_class}}">
         <header class="post-header">
             <h2 class="post-title"><a href="/{{slug}}">{{title}}</a></h2>
             <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> in <a href="#">What I Learned Building...</a></span>

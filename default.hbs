@@ -16,13 +16,24 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="assets/css/screen.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400">
-</head>
-<body class="{{bodyclass}}">
     
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    <figure id="blog-icon">
+        <a href="/" title="Home">
+            <img src="http://f.cl.ly/items/1O1o3n05373h222G101k/gravatar-j7-100.jpg" alt="John" />
+        </a>
+    </figure>
+
     {{! This is where shit gets real }}
     {{{body}}}
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+    <script type="text/javascript" src="assets/js/index.js"></script>
+
 </body>
 </html>

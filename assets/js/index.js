@@ -1,5 +1,5 @@
 /**
- * Placeholder JS file for Casper behaviours
+ * Main JS file for Casper behaviours
  */
 
 /*globals jQuery, document */
@@ -7,6 +7,11 @@
     "use strict";
 
     $(document).ready(function(){
+
+        // On the home page, move the blog icon inside the header 
+        // for better relative/absolute positioning.
+        
+        $("#blog-icon").prependTo("#site-head");
 
     });
 
