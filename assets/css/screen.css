@@ -266,29 +266,30 @@ table.plain {
    1. General
    ========================================================================== */
 
-#sitehead {
+#site-head {
     position: relative;
     width: 100%;
     height: 60%;
     text-align: center;
     color: #fff;
-    background: #909396 url(http://f.cl.ly/items/1N2205280l2u1l0h190o/bg.jpg) no-repeat center center;
+    background: #303538 url(http://f.cl.ly/items/1N2205280l2u1l0h190o/bg.jpg) no-repeat center center;
     background-size: cover;
 }
 
-.blog-icon {
+#blog-icon {
     position: absolute;
     top: 40px;
     left: 40px;
+    z-index: 900;
     border: #fff 3px solid;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
     overflow: hidden;
-    box-shadow: rgba(0,0,0,0.1) 0 1px 2px;
+    background: #303538;
 }
 
-.blog-icon img {
+#blog-icon img {
     height: 80px;
     width: auto;
     min-width: 80px;
@@ -296,29 +297,28 @@ table.plain {
     line-height: 0;
 }
 
-#sitehead .wrap {
+#site-head .wrap {
     display: inline-block;
     position: absolute;
-    top: 50%;
+    bottom: 40%;
     left: 0;
     right: 0;
-    margin-top: -100px;
+    margin: 0 auto -60px auto;
+    width: 80%;
+    max-width: 700px;
 }
 
-#sitehead h1 {
-    margin:0;
-    font-size: 10rem;
-    font-family: Lato, "Open Sans", sans-serif;
-    font-weight: 100;
+.blog-title {
+    margin: 0 0 10px 0;
+    font-size: 7rem;
+    letter-spacing: -3px;
 }
 
-#sitehead h2 {
-    font-size: 1.8rem;
+.blog-description {
+    font-size: 2rem;
     line-height: 1.5em;
     font-weight: 300;
-    opacity: 0.6;
-    max-width: 700px;
-    margin: 0 auto;
+    opacity: 0.8;
 }
 
 .post-template .content {
@@ -330,7 +330,8 @@ table.plain {
     width:80%;
     max-width: 700px;
     border-bottom: #DDE6EB 1px solid;
-    margin: 1.6em auto;
+    margin: 3.2em auto;
+    padding-bottom: 1.6em;
     word-break: break-word;
     hyphens: auto;
 }
@@ -484,13 +485,37 @@ table.plain {
 
 @media only screen and (max-width: 900px) {
 
-    #sitehead {
+    #site-head {
         -webkit-box-sizing: border-box; 
         -moz-box-sizing: border-box;
         box-sizing: border-box; 
         height: auto;
         min-height: 240px;
         padding-top: 50%;
+    }
+
+    #site-head .wrap {
+        margin: 0 auto -50px auto;
+    }
+    
+    #blog-icon {
+        left: 50%;
+        margin-left: -41px;
+    }
+
+    .home-template #blog-icon {
+        top: auto;
+        bottom: -41px;
+    }
+
+    .blog-title {
+        font-size: 5rem;
+        letter-spacing: -3px;
+    }
+
+    .blog-description {
+        font-size: 1.9rem;
+        line-height: 1.5em;
     }
 
     .post {
@@ -500,7 +525,10 @@ table.plain {
 
     h1 {
         font-size: 4.8rem;
-        line-height: 1.2em;
+    }
+
+    h2 {
+        font-size: 3.8rem;
     }
 
 }/* max 900 */
@@ -516,8 +544,26 @@ table.plain {
         line-height: 1.6em;
     }
 
+    #blog-icon {
+        
+    }
 
-    h1 {
+    #site-head .wrap {
+        margin: 0 16px -30px 16px;
+        width: auto;
+    }
+
+    .blog-title {
+        font-size: 3rem;
+        letter-spacing: 0;
+    }
+
+    .blog-description {
+        font-size: 1.5rem;
+    }
+
+
+    h1, h2 {
         font-size: 3rem;
         line-height: 1.1em;
         letter-spacing: 0;
