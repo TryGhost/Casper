@@ -18,8 +18,6 @@
 
     </article>
 
-    {{/post}}
-
     <footer class="post-footer">
         <a class="subscribe icon-feed" href="#"><span class="hidden">Subscribe to RSS</span></a>
         <div class="inner">
@@ -29,11 +27,13 @@
             </section>
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url}}"><span class="hidden">Twitter</span></a>
-                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{url}}"><span class="hidden">Twitter</span></a>
+                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{../settings.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
+                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{../settings.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
                 <a class="icon-google-plus" href="#"><span class="hidden">Twitter</span></a>
             </section>
         </div>
     </footer>
+
+    {{/post}}
 
 </main>

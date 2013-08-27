@@ -329,7 +329,6 @@ table.plain {
     -moz-border-radius: 100%;
     border-radius: 100%;
     overflow: hidden;
-    background: #303538;
 }
 
 /* Create dark overlay state for blog icon */
@@ -479,15 +478,6 @@ table.plain {
     text-decoration: underline;
 }
 
-.post-footer {
-    position: relative;
-    padding: 4rem 100px 0 0;
-    margin: 6rem 0 0 0;
-    border-top: #DDE6EB 1px solid;
-    font-size: 1.6rem;
-    line-height: 1.5em;
-}
-
 .user-meta {
     position: relative;
     padding: 0.3rem 40px 0 100px;
@@ -538,7 +528,7 @@ table.plain {
     top: -14px;
     left: 50%;
     margin-left: -14px;
-    border: #DDE6EB 1px solid;
+    border: #EBF2F6 1px solid;
     text-align: center;
     line-height: 2.4rem;
     border-radius: 50px;
@@ -547,7 +537,7 @@ table.plain {
 }
 
 .subscribe:before {
-    color: #BBC7CC;
+    color: #D2DEE3;
     font-size: 10px;
     position: absolute;
     top: 9px;
@@ -564,7 +554,7 @@ table.plain {
     position: relative;
     margin: 6rem 0 0 0;
     padding: 6rem 0;
-    border-top: #DDE6EB 1px solid;
+    border-top: #EBF2F6 1px solid;
 }
 
 .post-footer h4 {
@@ -575,6 +565,7 @@ table.plain {
 .post-footer p {
     margin: 1rem 0;
     font-size: 1.4rem;
+    line-height: 1.6em;
 }
 
 .post-footer .author {
@@ -777,7 +768,7 @@ table.plain {
     .post-footer .author {
         margin: 0 0 2rem 0;
         padding: 0 0 1.6rem 0;
-        border-bottom: #DDE6EB 1px dashed;
+        border-bottom: #EBF2F6 1px dashed;
     }
 
     .post-footer .share {
