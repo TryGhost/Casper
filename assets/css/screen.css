@@ -27,7 +27,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Droid Serif', serif;
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #3A4145;
@@ -50,12 +50,13 @@ h4, h5, h6 {
     text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
     font-size: 5rem;
     line-height: 1.2em;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
 }
 
 h2 {
@@ -288,120 +289,52 @@ table.plain {
 
 #site-head {
     position: relative;
+    display: table;
     width: 100%;
-    height: 60%;
+    height: 70%;
     margin-bottom: 5rem;
     text-align: center;
     color: #fff;
-    background: #303538 url(http://f.cl.ly/items/1N2205280l2u1l0h190o/bg.jpg) no-repeat center center;
+    background: #303538 url(https://maptia-production.s3.amazonaws.com/posts/1923/full_screen.jpg) no-repeat center center;
     background-size: cover;
-}
-
-#ghost {
-    display: block;
-    width: 20px;
-    height: 18px;
-    padding: 4px;
-    position: absolute;
-    top: 43px;
-    right: 43px;
-    z-index: 950;
-    opacity: 0.4;
-    color: #fff;
-    text-indent: -9999px;
-    text-decoration: none;
-    background: rgba(0,0,0,0.15) url(../img/ghost.png) 4px 4px no-repeat;
-    border-radius: 2px;
-    transition: opacity ease 0.5s;
-}
-
-#ghost:hover {
-    opacity: 1;
 }
 
 #blog-icon {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    z-index: 900;
-    border: #fff 3px solid;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    overflow: hidden;
-}
-
-/* Create dark overlay state for blog icon */
-#blog-icon:before {
-    display: block;
-    content: "";
-    position: absolute;
-    z-index: 930;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: transparent;
-    transition: background ease 0.5s;
-}
-
-/* On the post template, show the dark overlay on hover */
-.post-template #blog-icon:hover:before {
-    background: rgba(0,0,0,0.4);
-}
-
-/* Create home icon for blog icon overlay */
-#blog-icon:after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 950;
-    margin-top: -10px;
-    content: "\e004";
-    color: #fff;
-    text-align: center;
-    opacity:0;
-    transition: opacity ease 0.5s;
-}
-
-/* On the post template, show the home icon overlay on hover */
-.post-template #blog-icon:hover:after {
-    opacity: 1;
+    top: 10px;
+    left: 10px;
 }
 
 #blog-icon img {
-    height: 80px;
-    width: auto;
-    min-width: 80px;
+    height: 40px;
+    width: 40px;
     display: block;
     line-height: 0;
 }
 
-#site-head .wrap {
-    display: inline-block;
-    position: absolute;
-    bottom: 40%;
-    left: 0;
-    right: 0;
-    margin: 0 auto -60px auto;
+.vertical {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#site-head .content {
     width: 80%;
     max-width: 700px;
+    margin: 0 auto;
 }
 
 .blog-title {
-    margin: 0 0 10px 0;
-    font-size: 7rem;
-    letter-spacing: -3px;
+    margin: 0 0 20px 0;
+    font-size: 5rem;
+    letter-spacing: -1px;
 }
 
 .blog-description {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
-    opacity: 0.8;
+    font-family: 'Droid Serif', serif;
+    letter-spacing: 0;
 }
 
 .post-template .content {
@@ -612,7 +545,7 @@ table.plain {
     font-style: normal;
 }
 
-#blog-icon, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
+.icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -640,7 +573,9 @@ table.plain {
 .icon-home:before {
     content: "\e004";
 }
-
+.icon-ghost:before {
+    content: "\e005";
+}
 
 
 @media only screen and (max-width: 900px) {
@@ -656,13 +591,9 @@ table.plain {
         box-sizing: border-box; 
         height: auto;
         min-height: 240px;
-        padding-top: 50%;
+        padding: 25% 0;
     }
 
-    #site-head .wrap {
-        margin: 0 auto -50px auto;
-    }
-    
     #blog-icon {
         left: 50%;
         margin-left: -41px;
@@ -674,12 +605,12 @@ table.plain {
     }
 
     .blog-title {
-        font-size: 5rem;
-        letter-spacing: -3px;
+        font-size: 4rem;
+        letter-spacing: -1px;
     }
 
     .blog-description {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
         line-height: 1.5em;
     }
 
@@ -727,14 +658,13 @@ table.plain {
         line-height: 1.6em;
     }
 
-    #site-head .wrap {
-        margin: 0 16px -40px 16px;
+    #site-head .content {
+        margin: 0 16px;
         width: auto;
     }
 
     .blog-title {
         font-size: 3rem;
-        letter-spacing: 0;
     }
 
     .blog-description {
@@ -745,7 +675,7 @@ table.plain {
     h1, h2 {
         font-size: 3rem;
         line-height: 1.1em;
-        letter-spacing: 0;
+        letter-spacing: -1px;
     }
 
     h3 {
