@@ -464,29 +464,13 @@ table.plain {
     line-height: 1.5em;
 }
 
-.pagination {
-    position: relative;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-}
-
-.older-posts {
-    position: absolute;
-    right: 0;
-}
-
-.newer-posts {
-    position: absolute;
-    left: 0;
-}
-
 .subscribe {
     width: 28px;
     height: 28px;
     position: absolute;
     top: -14px;
     left: 50%;
-    margin-left: -14px;
+    margin-left: -15px;
     border: #EBF2F6 1px solid;
     text-align: center;
     line-height: 2.4rem;
@@ -509,9 +493,46 @@ table.plain {
     transition: box-shadow 0.25s;
 }
 
+.tooltip {
+    opacity:0;
+    display: inline-block;
+    padding: 4px 8px 5px 8px;
+    position:absolute;
+    top: -23px;
+    left: -23px;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1em;
+    text-align: center;
+    background: #50585D;
+    border-radius:20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+.tooltip:after {
+    content:"";
+    border-width:5px 5px 0 5px;
+    border-style:solid;
+    border-color: #50585D transparent;
+    display:block;
+    position:absolute;
+    bottom:-4px;
+    left:50%;
+    margin-left:-5px;
+    z-index: 220;
+    width:0;
+}
+
+.subscribe:hover .tooltip {
+    opacity: 1;
+    top: -33px;
+}
+
 .post-footer {
     position: relative;
-    margin: 6rem 0 0 0;
+    margin: 8rem 0 0 0;
     padding: 6rem 0;
     border-top: #EBF2F6 1px solid;
     background: #F7FAFB;
@@ -550,12 +571,43 @@ table.plain {
     color: #222;
 }
 
+
 .pagination {
     position: relative;
     width: 80%;
     max-width: 700px;
-    margin: 1.6em auto;
-    font-size: 1.4rem;
+    margin: 4rem auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    color: #9EABB3;
+    text-align: center;
+}
+
+.pagination a {
+    color: #9EABB3;
+}
+
+.older-posts,
+.newer-posts {
+    position: absolute;
+    display: inline-block;
+    padding: 0 15px;
+    border: #EBF2F6 2px solid;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.older-posts {
+    right: 0;
+}
+
+.page-number {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.newer-posts {
+    left: 0;
 }
 
 
