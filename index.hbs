@@ -2,7 +2,8 @@
 
 <header id="site-head">
     <div class="vertical">
-        <div class="content">
+        <div id="site-head-content">
+            <a id="blog-logo" href="{{settings.url}}"><img src="assets/img/user.png" alt="" /></a>
             <h1 class="blog-title">{{settings.title}}</h1>
             <h2 class="blog-description">A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.</h2>
         </div>
@@ -15,8 +16,9 @@
 
     <article class="{{post_class}}">
         <header class="post-header">
-            <h2 class="post-title"><a href="/{{slug}}">{{title}}</a></h2>
             <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> in <a href="#">What I Learned Building...</a></span>
+            <h2 class="post-title"><a href="/{{slug}}">{{title}}</a></h2>
+            
         </header>
         <section class="post-excerpt">
             <p>{{excerpt}}&hellip;</p>

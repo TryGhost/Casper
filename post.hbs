@@ -7,10 +7,14 @@
     <article class="{{post_class}}">
 
         <header class="post-header">
+
+            <a id="blog-logo" href="{{../settings.url}}"><img src="assets/img/user.png" alt="" /></a>
             
-            <h1 class="post-title">{{title}}</h1>
-            <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> on <a href="#">What I Learned Building...</a></span>
         </header>
+        
+        <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> on <a href="#">What I Learned Building...</a></span>
+        <h1 class="post-title">{{title}}</h1>
+        
 
         <section class="post-content">
             {{content}}
