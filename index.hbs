@@ -1,5 +1,9 @@
 {{!< default}}
 
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
 <header id="site-head">
     <div class="vertical">
         <div id="site-head-content">
@@ -10,10 +14,12 @@
     </div>
 </header>
 
+{{! The main content area on the homepage }}
 <main class="content" role="main">
 
+    {{! Each post will be output using this markup }}
     {{#foreach posts}}
-
+    
     <article class="{{post_class}}">
         <header class="post-header">
             <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> in <a href="#">What I Learned Building...</a></span>
@@ -26,6 +32,8 @@
     </article>
 
     {{/foreach}}
-
+    
+    {{!! After all the posts, we have the previous/next pagination links }}
     {{pagination}}
+
 </main>
