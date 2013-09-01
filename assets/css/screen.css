@@ -4,18 +4,18 @@
 
 /*
    0.   Includes
-   1.   Something
+   1.   General
    2.   Something else
  */
 
 /* ==========================================================================
-   0. Includes
+   0. Includes - Ground zero
    ========================================================================== */
 
 @import url(normalize.css);
 
 /* ==========================================================================
-   1. General
+   1. General - Setting up some base styles
    ========================================================================== */
 
 html {
@@ -267,15 +267,17 @@ table.plain {
 
 
 /* ==========================================================================
-   1. Utility
+   1. Utilities - These things get used a lot
    ========================================================================== */
 
+/* Hides shit */
 .hidden {
     text-indent: -9999px;
     visibility: hidden;
     display: none;
 }
 
+/* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
     width: 80%;
@@ -283,6 +285,7 @@ table.plain {
     margin: 0 auto;
 }
 
+/* Centres vertically yo. (IE8+) */
 .vertical {
     display: table-cell;
     vertical-align: middle;
@@ -293,11 +296,12 @@ table.plain {
    1. General
    ========================================================================== */
 
+/* Big cover image on the home page */
 #site-head {
     position: relative;
     display: table;
     width: 100%;
-    height: 70%;
+    height: 60%;
     margin-bottom: 5rem;
     text-align: center;
     color: #fff;
@@ -305,18 +309,13 @@ table.plain {
     background-size: cover;
 }
 
+/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
 #blog-logo img {
     display: block;
     max-height: 100px;
     width: auto;
     margin: 0 auto;
     line-height: 0;
-}
-
-#site-head-content {
-    width: 80%;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 #back {
@@ -328,6 +327,7 @@ table.plain {
     font-size: 16px;
 }
 
+/* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
     margin: 10px 0 10px 0;
     font-size: 5rem;
@@ -343,30 +343,20 @@ table.plain {
     letter-spacing: 0;
 }
 
-.post-template .post {
-    margin-top: 0;
-    border-bottom: none;
-}
-
-.post-template .post:after {
-    display: none;
-}
-
-.post-template .post-header {
-    padding: 60px 0;
-}
-
+/* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
     width:80%;
     max-width: 700px;
-    border-bottom: #EBF2F6 1px solid;
     margin: 4rem auto;
     padding-bottom: 4rem;
+    border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
     hyphens: auto;
 }
 
+/* Add a little circle in the middle of the border-bottom on our .post
+   just for lolz and stylepoints. */
 .post:after {
     display: block;
     content: "";
@@ -396,12 +386,6 @@ table.plain {
     margin: 1.6rem 0 0 0;
     font-size: 0.9em;
     line-height: 1.6em;
-}
-
-.post-content img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
 }
 
 .post-meta {
@@ -464,71 +448,36 @@ table.plain {
     line-height: 1.5em;
 }
 
-.subscribe {
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    margin-left: -15px;
-    border: #EBF2F6 1px solid;
-    text-align: center;
-    line-height: 2.4rem;
-    border-radius: 50px;
-    background: #fff;
-    transition: box-shadow 0.5s;
+/* ==========================================================================
+   1. Single Post - When you click on an individual post
+   ========================================================================== */
+
+/* Remove the border after the .post */
+.post-template .post {
+    margin-top: 0;
+    border-bottom: none;
 }
 
-.subscribe:before {
-    color: #D2DEE3;
-    font-size: 10px;
-    position: absolute;
-    top: 9px;
-    left: 9px;
-    font-weight: bold;
+/* Kill that stylish little circle that was on the border, too */
+.post-template .post:after {
+    display: none;
 }
 
-.subscribe:hover {
-    box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
-    transition: box-shadow 0.25s;
+/* Insert some mad padding up in the header for better spacing */
+.post-template .post-header {
+    padding: 60px 0;
 }
 
-.tooltip {
-    opacity:0;
-    display: inline-block;
-    padding: 4px 8px 5px 8px;
-    position:absolute;
-    top: -23px;
-    left: -23px;
-    color: rgba(255,255,255,0.9);
-    font-size: 1.1rem;
-    font-weight: bold;
-    line-height: 1em;
-    text-align: center;
-    background: #50585D;
-    border-radius:20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    transition: opacity 0.3s ease, top 0.3s ease;
+/* Keep large images within the bounds of the post-width */
+.post-content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.tooltip:after {
-    content:"";
-    border-width:5px 5px 0 5px;
-    border-style:solid;
-    border-color: #50585D transparent;
-    display:block;
-    position:absolute;
-    bottom:-4px;
-    left:50%;
-    margin-left:-5px;
-    z-index: 220;
-    width:0;
-}
-
-.subscribe:hover .tooltip {
-    opacity: 1;
-    top: -33px;
-}
+/* ==========================================================================
+   1. Footer - The bottom of every page
+   ========================================================================== */
 
 .post-footer {
     position: relative;
@@ -571,6 +520,82 @@ table.plain {
     color: #222;
 }
 
+/* The subscribe icon on the footer */
+.subscribe {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    margin-left: -15px;
+    border: #EBF2F6 1px solid;
+    text-align: center;
+    line-height: 2.4rem;
+    border-radius: 50px;
+    background: #fff;
+    transition: box-shadow 0.5s;
+}
+
+/* The RSS icon, inserted via icon font */
+.subscribe:before {
+    color: #D2DEE3;
+    font-size: 10px;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    font-weight: bold;
+}
+
+/* Add a box shadow to on hover */
+.subscribe:hover {
+    box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
+    transition: box-shadow 0.25s;
+}
+
+/* CSS tooltip saying "Subscribe!" - initially hidden */
+.tooltip {
+    opacity:0;
+    display: inline-block;
+    padding: 4px 8px 5px 8px;
+    position:absolute;
+    top: -23px;
+    left: -23px;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1em;
+    text-align: center;
+    background: #50585D;
+    border-radius:20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+/* The little chiclet arrow under the tooltip, pointing down */
+.tooltip:after {
+    content:"";
+    border-width:5px 5px 0 5px;
+    border-style:solid;
+    border-color: #50585D transparent;
+    display:block;
+    position:absolute;
+    bottom:-4px;
+    left:50%;
+    margin-left:-5px;
+    z-index: 220;
+    width:0;
+}
+
+/* On hover, show the tooltip! */
+.subscribe:hover .tooltip {
+    opacity: 1;
+    top: -33px;
+}
+
+
+/* ==========================================================================
+   1. Pagination
+   ========================================================================== */
 
 .pagination {
     position: relative;
@@ -611,8 +636,11 @@ table.plain {
 }
 
 
-/* --- */
+/* ==========================================================================
+   1. Icons - Sets up the icon font and respective classes
+   ========================================================================== */
 
+/* Import the font file with the icons in it */
 @font-face {
     font-family: 'icons';
     src:url('../fonts/icons.eot');
@@ -624,6 +652,7 @@ table.plain {
     font-style: normal;
 }
 
+/* Apply these base styles to all icons */
 .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook, .icon-back {
     font-family: 'icons';
     speak: none;
@@ -636,6 +665,9 @@ table.plain {
     text-decoration: none;
     vertical-align: middle;
 }
+
+/* Each icon is created by inserting the corret character into the 
+   content of the :before pseudo element. Like a boss. */
 .icon-feed:before {
     content: "\e000";
 }
@@ -652,6 +684,10 @@ table.plain {
     content: "\e004";
 }
 
+
+/* ==========================================================================
+   1. Media Queries - Smaller than 900px
+   ========================================================================== */
 
 @media only screen and (max-width: 900px) {
 
@@ -708,7 +744,11 @@ table.plain {
         font-size: 2.8rem;
     }
 
-}/* max 900 */
+}
+
+/* ==========================================================================
+   1. Media Queries - Smaller than 500px
+   ========================================================================== */
 
 
 @media only screen and (max-width: 500px) {
@@ -717,7 +757,6 @@ table.plain {
         max-height: 80px;
     }
 
-    #site-head-content,
     .inner, 
     .pagination {
         width: auto;
@@ -792,5 +831,9 @@ table.plain {
         margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
-}/* max 500 */
+}
 
+/* ==========================================================================
+   End of file. Media queries should be the last thing here. Do not add stuff
+   below this point, or it will probably fuck everything up.
+   ========================================================================== */
