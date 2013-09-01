@@ -14,28 +14,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="assets/css/screen.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400">
     
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-    
-    {{! Your Ghost watermark in the top right corner}}
-    <a id="ghost" href="/ghost/">Ghost</a>
-
-    {{! Your blog icon in the top left corner }}
-    <a id="blog-icon" href="/">
-        <img src="http://f.cl.ly/items/1O1o3n05373h222G101k/gravatar-j7-100.jpg" alt="John" />
-    </a>
 
     {{! Everything else gets inserted here }}
     {{{body}}}
 
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="#"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="/">{{settings.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
+             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://tryghost.org">Ghost</a></section>
+        </div>
+    </footer>
+
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
-
     <script type="text/javascript" src="assets/js/index.js"></script>
 
 </body>

@@ -1,38 +1,43 @@
 {{!< default}}
 
-<main class="content" role="main">
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
 
+<main class="content" role="main">
+    
+    {{! Everything inside the #post tags is the template used to ourput the post }}
     {{#post}}
 
     <article class="{{post_class}}">
-
+        
+        {{! Each post has the blog logo at the top, with a link back to the homage page }}
         <header class="post-header">
-            
-            <h1 class="post-title">{{title}}</h1>
-            <span class="post-meta"><a href="/">John O'Nolan</a>, <time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> on <a href="#">What I Learned Building...</a></span>
+            <a id="blog-logo" href="{{../settings.url}}"><img src="assets/img/user.png" alt="" /></a>
         </header>
+        
+        {{! Everything below outputs content of the the post which has been published }}
+        <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> on <a href="#">What I Learned Building...</a></span>
+
+        <h1 class="post-title">{{title}}</h1>
 
         <section class="post-content">
             {{content}}
         </section>
 
-    </article>
-
-    <footer class="post-footer">
-        <a class="subscribe icon-feed" href="#"><span class="hidden">Subscribe to RSS</span></a>
-        <div class="inner">
+        <footer class="post-footer">
             <section class="author">
                 <h4>John O'Nolan</h4>
                 <p>A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.</p>
             </section>
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{../settings.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
-                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{../settings.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
+                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{settings.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
+                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{settings.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
                 <a class="icon-google-plus" href="#"><span class="hidden">Twitter</span></a>
             </section>
-        </div>
-    </footer>
+        </footer>
+
+    </article>
 
     {{/post}}
 
