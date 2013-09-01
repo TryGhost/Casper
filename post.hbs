@@ -1,20 +1,24 @@
 {{!< default}}
 
-<main class="content" role="main">
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
 
+<main class="content" role="main">
+    
+    {{! Everything inside the #post tags is the template used to ourput the post }}
     {{#post}}
 
     <article class="{{post_class}}">
-
+        
+        {{! Each post has the blog logo at the top, with a link back to the homage page }}
         <header class="post-header">
-
             <a id="blog-logo" href="{{../settings.url}}"><img src="assets/img/user.png" alt="" /></a>
-            
         </header>
         
+        {{! Everything below outputs content of the the post which has been published }}
         <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> on <a href="#">What I Learned Building...</a></span>
+
         <h1 class="post-title">{{title}}</h1>
-        
 
         <section class="post-content">
             {{content}}
