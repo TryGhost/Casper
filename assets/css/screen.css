@@ -14,6 +14,56 @@
 
 @import url(normalize.css);
 
+
+/* ==========================================================================
+   1. Icons - Sets up the icon font and respective classes
+   ========================================================================== */
+
+/* Import the font file with the icons in it */
+@font-face {
+    font-family: 'icons';
+    src:url('../fonts/icons.eot');
+    src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/icons.woff') format('woff'),
+        url('../fonts/icons.ttf') format('truetype'),
+        url('../fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply these base styles to all icons */
+.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+}
+
+/* Each icon is created by inserting the corret character into the 
+   content of the :before pseudo element. Like a boss. */
+.icon-ghost:before {
+    content: "\e000";
+}
+.icon-feed:before {
+    content: "\e001";
+}
+.icon-twitter:before {
+    content: "\e002";
+    font-size: 1.1em;
+}
+.icon-google-plus:before {
+    content: "\e003";
+}
+.icon-facebook:before {
+    content: "\e004";
+}
+
+
 /* ==========================================================================
    1. General - Setting up some base styles
    ========================================================================== */
@@ -356,7 +406,7 @@ table.plain {
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
-   just for lolz and stylepoints. */
+   just for the lolz and stylepoints. */
 .post:after {
     display: block;
     content: "";
@@ -452,10 +502,11 @@ table.plain {
    1. Single Post - When you click on an individual post
    ========================================================================== */
 
-/* Remove the border after the .post */
+/* Tweak the .post wrapper style */
 .post-template .post {
     margin-top: 0;
     border-bottom: none;
+    padding-bottom: 0;
 }
 
 /* Kill that stylish little circle that was on the border, too */
@@ -475,16 +526,12 @@ table.plain {
     margin: 0 auto;
 }
 
-/* ==========================================================================
-   1. Footer - The bottom of every page
-   ========================================================================== */
-
+/* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 8rem 0 0 0;
-    padding: 6rem 0;
+    margin: 4rem 0 0 0;
+    padding: 4rem 0 0 0;
     border-top: #EBF2F6 1px solid;
-    background: #F7FAFB;
 }
 
 .post-footer h4 {
@@ -498,15 +545,20 @@ table.plain {
     line-height: 1.6em;
 }
 
+/* Create some space to the right for the share links */
 .post-footer .author {
-    margin-right: 200px;
+    margin-right: 180px;
 }
 
+/* Drop the share links in the space to the right.
+   Doing it like this means it's easier for the author bio
+   to be flexible at smaller screen sizes while the share
+   links remain at a fixed width the whole time */
 .post-footer .share {
     position: absolute;
-    top: 0;
+    top: 4rem;
     right: 0;
-    width: 160px;
+    width: 140px;
 }
 
 .post-footer .share a {
@@ -517,7 +569,99 @@ table.plain {
 }
 
 .post-footer .share a:hover {
-    color: #222;
+    color: #50585D;
+}
+
+
+/* ==========================================================================
+   1. Pagination
+   ========================================================================== */
+
+/* The main wrapper for our pagination links */
+.pagination {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    margin: 4rem auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    color: #9EABB3;
+    text-align: center;
+}
+
+.pagination a {
+    color: #9EABB3;
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+    position: absolute;
+    display: inline-block;
+    padding: 0 15px;
+    border: #EBF2F6 2px solid;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: border ease 0.3s;
+}
+
+.older-posts {
+    right: 0;
+}
+
+.page-number {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.newer-posts {
+    left: 0;
+}
+
+.older-posts:hover,
+.newer-posts:hover {
+    border-color: #9EABB3;
+}
+
+
+/* ==========================================================================
+   1. Footer - The bottom of every page
+   ========================================================================== */
+
+.site-footer {
+    position: relative;
+    margin: 8rem 0 0 0;
+    padding: 4rem 0;
+    border-top: #EBF2F6 1px solid;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.7em;
+    color: #BBC7CC;
+    text-align: center;
+    background: #F7FAFB;
+}
+
+.site-footer a {
+    color: #BBC7CC;
+    text-decoration: underline;
+}
+
+.site-footer a:hover {
+    color: #50585D;
+}
+
+.poweredby .icon-ghost {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.poweredby .icon-ghost:hover {
+    text-decoration: none;
+}
+
+.poweredby .icon-ghost:before {
+    font-size: 1rem;
+    margin-right: 0.2em;
 }
 
 /* The subscribe icon on the footer */
@@ -541,15 +685,20 @@ table.plain {
     color: #D2DEE3;
     font-size: 10px;
     position: absolute;
-    top: 9px;
+    top: 2px;
     left: 9px;
     font-weight: bold;
+    transition: color 0.5s ease;
 }
 
 /* Add a box shadow to on hover */
 .subscribe:hover {
     box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
     transition: box-shadow 0.25s;
+}
+
+.subscribe:hover:before {
+    color: #50585D;
 }
 
 /* CSS tooltip saying "Subscribe!" - initially hidden */
@@ -590,98 +739,6 @@ table.plain {
 .subscribe:hover .tooltip {
     opacity: 1;
     top: -33px;
-}
-
-
-/* ==========================================================================
-   1. Pagination
-   ========================================================================== */
-
-.pagination {
-    position: relative;
-    width: 80%;
-    max-width: 700px;
-    margin: 4rem auto;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.3rem;
-    color: #9EABB3;
-    text-align: center;
-}
-
-.pagination a {
-    color: #9EABB3;
-}
-
-.older-posts,
-.newer-posts {
-    position: absolute;
-    display: inline-block;
-    padding: 0 15px;
-    border: #EBF2F6 2px solid;
-    text-decoration: none;
-    border-radius: 30px;
-}
-
-.older-posts {
-    right: 0;
-}
-
-.page-number {
-    display: inline-block;
-    padding: 2px 0;
-}
-
-.newer-posts {
-    left: 0;
-}
-
-
-/* ==========================================================================
-   1. Icons - Sets up the icon font and respective classes
-   ========================================================================== */
-
-/* Import the font file with the icons in it */
-@font-face {
-    font-family: 'icons';
-    src:url('../fonts/icons.eot');
-    src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/icons.woff') format('woff'),
-        url('../fonts/icons.ttf') format('truetype'),
-        url('../fonts/icons.svg#icons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Apply these base styles to all icons */
-.icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook, .icon-back {
-    font-family: 'icons';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    text-decoration: none;
-    vertical-align: middle;
-}
-
-/* Each icon is created by inserting the corret character into the 
-   content of the :before pseudo element. Like a boss. */
-.icon-feed:before {
-    content: "\e000";
-}
-.icon-twitter:before {
-    content: "\e001";
-}
-.icon-google-plus:before {
-    content: "\e002";
-}
-.icon-facebook:before {
-    content: "\e003";
-}
-.icon-back:before {
-    content: "\e004";
 }
 
 
@@ -829,6 +886,10 @@ table.plain {
 
     .post-footer .share a {
         margin: 1.4rem 0.8rem 0 0.8rem;
+    }
+
+    .site-footer {
+        font-size: 1.1rem;
     }
 
 }
