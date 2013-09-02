@@ -22,7 +22,7 @@
         {{#post}}
         
         {{! Everything below outputs content of the the post which has been published }}
-        <span class="post-meta"><time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags}}{{/if}}</a></span>
+        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
 
         <h1 class="post-title">{{title}}</h1>
 
@@ -34,16 +34,16 @@
 
             {{#if author}}
                 <section class="author">
-                    <h4>{{author}}</h4>
+                    <h4>{{author.name}}</h4>
                     <p>{{author.bio}}</p>
                 </section>
             {{/if}}
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{@blog.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
-                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{@blog.url}}/{{slug}}"><span class="hidden">Twitter</span></a>
-                <a class="icon-google-plus" href="#"><span class="hidden">Twitter</span></a>
+                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute}}"><span class="hidden">Twitter</span></a>
+                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{url absolute}}"><span class="hidden">Facebook</span></a>
+                <a class="icon-google-plus" href="#"><span class="hidden">Google+</span></a>
             </section>
 
         </footer>
