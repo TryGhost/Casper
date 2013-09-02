@@ -7,7 +7,7 @@
 <header id="site-head">
     <div class="vertical">
         <div id="site-head-content" class="inner">
-            <a id="blog-logo" href="{{settings.url}}"><img src="/assets/img/user.png" alt="" /></a>
+            {{#if settings.logo}}<a id="blog-logo" href="{{settings.url}}"><img src="{{settings.logo}}" alt="Blog Logo" /></a>{{/if}}
             <h1 class="blog-title">{{settings.title}}</h1>
             <h2 class="blog-description">{{settings.description}}</h2>
         </div>
