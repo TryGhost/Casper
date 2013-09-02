@@ -22,7 +22,7 @@
     
     <article class="{{post_class}}">
         <header class="post-header">
-            <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format='DD MMM YYYY'}}</time> in <a href="#">What I Learned Building...</a></span>
+            <span class="post-meta"><time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
             <h2 class="post-title"><a href="/{{slug}}">{{title}}</a></h2>
             
         </header>
