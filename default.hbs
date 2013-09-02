@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
     {{! Page Meta }}
-    <title>{{settings.title}}</title>
-    <meta name="description" content="{{settings.description}}" />
+    <title>{{@blog.title}}</title>
+    <meta name="description" content="{{@blog.description}}" />
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -28,7 +28,7 @@
     <footer class="site-footer">
         <a class="subscribe icon-feed" href="#"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
-             <section class="copyright">All content copyright <a href="/">{{settings.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
+             <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
              <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://tryghost.org">Ghost</a></section>
         </div>
     </footer>
