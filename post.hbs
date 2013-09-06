@@ -6,7 +6,7 @@
 <main class="content" role="main">
 
     <article class="{{post_class}}">
-        
+
         {{! Each post has the blog logo at the top, with a link back to the home page }}
         <header class="post-header">
             <a id="blog-logo" href="{{@blog.url}}">
@@ -20,9 +20,9 @@
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
-        
+
         {{! Everything below outputs content of the the post which has been published }}
-        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
+        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
 
         <h1 class="post-title">{{title}}</h1>
 
@@ -41,8 +41,8 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute}}"><span class="hidden">Twitter</span></a>
-                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{url absolute}}"><span class="hidden">Facebook</span></a>
+                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"><span class="hidden">Twitter</span></a>
+                <a class="icon-facebook" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}"><span class="hidden">Facebook</span></a>
                 <a class="icon-google-plus" href="#"><span class="hidden">Google+</span></a>
             </section>
 
