@@ -888,7 +888,18 @@ table.plain {
         margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
+    .older-posts,
+    .newer-posts {
+        position: static;
+        margin: 10px 0;
+    }
+
+    .page-number {
+        display: block;
+    }
+
     .site-footer {
+        margin-top: 6rem;
         font-size: 1.1rem;
     }
 
