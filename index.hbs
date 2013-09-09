@@ -4,7 +4,7 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 {{! The big featured header on the homepage, with the site logo and description }}
-<header id="site-head" {{! style="background-image: url()" }}>
+<header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
     <div class="vertical">
         <div id="site-head-content" class="inner">
 
@@ -25,7 +25,7 @@
         <header class="post-header">
             <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
             <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-            
+
         </header>
         <section class="post-excerpt">
             <p>{{excerpt}}&hellip;</p>
@@ -33,7 +33,7 @@
     </article>
 
     {{/foreach}}
-    
+
     {{!! After all the posts, we have the previous/next pagination links }}
     {{pagination}}
 
