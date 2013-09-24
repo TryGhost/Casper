@@ -3,9 +3,19 @@
    ========================================================================== */
 
 /*
-   0.   Includes
-   1.   General
-   2.   Something else
+
+    0.  Includes
+    1.  Icons
+    2.  General
+    3.  Utilities
+    4.  General
+    5.  Single Post
+    6.  Third Party Elements
+    7.  Pagination
+    8.  Footer
+    9.  Media Queries (Tablet)
+    10. Media Queries (Mobile)
+
  */
 
 /* ==========================================================================
@@ -65,7 +75,7 @@
 
 
 /* ==========================================================================
-   1. General - Setting up some base styles
+   2. General - Setting up some base styles
    ========================================================================== */
 
 html {
@@ -317,7 +327,7 @@ table.plain {
 
 
 /* ==========================================================================
-   1. Utilities - These things get used a lot
+   3. Utilities - These things get used a lot
    ========================================================================== */
 
 /* Hides shit */
@@ -343,7 +353,7 @@ table.plain {
 
 
 /* ==========================================================================
-   1. General
+   4. General - The main styles for the the theme
    ========================================================================== */
 
 /* Big cover image on the home page */
@@ -499,7 +509,7 @@ table.plain {
 }
 
 /* ==========================================================================
-   1. Single Post - When you click on an individual post
+   5. Single Post - When you click on an individual post
    ========================================================================== */
 
 /* Tweak the .post wrapper style */
@@ -574,7 +584,7 @@ table.plain {
 
 
 /* ==========================================================================
-   1. Third Party Elements
+   6. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -591,7 +601,7 @@ table.plain {
 
 
 /* ==========================================================================
-   1. Pagination
+   7. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -642,7 +652,7 @@ table.plain {
 
 
 /* ==========================================================================
-   1. Footer - The bottom of every page
+   8. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -760,7 +770,7 @@ table.plain {
 
 
 /* ==========================================================================
-   1. Media Queries - Smaller than 900px
+   9. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -821,7 +831,7 @@ table.plain {
 }
 
 /* ==========================================================================
-   1. Media Queries - Smaller than 500px
+   10. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
