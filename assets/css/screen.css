@@ -595,7 +595,7 @@ table.plain {
 }
 
 .gist .line-number {
-    min-width: 10px;
+    min-width: 25px;
     font-size: 1.1rem;
 }
 
