@@ -24,7 +24,7 @@
         {{! Everything below outputs content of the the post which has been published }}
         <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
 
-        <h1 class="post-title">{{title}}</h1>
+        <h1 class="post-title">{{{title}}}</h1>
 
         <section class="post-content">
             {{content}}
