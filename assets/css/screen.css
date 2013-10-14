@@ -736,6 +736,7 @@ table.plain tbody > tr:nth-child(odd) > th {
     top: -23px;
     left: -23px;
     color: rgba(255,255,255,0.9);
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
     line-height: 1em;
