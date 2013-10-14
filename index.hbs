@@ -21,13 +21,13 @@
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
 
-    <article class="{{post_class}}">
+    <article class="h-entry {{post_class}}">
         <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            <span class="post-meta"><time class="dt-published" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
+            <h2 class=p-name post-title"><a href="{{url}}">{{{title}}}</a></h2>
 
         </header>
-        <section class="post-excerpt">
+        <section class="p-summary post-excerpt">
             <p>{{excerpt}}&hellip;</p>
         </section>
     </article>
