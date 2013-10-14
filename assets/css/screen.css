@@ -318,12 +318,11 @@ table tbody > tr:nth-child(odd) > th {
     background-color: #f6f6f6;
 }
 
-table.plain {
-    tbody > tr:nth-child(odd) > td,
-    tbody > tr:nth-child(odd) > th {
-        background: transparent;
-    }
+table.plain tbody > tr:nth-child(odd) > td,
+table.plain tbody > tr:nth-child(odd) > th {
+   background: transparent;
 }
+
 
 
 /* ==========================================================================
