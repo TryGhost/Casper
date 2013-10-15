@@ -533,6 +533,7 @@ table.plain tbody > tr:nth-child(odd) > th {
     display: block;
     max-width: 100%;
     margin: 0 auto;
+    height: auto;
 }
 
 /* The author credit area after the post */
