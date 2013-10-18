@@ -42,7 +42,11 @@
 }
 
 /* Apply these base styles to all icons */
-.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
+.icon-ghost:before, 
+.icon-feed:before, 
+.icon-twitter:before, 
+.icon-google-plus:before, 
+.icon-facebook:before {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -576,6 +580,7 @@ table.plain tbody > tr:nth-child(odd) > th {
     display: inline-block;
     margin: 1.4rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
+    text-decoration: none;
 }
 
 .post-footer .share a:hover {
@@ -712,7 +717,7 @@ table.plain tbody > tr:nth-child(odd) > th {
     color: #D2DEE3;
     font-size: 10px;
     position: absolute;
-    top: 2px;
+    top: 9px;
     left: 9px;
     font-weight: bold;
     transition: color 0.5s ease;
