@@ -740,10 +740,9 @@ table.plain tbody > tr:nth-child(odd) > th {
     padding: 4px 8px 5px 8px;
     position:absolute;
     top: -23px;
-    left: -23px;
+    left: -21px;
     color: rgba(255,255,255,0.9);
     font-size: 1.1rem;
-    font-weight: bold;
     line-height: 1em;
     text-align: center;
     background: #50585D;
