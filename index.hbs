@@ -21,13 +21,13 @@
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
 
-    <article class="{{post_class}}">
+    <article class="{{post_class}}" itemscope itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}" itemprop="dateCreated">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on <span itemprop="keywords">{{tags}}</span>{{/if}}</span>
+            <h2 class="post-title" itemprop="name"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
 
         </header>
-        <section class="post-excerpt">
+        <section class="post-excerpt" itemprop="description">
             <p>{{excerpt}}&hellip;</p>
         </section>
     </article>
