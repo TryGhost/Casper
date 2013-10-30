@@ -372,6 +372,10 @@ table.plain tbody > tr:nth-child(odd) > th {
     background-size: cover;
 }
 
+#blog-logo {
+    text-decoration: none;
+}
+
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
 #blog-logo img {
     display: block;
@@ -395,6 +399,8 @@ table.plain tbody > tr:nth-child(odd) > th {
     margin: 10px 0 10px 0;
     font-size: 5rem;
     letter-spacing: -1px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .blog-description {
@@ -530,6 +536,12 @@ table.plain tbody > tr:nth-child(odd) > th {
 /* Insert some mad padding up in the header for better spacing */
 .post-template .post-header {
     padding: 60px 0;
+    text-align: center;
+}
+
+.post-template .blog-title {
+    display: block;
+    padding: 2.5rem 0;
 }
 
 /* Keep large images within the bounds of the post-width */
