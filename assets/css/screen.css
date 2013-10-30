@@ -540,7 +540,7 @@ table.plain tbody > tr:nth-child(odd) > th {
 }
 
 .post-template .blog-title {
-    display: block;
+    display: inline-block;
     padding: 2.5rem 0;
 }
 
