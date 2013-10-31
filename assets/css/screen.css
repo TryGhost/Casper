@@ -91,7 +91,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Droid Serif', serif;
+    font-family: 'Noto Serif', serif;
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #3A4145;
@@ -404,7 +404,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
-    font-family: 'Droid Serif', serif;
+    font-family: 'Noto Serif', serif;
     letter-spacing: 0;
 }
 
