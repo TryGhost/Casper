@@ -360,7 +360,7 @@ table.plain tbody > tr:nth-child(odd) > th {
    ========================================================================== */
 
 /* Big cover image on the home page */
-#site-head {
+.site-head {
     position: relative;
     display: table;
     width: 100%;
@@ -372,26 +372,17 @@ table.plain tbody > tr:nth-child(odd) > th {
     background-size: cover;
 }
 
-#blog-logo {
+.blog-logo {
     text-decoration: none;
 }
 
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
-#blog-logo img {
+.blog-logo img {
     display: block;
     max-height: 100px;
     width: auto;
     margin: 0 auto;
     line-height: 0;
-}
-
-#back {
-    color: rgba(0,0,0,0.2);
-    position: fixed;
-    top: 8px;
-    left: 8px;
-    padding: 6px;
-    font-size: 16px;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -795,7 +786,7 @@ table.plain tbody > tr:nth-child(odd) > th {
         margin-left: 0;
     }
 
-    #site-head {
+    .site-head {
         -webkit-box-sizing: border-box; 
         -moz-box-sizing: border-box;
         box-sizing: border-box; 
@@ -853,7 +844,7 @@ table.plain tbody > tr:nth-child(odd) > th {
 
 @media only screen and (max-width: 500px) {
 
-    #blog-logo img {
+    .blog-logo img {
         max-height: 80px;
     }
 
@@ -872,7 +863,7 @@ table.plain tbody > tr:nth-child(odd) > th {
         line-height: 1.6em;
     }
 
-    #site-head {
+    .site-head {
         padding: 10% 0;
     }
 
