@@ -322,6 +322,16 @@ table.plain tbody > tr:nth-child(odd) > th {
    background: transparent;
 }
 
+iframe, .fluid-width-video-wrapper {
+    display: block;
+    margin: 1.6em 0;
+}
+
+/* When a video is inside the fitvids wrapper, drop the
+margin on the iframe, cause it breaks stuff. */
+.fluid-width-video-wrapper iframe {
+    margin: 0;
+}
 
 
 /* ==========================================================================
