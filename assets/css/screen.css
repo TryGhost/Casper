@@ -162,13 +162,30 @@ h4 a, h5 a, h6 a {
 }
 
 
-p, ul, ol {
+p, ul, ol, dl {
     margin: 1.6em 0;
 }
 
 ol ol, ul ul,
 ul ol, ol ul {
     margin: 0.4em 0;
+}
+
+dl dt {
+    float: left;
+    width: 180px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-bottom: 1em
+}
+
+dl dd {
+    margin-left: 200px;
+    margin-bottom: 1em
 }
 
 hr {
@@ -207,28 +224,6 @@ blockquote cite {
 }
 
 blockquote cite a { font-weight: normal; }
-
-
-dl {
-    margin: 1.6em 0;
-}
-
-dl dt {
-    float: left;
-    width: 180px;
-    overflow: hidden;
-    clear: left;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: bold;
-    margin-bottom: 1em
-}
-
-dl dd {
-    margin-left: 200px;
-    margin-bottom: 1em
-}
 
 mark {
     background-color: #ffc336;
