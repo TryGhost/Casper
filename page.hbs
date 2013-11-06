@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<main class="content" role="main">
+
+    <article class="{{post_class}}">
+
+        {{! Each post has the blog logo at the top, with a link back to the home page }}
+        <header class="post-header">
+            <a id="blog-logo" href="{{@blog.url}}">
+                {{#if @blog.logo}}
+                    <img src="{{@blog.logo}}" alt="Blog Logo" />
+                {{else}}
+                    {{@blog.title}}
+                {{/if}}
+            </a>
+        </header>
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+
+        {{! Everything below outputs content of the the post which has been published }}
+        
+
+        <h1 class="post-title">{{{title}}}</h1>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        {{/post}}
+
+    </article>
+
+</main>
