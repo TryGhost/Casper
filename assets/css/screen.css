@@ -595,6 +595,14 @@ margin on the iframe, cause it breaks stuff. */
     color: #50585D;
 }
 
+/* The community comments area after the post */
+.post-comments {
+    position: relative;
+    margin: 6rem 0 0 0;
+    padding: 6rem 0 0 0;
+    border-top: #EBF2F6 1px solid;
+}
+
 
 /* ==========================================================================
    6. Third Party Elements - Embeds from other services

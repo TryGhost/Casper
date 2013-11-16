@@ -2,6 +2,15 @@
 
 The default theme for [Ghost](http://github.com/tryghost/ghost/).
 
+## Opinionated Enhancements
+ - Google Analytics Support
+ - Disqus Commenting on Blog Posts
+ - more to come
+
+## Used by Permission
+
+Used under the MIT License from the Ghost Foundation
+
 ## Copyright & License
 
 Copyright (C) 2013 Ghost Foundation - Released under the MIT License.
