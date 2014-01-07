@@ -22,6 +22,11 @@
     {{#foreach posts}}
 
     <article class="{{post_class}}">
+        <div class="post-image">
+            <a href="{{url}}">
+                {{content words="0"}}
+            </a>
+        </div>
         <header class="post-header">
             <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>

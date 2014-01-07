@@ -439,6 +439,32 @@ margin on the iframe, cause it breaks stuff. */
     box-shadow: #fff 0 0 0 5px;
 }
 
+.post-image {
+    margin-bottom: 5px;
+}
+
+.post-image a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-height: 400px;
+}
+
+.post-image img {
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -mox-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.post-image img:hover,
+.post-image img:active,
+.post-image img:focus {
+    opaxity: 0.8;
+}
+
 .post-title {
     margin:0;
 }
