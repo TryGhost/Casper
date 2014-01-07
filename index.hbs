@@ -27,11 +27,13 @@
                 {{content words="0"}}
             </a>
         </div>
-        <header class="post-header">
-            <span class="post-meta"><i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> <i class="fa fa-tags"></i>{{tags prefix=" "}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
 
+        <header class="post-header">
+            <span class="post-meta">
+            <i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> <i class="fa fa-tags"></i> {{tags prefix=""}}</span>
+            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
         </header>
+
         <section class="post-excerpt">
             <p>{{excerpt}}&hellip;</p>
         </section>
