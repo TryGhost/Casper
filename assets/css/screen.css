@@ -563,9 +563,19 @@ margin on the iframe, cause it breaks stuff. */
     text-align: center;
 }
 
+/* Make font smaller for display on  */
 .post-template .blog-title {
     display: inline-block;
+    font-size: 3rem;
     padding: 2.5rem 0;
+}
+
+.post-template .blog-description {
+    font-size: 1.5rem;
+}
+
+.post-template .site-head {
+    height: 100px;
 }
 
 /* Keep large images within the bounds of the post-width */
