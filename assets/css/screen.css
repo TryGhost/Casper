@@ -575,7 +575,12 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .post-template .site-head {
-    height: 100px;
+    height: 150px;
+}
+
+.post-template .site-head a {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Keep large images within the bounds of the post-width */
