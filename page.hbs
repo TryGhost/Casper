@@ -1,13 +1,12 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
 
 <main class="content" role="main">
 
     <article class="{{post_class}}">
 
-        {{! Each post has the blog logo at the top, with a link back to the home page }}
         <header class="post-header">
             <a class="blog-logo" href="{{@blog.url}}">
                 {{#if @blog.logo}}
@@ -18,17 +17,13 @@
             </a>
         </header>
 
-        {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-        {{! Everything below outputs content of the the post which has been published }}
-        
+            <h1 class="post-title">{{{title}}}</h1>
 
-        <h1 class="post-title">{{{title}}}</h1>
-
-        <section class="post-content">
-            {{content}}
-        </section>
+            <section class="post-content">
+                {{content}}
+            </section>
 
         {{/post}}
 
