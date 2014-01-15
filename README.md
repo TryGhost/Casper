@@ -6,6 +6,7 @@ The default theme for [Ghost](http://github.com/tryghost/ghost/).
  - Google Analytics Support
  - Disqus Commenting on Blog Posts
  - FontAwesome for icon font
+ - Google Prettier Support (Code Highlighting)
  - Post Images (display post images before feature is enabled in underlying Ghost platform)
  - Add smaller version of site header to individual post pages
  - more to come
