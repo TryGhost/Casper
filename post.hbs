@@ -32,7 +32,13 @@
             <footer class="post-footer">
 
                 <section class="author">
-                    <h4>{{author.name}}</h4>
+                    <h4>
+                        {{#if author.website}}
+                            <a href="{{author.website}}">{{author.name}}</a>
+                        {{else}}
+                            {{author.name}}
+                        {{/if}}
+                    </h4>
                     <p>{{author.bio}}</p>
                 </section>
 
