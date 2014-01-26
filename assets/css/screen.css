@@ -58,8 +58,8 @@
     text-decoration: none;
 }
 
-/* Each icon is created by inserting the corret character into the 
-   content of the :before pseudo element. Like a boss. */
+/* Each icon is created by inserting the correct character into the 
+   content of the :before pseudo element. */
 .icon-ghost:before {
     content: "\e000";
 }
@@ -338,7 +338,6 @@ margin on the iframe, cause it breaks stuff. */
    3. Utilities - These things get used a lot
    ========================================================================== */
 
-/* Hides shit */
 .hidden {
     text-indent: -9999px;
     visibility: hidden;
@@ -353,7 +352,7 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0 auto;
 }
 
-/* Centres vertically yo. (IE8+) */
+/* Centres vertically (IE8+) */
 .vertical {
     display: table-cell;
     vertical-align: middle;
@@ -381,7 +380,7 @@ margin on the iframe, cause it breaks stuff. */
     text-decoration: none;
 }
 
-/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
+/* Blog logo. Upload one in ghost/settings/ */
 .blog-logo img {
     display: block;
     max-height: 100px;
@@ -422,8 +421,7 @@ margin on the iframe, cause it breaks stuff. */
     hyphens: auto;
 }
 
-/* Add a little circle in the middle of the border-bottom on our .post
-   just for the lolz and stylepoints. */
+/* Add a little circle in the middle of the border-bottom on our .post */
 .post:after {
     display: block;
     content: "";
@@ -526,7 +524,7 @@ margin on the iframe, cause it breaks stuff. */
     padding-bottom: 0;
 }
 
-/* Kill that stylish little circle that was on the border, too */
+/* Remove the little circle that was on the border */
 .post-template .post:after {
     display: none;
 }
@@ -946,7 +944,7 @@ margin on the iframe, cause it breaks stuff. */
 
 }
 
-/* ==========================================================================
-   End of file. Media queries should be the last thing here. Do not add stuff
-   below this point, or it will probably fuck everything up.
-   ========================================================================== */
+/* ==========================================================
+   End of file. Media queries should be the last thing here.
+   Do not add stuff below this point. Stuff may break.
+   ========================================================== */
