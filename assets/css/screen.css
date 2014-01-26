@@ -524,7 +524,7 @@ margin on the iframe, cause it breaks stuff. */
     padding-bottom: 0;
 }
 
-/* Remove the  little circle that was on the border */
+/* Remove the little circle that was on the border */
 .post-template .post:after {
     display: none;
 }
@@ -946,5 +946,5 @@ margin on the iframe, cause it breaks stuff. */
 
 /* ==========================================================
    End of file. Media queries should be the last thing here.
-   Do not add stuff below this point.
+   Do not add stuff below this point. Stuff may break.
    ========================================================== */
