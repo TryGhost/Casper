@@ -338,6 +338,15 @@ margin on the iframe, cause it breaks stuff. */
    3. Utilities - These things get used a lot
    ========================================================================== */
 
+/* Clears shit */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
 /* Hides shit */
 .hidden {
     text-indent: -9999px;
@@ -569,6 +578,38 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.6em;
 }
 
+/* list of author links - location / url */
+.author-meta {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    font-style: italic;
+    color: #9EABB3;
+}
+
+.author-meta li {
+    float: left;
+    margin-left: 10px; /* space to the left of the bullet */
+}
+
+/* bullet divider */
+.author-meta li:before {
+    content: "•";
+    display: inline-block;
+    margin-right: 10px; /* space to the right of the bullet */
+    color: #BBC7CC;
+}
+
+/* disable the bullet divider for the first item in the list */
+.author-meta li:first-child { margin-left: 0; }
+.author-meta li:first-child:before { display: none; }
+
+.author-meta a {
+    color: #9EABB3;
+}
+
 /* Create some space to the right for the share links */
 .post-footer .author {
     margin-right: 180px;
@@ -588,7 +629,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-footer .share a {
     font-size: 1.8rem;
     display: inline-block;
-    margin: 1.4rem 1.6rem 1.6rem 0;
+    margin: 1rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
     text-decoration: none;
 }

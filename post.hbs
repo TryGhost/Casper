@@ -34,6 +34,10 @@
                 <section class="author">
                     <h4>{{author.name}}</h4>
                     <p>{{author.bio}}</p>
+                    <ul class="author-meta clearfix">
+                        {{#if author.location}}<li>{{author.location}}</li>{{/if}}
+                        {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
+                    </ul>
                 </section>
 
                 <section class="share">
