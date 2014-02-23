@@ -624,6 +624,9 @@ margin on the iframe, cause it breaks stuff. */
 .author-meta a {
     color: #9EABB3;
 }
+.author-meta a:hover {
+    color: #57A3E8;
+}
 
 /* Create some space to the right for the share links */
 .post-footer .author {
