@@ -4,25 +4,98 @@
 
 /*
 
-    0.  Includes
+    0.  Normalize
     1.  Icons
     2.  General
     3.  Utilities
     4.  General
     5.  Single Post
-    6.  Third Party Elements
-    7.  Pagination
-    8.  Footer
-    9.  Media Queries (Tablet)
-    10. Media Queries (Mobile)
+    6.  Tag Archive
+    7.  Third Party Elements
+    8.  Pagination
+    9.  Footer
+    10.  Media Queries (Tablet)
+    11. Media Queries (Mobile)
 
  */
 
 /* ==========================================================================
-   0. Includes - Ground zero
+   0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
    ========================================================================== */
 
-@import url(normalize.css);
+article, aside, details,
+figcaption, figure,
+footer, header, hgroup,
+main, nav, section,
+summary { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden], template { display: none; }
+html {
+   font-family: sans-serif;
+   -ms-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+body { margin: 0; }
+a { background: transparent; }
+a:focus { outline: thin dotted; }
+a:active, a:hover { outline: 0; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+dfn { font-style: italic; }
+hr {
+   -moz-box-sizing: content-box;
+   box-sizing: content-box;
+   height: 0;
+}
+mark { background: #ff0; color: #000; }
+code, kbd, pre,
+samp { font-family: monospace, serif; font-size: 1em; }
+pre { white-space: pre-wrap; }
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+small { font-size: 80%; }
+sub, sup {
+   font-size: 75%;
+   line-height: 0;
+   position: relative;
+   vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+fieldset {
+   border: 1px solid #c0c0c0;
+   margin: 0 2px;
+   padding: 0.35em 0.625em 0.75em;
+}
+legend { border: 0; padding: 0; }
+button, input, select,
+textarea { font-family: inherit; font-size: 100%; margin: 0; }
+button, input { line-height: normal; }
+button, select { text-transform: none; }
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] {
+   -webkit-appearance: button;
+   cursor: pointer;
+}
+button[disabled], html input[disabled] { cursor: default; }
+input[type="checkbox"], 
+input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] {
+   -webkit-appearance: textfield;
+   -moz-box-sizing: content-box;
+   -webkit-box-sizing: content-box;
+   box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner,
+input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; }
+table { border-collapse: collapse; border-spacing: 0; }
 
 
 /* ==========================================================================
@@ -338,6 +411,15 @@ margin on the iframe, cause it breaks stuff. */
    3. Utilities - These things get used a lot
    ========================================================================== */
 
+/* Clears shit */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
 /* Hides shit */
 .hidden {
     text-indent: -9999px;
@@ -519,6 +601,12 @@ margin on the iframe, cause it breaks stuff. */
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
+/* Stop .full-img from creating horizontal scroll - slight hack due to 
+   imperfections with browser width % calculations and rounding */
+.post-template .content {
+    overflow: hidden;
+}
+
 /* Tweak the .post wrapper style */
 .post-template .post {
     margin-top: 0;
@@ -537,22 +625,26 @@ margin on the iframe, cause it breaks stuff. */
     text-align: center;
 }
 
-.tag-archive-header {
-    padding: 60px 0 0;
-    text-align: center;
-}
-
-.archive-template .blog-title, .post-template .blog-title {
+.post-template .blog-title {
     display: inline-block;
     padding: 2.5rem 0;
 }
 
-/* Keep large images within the bounds of the post-width */
+/* Keep images centred and within the bounds of the post-width */
 .post-content img {
     display: block;
     max-width: 100%;
-    margin: 0 auto;
     height: auto;
+    margin: 0 auto;
+    padding: 0.6em 0;
+}
+
+/* Break out larger images to be wider than the main text column
+   the class is applied with jQuery */
+.post-content .full-img {
+    width: 126%;
+    max-width: none;
+    margin: 0 -13%;    
 }
 
 /* The author credit area after the post */
@@ -574,6 +666,41 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.6em;
 }
 
+/* list of author links - location / url */
+.author-meta {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    font-style: italic;
+    color: #9EABB3;
+}
+
+.author-meta li {
+    float: left;
+    margin-left: 10px; /* space to the left of the bullet */
+}
+
+/* bullet divider */
+.author-meta li:before {
+    content: "•";
+    display: inline-block;
+    margin-right: 10px; /* space to the right of the bullet */
+    color: #BBC7CC;
+}
+
+/* disable the bullet divider for the first item in the list */
+.author-meta li:first-child { margin-left: 0; }
+.author-meta li:first-child:before { display: none; }
+
+.author-meta a {
+    color: #9EABB3;
+}
+.author-meta a:hover {
+    color: #57A3E8;
+}
+
 /* Create some space to the right for the share links */
 .post-footer .author {
     margin-right: 180px;
@@ -593,7 +720,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-footer .share a {
     font-size: 1.8rem;
     display: inline-block;
-    margin: 1.4rem 1.6rem 1.6rem 0;
+    margin: 1rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
     text-decoration: none;
 }
@@ -602,9 +729,22 @@ margin on the iframe, cause it breaks stuff. */
     color: #50585D;
 }
 
+/* ==========================================================================
+   6. Single Post - When you click on an individual post
+   ========================================================================== */
+
+.tag-archive-header {
+    padding: 60px 0 0;
+    text-align: center;
+}
+
+.archive-template .blog-title, .post-template .blog-title {
+    display: inline-block;
+    padding: 2.5rem 0;
+}
 
 /* ==========================================================================
-   6. Third Party Elements - Embeds from other services
+   7. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -621,7 +761,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   7. Pagination - Tools to let you flick between pages
+   8. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -672,7 +812,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   8. Footer - The bottom of every page
+   9. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -789,7 +929,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   9. Media Queries - Smaller than 900px
+   10. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -850,7 +990,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
@@ -908,6 +1048,18 @@ margin on the iframe, cause it breaks stuff. */
 
     .post-template .post-header {
         padding: 30px 0;
+    }
+
+    .post-content img {
+        padding: 0;
+    }
+
+    .post-content .full-img { 
+        width: auto;
+        width: calc(100% + 32px); /* expand with to image + margins */
+        margin: 0 -16px; /* get rid of margins */
+        min-width: 0;
+        max-width: 112%; /* fallback when calc doesn't work */
     }
 
     .post-meta {
