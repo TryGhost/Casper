@@ -81,7 +81,7 @@ input[type="reset"], input[type="submit"] {
    cursor: pointer;
 }
 button[disabled], html input[disabled] { cursor: default; }
-input[type="checkbox"], 
+input[type="checkbox"],
 input[type="radio"] { box-sizing: border-box; padding: 0; }
 input[type="search"] {
    -webkit-appearance: textfield;
@@ -114,10 +114,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Apply these base styles to all icons */
-.icon-ghost:before, 
-.icon-feed:before, 
-.icon-twitter:before, 
-.icon-google-plus:before, 
+.icon-ghost:before,
+.icon-feed:before,
+.icon-twitter:before,
+.icon-google-plus:before,
 .icon-facebook:before {
     font-family: 'icons';
     speak: none;
@@ -126,11 +126,12 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
     text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Each icon is created by inserting the corret character into the 
+/* Each icon is created by inserting the corret character into the
    content of the :before pseudo element. Like a boss. */
 .icon-ghost:before {
     content: "\e000";
@@ -346,8 +347,8 @@ kbd {
     font-weight: bold;
     background: #f4f4f4;
     border-radius: 4px;
-    box-shadow: 
-        0 1px 0 rgba(0, 0, 0, 0.2), 
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.2),
         0 1px 0 0 #fff inset;
 }
 
@@ -600,7 +601,7 @@ margin on the iframe, cause it breaks stuff. */
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
-/* Stop .full-img from creating horizontal scroll - slight hack due to 
+/* Stop .full-img from creating horizontal scroll - slight hack due to
    imperfections with browser width % calculations and rounding */
 .post-template .content {
     overflow: hidden;
@@ -643,7 +644,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-content .full-img {
     width: 126%;
     max-width: none;
-    margin: 0 -13%;    
+    margin: 0 -13%;
 }
 
 /* The author credit area after the post */
@@ -925,9 +926,9 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .site-head {
-        -webkit-box-sizing: border-box; 
+        -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         height: auto;
         min-height: 240px;
         padding: 15% 0;
@@ -986,7 +987,7 @@ margin on the iframe, cause it breaks stuff. */
         max-height: 80px;
     }
 
-    .inner, 
+    .inner,
     .pagination {
         width: auto;
         margin-left: 16px;
@@ -1040,7 +1041,7 @@ margin on the iframe, cause it breaks stuff. */
         padding: 0;
     }
 
-    .post-content .full-img { 
+    .post-content .full-img {
         width: auto;
         width: calc(100% + 32px); /* expand with to image + margins */
         margin: 0 -16px; /* get rid of margins */
