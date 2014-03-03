@@ -10,11 +10,12 @@
     3.  Utilities
     4.  General
     5.  Single Post
-    6.  Third Party Elements
-    7.  Pagination
-    8.  Footer
-    9.  Media Queries (Tablet)
-    10. Media Queries (Mobile)
+    6.  Tag Archive
+    7.  Third Party Elements
+    8.  Pagination
+    9.  Footer
+    10.  Media Queries (Tablet)
+    11. Media Queries (Mobile)
 
  */
 
@@ -728,9 +729,22 @@ margin on the iframe, cause it breaks stuff. */
     color: #50585D;
 }
 
+/* ==========================================================================
+   6. Single Post - When you click on an individual post
+   ========================================================================== */
+
+.tag-archive-header {
+    padding: 60px 0 0;
+    text-align: center;
+}
+
+.archive-template .blog-title, .post-template .blog-title {
+    display: inline-block;
+    padding: 2.5rem 0;
+}
 
 /* ==========================================================================
-   6. Third Party Elements - Embeds from other services
+   7. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -747,7 +761,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   7. Pagination - Tools to let you flick between pages
+   8. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -798,7 +812,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   8. Footer - The bottom of every page
+   9. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -915,7 +929,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   9. Media Queries - Smaller than 900px
+   10. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -976,7 +990,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
