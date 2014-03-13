@@ -21,6 +21,8 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
+        <a class="post-meta" href="/">← Back to the front page</a>
+
         {{! Everything below outputs content of the the post which has been published }}
         <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
 
