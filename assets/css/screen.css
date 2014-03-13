@@ -523,6 +523,34 @@ margin on the iframe, cause it breaks stuff. */
     box-shadow: #fff 0 0 0 5px;
 }
 
+.post-image {
+    margin-bottom: 5px;
+}
+
+.post-image a {
+    height: 100%;
+    width: 100%;
+    max-height: 400px;
+}
+
+.post-image img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+    transition: 0.3s;
+    -mox-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: 0.3s;
+}
+
+.post-image img:hover,
+.post-image img:active,
+.post-image img:focus {
+    opaxity: 0.8;
+}
+
 .post-title {
     margin:0;
 }
@@ -621,13 +649,27 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Insert some mad padding up in the header for better spacing */
 .post-template .post-header {
-    padding: 60px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
+/* Make font smaller for display on smaller site header */
 .post-template .blog-title {
     display: inline-block;
-    padding: 2.5rem 0;
+    font-size: 3rem;
+}
+
+.post-template .blog-description {
+    font-size: 1.5rem;
+}
+
+.post-template .site-head {
+    height: 150px;
+}
+
+.post-template .site-head a {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Keep images centred and within the bounds of the post-width */
@@ -727,6 +769,14 @@ margin on the iframe, cause it breaks stuff. */
 
 .post-footer .share a:hover {
     color: #50585D;
+}
+
+/* The community comments area after the post */
+.post-comments {
+    position: relative;
+    margin: 6rem 0 0 0;
+    padding: 6rem 0 0 0;
+    border-top: #EBF2F6 1px solid;
 }
 
 
