@@ -455,7 +455,6 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .post-image a {
-    display: block;
     height: 100%;
     width: 100%;
     max-height: 400px;
