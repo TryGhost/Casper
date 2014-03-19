@@ -10,11 +10,12 @@
     3.  Utilities
     4.  General
     5.  Single Post
-    6.  Third Party Elements
-    7.  Pagination
-    8.  Footer
-    9.  Media Queries (Tablet)
-    10. Media Queries (Mobile)
+    6.  Tag Archive
+    7.  Third Party Elements
+    8.  Pagination
+    9.  Footer
+    10.  Media Queries (Tablet)
+    11. Media Queries (Mobile)
 
  */
 
@@ -731,7 +732,56 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   6. Third Party Elements - Embeds from other services
+   6. Tag archive
+   ========================================================================== */
+
+.archive-template .site-head {
+    height: auto;
+    padding-bottom: 5rem;
+}
+
+.archive-template .site-head a {
+    color: #fff;
+}
+
+.archive-template .blog-logo {
+    display: block;
+    margin-top: 5rem;
+}
+
+.tag-archive-header {
+    padding: 20px 0;
+    text-align: center;
+    max-width: 700px;
+    margin: 4rem auto;
+    border-bottom: 1px solid #EBF2F6;
+    position: relative;
+}
+
+.tag-archive-header:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #fff 0 0 0 5px;
+}
+
+.archive-template .blog-title {
+    display: inline-block;
+    padding: 2.5rem 0;
+}
+
+/* ==========================================================================
+   7. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -748,7 +798,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   7. Pagination - Tools to let you flick between pages
+   8. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -799,7 +849,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   8. Footer - The bottom of every page
+   9. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -916,7 +966,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   9. Media Queries - Smaller than 900px
+   10. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -977,7 +1027,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
