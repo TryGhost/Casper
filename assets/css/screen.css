@@ -169,6 +169,16 @@ body {
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #3A4145;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0.1s;
+}
+
+@-webkit-keyframes fontfix {
+   from{ opacity: 1; }
+   to{ opacity: 1; }
 }
 
 ::-moz-selection {
