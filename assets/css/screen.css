@@ -277,11 +277,6 @@ blockquote {
     margin: 1.6em 0 1.6em -2.2em;
     padding: 0 0 0 1.6em;
     border-left: #4a4a4a 0.4em solid;
-    quotes: "“" "”";
-}
-
-blockquote > p:first-child:before {
-    content: open-quote;
 }
 
 blockquote p {
