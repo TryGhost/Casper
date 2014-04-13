@@ -1,6 +1,20 @@
 # StayPuft
 
-A modified fork of Casper, the default theme for [Ghost](http://github.com/tryghost/ghost/).
+A fork of Casper, the default theme for [Ghost](http://github.com/tryghost/ghost/).
+
+## Demo
+
+This theme is being used in my [blog](http://davidlecina.com/).
+
+## Installation
+
+Clone this repository on your themes folder:
+
+    cd ghost/content/themes
+    sudo git clone https://github.com/dlecina/StayPuft
+
+Restart Ghost.  
+You should now be able to select the theme in your Settings page.
 
 ## Copyright & License
 
