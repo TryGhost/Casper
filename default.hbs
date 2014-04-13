@@ -19,6 +19,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
@@ -52,10 +56,6 @@
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
-
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
 </body>
 </html>
