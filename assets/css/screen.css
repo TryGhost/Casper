@@ -460,8 +460,13 @@ margin on the iframe, cause it breaks stuff. */
     background-size: cover;
 }
 
+.site-head-content {
+    margin-top: 4rem;
+}
+
 .blog-logo {
     text-decoration: none;
+    color: white;
 }
 
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
@@ -471,6 +476,17 @@ margin on the iframe, cause it breaks stuff. */
     width: auto;
     margin: 0 auto;
     line-height: 0;
+    border:3px solid #fff;
+    border-radius:50%;
+    border-radius:50%;
+    max-height:100px;
+    -webkit-transition:opacity .3s ease-in-out;
+    transition:opacity .3s ease-in-out;
+    -webkit-box-shadow:0 0 3px 3px rgba(0,0,0,.3),inset 0 0 40px 2px rgba(0,0,0,.3);
+    box-shadow:0 0 3px 3px rgba(0,0,0,.3),inset 0 0 40px 2px rgba(0,0,0,.3);
+    -webkit-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    backface-visibility:hidden
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -484,6 +500,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .blog-description {
+    color: white;
     margin: 0;
     font-size: 1.8rem;
     line-height: 1.5em;
@@ -498,8 +515,6 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width:80%;
     max-width: 700px;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
     hyphens: auto;
@@ -603,15 +618,39 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.5em;
 }
 
+main
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.cover
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 25%;
+    height: 100%;
+    z-index: 100;
+    background-color: #242424;
+}
+
+.content
+{
+    position: absolute;
+    left: 25%;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding: 40px 10% 40px 185px;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
-
-/* Stop .full-img from creating horizontal scroll - slight hack due to
-   imperfections with browser width % calculations and rounding */
-.post-template .content {
-    overflow: hidden;
-}
 
 /* Tweak the .post wrapper style */
 .post-template .post {
@@ -629,11 +668,6 @@ margin on the iframe, cause it breaks stuff. */
 .post-template .post-header {
     padding: 60px 0;
     text-align: center;
-}
-
-.post-template .blog-title {
-    display: inline-block;
-    padding: 2.5rem 0;
 }
 
 /* Keep images centred and within the bounds of the post-width */
@@ -749,11 +783,6 @@ margin on the iframe, cause it breaks stuff. */
     color: #fff;
 }
 
-.archive-template .blog-logo {
-    display: block;
-    margin-top: 5rem;
-}
-
 .tag-archive-header {
     padding: 20px 0;
     text-align: center;
@@ -778,11 +807,6 @@ margin on the iframe, cause it breaks stuff. */
     -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #fff 0 0 0 5px;
-}
-
-.archive-template .blog-title {
-    display: inline-block;
-    padding: 2.5rem 0;
 }
 
 /* ==========================================================================
