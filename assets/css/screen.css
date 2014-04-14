@@ -641,7 +641,7 @@ main
 
 .content
 {
-    position: relative;
+    position: absolute;
     left: 25%;
     right: 0px;
     top: 0px;
@@ -1009,6 +1009,7 @@ main
     }
 
     .content {
+        position: relative;
         left: 0px;
     }
 
