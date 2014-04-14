@@ -174,13 +174,11 @@ body {
 ::-moz-selection {
     color: #222;
     background: #D6EDFF;
-    text-shadow: none;
 }
 
 ::selection {
     color: #222;
     background: #D6EDFF;
-    text-shadow: none;
 }
 
 h1, h2, h3,
@@ -461,7 +459,8 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .site-head-content {
-    margin-top: 4rem;
+    position: relative;
+    top: 4rem;
 }
 
 .blog-logo {
@@ -492,7 +491,7 @@ margin on the iframe, cause it breaks stuff. */
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
     margin: 10px 0 10px 0;
-    font-size: 5rem;
+    font-size: 3rem;
     letter-spacing: -1px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
@@ -636,16 +635,19 @@ main
     height: 100%;
     z-index: 100;
     background-color: #242424;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
 }
 
 .content
 {
-    position: absolute;
+    position: relative;
     left: 25%;
     right: 0px;
     top: 0px;
     bottom: 0px;
     padding: 40px 10%;
+    max-width: 1000px;
 }
 
 /* ==========================================================================
@@ -787,7 +789,7 @@ main
     padding: 20px 0;
     text-align: center;
     max-width: 700px;
-    margin: 4rem auto;
+    margin: 4rem 0px;
     border-bottom: 1px solid #EBF2F6;
     position: relative;
 }
@@ -835,7 +837,7 @@ main
     position: relative;
     width: 80%;
     max-width: 700px;
-    margin: 4rem auto;
+    margin: 4rem 0px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
@@ -993,6 +995,36 @@ main
     top: -33px;
 }
 
+/* ==========================================================================
+   Media Queries for changing from Vertical to Horizontal cover
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+    .cover {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 25%;
+        min-height: 270px;
+    }
+
+    .content {
+        left: 0px;
+    }
+
+    .site-head-content {
+        position: absolute;
+        bottom: 20px;
+        top: auto;
+        left: 0px;
+        right: 0px;
+    }
+
+    .post {
+        width: 100%;
+    }
+}
+
 
 /* ==========================================================================
    10. Media Queries - Smaller than 900px
@@ -1011,16 +1043,6 @@ main
         height: auto;
         min-height: 240px;
         padding: 15% 0;
-    }
-
-    .blog-title {
-        font-size: 4rem;
-        letter-spacing: -1px;
-    }
-
-    .blog-description {
-        font-size: 1.7rem;
-        line-height: 1.5em;
     }
 
     .post {
@@ -1084,15 +1106,6 @@ main
     .site-head {
         padding: 10% 0;
     }
-
-    .blog-title {
-        font-size: 3rem;
-    }
-
-    .blog-description {
-        font-size: 1.5rem;
-    }
-
 
     h1, h2 {
         font-size: 3rem;
@@ -1167,6 +1180,9 @@ main
         font-size: 1.1rem;
     }
 
+    .content {
+        padding: 40px 12px;
+    }
 }
 
 /* ==========================================================================
