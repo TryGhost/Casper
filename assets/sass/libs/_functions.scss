@@ -1,0 +1,48 @@
+
+// Project Functions
+// ============================================================
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px !default;
+
+// Media Query Functions
+
+@function lower-bound($range) {
+	@if length($range) <= 0 {
+		@return 0;
+	}
+	@return nth($range, 1);
+}
+
+@function upper-bound($range) {
+	@if length($range) < 2 {
+		@return 999999999999;
+	}
+	@return nth($range, 2);
+}
+
+// Rem Conversions
+
+@function strip-unit($num) {
+	@return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base) {
+	$value: strip-unit($value) / strip-unit($base-value) * 1rem;
+	@if $value == 0rem {
+		$value: 0;
+	}
+	@return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+	$max: length($values);
+	@if $max == 1 {
+		@return convert-to-rem(nth($values, 1), $base-value);
+	}
+	$remValues: ();
+	@for $i from 1 through $max {
+		$remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+	}
+	@return $remValues;
+}

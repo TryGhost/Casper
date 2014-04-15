@@ -1,0 +1,116 @@
+// Typography
+// ============================================================
+
+// ========= Default Sizing and Spacing =========
+
+// h1, h2, h3, h4, h5, h6
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-color;
+  small {
+    font-size: $small-font-size;
+    opacity: 0.8;
+    line-height: 0;
+  }
+}
+
+// p, pre, label
+
+pre {
+  white-space: pre-wrap;
+}
+
+// ol, ul, dl
+
+li {
+  line-height: auto;
+}
+
+dl, menu, ol, ul {
+  margin: 0.875em 0;
+}
+
+dd {
+  margin: 0 0 0 $indent-amount;
+}
+
+ol, ul {
+  padding: 0 0 0 $indent-amount;
+}
+
+nav ul {
+  @include lining;
+}
+
+// ========= Core Typography =========
+
+strong, b {
+  font-weight: 600;
+}
+
+em, i, q {
+  font-style: italic;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote {
+  border-left: 0.25 solid $secondary;
+  line-height: normal;
+  margin-left: $indent-amount;
+  margin-right: $indent-amount;
+  p {
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+small {
+  font-size: $small-font-size;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}

@@ -1,0 +1,133 @@
+// Core Styles
+// ============================================================
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+
+// ========= Clearfix =========
+
+.clearfix {
+	zoom: 1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// ========= Body Global Styles =========
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	color: $base-color;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: $base-font-size;
+	background-color: $base-bg;
+	padding: 3em;
+	margin: 0;
+}
+
+// Link Styles
+a {
+	color: $action;
+	background: transparent;
+	&:hover, &:focus, &:active {
+		color: $action-alt;
+	}
+	&:active, &:hover {
+		outline: 0;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+}
+
+hr {
+	height: 0;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+}
+
+img, a img {
+	border: 0;
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Navigation Styles
+
+nav {
+	ul {
+		@include lining(ul, 1em);
+	}
+}
+
+// Example Grid Styles
+
+//  .wrap-page-section {
+// 	 & > section {
+// 		 @include grid-row;
+// 		 @extend %island;
+// 		 & > h1 {
+// 			 @include grid-column($columns: 12);
+// 			 text-align: center;
+// 		 }
+// 		 & > article {
+// /			 @include grid-column($columns: 12);
+// /		 }
+// /		 @media #{$small} {
+// /			 & > h1 {
+// /				 @include grid-column($columns: 6);
+// /			 }
+// /			 & > article {
+// /				 @include grid-column($columns: 6);
+// /			 }
+// /		 }
+// /		 @media #{$medium} {
+// /			 & > h1 {
+// /				 @include grid-column($columns: 4);
+// /			 }
+// /			 & > article {
+// /				 @include grid-column($columns: 8);
+// /			 }
+// /		 }
+// /	 }
+// / }
+
+@media #{$screen} {}
+
+@media #{$small} {}
+
+@media #{$medium} {}
+
+@media #{$large} {}
+
+@media #{$landscape} {}
+
+@media #{$portrait} {}

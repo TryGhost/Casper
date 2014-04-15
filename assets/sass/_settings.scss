@@ -1,0 +1,118 @@
+// Project Settings
+// ============================================================
+
+// ========= Typography & Metrics =========
+
+// This is the default html and body font-size for the base em value.
+$rem-base: 16px;
+$em-base: 16px;
+
+// Fonts size and line height defaults for our calculations
+
+$base-font-size: 1em;
+$base-line-height: 1.5;
+
+// Font sizes are then abstracted to global spacing behaviors
+
+$base-spacing-unit: $base-line-height;
+$base-font-size: 16px;
+
+// ========= Conversion Functions =========
+
+@import "libs/functions";
+
+// ========= Grid Variables =========
+
+$default-float: left;
+$text-direction: ltr;
+$opposite-direction: right;
+
+@if $text-direction == ltr {
+	$default-float: left;
+	$opposite-direction: right;
+}
+@else {
+	$default-float: right;
+	$opposite-direction: left;
+}
+
+$include-html-grid-classes: false;
+$row-width: rem-calc(1440);
+$column-gutter: rem-calc(30);
+$total-columns: 12;
+
+$include-html-grid-classes: false;
+
+// ========= Media Queries =========
+
+// Media Queries
+
+$small-screen: 768px !default;
+$medium-screen: 1280px !default;
+$large-screen: 1440px !default;
+
+$screen: "only screen" !default;
+$small: "only screen and (min-width: #{$small-screen})" !default;
+$medium: "only screen and (min-width:#{$medium-screen})" !default;
+$large: "only screen and (min-width:#{$large-screen})" !default;
+$landscape: "only screen and (orientation: landscape)" !default;
+$portrait: "only screen and (orientation: portrait)" !default;
+
+// ========= Core Settings =========
+
+$h1-font-size: rem-calc(44);
+$h2-font-size: rem-calc(37);
+$h3-font-size: rem-calc(27);
+$h4-font-size: rem-calc(23);
+$h5-font-size: rem-calc(18);
+$h6-font-size: rem-calc(16);
+
+// Small Print
+$small-font-size: 65%;
+
+// Indentation for dl, ul, blockquote
+$indent-amount: 1em;
+
+// ========= Color Settings =========
+
+$primary: #d34836;
+$secondary: #4b4b4b;
+$tertiary: #d2d2d2;
+
+// Primary roles
+
+$base-color: #2b2b2b;
+$base-bg: whitesmoke;
+$heading-color: $secondary;
+$secondary-heading-color: $tertiary;
+$alert: red;
+$success: green;
+
+// Links
+
+$action: $primary;
+$action-alt: darken($primary, 5%);
+
+// ========= Component Settings =========
+
+$base-component-factor: 0;
+$base-factor-modifier: 0.5;
+
+// Core Spacing Variables
+
+$coral: 1rem;
+$reef: 2rem;
+$island: 4rem;
+$continent: 8rem;
+
+$render-helper-classes: true;
+
+// Transition Variables
+
+$global-transition-speed: 150ms;
+$global-transition-function: ease;
+
+// Border Variables
+
+$global-radius: 2px;
+$global-border-width: 1px;

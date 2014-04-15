@@ -1,3 +1,214 @@
+h1 {
+  font-size: 2.75rem; }
+
+h2 {
+  font-size: 2.3125rem; }
+
+h3 {
+  font-size: 1.6875rem; }
+
+h4 {
+  font-size: 1.4375rem; }
+
+h5 {
+  font-size: 1.125rem; }
+
+h6 {
+  font-size: 1rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #4b4b4b; }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 65%;
+    opacity: 0.8;
+    line-height: 0; }
+
+pre {
+  white-space: pre-wrap; }
+
+li {
+  line-height: auto; }
+
+dl, menu, ol, ul {
+  margin: 0.875em 0; }
+
+dd {
+  margin: 0 0 0 1em; }
+
+ol, ul {
+  padding: 0 0 0 1em; }
+
+nav ul {
+  list-style: none; }
+  nav ul li {
+    display: inline-block;
+    margin-right: 1em; }
+
+strong, b {
+  font-weight: 600; }
+
+em, i, q {
+  font-style: italic; }
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+blockquote {
+  border-left: 0.25 solid #4b4b4b;
+  line-height: normal;
+  margin-left: 1em;
+  margin-right: 1em; }
+  blockquote p {
+    font-style: italic;
+    margin: 0; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+small {
+  font-size: 65%; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+label, select {
+  display: block; }
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border linear 0.2s, box-shadow linear 0.2s; }
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer; }
+
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+  width: auto; }
+
+select, input[type="file"] {
+  *margin-top: 4px; }
+
+select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
+  outline: thin dotted #333333;
+  outline: 5px auto-webkit-focus-ring-color;
+  outline-offset: -2px; }
+
+fieldset {
+  margin: 0 2px;
+  border-color: silver; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .clearfix:after {
+    clear: both; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 100%; }
+
+body {
+  color: #2b2b2b;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color: whitesmoke;
+  padding: 3em;
+  margin: 0; }
+
+a {
+  color: #d34836;
+  background: transparent; }
+  a:hover, a:focus, a:active {
+    color: #c43a2b; }
+  a:active, a:hover {
+    outline: 0; }
+  a:focus {
+    outline: thin dotted; }
+
+hr {
+  height: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+img {
+  display: inline-block;
+  max-width: 100%; }
+
+img, a img {
+  border: 0; }
+
+figure {
+  margin: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+nav ul {
+  list-style: none; }
+  nav ul li {
+    display: inline-block;
+    margin-right: 1em; }
+
+@media only screen { }
+
+@media only screen and (min-width: 768px) { }
+
+@media only screen and (min-width:1280px) { }
+
+@media only screen and (min-width:1440px) { }
+
+@media only screen and (orientation: landscape) { }
+
+@media only screen and (orientation: portrait) { }
+
 /* ==========================================================================
    Table of Contents
    ========================================================================== */
