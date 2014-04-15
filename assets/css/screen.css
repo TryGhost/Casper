@@ -741,27 +741,14 @@ margin on the iframe, cause it breaks stuff. */
    6. Tag archive
    ========================================================================== */
 
-.archive-template .site-head {
-    height: auto;
-    padding-bottom: 5rem;
-}
-
-.archive-template .site-head a {
-    color: #fff;
-}
-
-.archive-template .blog-logo {
-    display: block;
-    margin-top: 5rem;
-}
-
 .tag-archive-header {
-    padding: 20px 0;
-    text-align: center;
+    position: relative;
     max-width: 700px;
     margin: 4rem auto;
     border-bottom: 1px solid #EBF2F6;
-    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    color: #222;
 }
 
 .tag-archive-header:after {
@@ -781,10 +768,6 @@ margin on the iframe, cause it breaks stuff. */
     box-shadow: #fff 0 0 0 5px;
 }
 
-.archive-template .blog-title {
-    display: inline-block;
-    padding: 2.5rem 0;
-}
 
 /* ==========================================================================
    7. Third Party Elements - Embeds from other services
