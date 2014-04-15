@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	{{! Document Settings }}
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{! Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
-    {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+	{{! Styles'n'Scripts }}
+	<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
 
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+	{{! Ghost outputs important style and meta data with this tag }}
+	{{ghost_head}}
 </head>
 <body class="{{body_class}}">
 
-    {{! Everything else gets inserted here }}
-    {{{body}}}
+	{{! Everything else gets inserted here }}
+	{{{body}}}
 
-    <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-        <div class="inner">
-             <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
-        </div>
-    </footer>
+	<footer class="site-footer">
+		<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+		<div class="inner">
+			 <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
+			 <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
+		</div>
+	</footer>
 
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+	{{! Ghost outputs important scripts and data with this tag }}
+	{{ghost_foot}}
 
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+	{{! The main JavaScript file for Casper }}
+	<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
 </body>
 </html>
