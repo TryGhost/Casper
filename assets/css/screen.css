@@ -1112,6 +1112,16 @@ margin on the iframe, cause it breaks stuff. */
         margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
+    .author-meta li {
+        float: none;
+        margin: 0;
+        line-height: 1.6em;
+    }
+
+    .author-meta li:before {
+        display: none;
+    }
+
     .older-posts,
     .newer-posts {
         position: static;
