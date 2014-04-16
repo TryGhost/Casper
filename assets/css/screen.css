@@ -1070,10 +1070,15 @@ margin on the iframe, cause it breaks stuff. */
 
     .post-template .post {
         padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .post-template .post-header {
         padding: 30px 0;
+    }
+
+    .post-template .site-footer {
+        margin-top: 0;
     }
 
     .post-content img {
