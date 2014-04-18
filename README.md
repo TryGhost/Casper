@@ -1,6 +1,11 @@
 # StayPuft
 
-A fork of Casper, the default theme for [Ghost](http://github.com/tryghost/ghost/).
+A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghost/).
+
+## Features
+
+* Responsive
+* Smoother navigation using [InstantClick](https://github.com/dieulot/instantclick).
 
 ## Demo
 

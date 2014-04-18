@@ -26,9 +26,6 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
-
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
 </head>
 
 <body class="{{body_class}}">
@@ -55,6 +52,12 @@
     <main>
         {{{body}}}
     </main>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    <script src="{{asset "js/instantclick.min.js"}}" data-no-instant></script>
+    <script data-no-instant>InstantClick.init();</script>
 
 </body>
 
