@@ -626,6 +626,68 @@ main
     padding: 40px 10%;
 }
 
+#search
+{
+    display: block;
+    width: 100%;
+}
+
+#search span
+{
+    display: block;
+    overflow: hidden;
+    padding: 0 1em 0 0;
+}
+
+#search input
+{
+    width: 100%;
+    font-size: 0.8em;
+}
+
+#search label
+{
+    float: right;
+    line-height: 1.6em;
+}
+
+#results
+{
+    text-align: center;
+    padding: 0px 4rem;
+    margin-bottom: 4rem;
+}
+
+#results > p
+{
+    color: #BBB;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+#results > a
+{
+    display: block;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#results h2
+{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+#results h4
+{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #BBB;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */

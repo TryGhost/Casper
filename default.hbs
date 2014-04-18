@@ -26,6 +26,8 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body class="{{body_class}}">
@@ -35,6 +37,11 @@
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
             <h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
             <h2 class="blog-description">{{@blog.description}}</h2>
+
+            <form id="search">
+                <label for="search-field" class="fa fa-search"></label>
+                <span><input id="search-field" placeholder="Search"/></span>
+            </form>
 
             <!--
             <aside>
@@ -50,6 +57,7 @@
     </div>
 
     <main>
+        <section id="results"></section>
         {{{body}}}
     </main>
 
@@ -58,6 +66,15 @@
 
     <script src="{{asset "js/instantclick.min.js"}}" data-no-instant></script>
     <script data-no-instant>InstantClick.init();</script>
+
+    <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
+    <script>
+        $("#search-field").ghostHunter({
+            results : "#results",
+            onKeyUp : true,
+            zeroResultsInfo : false
+        });
+    </script>
 
 </body>
 

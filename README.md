@@ -4,8 +4,9 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 
 ## Features
 
-* Responsive
+* Responsive.
 * Smoother navigation using [InstantClick](https://github.com/dieulot/instantclick).
+* In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 
 ## Demo
 
