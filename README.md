@@ -24,7 +24,8 @@ This theme is being used in my [blog](http://davidlecina.com/).
 
 ## Configuration
 
-* Modify `partials/copyright.hbs` with your own disclaimer.
+* Replace `assets/favicon.png` with your own favicon, or remove for the default Ghost favicon.
+* Replace `partials/copyright.hbs` with your own disclaimer.
 
 ## Copyright & License
 
