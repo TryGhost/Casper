@@ -43,6 +43,12 @@
                 <span><input id="search-field" placeholder="Search"/></span>
             </form>
 
+            <div id="sidebar-links">
+                <ul id="sidebar-external">
+                    {{> sidebar-external}}
+                </ul>
+            </div>
+
             <!--
             <aside>
                 <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
@@ -54,6 +60,7 @@
                 <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
             </footer>
         </div>
+        <span class=".clearfix"></span>
     </div>
 
     <main>
