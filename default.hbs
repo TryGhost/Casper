@@ -26,37 +26,35 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
 </head>
 
 <body class="{{body_class}}">
 
-    <main class="container" role="main">
+    <div id="sidebar" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+        <div id="sidebar-content" class="inner">
+            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+            <h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            <h2 class="blog-description">{{@blog.description}}</h2>
 
-        <aside class="cover" role="banner" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-            <div class="site-head-content inner">
-                {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-                <a class="blog-logo" href="{{@blog.url}}"><h1 class="blog-title">{{@blog.title}}</h1></a>
-                <h2 class="blog-description">{{@blog.description}}</h2>
-
-                <!-- <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a> -->
-            </div>
-        </aside>
-
-        <div class="content">
-
-            {{{body}}}
+            <!--
+            <aside>
+                <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+            </aside>
+            -->
 
             <footer class="site-footer">
-                {{> copyright}}
+                <section class="copyright">{{> copyright}}</section>
                 <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
             </footer>
-
         </div>
+    </div>
 
+    <main>
+        {{{body}}}
     </main>
-
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
 
 </body>
 

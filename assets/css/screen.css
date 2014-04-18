@@ -445,27 +445,9 @@ margin on the iframe, cause it breaks stuff. */
    4. General - The main styles for the the theme
    ========================================================================== */
 
-/* Big cover image on the home page */
-.site-head {
-    position: relative;
-    display: table;
-    width: 100%;
-    height: 60%;
-    margin-bottom: 5rem;
-    text-align: center;
-    color: #fff;
-    background: #303538 no-repeat center center;
-    background-size: cover;
-}
-
-.site-head-content {
+#sidebar-content {
     position: relative;
     top: 4rem;
-}
-
-.blog-logo {
-    text-decoration: none;
-    color: white;
 }
 
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
@@ -492,21 +474,25 @@ margin on the iframe, cause it breaks stuff. */
 .blog-title {
     margin: 10px 0 10px 0;
     font-size: 3rem;
-    letter-spacing: -1px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    text-indent: 0px;
+}
+
+.blog-title a {
+    color: white;
+    text-decoration: none;
 }
 
 .blog-description {
-    color: #7f8c8d;
-    margin: 0;
+    color: #9EABB3;
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
-    letter-spacing: 0;
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    text-indent: 0px;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -617,16 +603,7 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.5em;
 }
 
-main
-{
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-}
-
-.cover
+#sidebar
 {
     position: fixed;
     top: 0px;
@@ -639,7 +616,7 @@ main
     overflow-y: auto;
 }
 
-.content
+main
 {
     position: absolute;
     left: 25%;
@@ -647,7 +624,6 @@ main
     top: 0px;
     bottom: 0px;
     padding: 40px 10%;
-    max-width: 1000px;
 }
 
 /* ==========================================================================
@@ -776,15 +752,6 @@ main
    6. Tag archive
    ========================================================================== */
 
-.archive-template .site-head {
-    height: auto;
-    padding-bottom: 5rem;
-}
-
-.archive-template .site-head a {
-    color: #fff;
-}
-
 .tag-archive-header {
     padding: 20px 0;
     text-align: center;
@@ -885,7 +852,7 @@ main
 
 .site-footer {
     position: relative;
-    bottom: 1rem;
+    margin-top: 2rem;
     width: 80%;
     max-width: 700px;
     font-family: 'Roboto', sans-serif;
@@ -900,7 +867,7 @@ main
 }
 
 .site-footer a:hover {
-    color: black;
+    color: white;
 }
 
 .poweredby .icon-ghost {
@@ -998,7 +965,7 @@ main
    ========================================================================== */
 
 @media (max-width: 1023px) {
-    .cover {
+    #sidebar {
         position: relative;
         text-align: center;
         width: 100%;
@@ -1006,17 +973,17 @@ main
         min-height: 270px;
     }
 
-    .content {
-        position: relative;
-        left: 0px;
-    }
-
-    .site-head-content {
+    #sidebar-content {
         position: absolute;
         bottom: 20px;
         top: auto;
         left: 0px;
         right: 0px;
+    }
+
+    main {
+        position: relative;
+        left: 0px;
     }
 
     .post {
@@ -1033,15 +1000,6 @@ main
 
     blockquote {
         margin-left: 0;
-    }
-
-    .site-head {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        height: auto;
-        min-height: 240px;
-        padding: 15% 0;
     }
 
     .post {
@@ -1100,10 +1058,6 @@ main
         margin-right: 16px;
         font-size: 0.8em;
         line-height: 1.6em;
-    }
-
-    .site-head {
-        padding: 10% 0;
     }
 
     h1, h2 {
@@ -1179,7 +1133,7 @@ main
         font-size: 1.1rem;
     }
 
-    .content {
+    main {
         padding: 40px 12px;
     }
 }
