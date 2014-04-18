@@ -16,8 +16,10 @@ This theme is being used in my [blog](http://davidlecina.com/).
 
 * Clone this repository on your themes folder:
 
-    cd ghost/content/themes
-    sudo git clone https://github.com/dlecina/StayPuft
+```
+cd ghost/content/themes
+sudo git clone https://github.com/dlecina/StayPuft
+```
 
 * Restart Ghost.  
 * Select the theme in your Settings page.
