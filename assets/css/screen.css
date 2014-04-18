@@ -499,7 +499,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .blog-description {
-    color: white;
+    color: #7f8c8d;
     margin: 0;
     font-size: 1.8rem;
     line-height: 1.5em;
@@ -885,24 +885,22 @@ main
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
-    padding: 4rem 0;
-    border-top: #EBF2F6 1px solid;
+    bottom: 1rem;
+    width: 80%;
+    max-width: 700px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7em;
-    color: #BBC7CC;
-    text-align: center;
-    background: #F7FAFB;
+    color: #9EABB3;
 }
 
 .site-footer a {
-    color: #BBC7CC;
-    text-decoration: underline;
+    color: #9EABB3;
+    text-decoration: none;
 }
 
 .site-footer a:hover {
-    color: #50585D;
+    color: black;
 }
 
 .poweredby .icon-ghost {

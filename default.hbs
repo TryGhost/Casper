@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     {{! Document Settings }}
     <meta charset="utf-8" />
@@ -26,36 +27,37 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
+
 <body class="{{body_class}}">
 
     <main class="container" role="main">
+
         <aside class="cover" role="banner" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
             <div class="site-head-content inner">
                 {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
                 <a class="blog-logo" href="{{@blog.url}}"><h1 class="blog-title">{{@blog.title}}</h1></a>
                 <h2 class="blog-description">{{@blog.description}}</h2>
+
+                <!-- <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a> -->
             </div>
         </aside>
+
         <div class="content">
 
-        {{! Everything else gets inserted here }}
-        {{{body}}}
+            {{{body}}}
+
+            <footer class="site-footer">
+                {{> copyright}}
+                <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
+            </footer>
 
         </div>
+
     </main>
-
-    <!--
-    <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-        <div class="inner">
-             <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
-        </div>
-    </footer>
-    -->
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
 </body>
+
 </html>
