@@ -820,14 +820,23 @@ main
     top: 4rem;
     right: 0;
     width: 140px;
+    text-align: center;
 }
 
 .post-footer .share a {
-    font-size: 1.8rem;
+    font-size: 3rem;
     display: inline-block;
     margin: 1rem 1.6rem 1.6rem 0;
     color: #BBC7CC;
     text-decoration: none;
+}
+
+.post-footer .share a.fa:first-child {
+    margin-left: 0;
+}
+
+.post-footer .share a.fa:last-child {
+    margin-right: 0;
 }
 
 .post-footer .share a:hover {
