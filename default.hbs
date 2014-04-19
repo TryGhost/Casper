@@ -44,16 +44,19 @@
             </form>
 
             <div id="sidebar-links">
+                <ul id="subscription-links">
+                    <li><a target="_blank" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i> Subscribe via RSS</a></li>
+                    <!-- No support yet
+                    <li><a target="_blank" href=" "><i class="fa fa-envelope"></i> Subscribe via email<a></li>
+                    -->
+                </ul>
+                <ul id="sidebar-internal">
+                    <!-- For 'About' and other pages -->
+                </ul>
                 <ul id="sidebar-external">
                     {{> sidebar-external}}
                 </ul>
             </div>
-
-            <!--
-            <aside>
-                <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-            </aside>
-            -->
 
             <footer class="site-footer">
                 <section class="copyright">{{> copyright}}</section>
