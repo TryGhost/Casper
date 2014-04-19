@@ -840,29 +840,18 @@ main
    ========================================================================== */
 
 .tag-archive-header {
-    padding: 20px 0;
-    text-align: center;
+    text-align: left;
     max-width: 700px;
-    margin: 4rem 0px;
+    margin: 3rem 0px;
     border-bottom: 1px solid #EBF2F6;
-    position: relative;
 }
 
-.tag-archive-header:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #fff;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #fff 0 0 0 5px;
+.tag-archive-header-name {
+    margin-left: 1rem;
+}
+
+.tag-archive-header i {
+    font-size: 80%;
 }
 
 /* ==========================================================================
