@@ -18,7 +18,8 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
   color: #4b4b4b;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.25; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 65%;
     opacity: 0.8;
@@ -166,7 +167,7 @@ a {
   color: #d34836;
   background: transparent; }
   a:hover, a:focus, a:active {
-    color: #c43a2b; }
+    color: #982d21; }
   a:active, a:hover {
     outline: 0; }
   a:focus {
@@ -279,7 +280,7 @@ table {
   .post-meta a {
     color: #d2d2d2; }
     .post-meta a:hover {
-      color: #d34836; }
+      color: #982d21; }
 
 
 
@@ -316,7 +317,7 @@ ul.author-meta {
     color: #d2d2d2;
     text-decoration: underline; }
     ul.author-meta li a:hover {
-      color: #d34836; }
+      color: #982d21; }
 
 .post-footer .share a {
   display: inline-block;
@@ -338,23 +339,20 @@ ul.author-meta {
   padding-bottom: 5rem; }
 
 .archive-template .site-head a {
-  color: #fff; }
+  color: whitesmoke; }
 
 .archive-template .blog-logo {
   display: block;
   margin-top: 5rem; }
 
 .tag-archive-header {
-  padding: 20px 0;
   text-align: center;
-  max-width: 700px;
+  max-width: 43.75rem;
   margin: 4rem auto;
-  border-bottom: 1px solid #EBF2F6;
   position: relative; }
 
 .archive-template .blog-title {
-  display: inline-block;
-  padding: 2.5rem 0; }
+  display: inline-block; }
 
 /* ==========================================================================
    7. Third Party Elements - Embeds from other services
@@ -368,10 +366,6 @@ ul.author-meta {
   min-width: 25px;
   font-size: 1.1rem; }
 
-/* ==========================================================================
-   8. Pagination - Tools to let you flick between pages
-   ========================================================================== */
-/* The main wrapper for our pagination links */
 .pagination {
   position: relative;
   width: 80%;
@@ -385,9 +379,8 @@ ul.author-meta {
   color: #d2d2d2;
   text-decoration: underline; }
   .pagination a:hover {
-    color: #d34836; }
+    color: #982d21; }
 
-/* Push the previous/next links out to the left/right */
 
 
 .site-footer {
@@ -399,7 +392,7 @@ ul.author-meta {
     color: #d2d2d2;
     text-decoration: underline; }
     .site-footer a:hover {
-      color: #d34836; }
+      color: #982d21; }
   .site-footer .subscribe {
     text-align: center;
     text-decoration: none; }

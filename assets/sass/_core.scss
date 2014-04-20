@@ -41,10 +41,10 @@ body {
 
 // Link Styles
 a {
-	color: $action;
+	color: $primary;
 	background: transparent;
 	&:hover, &:focus, &:active {
-		color: $action-alt;
+		color: $primary-alt;
 	}
 	&:active, &:hover {
 		outline: 0;
@@ -202,7 +202,7 @@ table {
 		color: $tertiary;
 
 		&:hover {
-			color: $primary;
+			color: $primary-alt;
 		}
 	}
 
@@ -297,7 +297,7 @@ ul.author-meta {
 			color: $tertiary;
 			text-decoration: underline;
 			&:hover {
-				color: $primary;
+				color: $primary-alt;
 			}
 		}
 	}
@@ -332,7 +332,7 @@ ul.author-meta {
 }
 
 .archive-template .site-head a {
-	color: #fff;
+	color: $base-bg;
 }
 
 .archive-template .blog-logo {
@@ -341,17 +341,14 @@ ul.author-meta {
 }
 
 .tag-archive-header {
-	padding: 20px 0;
 	text-align: center;
-	max-width: 700px;
+	max-width: rem-calc(700);
 	margin: 4rem auto;
-	border-bottom: 1px solid #EBF2F6;
 	position: relative;
 }
 
 .archive-template .blog-title {
 	display: inline-block;
-	padding: 2.5rem 0;
 }
 
 /* ==========================================================================
@@ -371,11 +368,8 @@ ul.author-meta {
 }
 
 
-/* ==========================================================================
-   8. Pagination - Tools to let you flick between pages
-   ========================================================================== */
+// ========= Pagination =========
 
-/* The main wrapper for our pagination links */
 .pagination {
 	position: relative;
 	width: 80%;
@@ -390,11 +384,10 @@ ul.author-meta {
 	color: $tertiary;
 	text-decoration: underline;
 	&:hover {
-		color: $primary;
+		color: $primary-alt;
 	}
 }
 
-/* Push the previous/next links out to the left/right */
 .older-posts,
 .newer-posts {
 }
@@ -417,7 +410,7 @@ ul.author-meta {
 		text-decoration: underline;
 		
 		&:hover {
-			color: $primary;
+			color: $primary-alt;
 		}
 	}
 	

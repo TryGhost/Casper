@@ -32,6 +32,7 @@ h6 {
 h1, h2, h3, h4, h5, h6 {
 	color: $heading-color;
 	font-family: $header-font-family;
+	line-height: 1.25;
 	small {
 		font-size: $small-font-size;
 		opacity: 0.8;

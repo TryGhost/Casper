@@ -62,6 +62,7 @@ $header-font-family: 'Open Sans', sans-serif;
 // ========= Color Settings =========
 
 $primary: #d34836;
+$primary-alt: scale-color($primary, $lightness: -30%);
 $secondary: #4b4b4b;
 $tertiary: #d2d2d2;
 
@@ -73,10 +74,6 @@ $heading-color: $secondary;
 $alert: red;
 $success: green;
 
-// Links
-
-$action: $primary;
-$action-alt: darken($primary, 5%);
 
 // ========= Component Settings =========
 
