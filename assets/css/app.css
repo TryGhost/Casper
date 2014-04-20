@@ -38,12 +38,6 @@ dd {
 ol, ul {
   padding: 0 0 0 1em; }
 
-nav ul {
-  list-style: none; }
-  nav ul li {
-    display: inline-block;
-    margin-right: 1em; }
-
 strong, b {
   font-weight: 600; }
 
@@ -158,10 +152,9 @@ html {
 
 body {
   color: #2b2b2b;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Noto Serif', serif;
   font-size: 16px;
   background-color: whitesmoke;
-  padding: 3em;
   margin: 0; }
 
 a {
@@ -194,11 +187,464 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-nav ul {
-  list-style: none; }
-  nav ul li {
-    display: inline-block;
-    margin-right: 1em; }
+.vertical {
+  display: table-cell;
+  vertical-align: middle; }
+
+/* Big cover image on the home page */
+.site-head {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 60%;
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #fff;
+  background: #303538 no-repeat center center;
+  background-size: cover; }
+
+.blog-logo {
+  text-decoration: none; }
+
+/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
+.blog-logo img {
+  display: block;
+  max-height: 100px;
+  width: auto;
+  margin: 0 auto;
+  line-height: 0; }
+
+/* The details of your blog. Defined in ghost/settings/ */
+.blog-title {
+  margin: 10px 0 10px 0;
+  font-size: 5rem;
+  letter-spacing: -1px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); }
+
+.blog-description {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.5em;
+  font-weight: 300;
+  font-family: 'Noto Serif', serif;
+  letter-spacing: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
+
+/* Every post, on every page, gets this style on its <article> tag */
+.post {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 4rem auto;
+  padding-bottom: 4rem;
+  border-bottom: #EBF2F6 1px solid;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; }
+
+/* Add a little circle in the middle of the border-bottom on our .post
+   just for the lolz and stylepoints. */
+.post:after {
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: #E7EEF2 1px solid;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: #fff 0 0 0 5px; }
+
+.post-title {
+  margin: 0;
+  color: #222; }
+
+.post-title a {
+  text-decoration: none;
+  color: #222; }
+
+.post-excerpt p {
+  margin: 1.6rem 0 0 0;
+  font-size: 0.9em;
+  line-height: 1.6em; }
+
+.read-more {
+  text-decoration: none; }
+
+.post-meta {
+  display: inline-block;
+  margin: 0 0 5px 0;
+  font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  color: #9EABB3; }
+
+.post-meta a {
+  color: #9EABB3;
+  text-decoration: none; }
+
+.post-meta a:hover {
+  text-decoration: underline; }
+
+.user-meta {
+  position: relative;
+  padding: 0.3rem 40px 0 100px;
+  min-height: 77px; }
+
+.user-image {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.user-name {
+  display: block;
+  font-weight: bold; }
+
+.user-bio {
+  display: block;
+  max-width: 440px;
+  font-size: 1.4rem;
+  line-height: 1.5em; }
+
+.publish-meta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4.3rem 0 4rem 0;
+  text-align: right; }
+
+.publish-heading {
+  display: block;
+  font-weight: bold; }
+
+.publish-date {
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1.5em; }
+
+/* ==========================================================================
+   5. Single Post - When you click on an individual post
+   ========================================================================== */
+/* Stop .full-img from creating horizontal scroll - slight hack due to
+   imperfections with browser width % calculations and rounding */
+.post-template .content {
+  overflow: hidden; }
+
+/* Tweak the .post wrapper style */
+.post-template .post {
+  margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0; }
+
+/* Kill that stylish little circle that was on the border, too */
+.post-template .post:after {
+  display: none; }
+
+/* Insert some mad padding up in the header for better spacing */
+.post-template .post-header {
+  padding: 60px 0;
+  text-align: center; }
+
+.post-template .blog-title {
+  display: inline-block;
+  padding: 2.5rem 0; }
+
+/* Keep images centred and within the bounds of the post-width */
+.post-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0.6em 0; }
+
+/* Break out larger images to be wider than the main text column
+   the class is applied with jQuery */
+.post-content .full-img {
+  width: 126%;
+  max-width: none;
+  margin: 0 -13%; }
+
+/* The author credit area after the post */
+.post-footer {
+  position: relative;
+  margin: 4rem 0 0 0;
+  padding: 4rem 0 0 0;
+  border-top: #EBF2F6 1px solid; }
+
+.post-footer h4 {
+  font-size: 1.8rem;
+  margin: 0; }
+
+.post-footer p {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  line-height: 1.6em; }
+
+/* list of author links - location / url */
+.author-meta {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-style: italic;
+  color: #9EABB3; }
+
+.author-meta li {
+  float: left;
+  margin-left: 10px;
+  /* space to the left of the bullet */ }
+
+/* bullet divider */
+.author-meta li:before {
+  content: "•";
+  display: inline-block;
+  margin-right: 10px;
+  /* space to the right of the bullet */
+  color: #BBC7CC; }
+
+/* disable the bullet divider for the first item in the list */
+.author-meta li:first-child {
+  margin-left: 0; }
+
+.author-meta li:first-child:before {
+  display: none; }
+
+.author-meta a {
+  color: #9EABB3; }
+
+.author-meta a:hover {
+  color: #57A3E8; }
+
+/* Create some space to the right for the share links */
+.post-footer .author {
+  margin-right: 180px; }
+
+/* Drop the share links in the space to the right.
+   Doing it like this means it's easier for the author bio
+   to be flexible at smaller screen sizes while the share
+   links remain at a fixed width the whole time */
+.post-footer .share {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 140px; }
+
+.post-footer .share a {
+  font-size: 1.8rem;
+  display: inline-block;
+  margin: 1rem 1.6rem 1.6rem 0;
+  color: #BBC7CC;
+  text-decoration: none; }
+
+.post-footer .share a:hover {
+  color: #50585D; }
+
+/* ==========================================================================
+   6. Tag archive
+   ========================================================================== */
+.archive-template .site-head {
+  height: auto;
+  padding-bottom: 5rem; }
+
+.archive-template .site-head a {
+  color: #fff; }
+
+.archive-template .blog-logo {
+  display: block;
+  margin-top: 5rem; }
+
+.tag-archive-header {
+  padding: 20px 0;
+  text-align: center;
+  max-width: 700px;
+  margin: 4rem auto;
+  border-bottom: 1px solid #EBF2F6;
+  position: relative; }
+
+.tag-archive-header:after {
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: #E7EEF2 1px solid;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: #fff 0 0 0 5px; }
+
+.archive-template .blog-title {
+  display: inline-block;
+  padding: 2.5rem 0; }
+
+/* ==========================================================================
+   7. Third Party Elements - Embeds from other services
+   ========================================================================== */
+/* Github */
+.gist table {
+  margin: 0;
+  font-size: 1.4rem; }
+
+.gist .line-number {
+  min-width: 25px;
+  font-size: 1.1rem; }
+
+/* ==========================================================================
+   8. Pagination - Tools to let you flick between pages
+   ========================================================================== */
+/* The main wrapper for our pagination links */
+.pagination {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 4rem auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  color: #9EABB3;
+  text-align: center; }
+
+.pagination a {
+  color: #9EABB3; }
+
+/* Push the previous/next links out to the left/right */
+.older-posts, .newer-posts {
+  position: absolute;
+  display: inline-block;
+  padding: 0 15px;
+  border: #EBF2F6 2px solid;
+  text-decoration: none;
+  border-radius: 30px;
+  -webkit-transition: border ease 0.3s;
+  transition: border ease 0.3s; }
+
+.older-posts {
+  right: 0; }
+
+.page-number {
+  display: inline-block;
+  padding: 2px 0; }
+
+.newer-posts {
+  left: 0; }
+
+.older-posts:hover, .newer-posts:hover {
+  border-color: #9EABB3; }
+
+/* ==========================================================================
+   9. Footer - The bottom of every page
+   ========================================================================== */
+.site-footer {
+  position: relative;
+  margin: 8rem 0 0 0;
+  padding: 4rem 0;
+  border-top: #EBF2F6 1px solid;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.7em;
+  color: #BBC7CC;
+  text-align: center;
+  background: #F7FAFB; }
+
+.site-footer a {
+  color: #BBC7CC;
+  text-decoration: underline; }
+
+.site-footer a:hover {
+  color: #50585D; }
+
+.poweredby .icon-ghost {
+  font-weight: 700;
+  text-decoration: none; }
+
+.poweredby .icon-ghost:hover {
+  text-decoration: none; }
+
+.poweredby .icon-ghost:before {
+  font-size: 1rem;
+  margin-right: 0.2em; }
+
+/* The subscribe icon on the footer */
+.subscribe {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  margin-left: -15px;
+  border: #EBF2F6 1px solid;
+  text-align: center;
+  line-height: 2.4rem;
+  border-radius: 50px;
+  background: #fff;
+  -webkit-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s; }
+
+/* The RSS icon, inserted via icon font */
+.subscribe:before {
+  color: #D2DEE3;
+  font-size: 10px;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  font-weight: bold;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease; }
+
+/* Add a box shadow to on hover */
+.subscribe:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s; }
+
+.subscribe:hover:before {
+  color: #50585D; }
+
+/* CSS tooltip saying "Subscribe!" - initially hidden */
+.tooltip {
+  opacity: 0;
+  display: inline-block;
+  padding: 4px 8px 5px 8px;
+  position: absolute;
+  top: -23px;
+  left: -21px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1em;
+  text-align: center;
+  background: #50585D;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  -webkit-transition: opacity 0.3s ease, top 0.3s ease;
+  transition: opacity 0.3s ease, top 0.3s ease; }
+
+/* The little chiclet arrow under the tooltip, pointing down */
+.tooltip:after {
+  content: "";
+  border-width: 5px 5px 0 5px;
+  border-style: solid;
+  border-color: #50585D transparent;
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  margin-left: -5px;
+  z-index: 220;
+  width: 0; }
+
+/* On hover, show the tooltip! */
+.subscribe:hover .tooltip {
+  opacity: 1;
+  top: -33px; }
+
 
 @media only screen { }
 
@@ -212,28 +658,6 @@ nav ul {
 
 @media only screen and (orientation: portrait) { }
 
-/* ==========================================================================
-   Table of Contents
-   ========================================================================== */
-/*
-
-	0.  Normalize
-	1.  Icons
-	2.  General
-	3.  Utilities
-	4.  General
-	5.  Single Post
-	6.  Tag Archive
-	7.  Third Party Elements
-	8.  Pagination
-	9.  Footer
-	10.  Media Queries (Tablet)
-	11. Media Queries (Mobile)
-
- */
-/* ==========================================================================
-   0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
-   ========================================================================== */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
