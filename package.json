@@ -8,6 +8,7 @@
     "gulp-jshint": "^1.5.3",
     "gulp-autoprefixer": "0.0.7",
     "gulp-changed": "^0.3.0",
-    "gulp-notify": "^1.2.5"
+    "gulp-notify": "^1.2.5",
+    "jshint-stylish": "^0.1.5"
   }
 }

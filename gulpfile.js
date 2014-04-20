@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass'),
 	autoprefix = require('gulp-autoprefixer'),
 	jshint = require('gulp-jshint'),
+	stylish = require('jshint-stylish'),
 	imagemin = require('gulp-imagemin'),
 	notify = require('gulp-notify');
 
