@@ -12,7 +12,7 @@ var sass = require('gulp-sass'),
 
 gulp.task('sass', function () {
 	gulp.src('./assets/sass/*.scss')
-		.pipe(sass())
+		.pipe(sass({errLogToConsole: true}))
 		.pipe(autoprefix('last 2 versions'))
 		.pipe(gulp.dest('./assets/css'))
 		.pipe(notify({ message: 'Stylesheet build task complete' }));
