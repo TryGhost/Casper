@@ -31,6 +31,7 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
 	color: $heading-color;
+	font-family: $header-font-family;
 	small {
 		font-size: $small-font-size;
 		opacity: 0.8;
@@ -39,6 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // p, pre, label
+
+p {
+	line-height: $base-line-height;
+}
 
 pre {
 	white-space: pre-wrap;
