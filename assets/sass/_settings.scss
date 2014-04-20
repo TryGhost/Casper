@@ -23,25 +23,7 @@ $base-font-size: 16px;
 
 // ========= Grid Variables =========
 
-$default-float: left;
-$text-direction: ltr;
-$opposite-direction: right;
-
-@if $text-direction == ltr {
-	$default-float: left;
-	$opposite-direction: right;
-}
-@else {
-	$default-float: right;
-	$opposite-direction: left;
-}
-
-$include-html-grid-classes: false;
-$row-width: rem-calc(1440);
-$column-gutter: rem-calc(30);
-$total-columns: 12;
-
-$include-html-grid-classes: false;
+// Roll your own, yo
 
 // ========= Media Queries =========
 
@@ -72,6 +54,10 @@ $small-font-size: 65%;
 
 // Indentation for dl, ul, blockquote
 $indent-amount: 1em;
+
+// Fonts
+$base-font-family: 'Noto Serif', serif;
+$header-font-family: 'Noto Serif', serif;
 
 // ========= Color Settings =========
 
