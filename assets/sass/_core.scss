@@ -34,6 +34,7 @@ body {
 	color: $base-color;
 	font-family: $base-font-family;
 	font-size: $base-font-size;
+	line-height: $base-line-height;
 	background-color: $base-bg;
 	margin: 0;
 }
@@ -348,23 +349,6 @@ ul.author-meta {
 	position: relative;
 }
 
-.tag-archive-header:after {
-	display: block;
-	content: "";
-	width: 7px;
-	height: 7px;
-	border: #E7EEF2 1px solid;
-	position: absolute;
-	bottom: -5px;
-	left: 50%;
-	margin-left: -5px;
-	background: #fff;
-	-webkit-border-radius: 100%;
-	-moz-border-radius: 100%;
-	border-radius: 100%;
-	box-shadow: #fff 0 0 0 5px;
-}
-
 .archive-template .blog-title {
 	display: inline-block;
 	padding: 2.5rem 0;
@@ -395,121 +379,80 @@ ul.author-meta {
 .pagination {
 	position: relative;
 	width: 80%;
-	max-width: 700px;
+	max-width: rem-calc(700);
 	margin: 4rem auto;
 	font-family: $header-font-family;
-	font-size: 1.3rem;
-	color: #9EABB3;
+	color: $tertiary;
 	text-align: center;
 }
 
 .pagination a {
-	color: #9EABB3;
+	color: $tertiary;
+	text-decoration: underline;
+	&:hover {
+		color: $primary;
+	}
 }
 
 /* Push the previous/next links out to the left/right */
 .older-posts,
 .newer-posts {
-	position: absolute;
-	display: inline-block;
-	padding: 0 15px;
-	border: #EBF2F6 2px solid;
-	text-decoration: none;
-	border-radius: 30px;
-	transition: border ease 0.3s;
-}
-
-.older-posts {
-	right: 0;
 }
 
 .page-number {
-	display: inline-block;
-	padding: 2px 0;
-}
-
-.newer-posts {
-	left: 0;
-}
-
-.older-posts:hover,
-.newer-posts:hover {
-	border-color: #9EABB3;
 }
 
 
-/* ==========================================================================
-   9. Footer - The bottom of every page
-   ========================================================================== */
+
+// ========= Global Footer Styles =========
 
 .site-footer {
 	position: relative;
 	font-family: $header-font-family;
-	font-size: 1.3rem;
-	color: #BBC7CC;
+	color: $tertiary;
 	text-align: center;
-}
 
-.site-footer a {
-	color: #BBC7CC;
-	text-decoration: underline;
-}
-
-.site-footer a:hover {
-	color: #50585D;
-}
-
-.poweredby .icon-ghost {
-	font-weight: 700;
-	text-decoration: none;
-}
-
-.poweredby .icon-ghost:hover {
-	text-decoration: none;
-}
-
-.poweredby .icon-ghost:before {
-	font-size: 1rem;
-	margin-right: 0.2em;
-}
-
-/* The subscribe icon on the footer */
-.subscribe {
-	width: 28px;
-	height: 28px;
-	position: absolute;
-	top: -14px;
-	left: 50%;
-	margin-left: -15px;
-	border: #EBF2F6 1px solid;
-	text-align: center;
-	line-height: 2.4rem;
-	transition: box-shadow 0.5s;
-}
-
-/* The RSS icon, inserted via icon font */
-.subscribe:before {
-	color: #D2DEE3;
-	font-size: 10px;
-	position: absolute;
-	top: 9px;
-	left: 9px;
-	font-weight: bold;
-	transition: color 0.5s ease;
-}
-
-
-
-
-
-
-// ========= Navigation Styles =========
-
-nav {
+	a {
+		color: $tertiary;
+		text-decoration: underline;
+		
+		&:hover {
+			color: $primary;
+		}
+	}
 	
+	.subscribe {
+		text-align: center;
+		text-decoration: none;
+
+		&:before {
+			text-decoration: none;
+			padding-right: 0.5em;
+		}
+		
+		span {
+			text-decoration: underline;
+		}
+	}
 }
 
 
+.poweredby {
+
+	 .icon-ghost {
+		font-weight: 700;
+		text-decoration: none;
+		
+		&:before {
+			font-size: 1rem;
+			margin-right: 0.2em;
+		}
+	}
+}
+
+
+
+// ========= Media Quieries =========
 
 @media #{$screen} {}
 
