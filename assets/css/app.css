@@ -91,6 +91,7 @@ input, button, select, textarea {
 
 input[type="search"] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
@@ -103,6 +104,7 @@ textarea {
 
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
   transition: border linear 0.2s, box-shadow linear 0.2s; }
 
 input[type="radio"], input[type="checkbox"] {
@@ -148,6 +150,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     clear: both; }
 
 *, *:before, *:after {
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -340,13 +343,13 @@ button[disabled], html input[disabled] {
   cursor: default; }
 
 input[type="checkbox"], input[type="radio"] {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0; }
 
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
 /* ==========================================================================
@@ -405,6 +408,11 @@ body {
   line-height: 1.6em;
   color: #3A4145; }
 
+::-moz-selection {
+  color: #222;
+  background: #D6EDFF;
+  text-shadow: none; }
+
 ::selection {
   color: #222;
   background: #D6EDFF;
@@ -442,6 +450,7 @@ h6 {
 
 a {
   color: #4a4a4a;
+  -webkit-transition: color ease 0.3s;
   transition: color ease 0.3s; }
 
 a:hover {
@@ -679,6 +688,9 @@ margin on the iframe, cause it breaks stuff. */
   padding-bottom: 4rem;
   border-bottom: #EBF2F6 1px solid;
   word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto; }
 
 /* Add a little circle in the middle of the border-bottom on our .post
@@ -694,8 +706,6 @@ margin on the iframe, cause it breaks stuff. */
   left: 50%;
   margin-left: -5px;
   background: #fff;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
   border-radius: 100%;
   box-shadow: #fff 0 0 0 5px; }
 
@@ -907,8 +917,6 @@ margin on the iframe, cause it breaks stuff. */
   left: 50%;
   margin-left: -5px;
   background: #fff;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
   border-radius: 100%;
   box-shadow: #fff 0 0 0 5px; }
 
@@ -953,6 +961,7 @@ margin on the iframe, cause it breaks stuff. */
   border: #EBF2F6 2px solid;
   text-decoration: none;
   border-radius: 30px;
+  -webkit-transition: border ease 0.3s;
   transition: border ease 0.3s; }
 
 .older-posts {
@@ -1014,6 +1023,7 @@ margin on the iframe, cause it breaks stuff. */
   line-height: 2.4rem;
   border-radius: 50px;
   background: #fff;
+  -webkit-transition: box-shadow 0.5s;
   transition: box-shadow 0.5s; }
 
 /* The RSS icon, inserted via icon font */
@@ -1024,11 +1034,13 @@ margin on the iframe, cause it breaks stuff. */
   top: 9px;
   left: 9px;
   font-weight: bold;
+  -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease; }
 
 /* Add a box shadow to on hover */
 .subscribe:hover {
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
+  -webkit-transition: box-shadow 0.25s;
   transition: box-shadow 0.25s; }
 
 .subscribe:hover:before {
@@ -1049,6 +1061,7 @@ margin on the iframe, cause it breaks stuff. */
   background: #50585D;
   border-radius: 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  -webkit-transition: opacity 0.3s ease, top 0.3s ease;
   transition: opacity 0.3s ease, top 0.3s ease; }
 
 /* The little chiclet arrow under the tooltip, pointing down */
@@ -1077,7 +1090,6 @@ margin on the iframe, cause it breaks stuff. */
   blockquote {
     margin-left: 0; }
   .site-head {
-    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: auto;
@@ -1144,6 +1156,7 @@ margin on the iframe, cause it breaks stuff. */
     padding: 0; }
   .post-content .full-img {
     width: auto;
+    width: -webkit-calc(100% + 32px);
     width: calc(100% + 32px);
     /* expand with to image + margins */
     margin: 0 -16px;
