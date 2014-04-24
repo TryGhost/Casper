@@ -80,6 +80,11 @@ code, kbd, pre, samp {
   font-family: monospace, serif;
   font-size: 1em; }
 
+pre > code {
+  display: block;
+  padding: 2rem;
+  background-color: #eaeaea; }
+
 label, select {
   display: block; }
 
@@ -288,9 +293,9 @@ table {
   margin: 0 0 0.25rem 0;
   font-family: 'Noto Serif', serif;
   font-size: 1rem;
-  color: #d2d2d2; }
+  color: #9b9b9b; }
   .post-meta a {
-    color: #d2d2d2; }
+    color: #9b9b9b; }
     .post-meta a:hover {
       color: #982d21; }
 
@@ -321,12 +326,12 @@ ul.author-meta {
   list-style: none;
   padding: 0;
   font-style: italic;
-  color: #d2d2d2; }
+  color: #9b9b9b; }
   ul.author-meta li {
     display: inline-block;
     margin-right: 1em; }
   ul.author-meta li a {
-    color: #d2d2d2;
+    color: #9b9b9b;
     text-decoration: underline; }
     ul.author-meta li a:hover {
       color: #982d21; }
@@ -334,7 +339,7 @@ ul.author-meta {
 .post-footer .share a {
   display: inline-block;
   margin: 1rem 1.6rem 1.6rem 0;
-  color: #d2d2d2;
+  color: #9b9b9b;
   text-decoration: none; }
   .post-footer .share a:before {
     text-decoration: none; }
@@ -384,11 +389,11 @@ ul.author-meta {
   max-width: 43.75rem;
   margin: 4rem auto;
   font-family: 'Open Sans', sans-serif;
-  color: #d2d2d2;
+  color: #9b9b9b;
   text-align: center; }
 
 .pagination a {
-  color: #d2d2d2;
+  color: #9b9b9b;
   text-decoration: underline; }
   .pagination a:hover {
     color: #982d21; }
@@ -398,10 +403,10 @@ ul.author-meta {
 .site-footer {
   position: relative;
   font-family: 'Open Sans', sans-serif;
-  color: #d2d2d2;
+  color: #9b9b9b;
   text-align: center; }
   .site-footer a {
-    color: #d2d2d2;
+    color: #9b9b9b;
     text-decoration: underline; }
     .site-footer a:hover {
       color: #982d21; }

@@ -113,7 +113,16 @@ small {
 	font-size: $small-font-size;
 }
 
+// Code & Code Blocks
+
 code, kbd, pre, samp {
 	font-family: monospace, serif;
 	font-size: 1em;
+}
+
+pre > code {
+	display: block;
+	padding: 2rem;
+	background-color: mix($base-bg, $base-color,95%);
+
 }
