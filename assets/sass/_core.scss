@@ -39,6 +39,10 @@ body {
 	margin: 0;
 }
 
+main {
+	@include clearfix;
+}
+
 // Link Styles
 a {
 	color: $primary;
@@ -142,6 +146,10 @@ table {
 	background: $secondary no-repeat center center;
 	background-size: cover;
 	@include clearfix;
+
+	.site-head-content {
+		margin: 4rem 0;
+	}
 
 	.blog-logo {
 		text-decoration: none;

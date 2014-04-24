@@ -163,6 +163,16 @@ body {
   background-color: whitesmoke;
   margin: 0; }
 
+main {
+  zoom: 1; }
+  main:before, main:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  main:after {
+    clear: both; }
+
 a {
   color: #d34836;
   background: transparent; }
@@ -243,6 +253,8 @@ table {
     overflow: hidden; }
   .site-head:after {
     clear: both; }
+  .site-head .site-head-content {
+    margin: 4rem 0; }
   .site-head .blog-logo {
     text-decoration: none; }
     .site-head .blog-logo img {
