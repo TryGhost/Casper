@@ -230,7 +230,7 @@ a:hover {
 
 h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
-    color: black;
+    color: #22313F;
 }
 
 
@@ -486,7 +486,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .blog-description {
-    color: #9EABB3;
+    color: #BBC4C9;
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
@@ -611,7 +611,7 @@ margin on the iframe, cause it breaks stuff. */
     min-width: 300px;
     height: 100%;
     z-index: 100;
-    background-color: #19242e;
+    background-color: #22313F;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
 }
@@ -649,6 +649,7 @@ main
 {
     float: right;
     line-height: 1.6em;
+    color: #9EABB3
 }
 
 #results
@@ -690,7 +691,7 @@ main
 
 #sidebar-links ul
 {
-    color: #9EABB3;
+    color: #BBC4C9;
     font-size: 13px;
     list-style: none inside none;
     padding: 0;
@@ -704,7 +705,7 @@ main
 
 #sidebar-links a
 {
-    color: #9EABB3;
+    color: #BBC4C9;
     text-decoration: none;
 }
 
@@ -942,11 +943,11 @@ main
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7em;
-    color: #9EABB3;
+    color: #e6e9eb;
 }
 
 .site-footer a {
-    color: #9EABB3;
+    color: #e6e9eb;
     text-decoration: none;
 }
 
