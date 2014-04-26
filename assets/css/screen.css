@@ -498,7 +498,6 @@ margin on the iframe, cause it breaks stuff. */
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width:80%;
     max-width: 700px;
     border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
@@ -608,7 +607,8 @@ margin on the iframe, cause it breaks stuff. */
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 25%;
+    width: 20%;
+    min-width: 300px;
     height: 100%;
     z-index: 100;
     background-color: #242424;
@@ -619,11 +619,11 @@ margin on the iframe, cause it breaks stuff. */
 main
 {
     position: absolute;
-    left: 25%;
+    left: 20%;
     right: 0px;
     top: 0px;
     bottom: 0px;
-    padding: 40px 10%;
+    padding: 40px 15%;
 }
 
 #search
@@ -1117,6 +1117,9 @@ main
         font-size: 2.8rem;
     }
 
+    main {
+        padding: 40px 8%;
+    }
 }
 
 /* ==========================================================================
