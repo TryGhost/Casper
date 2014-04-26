@@ -643,6 +643,9 @@ main
 {
     width: 100%;
     font-size: 0.8em;
+    border: none;
+    border-radius: 12px;
+    padding: 4px;
 }
 
 #search label
