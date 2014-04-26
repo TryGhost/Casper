@@ -1072,7 +1072,8 @@ main
     }
 
     #sidebar-links li {
-        display: inline;
+        display: inline-block;
+        margin: 0px 4px;
     }
 }
 
