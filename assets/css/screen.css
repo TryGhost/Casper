@@ -645,7 +645,9 @@ main
     font-size: 0.8em;
     border: none;
     border-radius: 12px;
-    padding: 4px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    padding-left: 12px;
 }
 
 #search label
