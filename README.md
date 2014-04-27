@@ -10,6 +10,7 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 * In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
 * Basic support for [slidr.js](https://github.com/bchanx/slidr).
+* Syntax highlighting using [Prism](https://github.com/LeaVerou/prism/).
 
 ## Demo
 
