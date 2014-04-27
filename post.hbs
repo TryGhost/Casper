@@ -25,10 +25,10 @@
                 <div class="author-text">
                     <h4>{{author.name}}</h4>
                     <p>{{author.bio}}</p>
-                    <ul class="author-meta clearfix">
-                        {{#if author.location}}<li>{{author.location}}</li>{{/if}}
-                        {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
-                    </ul>
+                    <div class="author-meta clearfix">
+                        {{#if author.location}}<p>{{author.location}}</p>{{/if}}
+                        {{#if author.website}}<p><a href="{{author.website}}">{{author.website}}</a></p>{{/if}}
+                    </div>
                 </div>
             </section>
 

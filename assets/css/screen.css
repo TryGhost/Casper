@@ -797,23 +797,6 @@ main
     color: #9EABB3;
 }
 
-.author-meta li {
-    float: left;
-    margin-left: 10px; /* space to the left of the bullet */
-}
-
-/* bullet divider */
-.author-meta li:before {
-    content: "•";
-    display: inline-block;
-    margin-right: 10px; /* space to the right of the bullet */
-    color: #BBC7CC;
-}
-
-/* disable the bullet divider for the first item in the list */
-.author-meta li:first-child { margin-left: 0; }
-.author-meta li:first-child:before { display: none; }
-
 .author-meta a {
     color: #9EABB3;
 }
@@ -866,6 +849,14 @@ main
 
 .author-image img {
     border-radius: 100%;
+}
+
+.author-text {
+    overflow: hidden;
+}
+
+.author-meta p {
+    margin: 0;
 }
 
 /* ==========================================================================
