@@ -846,6 +846,15 @@ main
     color: #50585D;
 }
 
+.author-image {
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 20px;
+}
+
+.author-image img {
+    border-radius: 100%;
+}
 
 /* ==========================================================================
    6. Tag archive

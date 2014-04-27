@@ -19,12 +19,17 @@
         <footer class="post-footer">
 
             <section class="author">
-                <h4>{{author.name}}</h4>
-                <p>{{author.bio}}</p>
-                <ul class="author-meta clearfix">
-                    {{#if author.location}}<li>{{author.location}}</li>{{/if}}
-                    {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
-                </ul>
+                <div class="author-image">
+                    {{#if author.image}} <img src="{{author.image}}" alt="{{author.name}}"/> {{/if}}
+                </div>
+                <div class="author-text">
+                    <h4>{{author.name}}</h4>
+                    <p>{{author.bio}}</p>
+                    <ul class="author-meta clearfix">
+                        {{#if author.location}}<li>{{author.location}}</li>{{/if}}
+                        {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
+                    </ul>
+                </div>
             </section>
 
             <section class="share">
