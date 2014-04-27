@@ -632,13 +632,6 @@ main
     width: 100%;
 }
 
-#search span
-{
-    display: block;
-    overflow: hidden;
-    padding: 0 1em 0 0;
-}
-
 #search input
 {
     width: 100%;
@@ -647,15 +640,19 @@ main
     border-radius: 12px;
     box-sizing:border-box;
     -moz-box-sizing:border-box;
-    padding-left: 12px;
+    padding-left: 10px;
+    padding-right: 30px;
 }
 
-#search label
-{
-    float: right;
-    line-height: 1.6em;
-    color: #9EABB3
-}
+#search:after {
+    color: #9EABB3;
+    font-family: 'FontAwesome';
+    content: "\f002"; /* fa-search */
+    font-size: 14px;
+    margin-top: 1px;
+    right: 10px;
+    position: absolute; /* must be set to absolute */
+} 
 
 #results
 {
