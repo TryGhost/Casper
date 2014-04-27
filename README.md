@@ -5,6 +5,7 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 ## Features
 
 * Responsive design.
+* Post comments using [Disqus](http://disqus.com/).
 * Smoother navigation using [InstantClick](https://github.com/dieulot/instantclick).
 * In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
@@ -30,6 +31,7 @@ sudo git clone https://github.com/dlecina/StayPuft
 ## Configuration
 
 * Replace `assets/favicon.png` with your own favicon, or remove for the default Ghost favicon.
+* Modify `partials/disqus.hbs` with your shortname.
 * Replace `partials/copyright.hbs` with your own disclaimer.
 * Modify `partials/sidebar-external.hbs` with your own external links.
 * After configuration, you may have to restart for all changes to take place.

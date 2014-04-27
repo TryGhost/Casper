@@ -716,6 +716,17 @@ main
     color: white;
 }
 
+.post-indexfooter
+{
+    margin: 1rem 0;
+}
+
+.post-indexfooter a
+{
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
@@ -758,9 +769,10 @@ main
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 4rem 0 0 0;
-    padding: 4rem 0 0 0;
+    margin: 4rem 0 4rem 0;
+    padding: 4rem 0 4rem 0;
     border-top: #EBF2F6 1px solid;
+    border-bottom: #EBF2F6 1px solid;
 }
 
 .post-footer h4 {
@@ -1201,7 +1213,6 @@ main
 
     .post-footer {
         padding: 4rem 0;
-        text-align: center;
     }
 
     .post-footer .author {
