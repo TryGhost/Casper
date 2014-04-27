@@ -644,7 +644,7 @@ main
     padding-right: 30px;
 }
 
-#search:after {
+#search:before {
     color: #9EABB3;
     font-family: 'FontAwesome';
     content: "\f002"; /* fa-search */
