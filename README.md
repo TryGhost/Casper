@@ -16,6 +16,9 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 
 This theme is being used in my [blog](http://davidlecina.com/).
 
+*  ["Welcome to Ghost" post](http://davidlecina.com/welcome-to-ghost/).
+*  [Prism demo](http://davidlecina.com/prism-demo/).
+
 ## Installation
 
 * Clone this repository on your themes folder:
