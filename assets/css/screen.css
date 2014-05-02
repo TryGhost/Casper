@@ -166,7 +166,7 @@ body {
     height: 100%;
     max-height: 100%;
     font-family: 'Roboto', sans-serif;
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     line-height: 1.6em;
     color: #3A4145;
 }
@@ -190,25 +190,25 @@ h4, h5, h6 {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1.2em;
     letter-spacing: -2px;
     text-indent: -3px;
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 1.2em;
     letter-spacing: -1px;
     text-indent: -2px;
 }
 
 h3 {
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 h4 {
-    font-size: 3rem;
+    font-size: 2.75rem;
 }
 
 h5 {
@@ -473,7 +473,6 @@ margin on the iframe, cause it breaks stuff. */
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
     margin: 10px 0 10px 0;
-    font-size: 3rem;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 1px 6px rgba(0,0,0,0.1);
@@ -488,7 +487,7 @@ margin on the iframe, cause it breaks stuff. */
 .blog-description {
     color: #BBC4C9;
     font-size: 1.8rem;
-    line-height: 1.5em;
+    line-height: 1.3em;
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
@@ -607,8 +606,7 @@ margin on the iframe, cause it breaks stuff. */
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 20%;
-    min-width: 300px;
+    width: 370px;
     height: 100%;
     z-index: 100;
     background-color: #22313F;
@@ -619,7 +617,7 @@ margin on the iframe, cause it breaks stuff. */
 main
 {
     position: absolute;
-    left: 20%;
+    left: 370px;
     right: 0px;
     top: 0px;
     bottom: 0px;
@@ -657,7 +655,6 @@ main
 #results
 {
     text-align: center;
-    padding: 0px 4rem;
     margin-bottom: 4rem;
 }
 
@@ -1121,20 +1118,20 @@ main
     }
 
     h1 {
-        font-size: 4.8rem;
+        font-size: 3.8rem;
         text-indent: -2px;
     }
 
     h2 {
-        font-size: 3.8rem;
+        font-size: 3rem;
     }
 
     h3 {
-        font-size: 3.3rem;
+        font-size: 2.8rem;
     }
 
     h4 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     main {
@@ -1162,24 +1159,20 @@ main
 
     .post {
         width:auto;
-        margin-left: 16px;
-        margin-right: 16px;
-        font-size: 0.8em;
-        line-height: 1.6em;
     }
 
     h1, h2 {
-        font-size: 3rem;
+        font-size: 2.4rem;
         line-height: 1.1em;
         letter-spacing: -1px;
     }
 
     h3 {
-        font-size: 2.8rem;
+        font-size: 2rem;
     }
 
     h4 {
-        font-size: 2.3rem;
+        font-size: 2rem;
     }
 
     .post-template .post {
