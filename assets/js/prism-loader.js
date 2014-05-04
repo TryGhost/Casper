@@ -1,8 +1,8 @@
-(function () {
-    function isNumber(n) {
-      return !isNaN(parseFloat(n)) && isFinite(n);
-    }
 
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+function prism_markdown(){
     // All code elements with class language-* or lang-*
     var codeEls = $('pre > code[class*=lang-], pre > code[class*=language-]');
     if (codeEls.length) {
@@ -63,5 +63,6 @@
                 }
             }
         });
-    }
-})()
+    };
+}
+prism_markdown()

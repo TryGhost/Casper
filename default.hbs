@@ -78,6 +78,13 @@
 
     <script src="{{asset "js/instantclick.min.js"}}" data-no-instant></script>
     <script data-no-instant>InstantClick.init();</script>
+    <script data-no-instant>
+        InstantClick.on('change', function() {
+            prism_markdown();
+            Prism.highlightAll();
+        });
+        InstantClick.init();
+    </script>
 
     <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
     <script>
