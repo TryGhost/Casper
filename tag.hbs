@@ -12,7 +12,12 @@
 
 <article class="{{post_class}}">
     <header class="post-header">
-        <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
+        <div class="post-meta">
+            <time datetime="{{date format="YYYY-MM-DD"}}">
+                {{date format="MMMM Do, YYYY"}} - {{date timeago="true"}}
+            </time>
+            {{tags prefix="<br><i class='fa fa-tag'></i> " separator=" · "}}
+        </div>
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
 
     </header>
