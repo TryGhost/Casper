@@ -29,7 +29,7 @@ cd ghost/content/themes
 sudo git clone https://github.com/dlecina/StayPuft
 ```
 
-* **[Configure](#configuration)** the theme.
+* **[Configure](#configuration) the theme.**
 * Restart Ghost.
 * Select the theme in your Settings page.
 
