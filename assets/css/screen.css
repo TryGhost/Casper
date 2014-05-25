@@ -430,7 +430,7 @@ margin on the iframe, cause it breaks stuff. */
 .inner {
     position: relative;
     width: 80%;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -497,7 +497,7 @@ margin on the iframe, cause it breaks stuff. */
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    max-width: 700px;
+    max-width: 800px;
     border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
     hyphens: auto;
@@ -886,7 +886,7 @@ main
 
 .tag-archive-header {
     text-align: left;
-    max-width: 700px;
+    max-width: 800px;
     margin: 3rem 0px;
     border-bottom: 1px solid #EBF2F6;
 }
@@ -924,7 +924,7 @@ main
 .pagination {
     position: relative;
     width: 80%;
-    max-width: 700px;
+    max-width: 800px;
     margin: 4rem 0px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
@@ -974,7 +974,7 @@ main
 .site-footer {
     position: relative;
     margin-top: 2rem;
-    max-width: 700px;
+    max-width: 800px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7em;
@@ -1113,12 +1113,21 @@ main
     }
 }
 
-
 /* ==========================================================================
-   10. Media Queries - Smaller than 900px
+   Media Queries - Smaller than 1279px
    ========================================================================== */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1279px) {
+    main {
+        padding: 40px 10%;
+    }
+}
+
+/* ==========================================================================
+   10. Media Queries - Smaller than 1023px
+   ========================================================================== */
+
+@media only screen and (max-width: 1023px) {
 
     blockquote {
         margin-left: 0;
