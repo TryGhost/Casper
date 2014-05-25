@@ -165,7 +165,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.8rem;
     line-height: 1.6em;
     color: #3A4145;
@@ -489,7 +489,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.8rem;
     line-height: 1.3em;
     font-weight: 300;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
     text-indent: 0px;
 }
@@ -544,7 +544,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-meta {
     display: inline-block;
     margin: 0 0 5px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.4rem;
     color: #9EABB3;
 }
@@ -906,7 +906,7 @@ main
     width: 80%;
     max-width: 700px;
     margin: 4rem 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -955,7 +955,7 @@ main
     position: relative;
     margin-top: 2rem;
     max-width: 700px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7em;
     color: #e6e9eb;
