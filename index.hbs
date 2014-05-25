@@ -9,9 +9,11 @@
 <article class="{{post_class}}">
     <header class="post-header">
         <div class="post-meta">
-            <i class='fa fa-calendar'></i><time datetime="{{date format="YYYY-MM-DD"}}">
-                {{date format="MMMM Do, YYYY"}} - {{date timeago="true"}}
-            </time>
+            <span class="post-time">
+                <i class='fa fa-calendar'></i>
+                <time datetime="{{date format="YYYY-MM-DD"}}" class="timeago">{{date timeago="true"}}</time>
+                <time datetime="{{date format="YYYY-MM-DD"}}" class="fulldate">{{date format="MMMM Do, YYYY"}}</time>
+            </span>
             {{tags prefix="<br><i class='fa fa-tag'></i> " separator=" · "}}
         </div>
         <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>

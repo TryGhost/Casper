@@ -545,7 +545,7 @@ margin on the iframe, cause it breaks stuff. */
     display: inline-block;
     margin: 0 0 5px 0;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.4rem;
+    font-size: 15px;
     color: #9EABB3;
 }
 
@@ -556,6 +556,11 @@ margin on the iframe, cause it breaks stuff. */
 
 .post-meta a:hover {
     text-decoration: underline;
+}
+
+.post-meta i
+{
+    width: 17px;
 }
 
 .user-meta {
@@ -722,6 +727,21 @@ main
 {
     font-weight: bold;
     text-decoration: none;
+}
+
+.post-time .fulldate
+{
+    display: none;
+}
+
+.post-time:hover .timeago
+{
+    display: none;
+}
+
+.post-time:hover .fulldate
+{
+    display: inline;
 }
 
 /* ==========================================================================
@@ -1196,7 +1216,12 @@ main
     }
 
     .post-meta {
-        font-size: 1.3rem;
+        font-size: 13px;
+    }
+
+    .post-meta i
+    {
+        width: 15px;
     }
 
     .post-footer {
