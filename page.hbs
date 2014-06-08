@@ -13,6 +13,59 @@
             {{content}}
         </section>
 
+        <footer class="post-footer">
+
+            <section class="author">
+                <div class="author-image">
+                    {{#if author.image}} <img src="{{author.image}}" alt="{{author.name}}"/> {{/if}}
+                </div>
+                <div class="author-text">
+                    <h4>{{author.name}}</h4>
+                    <p>{{author.bio}}</p>
+                    <div class="author-meta clearfix">
+                        {{#if author.location}}<p>{{author.location}}</p>{{/if}}
+                        {{#if author.website}}<p><a href="{{author.website}}">{{author.website}}</a></p>{{/if}}
+                    </div>
+                </div>
+            </section>
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <div class="share-icons">
+                    <a class="fa fa-twitter-square" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                    <a class="fa fa-facebook-square" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                    </a>
+                    <a class="fa fa-google-plus-square" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <span class="hidden">Google+</span>
+                    </a>
+                </div>
+            </section>
+
+        </footer>
+
+        <section class="post-comments">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                {{> disqus}}
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
     {{/post}}
 
 </article>
