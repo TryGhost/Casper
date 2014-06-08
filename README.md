@@ -6,7 +6,6 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 
 * Responsive design.
 * Post comments using [Disqus](http://disqus.com/).
-* Smoother navigation using [InstantClick](https://github.com/dieulot/instantclick).
 * In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
 * Basic support for [slidr.js](https://github.com/bchanx/slidr).

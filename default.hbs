@@ -75,15 +75,6 @@
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
 
-    <script src="{{asset "js/instantclick.min.js"}}" data-no-instant></script>
-    <script data-no-instant>
-        InstantClick.on('change', function() {
-            Prism.highlightAll();
-        });
-
-        InstantClick.init();
-    </script>
-
     <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
     <script>
         $("#search-field").ghostHunter({
