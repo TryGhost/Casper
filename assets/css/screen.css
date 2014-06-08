@@ -604,6 +604,15 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.5em;
 }
 
+.social-links {
+    text-align: center;
+}
+
+.social-links a {
+    text-decoration: none;
+    margin-right: 15px;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
