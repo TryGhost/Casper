@@ -461,11 +461,6 @@ margin on the iframe, cause it breaks stuff. */
     background-size: cover;
 }
 
-.site-head .blog-logo img {
-    -webkit-animation: fade-in-down 1s;
-    animation: fade-in-down 1s;
-}
-
 .blog-logo {
     text-decoration: none;
 }
@@ -487,10 +482,6 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 1px 6px rgba(0,0,0,0.1);
-    -webkit-animation: fade-in-down 1s;
-    animation: fade-in-down 1s;
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
 }
 
 .blog-description {
@@ -501,10 +492,34 @@ margin on the iframe, cause it breaks stuff. */
     font-family: 'Noto Serif', serif;
     letter-spacing: 0;
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+/* Add subtle load-in animation for content on the home page */
+.home-template .site-head {
+    -webkit-animation: fade-in-down-subtle 2s;
+    animation: fade-in-down-subtle 2s;
+}
+.home-template .blog-logo img {
     -webkit-animation: fade-in-down 1s;
     animation: fade-in-down 1s;
-    -webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.home-template .blog-title {
+    -webkit-animation: fade-in-down 1s;
+    animation: fade-in-down 1s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+.home-template .blog-description {
+    -webkit-animation: fade-in-down 1s;
+    animation: fade-in-down 1s;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+.home-template .content {
+    -webkit-animation: fade-in-up-subtle 2s;
+    animation: fade-in-up-subtle 2s;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -1164,35 +1179,83 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 @-webkit-keyframes fade-in-down {
-    from {
+    0% {
         opacity: 0;
-        -webkit-transform: translateY(-7px);
-    },
-    to {
+        -webkit-transform: translateY(-5px);
+    }
+    60% {
         opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-5px);
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
         -webkit-transform: translateY(0);
     }
 }
 
-@keyframes fade-in-down {
-    from {
-        opacity: 0;
-        -moz-transform: translateY(-7px);
-         -ms-transform: translateY(-7px);
-          -o-transform: translateY(-7px);
-             transform: translateY(-7px);
-    },
-    to {
-        opacity: 0;
-        -moz-transform: translateY(0);
-         -ms-transform: translateY(0);
-          -o-transform: translateY(0);
-             transform: translateY(0);
+@-webkit-keyframes fade-in-down-subtle {
+    0% {
+        opacity: 0.8;
+        -webkit-transform: translateY(-5px);
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+@keyframes fade-in-down-subtle {
+    0% {
+        opacity: 0.8;
+        -webkit-transform: translateY(-5px);
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fade-in-up-subtle {
+    0% {
+        opacity: 0.3;
+        -webkit-transform: translateY(3px);
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+@keyframes fade-in-down-subtle {
+    0% {
+        opacity: 0.3;
+        -webkit-transform: translateY(3px);
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0);
     }
 }
 
 
+
 /* ==========================================================================
-   End of file. Media queries should be the last thing here. Do not add stuff
+   End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
