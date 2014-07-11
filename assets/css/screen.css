@@ -14,8 +14,9 @@
     7.  Third Party Elements
     8.  Pagination
     9.  Footer
-    10.  Media Queries (Tablet)
+    10. Media Queries (Tablet)
     11. Media Queries (Mobile)
+    12. Animations
 
  */
 
@@ -460,6 +461,11 @@ margin on the iframe, cause it breaks stuff. */
     background-size: cover;
 }
 
+.site-head .blog-logo img {
+    -webkit-animation: fade-in-down 1s;
+    animation: fade-in-down 1s;
+}
+
 .blog-logo {
     text-decoration: none;
 }
@@ -481,6 +487,10 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    -webkit-animation: fade-in-down 1s;
+    animation: fade-in-down 1s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 .blog-description {
@@ -491,6 +501,10 @@ margin on the iframe, cause it breaks stuff. */
     font-family: 'Noto Serif', serif;
     letter-spacing: 0;
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    -webkit-animation: fade-in-down 1s;
+    animation: fade-in-down 1s;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -1015,10 +1029,10 @@ margin on the iframe, cause it breaks stuff. */
 
 }
 
+
 /* ==========================================================================
    11. Media Queries - Smaller than 500px
    ========================================================================== */
-
 
 @media only screen and (max-width: 500px) {
 
@@ -1143,6 +1157,40 @@ margin on the iframe, cause it breaks stuff. */
     }
 
 }
+
+
+/* ==========================================================================
+   12. Animations
+   ========================================================================== */
+
+@-webkit-keyframes fade-in-down {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(-7px);
+    },
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        -moz-transform: translateY(-7px);
+         -ms-transform: translateY(-7px);
+          -o-transform: translateY(-7px);
+             transform: translateY(-7px);
+    },
+    to {
+        opacity: 0;
+        -moz-transform: translateY(0);
+         -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+             transform: translateY(0);
+    }
+}
+
 
 /* ==========================================================================
    End of file. Media queries should be the last thing here. Do not add stuff
