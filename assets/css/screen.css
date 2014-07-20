@@ -117,11 +117,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Apply these base styles to all icons */
-.icon-ghost:before,
-.icon-feed:before,
-.icon-twitter:before,
-.icon-google-plus:before,
-.icon-facebook:before {
+[class^="icon-"], [class*=" icon-"] {
     font-family: "icons";
     speak: none;
     font-style: normal;
@@ -129,7 +125,7 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    text-decoration: none;
+    text-decoration: none !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -152,6 +148,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 .icon-facebook:before {
     content: "\e004";
 }
+.icon-arrow-left:before {
+    content: "\e005";
+}
+
 
 
 /* ==========================================================================
@@ -162,6 +162,7 @@ html {
     height: 100%;
     max-height: 100%;
     font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -194,7 +195,7 @@ h4, h5, h6 {
     -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     color: #2E2E2E;
-    line-height: 1.3em;
+    line-height: 1.15em;
     margin: 0 0 0.5em 0;
     font-family: "Open Sans", sans-serif;
 }
@@ -239,6 +240,10 @@ a:hover {
 h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
     color: #50585D;
+}
+
+.post-template .post-title {
+    margin-bottom: 3.4rem;
 }
 
 p, ul, ol, dl {
@@ -647,6 +652,85 @@ margin on the iframe, cause it breaks stuff. */
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
+.main-nav {
+    position: relative;
+    padding: 15px;
+    margin: 0 0 30px 0;
+}
+
+.back-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    padding: 0 15px 0 10px;
+    border: transparent 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 37px;
+    border-radius: 3px;
+    transition: all ease 0.3s;
+}
+.back-button:before {
+    position: relative;
+    bottom: -2px;
+    font-size: 13px;
+    line-height: 0;
+    margin-right: 8px;
+}
+
+.subscribe-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: right;
+    height: 40px;
+    padding: 0 20px;
+    border: transparent 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 37px;
+    border-radius: 40px;
+    transition: all ease 0.3s;
+}
+.subscribe-button:before {
+    font-size: 9px;
+    margin-right: 6px;
+}
+
+/* Special styles when overlaid on an image*/
+.main-nav.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: none;
+}
+
+.main-nav.overlay a {
+    color: rgba(255,255,255,0.7);
+}
+
+.main-nav.overlay a:hover {
+    color: #fff;
+    border-color: #fff;
+    background: transparent;
+}
+
+/* Add a border to the buttons on hover */
+.back-button:hover,
+.subscribe-button:hover {
+    border-color: #bfc8cd;
+    color: #9EABB3;
+}
+
 /* Stop .full-img from creating horizontal scroll - slight hack due to
    imperfections with browser width % calculations and rounding */
 .post-template .content {
@@ -777,38 +861,6 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   6. Tag archive
-   ========================================================================== */
-
-.tag-archive-header {
-    position: relative;
-    max-width: 700px;
-    margin: 4rem auto;
-    border-bottom: 1px solid #EBF2F6;
-    padding: 20px 0;
-    text-align: center;
-    color: #222;
-}
-
-.tag-archive-header:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #FFF 0 0 0 5px;
-}
-
-
-/* ==========================================================================
    7. Third Party Elements - Embeds from other services
    ========================================================================== */
 
@@ -884,37 +936,33 @@ margin on the iframe, cause it breaks stuff. */
 .site-footer {
     position: relative;
     margin: 8rem 0 0 0;
-    padding: 4rem 0;
+    padding: 0.5rem 35px;
     border-top: #EBF2F6 1px solid;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
     line-height: 1.7em;
     color: #BBC7CC;
-    text-align: center;
-    background: #F7FAFB;
 }
 
 .site-footer a {
     color: #BBC7CC;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .site-footer a:hover {
     color: #50585D;
 }
 
-.poweredby .icon-ghost {
-    font-weight: 700;
-    text-decoration: none;
+.poweredby {
+    display: block;
+    float: right;
+    text-align: right;
 }
 
-.poweredby .icon-ghost:hover {
-    text-decoration: none;
-}
-
-.poweredby .icon-ghost:before {
-    font-size: 1rem;
-    margin-right: 0.2em;
+.copyright {
+    display: block;
+    float: left;
 }
 
 /* The subscribe icon on the footer */
@@ -938,7 +986,7 @@ margin on the iframe, cause it breaks stuff. */
     color: #D2DEE3;
     font-size: 10px;
     position: absolute;
-    top: 9px;
+    top: 2px;
     left: 9px;
     font-weight: 700;
     transition: color 0.5s ease;
@@ -957,7 +1005,8 @@ margin on the iframe, cause it breaks stuff. */
 /* CSS tooltip saying "Subscribe!" - initially hidden */
 .tooltip {
     opacity: 0;
-    display: inline-block;
+    display: block;
+    width: 52px;
     padding: 4px 8px 5px 8px;
     position:absolute;
     top: -23px;
@@ -1062,6 +1111,10 @@ margin on the iframe, cause it breaks stuff. */
 
 @media only screen and (max-width: 900px) {
 
+    .main-nav {
+        padding: 10px;
+    }
+
     blockquote {
         margin-left: 0;
     }
@@ -1097,6 +1150,10 @@ margin on the iframe, cause it breaks stuff. */
         padding: 40px 0;
     }
 
+    hr {
+        margin: 2.4em 0;
+    }
+
     ol, ul {
         padding-left: 2em;
     }
@@ -1126,6 +1183,10 @@ margin on the iframe, cause it breaks stuff. */
         font-size: 1.8rem;
     }
 
+    .site-footer {
+        padding: 0.5rem 15px;
+    }
+
 }
 
 
@@ -1134,6 +1195,51 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
+
+    .site-head {
+        margin-bottom: 0;
+    }
+
+    .main-nav {
+        padding: 0;
+        margin-bottom: 2rem;
+        border-bottom: #e0e4e7 1px solid;
+    }
+
+    .back-button,
+    .subscribe-button {
+        height: 44px;
+        line-height: 41px;
+        border-radius: 0;
+        color: #2e2e2e;
+    }
+    .back-button:hover,
+    .subscribe-button:hover {
+        border-color: #ebeef0;
+        color: #2e2e2e;
+        background: #ebeef0;
+    }
+
+    .back-button {
+        padding: 0 15px 0 10px;
+    }
+
+    .subscribe-button {
+        padding: 0 12px;
+    }
+
+    .main-nav.overlay {
+        color: #fff;
+        background: rgba(0,0,0,0.4);
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0)));
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+    }
+    .main-nav.overlay a:hover {
+        border-color: transparent;
+        background: transparent;
+    }
 
     .blog-logo img {
         max-height: 80px;
@@ -1148,14 +1254,25 @@ margin on the iframe, cause it breaks stuff. */
 
     .post {
         width: auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
         margin-left: 16px;
         margin-right: 16px;
+        padding-bottom: 2rem;
         font-size: 0.8em;
         line-height: 1.6em;
     }
 
+    .post-template .post-title {
+        margin-bottom: 2rem;
+    }
+
+    hr {
+        margin: 1.6em 0;
+    }
+
     p, ul, ol, dl {
-        margin: 0 0 1.6em 0;
+        margin: 0 0 2rem 0;
     }
 
     .site-head {
@@ -1164,6 +1281,7 @@ margin on the iframe, cause it breaks stuff. */
 
     .blog-title {
         font-size: 3rem;
+        margin: 0;
     }
 
     .blog-description {
@@ -1271,8 +1389,7 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .site-footer {
-        margin-top: 6rem;
-        font-size: 1.1rem;
+        margin-top: 3rem;
     }
 
 }

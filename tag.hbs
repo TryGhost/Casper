@@ -5,21 +5,20 @@
 
 {{! The big featured header on the homepage, with the site logo and description }}
 <header class="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <nav class="main-nav overlay clearfix">
+        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
+        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+    </nav>
     <div class="vertical">
         <div class="site-head-content inner">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-            <h1 class="blog-title">{{@blog.title}}</h1>
-            <h2 class="blog-description">{{@blog.description}}</h2>
+            <h1 class="blog-title">{{tag.name}}</h1>
+            <h2 class="blog-description">A {{pagination.total}}-post collection</h2>
         </div>
     </div>
 </header>
 
 {{! The main content area on the homepage }}
 <main class="content" role="main">
-
-    <header class="tag-archive-header">
-        <h1>{{tag.name}}</h1>
-    </header>
 
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
@@ -37,7 +36,7 @@
 
     {{/foreach}}
 
-    {{!! After all the posts, we have the previous/next pagination links }}
+    {{! After all the posts, we have the previous/next pagination links }}
     {{pagination}}
 
 </main>
