@@ -1257,10 +1257,6 @@ margin on the iframe, cause it breaks stuff. */
         margin: 0 0 2rem 0;
     }
 
-    .site-head {
-        padding: 10% 0;
-    }
-
     .blog-title {
         font-size: 3rem;
     }
