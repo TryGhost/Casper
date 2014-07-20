@@ -179,14 +179,6 @@ body {
     color: #3A4145;
 }
 
-/*Make a sticky footer*/
-.site-wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -28px; /*exact height of .site-footer*/
-}
-
 ::-moz-selection {
     background: #D6EDFF;
 }
@@ -548,16 +540,6 @@ margin on the iframe, cause it breaks stuff. */
 .home-template .content {
     -webkit-animation: fade-in-up-subtle 2s;
     animation: fade-in-up-subtle 2s;
-}
-
-.content {
-    padding-bottom: 8rem;
-}
-@media (max-width: 900px) {
-    .content { padding-bottom: 6rem; }
-}
-@media (max-width: 500px) {
-    .content { padding-bottom: 3rem; }
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -1015,11 +997,8 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 .site-footer {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     position: relative;
-    height: 28px;
+    margin: 8rem 0 0 0;
     padding: 0.5rem 35px;
     border-top: #EBF2F6 1px solid;
     font-family: "Open Sans", sans-serif;
@@ -1380,6 +1359,10 @@ margin on the iframe, cause it breaks stuff. */
 
     .page-number {
         display: block;
+    }
+
+    .site-footer {
+        margin-top: 3rem;
     }
 
 }
