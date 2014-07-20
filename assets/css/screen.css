@@ -479,11 +479,6 @@ margin on the iframe, cause it breaks stuff. */
     background-size: cover;
 }
 
-.site-head h1,
-.site-head h2 {
-    color: #FFF;
-}
-
 .blog-logo {
     text-decoration: none;
 }
@@ -504,16 +499,18 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: -1px;
     font-weight: 700;
     font-family: "Open Sans", sans-serif;
+    color: #fff;
     text-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
 .blog-description {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     line-height: 1.6em;
     font-weight: 400;
     font-family: "Noto Serif", serif;
     letter-spacing: 0;
+    color: rgba(255,255,255,0.8);
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
@@ -1054,7 +1051,7 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .blog-description {
-        font-size: 1.7rem;
+        font-size: 2rem;
         line-height: 1.5em;
     }
 
@@ -1134,7 +1131,7 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .blog-description {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         line-height: 1.5em;
     }
 
@@ -1281,11 +1278,10 @@ margin on the iframe, cause it breaks stuff. */
 
     .blog-title {
         font-size: 3rem;
-        margin: 0;
     }
 
     .blog-description {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     h1, h2, h3,
