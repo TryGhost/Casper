@@ -979,7 +979,6 @@ body:not(.post-template) .post-title {
 .author-head.main-header {
     height: 40%;
     min-height: 180px;
-    margin-bottom: -60px; /* Pull the author bio up to overlap the cover */
 }
 
 .no-cover.author-head.main-header {
@@ -989,7 +988,6 @@ body:not(.post-template) .post-title {
 }
 
 .author-profile {
-    margin-top: 0 !important;
     padding: 0 15px 5rem 15px;
     border-bottom: #EBF2F6 1px solid;
     text-align: center;
@@ -1021,7 +1019,7 @@ body:not(.post-template) .post-title {
     position: relative;
     width: 120px;
     height: 120px;
-    margin: 0 auto;
+    margin: -100px auto 0;
     border-radius: 100%;
     overflow: hidden;
     padding: 3px;
@@ -1631,6 +1629,10 @@ body:not(.post-template) .post-title {
     .tag-head.main-header,
     .author-head.main-header {
         height: 20%;
+    }
+
+    .author-profile .author-image {
+        margin-top: -70px;
     }
 
     .author-profile .author-meta span {
