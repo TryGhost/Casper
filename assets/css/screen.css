@@ -867,6 +867,15 @@ body:not(.post-template) .post-title {
     margin-right: 180px;
 }
 
+.post-footer h4 a {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
+.post-footer h4 a:hover {
+    text-decoration: underline;
+}
+
 /* Drop the share links in the space to the right.
    Doing it like this means it's easier for the author bio
    to be flexible at smaller screen sizes while the share
@@ -931,7 +940,7 @@ body:not(.post-template) .post-title {
 .tooltip {
     opacity: 0;
     display: block;
-    width: 52px;
+    width: 53px;
     padding: 4px 8px 5px 8px;
     position:absolute;
     top: -23px;
@@ -1049,19 +1058,22 @@ body:not(.post-template) .post-title {
     text-indent: 0;
 }
 
+.author-meta {
+    margin: 1.6rem 0;
+}
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
     font-family: "Noto Serif", serif;
     font-size: 1.7rem;
 }
-.author-profile .author-meta span {
+.author-meta span {
     margin-left: 2rem;
 }
-.author-profile .author-meta span:first-child {
+.author-meta span:first-child {
     margin-left: 0;
 }
-.author-profile .author-meta a {
+.author-meta a {
     text-decoration: none;
 }
 
@@ -1371,9 +1383,11 @@ body:not(.post-template) .post-title {
         font-size: 1.6rem;
     }
 
-    .author-profile .author-meta span {
+    .author-meta span {
         display: block;
         margin: 1.5rem 0;
+    }
+    .author-profile .author-meta span {
         font-size: 1.6rem;
     }
 

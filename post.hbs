@@ -24,12 +24,12 @@
             <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
 
             <section class="author">
-                <h4>{{author.name}}</h4>
+                <h4><a href="{{@blog.url}}/author/{{author.slug}}">{{author.name}}</a></h4>
                 <p>{{author.bio}}</p>
-                <ul class="author-meta clearfix">
-                    {{#if author.location}}<li>{{author.location}}</li>{{/if}}
-                    {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
-                </ul>
+                <div class="author-meta">
+                    {{#if author.location}}<span class="author-location"><i class="icon-location"></i> {{author.location}}</span>{{/if}}
+                    {{#if author.website}}<span class="author-link"><i class="icon-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
+                </div>
             </section>
 
             <section class="share">
