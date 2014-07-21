@@ -1353,10 +1353,6 @@ body:not(.post-template) .post-title {
         font-size: 3.2rem;
     }
 
-    .post-template .post {
-        padding-bottom: 1rem;
-    }
-
     hr {
         margin: 2.4em 0;
     }
