@@ -151,7 +151,15 @@ table { border-collapse: collapse; border-spacing: 0; }
 .icon-arrow-left:before {
     content: "\e005";
 }
-
+.icon-stats:before {
+    content: "\e006";
+}
+.icon-location:before {
+    content: "\e007";
+}
+.icon-link:before {
+    content: "\e008";
+}
 
 
 /* ==========================================================================
@@ -196,7 +204,7 @@ h4, h5, h6 {
     font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     color: #2E2E2E;
     line-height: 1.15em;
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0.3em 0;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -234,7 +242,7 @@ a {
 }
 
 a:hover {
-    color: #57A3E8;
+    color: #111;
 }
 
 h1 a, h2 a, h3 a,
@@ -468,78 +476,169 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 /* Big cover image on the home page */
-.site-head {
+.main-header {
     position: relative;
     display: table;
     width: 100%;
-    height: 60%;
+    height: 100%;
     margin-bottom: 5rem;
     text-align: center;
-    background: #303538 no-repeat center center;
+    background: #222 no-repeat center center;
     background-size: cover;
 }
 
-.blog-logo {
-    text-decoration: none;
+.main-header .inner {
+    width: 80%;
 }
 
-/* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
-.blog-logo img {
+.main-nav {
+    position: relative;
+    padding: 15px;
+    margin: 0 0 30px 0;
+}
+
+/* Appears in the top right corner of your home page */
+.blog-logo {
     display: block;
-    max-height: 100px;
+    float: left;
+    background: none !important;
+    border: none !important;
+}
+
+
+.blog-logo img {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    height: 38px;
+    padding: 2px 0 6px 0;
     width: auto;
-    margin: 0 auto;
+}
+
+.back-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 38px;
+    padding: 0 15px 0 10px;
+    border: transparent 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    border-radius: 3px;
+    transition: all ease 0.3s;
+}
+.back-button:before {
+    position: relative;
+    bottom: -2px;
+    font-size: 13px;
     line-height: 0;
+    margin-right: 8px;
+}
+
+.subscribe-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: right;
+    height: 38px;
+    padding: 0 20px;
+    border: transparent 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    border-radius: 3px;
+    transition: all ease 0.3s;
+}
+.subscribe-button:before {
+    font-size: 9px;
+    margin-right: 6px;
+}
+
+/* Special styles when overlaid on an image*/
+.main-nav.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: none;
+}
+
+.main-nav.overlay a {
+    color: #fff;
+}
+
+.main-nav.overlay .back-button,
+.main-nav.overlay .subscribe-button {
+    border-color: #fff;
+}
+
+.main-nav.overlay a:hover {
+    color: #222;
+    border-color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.8);
+    transition: all 0.1s ease;
+}
+
+/* Add a border to the buttons on hover */
+.back-button:hover,
+.subscribe-button:hover {
+    border-color: #bfc8cd;
+    color: #9EABB3;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
-.blog-title {
+.page-title {
     margin: 10px 0 10px 0;
     font-size: 5.6rem;
     letter-spacing: -1px;
     font-weight: 700;
     font-family: "Open Sans", sans-serif;
     color: #fff;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
-.blog-description {
+.page-description {
     margin: 0;
-    font-size: 2.4rem;
-    line-height: 1.6em;
+    font-size: 2.2rem;
+    line-height: 1.5em;
     font-weight: 400;
     font-family: "Noto Serif", serif;
     letter-spacing: 0;
     color: rgba(255,255,255,0.8);
-    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.no-cover.main-header {
+    background: #f5f8fa;
+}
+
+.no-cover .page-title {
+    color: rgba(0,0,0,0.8);
+}
+
+.no-cover .page-description {
+    color: rgba(0,0,0,0.5);
 }
 
 /* Add subtle load-in animation for content on the home page */
-.home-template .site-head {
-    -webkit-animation: fade-in-down-subtle 2s;
-    animation: fade-in-down-subtle 2s;
-}
-.home-template .blog-logo img {
-    -webkit-animation: fade-in-down 1s;
-    animation: fade-in-down 1s;
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-}
-.home-template .blog-title {
-    -webkit-animation: fade-in-down 1s;
-    animation: fade-in-down 1s;
+.home-template .page-title {
+    -webkit-animation: fade-in-down 0.6s;
+    animation: fade-in-down 0.6s;
     -webkit-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
-.home-template .blog-description {
-    -webkit-animation: fade-in-down 1s;
-    animation: fade-in-down 1s;
+.home-template .page-description {
+    -webkit-animation: fade-in-down 0.9s;
+    animation: fade-in-down 0.9s;
     -webkit-animation-delay: 0.1s;
     animation-delay: 0.1s;
-}
-.home-template .content {
-    -webkit-animation: fade-in-up-subtle 2s;
-    animation: fade-in-up-subtle 2s;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -645,88 +744,10 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.5em;
 }
 
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
-
-.main-nav {
-    position: relative;
-    padding: 15px;
-    margin: 0 0 30px 0;
-}
-
-.back-button {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    float: left;
-    height: 40px;
-    padding: 0 15px 0 10px;
-    border: transparent 1px solid;
-    color: #9EABB3;
-    text-align: center;
-    font-size: 12px;
-    text-transform: uppercase;
-    line-height: 37px;
-    border-radius: 3px;
-    transition: all ease 0.3s;
-}
-.back-button:before {
-    position: relative;
-    bottom: -2px;
-    font-size: 13px;
-    line-height: 0;
-    margin-right: 8px;
-}
-
-.subscribe-button {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    float: right;
-    height: 40px;
-    padding: 0 20px;
-    border: transparent 1px solid;
-    color: #9EABB3;
-    text-align: center;
-    font-size: 12px;
-    text-transform: uppercase;
-    line-height: 37px;
-    border-radius: 40px;
-    transition: all ease 0.3s;
-}
-.subscribe-button:before {
-    font-size: 9px;
-    margin-right: 6px;
-}
-
-/* Special styles when overlaid on an image*/
-.main-nav.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    border: none;
-}
-
-.main-nav.overlay a {
-    color: rgba(255,255,255,0.7);
-}
-
-.main-nav.overlay a:hover {
-    color: #fff;
-    border-color: #fff;
-    background: transparent;
-}
-
-/* Add a border to the buttons on hover */
-.back-button:hover,
-.subscribe-button:hover {
-    border-color: #bfc8cd;
-    color: #9EABB3;
-}
 
 /* Stop .full-img from creating horizontal scroll - slight hack due to
    imperfections with browser width % calculations and rounding */
@@ -814,7 +835,7 @@ margin on the iframe, cause it breaks stuff. */
     color: #9EABB3;
 }
 .author-meta a:hover {
-    color: #57A3E8;
+    color: #111;
 }
 
 /* Create some space to the right for the share links */
@@ -922,18 +943,114 @@ margin on the iframe, cause it breaks stuff. */
     top: -33px;
 }
 
+/* ==========================================================================
+   6. Author profile
+   ========================================================================== */
+
+.tag-head.main-header {
+    height: 40%;
+    min-height: 180px;
+}
+
+.author-head.main-header {
+    height: 40%;
+    min-height: 180px;
+    margin-bottom: -60px; /* Pull the author bio up to overlap the cover */
+}
+
+.author-profile {
+    padding-bottom: 5rem;
+    border-bottom: #EBF2F6 1px solid;
+    text-align: center;
+}
+
+/* Add a little circle in the middle of the border-bottom */
+.author-profile:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+}
+
+.author-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 3px;
+    background: #fff;
+    z-index: 2;
+}
+
+.author-image .img {
+    display: block;
+    width: 114px;
+    height: 114px;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 100%;
+}
+
+.author-title {
+    margin: 1.5rem 0 1rem;
+}
+
+.author-bio {
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 200;
+    color: #50585D;
+    letter-spacing: 0;
+    text-indent: 0;
+}
+
+/* Location, website, and link */
+.author-profile .author-meta {
+    margin: 2rem 0;
+    font-family: "Noto Serif", serif;
+    font-size: 1.7rem;
+}
+.author-profile .author-meta span {
+    margin-left: 2rem;
+}
+.author-profile .author-meta span:first-child {
+    margin-left: 0;
+}
+.author-profile .author-meta a {
+    text-decoration: none;
+}
+
+/* Turn off meta for page2+ to make room for extra
+   pagination prev/next links */
+.archive-template .author-profile .author-meta {
+    display: none;
+}
 
 /* ==========================================================================
    7. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
-
 .gist table {
     margin: 0;
     font-size: 1.4rem;
 }
-
 .gist .line-number {
     min-width: 25px;
     font-size: 1.1rem;
@@ -991,6 +1108,40 @@ margin on the iframe, cause it breaks stuff. */
     border-color: #9EABB3;
 }
 
+.extra-pagination {
+    display: none;
+    border-bottom: #EBF2F6 1px solid;
+}
+.extra-pagination:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+}
+.extra-pagination .pagination {
+    width: auto;
+}
+
+/* On page2+ make all the headers smaller */
+.archive-template .main-header {
+    max-height: 30%;
+}
+
+/* On page2+ show extra pagination controls at the top of post list */
+.archive-template .extra-pagination {
+    display: block;
+}
+
 
 /* ==========================================================================
    9. Footer - The bottom of every page
@@ -999,12 +1150,13 @@ margin on the iframe, cause it breaks stuff. */
 .site-footer {
     position: relative;
     margin: 8rem 0 0 0;
-    padding: 0.5rem 35px;
+    padding: 0.5rem 15px;
     border-top: #EBF2F6 1px solid;
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.7em;
     color: #BBC7CC;
+    background: #f5f8fa;
 }
 
 .site-footer a {
@@ -1035,11 +1187,11 @@ margin on the iframe, cause it breaks stuff. */
 
 @media only screen and (max-width: 1600px) {
 
-    .blog-title {
+    .page-title {
         font-size: 5rem;
     }
 
-    .blog-description {
+    .page-description {
         font-size: 2rem;
         line-height: 1.5em;
     }
@@ -1055,7 +1207,7 @@ margin on the iframe, cause it breaks stuff. */
 
     .post,
     .inner,
-    .tag-archive-header {
+    .pagination {
         max-width: 710px;
     }
 
@@ -1105,21 +1257,31 @@ margin on the iframe, cause it breaks stuff. */
         margin-left: 0;
     }
 
-    .site-head {
+    .main-header {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         height: auto;
         min-height: 240px;
+        height: 60%;
         padding: 15% 0;
     }
 
-    .blog-title {
+    .archive-template .main-header {
+        min-height: 180px;
+        padding: 10% 0;
+    }
+
+    .blog-logo img {
+        padding: 4px 0;
+    }
+
+    .page-title {
         font-size: 4rem;
         letter-spacing: -1px;
     }
 
-    .blog-description {
+    .page-description {
         font-size: 1.8rem;
         line-height: 1.5em;
     }
@@ -1165,8 +1327,23 @@ margin on the iframe, cause it breaks stuff. */
         font-size: 1.8rem;
     }
 
-    .site-footer {
-        padding: 0.5rem 15px;
+    .author-profile {
+        padding-bottom: 4rem;
+    }
+
+    .author-profile .author-bio {
+        font-size: 1.6rem;
+    }
+
+    .author-profile .author-meta span {
+        display: block;
+        margin: 1.5rem 0;
+        font-size: 1.6rem;
+    }
+
+    .tag-head.main-header,
+    .author-head.main-header {
+        height: 30%;
     }
 
 }
@@ -1178,14 +1355,29 @@ margin on the iframe, cause it breaks stuff. */
 
 @media only screen and (max-width: 500px) {
 
-    .site-head {
+    .main-header {
         margin-bottom: 0;
+        height: 40%;
+    }
+
+    .archive-template .main-header {
+        max-height: 20%;
+        min-height: 160px;
+        padding: 10% 0;
     }
 
     .main-nav {
         padding: 0;
         margin-bottom: 2rem;
         border-bottom: #e0e4e7 1px solid;
+    }
+
+    .blog-logo {
+        padding: 10px 10px;
+    }
+
+    .blog-logo img {
+        height: 26px;
     }
 
     .back-button,
@@ -1213,14 +1405,20 @@ margin on the iframe, cause it breaks stuff. */
     .main-nav.overlay {
         color: #fff;
         background: rgba(0,0,0,0.4);
-        background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0)));
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
-        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(100%,rgba(0,0,0,0)));
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
     }
     .main-nav.overlay a:hover {
+        color: #fff;
         border-color: transparent;
         background: transparent;
+    }
+
+    .main-nav.overlay .back-button,
+    .main-nav.overlay .subscribe-button {
+        border-color: transparent;
     }
 
     .blog-logo img {
@@ -1230,8 +1428,7 @@ margin on the iframe, cause it breaks stuff. */
     .inner,
     .pagination {
         width: auto;
-        margin-left: 16px;
-        margin-right: 16px;
+        margin: 2rem auto;
     }
 
     .post {
@@ -1241,8 +1438,7 @@ margin on the iframe, cause it breaks stuff. */
         margin-left: 16px;
         margin-right: 16px;
         padding-bottom: 2rem;
-        font-size: 0.8em;
-        line-height: 1.6em;
+        line-height: 1.55em;
     }
 
     .post-template .post-title {
@@ -1254,14 +1450,15 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     p, ul, ol, dl {
+        font-size: 0.95em;
         margin: 0 0 2rem 0;
     }
 
-    .blog-title {
+    .page-title {
         font-size: 3rem;
     }
 
-    .blog-description {
+    .page-description {
         font-size: 1.6rem;
     }
 
@@ -1365,6 +1562,23 @@ margin on the iframe, cause it breaks stuff. */
         margin-top: 3rem;
     }
 
+    .author-profile {
+        padding-bottom: 2rem;
+    }
+
+    .tag-head.main-header,
+    .author-head.main-header {
+        height: 20%;
+    }
+
+    .author-profile .author-meta span {
+        font-size: 1.5rem;
+    }
+
+    .archive-template .main-header .page-description {
+        display: none;
+    }
+
 }
 
 
@@ -1375,7 +1589,7 @@ margin on the iframe, cause it breaks stuff. */
 @-webkit-keyframes fade-in-down {
     0% {
         opacity: 0;
-        -webkit-transform: translateY(-5px);
+        -webkit-transform: translateY(-10px);
     }
     60% {
         opacity: 1;
@@ -1387,7 +1601,7 @@ margin on the iframe, cause it breaks stuff. */
 @keyframes fade-in-down {
     0% {
         opacity: 0;
-        -webkit-transform: translateY(-5px);
+        -webkit-transform: translateY(-10px);
     }
     60% {
         opacity: 1;
@@ -1396,57 +1610,6 @@ margin on the iframe, cause it breaks stuff. */
         -webkit-transform: translateY(0);
     }
 }
-
-@-webkit-keyframes fade-in-down-subtle {
-    0% {
-        opacity: 0.8;
-        -webkit-transform: translateY(-5px);
-    }
-    30% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-    }
-}
-@keyframes fade-in-down-subtle {
-    0% {
-        opacity: 0.8;
-        -webkit-transform: translateY(-5px);
-    }
-    30% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-    }
-}
-
-@-webkit-keyframes fade-in-up-subtle {
-    0% {
-        opacity: 0.3;
-        -webkit-transform: translateY(3px);
-    }
-    30% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-    }
-}
-@keyframes fade-in-down-subtle {
-    0% {
-        opacity: 0.3;
-        -webkit-transform: translateY(3px);
-    }
-    30% {
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-    }
-}
-
 
 
 /* ==========================================================================
