@@ -1145,6 +1145,7 @@ body:not(.post-template) .post-title {
 
 .pagination a {
     color: #9EABB3;
+    transition: all 0.2s ease;
 }
 
 /* Push the previous/next links out to the left/right */
@@ -1153,9 +1154,9 @@ body:not(.post-template) .post-title {
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: #EBF2F6 2px solid;
+    border: #bfc8cd 1px solid;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 4px;
     transition: border ease 0.3s;
 }
 
@@ -1175,7 +1176,8 @@ body:not(.post-template) .post-title {
 
 .older-posts:hover,
 .newer-posts:hover {
-    border-color: #9EABB3;
+    color: #889093;
+    border-color: #98a0a4;
 }
 
 .extra-pagination {
