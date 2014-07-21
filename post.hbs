@@ -21,8 +21,11 @@
         </section>
 
         <footer class="post-footer">
-            <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-
+            {{#if author.image}}
+            <figure class="author-image">
+                <A class="img" href="{{@blog.url}}/author/{{author.slug}}" style="background-image: url({{author.image}})"><span class="hidden">{{author.name}}'s Picture</span></a>
+            </figure>
+            {{/if}}
             <section class="author">
                 <h4><a href="{{@blog.url}}/author/{{author.slug}}">{{author.name}}</a></h4>
                 <p>{{author.bio}}</p>

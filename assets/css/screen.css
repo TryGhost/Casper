@@ -811,8 +811,8 @@ body:not(.post-template) .post-title {
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 4rem 0 0 0;
-    padding: 4rem 0 0 0;
+    margin: 6rem 0 0 0;
+    padding: 6rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
 
@@ -882,7 +882,7 @@ body:not(.post-template) .post-title {
    links remain at a fixed width the whole time */
 .post-footer .share {
     position: absolute;
-    top: 4rem;
+    top: 6rem;
     right: 0;
     width: 140px;
 }
@@ -1025,24 +1025,39 @@ body:not(.post-template) .post-title {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: -100px auto 0;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
     overflow: hidden;
-    padding: 3px;
+    padding: 6px;
     background: #fff;
     z-index: 2;
+    box-shadow: #E7EEF2 0 0 0 1px;
 }
 
 .author-image .img {
+    position: relative;
     display: block;
-    width: 114px;
-    height: 114px;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center center;
     border-radius: 100%;
+}
+
+.author-profile .author-image {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    margin: -100px auto 0 auto;
+    box-shadow: none;
 }
 
 .author-title {
@@ -1593,7 +1608,7 @@ body:not(.post-template) .post-title {
     }
 
     .post-footer {
-        padding: 4rem 0;
+        padding: 5rem 0 3rem 0;
         text-align: center;
     }
 
