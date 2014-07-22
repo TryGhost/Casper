@@ -33,7 +33,11 @@
             {{/if}}
             <section class="author">
                 <h4><a href="{{@blog.url}}/author/{{author.slug}}">{{author.name}}</a></h4>
-                <p>{{author.bio}}</p>
+                {{#if author.bio}}
+                    <p>{{author.bio}}</p>
+                {{else}}
+                    <p>Read <a href="{{@blog.url}}/author/{{author.slug}}">more posts</a> by this author.</p>
+                {{/if}}
                 <div class="author-meta">
                     {{#if author.location}}<span class="author-location"><i class="icon-location"></i> {{author.location}}</span>{{/if}}
                     {{#if author.website}}<span class="author-link"><i class="icon-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
