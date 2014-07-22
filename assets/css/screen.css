@@ -156,6 +156,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 .icon-location:before {
     content: "\e007";
+    margin-left: -3px; /* Tracking fix */
 }
 .icon-link:before {
     content: "\e008";
@@ -910,23 +911,6 @@ body:not(.post-template) .post-title {
     font-style: italic;
     color: #9EABB3;
 }
-
-.author-meta li {
-    float: left;
-    margin-left: 10px; /* space to the left of the bullet */
-}
-
-/* bullet divider */
-.author-meta li:before {
-    content: "•";
-    display: inline-block;
-    margin-right: 10px; /* space to the right of the bullet */
-    color: #BBC7CC;
-}
-
-/* disable the bullet divider for the first item in the list */
-.author-meta li:first-child { margin-left: 0; }
-.author-meta li:first-child:before { display: none; }
 
 .author-meta a {
     color: #9EABB3;
