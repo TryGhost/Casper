@@ -20,7 +20,7 @@
     <div class="author-meta">
         {{#if author.location}}<span class="author-location"><i class="icon-location"></i> {{author.location}}</span>{{/if}}
         {{#if author.website}}<span class="author-link"><i class="icon-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
-        <span class="author-stats"><i class="icon-stats"></i> {{pagination.total}} posts</span>
+        <span class="author-stats"><i class="icon-stats"></i> {{plural pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
     </div>
 </section>
 
