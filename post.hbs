@@ -26,23 +26,31 @@
         </section>
 
         <footer class="post-footer">
-            {{#if author.image}}
+        
+        {{! Everything inside the ((#with author)) tags pulls data from the author }}
+        {{#with author}}
+
+            {{#if image}}
             <figure class="author-image">
-                <A class="img" href="{{@blog.url}}/author/{{author.slug}}" style="background-image: url({{author.image}})"><span class="hidden">{{author.name}}'s Picture</span></a>
+                <A class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
             </figure>
             {{/if}}
+
             <section class="author">
-                <h4><a href="{{@blog.url}}/author/{{author.slug}}">{{author.name}}</a></h4>
-                {{#if author.bio}}
-                    <p>{{author.bio}}</p>
+                <h4><a href="{{url}}">{{name}}</a></h4>
+                
+                {{#if bio}}
+                    <p>{{bio}}</p>
                 {{else}}
-                    <p>Read <a href="{{@blog.url}}/author/{{author.slug}}">more posts</a> by this author.</p>
+                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
                 <div class="author-meta">
-                    {{#if author.location}}<span class="author-location"><i class="icon-location"></i> {{author.location}}</span>{{/if}}
-                    {{#if author.website}}<span class="author-link"><i class="icon-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
+                    {{#if location}}<span class="author-location"><i class="icon-location"></i> {{location}}</span>{{/if}}
+                    {{#if website}}<span class="author-link"><i class="icon-link"></i> <a href="{{website}}">{{website}}</a></span>{{/if}}
                 </div>
             </section>
+
+        {{/with}}
 
             <section class="share">
                 <h4>Share this post</h4>
