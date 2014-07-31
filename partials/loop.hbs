@@ -14,7 +14,7 @@
     </section>
     <footer class="post-meta">
         {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        <a href="{{@blog.url}}/author/{{author.slug}}">{{author.name}}</a>
+        {{author}}
         {{tags prefix=" on "}} 
         <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> 
     </footer>
