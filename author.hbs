@@ -18,8 +18,8 @@
     <h1 class="author-title">{{author.name}}</h1>
     <h2 class="author-bio">{{author.bio}}</h2>
     <div class="author-meta">
-        {{#if author.location}}<span class="author-location"><i class="icon-location"></i> {{author.location}}</span>{{/if}}
-        {{#if author.website}}<span class="author-link"><i class="icon-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
+        {{#if author.location}}<span class="author-location icon-location">{{author.location}}</span>{{/if}}
+        {{#if author.website}}<span class="author-link icon-link"><a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
         <span class="author-stats"><i class="icon-stats"></i> {{plural pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
     </div>
 </section>

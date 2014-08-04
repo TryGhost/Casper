@@ -32,7 +32,7 @@
 
             {{#if image}}
             <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                <A class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
             </figure>
             {{/if}}
 
@@ -45,8 +45,8 @@
                     <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
                 <div class="author-meta">
-                    {{#if location}}<span class="author-location"><i class="icon-location"></i> {{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link"><i class="icon-link"></i> <a href="{{website}}">{{website}}</a></span>{{/if}}
+                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
                 </div>
             </section>
 

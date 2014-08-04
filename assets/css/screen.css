@@ -117,7 +117,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Apply these base styles to all icons */
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "icons", "Open Sans", sans-serif;
     speak: none;
     font-style: normal;
@@ -489,6 +489,11 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0 0 30px 0;
 }
 
+.main-nav a {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
     display: block;
@@ -501,6 +506,7 @@ margin on the iframe, cause it breaks stuff. */
     height: 34px;
     font-size: 34px;
     text-align: center;
+    text-decoration: none;
     color: rgba(255,255,255,0.7);
     transform: rotate(-90deg);
     -webkit-animation: bounce 4s 2s infinite;
@@ -1140,10 +1146,9 @@ body:not(.post-template) .post-title {
     font-size: 1.7rem;
 }
 .author-meta span {
-    margin-left: 2rem;
-}
-.author-meta span:first-child {
-    margin-left: 0;
+    display: inline-block;
+    margin: 0 2rem 1rem 0;
+    word-wrap: break-word;
 }
 .author-meta a {
     text-decoration: none;
