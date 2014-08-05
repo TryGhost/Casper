@@ -15,9 +15,9 @@
     {{#post}}
 
         <header class="post-header">
-            <h1 class="post-title">{{{title}}}</h1>
+            <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}} 
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
 
@@ -26,9 +26,9 @@
         </section>
 
         <footer class="post-footer">
-        
-        {{! Everything inside the {#with author} tags pulls data from the author }}
-        {{#with author}}
+
+        {{! Everything inside the #author tags pulls data from the author }}
+        {{#author}}
 
             {{#if image}}
             <figure class="author-image">
@@ -38,7 +38,7 @@
 
             <section class="author">
                 <h4><a href="{{url}}">{{name}}</a></h4>
-                
+
                 {{#if bio}}
                     <p>{{bio}}</p>
                 {{else}}
@@ -50,7 +50,7 @@
                 </div>
             </section>
 
-        {{/with}}
+        {{/author}}
 
             <section class="share">
                 <h4>Share this post</h4>
