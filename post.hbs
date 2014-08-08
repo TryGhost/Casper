@@ -3,25 +3,25 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<nav class="main-nav clearfix">
+<nav class="main-nav clearfix" role="navigation">
     <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
     <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
 </nav>
 
-<main class="content" role="main">
+<main class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
 
-    <article class="{{post_class}}">
+    <article class="{{post_class}}" role="article" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
 
         <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
+            <h1 class="post-title" role="heading" itemprop="headline">{{title}}</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}" itemprop="datePublished">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content" itemprop="articleBody">
             {{content}}
         </section>
 
@@ -36,8 +36,8 @@
             </figure>
             {{/if}}
 
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
+            <section class="author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                <h4 itemprop="name"><a href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
                     <p>{{bio}}</p>
@@ -46,7 +46,7 @@
                 {{/if}}
                 <div class="author-meta">
                     {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}" rel="author" itemprop="url">{{website}}</a></span>{{/if}}
                 </div>
             </section>
 

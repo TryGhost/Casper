@@ -5,8 +5,8 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
-        <nav class="main-nav overlay clearfix">
+    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+        <nav class="main-nav overlay clearfix" role="navigation">
             <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
             <a class="subscribe-button icon-feed" href="{{url}}rss/">{{name}}</a>
         </nav>
@@ -29,7 +29,7 @@
 {{/author}}
 
 {{! The main content area on the homepage }}
-<main class="content" role="main">
+<main class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
 
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}
