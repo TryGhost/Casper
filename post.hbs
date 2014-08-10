@@ -21,7 +21,7 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-            <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
+            <span class="post-meta">{{author}}, <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
 
             <h1 class="post-title">{{{title}}}</h1>
 
@@ -30,15 +30,21 @@
             </section>
 
             <footer class="post-footer">
-
+                
+                {{#author}}
                 <section class="author">
-                    <h4>{{author.name}}</h4>
-                    <p>{{author.bio}}</p>
-                    <ul class="author-meta clearfix">
-                        {{#if author.location}}<li>{{author.location}}</li>{{/if}}
-                        {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
-                    </ul>
+                    <h4><a href="{{url}}">{{name}}</a></h4>
+                    {{#if bio}}
+                        <p>{{bio}}</p>
+                    {{else}}
+                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                    {{/if}}
+                    <div class="author-meta">
+                        {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                    </div>
                 </section>
+                {{/author}}
 
                 <section class="share">
                     <h4>Share this post</h4>

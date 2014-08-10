@@ -723,6 +723,10 @@ margin on the iframe, cause it breaks stuff. */
     color: #9EABB3;
 }
 
+.author h4 a {
+    text-decoration: none;
+}
+
 .author-meta li {
     float: left;
     margin-left: 10px; /* space to the left of the bullet */
