@@ -603,6 +603,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 12px;
     text-transform: uppercase;
     line-height: 35px;
+    white-space: nowrap;
     border-radius: 3px;
     transition: all ease 0.3s;
 }
@@ -791,6 +792,7 @@ body:not(.post-template) .post-title {
     border-left: #d5dbde 1px solid;
     text-transform: uppercase;
     font-size: 1.3rem;
+    white-space: nowrap;
 }
 
 .user-image {
