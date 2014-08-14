@@ -562,6 +562,9 @@ margin on the iframe, cause it breaks stuff. */
     height: 38px;
     padding: 1px 0 5px 0;
     width: auto;
+    -webkit-border-radius: 50px; 
+    -moz-border-radius: 50px; 
+    border-radius: 50px;
 }
 
 .back-button {
