@@ -182,7 +182,7 @@ body {
     font-feature-settings: 'kern' 1;
     height: 100%;
     max-height: 100%;
-    font-family: "Noto Serif", serif;
+    font-family: "PT Serif", serif;
     font-size: 2.2rem;
     line-height: 1.7em;
     color: #3A4145;
@@ -667,7 +667,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 2.2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Noto Serif", serif;
+    font-family: "PT Serif", serif;
     letter-spacing: 0;
     color: rgba(255,255,255,0.8);
 }
@@ -1144,7 +1144,7 @@ body:not(.post-template) .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "Noto Serif", serif;
+    font-family: "PT Serif", serif;
     font-size: 1.7rem;
 }
 .author-meta span {
