@@ -7,21 +7,22 @@
     "use strict";
 
     $(document).ready(function(){
-
-        $(".post-content").fitVids();
+        var postContent = $(".post-content");
+        postContent.fitVids();
 
         function casperFullImg() {
             $("img").each( function() {
-                var contentWidth = $(".post-content").outerWidth(); // Width of the content
-                var imageWidth = $(this)[0].naturalWidth; // Original image resolution
+                var $this = $(this);
+                var contentWidth = postContent.outerWidth(); // Width of the content
+                var imageWidth = $this[0].naturalWidth; // Original image resolution
 
                 if (imageWidth >= contentWidth) {
-                    $(this).addClass('full-img');
+                    $this.addClass('full-img');
                 } else {
-                    $(this).removeClass('full-img');
+                    $this.removeClass('full-img');
                 }
             });
-        };
+        }
 
         casperFullImg();
         $(window).smartresize(casperFullImg);
@@ -45,7 +46,7 @@
               if (!execAsap)
                   func.apply(obj, args);
               timeout = null;
-          };
+          }
 
           if (timeout)
               clearTimeout(timeout);
@@ -54,8 +55,8 @@
 
           timeout = setTimeout(delayed, threshold || 100);
       };
-  }
-  // smartresize 
+  };
+  // smartresize
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery,'smartresize');
@@ -71,18 +72,20 @@
         };
         var options = $.extend(defaults, options);
 
-        options.elem.click(function(event){     
+        options.elem.click(function(event){
             event.preventDefault();
-            var offset = ($(this).attr('data-offset')) ? $(this).attr('data-offset') : false,
-                position = ($(this).attr('data-position')) ? $(this).attr('data-position') : false;         
+            var $this = $(this),
+                offset = ($this.attr('data-offset')) ? $this.attr('data-offset') : false,
+                position = ($this.attr('data-position')) ? $this.attr('data-position') : false,
+                $htmlBody = $('html, body');
             if (offset) {
                 var toMove = parseInt(offset);
-                $('html,body').stop(true, false).animate({scrollTop: ($(this.hash).offset().top + toMove) }, options.speed);
+                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top + toMove) }, options.speed);
             } else if (position) {
                 var toMove = parseInt(position);
-                $('html,body').stop(true, false).animate({scrollTop: toMove }, options.speed);
+                $htmlBody.stop(true, false).animate({scrollTop: toMove }, options.speed);
             } else {
-                $('html,body').stop(true, false).animate({scrollTop: ($(this.hash).offset().top) }, options.speed);
+                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top) }, options.speed);
             }
         });
 
