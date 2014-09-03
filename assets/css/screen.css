@@ -508,6 +508,7 @@ margin on the iframe, cause it breaks stuff. */
     text-align: center;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
+    -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
     -webkit-animation: bounce 4s 2s infinite;
     animation: bounce 4s 2s infinite;
