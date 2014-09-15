@@ -2,23 +2,51 @@
  * Main JS file for Casper behaviours
  */
 
-/*globals jQuery, document */
-(function ($) {
+/* globals jQuery, document */
+(function ($, sr, undefined) {
     "use strict";
 
-    $(document).ready(function(){
+    var $document = $(document),
 
-        $(".post-content").fitVids();
+        // debouncing function from John Hann
+        // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+        debounce = function (func, threshold, execAsap) {
+            var timeout;
 
-        function casperFullImg() {
-            $("img").each( function() {
-                var contentWidth = $(".post-content").outerWidth(); // Width of the content
-                var imageWidth = $(this)[0].naturalWidth; // Original image resolution
+            return function debounced () {
+                var obj = this, args = arguments;
+                function delayed () {
+                    if (!execAsap) {
+                        func.apply(obj, args);
+                    }
+                    timeout = null;
+                }
+
+                if (timeout) {
+                    clearTimeout(timeout);
+                } else if (execAsap) {
+                    func.apply(obj, args);
+                }
+
+                timeout = setTimeout(delayed, threshold || 100);
+            };
+        };
+
+    $document.ready(function () {
+
+        var $postContent = $(".post-content");
+        $postContent.fitVids();
+
+        var casperFullImg = function () {
+            $("img").each(function () {
+                var $this = $(this),
+                    contentWidth = $postContent.outerWidth(), // Width of the content
+                    imageWidth = $this[0].naturalWidth; // Original image resolution
 
                 if (imageWidth >= contentWidth) {
-                    $(this).addClass('full-img');
+                    $this.addClass('full-img');
                 } else {
-                    $(this).removeClass('full-img');
+                    $this.removeClass('full-img');
                 }
             });
         };
@@ -30,61 +58,38 @@
 
     });
 
-}(jQuery));
+    // smartresize
+    jQuery.fn[sr] = function(fn) { return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
-(function($,sr){
-
-  // debouncing function from John Hann
-  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-  var debounce = function (func, threshold, execAsap) {
-      var timeout;
-
-      return function debounced () {
-          var obj = this, args = arguments;
-          function delayed () {
-              if (!execAsap)
-                  func.apply(obj, args);
-              timeout = null;
-          };
-
-          if (timeout)
-              clearTimeout(timeout);
-          else if (execAsap)
-              func.apply(obj, args);
-
-          timeout = setTimeout(delayed, threshold || 100);
-      };
-  }
-  // smartresize 
-  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-})(jQuery,'smartresize');
-
-// Arctic Scroll by Paul Adam Davis
-// https://github.com/PaulAdamDavis/Arctic-Scroll
-(function ($) {
+    // Arctic Scroll by Paul Adam Davis
+    // https://github.com/PaulAdamDavis/Arctic-Scroll
     $.fn.arctic_scroll = function (options) {
 
         var defaults = {
             elem: $(this),
             speed: 500
-        };
-        var options = $.extend(defaults, options);
+        },
 
-        options.elem.click(function(event){     
+        allOptions = $.extend(defaults, options);
+
+        allOptions.elem.click(function (event) {
             event.preventDefault();
-            var offset = ($(this).attr('data-offset')) ? $(this).attr('data-offset') : false,
-                position = ($(this).attr('data-position')) ? $(this).attr('data-position') : false;         
+            var $this = $(this),
+                $htmlBody = $('html, body'),
+                offset = ($this.attr('data-offset')) ? $this.attr('data-offset') : false,
+                position = ($this.attr('data-position')) ? $this.attr('data-position') : false,
+                toMove;
+
             if (offset) {
-                var toMove = parseInt(offset);
-                $('html,body').stop(true, false).animate({scrollTop: ($(this.hash).offset().top + toMove) }, options.speed);
+                toMove = parseInt(offset);
+                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top + toMove) }, allOptions.speed);
             } else if (position) {
-                var toMove = parseInt(position);
-                $('html,body').stop(true, false).animate({scrollTop: toMove }, options.speed);
+                toMove = parseInt(position);
+                $htmlBody.stop(true, false).animate({scrollTop: toMove }, allOptions.speed);
             } else {
-                $('html,body').stop(true, false).animate({scrollTop: ($(this.hash).offset().top) }, options.speed);
+                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top) }, allOptions.speed);
             }
         });
 
     };
-})(jQuery);
+})(jQuery, 'smartresize');
