@@ -589,6 +589,7 @@ margin on the iframe, cause it breaks stuff. */
     text-transform: uppercase;
     line-height: 35px;
     border-radius: 3px;
+    background: rgba(0,0,0,0.1);
     transition: all ease 0.3s;
 }
 .back-button:before {
@@ -615,6 +616,7 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 35px;
     white-space: nowrap;
     border-radius: 3px;
+    background: rgba(0,0,0,0.1);
     transition: all ease 0.3s;
 }
 .subscribe-button:before {
@@ -635,7 +637,9 @@ margin on the iframe, cause it breaks stuff. */
     background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
 }
-.no-cover .main-nav.overlay {
+.no-cover .main-nav.overlay,
+.no-cover .back-button,
+.no-cover .subscribe-button {
     background: none;
 }
 
@@ -645,13 +649,13 @@ margin on the iframe, cause it breaks stuff. */
 
 .main-nav.overlay .back-button,
 .main-nav.overlay .subscribe-button {
-    border-color: #fff;
+    border-color: rgba(255,255,255,0.6);
 }
 
 .main-nav.overlay a:hover {
     color: #222;
-    border-color: rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.8);
+    border-color: #fff;
+    background: #fff;
     transition: all 0.1s ease;
 }
 
@@ -1057,6 +1061,18 @@ body:not(.post-template) .post-title {
    6. Author profile
    ========================================================================== */
 
+.post-head.main-header {
+    height: 65%;
+    min-height: 180px;
+}
+
+.no-cover.post-head.main-header {
+    height: 85px;
+    min-height: 0;
+    margin-bottom: 0;
+    background: transparent;
+}
+
 .tag-head.main-header {
     height: 40%;
     min-height: 180px;
@@ -1420,9 +1436,18 @@ body:not(.post-template) .post-title {
         font-size: 1.6rem;
     }
 
+    .post-head.main-header {
+        height:45%;
+    }
+
     .tag-head.main-header,
     .author-head.main-header {
         height: 30%;
+    }
+
+    .no-cover.post-head.main-header {
+        height: 55px;
+        padding: 0;
     }
 
     .no-cover.author-head.main-header {
@@ -1439,7 +1464,7 @@ body:not(.post-template) .post-title {
 @media only screen and (max-width: 500px) {
 
     .main-header {
-        margin-bottom: 0;
+        margin-bottom: 15px;
         height: 40%;
     }
 
@@ -1473,6 +1498,7 @@ body:not(.post-template) .post-title {
         line-height: 41px;
         border-radius: 0;
         color: #2e2e2e;
+        background: transparent;
     }
     .back-button:hover,
     .subscribe-button:hover {
@@ -1668,6 +1694,10 @@ body:not(.post-template) .post-title {
 
     .author-profile {
         padding-bottom: 2rem;
+    }
+
+    .post-head.main-header {
+        height: 30%;
     }
 
     .tag-head.main-header,

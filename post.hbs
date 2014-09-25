@@ -3,16 +3,19 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<nav class="main-nav clearfix">
-    <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-</nav>
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
+        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+    </nav>
+</header>
 
 <main class="content" role="main">
 
     <article class="{{post_class}}">
-    {{! Everything inside the #post tags pulls data from the post }}
-    {{#post}}
 
         <header class="post-header">
             <h1 class="post-title">{{title}}</h1>
@@ -70,7 +73,8 @@
 
         </footer>
 
-    {{/post}}
     </article>
 
 </main>
+
+{{/post}}
