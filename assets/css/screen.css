@@ -175,17 +175,18 @@ html {
 }
 
 body {
+    height: 100%;
+    max-height: 100%;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    font-size: 1.8rem;
+    line-height: 1.75em;
+    color: #3A4145;
     -webkit-font-feature-settings: 'kern' 1;
     -moz-font-feature-settings: 'kern' 1;
     -ms-font-feature-settings: 'kern' 1;
     -o-font-feature-settings: 'kern' 1;
     font-feature-settings: 'kern' 1;
-    height: 100%;
-    max-height: 100%;
-    font-family: "PT Serif", serif;
-    font-size: 2.2rem;
-    line-height: 1.7em;
-    color: #3A4145;
 }
 
 ::-moz-selection {
@@ -205,35 +206,35 @@ h4, h5, h6 {
     font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     color: #2E2E2E;
     line-height: 1.15em;
-    margin: 0 0 0.3em 0;
+    margin: 0 0 0.4em 0;
     font-family: "Open Sans", sans-serif;
 }
 
 h1 {
-    font-size: 5.6rem;
+    font-size: 5rem;
     letter-spacing: -2px;
     text-indent: -3px;
 }
 
 h2 {
-    font-size: 4.4rem;
+    font-size: 3.6rem;
     letter-spacing: -1px;
 }
 
 h3 {
-    font-size: 3.9rem;
+    font-size: 3rem;
 }
 
 h4 {
-    font-size: 3.1rem;
+    font-size: 2.5rem;
 }
 
 h5 {
-    font-size: 2.8rem;
+    font-size: 2rem;
 }
 
 h6 {
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 a {
@@ -251,11 +252,11 @@ p, ul, ol, dl {
     -ms-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
-    margin: 0 0 1.7em 0;
+    margin: 0 0 1.75em 0;
 }
 
 ol, ul {
-    padding-left: 0;
+    padding-left: 3rem;
 }
 
 ol ol, ul ul,
@@ -281,6 +282,14 @@ dl dd {
     margin-bottom: 1em
 }
 
+li {
+    margin: 0.4em 0;
+}
+
+li li {
+    margin: 0;
+}
+
 hr {
     display: block;
     height: 1px;
@@ -293,8 +302,8 @@ hr {
 blockquote {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.7em 0 1.7em -2.2em;
-    padding: 0 0 0 1.6em;
+    margin: 1.75em 0 1.75em -2.2em;
+    padding: 0 0 0 1.75em;
     border-left: #4A4A4A 0.4em solid;
 }
 
@@ -335,7 +344,7 @@ code, tt {
 pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 0 0 1.7em 0;
+    margin: 0 0 1.75em 0;
     border: #E3EDF3 1px solid;
     width: 100%;
     padding: 10px;
@@ -375,7 +384,7 @@ kbd {
 table {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.7em 0;
+    margin: 1.75em 0;
     width: 100%;
     max-width: 100%;
     background-color: transparent;
@@ -417,7 +426,7 @@ table.plain tbody > tr:nth-child(odd) > th {
 
 iframe, .fluid-width-video-wrapper {
     display: block;
-    margin: 1.6em 0;
+    margin: 1.75em 0;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
@@ -451,7 +460,7 @@ margin on the iframe, cause it breaks stuff. */
 .inner {
     position: relative;
     width: 80%;
-    max-width: 780px;
+    max-width: 710px;
     margin: 0 auto;
 }
 
@@ -656,7 +665,7 @@ margin on the iframe, cause it breaks stuff. */
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
     margin: 10px 0 10px 0;
-    font-size: 5.6rem;
+    font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
     font-family: "Open Sans", sans-serif;
@@ -665,11 +674,11 @@ margin on the iframe, cause it breaks stuff. */
 
 .page-description {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "PT Serif", serif;
-    letter-spacing: 0;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
 
@@ -711,7 +720,7 @@ margin on the iframe, cause it breaks stuff. */
 .post {
     position: relative;
     width: 80%;
-    max-width: 780px;
+    max-width: 710px;
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
@@ -739,7 +748,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 body:not(.post-template) .post-title {
-    font-size: 4rem;
+    font-size: 3.6rem;
 }
 
 .post-title a {
@@ -748,6 +757,8 @@ body:not(.post-template) .post-title {
 
 .post-excerpt p {
     margin: 0;
+    font-size: 0.9em;
+    line-height: 1.7em;
 }
 
 .read-more {
@@ -756,7 +767,7 @@ body:not(.post-template) .post-title {
 
 .post-meta {
     display: block;
-    margin: 2rem 0 0.6rem 0;
+    margin: 1.75rem 0 0 0;
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
@@ -907,7 +918,7 @@ body:not(.post-template) .post-title {
 .post-footer p {
     margin: 1rem 0;
     font-size: 1.4rem;
-    line-height: 1.6em;
+    line-height: 1.75em;
 }
 
 /* list of author links - location / url */
@@ -1145,7 +1156,8 @@ body:not(.post-template) .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "PT Serif", serif;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
 .author-meta span {
@@ -1186,7 +1198,7 @@ body:not(.post-template) .post-title {
 .pagination {
     position: relative;
     width: 80%;
-    max-width: 780px;
+    max-width: 710px;
     margin: 4rem auto;
     font-family: "Open Sans", sans-serif;
     font-size: 1.3rem;
@@ -1277,7 +1289,7 @@ body:not(.post-template) .post-title {
     border-top: #EBF2F6 1px solid;
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
-    line-height: 1.7em;
+    line-height: 1.75em;
     color: #BBC7CC;
 }
 
@@ -1306,73 +1318,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 1600px
-   ========================================================================== */
-
-@media only screen and (max-width: 1600px) {
-
-    .page-title {
-        font-size: 5rem;
-    }
-
-    .page-description {
-        font-size: 2rem;
-        line-height: 1.5em;
-    }
-
-    .post {
-        font-size: 0.9em;
-        line-height: 1.65em;
-    }
-
-    p, ul, ol, dl {
-        margin: 0 0 1.65em 0;
-    }
-
-    .post,
-    .inner,
-    .pagination {
-        max-width: 710px;
-    }
-
-    h1, h2, h3,
-    h4, h5, h6 {
-        margin: 0 0 0.4em 0;
-    }
-
-    h1 {
-        font-size: 5rem;
-    }
-
-    h2 {
-        font-size: 4rem;
-    }
-
-    h3 {
-        font-size: 3.5rem;
-    }
-
-    h4 {
-        font-size: 2.8rem;
-    }
-
-    h5 {
-        font-size: 2.5rem;
-    }
-
-    h6 {
-        font-size: 2rem;
-    }
-
-    body:not(.post-template) .post-title {
-        font-size: 3.6rem;
-    }
-
-}
-
-
-/* ==========================================================================
-   11. Media Queries - Smaller than 900px
+   10. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -1395,7 +1341,8 @@ body:not(.post-template) .post-title {
         padding: 15% 0;
     }
 
-    .scroll-down { display: none; }
+    .scroll-down,
+    .home-template .main-header:after { display: none; }
 
     .archive-template .main-header {
         min-height: 180px;
@@ -1417,7 +1364,7 @@ body:not(.post-template) .post-title {
     }
 
     .post {
-        font-size: 0.8em
+        font-size: 0.95em
     }
 
     body:not(.post-template) .post-title {
@@ -1486,7 +1433,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   12. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
@@ -1578,7 +1525,7 @@ body:not(.post-template) .post-title {
         margin-left: 16px;
         margin-right: 16px;
         padding-bottom: 2rem;
-        line-height: 1.55em;
+        line-height: 1.65em;
     }
 
     .post-date {
@@ -1594,16 +1541,20 @@ body:not(.post-template) .post-title {
     }
 
     hr {
-        margin: 1.6em 0;
+        margin: 1.75em 0;
     }
 
     p, ul, ol, dl {
         font-size: 0.95em;
-        margin: 0 0 2rem 0;
+        margin: 0 0 2.5rem 0;
     }
 
     .page-title {
         font-size: 3rem;
+    }
+
+    .post-excerpt p {
+        font-size: 0.85em;
     }
 
     .page-description {
@@ -1616,33 +1567,33 @@ body:not(.post-template) .post-title {
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
         letter-spacing: -1px;
     }
 
     h2 {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         letter-spacing: 0;
     }
 
     h3 {
-        font-size: 2.4rem;
-    }
-
-    h4 {
         font-size: 2.1rem;
     }
 
-    h5 {
+    h4 {
         font-size: 1.9rem;
     }
 
+    h5 {
+        font-size: 1.8rem;
+    }
+
     h6 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     body:not(.post-template) .post-title {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
     }
 
     .post-template .post {
@@ -1668,6 +1619,7 @@ body:not(.post-template) .post-title {
 
     .post-meta {
         font-size: 1.3rem;
+        margin-top: 1rem;
     }
 
     .post-footer {
@@ -1693,7 +1645,7 @@ body:not(.post-template) .post-title {
     .author-meta li {
         float: none;
         margin: 0;
-        line-height: 1.6em;
+        line-height: 1.75em;
     }
 
     .author-meta li:before {
@@ -1728,7 +1680,7 @@ body:not(.post-template) .post-title {
     }
 
     .author-profile .author-meta span {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .archive-template .main-header .page-description {
@@ -1739,7 +1691,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   13. Animations
+   12. Animations
    ========================================================================== */
 
 /* Used to fade in title/desc on the home page */
