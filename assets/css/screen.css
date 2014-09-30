@@ -14,10 +14,9 @@
     7.  Third Party Elements
     8.  Pagination
     9.  Footer
-    10. Media Queries (Medium Desktop)
-    11. Media Queries (Tablet)
-    12. Media Queries (Mobile)
-    13. Animations
+    10. Media Queries (Tablet)
+    11. Media Queries (Mobile)
+    12. Animations
 
 */
 
@@ -175,17 +174,16 @@ html {
 }
 
 body {
-    -webkit-font-feature-settings: 'kern' 1;
-    -moz-font-feature-settings: 'kern' 1;
-    -ms-font-feature-settings: 'kern' 1;
-    -o-font-feature-settings: 'kern' 1;
-    font-feature-settings: 'kern' 1;
     height: 100%;
     max-height: 100%;
-    font-family: "PT Serif", serif;
-    font-size: 2.2rem;
-    line-height: 1.7em;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    font-size: 1.8rem;
+    line-height: 1.75em;
     color: #3A4145;
+    -webkit-font-feature-settings: 'kern' 1;
+    -moz-font-feature-settings: 'kern' 1;
+    -o-font-feature-settings: 'kern' 1;
 }
 
 ::-moz-selection {
@@ -200,40 +198,38 @@ h1, h2, h3,
 h4, h5, h6 {
     -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     color: #2E2E2E;
     line-height: 1.15em;
-    margin: 0 0 0.3em 0;
+    margin: 0 0 0.4em 0;
     font-family: "Open Sans", sans-serif;
 }
 
 h1 {
-    font-size: 5.6rem;
+    font-size: 5rem;
     letter-spacing: -2px;
     text-indent: -3px;
 }
 
 h2 {
-    font-size: 4.4rem;
+    font-size: 3.6rem;
     letter-spacing: -1px;
 }
 
 h3 {
-    font-size: 3.9rem;
+    font-size: 3rem;
 }
 
 h4 {
-    font-size: 3.1rem;
+    font-size: 2.5rem;
 }
 
 h5 {
-    font-size: 2.8rem;
+    font-size: 2rem;
 }
 
 h6 {
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 a {
@@ -248,14 +244,12 @@ a:hover {
 p, ul, ol, dl {
     -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
-    -ms-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
-    font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
-    margin: 0 0 1.7em 0;
+    margin: 0 0 1.75em 0;
 }
 
 ol, ul {
-    padding-left: 0;
+    padding-left: 3rem;
 }
 
 ol ol, ul ul,
@@ -281,6 +275,14 @@ dl dd {
     margin-bottom: 1em
 }
 
+li {
+    margin: 0.4em 0;
+}
+
+li li {
+    margin: 0;
+}
+
 hr {
     display: block;
     height: 1px;
@@ -293,8 +295,8 @@ hr {
 blockquote {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.7em 0 1.7em -2.2em;
-    padding: 0 0 0 1.6em;
+    margin: 1.75em 0 1.75em -2.2em;
+    padding: 0 0 0 1.75em;
     border-left: #4A4A4A 0.4em solid;
 }
 
@@ -335,7 +337,7 @@ code, tt {
 pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 0 0 1.7em 0;
+    margin: 0 0 1.75em 0;
     border: #E3EDF3 1px solid;
     width: 100%;
     padding: 10px;
@@ -375,7 +377,7 @@ kbd {
 table {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.7em 0;
+    margin: 1.75em 0;
     width: 100%;
     max-width: 100%;
     background-color: transparent;
@@ -417,7 +419,7 @@ table.plain tbody > tr:nth-child(odd) > th {
 
 iframe, .fluid-width-video-wrapper {
     display: block;
-    margin: 1.6em 0;
+    margin: 1.75em 0;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
@@ -451,7 +453,7 @@ margin on the iframe, cause it breaks stuff. */
 .inner {
     position: relative;
     width: 80%;
-    max-width: 780px;
+    max-width: 710px;
     margin: 0 auto;
 }
 
@@ -580,6 +582,7 @@ margin on the iframe, cause it breaks stuff. */
     text-transform: uppercase;
     line-height: 35px;
     border-radius: 3px;
+    background: rgba(0,0,0,0.1);
     transition: all ease 0.3s;
 }
 .back-button:before {
@@ -606,6 +609,7 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 35px;
     white-space: nowrap;
     border-radius: 3px;
+    background: rgba(0,0,0,0.1);
     transition: all ease 0.3s;
 }
 .subscribe-button:before {
@@ -626,7 +630,9 @@ margin on the iframe, cause it breaks stuff. */
     background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
 }
-.no-cover .main-nav.overlay {
+.no-cover .main-nav.overlay,
+.no-cover .back-button,
+.no-cover .subscribe-button {
     background: none;
 }
 
@@ -636,13 +642,13 @@ margin on the iframe, cause it breaks stuff. */
 
 .main-nav.overlay .back-button,
 .main-nav.overlay .subscribe-button {
-    border-color: #fff;
+    border-color: rgba(255,255,255,0.6);
 }
 
 .main-nav.overlay a:hover {
     color: #222;
-    border-color: rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.8);
+    border-color: #fff;
+    background: #fff;
     transition: all 0.1s ease;
 }
 
@@ -656,7 +662,7 @@ margin on the iframe, cause it breaks stuff. */
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
     margin: 10px 0 10px 0;
-    font-size: 5.6rem;
+    font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
     font-family: "Open Sans", sans-serif;
@@ -665,11 +671,11 @@ margin on the iframe, cause it breaks stuff. */
 
 .page-description {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "PT Serif", serif;
-    letter-spacing: 0;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
 
@@ -711,7 +717,7 @@ margin on the iframe, cause it breaks stuff. */
 .post {
     position: relative;
     width: 80%;
-    max-width: 780px;
+    max-width: 710px;
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
@@ -739,7 +745,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 body:not(.post-template) .post-title {
-    font-size: 4rem;
+    font-size: 3.6rem;
 }
 
 .post-title a {
@@ -748,6 +754,8 @@ body:not(.post-template) .post-title {
 
 .post-excerpt p {
     margin: 0;
+    font-size: 0.9em;
+    line-height: 1.7em;
 }
 
 .read-more {
@@ -756,7 +764,7 @@ body:not(.post-template) .post-title {
 
 .post-meta {
     display: block;
-    margin: 2rem 0 0.6rem 0;
+    margin: 1.75rem 0 0 0;
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
@@ -907,7 +915,7 @@ body:not(.post-template) .post-title {
 .post-footer p {
     margin: 1rem 0;
     font-size: 1.4rem;
-    line-height: 1.6em;
+    line-height: 1.75em;
 }
 
 /* list of author links - location / url */
@@ -1046,6 +1054,18 @@ body:not(.post-template) .post-title {
    6. Author profile
    ========================================================================== */
 
+.post-head.main-header {
+    height: 65%;
+    min-height: 180px;
+}
+
+.no-cover.post-head.main-header {
+    height: 85px;
+    min-height: 0;
+    margin-bottom: 0;
+    background: transparent;
+}
+
 .tag-head.main-header {
     height: 40%;
     min-height: 180px;
@@ -1145,7 +1165,8 @@ body:not(.post-template) .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "PT Serif", serif;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
 .author-meta span {
@@ -1186,7 +1207,7 @@ body:not(.post-template) .post-title {
 .pagination {
     position: relative;
     width: 80%;
-    max-width: 780px;
+    max-width: 710px;
     margin: 4rem auto;
     font-family: "Open Sans", sans-serif;
     font-size: 1.3rem;
@@ -1277,7 +1298,7 @@ body:not(.post-template) .post-title {
     border-top: #EBF2F6 1px solid;
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
-    line-height: 1.7em;
+    line-height: 1.75em;
     color: #BBC7CC;
 }
 
@@ -1306,73 +1327,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 1600px
-   ========================================================================== */
-
-@media only screen and (max-width: 1600px) {
-
-    .page-title {
-        font-size: 5rem;
-    }
-
-    .page-description {
-        font-size: 2rem;
-        line-height: 1.5em;
-    }
-
-    .post {
-        font-size: 0.9em;
-        line-height: 1.65em;
-    }
-
-    p, ul, ol, dl {
-        margin: 0 0 1.65em 0;
-    }
-
-    .post,
-    .inner,
-    .pagination {
-        max-width: 710px;
-    }
-
-    h1, h2, h3,
-    h4, h5, h6 {
-        margin: 0 0 0.4em 0;
-    }
-
-    h1 {
-        font-size: 5rem;
-    }
-
-    h2 {
-        font-size: 4rem;
-    }
-
-    h3 {
-        font-size: 3.5rem;
-    }
-
-    h4 {
-        font-size: 2.8rem;
-    }
-
-    h5 {
-        font-size: 2.5rem;
-    }
-
-    h6 {
-        font-size: 2rem;
-    }
-
-    body:not(.post-template) .post-title {
-        font-size: 3.6rem;
-    }
-
-}
-
-
-/* ==========================================================================
-   11. Media Queries - Smaller than 900px
+   10. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -1395,7 +1350,8 @@ body:not(.post-template) .post-title {
         padding: 15% 0;
     }
 
-    .scroll-down { display: none; }
+    .scroll-down,
+    .home-template .main-header:after { display: none; }
 
     .archive-template .main-header {
         min-height: 180px;
@@ -1417,7 +1373,7 @@ body:not(.post-template) .post-title {
     }
 
     .post {
-        font-size: 0.8em
+        font-size: 0.95em
     }
 
     body:not(.post-template) .post-title {
@@ -1473,9 +1429,18 @@ body:not(.post-template) .post-title {
         font-size: 1.6rem;
     }
 
+    .post-head.main-header {
+        height:45%;
+    }
+
     .tag-head.main-header,
     .author-head.main-header {
         height: 30%;
+    }
+
+    .no-cover.post-head.main-header {
+        height: 55px;
+        padding: 0;
     }
 
     .no-cover.author-head.main-header {
@@ -1486,13 +1451,13 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   12. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
 
     .main-header {
-        margin-bottom: 0;
+        margin-bottom: 15px;
         height: 40%;
     }
 
@@ -1526,6 +1491,7 @@ body:not(.post-template) .post-title {
         line-height: 41px;
         border-radius: 0;
         color: #2e2e2e;
+        background: transparent;
     }
     .back-button:hover,
     .subscribe-button:hover {
@@ -1578,7 +1544,7 @@ body:not(.post-template) .post-title {
         margin-left: 16px;
         margin-right: 16px;
         padding-bottom: 2rem;
-        line-height: 1.55em;
+        line-height: 1.65em;
     }
 
     .post-date {
@@ -1594,16 +1560,20 @@ body:not(.post-template) .post-title {
     }
 
     hr {
-        margin: 1.6em 0;
+        margin: 1.75em 0;
     }
 
     p, ul, ol, dl {
         font-size: 0.95em;
-        margin: 0 0 2rem 0;
+        margin: 0 0 2.5rem 0;
     }
 
     .page-title {
         font-size: 3rem;
+    }
+
+    .post-excerpt p {
+        font-size: 0.85em;
     }
 
     .page-description {
@@ -1616,33 +1586,33 @@ body:not(.post-template) .post-title {
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
         letter-spacing: -1px;
     }
 
     h2 {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         letter-spacing: 0;
     }
 
     h3 {
-        font-size: 2.4rem;
-    }
-
-    h4 {
         font-size: 2.1rem;
     }
 
-    h5 {
+    h4 {
         font-size: 1.9rem;
     }
 
+    h5 {
+        font-size: 1.8rem;
+    }
+
     h6 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     body:not(.post-template) .post-title {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
     }
 
     .post-template .post {
@@ -1668,6 +1638,7 @@ body:not(.post-template) .post-title {
 
     .post-meta {
         font-size: 1.3rem;
+        margin-top: 1rem;
     }
 
     .post-footer {
@@ -1693,7 +1664,7 @@ body:not(.post-template) .post-title {
     .author-meta li {
         float: none;
         margin: 0;
-        line-height: 1.6em;
+        line-height: 1.75em;
     }
 
     .author-meta li:before {
@@ -1718,6 +1689,10 @@ body:not(.post-template) .post-title {
         padding-bottom: 2rem;
     }
 
+    .post-head.main-header {
+        height: 30%;
+    }
+
     .tag-head.main-header,
     .author-head.main-header {
         height: 20%;
@@ -1728,7 +1703,7 @@ body:not(.post-template) .post-title {
     }
 
     .author-profile .author-meta span {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .archive-template .main-header .page-description {
@@ -1739,7 +1714,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   13. Animations
+   12. Animations
    ========================================================================== */
 
 /* Used to fade in title/desc on the home page */
