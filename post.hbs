@@ -6,6 +6,28 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
+      {{#contentFor "meta"}}
+        <!-- Classic Meta Tags -->
+        <title>{{title}}</title>
+        <meta name="description" content="{{excerpt characters="220"}}">
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="{{title}}"/>
+        <meta property="og:description" content="{{excerpt characters="220"}}"/>
+        <meta property="og:site_name" content="{{@blog.title}}"/>
+        <meta property="og:url" content="{{@blog.url}}{{url}}"/>
+        <meta property="og:image" content="http://blog.qli.jp/content/images/2014/Aug/my-bear-2-for-twitter.png"/>
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="{{title}}"/>
+        <meta name="twitter:description" content="{{excerpt characters="220"}}"/>
+        <meta name="twitter:image" content="http://blog.qli.jp/content/images/2014/Aug/my-bear-2-for-twitter.png"/>
+        <meta name="twitter:site" content="@hiro"/>
+        <meta name="twitter:creator" content="@hiro"/>
+      {{/contentFor}}
+
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
         <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
@@ -20,7 +42,7 @@
         <header class="post-header">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY/MM/DD"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
 
