@@ -23,3 +23,25 @@
     {{> "loop"}}
 
 </main>
+
+{{#contentFor "meta"}}
+  <!-- Classic Meta Tags -->
+  <title>{{@blog.title}}</title>
+  <meta name="description" content="{{@blog.description}}">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="blog"/>
+  <meta property="og:title" content="{{@blog.title}}"/>
+  <meta property="og:description" content="{{@blog.description}}"/>
+  <meta property="og:site_name" content="{{@blog.title}}"/>
+  <meta property="og:url" content="{{@blog.url}}"/>
+  <meta property="og:image" content="http://blog.qli.jp/content/images/2014/Aug/my-bear-2-for-twitter.png" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="{{@blog.title}}"/>
+  <meta name="twitter:description" content="{{@blog.description}}"/>
+  <meta name="twitter:image" content="http://blog.qli.jp/content/images/2014/Aug/my-bear-2-for-twitter.png"/>
+  <meta name="twitter:site" content="@hiro"/>
+  <meta name="twitter:creator" content="@hiro"/>
+{{/contentFor}}
