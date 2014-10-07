@@ -13,8 +13,8 @@
         <p>{{excerpt words="50"}}&hellip; <a class="read-more" href="{{url}}">Read more &raquo;</a></p>
     </section>
     <footer class="post-meta">
-        {{tags prefix=" on "}}
         <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        {{#if tags}}<div class="post-tags"><span class="icon-tags"></span>{{tags}}</div>{{/if}}
     </footer>
 </article>
 {{/foreach}}
