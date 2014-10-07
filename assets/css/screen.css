@@ -949,10 +949,6 @@ body:not(.post-template) .post-title {
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
-    position: absolute;
-    top: 6rem;
-    right: 0;
-    width: 140px;
 }
 
 .post-footer .share a {
