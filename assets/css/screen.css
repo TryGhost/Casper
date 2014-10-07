@@ -105,19 +105,19 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* Import the font file with the icons in it */
 @font-face {
-    font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot");
-    src:url("../fonts/casper-icons.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff") format("woff"),
-        url("../fonts/casper-icons.ttf") format("truetype"),
-        url("../fonts/casper-icons.svg#icons") format("svg");
+    font-family: "rbox-casper-icons";
+    src:url("../fonts/rbox-casper-icons.eot");
+    src:url("../fonts/rbox-casper-icons.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/rbox-casper-icons.woff") format("woff"),
+        url("../fonts/rbox-casper-icons.ttf") format("truetype"),
+        url("../fonts/rbox-casper-icons.svg#icons") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
 /* Apply these base styles to all icons */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
+    font-family: "rbox-casper-icons", "Open Sans", sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -131,35 +131,16 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* Each icon is created by inserting the correct character into the
    content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-    content: "\f600";
-}
-.icon-feed:before {
-    content: "\f601";
-}
-.icon-twitter:before {
-    content: "\f602";
-    font-size: 1.1em;
-}
-.icon-google-plus:before {
-    content: "\f603";
-}
-.icon-facebook:before {
-    content: "\f604";
-}
-.icon-arrow-left:before {
-    content: "\f605";
-}
-.icon-stats:before {
-    content: "\f606";
-}
-.icon-location:before {
-    content: "\f607";
-    margin-left: -3px; /* Tracking fix */
-}
-.icon-link:before {
-    content: "\f608";
-}
+.icon-tags:before { content: '\e800'; }
+.icon-ghost:before { content: '\e801'; }
+.icon-feed:before { content: '\e802'; }
+.icon-twitter:before { content: '\e803'; }
+.icon-google-plus:before { content: '\e804'; }
+.icon-facebook:before { content: '\e805'; }
+.icon-arrow-left:before { content: '\e806'; }
+.icon-stats:before { content: '\e807'; }
+.icon-location:before { content: '\e808'; }
+.icon-link:before { content: '\e809'; }
 
 
 /* ==========================================================================
