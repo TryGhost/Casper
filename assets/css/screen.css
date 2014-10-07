@@ -760,6 +760,11 @@ body:not(.post-template) .post-title {
 
 .read-more {
     text-decoration: none;
+    color: #08c; /* from bootstrap 2.3 */
+}
+
+.read-more:hover {
+    color: #005580;
 }
 
 .post-meta {
