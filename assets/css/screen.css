@@ -454,11 +454,13 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     display: table;
     width: 100%;
-    height: 100%;
+    height: 40%;
+    min-height: 300px;
     margin-bottom: 5rem;
     text-align: center;
-    background: #222 no-repeat center center;
-    background-size: cover;
+    background-color: #222;
+    background-position: center center;
+    background-size: 100%;
     overflow: hidden;
 }
 
@@ -506,21 +508,21 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Put a semi-opaque radial gradient behind the icon to make it more visible
    on photos which happen to have a light background. */
-.home-template .main-header:after {
-    display: block;
-    content: " ";
-    width: 150px;
-    height: 130px;
-    border-radius: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -75px;
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.15)), color-stop(70%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
-    background: radial-gradient(ellipse at center,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
-}
+/* .home-template .main-header:after { */
+/*     display: block; */
+/*     content: " "; */
+/*     width: 150px; */
+/*     height: 130px; */
+/*     border-radius: 100%; */
+/*     position: absolute; */
+/*     bottom: 0; */
+/*     left: 50%; */
+/*     margin-left: -75px; */
+/*     background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%); */
+/*     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.15)), color-stop(70%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); */
+/*     background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%); */
+/*     background: radial-gradient(ellipse at center,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%); */
+/* } */
 
 /* Hide when there's no cover image or on page2+ */
 .no-cover .scroll-down,
@@ -1334,10 +1336,9 @@ body:not(.post-template) .post-title {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        height: auto;
         min-height: 240px;
-        height: 60%;
         padding: 15% 0;
+        background-size: cover;
     }
 
     .scroll-down,
