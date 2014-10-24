@@ -777,6 +777,13 @@ body:not(.post-template) .post-title {
     float: left;
     margin-right: 9px;
     border-radius: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+.author-thumb img {
+    width: 24px;
+    height: 24px;
+    opacity: 0;
 }
 
 .post-meta a {
