@@ -455,7 +455,7 @@ margin on the iframe, cause it breaks stuff. */
     display: block;
     max-height: 100px;
     width: auto;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
     line-height: 0;
     border:3px solid #fff;
     border-radius:50%;
@@ -472,7 +472,7 @@ margin on the iframe, cause it breaks stuff. */
 
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
-    margin: 10px 0 10px 0;
+    margin: 0 0 10px 0;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 1px 6px rgba(0,0,0,0.1);
@@ -660,7 +660,6 @@ main
 #results
 {
     text-align: center;
-    margin-bottom: 4rem;
 }
 
 #results > p
@@ -678,6 +677,9 @@ main
     text-decoration: none;
     padding: 1rem 2.5rem;
     margin-bottom: 1rem;
+}
+#results > a:last-child {
+    margin-bottom: 4rem;
 }
 
 #results h2
