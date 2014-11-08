@@ -1,0 +1,11 @@
+/* Say, THANKS to http://www.incrediblemolk.com/adding-custom-css-to-your-ghost-blog-theme/ for this code! */
+.twitter-tweet {
+    visibility: hidden;
+}
+
+*[id*='twitter-widget-'] {
+    margin-left: 10% !important;
+    width: 80% !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+}
