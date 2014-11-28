@@ -1198,6 +1198,10 @@ body:not(.post-template) .post-title {
     font-size: 1.1rem;
 }
 
+/* Pastebin */
+.content .embedPastebin {
+    margin-bottom: 1.75em;
+}
 
 /* ==========================================================================
    8. Pagination - Tools to let you flick between pages
