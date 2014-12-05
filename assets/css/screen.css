@@ -104,7 +104,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* Import the font file with the icons in it */
 @font-face {
-    font-family: 'icons';
+    font-family: 'casper-icons';
     src:url('../fonts/casper-icons.eot');
     src:url('../fonts/casper-icons.eot?#iefix') format('embedded-opentype'),
         url('../fonts/casper-icons.woff') format('woff'),
