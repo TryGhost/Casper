@@ -31,19 +31,30 @@
 
         <footer class="post-footer">
 
-            <section class="author">
-                <div class="author-image">
-                    {{#if author.image}} <img src="{{author.image}}" alt="{{author.name}}"/> {{/if}}
-                </div>
-                <div class="author-text">
-                    <h4>{{author.name}}</h4>
-                    <p>{{author.bio}}</p>
-                    <div class="author-meta clearfix">
-                        {{#if author.location}}<p>{{author.location}}</p>{{/if}}
-                        {{#if author.website}}<p><a href="{{author.website}}">{{author.website}}</a></p>{{/if}}
+            {{! Everything inside the #author tags pulls data from the author }}
+            {{#author}}
+
+                {{#if image}}
+                <figure class="author-image">
+                    <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                </figure>
+                {{/if}}
+
+                <section class="author">
+                    <h4><a href="{{url}}">{{name}}</a></h4>
+
+                    {{#if bio}}
+                        <p>{{bio}}</p>
+                    {{else}}
+                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                    {{/if}}
+                    <div class="author-meta">
+                        {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
                     </div>
-                </div>
-            </section>
+                </section>
+
+            {{/author}}
 
             <section class="share">
                 <h4>Share this post</h4>
