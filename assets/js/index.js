@@ -37,19 +37,22 @@
         var $postContent = $(".post-content");
         $postContent.fitVids();
 
-        var casperFullImg = function () {
-            $("img").each(function () {
-                var $this = $(this),
-                    contentWidth = $postContent.outerWidth(), // Width of the content
-                    imageWidth = $this[0].naturalWidth; // Original image resolution
+        function updateImageWidth() {
+            var $this = $(this),
+                contentWidth = $postContent.outerWidth(), // Width of the content
+                imageWidth = this.naturalWidth; // Original image resolution
 
-                if (imageWidth >= contentWidth) {
-                    $this.addClass('full-img');
-                } else {
-                    $this.removeClass('full-img');
-                }
-            });
-        };
+            if (imageWidth >= contentWidth) {
+                $this.addClass('full-img');
+            } else {
+                $this.removeClass('full-img');
+            }
+        }
+
+        var $img = $("img").on('load', updateImageWidth);
+        function casperFullImg() {
+            $img.each(updateImageWidth);
+        }
 
         casperFullImg();
         $(window).smartresize(casperFullImg);
