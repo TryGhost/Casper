@@ -478,6 +478,31 @@ margin on the iframe, cause it breaks stuff. */
     backface-visibility:hidden
 }
 
+.subscribe-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 38px;
+    padding: 0 20px;
+    border: rgba(0,0,0,0.3) 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    white-space: nowrap;
+    border-radius: 3px;
+    background: none;
+    transition: all ease 0.3s;
+    text-decoration: none;
+}
+
+.subscribe-button:before {
+    font-size: 9px;
+    margin-right: 6px;
+}
+
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
     margin: 0 0 10px 0;
@@ -941,27 +966,19 @@ main
 }
 
 .author-profile {
-    padding: 0 15px 5rem 15px;
+    padding: 0 0 30px 0;
     border-bottom: #EBF2F6 1px solid;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
-/* Add a little circle in the middle of the border-bottom */
-.author-profile:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #FFF 0 0 0 5px;
+.author-cover {
+    background: transparent no-repeat center;
+    width: 100%;
+    background-size: 100%;
+    min-height: 220px;
+    margin: 0 0 40px 0;
+    position: relative;
 }
 
 .author-image {
@@ -994,14 +1011,17 @@ main
 }
 
 .author-profile .author-image {
-    position: relative;
-    left: auto;
-    top: auto;
     width: 120px;
     height: 120px;
-    padding: 3px;
-    margin: -100px auto 0 auto;
     box-shadow: none;
+    float: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .author-title {
