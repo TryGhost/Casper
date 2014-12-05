@@ -132,7 +132,7 @@ table { border-collapse: collapse; border-spacing: 0; }
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Each icon is created by inserting the corret character into the
+/* Each icon is created by inserting the correct character into the
    content of the :before pseudo element. Like a boss. */
 .icon-ghost:before {
     content: "\e000";
