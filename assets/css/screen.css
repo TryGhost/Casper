@@ -595,7 +595,8 @@ margin on the iframe, cause it breaks stuff. */
 
 .post-meta i
 {
-    width: 17px;
+    width: 18px;
+    font-size: 14px;
 }
 
 .user-meta {
@@ -741,7 +742,7 @@ main
 #sidebar-links i
 {
     width: 18px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #sidebar-links a
@@ -757,7 +758,14 @@ main
 
 .post-indexfooter
 {
+    font-size: 14px;
     margin: 2rem 0;
+}
+
+.post-indexfooter i
+{
+    width: 18px;
+    font-size: 14px;
 }
 
 .post-indexfooter a
