@@ -7,7 +7,13 @@
 
     {{#post}}
 
-        <h1 class="post-title">{{{title}}}</h1>
+        <header class="post-header">
+            {{#if image}}
+                <img class="post-cover" src="{{image}}" alt="{{title}}">
+            {{/if}}
+
+            <h1 class="post-title">{{title}}</h1>
+        </header>
 
         <section class="post-content">
             {{content}}

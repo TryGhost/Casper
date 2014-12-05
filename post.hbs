@@ -8,16 +8,22 @@
     {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
 
-        <div class="post-meta">
-            <span class="post-time">
-                <i class='fa fa-calendar'></i>
-                <time datetime="{{date format="YYYY-MM-DD"}}" class="timeago">{{date timeago="true"}}</time>
-                <time datetime="{{date format="YYYY-MM-DD"}}" class="fulldate">{{date format="MMMM Do, YYYY"}}</time>
-            </span>
-            {{tags prefix="<br><i class='fa fa-tag'></i> " separator=" · "}}
-        </div>
+        <header class="post-header">
+            {{#if image}}
+                <img class="post-cover" src="{{image}}" alt="{{title}}">
+            {{/if}}
 
-        <h1 class="post-title">{{{title}}}</h1>
+            <h1 class="post-title">{{title}}</h1>
+            
+            <section class="post-meta">
+                <span class="post-time">
+                    <i class='fa fa-calendar'></i>
+                    <time datetime="{{date format="YYYY-MM-DD"}}" class="timeago">{{date timeago="true"}}</time>
+                    <time datetime="{{date format="YYYY-MM-DD"}}" class="fulldate">{{date format="MMMM Do, YYYY"}}</time>
+                </span>
+                {{tags prefix="<br><i class='fa fa-tag'></i> " separator=" · "}}
+            </section>
+        </header>
 
         <section class="post-content">
             {{content}}
