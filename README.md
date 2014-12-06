@@ -1,8 +1,8 @@
-# Casper
+# Duppy (means Ghost in Jamaica)
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+This is a fork of the default theme for [Ghost](http://github.com/tryghost/ghost/).
 
-To download, visit the [releases](https://github.com/TryGhost/Casper/releases) page.
+To download, visit the [releases](https://github.com/dbulli/Duppy/releases) page.
 
 ## Copyright & License
 
