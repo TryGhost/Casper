@@ -1723,11 +1723,11 @@ body:not(.post-template) .post-title {
 ========================================================================== */
 
 
-a {
+.post-content a, .post-excerpt a, .post-meta a {
   color: #9f5111;
 }
 
-a:hover {
+.post-content a:hover, .post-excerpt a:hover, .post-meta a:hover {
   color: #4e1800;
 }
 
