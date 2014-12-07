@@ -24,8 +24,8 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 
 This theme is being used in my [blog](http://davidlecina.com/).
 
-*  ["Welcome to Ghost" post](http://davidlecina.com/welcome-to-ghost/).
-*  [Prism demo](http://davidlecina.com/prism-demo/).
+*  ["Welcome to Ghost" post](http://davidlecina.com/blog/welcome-to-ghost/).
+*  [Prism demo](http://davidlecina.com/blog/prism-demo/).
 
 ## Installation
 
