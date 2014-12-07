@@ -79,6 +79,7 @@
     <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
     <script>
         $("#search-field").ghostHunter({
+            rss : "{{@blog.url}}/rss",
             results : "#results",
             onKeyUp : true,
             zeroResultsInfo : false
