@@ -17,6 +17,7 @@
     10. Media Queries (Tablet)
     11. Media Queries (Mobile)
     12. Animations
+    13. Duppy
 
 */
 
@@ -1716,6 +1717,19 @@ body:not(.post-template) .post-title {
 
 }
 
+
+/* ==========================================================================
+13. Duppy specific styles
+========================================================================== */
+
+
+.post-content a, .post-excerpt a, .post-meta a {
+  color: #9f5111;
+}
+
+.post-content a:hover, .post-excerpt a:hover, .post-meta a:hover {
+  color: #4e1800;
+}
 
 /* ==========================================================================
    12. Animations
