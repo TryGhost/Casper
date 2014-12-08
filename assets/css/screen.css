@@ -439,7 +439,6 @@ margin on the iframe, cause it breaks stuff. */
 .inner {
     position: relative;
     width: 80%;
-    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -531,7 +530,7 @@ margin on the iframe, cause it breaks stuff. */
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    max-width: 800px;
+    max-width: inherit;
     border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
     hyphens: auto;
@@ -664,6 +663,11 @@ main
     top: 0px;
     bottom: 0px;
     padding: 4rem 15%;
+}
+
+.main-inner
+{
+    max-width: 800px;
 }
 
 #search
@@ -926,7 +930,7 @@ main
 
 .tag-archive-header {
     text-align: center;
-    max-width: 800px;
+    max-width: inherit;
     margin: 3rem 0px;
     padding: 0 0 30px 0;
     border-bottom: 1px solid #EBF2F6;
@@ -981,6 +985,7 @@ main
     border-bottom: #EBF2F6 1px solid;
     text-align: center;
     margin-bottom: 2rem;
+    max-width: inherit;
 }
 
 .author-cover {
@@ -1111,6 +1116,7 @@ main
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
+    max-width: inherit;
 }
 
 .pagination a {
@@ -1155,7 +1161,7 @@ main
 .site-footer {
     position: relative;
     margin-top: 2rem;
-    max-width: 800px;
+    max-width: inherit;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7em;
