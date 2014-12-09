@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: http://dbulli.com/sitemap-index.xml
+Disallow: /ghost/
