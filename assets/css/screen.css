@@ -1462,7 +1462,7 @@ body:not(.post-template) .post-title {
 @media only screen and (max-width: 500px) {
 
     .main-header {
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         height: 40%;
     }
 
