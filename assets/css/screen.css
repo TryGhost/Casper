@@ -1731,6 +1731,11 @@ body:not(.post-template) .post-title {
   color: #4e1800;
 }
 
+/* The author credit area after the post */
+.post-footer {
+  margin-top: 10rem;
+}
+
 /* ==========================================================================
    12. Animations
    ========================================================================== */
