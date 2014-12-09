@@ -1729,6 +1729,7 @@ body:not(.post-template) .post-title {
 
 .post-content a:hover, .post-excerpt a:hover, .post-meta a:hover {
   color: #4e1800;
+  text-decoration: none;
 }
 
 /* The author credit area after the post */
