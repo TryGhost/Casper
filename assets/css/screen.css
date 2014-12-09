@@ -1725,6 +1725,7 @@ body:not(.post-template) .post-title {
 
 .post-content a, .post-excerpt a, .post-meta a {
   color: #9f5111;
+  text-decoration: none;
 }
 
 .post-content a:hover, .post-excerpt a:hover, .post-meta a:hover {
