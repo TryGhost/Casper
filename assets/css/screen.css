@@ -1462,7 +1462,7 @@ body:not(.post-template) .post-title {
 @media only screen and (max-width: 500px) {
 
     .main-header {
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         height: 40%;
     }
 
@@ -1725,10 +1725,17 @@ body:not(.post-template) .post-title {
 
 .post-content a, .post-excerpt a, .post-meta a {
   color: #9f5111;
+  text-decoration: none;
 }
 
 .post-content a:hover, .post-excerpt a:hover, .post-meta a:hover {
   color: #4e1800;
+  text-decoration: none;
+}
+
+/* The author credit area after the post */
+.post-footer {
+  margin-top: 10rem;
 }
 
 /* ==========================================================================
