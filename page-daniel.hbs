@@ -6,7 +6,7 @@
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-<header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
+<header class="main-header author-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
   <nav class="main-nav overlay clearfix">
     <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
     <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
@@ -53,7 +53,7 @@
 
           {{/author}}
           </section>
-      </footer>
+        </footer>
     </article>
 
 </main>
