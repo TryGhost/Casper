@@ -15,24 +15,24 @@
 
 <main class="content" role="main">
 
-    <article class="{{post_class}}">
+  <article class="{{post_class}}">
     {{! Everything inside the #post tags pulls data from the post }}
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
+    <header class="post-header">
+      <h1 class="post-title">{{title}}</h1>
+    </header>
 
-        <section class="post-content">
-            {{content}}
-        </section>
+    <section class="post-content">
+      {{content}}
+    </section>
 
-        <footer class="post-footer">
+    <footer class="post-footer">
 
-          {{! Only daniel is the author }}
-          {{> daniel}}
-          
-        </footer>
-    </article>
+      {{! Only daniel is the author }}
+      {{> daniel}}
+
+    </footer>
+  </article>
 
 </main>
 {{/post}}

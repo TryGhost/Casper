@@ -6,34 +6,33 @@
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-    </nav>
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+  <nav class="main-nav overlay clearfix">
+    <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
+    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+  </nav>
 </header>
 
 <main class="content" role="main">
 
-    <article class="{{post_class}}">
+  <article class="{{post_class}}">
     {{! Everything inside the #post tags pulls data from the post }}
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
+    <header class="post-header">
+      <h1 class="post-title">{{title}}</h1>
+    </header>
 
-        <section class="post-content">
-            {{content}}
-        </section>
+    <section class="post-content">
+      {{content}}
+    </section>
 
-        <footer class="post-footer">
+    <footer class="post-footer">
 
-          {{! Only daniel is the author }}
-          {{> daniel}}
+      {{! Only daniel is the author }}
+      {{> daniel}}
 
-        </footer>
-
-    </article>
+    </footer>
+  </article>
 
 </main>
 {{/post}}
