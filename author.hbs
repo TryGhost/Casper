@@ -5,7 +5,7 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}{{# if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
         <nav class="main-nav overlay clearfix">
             <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
             <a class="subscribe-button icon-feed" href="{{url}}rss/">{{name}}</a>
