@@ -1334,7 +1334,7 @@ body:not(.post-template) .post-title {
    10. Media Queries - Smaller than 900px
    ========================================================================== */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25em) {
 
     .main-nav {
         padding: 15px;
@@ -1458,7 +1458,7 @@ body:not(.post-template) .post-title {
    11. Media Queries - Smaller than 500px
    ========================================================================== */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 31.25em) {
 
     .main-header {
         margin-bottom: 15px;
