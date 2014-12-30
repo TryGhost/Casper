@@ -17,7 +17,7 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -81,7 +81,7 @@
     <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
     <script>
         $("#search-field").ghostHunter({
-            rss : "{{@blog.url}}/rss",
+            rss : "{{@blog.url}}/rss/",
             results : "#results",
             onKeyUp : true,
             zeroResultsInfo : false
