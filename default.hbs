@@ -25,8 +25,27 @@
 </head>
 <body class="{{body_class}}">
 
+    <!-- start: Internet Defense League campaigns code -->
+    <script type="text/javascript">
+        window._idl = {};
+        _idl.variant = "modal";
+        (function() {
+            var idl = document.createElement('script');
+            idl.type = 'text/javascript';
+            idl.async = true;
+            idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'modal');
+            document.getElementsByTagName('body')[0].appendChild(idl);
+        })();</script>
+    <!-- end: Internet Defense League campaigns code -->
+
     {{! Everything else gets inserted here }}
     {{{body}}}
+
+    <!-- start: Internet Defense League member banner -->
+    <center>
+    <a href="https://internetdefenseleague.org"><img src="https://internetdefenseleague.org/images/badges/final/shield_badge.png" alt="Member of The Internet Defense League" style="height:120px;width:120px;"/></a>
+    </center>
+    <!-- end: Internet Defense League member banner -->
 
     <footer class="site-footer clearfix">
          <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
