@@ -215,6 +215,7 @@ h6 {
 
 a {
     color: #4A4A4A;
+    text-decoration: underline;
     transition: color ease 0.3s;
 }
 
