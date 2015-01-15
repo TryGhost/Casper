@@ -351,7 +351,6 @@ pre {
 
 pre code, tt {
     font-size: inherit;
-    white-space: -moz-pre-wrap;
     white-space: pre-wrap;
     background: transparent;
     border: none;
@@ -440,7 +439,7 @@ margin on the iframe, cause it breaks stuff. */
     display: table;
 }
 .clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+.clearfix { zoom: 1; }
 
 /* Hides shit */
 .hidden {
@@ -535,9 +534,6 @@ margin on the iframe, cause it breaks stuff. */
     bottom: 0;
     left: 50%;
     margin-left: -75px;
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.15)), color-stop(70%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
     background: radial-gradient(ellipse at center,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
 }
 
@@ -625,9 +621,6 @@ margin on the iframe, cause it breaks stuff. */
     right: 0;
     height: 70px;
     border: none;
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
 }
 .no-cover .main-nav.overlay,
@@ -721,7 +714,10 @@ margin on the iframe, cause it breaks stuff. */
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
-    word-break: break-word;
+    word-wrap: break-word;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
     hyphens: auto;
 }
 
@@ -738,8 +734,6 @@ margin on the iframe, cause it breaks stuff. */
     left: 50%;
     margin-left: -5px;
     background: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
 }
@@ -1100,8 +1094,6 @@ body:not(.post-template) .post-title {
     left: 50%;
     margin-left: -5px;
     background: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
 }
@@ -1271,8 +1263,6 @@ body:not(.post-template) .post-title {
     left: 50%;
     margin-left: -5px;
     background: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
 }
