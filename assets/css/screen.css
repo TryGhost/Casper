@@ -423,8 +423,8 @@ iframe, .fluid-width-video-wrapper {
 }
 
 /* fix DISQUS iframe margin problem */
-.post-template > iframe {
-   margin: 0;
+.post-template > iframe[id*='dsq'], .post-template > iframe[src*='https://disqus.com'] {
+   margin: 0 !important;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
