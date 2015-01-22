@@ -19,7 +19,9 @@
         </figure>
         {{/if}}
         <h1 class="author-title">{{name}}</h1>
-        <h2 class="author-bio">{{bio}}</h2>
+        {{#if bio}}
+            <h2 class="author-bio">{{bio}}</h2>
+        {{/if}}
         <div class="author-meta">
             {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
             {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
