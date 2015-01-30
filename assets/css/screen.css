@@ -541,6 +541,11 @@ margin on the iframe, cause it breaks stuff. */
     float: left;
     background: none !important;
     border: none !important;
+    opacity: 0.8;
+}
+
+.blog-logo:hover {
+    opacity: 1;
 }
 
 .blog-logo img {
