@@ -22,6 +22,19 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
+
+        <!-- mailchimp start -->
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+    <style>
+    #mc_embed_signup { 
+        background:#fff; 
+        clear:left; 
+        font:14px Helvetica,Arial,sans-serif; 
+        width: 600px;
+        margin: 0 auto;
+    }
+    </style>
+    <!-- end mailchimp -->
 </head>
 <body class="{{body_class}}">
 
@@ -42,6 +55,7 @@
     {{{body}}}
 
     <footer class="site-footer clearfix">
+      <section><a href="http://levibostian.com/privacy_policy.html">Privacy Policy</a></section>
          <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
          <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>

@@ -1,102 +1,128 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
+     {{! The comment above "< default" means - insert everything in this file into
+     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<nav class="main-nav clearfix">
-    <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-</nav>
+     <nav class="main-nav clearfix">
+       <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
+       <a class="subscribe-button icon-feed" href="http://eepurl.com/bda_O1">Subscribe</a>
+     </nav>
 
-<main class="content" role="main">
+     <main class="content" role="main">
 
-    <article class="{{post_class}}">
-    {{! Everything inside the #post tags pulls data from the post }}
-    {{#post}}
+       <article class="{{post_class}}">
+         {{! Everything inside the #post tags pulls data from the post }}
+         {{#post}}
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
-            </section>
-        </header>
+         <header class="post-header">
+           <h1 class="post-title">{{title}}</h1>
+           <section class="post-meta">
+             <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+           </section>
+         </header>
 
-        <section class="post-content">
-            {{content}}
-        </section>
+         <section class="post-content">
+           {{content}}
+         </section>
 
-    <!-- start: social links -->
-    <center>
-        <a href="https://twitter.com/levibostian"><img src="{{asset "img/twitter_icon.png"}}" style="height:80px;width:80px;"/></a>
-        <a href="https://github.com/levibostian"><img src="{{asset "img/github_icon.png"}}" style="height:80px;width:80px;"/></a>
-        <a href="https://internetdefenseleague.org"><img src="https://internetdefenseleague.org/images/badges/final/shield_badge.png" alt="Member of The Internet Defense League" style="height:80px;width:80px;"/></a>
-    </center>
-    <!-- end: social links -->
+         <!-- start: social links -->
+         <center>
+           <a href="https://twitter.com/levibostian"><img src="{{asset "img/twitter_icon.png"}}" style="height:80px;width:80px;"/></a>
+           <a href="https://github.com/levibostian"><img src="{{asset "img/github_icon.png"}}" style="height:80px;width:80px;"/></a>
+           <a href="https://internetdefenseleague.org"><img src="https://internetdefenseleague.org/images/badges/final/shield_badge.png" alt="Member of The Internet Defense League" style="height:80px;width:80px;"/></a>
+         </center>
+         <!-- end: social links -->
 
-        <footer class="post-footer">
+         <footer class="post-footer">
 
-        {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
+           {{! Everything inside the #author tags pulls data from the author }}
+           {{#author}}
 
-            {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-            </figure>
-            {{/if}}
+           {{#if image}}
+           <figure class="author-image">
+             <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+           </figure>
+           {{/if}}
 
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
+           <section class="author">
+             <h4><a href="{{url}}">{{name}}</a></h4>
 
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                {{/if}}
-                <div class="author-meta">
-                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
-            </section>
+             {{#if bio}}
+             <p>{{bio}}</p>
+             {{else}}
+             <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+             {{/if}}
+             <div class="author-meta">
+               {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+               {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+             </div>
+           </section>
 
-        {{/author}}
+           {{/author}}
 
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
+           <section class="share">
+             <h4>Share this post</h4>
+             <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+               <span class="hidden">Twitter</span>
+             </a>
+             <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+               <span class="hidden">Facebook</span>
+             </a>
+             <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+               <span class="hidden">Google+</span>
+             </a>
+           </section>
 
-        </footer>
+         </footer>
 
-    {{/post}}
 
-<!-- start disqus -->
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'levibostian'; 
-        var disqus_identifier = '{{post.id}}'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+         <!-- Begin MailChimp Signup Form -->
+         <div id="mc_embed_signup">
+           <form action="//levibostian.us10.list-manage.com/subscribe/post?u=7f489ab74730d111936a8515e&amp;id=e7c869cc60" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+             <div id="mc_embed_signup_scroll">
+	       <h2>Subscribe to my newsletter.</h2>
+               <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+               <div class="mc-field-group">
+	         <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+                 </label>
+	         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+               </div>
+	       <div id="mce-responses" class="clear">
+		 <div class="response" id="mce-error-response" style="display:none"></div>
+		 <div class="response" id="mce-success-response" style="display:none"></div>
+	       </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+               <div style="position: absolute; left: -5000px;"><input type="text" name="b_7f489ab74730d111936a8515e_e7c869cc60" tabindex="-1" value=""></div>
+               <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+               <a href="http://levibostian.com/privacy_policy.html">I care about your privacy. I only ask for your email address to send you newsletters. </a>
+             </div>
+           </form>
+         </div>
+         <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+         <!--End mc_embed_signup-->
 
-         /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-<!-- end disqus -->
 
-    </article>
+         {{/post}}
 
-</main>
+         <!-- start disqus -->
+         <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_shortname = 'levibostian'; 
+           var disqus_identifier = '{{post.id}}'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+
+           /* * * DON'T EDIT BELOW THIS LINE * * */
+           (function() {
+           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+           })();
+         </script>
+         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+         <!-- end disqus -->
+
+       </article>
+
+     </main>
