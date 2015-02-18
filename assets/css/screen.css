@@ -234,7 +234,7 @@ h6 {
 
 a {
     color: #4A4A4A;
-    transition: color ease 0.3s;
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -579,7 +579,7 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 35px;
     border-radius: 3px;
     background: rgba(0,0,0,0.1);
-    transition: all ease 0.3s;
+    transition: all 0.3s ease;
 }
 .back-button:before {
     position: relative;
@@ -606,7 +606,7 @@ margin on the iframe, cause it breaks stuff. */
     white-space: nowrap;
     border-radius: 3px;
     background: rgba(0,0,0,0.1);
-    transition: all ease 0.3s;
+    transition: all 0.3s ease;
 }
 .subscribe-button:before {
     font-size: 9px;
@@ -1227,7 +1227,7 @@ body:not(.post-template) .post-title {
     border: #bfc8cd 1px solid;
     text-decoration: none;
     border-radius: 4px;
-    transition: border ease 0.3s;
+    transition: border 0.3s ease;
 }
 
 .older-posts {
