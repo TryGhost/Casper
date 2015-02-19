@@ -858,8 +858,9 @@ body:not(.post-template) .post-title {
     border: none;
 }
 
-/* Stop .full-img from creating horizontal scroll - slight hack due to
-   imperfections with browser width % calculations and rounding */
+/* Stop elements, such as img wider than the post content, from 
+   creating horizontal scroll - slight hack due to imperfections 
+   with browser width % calculations and rounding */
 .post-template .content {
     overflow: hidden;
 }
@@ -876,21 +877,21 @@ body:not(.post-template) .post-title {
     display: none;
 }
 
-/* Keep images centred and within the bounds of the post-width */
+/* Keep images centered, and allow images wider than the main 
+   text column to break out. */
 .post-content img {
     display: block;
-    max-width: 100%;
+    max-width: 126%;
     height: auto;
-    margin: 0 auto;
     padding: 0.6em 0;
-}
-
-/* Break out larger images to be wider than the main text column
-   the class is applied with jQuery */
-.post-content .full-img {
-    width: 126%;
-    max-width: none;
-    margin: 0 -13%;
+    /* Centers an image by (1) pushing its left edge to the 
+       center of its container and (2) shifting the entire image 
+       in the opposite direction by half its own width. 
+       Works for images that are larger than their containers. */
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* for Safari and iOS */
+    transform: translateX(-50%);
 }
 
 /* The author credit area after the post */
@@ -1622,12 +1623,7 @@ body:not(.post-template) .post-title {
 
     .post-content img {
         padding: 0;
-    }
-
-    .post-content .full-img {
-        width: auto;
         width: calc(100% + 32px); /* expand with to image + margins */
-        margin: 0 -16px; /* get rid of margins */
         min-width: 0;
         max-width: 112%; /* fallback when calc doesn't work */
     }
