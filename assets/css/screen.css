@@ -531,12 +531,15 @@ body.nav-opened .nav-cover {
     bottom: 0;
     z-index: 5;
     width: 240px;
+    opacity: 0;
     background: #111;
     margin-bottom: 0;
     text-align: left;
     overflow-y: auto;
-    -webkit-transition: -webkit-transform 0.5s ease;
-            transition: transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease,
+                        opacity 0.3s ease 0.7s;
+            transition: transform 0.5s ease,
+                        opacity 0.3s ease 0.7s;
 }
 
 body.nav-closed .nav {
@@ -546,6 +549,11 @@ body.nav-closed .nav {
 }
 
 body.nav-opened .nav {
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.5s ease,
+                        opacity 0s ease 0s;
+            transition: -webkit-transform 0.5s ease,
+                        opacity 0s ease 0s;
     -webkit-transform: translate3D(0, 0, 0);
         -ms-transform: translate3D(0, 0, 0);
             transform: translate3D(0, 0, 0);
