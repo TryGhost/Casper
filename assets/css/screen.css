@@ -1,4 +1,4 @@
-/* ==========================================================================
+ ==========================================================================
    Table of Contents
    ========================================================================== */
 
@@ -465,6 +465,22 @@ margin on the iframe, cause it breaks stuff. */
     vertical-align: middle;
 }
 
+/* Wraps the main content & footer */
+.site-wrapper {
+    position: relative;
+    z-index: 10;
+    min-height: 100%;
+    background: #fff;
+    -webkit-transition: -webkit-transform 0.5s ease;
+            transition: transform 0.5s ease;
+}
+
+body.nav-opened .site-wrapper {
+    -webkit-transform: translate3D(-240px, 0, 0);
+        -ms-transform: translate3D(-240px, 0, 0);
+            transform: translate3D(-240px, 0, 0);
+}
+
 
 /* ==========================================================================
    4. General - The main styles for the the theme
@@ -475,7 +491,7 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     display: table;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin-bottom: 5rem;
     text-align: center;
     background: #222 no-repeat center center;
@@ -496,6 +512,114 @@ margin on the iframe, cause it breaks stuff. */
 .main-nav a {
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
+}
+
+/* Navigation */
+body.nav-opened .nav-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 240px;
+    background: #2E2E2E;
+    margin-bottom: 0;
+    text-align: left;
+    overflow-y: auto;
+    -webkit-transition: -webkit-transform 0.5s ease;
+            transition: transform 0.5s ease;
+}
+
+body.nav-closed .nav {
+    -webkit-transform: translate3D(100px, 0, 0);
+        -ms-transform: translate3D(100px, 0, 0);
+            transform: translate3D(100px, 0, 0);
+}
+
+body.nav-opened .nav {
+    -webkit-transform: translate3D(0, 0, 0);
+        -ms-transform: translate3D(0, 0, 0);
+            transform: translate3D(0, 0, 0);
+}
+
+a.nav-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.nav-close:focus {
+    outline: 0;
+}
+
+.nav-close:before,
+.nav-close:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 1px;
+    background: rgb(150,150,150);
+    top: 15px;
+    -webkit-transition: background 0.15s ease;
+            transition: background 0.15s ease;
+}
+
+.nav-close:before {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.nav-close:after {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+.nav-close:hover:before,
+.nav-close:hover:after {
+    background: rgb(255,255,255);
+}
+
+.nav ul {
+    padding: 50px 9% 5%;
+}
+.nav li {
+    list-style: none;
+    margin: 0;
+}
+.nav li a {
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.4;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.6rem 4%;
+
+}
+.nav a:link,
+.nav a:visited {
+    color: #B8B8B8;
+}
+
+.nav li.nav-current a,
+.nav a:hover,
+.nav a:active,
+.nav a:focus {
+    color: #fff;
 }
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
@@ -593,7 +717,7 @@ margin on the iframe, cause it breaks stuff. */
     margin-right: 8px;
 }
 
-.subscribe-button {
+.menu-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -612,9 +736,16 @@ margin on the iframe, cause it breaks stuff. */
     background: rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
-.subscribe-button:before {
-    font-size: 9px;
+.menu-button:focus {
+    outline: 0;
+}
+.menu-button span {
+    font-size: 12px;
     margin-right: 6px;
+}
+
+body.nav-opened .menu-button {
+    opacity: 0;
 }
 
 /* Special styles when overlaid on an image*/
@@ -629,7 +760,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 .no-cover .main-nav.overlay,
 .no-cover .back-button,
-.no-cover .subscribe-button {
+.no-cover .menu-button {
     background: none;
 }
 
@@ -638,7 +769,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .main-nav.overlay .back-button,
-.main-nav.overlay .subscribe-button {
+.main-nav.overlay .menu-button {
     border-color: rgba(255,255,255,0.6);
 }
 
@@ -651,7 +782,7 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Add a border to the buttons on hover */
 .back-button:hover,
-.subscribe-button:hover {
+.menu-button:hover {
     border-color: #bfc8cd;
     color: #9EABB3;
 }
@@ -691,7 +822,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .no-cover .main-nav.overlay .back-button,
-.no-cover .main-nav.overlay .subscribe-button {
+.no-cover .main-nav.overlay .menu-button {
     color: rgba(0,0,0,0.4);
     border-color: rgba(0,0,0,0.3);
 }
@@ -971,89 +1102,13 @@ body:not(.post-template) .post-title {
     color: #50585D;
 }
 
-/* The subscribe icon on the footer */
-.subscribe {
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    margin-left: -15px;
-    border: #EBF2F6 1px solid;
-    text-align: center;
-    line-height: 2.4rem;
-    border-radius: 50px;
-    background: #FFF;
-    transition: box-shadow 0.5s;
-}
-
-/* The RSS icon, inserted via icon font */
-.subscribe:before {
-    color: #D2DEE3;
-    font-size: 10px;
-    position: absolute;
-    top: 2px;
-    left: 9px;
-    font-weight: 700;
-    transition: color 0.5s ease;
-}
-
-/* Add a box shadow to on hover */
-.subscribe:hover {
-    box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
-    transition: box-shadow 0.25s;
-}
-
-.subscribe:hover:before {
-    color: #50585D;
-}
-
-/* CSS tooltip saying "Subscribe!" - initially hidden */
-.tooltip {
-    opacity: 0;
-    display: block;
-    width: 53px;
-    padding: 4px 8px 5px 8px;
-    position:absolute;
-    top: -23px;
-    left: -21px;
-    color: rgba(255,255,255,0.9);
-    font-size: 1.1rem;
-    line-height: 1em;
-    text-align: center;
-    background: #50585D;
-    border-radius: 20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    transition: opacity 0.3s ease, top 0.3s ease;
-}
-
-/* The little chiclet arrow under the tooltip, pointing down */
-.tooltip:after {
-    content: " ";
-    border-width: 5px 5px 0 5px;
-    border-style: solid;
-    border-color: #50585D transparent;
-    display: block;
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    margin-left: -5px;
-    z-index: 220;
-    width: 0;
-}
-
-/* On hover, show the tooltip! */
-.subscribe:hover .tooltip {
-    opacity: 1;
-    top: -33px;
-}
 
 /* ==========================================================================
    6. Author profile
    ========================================================================== */
 
 .post-head.main-header {
-    height: 65%;
+    height: 65vh;
     min-height: 180px;
 }
 
@@ -1065,17 +1120,17 @@ body:not(.post-template) .post-title {
 }
 
 .tag-head.main-header {
-    height: 40%;
+    height: 40vh;
     min-height: 180px;
 }
 
 .author-head.main-header {
-    height: 40%;
+    height: 40vh;
     min-height: 180px;
 }
 
 .no-cover.author-head.main-header {
-    height: 10%;
+    height: 10vh;
     min-height: 100px;
     background: transparent;
 }
@@ -1486,7 +1541,7 @@ body:not(.post-template) .post-title {
     }
 
     .back-button,
-    .subscribe-button {
+    .menu-button {
         height: 44px;
         line-height: 41px;
         border-radius: 0;
@@ -1494,7 +1549,7 @@ body:not(.post-template) .post-title {
         background: transparent;
     }
     .back-button:hover,
-    .subscribe-button:hover {
+    .menu-button:hover {
         border-color: #ebeef0;
         color: #2e2e2e;
         background: #ebeef0;
@@ -1504,7 +1559,7 @@ body:not(.post-template) .post-title {
         padding: 0 15px 0 10px;
     }
 
-    .subscribe-button {
+    .menu-button {
         padding: 0 12px;
     }
 
@@ -1518,12 +1573,12 @@ body:not(.post-template) .post-title {
         background: none;
     }
     .no-cover .main-nav.overlay .back-button,
-    .no-cover .main-nav.overlay .subscribe-button {
+    .no-cover .main-nav.overlay .menu-button {
         border: none;
     }
 
     .main-nav.overlay .back-button,
-    .main-nav.overlay .subscribe-button {
+    .main-nav.overlay .menu-button {
         border-color: transparent;
     }
 
