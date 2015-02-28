@@ -1,4 +1,4 @@
- ==========================================================================
+/* ==========================================================================
    Table of Contents
    ========================================================================== */
 
@@ -516,10 +516,10 @@ body.nav-opened .site-wrapper {
 
 /* Navigation */
 body.nav-opened .nav-cover {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    right: 240px;
     bottom: 0;
     z-index: 200;
 }
@@ -531,7 +531,7 @@ body.nav-opened .nav-cover {
     bottom: 0;
     z-index: 5;
     width: 240px;
-    background: #2E2E2E;
+    background: #111;
     margin-bottom: 0;
     text-align: left;
     overflow-y: auto;
@@ -540,9 +540,9 @@ body.nav-opened .nav-cover {
 }
 
 body.nav-closed .nav {
-    -webkit-transform: translate3D(100px, 0, 0);
-        -ms-transform: translate3D(100px, 0, 0);
-            transform: translate3D(100px, 0, 0);
+    -webkit-transform: translate3D(97px, 0, 0);
+        -ms-transform: translate3D(97px, 0, 0);
+            transform: translate3D(97px, 0, 0);
 }
 
 body.nav-opened .nav {
@@ -551,13 +551,24 @@ body.nav-opened .nav {
             transform: translate3D(0, 0, 0);
 }
 
-a.nav-close {
+.nav-title {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    height: 30px;
+    top: 45px;
+    left: 30px;
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.nav-close {
+    position: absolute;
+    top: 38px;
+    right: 25px;
+    width: 20px;
+    height: 20px;
     padding: 0;
+    font-size: 10px;
 }
 
 .nav-close:focus {
@@ -569,7 +580,7 @@ a.nav-close {
     content: '';
     position: absolute;
     top: 0;
-    width: 30px;
+    width: 20px;
     height: 1px;
     background: rgb(150,150,150);
     top: 15px;
@@ -595,21 +606,51 @@ a.nav-close {
 }
 
 .nav ul {
-    padding: 50px 9% 5%;
+    padding: 90px 9% 5%;
+    list-style: none;
+    counter-reset: item;
+}
+
+.nav li:before {
+    display: block;
+    float: right;
+    padding-right: 4%;
+    padding-left: 5px;
+    text-align: right;
+    font-size: 1.2rem;
+    vertical-align: bottom;
+    color: #B8B8B8;
+    content: counter(item, lower-roman);
+    counter-increment: item;
 }
 .nav li {
-    list-style: none;
     margin: 0;
 }
 .nav li a {
     text-decoration: none;
-    font-family: "Open Sans", sans-serif;
     line-height: 1.4;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     display: block;
     padding: 0.6rem 4%;
-
+    overflow: hidden;
+    white-space: nowrap;
 }
+.nav li a:after {
+    display: inline-block;
+    content: " .......................................................";
+    color: rgba(255,255,255,0.2);
+    margin-left: 5px;
+}
+.nav .nav-current:before {
+    color: #fff;
+}
+.nav .nav-current a:after {
+    content: " ";
+    border-bottom: rgba(255,255,255,0.5) 1px solid;
+    width: 100%;
+    height: 1px;
+}
+
 .nav a:link,
 .nav a:visited {
     color: #B8B8B8;
@@ -621,6 +662,34 @@ a.nav-close {
 .nav a:focus {
     color: #fff;
 }
+
+.subscribe-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    height: 38px;
+    padding: 0 20px;
+    color: #111 !important;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 35px;
+    border-radius: 3px;
+    background: #fff;
+    transition: all ease 0.3s;
+}
+.subscribe-button:before {
+    font-size: 9px;
+    margin-right: 6px;
+}
+
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
@@ -691,32 +760,6 @@ a.nav-close {
     width: auto;
 }
 
-.back-button {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    float: left;
-    height: 38px;
-    padding: 0 15px 0 10px;
-    border: transparent 1px solid;
-    color: #9EABB3;
-    text-align: center;
-    font-size: 12px;
-    text-transform: uppercase;
-    line-height: 35px;
-    border-radius: 3px;
-    background: rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-.back-button:before {
-    position: relative;
-    bottom: -2px;
-    font-size: 13px;
-    line-height: 0;
-    margin-right: 8px;
-}
-
 .menu-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -724,8 +767,9 @@ a.nav-close {
     display: inline-block;
     float: right;
     height: 38px;
-    padding: 0 20px;
-    border: transparent 1px solid;
+    padding: 0 15px;
+    border: #bfc8cd 1px solid;
+    opacity: 1;
     color: #9EABB3;
     text-align: center;
     font-size: 12px;
@@ -734,18 +778,29 @@ a.nav-close {
     white-space: nowrap;
     border-radius: 3px;
     background: rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 .menu-button:focus {
     outline: 0;
 }
-.menu-button span {
+.menu-button .burger {
     font-size: 12px;
     margin-right: 6px;
 }
 
 body.nav-opened .menu-button {
+    padding: 0 12px;
+    background: #111 !important;
+    border-color: #111 !important;
+    color: #fff !important;
+    -webkit-transform: translate3D(94px, 0, 0);
+        -ms-transform: translate3D(94px, 0, 0);
+            transform: translate3D(94px, 0, 0);
+    transition: all 0.4s ease;
+}
+body.nav-opened .menu-button .word {
     opacity: 0;
+    transition: all 0.3s ease;
 }
 
 /* Special styles when overlaid on an image*/
@@ -759,7 +814,6 @@ body.nav-opened .menu-button {
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
 }
 .no-cover .main-nav.overlay,
-.no-cover .back-button,
 .no-cover .menu-button {
     background: none;
 }
@@ -768,7 +822,6 @@ body.nav-opened .menu-button {
     color: #fff;
 }
 
-.main-nav.overlay .back-button,
 .main-nav.overlay .menu-button {
     border-color: rgba(255,255,255,0.6);
 }
@@ -777,14 +830,12 @@ body.nav-opened .menu-button {
     color: #222;
     border-color: #fff;
     background: #fff;
-    transition: all 0.1s ease;
 }
 
 /* Add a border to the buttons on hover */
-.back-button:hover,
 .menu-button:hover {
-    border-color: #bfc8cd;
-    color: #9EABB3;
+    border-color: #555;
+    color: #555;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -821,7 +872,6 @@ body.nav-opened .menu-button {
     color: rgba(0,0,0,0.5);
 }
 
-.no-cover .main-nav.overlay .back-button,
 .no-cover .main-nav.overlay .menu-button {
     color: rgba(0,0,0,0.4);
     border-color: rgba(0,0,0,0.3);
@@ -1387,10 +1437,6 @@ body:not(.post-template) .post-title {
 
 @media only screen and (max-width: 900px) {
 
-    .main-nav {
-        padding: 15px;
-    }
-
     blockquote {
         margin-left: 0;
     }
@@ -1527,40 +1573,33 @@ body:not(.post-template) .post-title {
     }
 
     .main-nav {
-        padding: 0;
+        padding: 5px;
         margin-bottom: 2rem;
-        border-bottom: #e0e4e7 1px solid;
     }
 
     .blog-logo {
-        padding: 10px 10px;
+        padding: 5px;
     }
 
     .blog-logo img {
-        height: 26px;
+        height: 30px;
     }
 
-    .back-button,
     .menu-button {
-        height: 44px;
-        line-height: 41px;
+        padding: 0 5px;
         border-radius: 0;
+        border-color: transparent;
         color: #2e2e2e;
         background: transparent;
     }
-    .back-button:hover,
     .menu-button:hover {
-        border-color: #ebeef0;
         color: #2e2e2e;
-        background: #ebeef0;
+        border-color: transparent;
+        background: none;
     }
-
-    .back-button {
-        padding: 0 15px 0 10px;
-    }
-
-    .menu-button {
-        padding: 0 12px;
+    body.nav-opened .menu-button {
+        background: none !important;
+        border: transparent !important;
     }
 
     .main-nav.overlay a:hover {
@@ -1572,18 +1611,26 @@ body:not(.post-template) .post-title {
     .no-cover .main-nav.overlay {
         background: none;
     }
-    .no-cover .main-nav.overlay .back-button,
     .no-cover .main-nav.overlay .menu-button {
         border: none;
     }
 
-    .main-nav.overlay .back-button,
     .main-nav.overlay .menu-button {
         border-color: transparent;
     }
 
-    .blog-logo img {
-        max-height: 80px;
+    .nav-title {
+        top: 25px;
+
+    }
+
+    .nav-close {
+        position: absolute;
+        top: 18px;
+    }
+
+    .nav ul {
+        padding: 60px 9% 5%;
     }
 
     .inner,
