@@ -529,7 +529,7 @@ body.nav-opened .nav-cover {
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 5;
+    z-index: 50;
     width: 240px;
     opacity: 0;
     background: #111;
