@@ -869,7 +869,7 @@ body.nav-opened .menu-button .word {
 
 .no-cover.main-header {
     min-height: 160px;
-    max-height: 40%;
+    max-height: 40vh;
     background: #f5f8fa;
 }
 
@@ -1392,7 +1392,7 @@ body:not(.post-template) .post-title {
 
 /* On page2+ make all the headers smaller */
 .archive-template .main-header {
-    max-height: 30%;
+    max-height: 30vh;
 }
 
 /* On page2+ show extra pagination controls at the top of post list */
@@ -1456,7 +1456,7 @@ body:not(.post-template) .post-title {
         box-sizing: border-box;
         height: auto;
         min-height: 240px;
-        height: 60%;
+        height: 60vh;
         padding: 15% 0;
     }
 
@@ -1540,12 +1540,12 @@ body:not(.post-template) .post-title {
     }
 
     .post-head.main-header {
-        height:45%;
+        height:45vh;
     }
 
     .tag-head.main-header,
     .author-head.main-header {
-        height: 30%;
+        height: 30vh;
     }
 
     .no-cover.post-head.main-header {
@@ -1568,15 +1568,15 @@ body:not(.post-template) .post-title {
 
     .main-header {
         margin-bottom: 15px;
-        height: 40%;
+        height: 40vh;
     }
 
     .no-cover.main-header {
-        height: 30%;
+        height: 30vh;
     }
 
     .archive-template .main-header {
-        max-height: 20%;
+        max-height: 20vh;
         min-height: 160px;
         padding: 10% 0;
     }
@@ -1801,12 +1801,12 @@ body:not(.post-template) .post-title {
     }
 
     .post-head.main-header {
-        height: 30%;
+        height: 30vh;
     }
 
     .tag-head.main-header,
     .author-head.main-header {
-        height: 20%;
+        height: 20vh;
     }
 
     .author-profile .author-image {
