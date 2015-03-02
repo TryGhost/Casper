@@ -423,7 +423,7 @@ iframe, .fluid-width-video-wrapper {
 }
 
 /* fix DISQUS iframe margin problem */
-.post-template > iframe#dsq-5 {
+iframe#dsq-5 {
    margin: 0 !important;
 }
 
