@@ -349,7 +349,7 @@ pre {
     border-radius: 3px;
 }
 
-pre code, tt {
+pre code, pre tt {
     font-size: inherit;
     white-space: pre-wrap;
     background: transparent;
