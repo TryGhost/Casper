@@ -1086,6 +1086,7 @@ body:not(.post-template) .post-title {
     position: relative;
     left: 50%;
     -webkit-transform: translateX(-50%); /* for Safari and iOS */
+    -ms-transform: translateX(-50%); /* for IE9 */
     transform: translateX(-50%);
 }
 
