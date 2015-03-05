@@ -553,7 +553,7 @@ body.nav-opened .nav {
     opacity: 1;
     -webkit-transition: -webkit-transform 0.5s ease,
                         opacity 0s ease 0s;
-            transition: -webkit-transform 0.5s ease,
+            transition: transform 0.5s ease,
                         opacity 0s ease 0s;
     -webkit-transform: translate3D(0, 0, 0);
         -ms-transform: translate3D(0, 0, 0);
