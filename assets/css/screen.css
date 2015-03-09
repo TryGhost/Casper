@@ -480,6 +480,8 @@ body.nav-opened .site-wrapper {
     -webkit-transform: translate3D(-240px, 0, 0);
         -ms-transform: translate3D(-240px, 0, 0);
             transform: translate3D(-240px, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s ease;
+            transition: transform 0.3s ease;
 }
 
 
@@ -551,9 +553,9 @@ body.nav-closed .nav {
 
 body.nav-opened .nav {
     opacity: 1;
-    -webkit-transition: -webkit-transform 0.5s ease,
+    -webkit-transition: -webkit-transform 0.3s ease,
                         opacity 0s ease 0s;
-            transition: transform 0.5s ease,
+            transition: transform 0.3s ease,
                         opacity 0s ease 0s;
     -webkit-transform: translate3D(0, 0, 0);
         -ms-transform: translate3D(0, 0, 0);
@@ -788,7 +790,7 @@ body.nav-opened .nav {
     white-space: nowrap;
     border-radius: 3px;
     background: rgba(0,0,0,0.1);
-    transition: all 0.6s ease;
+    transition: all 0.5s ease;
 }
 .menu-button:focus {
     outline: 0;
@@ -806,7 +808,7 @@ body.nav-opened .menu-button {
     -webkit-transform: translate3D(94px, 0, 0);
         -ms-transform: translate3D(94px, 0, 0);
             transform: translate3D(94px, 0, 0);
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 body.nav-opened .menu-button .word {
     opacity: 0;
