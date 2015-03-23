@@ -160,6 +160,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 .icon-link:before {
     content: "\f608";
 }
+.icon-menu:before {
+    content: "\f609";
+}
 
 
 /* ==========================================================================
@@ -792,12 +795,17 @@ body.nav-opened .nav {
     background: rgba(0,0,0,0.1);
     transition: all 0.5s ease;
 }
+.menu-button:before {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 6px;
+    color: #fff !important;
+    position: relative;
+    top: 1px;
+    transition: all 0.5s ease;
+}
 .menu-button:focus {
     outline: 0;
-}
-.menu-button .burger {
-    font-size: 12px;
-    margin-right: 6px;
 }
 
 body.nav-opened .menu-button {
@@ -842,6 +850,9 @@ body.nav-opened .menu-button .word {
     color: #222;
     border-color: #fff;
     background: #fff;
+}
+.main-nav.overlay a:hover:before {
+    color: #222;
 }
 
 /* Add a border to the buttons on hover */
