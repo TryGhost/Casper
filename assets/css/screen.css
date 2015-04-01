@@ -776,6 +776,32 @@ body.nav-opened .nav {
     width: auto;
 }
 
+.back-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 38px;
+    padding: 0 15px 0 10px;
+    border: transparent 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.1);
+    transition: all ease 0.3s;
+}
+.back-button:before {
+    position: relative;
+    bottom: -2px;
+    font-size: 13px;
+    line-height: 0;
+    margin-right: 8px;
+}
+
 .subscribe-button-standalone {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -860,6 +886,7 @@ body.nav-opened .menu-button .word {
 }
 .no-cover .main-nav.overlay,
 .no-cover .menu-button,
+.no-cover .back-button,
 .no-cover .subscribe-button-standalone {
     background: none;
 }
@@ -869,6 +896,7 @@ body.nav-opened .menu-button .word {
 }
 
 .main-nav.overlay .menu-button,
+.main-nav.overlay .back-button,
 .main-nav.overlay .subscribe-button-standalone {
     border-color: rgba(255,255,255,0.6);
 }
@@ -884,6 +912,7 @@ body.nav-opened .menu-button .word {
 
 /* Add a border to the buttons on hover */
 .menu-button:hover,
+.back-button:hover,
 .subscribe-button-standalone:hover {
     border-color: #555;
     color: #555;
@@ -924,6 +953,7 @@ body.nav-opened .menu-button .word {
 }
 
 .no-cover .main-nav.overlay .menu-button,
+.no-cover .main-nav.overlay .back-button,
 .no-cover .main-nav.overlay .subscribe-button-standalone {
     color: rgba(0,0,0,0.4);
     border-color: rgba(0,0,0,0.3);
@@ -1789,6 +1819,7 @@ body:not(.post-template) .post-title {
         height: 30px;
     }
 	
+	.back-button,
     .subscribe-button-standalone {
         height: 44px;
         line-height: 41px;
@@ -1797,11 +1828,16 @@ body:not(.post-template) .post-title {
         background: transparent;
 		padding: 0 12px;
     }
-
+	
+	.back-button:hover,
     .subscribe-button-standalone:hover {
         border-color: #ebeef0;
         color: #2e2e2e;
         background: #ebeef0;
+    }
+	
+	    .back-button {
+        padding: 0 15px 0 10px;
     }
 	
     .menu-button {
@@ -1831,11 +1867,13 @@ body:not(.post-template) .post-title {
         background: none;
     }
     .no-cover .main-nav.overlay .menu-button,
+	.no-cover .main-nav.overlay .back-button,
 	.no-cover .main-nav.overlay .subscribe-button-standalone {
         border: none;
     }
 
     .main-nav.overlay .menu-button,
+	.main-nav.overlay .back-button,
 	.no-cover .main-nav.overlay .subscribe-button-standalone {
         border-color: transparent;
     }

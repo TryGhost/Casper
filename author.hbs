@@ -11,6 +11,7 @@
             {{#if @blog.navigation}}
                 <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
 			{{else}}
+				<a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
 				<a class="subscribe-button-standalone icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
 			{{/if}}
         </nav>
