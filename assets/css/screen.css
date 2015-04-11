@@ -690,7 +690,7 @@ body.nav-opened .nav {
     right: 30px;
     height: 38px;
     padding: 0 20px;
-    color: #111 !important;
+    color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
     text-align: center;
     font-size: 12px;
     font-family: "Open Sans", sans-serif;
@@ -758,12 +758,12 @@ body.nav-opened .nav {
     display: none
 }
 
-/* Appears in the top right corner of your home page */
+/* Appears in the top left corner of your home page */
 .blog-logo {
     display: block;
     float: left;
-    background: none !important;
-    border: none !important;
+    background: none !important; /* Makes sure there is never a background */
+    border: none !important; /* Makes sure there is never a border */
 }
 
 .blog-logo img {
@@ -784,42 +784,63 @@ body.nav-opened .nav {
     float: right;
     height: 38px;
     padding: 0 15px;
-    border: #bfc8cd 1px solid;
+    border-style: solid;
+    border-width: 1px;
     opacity: 1;
-    color: #9EABB3;
     text-align: center;
     font-size: 12px;
     text-transform: uppercase;
     line-height: 35px;
     white-space: nowrap;
     border-radius: 3px;
-    background: rgba(0,0,0,0.1);
     transition: all 0.5s ease;
 }
 .menu-button:before {
     font-size: 12px;
     font-weight: bold;
     margin-right: 6px;
-    color: #fff !important;
     position: relative;
     top: 1px;
-    transition: all 0.5s ease;
+}
+.menu-button:hover {
+    background: #fff;
 }
 .menu-button:focus {
     outline: 0;
 }
 
-body.nav-opened .menu-button {
+/* When the navigation is closed */
+.nav-closed .menu-button {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+.nav-closed .menu-button:hover {
+    color: #222;
+}
+
+/* When the navigation is closed and there is no cover image */
+.nav-closed .no-cover .menu-button {
+    border-color: #BFC8CD;
+    color: #9EABB3;
+}
+.nav-closed .no-cover .menu-button:hover {
+    border-color: #555;
+    color: #555;
+}
+
+/* When the navigation is opened */
+.nav-opened .menu-button {
     padding: 0 12px;
-    background: #111 !important;
-    border-color: #111 !important;
-    color: #fff !important;
+    background: #111;
+    border-color: #111;
+    color: #fff;
     -webkit-transform: translate3D(94px, 0, 0);
         -ms-transform: translate3D(94px, 0, 0);
             transform: translate3D(94px, 0, 0);
     transition: all 0.3s ease;
 }
-body.nav-opened .menu-button .word {
+
+.nav-opened .menu-button .word {
     opacity: 0;
     transition: all 0.3s ease;
 }
@@ -834,32 +855,8 @@ body.nav-opened .menu-button .word {
     border: none;
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
 }
-.no-cover .main-nav.overlay,
-.no-cover .menu-button {
+.no-cover .main-nav.overlay {
     background: none;
-}
-
-.main-nav.overlay a {
-    color: #fff;
-}
-
-.main-nav.overlay .menu-button {
-    border-color: rgba(255,255,255,0.6);
-}
-
-.main-nav.overlay a:hover {
-    color: #222;
-    border-color: #fff;
-    background: #fff;
-}
-.main-nav.overlay a:hover:before {
-    color: #222;
-}
-
-/* Add a border to the buttons on hover */
-.menu-button:hover {
-    border-color: #555;
-    color: #555;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -894,11 +891,6 @@ body.nav-opened .menu-button .word {
 
 .no-cover .page-description {
     color: rgba(0,0,0,0.5);
-}
-
-.no-cover .main-nav.overlay .menu-button {
-    color: rgba(0,0,0,0.4);
-    border-color: rgba(0,0,0,0.3);
 }
 
 /* Add subtle load-in animation for content on the home page */
@@ -1774,8 +1766,8 @@ body:not(.post-template) .post-title {
         background: none;
     }
     body.nav-opened .menu-button {
-        background: none !important;
-        border: transparent !important;
+        background: none;
+        border: transparent;
     }
 
     .main-nav.overlay a:hover {
