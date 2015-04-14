@@ -1322,9 +1322,6 @@ body:not(.post-template) .post-title {
    7. Read More - Next/Prev Post Links
    ========================================================================== */
 
-.middle {
-
-}
 .read-next {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1347,6 +1344,7 @@ body:not(.post-template) .post-title {
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+    min-width: 50%;
     text-decoration: none;
     position: relative;
     text-align: center;
