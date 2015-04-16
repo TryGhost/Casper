@@ -1337,7 +1337,6 @@ body:not(.post-template) .post-title {
     -ms-flex-align: stretch;
     align-items: stretch;
     margin-top: 10rem;
-    margin-bottom: calc(-8rem - 37px);
 }
 
 .read-next-story {
@@ -1437,6 +1436,14 @@ body:not(.post-template) .post-title {
     border-left: rgba(0,0,100,0.04) 1px solid;
 }
 
+/* Correctly position site-footer when next to the .read-next container */
+.read-next + .site-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
 
 /* ==========================================================================
    8. Third Party Elements - Embeds from other services
