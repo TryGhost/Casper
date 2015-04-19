@@ -1185,8 +1185,14 @@ body:not(.post-template) .post-title {
     text-decoration: none;
 }
 
-.post-footer .share a:hover {
-    color: #50585D;
+.post-footer .share .icon-twitter:hover {
+    color: #55acee;
+}
+.post-footer .share .icon-facebook:hover {
+    color: #3b5998;
+}
+.post-footer .share .icon-google-plus:hover {
+    color: #dd4b39;
 }
 
 
