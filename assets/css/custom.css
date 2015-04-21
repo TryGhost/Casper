@@ -1,0 +1,27 @@
+.hide {
+  display: none;
+}
+
+.cta-button {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 38px;
+  padding: 0 20px;
+  border: transparent 1px solid;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 35px;
+  white-space: nowrap;
+  border-radius: 3px;
+  background: #359ad9;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  color: #fff;
+}
