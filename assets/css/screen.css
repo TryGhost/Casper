@@ -921,10 +921,6 @@ body.nav-opened .nav {
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
