@@ -1355,6 +1355,7 @@ body:not(.post-template) .post-title {
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+    box-sizing: border-box;
     min-width: 50%;
     text-decoration: none;
     position: relative;
