@@ -307,9 +307,10 @@ hr {
 blockquote {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.75em 0 1.75em -2.2em;
-    padding: 0 0 0 1.75em;
+    margin: 1.75em 0 1.75em 0em;
+    padding: .5em 1em .5em 1.75em;
     border-left: #4A4A4A 0.4em solid;
+    background-color: #fafafa;
 }
 
 blockquote p {
@@ -1095,6 +1096,10 @@ body:not(.post-template) .post-title {
     -webkit-transform: translateX(-50%); /* for Safari and iOS */
     -ms-transform: translateX(-50%); /* for IE9 */
     transform: translateX(-50%);
+}
+
+.post-content blockquote img {
+    max-width: 80%;
 }
 
 .footnotes {
