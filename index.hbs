@@ -3,12 +3,7 @@
 
 {{! The big featured header }}
 <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav overlay clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
+    {{> nav_header}}
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">{{@blog.title}}</h1>
