@@ -895,12 +895,15 @@ body:not(.post-template) .post-title {
     padding: 0.6em 0;
 }
 
-/* Break out larger images to be wider than the main text column
-   the class is applied with jQuery */
-.post-content .full-img {
-    width: 126%;
-    max-width: none;
-    margin: 0 -13%;
+.post-content figure {
+	margin-bottom: 1.6em;
+}
+.post-content figure img {
+	margin-bottom: .1em;
+}
+.post-content figure figcaption {
+	color: #666;
+	font-style: italic;
 }
 
 /* The author credit area after the post */

@@ -37,25 +37,7 @@
         var $postContent = $(".post-content");
         $postContent.fitVids();
 
-        function updateImageWidth() {
-            var $this = $(this),
-                contentWidth = $postContent.outerWidth(), // Width of the content
-                imageWidth = this.naturalWidth; // Original image resolution
-
-            if (imageWidth >= contentWidth) {
-                $this.addClass('full-img');
-            } else {
-                $this.removeClass('full-img');
-            }
-        }
-
-        var $img = $("img").on('load', updateImageWidth);
-        function casperFullImg() {
-            $img.each(updateImageWidth);
-        }
-
-        casperFullImg();
-        $(window).smartresize(casperFullImg);
+        $(window).smartresize();
 
         $(".scroll-down").arctic_scroll();
 
