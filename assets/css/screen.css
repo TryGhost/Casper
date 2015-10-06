@@ -465,7 +465,7 @@ margin on the iframe, cause it breaks stuff. */
     overflow: hidden;
 }
 
-.home-template .main-header:before {
+.home-template .main-header:before, .archive-template .main-header:before {
     position: absolute;
     width: 100%;
     height: 100%;
