@@ -934,7 +934,9 @@ body:not(.post-template) .post-title {
 	margin-bottom: .1em;
 }
 .post-content figure figcaption {
-	color: #666;
+	color: #777;
+	font-family: "Open Sans", sans-serif;
+	font-size: 85%;
 	font-style: italic;
 }
 
