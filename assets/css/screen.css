@@ -337,7 +337,6 @@ pre {
 
 pre code, tt {
     font-size: inherit;
-    white-space: -moz-pre-wrap;
     white-space: pre-wrap;
     background: transparent;
     border: none;
@@ -426,7 +425,7 @@ margin on the iframe, cause it breaks stuff. */
     display: table;
 }
 .clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+.clearfix { zoom: 1; }
 
 /* Hides shit */
 .hidden {
@@ -533,7 +532,10 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     max-width: inherit;
     border-bottom: #EBF2F6 1px solid;
-    word-break: break-word;
+    word-wrap: break-word;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
     hyphens: auto;
     margin-bottom: 2rem;
 }
@@ -551,8 +553,6 @@ margin on the iframe, cause it breaks stuff. */
     left: 50%;
     margin-left: -5px;
     background: #fff;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #fff 0 0 0 5px;
 }
