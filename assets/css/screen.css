@@ -841,6 +841,20 @@ main
     transform: translateX(-50%);
 }
 
+/* Footnotes */
+.footnotes {
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.footnotes li {
+    margin: 0.6rem 0;
+}
+
+.footnotes p {
+    margin: 0;
+}
+
 /* The author credit area after the post */
 .post-footer {
     position: relative;
