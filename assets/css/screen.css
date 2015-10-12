@@ -470,10 +470,6 @@ margin on the iframe, cause it breaks stuff. */
     max-width: inherit;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
     margin-bottom: 2rem;
 }
 
@@ -1142,10 +1138,6 @@ main
     margin: 0 auto;
     padding-bottom: 4rem;
     word-wrap: break-word;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
 }
 
 .read-next-story .read-next-post {
