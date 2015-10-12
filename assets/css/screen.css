@@ -737,6 +737,40 @@ main
     display: inline;
 }
 
+/* ========================================================================== */
+/* Tag Archive                                                                */
+
+.tag-archive-header {
+    text-align: center;
+    max-width: inherit;
+    margin: 1rem 0;
+    padding: 0 0 30px 0;
+    border-bottom: 1px solid #EBF2F6;
+}
+
+.tag-archive-header-name {
+    margin: 2rem 0;
+}
+
+.tag-archive-header i {
+    font-size: 80%;
+    margin-right: 1rem;
+}
+
+.tag-cover {
+    background: transparent no-repeat center;
+    width: 100%;
+    background-size: 100%;
+    min-height: 220px;
+    margin: 0 0 40px 0;
+    position: relative;
+}
+
+.tag-description {
+    margin: 1rem 0;
+}
+/* ========================================================================== */
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
@@ -887,40 +921,6 @@ main
 
 .post.page {
     margin-bottom: calc(40px + 4rem);
-}
-
-/* ==========================================================================
-   6. Tag archive
-   ========================================================================== */
-
-.tag-archive-header {
-    text-align: center;
-    max-width: inherit;
-    margin: 1rem 0;
-    padding: 0 0 30px 0;
-    border-bottom: 1px solid #EBF2F6;
-}
-
-.tag-archive-header-name {
-    margin: 2rem 0;
-}
-
-.tag-archive-header i {
-    font-size: 80%;
-    margin-right: 1rem;
-}
-
-.tag-cover {
-    background: transparent no-repeat center;
-    width: 100%;
-    background-size: 100%;
-    min-height: 220px;
-    margin: 0 0 40px 0;
-    position: relative;
-}
-
-.tag-description {
-    margin: 1rem 0;
 }
 
 /* ==========================================================================
