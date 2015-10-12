@@ -34,11 +34,11 @@ img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-
 /* Import the font file with the icons in it */
 @font-face {
     font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot");
-    src:url("../fonts/casper-icons.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff") format("woff"),
-        url("../fonts/casper-icons.ttf") format("truetype"),
-        url("../fonts/casper-icons.svg#icons") format("svg");
+    src:url("../fonts/casper-icons.eot?v=1");
+    src:url("../fonts/casper-icons.eot?v=1#iefix") format("embedded-opentype"),
+        url("../fonts/casper-icons.woff?v=1") format("woff"),
+        url("../fonts/casper-icons.ttf?v=1") format("truetype"),
+        url("../fonts/casper-icons.svg?v=1#icons") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -88,6 +88,14 @@ img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-
 .icon-link:before {
     content: "\f608";
 }
+.icon-menu:before {
+    content: "\f609";
+}
+/*
+    IMPORTANT: When making any changes to the icon font, be sure to increment
+    the version number by 1 in the @font-face rule. `?v=1` becomes `?v=2`
+    This forces browsers to download the new font file.
+*/
 
 /* ==========================================================================
    2. General - Setting up some base styles
