@@ -737,6 +737,11 @@ main
     color: #BBB;
 }
 
+#sidebar-links
+{
+    text-overflow: ellipsis;
+}
+
 #sidebar-links ul
 {
     color: #BBC4C9;
