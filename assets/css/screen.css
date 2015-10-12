@@ -11,13 +11,15 @@
     4.  General
     5.  Single Post
     6.  Tag Archive
-    7.  Third Party Elements
-    8.  Pagination
-    9.  Footer
-    10.  Media Queries (Tablet)
-    11. Media Queries (Mobile)
+    7.  Read Next
+    8.  Third Party Elements
+    9.  Pagination
+    10. Footer
+    11. Media Queries (Tablet)
+    12. Media Queries (Mobile)
+    13. Animations
 
- */
+*/
 
 /* ==========================================================================
    0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
@@ -1126,7 +1128,141 @@ main
 
 
 /* ==========================================================================
-   7. Third Party Elements - Embeds from other services
+   7. Read More - Next/Prev Post Links
+   ========================================================================== */
+
+.middle {
+
+}
+
+.read-next {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin-top: 2rem;
+    margin-bottom: calc(-8rem - 37px);
+    border-top: #E7EEF2 1px solid;
+    border-bottom: #E7EEF2 1px solid;
+}
+
+.read-next-story {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #222 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+.read-next-story:hover:before {
+    background: rgba(0,0,0,0.8);
+    transition: all 0.2s ease;
+}
+.read-next-story:hover .post:before {
+    color: #222;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.read-next-story:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    transition: all 0.5s ease;
+}
+
+/* Every post, on every page, gets this style on its <article> tag */
+.read-next-post {
+    position: relative;
+    width: 80%;
+    max-width: 710px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+    word-wrap: break-word;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.read-next-story .read-next-post {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.read-next-story .read-next-post:before {
+    content: "Read This Next";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans", sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: #E7EEF2 1px solid;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+.read-next-story.prev .read-next-post:before {
+    content: "You Might Enjoy";
+}
+
+.read-next-story h2 {
+    margin-top: 1rem;
+    color: #fff;
+}
+
+.read-next-story p {
+    margin: 0;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Special styles for posts with no cover images */
+.read-next-story.no-cover {
+    background: transparent;
+}
+
+.read-next-story.no-cover:before {
+    display: none;
+}
+
+.read-next-story.no-cover .read-next-post:before {
+    color: rgba(0,0,0,0.5);
+    border-color: rgba(0,0,0,0.2);
+}
+
+.read-next-story.no-cover h2 {
+    color: rgba(0,0,0,0.8);
+}
+
+.read-next-story.no-cover p {
+    color: rgba(0,0,0,0.5);
+}
+
+/* if there are two posts without covers, put a border between them */
+.read-next-story.no-cover + .read-next-story.no-cover {
+    border-left: rgba(0,0,100,0.04) 1px solid;
+}
+
+
+/* ==========================================================================
+   8. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -1147,7 +1283,7 @@ main
 }
 
 /* ==========================================================================
-   8. Pagination - Tools to let you flick between pages
+   9. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -1198,7 +1334,7 @@ main
 
 
 /* ==========================================================================
-   9. Footer - The bottom of every page
+   10. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -1214,10 +1350,11 @@ main
 .site-footer a {
     color: #e6e9eb;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .site-footer a:hover {
-    color: white;
+    border-bottom: #e6e9eb 1px solid;
 }
 
 .poweredby .icon-ghost {
@@ -1311,10 +1448,13 @@ main
 }
 
 /* ==========================================================================
-   Media Queries for changing from Vertical to Horizontal cover
+   11. Media Queries - Smaller than 1279px
    ========================================================================== */
 
-@media (max-width: 1023px) {
+/* ========================================================================== */
+/* Media Queries for changing from Vertical to Horizontal cover               */
+
+@media only screen and (max-width: 1279px) {
     #sidebar {
         position: relative;
         text-align: center;
@@ -1343,21 +1483,9 @@ main
     }
 }
 
-/* ==========================================================================
-   Media Queries - Smaller than 1279px
-   ========================================================================== */
+/* ========================================================================== */
 
 @media only screen and (max-width: 1279px) {
-    main {
-        padding: 40px 10%;
-    }
-}
-
-/* ==========================================================================
-   10. Media Queries - Smaller than 1023px
-   ========================================================================== */
-
-@media only screen and (max-width: 1023px) {
 
     blockquote {
         margin-left: 0;
@@ -1399,7 +1527,7 @@ main
 }
 
 /* ==========================================================================
-   11. Media Queries - Smaller than 500px
+   12. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
@@ -1514,7 +1642,14 @@ main
     }
 }
 
+
 /* ==========================================================================
-   End of file. Media queries should be the last thing here. Do not add stuff
+   13. Animations
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */

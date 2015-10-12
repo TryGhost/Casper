@@ -3,10 +3,10 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<article class="{{post_class}}">
-
     {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
+
+    <article class="{{post_class}}">
 
         <header class="post-header">
             {{#if image}}
@@ -93,6 +93,27 @@
             <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </section>
 
-    {{/post}}
+        {{!--
+        <aside class="read-next">
+            {{#next_post}}
+            <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                <section class="read-next-post">
+                    <h2>{{title}}</h2>
+                    {{excerpt words="19"}}&hellip;</p>
+                </section>
+            </a>
+            {{/next_post}}
+            {{#prev_post}}
+            <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                <section class="read-next-post">
+                    <h2>{{title}}</h2>
+                    <p>{{excerpt words="19"}}&hellip;</p>
+                </section>
+            </a>
+            {{/prev_post}}
+        </aside>
+        --}}
 
-</article>
+    </article>
+
+    {{/post}}
