@@ -22,7 +22,7 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
 
@@ -43,13 +43,13 @@
 
             <div id="sidebar-links">
                 <ul id="subscription-links">
-                    <li><a target="_blank" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i> Subscribe via RSS</a></li>
+                    <li><a target="_blank" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i>Subscribe via RSS</a></li>
                     <!-- No support yet
-                    <li><a target="_blank" href=" "><i class="fa fa-envelope"></i> Subscribe via email<a></li>
+                    <li><a target="_blank" href=" "><i class="fa fa-envelope"></i>Subscribe via email<a></li>
                     -->
                 </ul>
-                <ul id="sidebar-internal">
-                    <!-- For 'About' and other pages -->
+                <ul id="navigation">
+                    {{navigation}}
                 </ul>
                 <ul id="sidebar-external">
                     {{> sidebar-external}}
