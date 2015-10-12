@@ -229,7 +229,7 @@ h6 {
 
 a {
     color: #57A3E8;
-    transition: color ease 0.3s;
+    transition: color 0.3s ease;
     text-decoration: none;
 }
 
@@ -493,7 +493,7 @@ margin on the iframe, cause it breaks stuff. */
     white-space: nowrap;
     border-radius: 3px;
     background: none;
-    transition: all ease 0.3s;
+    transition: all 0.3s ease;
     text-decoration: none;
     margin: 1rem 0;
 }
@@ -1136,6 +1136,7 @@ main
 
 .pagination a {
     color: #9EABB3;
+    transition: all 0.2s ease;
 }
 
 /* Push the previous/next links out to the left/right */
@@ -1147,7 +1148,7 @@ main
     border: #EBF2F6 2px solid;
     text-decoration: none;
     border-radius: 30px;
-    transition: border ease 0.3s;
+    transition: border 0.3s ease;
 }
 
 .older-posts {
