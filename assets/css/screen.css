@@ -816,6 +816,7 @@ main
 .footnotes {
     font-style: italic;
     font-size: 1.3rem;
+    line-height: 1.6em;
 }
 
 .footnotes li {
@@ -824,6 +825,10 @@ main
 
 .footnotes p {
     margin: 0;
+}
+
+.footnotes p a:last-child {
+    text-decoration: none;
 }
 
 /* The author credit area after the post */
