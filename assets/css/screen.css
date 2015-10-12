@@ -875,7 +875,7 @@ main
    links remain at a fixed width the whole time */
 .post-footer .share {
     position: absolute;
-    top: 4rem;
+    top: 3rem;
     right: 0;
     width: 140px;
     text-align: center;
@@ -899,6 +899,15 @@ main
 
 .post-footer .share a:hover {
     color: #50585D;
+}
+.post-footer .share a.fa-twitter-square:hover {
+    color: #55acee !important;
+}
+.post-footer .share a.fa-facebook-square:hover {
+    color: #3b5998;
+}
+.post-footer .share a.fa-google-plus-square:hover {
+    color: #dd4b39;
 }
 
 .author-image {
