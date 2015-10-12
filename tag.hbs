@@ -4,7 +4,17 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 <header class="tag-archive-header">
-    <h4><i class="fa fa-tag"></i><span class="tag-archive-header-name">{{tag.name}}</span></h4>
+    <div class="tag-cover" {{#if tag.image}}style="background-image: url({{tag.image}}){{/if}}"></div>
+
+    <h4 class="tag-archive-header-name"><i class="fa fa-tag"></i>{{tag.name}}</h4>
+
+    <p class="tag-description">
+        {{#if tag.description}}
+            {{tag.description}}
+        {{else}}
+            <span class="tag-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+        {{/if}}
+    </p>
 
     <a class="subscribe-button icon-feed" href="{{url}}rss/">Subscribe to this tag</a>
 </header>

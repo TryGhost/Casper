@@ -496,6 +496,7 @@ margin on the iframe, cause it breaks stuff. */
     background: none;
     transition: all ease 0.3s;
     text-decoration: none;
+    margin: 1rem 0;
 }
 
 .subscribe-button:before {
@@ -931,17 +932,31 @@ main
 .tag-archive-header {
     text-align: center;
     max-width: inherit;
-    margin: 3rem 0px;
+    margin: 1rem 0;
     padding: 0 0 30px 0;
     border-bottom: 1px solid #EBF2F6;
 }
 
 .tag-archive-header-name {
-    margin-left: 1rem;
+    margin: 2rem 0;
 }
 
 .tag-archive-header i {
     font-size: 80%;
+    margin-right: 1rem;
+}
+
+.tag-cover {
+    background: transparent no-repeat center;
+    width: 100%;
+    background-size: 100%;
+    min-height: 220px;
+    margin: 0 0 40px 0;
+    position: relative;
+}
+
+.tag-description {
+    margin: 1rem 0;
 }
 
 /* ==========================================================================
