@@ -1103,15 +1103,15 @@ main
    ========================================================================== */
 
 /* Github */
-
 .gist table {
     margin: 0;
     font-size: 1.4rem;
 }
-
+.gist td {
+    line-height: 1.4;
+}
 .gist .line-number {
     min-width: 25px;
-    font-size: 1.1rem;
 }
 
 /* Pastebin */
