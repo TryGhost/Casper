@@ -40,7 +40,6 @@ cd ghost/content/themes
 sudo git clone https://github.com/dlecina/StayPuft
 ```
 
-* Replace `assets/favicon.png` with your own favicon, or remove for the default Ghost favicon.
 * Modify `partials/disqus.hbs` with your shortname.
 * Replace `partials/copyright.hbs` with your own disclaimer.
 * Modify `partials/sidebar-external.hbs` with your own external links.
