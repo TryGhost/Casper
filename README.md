@@ -33,7 +33,7 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 
 ## Installation
 
-* Clone this repository on your themes folder:
+* Clone this repository inside your themes folder:
 
 ```
 cd ghost/content/themes
