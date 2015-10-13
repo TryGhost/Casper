@@ -443,6 +443,7 @@ margin on the iframe, cause it breaks stuff. */
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
     margin: 0 0 10px 0;
+    color: white;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 1px 6px rgba(0,0,0,0.1);
@@ -1292,31 +1293,25 @@ main
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7em;
-    color: #e6e9eb;
+    color: #BBC4C9;
 }
 
 .site-footer a {
-    color: #e6e9eb;
-    text-decoration: none;
-    font-weight: bold;
+    color: #BBC4C9;
 }
 
 .site-footer a:hover {
-    border-bottom: #e6e9eb 1px solid;
-}
-
-.poweredby .icon-ghost {
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.poweredby .icon-ghost:hover {
-    text-decoration: none;
+    color: white;
 }
 
 .poweredby .icon-ghost:before {
     font-size: 1rem;
-    margin-right: 0.2em;
+    margin-right: 6px;
+}
+
+.poweredby .fa {
+    font-size: 1rem;
+    margin-left: 6px;
 }
 
 /* The subscribe icon on the footer */
