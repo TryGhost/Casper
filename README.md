@@ -40,13 +40,13 @@ cd ghost/content/themes
 sudo git clone https://github.com/dlecina/StayPuft
 ```
 
-* Rename all files in `partials` folder ending in `example` so they end in `hbs`:
+* Copy all files in `partials` folder ending in `example` so they end in `hbs`:
 
 ```
 cd ghost/content/themes/StayPuft/partials
-mv disqus.hbs.example disqus.hbs
-mv copyright.hbs.example copyright.hbs
-mv sidebar-external.hbs.example sidebar-external.hbs
+cp disqus.hbs.example disqus.hbs
+cp copyright.hbs.example copyright.hbs
+cp sidebar-external.hbs.example sidebar-external.hbs
 ```
 
 * Modify `partials/disqus.hbs` with your shortname.
