@@ -10,7 +10,6 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
 * Basic support for [slidr.js](https://github.com/bchanx/slidr).
 * Syntax highlighting using [Prism](https://github.com/LeaVerou/prism/).
-* [Google Analytics](http://www.google.com/analytics/).
 
 ## Demo
 
@@ -49,7 +48,6 @@ sudo git clone https://github.com/dlecina/StayPuft
 
 * Replace `assets/favicon.png` with your own favicon, or remove for the default Ghost favicon.
 * Modify `partials/disqus.hbs` with your shortname.
-* Modify `partials/google-analytics.hbs` with your own snippet.
 * Replace `partials/copyright.hbs` with your own disclaimer.
 * Modify `partials/sidebar-external.hbs` with your own external links.
 * After configuration, you may have to restart for all changes to take place.
