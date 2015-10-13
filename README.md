@@ -40,17 +40,12 @@ cd ghost/content/themes
 sudo git clone https://github.com/dlecina/StayPuft
 ```
 
-* **[Configure](#configuration) the theme.**
-* Restart Ghost.
-* Select the theme in your Settings page.
-
-## Configuration
-
 * Replace `assets/favicon.png` with your own favicon, or remove for the default Ghost favicon.
 * Modify `partials/disqus.hbs` with your shortname.
 * Replace `partials/copyright.hbs` with your own disclaimer.
 * Modify `partials/sidebar-external.hbs` with your own external links.
-* After configuration, you may have to restart for all changes to take place.
+* Restart Ghost.
+* Select the theme in your Settings page.
 
 ## Copyright & License
 
