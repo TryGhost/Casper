@@ -40,9 +40,19 @@ cd ghost/content/themes
 sudo git clone https://github.com/dlecina/StayPuft
 ```
 
+* Rename all files in `partials` folder ending in `example` so they end in `hbs`:
+
+```
+cd ghost/content/themes/StayPuft/partials
+mv disqus.hbs.example disqus.hbs
+mv copyright.hbs.example copyright.hbs
+mv sidebar-external.hbs.example sidebar-external.hbs
+```
+
 * Modify `partials/disqus.hbs` with your shortname.
 * Replace `partials/copyright.hbs` with your own disclaimer.
 * Modify `partials/sidebar-external.hbs` with your own external links.
+
 * Restart Ghost.
 * Select the theme in your Settings page.
 

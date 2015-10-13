@@ -1,0 +1,8 @@
+<li><a href="https://example.com/"><i class="fa fa-github"></i>GitHub</a></li>
+<li><a href="https://example.com/"><i class="fa fa-linkedin"></i>LinkedIn</a></li>
+<li><a href="https://example.com/"><i class="fa fa-twitter"></i>Twitter</a></li>
+<li><a href="https://example.com/"><i class="fa fa-google-plus"></i>Google+</a></li>
+<li><a href="https://example.com/"><i class="fa fa-youtube-play"></i>YouTube</a></li>
+<li><a href="https://example.com/"><i class="fa fa-steam"></i>Steam</a></li>
+<li><a href="https://example.com/"><i class="fa fa-lastfm"></i>Last.fm</a></li>
+<li><a target="_blank" href="mailto:example@example.com"><i class="fa fa-envelope"></i>Contact</a></li>
