@@ -344,6 +344,9 @@ code, tt {
     border: #E3EDF3 1px solid;
     background: #F7FAFB;
     border-radius: 2px;
+    -webkit-font-feature-settings: "liga" 0;
+    -moz-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0;
 }
 
 pre {
