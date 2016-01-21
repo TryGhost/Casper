@@ -2,21 +2,21 @@
 <html>
 <head>
     {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     {{! Page Meta }}
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
+    <meta name="description" content="{{meta_description}}">
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7cOpen+Sans:700,400">
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -38,13 +38,13 @@
     </div>
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    
+    {{! The main JavaScript file for Casper }}
+    <script src="{{asset "js/index.js"}}"></script>
+    
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
-
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-
 </body>
 </html>
