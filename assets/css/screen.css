@@ -297,7 +297,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: #EFEFEF 1px solid;
+    border-top: 1px solid #EFEFEF;
     margin: 3.2em 0;
     padding: 0;
 }
@@ -307,7 +307,7 @@ blockquote {
     box-sizing: border-box;
     margin: 1.75em 0 1.75em -2.2em;
     padding: 0 0 0 1.75em;
-    border-left: #4A4A4A 0.4em solid;
+    border-left: 0.4em solid #4A4A4A;
 }
 
 blockquote p {
@@ -339,7 +339,7 @@ code, tt {
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.85em;
     white-space: pre-wrap;
-    border: #E3EDF3 1px solid;
+    border: 1px solid #E3EDF3;
     background: #F7FAFB;
     border-radius: 2px;
     -webkit-font-feature-settings: "liga" 0;
@@ -351,7 +351,7 @@ pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 0 1.75em 0;
-    border: #E3EDF3 1px solid;
+    border: 1px solid #E3EDF3;
     width: 100%;
     padding: 10px;
     font-family: Inconsolata, monospace, sans-serif;
@@ -374,7 +374,7 @@ kbd {
     display: inline-block;
     margin-bottom: 0.4em;
     padding: 1px 8px;
-    border: #CCC 1px solid;
+    border: 1px solid #CCC;
     color: #666;
     text-shadow: #FFF 0 1px 0;
     font-size: 0.9em;
@@ -401,7 +401,7 @@ table td {
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: #EFEFEF 1px solid;
+    border-top: 1px solid #EFEFEF;
 }
 
 table th { color: #000; }
@@ -415,7 +415,7 @@ table thead:first-child tr:first-child td {
     border-top: 0;
 }
 
-table tbody + tbody { border-top: #EFEFEF 2px solid; }
+table tbody + tbody { border-top: 2px solid #EFEFEF; }
 
 table table table { background-color: #FFF; }
 
@@ -668,7 +668,7 @@ body.nav-opened .nav {
 }
 .nav .nav-current a:after {
     content: " ";
-    border-bottom: rgba(255,255,255,0.5) 1px solid;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
     width: 100%;
     height: 1px;
 }
@@ -920,7 +920,7 @@ body.nav-opened .nav {
     max-width: 710px;
     margin: 4rem auto;
     padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: 1px solid #EBF2F6;
     word-wrap: break-word;
 }
 
@@ -931,7 +931,7 @@ body.nav-opened .nav {
     content: "";
     width: 7px;
     height: 7px;
-    border: #E7EEF2 1px solid;
+    border: 1px solid #E7EEF2;
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -995,7 +995,7 @@ body:not(.post-template) .post-title {
     display: inline-block;
     margin-left: 8px;
     padding-left: 12px;
-    border-left: #d5dbde 1px solid;
+    border-left: 1px solid #d5dbde;
     text-transform: uppercase;
     font-size: 1.3rem;
     white-space: nowrap;
@@ -1122,7 +1122,7 @@ body:not(.post-template) .post-title {
     position: relative;
     margin: 6rem 0 0 0;
     padding: 6rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    border-top: 1px solid #EBF2F6;
 }
 
 .post-footer h4 {
@@ -1232,7 +1232,7 @@ body:not(.post-template) .post-title {
 
 .author-profile {
     padding: 0 15px 5rem 15px;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: 1px solid #EBF2F6;
     text-align: center;
 }
 
@@ -1242,7 +1242,7 @@ body:not(.post-template) .post-title {
     content: "";
     width: 7px;
     height: 7px;
-    border: #E7EEF2 1px solid;
+    border: 1px solid #E7EEF2;
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -1399,7 +1399,7 @@ body:not(.post-template) .post-title {
     font-size: 1.1rem;
     font-family: "Open Sans", sans-serif;
     color: rgba(255,255,255,0.8);
-    border: rgba(255,255,255,0.5) 1px solid;
+    border: 1px solid rgba(255,255,255,0.5);
     border-radius: 4px;
     transition: all 0.5s ease;
 }
@@ -1441,7 +1441,7 @@ body:not(.post-template) .post-title {
 
 /* if there are two posts without covers, put a border between them */
 .read-next-story.no-cover + .read-next-story.no-cover {
-    border-left: rgba(0,0,100,0.04) 1px solid;
+    border-left: 1px solid rgba(0,0,100,0.04);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1506,7 +1506,7 @@ body:not(.post-template) .post-title {
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: #bfc8cd 1px solid;
+    border: 1px solid #bfc8cd;
     text-decoration: none;
     border-radius: 4px;
     transition: border 0.3s ease;
@@ -1534,14 +1534,14 @@ body:not(.post-template) .post-title {
 
 .extra-pagination {
     display: none;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: 1px solid #EBF2F6;
 }
 .extra-pagination:after {
     display: block;
     content: "";
     width: 7px;
     height: 7px;
-    border: #E7EEF2 1px solid;
+    border: 1px solid #E7EEF2;
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -1586,7 +1586,7 @@ body:not(.post-template) .post-title {
 }
 
 .site-footer a:hover {
-    border-bottom: #bbc7cc 1px solid;
+    border-bottom: 1px solid #bbc7cc;
 }
 
 .poweredby {
@@ -1734,7 +1734,7 @@ body:not(.post-template) .post-title {
     }
 
     .read-next-story.no-cover + .read-next-story.no-cover {
-        border-top: rgba(0,0,100,0.06) 1px solid;
+        border-top: 1px solid rgba(0,0,100,0.06);
         border-left: none;
     }
 
@@ -1931,7 +1931,7 @@ body:not(.post-template) .post-title {
     .post-footer .author {
         margin: 0 0 2rem 0;
         padding: 0 0 1.6rem 0;
-        border-bottom: #EBF2F6 1px dashed;
+        border-bottom: 1px dashed #EBF2F6;
     }
 
     .post-footer .share {
