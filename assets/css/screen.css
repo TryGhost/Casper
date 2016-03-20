@@ -974,6 +974,8 @@ body:not(.post-template) .post-title {
     float: left;
     margin-right: 9px;
     border-radius: 100%;
+    background-position: center center;
+    background-size: cover;
 }
 
 .post-meta a {
