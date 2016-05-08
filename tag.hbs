@@ -1,7 +1,7 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{! If we have a tag cover, display that - else blog cover - else nothing }}
+{{!-- If we have a tag cover, display that - else blog cover - else nothing --}}
 <header class="main-header tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
     <nav class="main-nav overlay clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
@@ -23,10 +23,10 @@
     </div>
 </header>
 
-{{! The main content area on the homepage }}
+{{!-- The main content area on the homepage --}}
 <main class="content" role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
     {{> "loop"}}
 
 </main>

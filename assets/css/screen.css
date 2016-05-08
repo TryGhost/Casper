@@ -25,7 +25,7 @@
    0. normalize.css v3.0.3 | MIT License | git.io/normalize | (minified)
    ========================================================================== */
 
-html { 
+html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
@@ -71,7 +71,7 @@ button, input, optgroup, select, textarea {
 }
 button { overflow: visible; }
 button, select { text-transform: none; }
-button, html input[type="button"], 
+button, html input[type="button"],
 input[type="reset"], input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
@@ -227,6 +227,7 @@ h2 {
 
 h3 {
     font-size: 3rem;
+    letter-spacing: -0.6px;
 }
 
 h4 {
@@ -438,6 +439,78 @@ iframe, .fluid-width-video-wrapper {
 margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
     margin: 0;
+}
+
+textarea, select, input {
+    width: 260px;
+    padding: 6px 9px;
+    margin: 0 0 5px 0;
+    outline: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 100;
+    line-height: 1.4em;
+    background: #fff;
+    border: #e7eef2 1px solid;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+
+textarea {
+    width: 100%;
+    max-width: 340px;
+    min-width: 250px;
+    height: auto;
+    min-height: 80px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus {
+    border: #bbc7cc 1px solid;
+    background: #fff;
+    outline: none;
+    outline-width: 0;
+}
+
+select {
+    width: 270px;
+    height: 30px;
+    line-height: 30px;
+}
+
+button {
+    min-height: 35px;
+    width: auto;
+    display: inline-block;
+    padding: 0.1rem 1.5rem;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px; // Hack because Firefox sucks ass.
+    line-height: 13px; // Hack because Firefox sucks ass.
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: none;
+    border-radius: 0.3rem;
+    border: rgba(0,0,0,0.05) 0.1em solid;
+    background: #5ba4e5;
 }
 
 
@@ -1121,7 +1194,7 @@ body:not(.post-template) .post-title {
 .post-footer {
     position: relative;
     margin: 6rem 0 0 0;
-    padding: 6rem 0 0 0;
+    padding: 3rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
 
@@ -1174,7 +1247,7 @@ body:not(.post-template) .post-title {
    links remain at a fixed width the whole time */
 .post-footer .share {
     position: absolute;
-    top: 6rem;
+    top: 3rem;
     right: 0;
     width: 140px;
 }
@@ -1566,7 +1639,65 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   10. Footer - The bottom of every page
+   10. Subscribe - Generate those email subscribers
+   ========================================================================== */
+
+.gh-subscribe {
+    border: #e7eef2 1px solid;
+    padding: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+    background: #f5f8fa;
+    border-radius: 5px;
+}
+
+.gh-subscribe-title {
+    margin-bottom: 0;
+    font-size: 2.4rem
+}
+
+.gh-subscribe p {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.gh-subscribe form {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 0;
+}
+
+.gh-subscribe .form-group {
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.gh-subscribe .subscribe-email {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    border-radius: 4px 0 0 4px;
+    transition: all ease 0.5s;
+}
+
+.gh-subscribe .subscribe-email:focus {
+    border: #5ba4e5 1px solid;
+    transition: all ease 0.2s;
+}
+
+.gh-subscribe button {
+    margin-left: -1px;
+    border-radius: 0 4px 4px 0;
+}
+
+.gh-subscribe-rss {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4em;
+}
+
+/* ==========================================================================
+   11. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -1604,7 +1735,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   11. Media Queries - Smaller than 900px
+   12. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -1718,6 +1849,18 @@ body:not(.post-template) .post-title {
 
     .no-cover.author-head.main-header {
         padding: 0;
+    }
+
+    .gh-subscribe {
+        padding: 2rem;
+    }
+
+    .gh-subscribe-title {
+        font-size: 2rem
+    }
+
+    .gh-subscribe p {
+        font-size: 1.4rem;
     }
 
     .read-next {
@@ -1980,6 +2123,10 @@ body:not(.post-template) .post-title {
         height: 20vh;
     }
 
+    .post-footer .author-image {
+        top: -60px;
+    }
+
     .author-profile .author-image {
         margin-top: -70px;
     }
@@ -1990,6 +2137,14 @@ body:not(.post-template) .post-title {
 
     .archive-template .main-header .page-description {
         display: none;
+    }
+
+    .gh-subscribe {
+        padding: 15px;
+    }
+
+    .gh-subscribe form {
+        margin-top: 10px;
     }
 
     .read-next {
@@ -2050,15 +2205,15 @@ body:not(.post-template) .post-title {
     }
 }
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+    0%, 10%, 25%, 40%, 50% {
         -webkit-transform: translateY(0) rotate(-90deg);
                 transform: translateY(0) rotate(-90deg);
     }
-    40% {
+    20% {
         -webkit-transform: translateY(-10px) rotate(-90deg);
                 transform: translateY(-10px) rotate(-90deg);
     }
-    60% {
+    30% {
         -webkit-transform: translateY(-5px) rotate(-90deg);
                 transform: translateY(-5px) rotate(-90deg);
     }

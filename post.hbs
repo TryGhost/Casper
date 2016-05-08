@@ -1,9 +1,9 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
+{{!-- The comment above "< default" means - insert everything in this file into
+    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
 
-{{! Everything inside the #post tags pulls data from the post }}
+{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
@@ -31,7 +31,7 @@
 
         <footer class="post-footer">
 
-        {{! Everything inside the #author tags pulls data from the author }}
+        {{!-- Everything inside the #author tags pulls data from the author --}}
         {{#author}}
 
             {{#if image}}
@@ -72,11 +72,22 @@
                 </a>
             </section>
 
+            {{!-- Email subscribe form at the bottom of the page --}}
+            {{#if @labs.subscribers}}
+            <section class="gh-subscribe">
+                <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
+                <p>Get the latest posts delivered right to your inbox.</p>
+                {{subscribe_form placeholder="Your email address"}}
+                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+            </section>
+            {{/if}}
+
         </footer>
 
     </article>
 </main>
 
+{{!-- Links to Previous/Next posts --}}
 <aside class="read-next">
     {{#next_post}}
     <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
