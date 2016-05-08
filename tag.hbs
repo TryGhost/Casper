@@ -10,16 +10,18 @@
         {{/if}}
     </nav>
     <div class="vertical">
+        {{#tag}}
         <div class="main-header-content inner">
-            <h1 class="page-title">{{tag.name}}</h1>
+            <h1 class="page-title">{{name}}</h1>
             <h2 class="page-description">
-                {{#if tag.description}}
-                    {{tag.description}}
+                {{#if description}}
+                    {{description}}
                 {{else}}
-                    A {{pagination.total}}-post collection
+                    A {{../pagination.total}}-post collection
                 {{/if}}
             </h2>
         </div>
+        {{/tag}}
     </div>
 </header>
 
