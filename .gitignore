@@ -6,6 +6,7 @@ b-cov
 *.out
 *.pid
 *.gz
+*.swp
 
 pids
 logs

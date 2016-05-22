@@ -1,8 +1,13 @@
-# Casper
+# Frankenstein
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+A Ghost blog theme for book reviews.
 
-To download, visit the [releases](https://github.com/TryGhost/Casper/releases) page.
+Based off of the default theme for [Ghost](http://github.com/tryghost/ghost/).
+(Release 1.3.0)
+
+To download, visit the [GitHub page](https://github.com/max-nova/Frankenstein).
+
+Demo [here](http://books.max-nova.com)
 
 ## Copyright & License
 
