@@ -6,6 +6,7 @@
 {{!-- This is the post loop - each post will be output using this markup --}}
 {{#foreach posts}}
 <article class="{{post_class}}">
+    {{#if image}}<img src="{{image}}" class="loop-book" />{{/if}}
     <header class="post-header">
         <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
     </header>
@@ -18,6 +19,7 @@
         {{tags prefix=" on "}}
         <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
     </footer>
+    <div style="clear:both;"></div>
 </article>
 {{/foreach}}
 

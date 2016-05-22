@@ -1733,6 +1733,46 @@ body:not(.post-template) .post-title {
     float: left;
 }
 
+/* ==========================================================================
+   11.5 Frankenstein Customizations
+   ========================================================================== */
+
+.main-header {
+    background-color: #FFF;
+}
+
+.main-header-content {
+    background-color: #FFF;
+    opacity: 0.95;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.main-header .page-title,
+.main-header .page-description,
+.main-header .scroll-down {
+    color: black;
+}
+
+.post-head {
+    background-size: 710px;
+}
+
+img.post-book {
+    float:left;
+    padding: 0px 20px 5px 0px;
+    width:250px;
+    transform:none;
+    -webkit-transform:none;
+    left:0;
+}
+
+img.loop-book {
+    float: left;
+    width: 200px;
+    padding-right: 25px;
+}
+
 
 /* ==========================================================================
    12. Media Queries - Smaller than 900px
