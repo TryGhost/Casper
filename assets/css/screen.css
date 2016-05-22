@@ -10,14 +10,15 @@
     3.  Utilities
     4.  General
     5.  Single Post
-    6.  Tag Archive
-    7.  Read Next
+    6.  Author Profile
+    7.  Read More
     8.  Third Party Elements
     9.  Pagination
-    10.  Footer
-    11. Media Queries (Tablet)
-    12. Media Queries (Mobile)
-    13. Animations
+    10. Subscribe
+    11. Footer
+    12. Media Queries (Tablet)
+    13. Media Queries (Mobile)
+    14. Animations
 
 */
 
@@ -1885,7 +1886,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   12. Media Queries - Smaller than 500px
+   13. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
@@ -2160,7 +2161,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   13. Animations
+   14. Animations
    ========================================================================== */
 
 /* Used to fade in title/desc on the home page */
