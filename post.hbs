@@ -56,20 +56,13 @@
 
         {{/author}}
 
-
-			<div class="ds-share" data-thread-key="此处请替换为当前文章的thread-key" data-title="此处请替换为分享时显示的标题" data-images="此处请替换为分享时显示的图片的链接地址" data-content="此处请替换为分享时显示的内容" data-url="此处请替换为分享时显示的链接地址">
-				<div class="ds-share-inline">
-					<ul  class="ds-share-icons-32">
-      	
-					<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-					<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-					<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-					
-				  </ul>
-				  <div class="ds-share-icons-more">
+			<div class="ds-share flat" data-thread-key="此处请替换为当前文章的thread-key" data-title="此处请替换为分享时显示的标题" data-images="此处请替换为分享时显示的图片的链接地址" data-content="此处请替换为分享时显示的内容" data-url="此处请替换为分享时显示的链接地址">
+				<div class="ds-share-aside-right">
+				  <div class="ds-share-aside-inner">
 				  </div>
+				  <div class="ds-share-aside-toggle">分享到</div>
 				</div>
-			 </div>
+			</div>
 
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
