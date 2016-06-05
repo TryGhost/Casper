@@ -58,17 +58,18 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-				<div class="ds-share" data-thread-key="{{slug}}" data-title="{{title}}" data-url="{{url absolute="true"}}">
-					  <ul  class="ds-share-icons-16">
-						
-						<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-						<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-						<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-						
-					  </ul>
-					  </div>
-					</div>
-				 </div>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
@@ -84,6 +85,8 @@
         </footer>
 
     </article>
+	{{duoshuo-shares}}
+	{{duoshuo-comments}}
 </main>
 
 {{!-- Links to Previous/Next posts --}}
