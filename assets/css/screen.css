@@ -839,7 +839,7 @@ body.nav-opened .nav {
 }
 
 /* Appears in the top left corner of your home page */
-.blog-logo {
+.blog-logo, .blog-title {
     display: block;
     float: left;
     background: none !important; /* Makes sure there is never a background */
@@ -854,6 +854,14 @@ body.nav-opened .nav {
     height: 38px;
     padding: 1px 0 5px 0;
     width: auto;
+}
+
+.blog-title {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 35px;
+    padding: 1px 0 5px 0;
 }
 
 .menu-button {
