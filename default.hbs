@@ -18,7 +18,7 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="//fonts.gmirror.org/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
@@ -35,14 +35,14 @@
 
         {{!-- The tiny footer at the very bottom --}}
         <footer class="site-footer clearfix">
-            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}， <a href="http://www.miibeian.gov.cn/">粤ICP备15022820号-5</a> </section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> with theme <a href="https://github.com/choicky/Casper">Casper</a></section>
         </footer>
 
     </div>
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://staticfile.qnssl.com/jquery/2.2.1/jquery.min.js"></script>
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
     {{!-- Fitvids makes video embeds responsive and awesome --}}
