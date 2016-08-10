@@ -37,7 +37,7 @@ pre code, pre tt {
 }
 
 .post-comments input.disqusbut {
-	background-color: #57a3e8;
+    background-color: #57a3e8;
     color: #fff;
     width: 100%;
     padding: 15px 0;
@@ -49,4 +49,31 @@ pre code, pre tt {
 
 section.post-content img:hover {
     cursor: pointer;
+}
+
+
+/* ===============
+   READING TIME
+   =============== */
+.eta{
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+
+    color:darkgray;
+
+    position: relative;
+    top: 10px;
+    right: 30px;
+    display: inline-block;
+    font-feature-settings: initial;
+    z-index: 999;
+    font-weight: 400;
+    font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    text-rendering: optimizeLegibility;
+    line-height: 44px;
+    white-space: nowrap;
 }
