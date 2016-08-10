@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
@@ -10,7 +10,7 @@
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
         {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
         {{/if}}
     </nav>
 </header>
@@ -31,8 +31,8 @@
 
         <footer class="post-footer">
 
-        {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{#author}}
+            {{!-- Everything inside the #author tags pulls data from the author --}}
+            {{#author}}
 
             {{#if image}}
             <figure class="author-image">
@@ -44,9 +44,9 @@
                 <h4><a href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
-                    <p>{{bio}}</p>
+                <p>{{bio}}</p>
                 {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
                 <div class="author-meta">
                     {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
@@ -54,38 +54,71 @@
                 </div>
             </section>
 
-        {{/author}}
+            {{/author}}
 
             <section class="share">
                 <h4>Share this post</h4>
                 <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <span class="hidden">Twitter</span>
+            </a>
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="hidden">Facebook</span>
+        </a>
+        <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
 
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="gh-subscribe">
-                <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox.</p>
-                {{subscribe_form placeholder="Your email address"}}
-                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
-            </section>
-            {{/if}}
+{{!-- Email subscribe form at the bottom of the page --}}
+{{#if @labs.subscribers}}
+<section class="gh-subscribe">
+    <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
+    <p>Get the latest posts delivered right to your inbox.</p>
+    {{subscribe_form placeholder="Your email address"}}
+    <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+</section>
+{{/if}}
 
-        </footer>
+</footer>
 
-    </article>
+<aside class="post-comments">
+  <div class="disqusbox">
+    <div>
+        <p><strong>View or Post Comments</strong></p>
+    </div>
+    <div id="disqus_thread">
+        <form onsubmit="my.loadDisqus();return false;" class=formBlock> 
+            <input class="disqusbut" type=submit value="Load Comments">
+        </form>
+    </div>
+    <script>
+        {{> custom/config}}
+
+        var disqus_identifier = '{{post.id}}';
+        var my = my || {};
+        my.loadDisqus = function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        };
+    </script>
+    <noscript>Please enable javascript to <a rel="nofollow" href="http://disqus.com/?ref_noscript">discus this page, powered by Disqus.</a></noscript>
+    <style scoped=scoped>
+      @media print{
+         .disqusbox{display:none}
+     }
+    </style>
+  </div>
+</aside>
+
+</article>
 </main>
+
 
 {{!-- Links to Previous/Next posts --}}
 <aside class="read-next">
@@ -108,3 +141,23 @@
 </aside>
 
 {{/post}}
+
+
+<script type="text/javascript">
+  {{> custom/config}}
+
+  var disqus_identifier = '{{post.id}}';
+  (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
+      function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
+  t=h.createElement(o);z=h.getElementsByTagName(o)[0];
+  t.src='//www.google-analytics.com/analytics.js';
+  z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
+  ga('create',ga_ua);ga('send','pageview');
+
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>

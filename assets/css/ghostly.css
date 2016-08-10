@@ -1,0 +1,44 @@
+/* ====================
+   SYNTAX HIGHLIGHTING
+   ==================== */
+
+pre {
+    word-wrap: normal;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+    font-size: 0.8em;
+    line-height: 1.4em;
+}
+pre code, pre tt {
+    white-space: pre;
+    background: transparent !important;
+}
+
+.main-header {
+    height: 40vh;
+}
+
+/* ===============
+   DISQUS COMMENTS
+   =============== */
+
+.post-comments {
+    border-top: 2px solid #f2f2f2;
+    padding: 40px 0;
+}
+
+.post-comments strong {
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    text-rendering: geometricPrecision;
+    
+}
+
+.post-comments input.disqusbut {
+	background-color: #57a3e8;
+    color: #fff;
+    width: 100%;
+    padding: 15px 0;
+}
