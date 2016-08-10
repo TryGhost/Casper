@@ -97,7 +97,7 @@ the {{{body}}} of the default.hbs template, containing the blog header/footer. -
     <script>
         {{> custom/config}}
 
-        var disqus_identifier = '{{post.id}}';
+        var disqus_identifier = '{{id}}';
         var my = my || {};
         my.loadDisqus = function() {
             var dsq = document.createElement('script');
@@ -146,7 +146,6 @@ the {{{body}}} of the default.hbs template, containing the blog header/footer. -
 <script type="text/javascript">
   {{> custom/config}}
 
-  var disqus_identifier = '{{post.id}}';
   (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
       function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
   t=h.createElement(o);z=h.getElementsByTagName(o)[0];
