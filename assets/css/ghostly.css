@@ -42,3 +42,11 @@ pre code, pre tt {
     width: 100%;
     padding: 15px 0;
 }
+
+/* ===============
+   OPEN IMAGES
+   =============== */
+
+section.post-content img:hover {
+    cursor: pointer;
+}
