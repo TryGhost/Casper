@@ -19,6 +19,27 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    {{!-- Syntax Highlighting --}}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github-gist.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>  
+        pre {
+            word-wrap: normal;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            -webkit-hyphens: none;
+            hyphens: none;
+            font-size: 0.8em;
+            line-height: 1.4em;
+        }
+        pre code, pre tt {
+            white-space: pre;
+            background: transparent !important;
+        }
+    </style> 
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
