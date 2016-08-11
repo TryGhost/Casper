@@ -96,10 +96,9 @@ the {{{body}}} of the default.hbs template, containing the blog header/footer. -
         </form>
     </div>
     <script>
-        {{> custom/config}}
-
+      var my = my || {};
+      if(disqus_shortname != null){
         var disqus_identifier = '{{id}}';
-        var my = my || {};
         my.loadDisqus = function() {
             var dsq = document.createElement('script');
             dsq.type = 'text/javascript';
@@ -107,6 +106,9 @@ the {{{body}}} of the default.hbs template, containing the blog header/footer. -
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         };
+      } else {
+        console.error("You need to declare your 'disqus_shortname' variable on Ghost admin, in the Code Injection section. ie: 'var disqus_shortname = 'myshortname';");
+      }
     </script>
     <noscript>Please enable javascript to <a rel="nofollow" href="http://disqus.com/?ref_noscript">discus this page, powered by Disqus.</a></noscript>
     <style scoped=scoped>
@@ -146,13 +148,15 @@ the {{{body}}} of the default.hbs template, containing the blog header/footer. -
 <script type="text/javascript" src="{{asset "js/readingtime.js"}}"></script>
 <script type="text/javascript">
 
+  if(ga_ua != null){
+    (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
+          function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
+      t=h.createElement(o);z=h.getElementsByTagName(o)[0];
+      t.src='//www.google-analytics.com/analytics.js';
+      z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
+      ga('create',ga_ua);ga('send','pageview');
+  }
   /* Analytics */
-  (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
-      function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
-  t=h.createElement(o);z=h.getElementsByTagName(o)[0];
-  t.src='//www.google-analytics.com/analytics.js';
-  z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
-  ga('create',ga_ua);ga('send','pageview');
 
   /* Disqus comment count */
   (function () {
