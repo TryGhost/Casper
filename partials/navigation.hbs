@@ -1,17 +1,41 @@
 <div class="nav">
-    <h3 class="nav-title">Menu</h3>
-    <a href="#" class="nav-close">
-        <span class="hidden">Close</span>
-    </a>
-    <ul>
-        {{#foreach navigation}}
-            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
+    <div class="main-nav">
+        <h3 class="nav-title">Menu</h3>
+        <a href="#" class="nav-close">
+            <span class="hidden">Close</span>
+        </a>
+        <ul>
+            {{#foreach navigation}}
+                <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+            {{/foreach}}
+        </ul>
+    </div>
+    <ul class="social-menu">
+        {{#if @blog.facebook}}
+            <li class="social-icon" id="social-facebook">
+                <a href="{{facebook_url}}"><i class="fa fa-facebook"></i></a>
+            </li>
+        {{/if}}
+        {{#if @blog.twitter}}
+            <li class="social-icon" id="social-twitter">
+                <a href="{{twitter_url}}"><i class="fa fa-twitter"></i></a>
+            </li>
+        {{/if}}
+        <li class="social-icon hidden" id="social-linkedin">
+            <a href=""><i class="fa fa-linkedin-square"></i></a>
+            <script> if (typeof linkedin_url !== 'undefined') { $('#social-linkedin').removeClass('hidden'); $('#social-linkedin a').attr('href', linkedin_url); } </script>
+        </li>
+        <li class="social-icon hidden" id="social-github">
+            <a href=""><i class="fa fa-github"></i></a>
+            <script> if (typeof github_user !== 'undefined') { $('#social-github').removeClass('hidden'); $('#social-github a').attr('href', 'https://github.com/' + github_user); } </script>
+        </li>
     </ul>
-    {{#if @labs.subscribers}}
-        <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
-    {{else}}
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-    {{/if}}
+    <div class="subscribe-menu">
+        {{#if @labs.subscribers}}
+            <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
+        {{else}}
+            <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+        {{/if}}
+    </div>
 </div>
 <span class="nav-cover"></span>

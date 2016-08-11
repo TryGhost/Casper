@@ -704,47 +704,37 @@ body.nav-opened .nav {
     padding: 90px 9% 5%;
     list-style: none;
     counter-reset: item;
+    margin-top: 32px;
 }
 
-.nav li:before {
-    display: block;
-    float: right;
-    padding-right: 4%;
-    padding-left: 5px;
-    text-align: right;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-    color: #B8B8B8;
-    content: counter(item, lower-roman);
-    counter-increment: item;
-}
 .nav li {
     margin: 0;
+}
+.nav li a:hover {
+    color: #fff;
 }
 .nav li a {
     text-decoration: none;
     line-height: 1.4;
     font-size: 1.4rem;
     display: block;
-    padding: 0.6rem 4%;
+    padding: 1.25rem 4%;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-indent: 2px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    color: #707070;
+    transition: .14s color ease-out;
 }
-.nav li a:after {
-    display: inline-block;
-    content: " .......................................................";
-    color: rgba(255,255,255,0.2);
-    margin-left: 5px;
-}
-.nav .nav-current:before {
+
+.nav .nav-current {
+    font-weight: 600;
     color: #fff;
-}
-.nav .nav-current a:after {
-    content: " ";
-    border-bottom: rgba(255,255,255,0.5) 1px solid;
-    width: 100%;
-    height: 1px;
 }
 
 .nav a:link,

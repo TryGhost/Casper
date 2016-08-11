@@ -55,7 +55,7 @@ section.post-content img:hover {
 /* ===============
    READING TIME
    =============== */
-.eta{
+.eta {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -76,4 +76,50 @@ section.post-content img:hover {
     text-rendering: optimizeLegibility;
     line-height: 44px;
     white-space: nowrap;
+}
+
+/* ===============
+   MENU
+   =============== */
+
+.nav {
+    display: table;
+    height: 100%;
+    background-color: #0d0d0d;
+    color: #707070;
+}
+
+.nav .main-nav {
+    display: table-row;
+    height: 100%;
+    margin-bottom: 72px;
+}
+
+ul.social-menu {
+    display: table-row;
+    text-align: center;
+}
+
+li.social-icon {
+    display: inline-block;
+}
+
+.social-icon a i {
+    transition: .14s color ease-out;
+    color: #707070;
+    font-size: 1.5em;
+}
+
+.social-icon a:hover i {
+    color: #fff;
+}
+
+.subscribe-menu {
+    position: initial;
+    display: table-row;
+}
+
+.subscribe-button {
+    position: initial;
+    margin: 30px;
 }
