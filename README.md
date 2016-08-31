@@ -22,11 +22,22 @@ As it's based on Casper, the general look and feel is the same you would get wit
     
 ## Screenshots
 
+<details>
+<summary>Side menu</summary>
 ![Side Menu](http://i.imgur.com/uPrVuJ1.jpg)
+</details>
+<details>
+<summary>Reading time</summary>
 ![Reading time](http://i.imgur.com/lckpNQS.jpg)
+</details>
+<details>
+<summary>Syntax Highlight</summary>
 ![Syntax Highlight](http://i.imgur.com/rShTIFi.jpg)
+</details>
+<details>
+<summary>Comments</summary>
 ![Comments](http://i.imgur.com/7gkWwY7.jpg)
-
+</details>
 ## Why
 
 We liked the Ghost default theme, but we thought it lacked some things, such as Syntax Highlighting or easy integration with a comment system.
