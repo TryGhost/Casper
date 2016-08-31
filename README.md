@@ -1,22 +1,31 @@
 # Ghostly
 
-A theme for [Ghost](http://github.com/tryghost/ghost/) based on the default theme, [Casper](https://github.com/TryGhost/Casper).
+A theme for [Ghost](http://github.com/tryghost/ghost/) based on the default Ghost theme, [Casper](https://github.com/TryGhost/Casper).
 
 ## What does it provide
 
 As it's based on Casper, the general look and feel is the same you would get with it, but we added some features that will enhance your experience using it:
 
-* **Code syntax highlight**: when writing fenced code blocks (those surrounded by accent marks (`` ``` ``) ), you can add the language after the opening quotes, and the HTML output will be highlighted according to the language.
+* **Code syntax highlight**: when writing fenced code blocks (those surrounded by backticks (`` ``` ``) ), you can add the language after the opening quotes, and the HTML output will be highlighted according to the language.
     * If no language is specified, the engine will try to guess it
     * Provided by [Highlight.js](https://highlightjs.org/)
 * **Disqus** as a comment system: if you use Disqus as a comment system, you will only need to define your Disqus shortname and it will be all set.
     * The comments will be lazy-loaded only when the user clicks the "Load comments" button, so no unnecessary requests are made
-* **Revamped side menu**: the standard side menu felt old and incompleted. W
+* **Revamped side menu**: the standard side menu felt old and incomplete. The new menu has a flat, simple style.
+* **'Reading Time' header on posts:** added a simple 'reading time' header based on post length.
+* **Default Home icon** in case you didn't add a Blog icon.
 * **Social profiles**: On the lower part of the new side menu, you will be able to show links to your social profiles. Currently, the ones supported are:
     * Twitter
     * Facebook
     * Github
     * Linkedin
+    
+## Screenshots
+
+![Side Menu](http://i.imgur.com/uPrVuJ1.jpg)
+![Reading time](http://i.imgur.com/lckpNQS.jpg)
+![Syntax Highlight](http://i.imgur.com/rShTIFi.jpg)
+![Comments](http://i.imgur.com/7gkWwY7.jpg)
 
 ## Why
 
@@ -24,7 +33,11 @@ We liked the Ghost default theme, but we thought it lacked some things, such as 
 
 ## How
 
-Installation instructions
+1. Download the latest version from [here](https://github.com/Arasthel/Ghostly/archive/master.zip).
+2. Upload the theme folder to `{GHOST_FOLDER}/content/themes/`.
+3. Restart the Ghost service.
+4. Go to your Ghost admin panel, and under the **General** section, select the Theme.
+5. Customize it as you like.
 
 ## Customization
 
@@ -32,7 +45,7 @@ For customizing the different options that this theme provides, you will need to
 
 ```html
 <script type="text/javascript">
-  // You variables go here
+  // Your variables go here
 </script>
 ```
 
@@ -54,20 +67,22 @@ Those are the variables you will need to define in order to show your social pro
 
 ```javascript
 // Github
-var github_user = 'dexafree';
+var github_user = 'YOUR_GITHUB_USERNAME';
 
+// Linkedin
+var linkedin_user = 'YOUR_LINKEDIN_USER';
 ```
 
-> ### Note
-> Twitter and Facebook profiles will be taken from the blog defaults,defined under the *General* section
+> ### Twitter and Facebook
+> Twitter and Facebook profiles will be taken from the blog defaults, defined under the *General* section
 
-## Example
+### Example
 
 ```html
 <script type="text/javascript">
-    var ga_ua = 'UA-123456-1';
-	var disqus_shortname = 'MYSHORTNAME';
-    var github_user = 'MYGITHUBUSER';
+  var ga_ua = 'UA-123456-1';
+  var disqus_shortname = 'MYSHORTNAME';
+  var github_user = 'MYGITHUBUSER';
 </script>
 ```
 
@@ -81,3 +96,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
