@@ -1262,7 +1262,7 @@ body:not(.post-template) .post-title {
     position: absolute;
     top: 3rem;
     right: 0;
-    width: 140px;
+    width: 200px;
 }
 
 .post-footer .share a {
@@ -1283,6 +1283,15 @@ body:not(.post-template) .post-title {
     color: #dd4b39;
 }
 .post-footer .share .icon-reddit:hover {
+    color: #ff5700;
+}
+.post-footer .share .icon-linkedin:hover {
+    color: #ff5700;
+}
+.post-footer .share .icon-stumbleupon:hover {
+    color: #ff5700;
+}
+.post-footer .share .icon-email:hover {
     color: #ff5700;
 }
 
