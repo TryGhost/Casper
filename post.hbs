@@ -74,6 +74,18 @@
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
+                <a class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=<URL>&title={{encode title}}&source={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'linkedin-share', 'width=490,height=530');return false;">
+                    <span class="hidden">LinkedIn</span>
+                </a>
+                <a class="icon-stumbleupon" href="http://www.stumbleupon.com/submit?url={{url absolute="true"}}&title={{encode title}}"
+                   onclick="window.open(this.href, 'stumbleupon-share', 'width=490,height=530');return false;">
+                    <span class="hidden">StumbleUpon</span>
+                </a>
+                <a class="icon-email" href="mailto:?subject={{encode title}}&body={{encode title}}%0D%0A{{url absolute="true"}}"
+                   onclick="window.open(this.href, 'stumbleupon-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Email</span>
+                </a>
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
