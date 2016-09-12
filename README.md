@@ -2,6 +2,8 @@
 
 A theme for [Ghost](http://github.com/tryghost/ghost/) based on the default Ghost theme, [Casper](https://github.com/TryGhost/Casper).
 
+[Demo here](https://ghostly.dexa-dev.com/)
+
 ## What does it provide
 
 As it's based on Casper, the general look and feel is the same you would get with it, but we added some features that will enhance your experience using it:
