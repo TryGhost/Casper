@@ -833,8 +833,8 @@ body.nav-opened .nav {
 /* Hide when there's no cover image or on page2+ */
 .no-cover .scroll-down,
 .no-cover.main-header:after,
-.archive-template .scroll-down,
-.archive-template .main-header:after {
+.paged .scroll-down,
+.paged .main-header:after {
     display: none
 }
 
@@ -1015,7 +1015,8 @@ body.nav-opened .nav {
     box-shadow: #FFF 0 0 0 5px;
 }
 
-body:not(.post-template) .post-title {
+body:not(.post-template) .post-title,
+body:not(.page-template) .post-title {
     font-size: 3.6rem;
 }
 
@@ -1117,19 +1118,23 @@ body:not(.post-template) .post-title {
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
-.post-template .post-header {
+.post-template .post-header,
+.page-template .post-header {
    margin-bottom: 3.4rem;
 }
 
-.post-template .post-title {
+.post-template .post-title,
+.page-template .post-title {
     margin-bottom: 0;
 }
 
-.post-template .post-meta {
+.post-template .post-meta,
+.page-template .post-meta {
     margin: 0;
 }
 
-.post-template .post-date {
+.post-template .post-date,
+.page-template .post-date {
     padding: 0;
     margin: 0;
     border: none;
@@ -1138,19 +1143,22 @@ body:not(.post-template) .post-title {
 /* Stop elements, such as img wider than the post content, from
    creating horizontal scroll - slight hack due to imperfections
    with browser width % calculations and rounding */
-.post-template .content {
+.post-template .content,
+.page-template .content {
     overflow: hidden;
 }
 
 /* Tweak the .post wrapper style */
-.post-template .post {
+.post-template .post,
+.page-template .post {
     margin-top: 0;
     border-bottom: none;
     padding-bottom: 0;
 }
 
 /* Kill that stylish little circle that was on the border, too */
-.post-template .post:after {
+.post-template .post:after,
+.page-template .post:after {
     display: none;
 }
 
@@ -1400,7 +1408,7 @@ body:not(.post-template) .post-title {
 
 /* Turn off meta for page2+ to make room for extra
    pagination prev/next links */
-.archive-template .author-profile .author-meta {
+.paged .author-profile .author-meta {
     display: none;
 }
 
@@ -1629,12 +1637,12 @@ body:not(.post-template) .post-title {
 }
 
 /* On page2+ make all the headers smaller */
-.archive-template .main-header {
+.paged .main-header {
     max-height: 30vh;
 }
 
 /* On page2+ show extra pagination controls at the top of post list */
-.archive-template .extra-pagination {
+.paged .extra-pagination {
     display: block;
 }
 
@@ -1758,7 +1766,7 @@ body:not(.post-template) .post-title {
     .scroll-down,
     .home-template .main-header:after { display: none; }
 
-    .archive-template .main-header {
+    .paged .main-header {
         min-height: 180px;
         padding: 10% 0;
     }
@@ -1781,7 +1789,8 @@ body:not(.post-template) .post-title {
         font-size: 0.95em
     }
 
-    body:not(.post-template) .post-title {
+    body:not(.post-template) .post-title,
+    body:not(.page-template) .post-title {
         font-size: 3.2rem;
     }
 
@@ -1900,7 +1909,7 @@ body:not(.post-template) .post-title {
         height: 30vh;
     }
 
-    .archive-template .main-header {
+    .paged .main-header {
         max-height: 20vh;
         min-height: 160px;
         padding: 10% 0;
@@ -1987,11 +1996,13 @@ body:not(.post-template) .post-title {
         display: none;
     }
 
-    .post-template .post-header {
+    .post-template .post-header,
+    .page-template .post-header {
         margin-bottom: 2rem;
     }
 
-    .post-template .post-date {
+    .post-template .post-date,
+    .page-template .post-date {
         display: inline-block;
     }
 
@@ -2047,11 +2058,13 @@ body:not(.post-template) .post-title {
         font-size: 1.8rem;
     }
 
-    body:not(.post-template) .post-title {
+    body:not(.post-template) .post-title,
+    body:not(.page-template) .post-title {
         font-size: 2.5rem;
     }
 
-    .post-template .site-footer {
+    .post-template .site-footer,
+    .page-template .site-footer {
         margin-top: 0;
     }
 
@@ -2136,7 +2149,7 @@ body:not(.post-template) .post-title {
         font-size: 1.4rem;
     }
 
-    .archive-template .main-header .page-description {
+    .paged .main-header .page-description {
         display: none;
     }
 
