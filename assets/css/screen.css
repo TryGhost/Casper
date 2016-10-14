@@ -519,7 +519,7 @@ button {
    3. Utilities - These things get used a lot
    ========================================================================== */
 
-/* Clears shit */
+/* Clears elements */
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -528,7 +528,7 @@ button {
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-/* Hides shit */
+/* Hides elements */
 .hidden {
     text-indent: -9999px;
     visibility: hidden;
@@ -2235,6 +2235,6 @@ body:not(.page-template) .post-title {
 
 
 /* ==========================================================================
-   End of file. Animations should be the last thing here. Do not add stuff
-   below this point, or it will probably fuck everything up.
+   End of file. Animations should be the last thing here. If you add
+   rulesets below this point, it could break the presentation.
    ========================================================================== */
