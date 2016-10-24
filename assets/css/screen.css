@@ -1015,9 +1015,12 @@ body.nav-opened .nav {
     box-shadow: #FFF 0 0 0 5px;
 }
 
-body:not(.post-template) .post-title,
-body:not(.page-template) .post-title {
+body:not(.post-template) .post-title {
     font-size: 3.6rem;
+}
+
+body.page-template .post-title {
+    font-size: 5rem;
 }
 
 .post-title a {
@@ -1789,9 +1792,12 @@ body:not(.page-template) .post-title {
         font-size: 0.95em
     }
 
-    body:not(.post-template) .post-title,
-    body:not(.page-template) .post-title {
+    body:not(.post-template) .post-title {
         font-size: 3.2rem;
+    }
+
+    body.page-template .post-title {
+        font-size: 4.5rem;
     }
 
     hr {
@@ -2058,9 +2064,12 @@ body:not(.page-template) .post-title {
         font-size: 1.8rem;
     }
 
-    body:not(.post-template) .post-title,
-    body:not(.page-template) .post-title {
+    body:not(.post-template) .post-title {
         font-size: 2.5rem;
+    }
+
+    body.page-template .post-title {
+        font-size: 2.8rem;
     }
 
     .post-template .site-footer,
