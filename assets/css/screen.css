@@ -264,6 +264,15 @@ ol, ul {
     padding-left: 3rem;
 }
 
+p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+
 ol ol, ul ul,
 ul ol, ol ul {
     margin: 0 0 0.4em 0;
