@@ -1218,6 +1218,7 @@ main
 .gist table {
     margin: 0;
     font-size: 1.4rem;
+    text-rendering: auto;
 }
 .gist td {
     line-height: 1.4;
