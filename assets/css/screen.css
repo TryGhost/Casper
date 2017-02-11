@@ -255,6 +255,9 @@ code, tt {
     background: #22313F;
     color: #f8f8f2;
     border-radius: 0.3em;
+    -webkit-font-feature-settings: "liga" 0;
+    -moz-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0;
 }
 
 pre {
