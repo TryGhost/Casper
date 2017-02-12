@@ -35,26 +35,13 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 
 ## Installation
 
-* Clone this repository inside your themes folder:
-
-```
-cd ghost/content/themes
-sudo git clone https://github.com/dlecina/StayPuft
-```
-
-* Copy all files in `partials` folder ending in `example` so they end in `hbs`:
-
-```
-cd StayPuft/partials
-cp disqus.hbs.example disqus.hbs
-cp sidebar-external.hbs.example sidebar-external.hbs
-```
-
-* Modify `partials/disqus.hbs` with your shortname.
-* Modify `partials/sidebar-external.hbs` with your own external links.
-* Restart Ghost.
-* Enable the [Public API](http://support.ghost.org/public-api-beta/), which is required for GhostHunter.
-* Select the theme in your Settings page.
+* Download the [latest release](https://github.com/dlecina/StayPuft/releases/latest) as a zip file.
+* Rename `partials/disqus.hbs.example` to `partials/disqus.hbs` and customize it with your Disqus shortname.
+* Rename `partials/sidebar-external.hbs.example` to `partials/sidebar-external.hbs` and customize it with your own external links.
+* Go to your blog's Settings page (typically `/admin` or `/ghost`).
+* In the Labs tab, enable the [Ghost Public API](http://support.ghost.org/public-api-beta/). This is required for search functionality.
+* In the General tab, upload and activate Staypuft.
+* (Optional) In the Code Injection tab, add any snippets you may need, such as [Google Analytics](http://academy.ghost.org/how-to-monitor-your-ghost-blogs-traffic/).
 
 ## Copyright & License
 
