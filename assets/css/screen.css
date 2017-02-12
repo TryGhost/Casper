@@ -849,21 +849,24 @@ main
    ========================================================================== */
 
 /* Tweak the .post wrapper style */
-.post-template .post {
+.post-template .post,
+.page-template .post {
     margin-top: 0;
     border-bottom: none;
     padding-bottom: 0;
 }
 
 /* Kill that stylish little circle that was on the border, too */
-.post-template .post:after {
+.post-template .post:after,
+.page-template .post:after {
     display: none;
 }
 
 /* Stop elements, such as img wider than the post content, from 
    creating horizontal scroll - slight hack due to imperfections 
    with browser width % calculations and rounding */
-.post-template .content {
+.post-template .content,
+.page-template .content {
     overflow: hidden;
 }
 
@@ -1144,7 +1147,7 @@ main
 
 /* Turn off meta for page2+ to make room for extra
    pagination prev/next links */
-.archive-template .author-profile .author-meta {
+.paged .author-profile .author-meta {
     display: none;
 }
 
