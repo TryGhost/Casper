@@ -11,7 +11,6 @@ A fork of [Casper](https://github.com/TryGhost/Casper), the default theme for [G
 * Post comments using [Disqus](http://disqus.com/).
 * In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
-* Basic support for [slidr.js](https://github.com/bchanx/slidr).
 * Syntax highlighting using [Prism](https://github.com/LeaVerou/prism/).
 
 ## Demo
