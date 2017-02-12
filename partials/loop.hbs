@@ -1,6 +1,5 @@
-{{! This is the post loop - each post will be output using this markup }}
+{{!-- This is the post loop - each post will be output using this markup --}}
 {{#foreach posts}}
-
 <article class="{{post_class}}">
     <header class="post-header">
         {{#if image}}
@@ -25,8 +24,7 @@
         <i class="fa fa-comment-o"></i> <a href="{{url}}#disqus_thread">Comments</a>
     </footer>
 </article>
-
 {{/foreach}}
 
-{{! Previous/next page links - displayed on every page }}
+{{!-- Previous/next page links - displayed on every page --}}
 {{pagination}}
