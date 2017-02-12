@@ -5,6 +5,7 @@ A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghos
 ## Features
 
 * Responsive design.
+* Custom [AMP](https://dev.ghost.org/custom-amp-themes/) theme.
 * Post comments using [Disqus](http://disqus.com/).
 * In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
