@@ -53,6 +53,7 @@ cp sidebar-external.hbs.example sidebar-external.hbs
 * Modify `partials/disqus.hbs` with your shortname.
 * Modify `partials/sidebar-external.hbs` with your own external links.
 * Restart Ghost.
+* Enable the [Public API](http://support.ghost.org/public-api-beta/), which is required for GhostHunter.
 * Select the theme in your Settings page.
 
 ## Copyright & License

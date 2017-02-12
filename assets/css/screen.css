@@ -690,6 +690,7 @@ main
     max-width: 800px;
 }
 
+
 #search
 {
     display: block;
@@ -717,19 +718,19 @@ main
     position: absolute; /* must be set to absolute */
 } 
 
-#results
+#search-results
 {
     text-align: center;
 }
 
-#results > p
+#search-results > p
 {
     color: #BBB;
     font-size: 1.4rem;
     margin: 0;
 }
 
-#results > a
+#search-results > a
 {
     display: block;
     background-color: #F5F5F5;
@@ -738,22 +739,23 @@ main
     padding: 1rem 2.5rem;
     margin-bottom: 1rem;
 }
-#results > a:last-child {
+#search-results > a:last-child {
     margin-bottom: 4rem;
 }
 
-#results h2
+#search-results h2
 {
     font-size: 2.5rem;
     font-weight: 400;
 }
 
-#results h4
+#search-results h4
 {
     font-size: 1.4rem;
     font-weight: 400;
     color: #BBB;
 }
+
 
 #sidebar-links
 {

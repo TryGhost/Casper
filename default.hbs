@@ -44,6 +44,7 @@
             <h2 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h2>
             <h3 class="blog-description">{{@blog.description}}</h3>
 
+            {{!-- Search --}}
             <form id="search">
                 <input id="search-field" placeholder="Search"/>
             </form>
@@ -77,7 +78,7 @@
     {{!-- Main Content --}}
     <main>
         <div class="main-inner">
-            <section id="results"></section>
+            <section id="search-results"></section>
             {{{body}}}
         </div>
     </main>
@@ -103,14 +104,7 @@
 
     {{!-- ghostHunter --}}
     <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
-    <script>
-        $("#search-field").ghostHunter({
-            rss : "{{@blog.url}}/rss/",
-            results : "#results",
-            onKeyUp : true,
-            zeroResultsInfo : false
-        });
-    </script>
+    <script src="{{asset "js/jquery.ghostHunter-init.js"}}"></script>
     
 </body>
 
