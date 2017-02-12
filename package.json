@@ -1,4 +1,37 @@
 {
-  "name": "StayPuft",
-  "version": "1.3.1"
+    "name": "StayPuft",
+    "description": "A personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "homepage": "https://github.com/dlecina/StayPuft",
+    "demo": "https://github.com/dlecina/StayPuft#demo",
+    "version": "1.3.1",
+    "engines": {
+        "ghost": "^0.9.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "David Lecina",
+        "email": "dlecina13@gmail.com",
+        "url": "https://github.com/dlecina"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/dlecina/StayPuft.git"
+    },
+    "bugs": "https://github.com/dlecina/StayPuft/issues",
+    "contributors": "https://github.com/dlecina/StayPuft/graphs/contributors"
 }
