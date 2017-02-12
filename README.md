@@ -57,5 +57,5 @@ cp sidebar-external.hbs.example sidebar-external.hbs
 
 ## Copyright & License
 
-Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE). (Original)
+Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE). (Original)  
 Copyright (c) 2014-2017 David Lecina Fuentes - Released under the [MIT license](LICENSE). (Modifications)
