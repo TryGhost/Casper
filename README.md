@@ -43,6 +43,8 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 * In the General tab, upload and activate Staypuft.
 * (Optional) In the Code Injection tab, add any snippets you may need, such as [Google Analytics](http://academy.ghost.org/how-to-monitor-your-ghost-blogs-traffic/).
 
+If the process fails, try [installing the theme manually](https://www.ghostforbeginners.com/how-to-install-a-ghost-theme/#uploadmanually).
+
 ## Copyright & License
 
 Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE). (Original)  
