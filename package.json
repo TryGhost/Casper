@@ -9,8 +9,8 @@
     },
     "license": "MIT",
     "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
+        "desktop": "assets/screenshot-desktop.png",
+        "mobile": "assets/screenshot-mobile.png"
     },
     "author": {
         "name": "David Lecina",
