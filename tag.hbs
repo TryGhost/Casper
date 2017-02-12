@@ -1,15 +1,16 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- Tag header}}
+{{!-- Tag header --}}
+{{#tag}}
 <header class="tag-archive-header">
-    <div class="tag-cover" style="{{#if tag.image}}background-image: url({{tag.image}}){{/if}}"></div>
+    <div class="tag-cover" style="{{#if image}}background-image: url({{image}}){{/if}}"></div>
 
-    <h4 class="tag-archive-header-name"><i class="fa fa-tag"></i>{{tag.name}}</h4>
+    <h4 class="tag-archive-header-name"><i class="fa fa-tag"></i>{{name}}</h4>
 
     <p class="tag-description">
-        {{#if tag.description}}
-            {{tag.description}}
+        {{#if description}}
+            {{description}}
         {{else}}
             <span class="tag-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
         {{/if}}
@@ -17,6 +18,7 @@
 
     <a class="subscribe-button icon-feed" href="{{url}}rss/">Subscribe to this tag</a>
 </header>
+{{/tag}}
 
 {{!-- The tag below includes the post loop - partials/loop.hbs --}}
 {{> "loop"}}
