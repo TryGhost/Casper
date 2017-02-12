@@ -259,7 +259,7 @@ mark {
 
 code, tt {
     padding: 1px 3px;
-    font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace, sans-serif;
+    font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace;
     font-size: 0.85em;
     white-space: pre-wrap;
     background: #22313F;
@@ -276,7 +276,7 @@ pre {
     margin: 1.6em 0;
     width: 100%;
     padding: 10px;
-    font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace, sans-serif;
+    font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace;
     font-size: 0.9em;
     white-space: pre;
     overflow: auto;

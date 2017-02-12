@@ -99,6 +99,7 @@
     {{!-- Prism --}}
     <script type="text/javascript" src="{{asset "js/prism-loader.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <script type="text/javascript">Prism.plugins.autoloader.languages_path = "{{@blog.url}}/assets/js/prism-components/";</script>
 
     {{!-- ghostHunter --}}
     <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>

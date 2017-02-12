@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-extras+clike+javascript+java+php+php-extras+coffeescript+scss+bash+c+cpp+python+sql+groovy+http+ruby+gherkin+csharp+go+nsis+aspnet&plugins=line-highlight+line-numbers+autolinker+file-highlight */
+/* http://prismjs.com/download.html?themes=prism-okaidia&plugins=line-highlight+line-numbers+autolinker+file-highlight+autoloader */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -8,13 +8,15 @@
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #f8f8f2;
-	text-shadow: 0 1px rgba(0,0,0,0.3);
-	font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace, sans-serif;
-	direction: ltr;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -43,6 +45,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
+	white-space: normal;
 }
 
 .token.comment,
@@ -63,22 +66,24 @@ pre[class*="language-"] {
 .token.property,
 .token.tag,
 .token.constant,
-.token.symbol {
+.token.symbol,
+.token.deleted {
 	color: #f92672;
 }
 
 .token.boolean,
-.token.number{
+.token.number {
 	color: #ae81ff;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string,
-.token.builtin {
+.token.char,
+.token.builtin,
+.token.inserted {
 	color: #a6e22e;
 }
-
 
 .token.operator,
 .token.entity,
@@ -90,14 +95,13 @@ pre[class*="language-"] {
 }
 
 .token.atrule,
-.token.attr-value
-{
+.token.attr-value,
+.token.function {
 	color: #e6db74;
 }
 
-
-.token.keyword{
-color: #66d9ef;
+.token.keyword {
+	color: #66d9ef;
 }
 
 .token.regex,
@@ -105,8 +109,12 @@ color: #66d9ef;
 	color: #fd971f;
 }
 
-.token.important {
+.token.important,
+.token.bold {
 	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
 }
 
 .token.entity {
@@ -126,13 +134,10 @@ pre[data-line] {
 	margin-top: 1em; /* Same as .prism’s padding-top */
 
 	background: hsla(24, 20%, 50%,.08);
-	background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	
+	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
 	pointer-events: none;
-	
+
 	line-height: inherit;
 	white-space: pre;
 }
@@ -154,12 +159,13 @@ pre[data-line] {
 		text-shadow: none;
 		box-shadow: 0 1px white;
 	}
-	
+
 	.line-highlight[data-end]:after {
 		content: attr(data-end);
 		top: auto;
 		bottom: .4em;
 	}
+
 pre.line-numbers {
 	position: relative;
 	padding-left: 3.8em;
@@ -173,7 +179,7 @@ pre.line-numbers > code {
 .line-numbers .line-numbers-rows {
 	position: absolute;
 	pointer-events: none;
-	top: -0.3em;
+	top: 0;
 	font-size: 100%;
 	left: -3.8em;
 	width: 3em; /* works for line-numbers below 1000 lines */
