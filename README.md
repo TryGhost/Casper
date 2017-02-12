@@ -2,7 +2,7 @@
 
 ![Screenshot](/assets/screenshot-mockup.png?raw=true)
 
-A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghost/).
+A fork of [Casper](https://github.com/TryGhost/Casper), the default theme for [Ghost](https://github.com/TryGhost/Ghost).
 
 ## Features
 
