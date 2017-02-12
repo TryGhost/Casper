@@ -1,5 +1,7 @@
 # StayPuft
 
+![Screenshot](/assets/screenshot-mockup.png?raw=true)
+
 A fork of Casper, the default theme for [Ghost](https://github.com/tryghost/ghost/).
 
 ## Features
