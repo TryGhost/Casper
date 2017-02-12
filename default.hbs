@@ -2,33 +2,42 @@
 <html>
 
 <head>
-    {{! Document Settings }}
+    {{!-- Document Settings --}}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{! Page Meta }}
+    {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
 
+    {{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{#if @blog.logo}}<link rel="shortcut icon" href="{{@blog.logo}}">{{/if}}
+    {{!-- Brand icon --}}
+    {{#if @blog.logo}}
+        <link rel="shortcut icon" href="{{@blog.logo}}">
+    {{else}}
+        <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    {{/if}}
 
-    {{! Styles'n'Scripts }}
+    {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-    {{! Ghost outputs important style and meta data with this tag }}
+    {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 
+    {{!-- Font Awesome --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    {{!-- Prism --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
 </head>
 
 <body class="{{body_class}}">
 
+    {{!-- Sidebar --}}
     <div id="sidebar" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
         <div id="sidebar-content" class="inner">
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
@@ -39,12 +48,13 @@
                 <input id="search-field" placeholder="Search"/>
             </form>
 
+            {{!-- The blog navigation links --}}
             <div id="sidebar-links">
                 <ul id="subscription-links">
                     <li><a target="_blank" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i>Subscribe via RSS</a></li>
-                    <!-- No support yet
-                    <li><a target="_blank" href=" "><i class="fa fa-envelope"></i>Subscribe via email<a></li>
-                    -->
+                    {{#if @labs.subscribers}}
+                    <li><a target="_blank" href="{{@blog.url}}/subscribe/"><i class="fa fa-envelope"></i>Subscribe via email</a></li>
+                    {{/if}}
                 </ul>
                 <ul id="navigation">
                     {{navigation}}
@@ -64,6 +74,7 @@
         </div>
     </div>
 
+    {{!-- Main Content --}}
     <main>
         <div class="main-inner">
             <section id="results"></section>
@@ -71,17 +82,25 @@
         </div>
     </main>
 
-    {{! Scripts }}
+    {{!-- Scripts --}}
 
+    {{!-- jQuery --}}
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
-    {{! Ghost outputs important scripts and data with this tag }}
+    {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
 
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+    {{!-- The main JavaScript file for Casper --}}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+    {{!-- Prism --}}
     <script type="text/javascript" src="{{asset "js/prism-loader.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+
+    {{!-- ghostHunter --}}
     <script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
     <script>
         $("#search-field").ghostHunter({

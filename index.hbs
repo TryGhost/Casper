@@ -1,40 +1,8 @@
 {{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! Each post will be output using this markup }}
-{{#foreach posts}}
-
-<article class="{{post_class}}">
-    <header class="post-header">
-        {{#if image}}
-            <img class="post-cover" src="{{image}}" alt="{{title}}">
-        {{/if}}
-
-        <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
-        
-        <section class="post-meta">
-            <span class="post-time">
-                <i class='fa fa-calendar'></i>
-                <time datetime="{{date format="YYYY-MM-DD"}}" class="timeago">{{date timeago="true"}}</time>
-                <time datetime="{{date format="YYYY-MM-DD"}}" class="fulldate">{{date format="MMMM Do, YYYY"}}</time>
-            </span>
-            {{tags prefix="<br><i class='fa fa-tag'></i> " separator=" · "}}
-        </section>
-    </header>
-    <section class="post-content">
-        {{content}}
-    </section>
-    <footer class="post-indexfooter">
-        <i class="fa fa-comment-o"></i> <a href="{{url}}#disqus_thread">Comments</a>
-    </footer>
-</article>
-
-{{/foreach}}
-
-{{!! After all the posts, we have the previous/next pagination links }}
-{{pagination}}
+{{!-- The tag below includes the post loop - partials/loop.hbs --}}
+{{> "loop"}}
 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

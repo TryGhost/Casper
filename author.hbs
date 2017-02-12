@@ -1,9 +1,9 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{! The big featured header }}
+{{!-- The big featured header --}}
 
-{{! Everything inside the #author tags pulls data from the author }}
+{{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
     <section class="author-profile">
         <div class="author-cover" {{#if cover}}style="background-image: url({{cover}}){{/if}}">
@@ -30,5 +30,5 @@
     </section>
 {{/author}}
 
-{{! The tag below includes the post loop - partials/loop.hbs }}
+{{!-- The tag below includes the post loop - partials/loop.hbs --}}
 {{> "loop"}}
