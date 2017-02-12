@@ -208,6 +208,14 @@ dl dd {
     margin-bottom: 1em
 }
 
+li {
+    margin: 0;
+}
+
+li > p:last-of-type {
+    margin-bottom: 0;
+}
+
 hr {
     display: block;
     height: 1px;
