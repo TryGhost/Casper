@@ -293,6 +293,14 @@ pre code, pre tt {
     padding: 0;
 }
 
+pre + h3 {
+    margin-top: 1em;
+}
+
+pre + h4 {
+    margin-top: 1.33em;
+}
+
 kbd {
     display: inline-block;
     margin-bottom: 0.4em;
