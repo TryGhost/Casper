@@ -1754,7 +1754,7 @@ body.page-template .post-title {
    12. Media Queries - Smaller than 900px
    ========================================================================== */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25em) {
 
     blockquote {
         margin-left: 0;
@@ -1908,7 +1908,7 @@ body.page-template .post-title {
    13. Media Queries - Smaller than 500px
    ========================================================================== */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 31.25em) {
 
     .main-header {
         margin-bottom: 15px;
