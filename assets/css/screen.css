@@ -979,16 +979,22 @@ body.nav-opened .nav {
 
 /* Add subtle load-in animation for content on the home page */
 .home-template .page-title {
+    opacity: 0;
     -webkit-animation: fade-in-down 0.6s;
     animation: fade-in-down 0.6s both;
     -webkit-animation-delay: 0.2s;
     animation-delay: 0.2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 .home-template .page-description {
+    opacity: 0;
     -webkit-animation: fade-in-down 0.9s;
     animation: fade-in-down 0.9s both;
     -webkit-animation-delay: 0.1s;
     animation-delay: 0.1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
