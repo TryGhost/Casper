@@ -51,5 +51,17 @@
     {{!-- The main JavaScript file for Casper --}}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
+    {{! Mathjax configuration}}
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script type="text/x-mathjax-config">  
+    MathJax.Hub.Config({  
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+
+    {{! Syntax Highlighting }}
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
 </body>
 </html>
