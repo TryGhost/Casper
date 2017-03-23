@@ -446,7 +446,11 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0;
 }
 
-textarea, select, input {
+textarea, select, input[type="email"], input[type="search"],
+input[type="tel"], input[type="url"], input[type="password"],
+input[type="number"], input[type="date"], input[type="month"],
+input[type="week"], input[type="time"], input[type="datetime"],
+input[type="datetime-local"]{
     width: 260px;
     padding: 6px 9px;
     margin: 0 0 5px 0;
