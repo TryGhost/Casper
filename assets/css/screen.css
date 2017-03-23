@@ -446,7 +446,7 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0;
 }
 
-textarea, select, input {
+textarea, select, input:not([type="radio"]):not([type="checkbox"]){
     width: 260px;
     padding: 6px 9px;
     margin: 0 0 5px 0;
