@@ -662,46 +662,24 @@ body.nav-opened .nav {
 
 .nav-close {
     position: absolute;
+    background: none;
+    font-family: sans-serif;
     top: 38px;
     right: 25px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     padding: 0;
-    font-size: 10px;
+    font-size: 30px;
+    color: rgb(150,150,150);
 }
 
 .nav-close:focus {
     outline: 0;
+    color: rgb(255,255,255);
 }
 
-.nav-close:before,
-.nav-close:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 1px;
-    background: rgb(150,150,150);
-    top: 15px;
-    -webkit-transition: background 0.15s ease;
-            transition: background 0.15s ease;
-}
-
-.nav-close:before {
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-}
-
-.nav-close:after {
-    -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-}
-
-.nav-close:hover:before,
-.nav-close:hover:after {
-    background: rgb(255,255,255);
+.nav-close:hover {
+    color: rgb(255,255,255);
 }
 
 .nav ul {
@@ -868,6 +846,7 @@ body.nav-opened .nav {
     float: right;
     height: 38px;
     padding: 0 15px;
+    background: none;
     border-style: solid;
     border-width: 1px;
     opacity: 1;
@@ -890,7 +869,8 @@ body.nav-opened .nav {
     background: #fff;
 }
 .menu-button:focus {
-    outline: 0;
+    /*outline: 1px;*/
+    background: #fff;
 }
 
 /* When the navigation is closed */

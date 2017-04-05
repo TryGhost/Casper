@@ -1,8 +1,9 @@
-<div class="nav">
+<div class="nav" id="nav">
     <h3 class="nav-title">Menu</h3>
-    <a href="#" class="nav-close">
+    <button class="nav-close">
+        <span aria-hidden="true">&#xd7;</span>
         <span class="hidden">Close</span>
-    </a>
+    </button>
     <ul>
         {{#foreach navigation}}
             <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
