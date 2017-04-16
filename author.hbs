@@ -17,7 +17,7 @@
     <section class="author-profile inner">
         {{#if image}}
         <figure class="author-image">
-            <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
+            <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}} 的图片</span></div>
         </figure>
         {{/if}}
         <h1 class="author-title">{{name}}</h1>
@@ -27,7 +27,7 @@
         <div class="author-meta">
             {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
             {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-            <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='没有文章' singular='% post' plural='% 篇文章'}}</span>
+            <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='没有文章' singular='% 篇文章' plural='% 篇文章'}}</span>
         </div>
     </section>
 {{/author}}
