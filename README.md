@@ -21,7 +21,7 @@ As it's based on Casper, the general look and feel is the same you would get wit
     * Facebook
     * Github
     * Linkedin
-    
+
 ## Screenshots
 
 <details>
@@ -47,10 +47,10 @@ We liked the Ghost default theme, but we thought it lacked some things, such as 
 ## How
 
 1. Download the latest version from [here](https://github.com/Arasthel/Ghostly/archive/master.zip).
-2. Upload the theme folder to `{GHOST_FOLDER}/content/themes/`.
-3. Restart the Ghost service.
-4. Go to your Ghost admin panel, and under the **General** section, select the Theme.
-5. Customize it as you like.
+1. Upload the theme folder to `{GHOST_FOLDER}/content/themes/`.
+1. Restart the Ghost service.
+1. Go to your Ghost admin panel, and under the **General** section, select the Theme.
+1. Customize it as you like.
 
 ## Customization
 
