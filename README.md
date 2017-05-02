@@ -87,7 +87,7 @@ var github_user = 'YOUR_GITHUB_USERNAME';
 var linkedin_user = 'YOUR_LINKEDIN_USER';
 
 // Telegram
-var telegram_shannel = 'your_shannel'
+var telegram_channel = 'your_shannel'
 ```
 
 > ### Twitter and Facebook
