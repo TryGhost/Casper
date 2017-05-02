@@ -24,6 +24,7 @@ As it's based on Casper, the general look and feel is the same you would get wit
 
 ## Screenshots
 
+
 <details>
 <summary>Side menu</summary>
 ![Side Menu](http://i.imgur.com/uPrVuJ1.jpg)
@@ -84,6 +85,9 @@ var github_user = 'YOUR_GITHUB_USERNAME';
 
 // Linkedin
 var linkedin_user = 'YOUR_LINKEDIN_USER';
+
+// Telegram
+var telegram_shanel = 'https://t.me/your_shannel'
 ```
 
 > ### Twitter and Facebook
