@@ -440,6 +440,11 @@ iframe, .fluid-width-video-wrapper {
     margin: 1.75em 0;
 }
 
+/* fix DISQUS iframe margin problem */
+iframe#dsq-5 {
+   margin: 0 !important;
+}
+
 /* When a video is inside the fitvids wrapper, drop the
 margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
