@@ -84,10 +84,10 @@ Those are the variables you will need to define in order to show your social pro
 var github_user = 'YOUR_GITHUB_USERNAME';
 
 // Linkedin
-var linkedin_user = 'YOUR_LINKEDIN_USER';
+var linkedin_url = 'YOUR_LINKEDIN_USER_LINK';
 
 // Telegram
-var telegram_channel = 'your_shannel'
+var telegram_channel = 'YOUR_CHANNEL_NAME'
 ```
 
 > ### Twitter and Facebook
@@ -100,6 +100,7 @@ var telegram_channel = 'your_shannel'
   var ga_ua = 'UA-123456-1';
   var disqus_shortname = 'MYSHORTNAME';
   var github_user = 'MYGITHUBUSER';
+  var telegram_channel = 'mychannel'
 </script>
 ```
 
