@@ -11,12 +11,6 @@
         </ul>
     </div>
     <ul class="social-menu">
-        <li class="social-icon hidden" id="social-telegram">
-            <a href=""><i class="fa fa-telegram"></i></a>
-            <script> if (typeof telegram_channel !== 'undefined') { $('#social-telegram').removeClass('hidden'); $('#social-telegram a').attr('href', 'https://t.me/' + telegram_channel); } </script>
-        </li>
-    </ul>
-    <ul class="social-menu">
         {{#if @blog.facebook}}
             <li class="social-icon" id="social-facebook">
                 <a href="{{facebook_url}}"><i class="fa fa-facebook"></i></a>
@@ -30,6 +24,10 @@
         <li class="social-icon hidden" id="social-linkedin">
             <a href=""><i class="fa fa-linkedin-square"></i></a>
             <script> if (typeof linkedin_url !== 'undefined') { $('#social-linkedin').removeClass('hidden'); $('#social-linkedin a').attr('href', linkedin_url); } </script>
+        </li>
+        <li class="social-icon hidden" id="social-telegram">
+            <a href=""><i class="fa fa-telegram"></i></a>
+            <script> if (typeof telegram_channel !== 'undefined') { $('#social-telegram').removeClass('hidden'); $('#social-telegram a').attr('href', 'https://t.me/' + telegram_channel); } </script>
         </li>
         <li class="social-icon hidden" id="social-github">
             <a href=""><i class="fa fa-github"></i></a>
