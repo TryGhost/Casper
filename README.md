@@ -21,8 +21,9 @@ As it's based on Casper, the general look and feel is the same you would get wit
     * Facebook
     * Github
     * Linkedin
-    
+
 ## Screenshots
+
 
 <details>
 <summary>Side menu</summary>
@@ -47,10 +48,10 @@ We liked the Ghost default theme, but we thought it lacked some things, such as 
 ## How
 
 1. Download the latest version from [here](https://github.com/Arasthel/Ghostly/archive/master.zip).
-2. Upload the theme folder to `{GHOST_FOLDER}/content/themes/`.
-3. Restart the Ghost service.
-4. Go to your Ghost admin panel, and under the **General** section, select the Theme.
-5. Customize it as you like.
+1. Upload the theme folder to `{GHOST_FOLDER}/content/themes/`.
+1. Restart the Ghost service.
+1. Go to your Ghost admin panel, and under the **General** section, select the Theme.
+1. Customize it as you like.
 
 ## Customization
 
@@ -83,7 +84,10 @@ Those are the variables you will need to define in order to show your social pro
 var github_user = 'YOUR_GITHUB_USERNAME';
 
 // Linkedin
-var linkedin_user = 'YOUR_LINKEDIN_USER';
+var linkedin_url = 'YOUR_LINKEDIN_USER_LINK';
+
+// Telegram
+var telegram_channel = 'YOUR_CHANNEL_NAME'
 ```
 
 > ### Twitter and Facebook
@@ -96,6 +100,7 @@ var linkedin_user = 'YOUR_LINKEDIN_USER';
   var ga_ua = 'UA-123456-1';
   var disqus_shortname = 'MYSHORTNAME';
   var github_user = 'MYGITHUBUSER';
+  var telegram_channel = 'mychannel'
 </script>
 ```
 
