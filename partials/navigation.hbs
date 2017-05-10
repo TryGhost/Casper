@@ -21,13 +21,17 @@
                 <a href="{{twitter_url}}"><i class="fa fa-twitter"></i></a>
             </li>
         {{/if}}
-        <li class="social-icon hidden" id="social-linkedin">
-            <a href=""><i class="fa fa-linkedin-square"></i></a>
-            <script> if (typeof linkedin_url !== 'undefined') { $('#social-linkedin').removeClass('hidden'); $('#social-linkedin a').attr('href', linkedin_url); } </script>
+        <li class="social-icon hidden" id="social-telegram">
+            <a href=""><i class="fa fa-telegram"></i></a>
+            <script> if (typeof telegram_channel !== 'undefined') { $('#social-telegram').removeClass('hidden'); $('#social-telegram a').attr('href', 'https://t.me/' + telegram_channel); } </script>
         </li>
         <li class="social-icon hidden" id="social-github">
             <a href=""><i class="fa fa-github"></i></a>
             <script> if (typeof github_user !== 'undefined') { $('#social-github').removeClass('hidden'); $('#social-github a').attr('href', 'https://github.com/' + github_user); } </script>
+        </li>
+        <li class="social-icon hidden" id="social-linkedin">
+            <a href=""><i class="fa fa-linkedin-square"></i></a>
+            <script> if (typeof linkedin_url !== 'undefined') { $('#social-linkedin').removeClass('hidden'); $('#social-linkedin a').attr('href', linkedin_url); } </script>
         </li>
     </ul>
     <div class="subscribe-menu">
