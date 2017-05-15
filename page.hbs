@@ -3,17 +3,38 @@
 {{!-- This is a page template. A page outputs content just like any other post, and has all the same
     attributes by default, but you can also customise it to behave differently if you prefer. --}}
 
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+<header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+    <div class="inner">
+        <nav class="site-nav">
+            <div class="site-nav-left">
+                {{#if @blog.navigation}}
+                    {{!-- The blog navigation links from /ghost/settings/design --}}
+                    {{navigation}}
+                {{/if}}
+            </div>
+            <div class="site-nav-right">
+                <div class="social-links">
+                    {{#if @blog.facebook}}
+                        <a class="social-link social-link-fb" href="{{facebook_url}}">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if @blog.twitter}}
+                        <a class="social-link social-link-tw" href="{{twitter_url}}">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                </div>
+                {{#if @labs.subscribers}}
+                    <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
+                {{else}}
+                    <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank">{{> "icons/rss"}}</a>
+                {{/if}}
+            </div>
+        </nav>
+    </div>
+</header>
+
 {{!-- Everything inside the #post tags pulls data from the page --}}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-</header>
 
 <main class="content" role="main">
     <article class="{{post_class}}">

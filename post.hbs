@@ -1,110 +1,199 @@
 {{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
 
-{{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+            <div class="site-nav-left">
+                {{#if @blog.logo}}
+                    <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+                {{/if}}
+                {{#if @blog.navigation}}
+                    {{!-- The blog navigation links from /ghost/settings/design --}}
+                    {{navigation}}
+                {{/if}}
+            </div>
+            <div class="site-nav-right">
+                <div class="social-links">
+                    {{#if @blog.facebook}}
+                        <a class="social-link social-link-fb" href="{{facebook_url}}">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if @blog.twitter}}
+                        <a class="social-link social-link-tw" href="{{twitter_url}}">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                </div>
+                {{#if @labs.subscribers}}
+                    <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
+                {{else}}
+                    <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank">{{> "icons/rss"}}</a>
+                {{/if}}
+            </div>
+        </nav>
+    </div>
+</header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-</header>
+{{> floating-header}}
 
-<main class="content" role="main">
-    <article class="{{post_class}}">
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
-            </section>
-        </header>
+        <article class="post-full {{post_class}}">
 
-        <section class="post-content">
-            {{content}}
-        </section>
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    {{#if tags}}
+                        <span class="date-divider">/</span> <a href="{{tags.[0].slug}}">{{tags.[0].name}}</a>
+                    {{/if}}
+                </section>
+                <h1 class="post-full-title">{{title}}</h1>
+            </header>
 
-        <footer class="post-footer">
-
-        {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{#author}}
-
-            {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+            {{#if feature_image}}
+            <figure class="post-full-image" style="background-image: url({{feature_image}})">
             </figure>
             {{/if}}
 
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
-
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                {{/if}}
-                <div class="author-meta">
-                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
-            </section>
-
-        {{/author}}
-
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
+            <section class="post-full-content">
+                {{content}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
-            <section class="gh-subscribe">
-                <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox.</p>
-                {{subscribe_form placeholder="Your email address"}}
-                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+            <section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+                <p>Get the latest posts delivered right to your inbox</p>
+                {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
 
-        </footer>
+            <footer class="post-full-footer">
 
-    </article>
+                {{!-- Everything inside the #author tags pulls data from the author --}}
+                <section class="author-card">
+                {{#author}}
+
+                    {{#if profile_image}}
+                    <figure class="author-card-image">
+                        <a class="img" href="{{url}}" style="background-image: url({{profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                    </figure>
+                    {{/if}}
+
+                    <section class="author-card-content">
+                        <h4><a href="{{url}}">{{name}}</a></h4>
+
+                        {{#if bio}}
+                            <p>{{bio}}</p>
+                        {{else}}
+                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                        {{/if}}
+                        <div class="author-card-meta">
+                            {{#if location}}<span class="author-card-location">{{location}}</span>{{/if}}
+                            {{#if website}}<span class="author-card-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                        </div>
+                    </section>
+
+                {{/author}}
+                </section>
+
+                <section class="share">
+                    <h4>Share this post</h4>
+                    <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                    </a>
+                </section>
+
+            </footer>
+
+        </article>
+
+    </div>
 </main>
 
 {{!-- Links to Previous/Next posts --}}
-<aside class="read-next">
-    {{#next_post}}
-    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/next_post}}
-    {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+            {{#get "posts" filter="tags:{{tags.[0].slug}}+id:-{{id}}" limit="3"}}
+            <article class="read-next-card read-next-card {{post_class}}"{{#if ../tags.[0].feature_image}} style="background-image: url({{../tags.[0].feature_image}})"{{/if}}>
+                <header class="read-next-card-header">
+                    <h3 class="read-next-card-header-title">Read more posts like this</h3>
+                </header>
+                <div class="read-next-card-content">
+                    <ol>
+                        {{#foreach posts}}
+                        <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    </ol>
+                </div>
+            </article>
+            {{/get}}
+
+            {{#next_post}}
+            <article class="post-card {{post_class}}">
+                {{#if feature_image}}
+                    <a class="post-card-image-link" href="{{url}}">
+                        <div class="post-card-image" style="background-image: url({{feature_image}})"></div>
+                    </a>
+                {{/if}}
+                <div class="post-card-content">
+                    <a class="post-card-content-link" href="{{url}}">
+                        <header class="post-card-header">
+                            <h2 class="post-card-title">{{title}}</h2>
+                        </header>
+                        <section class="post-card-excerpt">
+                            <p>{{excerpt words="28"}}</p>
+                        </section>
+                    </a>
+                    <footer class="post-card-meta">
+                        {{#if author_image}}<img class="author-thumb" src="{{author_image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+                        {{author}}
+                        {{tags prefix=" on "}}
+                        <time class="post-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                    </footer>
+                </div>
+            </article>
+            {{/next_post}}
+
+            {{#prev_post}}
+            <article class="post-card {{post_class}}">
+                {{#if feature_image}}
+                    <a class="post-card-image-link" href="{{url}}">
+                        <div class="post-card-image" style="background-image: url({{feature_image}})"></div>
+                    </a>
+                {{/if}}
+                <div class="post-card-content">
+                    <a class="post-card-content-link" href="{{url}}">
+                        <header class="post-card-header">
+                            <h2 class="post-card-title">{{title}}</h2>
+                        </header>
+                        <section class="post-card-excerpt">
+                            <p>{{excerpt words="28"}}</p>
+                        </section>
+                    </a>
+                    <footer class="post-card-meta">
+                        {{#if author_image}}<img class="author-thumb" src="{{author_image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+                        {{author}}
+                        {{tags prefix=" on "}}
+                        <time class="post-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                    </footer>
+                </div>
+            </article>
+            {{/prev_post}}
+
+        </div>
+    </div>
 </aside>
 
 {{/post}}

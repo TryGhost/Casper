@@ -1,25 +1,27 @@
-{{!-- Previous/next page links - only displayed on page 2+ --}}
-<div class="extra-pagination inner">
-    {{pagination}}
+<div class="post-feed">
+    {{!-- This is the post loop - each post will be output using this markup --}}
+    {{#foreach posts}}
+    <article class="post-card {{post_class}}">
+        {{#if feature_image}}
+            <a class="post-card-image-link" href="{{url}}">
+                <div class="post-card-image" style="background-image: url({{feature_image}})"></div>
+            </a>
+        {{/if}}
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="{{url}}">
+                <header class="post-card-header">
+                    <h2 class="post-card-title">{{title}}</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>{{excerpt words="33"}}</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                {{#if author_image}}<img class="author-thumb" src="{{author_image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+                {{author}}
+                <time class="post-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+            </footer>
+        </div>
+    </article>
+    {{/foreach}}
 </div>
-
-{{!-- This is the post loop - each post will be output using this markup --}}
-{{#foreach posts}}
-<article class="{{post_class}}">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-        {{author}}
-        {{tags prefix=" on "}}
-        <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
-    </footer>
-</article>
-{{/foreach}}
-
-{{!-- Previous/next page links - displayed on every page --}}
-{{pagination}}
