@@ -17,9 +17,13 @@
                 </section>
             </a>
             <footer class="post-card-meta">
-                {{#if author_image}}<img class="author-thumb" src="{{author_image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-                {{author}}
-                <time class="post-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                {{#if author.profile_image}}
+                    <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" nopin="nopin" />
+                {{/if}}
+                <span class="post-card-author">{{author}}</span>
+                {{#if tags}}
+                    <span class="poar-card-tags"> in <a href="{{tags.[0].slug}}">{{tags.[0].name}}</a></span>
+                {{/if}}
             </footer>
         </div>
     </article>
