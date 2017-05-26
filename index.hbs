@@ -19,7 +19,14 @@
 
 {{!-- The main content area on the homepage --}}
 <main id="content" class="content" role="main">
-
+<p>Welcome to J2 Massage! Please see some information we have available below-</p>
+    <ul>
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+    
+<p>We also post articles about health and wellness!-</p>    
     {{!-- The tag below includes the post loop - partials/loop.hbs --}}
     {{> "loop"}}
 
