@@ -77,7 +77,7 @@
             <section class="gh-subscribe">
                 <h3 class="gh-subscribe-title">{{t "casper" "Subscribe to"}} {{@blog.title}}</h3>
                 <p>{{t "casper" "Get the latest posts delivered right to your inbox"}}.</p>
-                {{subscribe_form where="casper" placeholder="Your email address"}}
+                {{subscribe_form placeholder=(t "casper" "Your email address")}}
                 <span class="gh-subscribe-rss">{{t "casper" "or subscribe"}} <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">{{t "casper" "via RSS"}}</a> {{t "casper" "with Feedly!"}}</span>
             </section>
             {{/if}}

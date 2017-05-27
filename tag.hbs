@@ -17,7 +17,7 @@
                 {{#if description}}
                     {{description}}
                 {{else}}
-                    {{plural ../pagination.total where='casper' empty='No posts' singular='A 1-post collection' plural='A %-post collection'}}
+                    {{plural ../pagination.total empty=(t "casper" "No posts") singular=(t "casper" "A 1-post collection") plural=(t "casper" "A %-post collection")}}
                 {{/if}}
             </h2>
         </div>
