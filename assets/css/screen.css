@@ -855,7 +855,7 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    height: 64px;
+    height: 128px;
     padding: 1px 0 5px 0;
     width: auto;
 }
@@ -1938,7 +1938,7 @@ body.page-template .post-title {
     }
 
     .blog-logo img {
-        height: 30px;
+        height: 64px;
     }
 
     .menu-button {
@@ -1951,7 +1951,7 @@ body.page-template .post-title {
     }
     .menu-button:hover {
         color: #000;
-        border-color: #D9E7A3;
+        border-color: #8DC63F;
         background: none;
     }
     body.nav-opened .menu-button {
