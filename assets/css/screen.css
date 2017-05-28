@@ -896,7 +896,7 @@ body.nav-opened .nav {
 
 /* When the navigation is closed */
 .nav-closed .menu-button {
-    color: #000;
+    color: #fff;
     border-color: #8EC640;
    background-color:#fff;
 }
@@ -907,7 +907,7 @@ body.nav-opened .nav {
 
 /* When the navigation is closed and there is no cover image */
 .nav-closed .no-cover .menu-button {
-    color: #000;
+    color: #fff;
     border-color: #8EC640;
    background-color:#fff;
 }
