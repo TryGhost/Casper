@@ -208,7 +208,7 @@ h4, h5, h6 {
     -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    color: #2E2E2E;
+    color: #8EC640;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
     font-family: "Open Sans", sans-serif;
@@ -623,7 +623,7 @@ body.nav-opened .nav-cover {
     z-index: 5;
     width: 240px;
     opacity: 0;
-    background: #D9E7A3;
+    background: #8EC640;
     margin-bottom: 0;
     text-align: left;
     overflow-y: auto;
@@ -718,7 +718,7 @@ body.nav-opened .nav {
     text-align: right;
     font-size: 1.2rem;
     vertical-align: bottom;
-    color: #B8B8B8;
+    color: #fff;
     content: counter(item, lower-roman);
     counter-increment: item;
 }
@@ -753,7 +753,7 @@ body.nav-opened .nav {
 
 .nav a:link,
 .nav a:visited {
-    color: #B8B8B8;
+    color: #fff;
 }
 
 .nav li.nav-current a,
@@ -887,7 +887,8 @@ body.nav-opened .nav {
     top: 1px;
 }
 .menu-button:hover {
-    background: #D9E7A3;
+    background: #8EC640;
+   color:#fff;
 }
 .menu-button:focus {
     outline: 0;
@@ -896,24 +897,24 @@ body.nav-opened .nav {
 /* When the navigation is closed */
 .nav-closed .menu-button {
     color: #000;
-    border-color: rgba(255, 255, 255, 0.6);
-   background-color:#8EC640;
+    border-color: #8EC640;
+   background-color:#fff;
 }
 .nav-closed .menu-button:hover {
-    color: #000;
-   background-color:#D9E7A3;
+    color: #fff;
+   background-color:#8EC640;
 }
 
 /* When the navigation is closed and there is no cover image */
 .nav-closed .no-cover .menu-button {
-    border-color: #BFC8CD;
     color: #000;
-   background-color:#8EC640;
+    border-color: #8EC640;
+   background-color:#fff;
 }
 .nav-closed .no-cover .menu-button:hover {
     border-color: #555;
-    color: #000;
-   background-color:#D9E7A3;
+    color: #fff;
+   background-color:#8EC640;
 }
 
 /* When the navigation is opened */
