@@ -855,7 +855,7 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    height: 128px;
+    height: 96px;
     padding: 1px 0 5px 0;
     width: auto;
 }
@@ -918,9 +918,9 @@ body.nav-opened .nav {
 /* When the navigation is opened */
 .nav-opened .menu-button {
     padding: 0 12px;
-    background: #111;
-    border-color: #111;
-    color: #fff;
+    background: #8EC640;
+    border-color: #8EC640;
+    color: #D9E7A3;
     -webkit-transform: translate3D(94px, 0, 0);
         -ms-transform: translate3D(94px, 0, 0);
             transform: translate3D(94px, 0, 0);
@@ -929,6 +929,8 @@ body.nav-opened .nav {
 
 .nav-opened .menu-button .word {
     opacity: 0;
+   color: #D9E7A3;
+   font-weight:bold;
     transition: all 0.3s ease;
 }
 
