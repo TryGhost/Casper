@@ -898,7 +898,6 @@ body.nav-opened .nav {
 .nav-closed .menu-button {
     color: #fff;
     border-color: #8EC640;
-   background-color:#fff;
 }
 .nav-closed .menu-button:hover {
     color: #fff;
@@ -909,7 +908,6 @@ body.nav-opened .nav {
 .nav-closed .no-cover .menu-button {
     color: #fff;
     border-color: #8EC640;
-   background-color:#fff;
 }
 .nav-closed .no-cover .menu-button:hover {
     border-color: #555;
