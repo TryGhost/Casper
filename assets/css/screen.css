@@ -1216,7 +1216,7 @@ body.page-template .post-title {
     position: relative;
     margin: 6rem 0 0 0;
     padding: 3rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    border-top: #D9E7A3 1px solid;
 }
 
 .post-footer h4 {
@@ -1238,11 +1238,11 @@ body.page-template .post-title {
     font-size: 1.4rem;
     line-height: 1;
     font-style: italic;
-    color: #9EABB3;
+    color: #D9E7A3;
 }
 
 .author-meta a {
-    color: #9EABB3;
+    color: #D9E7A3;
 }
 .author-meta a:hover {
     color: #111;
@@ -1254,7 +1254,7 @@ body.page-template .post-title {
 }
 
 .post-footer h4 a {
-    color: #2e2e2e;
+    color: #D9E7A3;
     text-decoration: none;
 }
 
@@ -1277,18 +1277,18 @@ body.page-template .post-title {
     font-size: 1.8rem;
     display: inline-block;
     margin: 1rem 1.6rem 1.6rem 0;
-    color: #BBC7CC;
+    color: #D9E7A3;
     text-decoration: none;
 }
 
 .post-footer .share .icon-twitter:hover {
-    color: #55acee;
+    color: #8EC640;
 }
 .post-footer .share .icon-facebook:hover {
-    color: #3b5998;
+    color: #8EC640;
 }
 .post-footer .share .icon-google-plus:hover {
-    color: #dd4b39;
+    color: #8EC640;
 }
 
 
