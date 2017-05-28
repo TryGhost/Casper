@@ -888,7 +888,7 @@ body.nav-opened .nav {
 }
 .menu-button:hover {
     background: #8EC640;
-   color:#fff;
+   color:#D9E7A3;
 }
 .menu-button:focus {
     outline: 0;
@@ -896,22 +896,22 @@ body.nav-opened .nav {
 
 /* When the navigation is closed */
 .nav-closed .menu-button {
-    color: #fff;
+    color: #D9E7A3;
     border-color: #8EC640;
 }
 .nav-closed .menu-button:hover {
-    color: #fff;
+    color: #D9E7A3;
    background-color:#8EC640;
 }
 
 /* When the navigation is closed and there is no cover image */
 .nav-closed .no-cover .menu-button {
-    color: #fff;
+    color: #D9E7A3;
     border-color: #8EC640;
 }
 .nav-closed .no-cover .menu-button:hover {
     border-color: #555;
-    color: #fff;
+    color: #D9E7A3;
    background-color:#8EC640;
 }
 
