@@ -47,6 +47,9 @@
 
     // TODO: Only include this on post.hbs - preferably put in floating-header.hbs and pass up to ghost_foot via block helper or similar.
     $(function() {
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+
         $(window).scroll(function() {
             var header = $(".floating-header");
             var title = $(".post-full-title");

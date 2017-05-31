@@ -2,10 +2,14 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+{{#tag}}
+<header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
     <div class="inner">
         <nav class="site-nav">
             <div class="site-nav-left">
+                {{#if @blog.logo}}
+                    <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+                {{/if}}
                 {{#if @blog.navigation}}
                     {{!-- The blog navigation links from /ghost/settings/design --}}
                     {{navigation}}
@@ -14,10 +18,10 @@
             <div class="site-nav-right">
                 <div class="social-links">
                     {{#if @blog.facebook}}
-                        <a class="social-link social-link-fb" href="{{facebook_url}}">{{> "icons/facebook"}}</a>
+                        <a class="social-link social-link-fb" href="{{facebook_url}}" target="_blank">{{> "icons/facebook"}}</a>
                     {{/if}}
                     {{#if @blog.twitter}}
-                        <a class="social-link social-link-tw" href="{{twitter_url}}">{{> "icons/twitter"}}</a>
+                        <a class="social-link social-link-tw" href="{{twitter_url}}" target="_blank">{{> "icons/twitter"}}</a>
                     {{/if}}
                 </div>
                 {{#if @labs.subscribers}}
@@ -27,16 +31,9 @@
                 {{/if}}
             </div>
         </nav>
-    </div>
-</header>
-
-{{!-- If we have a tag cover, display that - else blog cover - else nothing --}}
-<header class="main-header tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
-    <div class="vertical">
-        {{#tag}}
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{name}}</h1>
-            <h2 class="page-description">
+        <div class="site-header-content">
+            <h1 class="site-title">{{name}}</h1>
+            <h2 class="site-description">
                 {{#if description}}
                     {{description}}
                 {{else}}
@@ -44,9 +41,9 @@
                 {{/if}}
             </h2>
         </div>
-        {{/tag}}
     </div>
 </header>
+{{/tag}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer" role="main">

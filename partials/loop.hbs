@@ -1,5 +1,10 @@
 <div class="post-feed">
     {{!-- This is the post loop - each post will be output using this markup --}}
+
+    {{!-- <aside class="post-card number-3">
+        <h1>SUBSCRIBE</h1>
+    </aside> --}}
+
     {{#foreach posts}}
     <article class="post-card {{post_class}}">
         {{#if feature_image}}
@@ -22,7 +27,7 @@
                 {{/if}}
                 <span class="post-card-author">{{author}}</span>
                 {{#if tags}}
-                    <span class="poar-card-tags"> in <a href="{{tags.[0].slug}}">{{tags.[0].name}}</a></span>
+                    <span class="poar-card-tags"> in <a href="{{@blog.url}}tag/{{tags.[0].slug}}">{{tags.[0].name}}</a></span>
                 {{/if}}
             </footer>
         </div>

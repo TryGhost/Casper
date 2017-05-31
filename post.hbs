@@ -37,6 +37,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
+{{!-- Floating header which appears on-scroll, pulled from includes/floating-header.hbs --}}
 {{> floating-header}}
 
 <main id="site-main" class="site-main outer" role="main">
@@ -48,7 +49,7 @@ into the {body} of the default.hbs template --}}
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
                     {{#if tags}}
-                        <span class="date-divider">/</span> <a href="{{tags.[0].slug}}">{{tags.[0].name}}</a>
+                        <span class="date-divider">/</span> <a href="{{@blog.url}}tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>
                     {{/if}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
@@ -126,7 +127,14 @@ into the {body} of the default.hbs template --}}
         <div class="read-next-feed">
 
             {{#get "posts" filter="tags:{{tags.[0].slug}}+id:-{{id}}" limit="3"}}
-            <article class="read-next-card read-next-card {{post_class}}"{{#if ../tags.[0].feature_image}} style="background-image: url({{../tags.[0].feature_image}})"{{/if}}>
+            <article class="read-next-card"
+                {{#if ../tags.[0].feature_image}}
+                    style="background-image: url({{../tags.[0].feature_image}})"
+                {{else}}
+                    {{#if @blog.cover_image}}
+                        style="background-image: url({{@blog.cover_image}})"{{/if}}
+                {{/if}}
+            >
                 <header class="read-next-card-header">
                     <h3 class="read-next-card-header-title">Read more posts like this</h3>
                 </header>
