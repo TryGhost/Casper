@@ -1392,6 +1392,7 @@ body.page-template .post-title {
     color: #50585D;
     letter-spacing: 0;
     text-indent: 0;
+    white-space: pre;
 }
 
 .author-meta {
