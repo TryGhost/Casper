@@ -43,7 +43,7 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full {{post_class}}">
+        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
@@ -102,19 +102,27 @@ into the {body} of the default.hbs template --}}
                 {{/author}}
                 </section>
 
-                <section class="share">
-                    <h4>Share this post</h4>
-                    <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                        <span class="hidden">Twitter</span>
-                    </a>
-                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                        <span class="hidden">Facebook</span>
-                    </a>
+                <section class="post-full-tags">
+                    {{tags}}
                 </section>
 
             </footer>
+
+            <section class="post-full-comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                    this.page.url = '{{url absolute="true"}}';
+                    this.page.identifier = 'ghost-{{id}}';
+                    };
+                    (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+            </section>
 
         </article>
 
