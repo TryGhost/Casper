@@ -106,11 +106,11 @@ td, th{ padding: 0; }
 /* Import the font file with the icons in it */
 @font-face {
     font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot?v=1");
-    src:url("../fonts/casper-icons.eot?v=1#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff?v=1") format("woff"),
-        url("../fonts/casper-icons.ttf?v=1") format("truetype"),
-        url("../fonts/casper-icons.svg?v=1#icons") format("svg");
+    src:url("../fonts/casper-icons.eot?v=2.2");
+    src:url("../fonts/casper-icons.eot?v=2.2#iefix") format("embedded-opentype"),
+        url("../fonts/casper-icons.woff?v=2.2") format("woff"),
+        url("../fonts/casper-icons.ttf?v=2.2") format("truetype"),
+        url("../fonts/casper-icons.svg?v=2.2#icons") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -162,6 +162,18 @@ td, th{ padding: 0; }
 }
 .icon-menu:before {
     content: "\f609";
+}
+.icon-reddit:before {
+    content: "\f60a";
+}
+.icon-linkedin:before {
+    content: "\f60b";
+}
+.icon-stumbleupon:before {
+    content: "\f60c";
+}
+.icon-email:before {
+    content: "\f60d";
 }
 /*
     IMPORTANT: When making any changes to the icon font, be sure to increment
@@ -1265,7 +1277,7 @@ body.page-template .post-title {
     position: absolute;
     top: 3rem;
     right: 0;
-    width: 140px;
+    width: 200px;
 }
 
 .post-footer .share a {
@@ -1284,6 +1296,18 @@ body.page-template .post-title {
 }
 .post-footer .share .icon-google-plus:hover {
     color: #dd4b39;
+}
+.post-footer .share .icon-reddit:hover {
+    color: #ff5700;
+}
+.post-footer .share .icon-linkedin:hover {
+    color: #4875b4;
+}
+.post-footer .share .icon-stumbleupon:hover {
+    color: #EB4823;
+}
+.post-footer .share .icon-email:hover {
+    color: #444444;
 }
 
 
