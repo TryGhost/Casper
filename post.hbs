@@ -58,6 +58,10 @@
 
             <section class="share">
                 <h4>Share this post</h4>
+                <a class="icon-reddit" href="https://reddit.com/submit?url={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'reddit-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Reddit</span>
+                </a>
                 <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
@@ -69,6 +73,18 @@
                 <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
+                </a>
+                <a class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url={{url absolute="true"}}&title={{encode title}}"
+                   onclick="window.open(this.href, 'linkedin-share', 'width=490,height=530');return false;">
+                    <span class="hidden">LinkedIn</span>
+                </a>
+                <a class="icon-stumbleupon" href="http://www.stumbleupon.com/submit?url={{url absolute="true"}}&title={{encode title}}"
+                   onclick="window.open(this.href, 'stumbleupon-share', 'width=490,height=530');return false;">
+                    <span class="hidden">StumbleUpon</span>
+                </a>
+                <a class="icon-email" href="mailto:?subject={{encode title}}&body={{encode title}}%0D%0A{{url absolute="true"}}"
+                   onclick="window.open(this.href, 'stumbleupon-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Email</span>
                 </a>
             </section>
 
