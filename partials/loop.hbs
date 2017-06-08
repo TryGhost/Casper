@@ -15,6 +15,9 @@
         <div class="post-card-content">
             <a class="post-card-content-link" href="{{url}}">
                 <header class="post-card-header">
+                    {{#if tags}}
+                        <span class="post-card-tags">{{tags.[0].name}}</span>
+                    {{/if}}
                     <h2 class="post-card-title">{{title}}</h2>
                 </header>
                 <section class="post-card-excerpt">
@@ -26,9 +29,6 @@
                     <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" nopin="nopin" />
                 {{/if}}
                 <span class="post-card-author">{{author}}</span>
-                {{#if tags}}
-                    <span class="poar-card-tags"> in <a href="{{@blog.url}}tag/{{tags.[0].slug}}">{{tags.[0].name}}</a></span>
-                {{/if}}
             </footer>
         </div>
     </article>

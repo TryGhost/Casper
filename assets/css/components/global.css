@@ -151,6 +151,8 @@ b,
 strong {
     font-weight: bold;
 }
+i,
+em,
 dfn {
     font-style: italic;
 }
@@ -179,6 +181,9 @@ img {
 }
 svg:not(:root) {
     overflow: hidden;
+}
+mark {
+    background-color: #fdffb6;
 }
 code,
 kbd,
@@ -297,12 +302,14 @@ body {
 }
 
 hr {
+    position: relative;
     display: block;
-    margin: 2em 0;
+    width: 100%;
+    margin: 2.5em 0 3.5em;
     padding: 0;
     height: 1px;
     border: 0;
-    border-top: 1px solid var(--whitegrey);
+    border-top: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 audio,
@@ -334,7 +341,8 @@ blockquote {
 
 ol,
 ul {
-    padding-left: 2.5em;
+    padding-left: 1em;
+    padding-right: 1.5em;
 }
 
 ol ol,
@@ -342,7 +350,6 @@ ul ul,
 ul ol,
 ol ul {
     margin: 0.5em 0 1em;
-    padding-left: 2em;
 }
 
 ul {
@@ -355,6 +362,7 @@ ol {
 
 li {
     margin: 0.5em 0;
+    padding-left: 0.5em;
     line-height: 1.6em;
 }
 
@@ -436,7 +444,7 @@ h1 {
 
 h2 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 @media (max-width: 500px) {
     h2 {

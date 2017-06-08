@@ -108,21 +108,23 @@ into the {body} of the default.hbs template --}}
 
             </footer>
 
+            {{!--
             <section class="post-full-comments">
                 <div id="disqus_thread"></div>
                 <script>
                     var disqus_config = function () {
-                    this.page.url = '{{url absolute="true"}}';
-                    this.page.identifier = 'ghost-{{id}}';
+                        this.page.url = '{{url absolute="true"}}';
+                        this.page.identifier = 'ghost-{{id}}';
                     };
                     (function() {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
                     })();
                 </script>
             </section>
+            --}}
 
         </article>
 
@@ -213,3 +215,26 @@ into the {body} of the default.hbs template --}}
 </aside>
 
 {{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+
+    $(window).scroll(function() {
+        var header = $(".floating-header");
+        var title = $(".post-full-title");
+        var trigger = title.offset().top;
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= trigger + title.height() + 35 ) {
+            header.addClass("floating-active");
+        } else {
+            header.removeClass("floating-active");
+        }
+    });
+});
+</script>
+{{/contentFor}}

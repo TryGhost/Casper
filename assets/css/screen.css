@@ -300,6 +300,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     order: unset;
     display: flex;
     flex-direction: column;
+    min-height: 300px;
     margin: 0 20px 40px;
     background: #fff center center;
     background-size: cover;
@@ -335,6 +336,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-content-link:hover {
     text-decoration: none;
+}
+
+.post-card-tags {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--midgrey);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 1.15em;
+    letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 .post-card-title {
@@ -406,11 +418,11 @@ The first (most recent) post in the list is styled to be bigger than the others 
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1) .post-card-content-link {
-        padding: 30px 30px 0;
+        padding: 30px 40px 0;
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1) .post-card-meta {
-        padding: 0 30px 30px;
+        padding: 0 40px 30px;
     }
 
     /* Special Styling for Subscribe box
@@ -470,7 +482,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-title {
-    color: var(--darkgrey);
+    color: color(var(--darkgrey) l(-5%));
 }
 
 .date-divider {
@@ -556,7 +568,17 @@ The first (most recent) post in the list is styled to be bigger than the others 
     max-width: 920px;
 }
 
-.post-full-content p {
+.post-full-content p,
+.post-full-content ul,
+.post-full-content ol,
+.post-full-content dl,
+.post-full-content pre,
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6 {
     min-width: 100%;
 }
 
@@ -573,6 +595,11 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-content a:hover {
     color: var(--blue);
     text-decoration: none;
+}
+
+.post-full-content strong,
+.post-full-content em {
+    color: color(var(--darkgrey) l(-5%));
 }
 
 .post-full-content img {
@@ -618,8 +645,100 @@ Super neat trick courtesy of @JoelDrapper
     padding-top: 0;
 }
 
+.post-full-content code {
+    padding: 0 5px 2px;
+    font-size: 0.8em;
+    line-height: 1em;
+    font-weight: 400!important;
+    background: var(--whitegrey);
+    border-radius: 3px;
+}
+
+.post-full-content pre {
+    margin: 1.5em 0 3em;
+    padding: 20px;
+    border: color(var(--darkgrey) l(-10%)) 1px solid;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    color: var(--whitegrey);
+    background: color(var(--darkgrey) l(-3%));
+    border-radius: 5px;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.post-full-content pre code {
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    background: transparent;
+}
+
 .post-full-content .fluid-width-video-wrapper {
     margin: 1.5em 0 3em;
+}
+
+.post-full-content hr:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    margin-left: -10px;
+    height: 30px;
+    width: 1px;
+    background: color(var(--lightgrey) l(+10%));
+    box-shadow: #fff 0 0 0 5px;
+    transform: rotate(45deg);
+}
+
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: color(var(--darkgrey) l(-5%));
+}
+
+.post-full-content h1 {
+    font-size: 5rem;
+}
+@media (max-width: 500px) {
+    .post-full-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.post-full-content h2 {
+    font-size: 3.5rem;
+}
+@media (max-width: 500px) {
+    .post-full-content h2 {
+        font-size: 2.9rem;
+    }
+}
+
+.post-full-content h3 {
+    font-size: 2.5rem;
+}
+@media (max-width: 500px) {
+    .post-full-content h3 {
+        font-size: 2rem;
+    }
+}
+
+.post-full-content h4 {
+    font-size: 1.6rem;
+}
+
+.post-full-content h5 {
+    font-size: 1.4rem;
+}
+
+.post-full-content h6 {
+    font-size: 1.4rem;
 }
 
 
@@ -628,22 +747,24 @@ Super neat trick courtesy of @JoelDrapper
 
 .subscribe-form {
     margin: 1.5em 0;
-    padding: 6vw 0 6.5vw;
+    padding: 6.5vw 7vw 7vw;
+    border: color(var(--whitegrey) l(+2%)) 1px solid;
     text-align: center;
     background: color(var(--whitegrey) l(+4%));
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .subscribe-form-title {
     margin: 0 0 3px 0;
     padding: 0;
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     line-height: 1;
     font-weight: 700;
     color: var(--darkgrey)
 }
 
 .subscribe-form p {
+    margin-bottom: 1em;
     font-size: 2.2rem;
     line-height: 1.55em;
     letter-spacing: 0.2px;
@@ -816,6 +937,7 @@ Super neat trick courtesy of @JoelDrapper
     line-height: 1.2em;
     font-weight: 200;
     letter-spacing: 1px;
+    color: #fff;
 }
 
 .read-next-card-content {

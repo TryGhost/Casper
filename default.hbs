@@ -41,29 +41,14 @@
     </div>
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script
+  src="//code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script>
 
-    // TODO: Only include this on post.hbs - preferably put in floating-header.hbs and pass up to ghost_foot via block helper or similar.
-    $(function() {
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-
-        $(window).scroll(function() {
-            var header = $(".floating-header");
-            var title = $(".post-full-title");
-            var trigger = title.offset().top;
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= trigger + title.height() + 35 ) {
-                header.addClass("floating-active");
-            } else {
-                header.removeClass("floating-active");
-            }
-        });
-    });
-    </script>
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
 
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
