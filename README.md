@@ -1,7 +1,3 @@
-# Inch blog theme
-
-Forked from [Casper](https://github.com/TryGhost/Casper) at v1.3.6
-
 # Casper
 
 The default theme for [Ghost](http://github.com/tryghost/ghost/).
