@@ -8,7 +8,7 @@
 
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        <a class="blog-logo" href="{{@blog.url}}"><img src="../assets/logo-white.svg" alt="{{@blog.title}}" /></a>
         {{#if @blog.navigation}}
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
         {{/if}}
@@ -21,7 +21,7 @@
         <header class="post-header">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time><div class="tags bordered">{{tags}}</div>
             </section>
         </header>
 
