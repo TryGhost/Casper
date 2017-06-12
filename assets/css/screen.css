@@ -72,7 +72,7 @@ body {
     padding-top: 12px;
     padding-bottom: 12px;
     color: #fff;
-    background: color(var(--darkgrey) l(-15%)) no-repeat center center;
+    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
 }
 
@@ -177,6 +177,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: block;
     margin-right: 24px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.site-nav-logo:hover {
+    text-decoration: none;
 }
 
 .site-nav-logo img {
@@ -892,8 +900,8 @@ Super neat trick courtesy of @JoelDrapper
 .read-next-feed {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
-    padding: 30px 0 0 0;
+    margin: 0 -20px;
+    padding: 40px 0 0 0;
 }
 
 .read-next-card {
@@ -901,7 +909,7 @@ Super neat trick courtesy of @JoelDrapper
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
-    margin: 0 15px 30px;
+    margin: 0 20px 40px;
     padding: 25px;
     color: #fff;
     background: var(--darkgrey) center center;
@@ -935,9 +943,21 @@ Super neat trick courtesy of @JoelDrapper
     margin: 0;
     font-size: 3rem;
     line-height: 1.2em;
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 1px;
     color: #fff;
+}
+
+.read-next-divider {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+.read-next-divider svg {
+    width: 50px;
+    stroke: #fff;
+    fill: transparent;
 }
 
 .read-next-card-content {
@@ -948,31 +968,32 @@ Super neat trick courtesy of @JoelDrapper
     font-size: 1.7rem;
 }
 
-.read-next-card-content a {
-    color: #fff;
-}
-
 .read-next-card-content ol {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0 0 0 2em;
+    margin: 0 auto;
+    padding: 0 1em 0 2em;
 }
 
 .read-next-card-content li {
     padding-left: 5px;
     margin: 20px 0;
     font-size: 1.8rem;
-    line-height: 1.8rem;
+    line-height: 1.25em;
     font-weight: 200;
 }
 
 .read-next-card-content li a {
     display: inline-block;
     vertical-align: top;
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.read-next-card-content li a:hover {
+    opacity: 1;
 }
 
 
@@ -1064,6 +1085,7 @@ Super neat trick courtesy of @JoelDrapper
     margin: 0 0 0 15px;
     font-size: 1.5rem;
     line-height: 1.3em;
+    letter-spacing: -0.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

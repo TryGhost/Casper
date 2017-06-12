@@ -49,8 +49,14 @@
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        {{!-- The tag below includes the post loop - partials/loop.hbs --}}
-        {{> "loop"}}
+        <div class="post-feed">
+            {{#foreach posts}}
+
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+
+            {{/foreach}}
+        </div>
 
     </div>
 </main>
