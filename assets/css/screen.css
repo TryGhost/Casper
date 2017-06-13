@@ -347,9 +347,9 @@ body {
 
 h1, h2, h3,
 h4, h5, h6 {
-    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -webkit-font-feature-settings: initial;
+    -moz-font-feature-settings: initial;
+    -o-font-feature-settings: initial;
     color: black;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
@@ -1741,7 +1741,7 @@ body.page-template .post-title {
 }
 
 .read-next-story .post:before {
-    content: "Read This Next";
+    content: "Lisez l'article suivant";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 13px;
@@ -1752,7 +1752,7 @@ body.page-template .post-title {
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "You Might Enjoy";
+    content: "Vous devriez apprécier";
 }
 
 .read-next-story h2 {
