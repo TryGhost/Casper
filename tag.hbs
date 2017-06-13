@@ -37,7 +37,7 @@
                 {{#if description}}
                     {{description}}
                 {{else}}
-                    A {{../pagination.total}}-post collection
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
                 {{/if}}
             </h2>
         </div>

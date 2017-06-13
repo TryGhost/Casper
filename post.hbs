@@ -148,16 +148,20 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                 >
                     <header class="read-next-card-header">
-                        <h3 class="read-next-card-header-title">Read more posts like this</h3>
+                        <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
+                        <h3 class="read-next-card-header-title"><a href="{{@blog.url}}tag/{{../tags.[0].slug}}/">{{../tags.[0].name}}</a></h3>
                     </header>
                     <div class="read-next-divider">{{> "icons/infinity"}}</div>
                     <div class="read-next-card-content">
-                        <ol>
+                        <ul>
                             {{#foreach posts}}
                             <li><a href="{{url}}">{{title}}</a></li>
                             {{/foreach}}
-                        </ol>
+                        </ul>
                     </div>
+                    <footer class="read-next-card-footer">
+                        <a href="{{@blog.url}}tag/{{../tags.[0].slug}}/">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                    </footer>
                 </article>
             {{/get}}
 

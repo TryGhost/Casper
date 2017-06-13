@@ -377,10 +377,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-content {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
 }
 
 .post-card-excerpt {
@@ -419,10 +419,12 @@ The first (most recent) post in the list is styled to be bigger than the others 
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1) .post-card-image-link {
+        position: relative;
         flex: 1 1 auto;
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1) .post-card-image {
+        position: absolute;
         width: 100%;
         height: 100%;
     }
@@ -474,7 +476,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-header {
     max-width: 1040px;
     margin: 0 auto;
-    padding: 10vw 3vw 6vw;
+    padding: 6vw 3vw 3vw;
     text-align: center;
 }
 
@@ -516,6 +518,12 @@ The first (most recent) post in the list is styled to be bigger than the others 
         height: 600px;
         margin: 0 -4vw -100px;
         border-radius: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-full-image {
+        height: 400px;
     }
 }
 
@@ -936,7 +944,7 @@ Super neat trick courtesy of @JoelDrapper
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(135deg, rgba(0,40,60,0.60) 0%,rgba(0,20,40,0.50) 100%);
+    background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
     border-radius: 5px;
     backdrop-filter: blur(2px);
 }
@@ -944,17 +952,34 @@ Super neat trick courtesy of @JoelDrapper
 .read-next-card-header {
     position: relative;
     z-index: 50;
+    padding-top: 20px;
     text-align: center;
 }
 
+.read-next-card-header-sitetitle {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.3em;
+    opacity: 0.8;
+}
+
 .read-next-card-header-title {
-    padding: 10px 20px;
+    padding: 0 20px;
     margin: 0;
     font-size: 3rem;
     line-height: 1.2em;
-    font-weight: 300;
     letter-spacing: 1px;
     color: #fff;
+}
+
+.read-next-card-header-title a {
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.read-next-card-header-title a:hover {
+    text-decoration: none;
 }
 
 .read-next-divider {
@@ -965,8 +990,9 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .read-next-divider svg {
-    width: 50px;
+    width: 40px;
     stroke: #fff;
+    stroke-width: 0.5px;
     stroke-opacity: 0.65;
     fill: transparent;
 }
@@ -979,32 +1005,51 @@ Super neat trick courtesy of @JoelDrapper
     font-size: 1.7rem;
 }
 
-.read-next-card-content ol {
+.read-next-card-content ul {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 0 1em 0 2em;
+    padding: 0;
+    list-style: none;
+    text-align: center;
 }
 
 .read-next-card-content li {
-    padding-left: 5px;
-    margin: 20px 0;
-    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
     line-height: 1.25em;
+    letter-spacing: -0.5px;
     font-weight: 200;
 }
 
 .read-next-card-content li a {
-    display: inline-block;
+    display: block;
+    padding: 20px 0;
+    border-bottom: rgba(255,255,255,0.3) 1px solid;
     vertical-align: top;
-    font-weight: 600;
+    font-weight: 500;
     color: #fff;
-    opacity: 0.8;
     transition: opacity 0.3s ease;
+
+}
+
+.read-next-card-content li:first-of-type a {
+    padding-top: 10px;
 }
 
 .read-next-card-content li a:hover {
     opacity: 1;
+}
+
+.read-next-card-footer {
+    position: relative;
+    margin: 15px 0 3px 0;
+    text-align: center;
+}
+
+.read-next-card-footer a {
+    color: #fff;
 }
 
 
