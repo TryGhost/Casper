@@ -46,7 +46,7 @@
                 {{#if bio}}
                     <p>{{bio}}</p>
                 {{else}}
-                    <p>Lisez <a href="{{url}}">plus d'arcticles</a> de cet auteur.</p>
+                    <p>Lisez <a href="{{url}}">plus d'articles</a> de cet auteur.</p>
                 {{/if}}
                 <div class="author-meta">
                     {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
@@ -57,7 +57,7 @@
         {{/author}}
 
             <section class="share">
-                <h4>Partagez cet article</h4>
+                <h4>Partagez</h4>
                 <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
