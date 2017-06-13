@@ -1,8 +1,8 @@
 {{!< default}}
+
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
 <header class="site-header outer">
     <div class="inner">
         {{> "site-nav"}}
@@ -12,7 +12,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-{{!-- Floating header which appears on-scroll, pulled from includes/floating-header.hbs --}}
+{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
 {{> floating-header}}
 
 <main id="site-main" class="site-main outer" role="main">
@@ -84,6 +84,11 @@ into the {body} of the default.hbs template --}}
             </footer>
 
             {{!--
+
+            If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id.
+
             <section class="post-full-comments">
                 <div id="disqus_thread"></div>
                 <script>
