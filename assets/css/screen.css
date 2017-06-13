@@ -3,7 +3,7 @@
 @import "components/global.css";
 
 body {
-    background: #F4F8FB;
+    background: #f4f8fb;
 }
 
 .img {
@@ -53,7 +53,8 @@ body {
 
 @media (min-width: 900px) {
     .home-template .post-feed,
-    .tag-template .post-feed {
+    .tag-template .post-feed,
+    .author-template .post-feed {
         margin-top: -100px;
     }
     .home-template .site-nav {
@@ -92,12 +93,13 @@ body {
     display: block;
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 0;
     right: 0;
+    bottom: auto;
+    left: 0;
     z-index: 10;
-    height: 60px;
-    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.3));
+    height: 80px;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
 }
 
 .site-header.no-cover:before,
@@ -111,6 +113,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 10vw 0;
     min-height: 200px;
     max-height: 450px;
@@ -258,6 +261,18 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link-fb svg {
     height: 1.5rem;
+}
+
+.social-link-wb svg {
+    height: 1.6rem;
+}
+
+.social-link-wb svg path {
+    stroke: #fff;
+}
+
+.social-link-rss svg {
+    height: 1.9rem;
 }
 
 .subscribe-button {
@@ -433,22 +448,11 @@ The first (most recent) post in the list is styled to be bigger than the others 
         padding: 0 40px 30px;
     }
 
-    /* Special Styling for Subscribe box
-
-    We've got a special subscribe box, this allows it to appear in the middle of the loop of posts without actually needing to interrupt the loop. Neat trickery courtesy of David Darnes.
-
-
-
-    .post-card:nth-of-type(2),
-    .post-card:nth-of-type(3) {
-      order: -1;
-    }
-
-    */
-
 }
 
-
+.home-template .site-header:after {
+    display: none;
+}
 
 
 
@@ -490,6 +494,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-title {
+    margin: 0;
     color: color(var(--darkgrey) l(-5%));
 }
 
@@ -500,7 +505,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-image {
     height: 800px;
-    margin: -5vw -10vw -165px;
+    margin: 0 -10vw -165px;
     background: var(--lightgrey) center center;
     background-size: cover;
     border-radius: 5px;
@@ -509,7 +514,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 @media (max-width: 1170px) {
     .post-full-image {
         height: 600px;
-        margin: -5vw -4vw -100px;
+        margin: 0 -4vw -100px;
         border-radius: 0;
     }
 }
@@ -562,6 +567,10 @@ The first (most recent) post in the list is styled to be bigger than the others 
     z-index: -1;
     background: rgba(39,44,49,0.15);
     filter: blur(5px);
+}
+
+.no-image .post-full-content {
+    padding-top: 0;
 }
 
 .no-image .post-full-content:before,
@@ -949,6 +958,7 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .read-next-divider {
+    position: relative;
     display: flex;
     justify-content: center;
     height: 80px;
@@ -957,6 +967,7 @@ Super neat trick courtesy of @JoelDrapper
 .read-next-divider svg {
     width: 50px;
     stroke: #fff;
+    stroke-opacity: 0.65;
     fill: transparent;
 }
 
@@ -1202,4 +1213,109 @@ Super neat trick courtesy of @JoelDrapper
 
 @media (max-width: 450px) {
     .floating-header-share-label { display: none; }
+}
+
+
+/* ==========================================================================
+   Author Template / author.hbs
+   ========================================================================== */
+
+.site-header-content .author-profile-image {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    margin: 0 0 20px 0;
+    box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
+}
+
+.site-header-content .author-bio {
+    flex-shrink: 0;
+    max-width: 600px;
+    margin: 5px 0 10px 0;
+    font-size: 2rem;
+    line-height: 1.3em;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.site-header-content .author-meta {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 10px 0;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.site-header-content .author-location svg {
+    height: 1.9rem;
+    stroke: #fff;
+}
+
+.site-header-content .bull {
+    display: inline-block;
+    margin: 0 12px;
+    opacity: 0.5;
+}
+
+.site-header-content .social-link:first-of-type {
+    padding-left: 4px;
+}
+
+
+/* ==========================================================================
+   Error Template / error.hbs
+   ========================================================================== */
+
+.error-template .site-main {
+    padding: 7vw 4vw;
+}
+
+.site-nav-center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.site-nav-center .site-nav-logo {
+   margin-right: 0;
+}
+
+.error-message {
+    text-align: center;
+}
+
+.error-code {
+    margin: 0;
+    font-size: 12vw;
+    line-height: 1em;
+    letter-spacing: -5px;
+    opacity: 0.3;
+}
+
+.error-description {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1.3em;
+    font-weight: 400;
+    color: var(--midgrey);
+}
+
+@media (max-width: 800px) {
+    .error-description {
+        margin: 5px 0 0 0;
+        font-size: 1.8rem;
+    }
+}
+
+.error-link {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.error-template .post-feed {
+    padding-top: 0;
 }

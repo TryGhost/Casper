@@ -5,37 +5,77 @@
 
 {{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
-    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
-        <nav class="main-nav overlay clearfix">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
+<header class="site-header outer {{#if cover_image}}" style="background-image: url({{cover_image}}){{else}}no-cover{{/if}}">
+    <div class="inner">
+        <nav class="site-nav">
+            <div class="site-nav-left">
+                {{#if @blog.logo}}
+                    <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+                {{/if}}
+                {{#if @blog.navigation}}
+                    {{!-- The blog navigation links from /ghost/settings/design --}}
+                    {{navigation}}
+                {{/if}}
+            </div>
+            <div class="site-nav-right">
+                <div class="social-links">
+                    {{#if @blog.facebook}}
+                        <a class="social-link social-link-fb" href="{{facebook_url @blog.facebook}}" target="_blank">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if @blog.twitter}}
+                        <a class="social-link social-link-tw" href="{{twitter_url @blog.twitter}}" target="_blank">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                </div>
+                {{#if @labs.subscribers}}
+                    <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
+                {{else}}
+                    <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank">{{> "icons/rss"}}</a>
+                {{/if}}
+            </div>
         </nav>
-    </header>
-
-    <section class="author-profile inner">
-        {{#if feature_image}}
-        <figure class="author-image">
-            <div class="img" style="background-image: url({{feature_image}})"><span class="hidden">{{name}}'s Picture</span></div>
-        </figure>
-        {{/if}}
-        <h1 class="author-title">{{name}}</h1>
-        {{#if bio}}
-            <h2 class="author-bio">{{bio}}</h2>
-        {{/if}}
-        <div class="author-meta">
-            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-            {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-            <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+        <div class="site-header-content">
+            {{#if profile_image}}
+                <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+            {{/if}}
+            <h1 class="site-title">{{name}}</h1>
+            {{#if bio}}
+                <h2 class="author-bio">{{bio}}</h2>
+            {{/if}}
+            <div class="author-meta">
+                {{#if location}}
+                    <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
+                {{/if}}
+                <div class="author-stats">
+                    {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
+                </div>
+                {{#if website}}
+                    <a class="social-link social-link-wb" href="{{website}}" target="_blank">{{> "icons/website"}}</a>
+                {{/if}}
+                {{#if twitter}}
+                    <a class="social-link social-link-tw" href="{{twitter_url}}" target="_blank">{{> "icons/twitter"}}</a>
+                {{/if}}
+                {{#if facebook}}
+                    <a class="social-link social-link-fb" href="{{facebook_url}}" target="_blank">{{> "icons/facebook"}}</a>
+                {{/if}}
+                <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{url absolute="true"}}rss/" target="_blank">{{> "icons/rss"}}</a>
+            </div>
         </div>
-    </section>
+    </div>
+</header>
 {{/author}}
 
 {{!-- The main content area on the homepage --}}
 <main class="content" role="main">
+    <div class="inner">
 
-    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
-    {{> "loop"}}
+        <div class="post-feed">
+            {{#foreach posts}}
 
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+
+            {{/foreach}}
+        </div>
+
+    </div>
 </main>

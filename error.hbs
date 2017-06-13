@@ -8,11 +8,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{asset "assets/public/screen.css"}}" />
 </head>
-<body class="{{body_class}}">
-
+<body class="error-template">
     <div class="site-wrapper">
-        ERROR
-    </div>
 
+        <header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+            <div class="inner">
+                <nav class="site-nav-center">
+                    {{#if @blog.logo}}
+                        <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+                    {{else}}
+                        <a class="site-nav-logo" href="{{@blog.url}}">{{@blog.title}}</a>
+                    {{/if}}
+                </nav>
+            </div>
+        </header>
+
+        {{!-- The main content area --}}
+        <main id="site-main" class="site-main outer" role="main">
+            <div class="inner">
+
+                <section class="error-message">
+                    <h1 class="error-code">{{code}}</h1>
+                    <p class="error-description">{{message}}</p>
+                    <a class="error-link" href="{{@blog.url}}">Go to the front page →</a>
+                </section>
+
+                {{#if errorDetails}}
+                <section class="error-stack">
+                    <h3>Theme errors</h3>
+
+                    <ul class="error-stack-list">
+                        {{#each errorDetails}}
+                            <li>
+                                <em class="error-stack-function">{{{rule}}}</em>
+
+                                {{#each failures}}
+                                    <p><span class="error-stack-file">Ref: {{ref}}</span></p>
+                                    <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                {{/each}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+                {{/if}}
+
+            </div>
+        </main>
+
+        {{#get "posts" limit="3"}}
+        <aside class="outer">
+            <div class="inner">
+                <div class="post-feed">
+                    {{#foreach posts}}
+                        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                </div>
+            </div>
+        </aside>
+        {{/get}}
+
+    </div>
 </body>
 </html>
