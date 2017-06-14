@@ -8,16 +8,7 @@
             {{/if}}
         {{/is}}
         {{#if @blog.navigation}}
-            {{#navigation}}
-            {{!-- Outputting nav links from Ghost admin settings/design --}}
-            <div class="nav-menu">
-                <ul>
-                    {{#foreach navigation}}
-                        <li class="nav-item nav-item-{{slug}}{{#if current}} nav-item-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
-                    {{/foreach}}
-                </ul>
-            </div>
-            {{/navigation}}
+            {{navigation}}
         {{/if}}
     </div>
     <div class="site-nav-right">

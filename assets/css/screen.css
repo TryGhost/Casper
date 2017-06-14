@@ -55,7 +55,7 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        margin-top: -100px;
+        margin-top: -110px;
     }
     .home-template .site-nav {
         position: relative;
@@ -196,21 +196,21 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     width: auto;
 }
 
-.nav-menu ul {
+.nav {
     display: flex;
     margin: 0 0 0 -12px;
     padding: 0;
     list-style: none;
 }
 
-.nav-item {
+.nav li {
     display: block;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
 }
 
-.nav-item a {
+.nav li a {
     display: block;
     margin: 0;
     padding: 10px 12px;
@@ -218,7 +218,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 0.8;
 }
 
-.nav-item a:hover {
+.nav li a:hover {
     opacity: 1;
     text-decoration: none;
 }
@@ -314,8 +314,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 200;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
-    padding: 30px 0 0 0;
+    margin: 0 -20px;
+    padding: 40px 0 0 0;
 }
 
 .post-card {
