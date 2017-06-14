@@ -1282,6 +1282,7 @@ Super neat trick courtesy of @JoelDrapper
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
+    white-space: pre;
 }
 
 .site-header-content .author-meta {
