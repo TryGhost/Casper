@@ -151,7 +151,7 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     height: 40px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     overflow-y: hidden;
 }
 
@@ -160,6 +160,7 @@ body {
     align-items: center;
     margin-right: 10px;
     padding-bottom: 80px;
+    letter-spacing: 0.4px;
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
@@ -181,6 +182,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin-right: 24px;
     font-size: 1.7rem;
+    line-height: 1em;
     font-weight: bold;
     color: #fff;
     letter-spacing: -0.5px;
@@ -1120,7 +1122,7 @@ Super neat trick courtesy of @JoelDrapper
     display: flex;
     align-items: center;
     position: fixed;
-    height: 48px;
+    height: 60px;
     border-bottom: rgba(0,0,0,0.06) 1px solid;
     z-index: 1000;
     top: 0;
@@ -1138,10 +1140,10 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .floating-header-logo {
-    margin: 0 0 0 15px;
-    font-size: 1.5rem;
-    line-height: 1.3em;
-    letter-spacing: -0.5px;
+    margin: 0 0 0 20px;
+    font-size: 1.7rem;
+    line-height: 1em;
+    letter-spacing: -1px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1152,7 +1154,6 @@ Super neat trick courtesy of @JoelDrapper
     align-items: center;
     color: var(--darkgrey);
     font-weight: 700;
-    line-height: 1em;
 }
 
 .floating-header-logo a:hover {
@@ -1161,7 +1162,7 @@ Super neat trick courtesy of @JoelDrapper
 
 .floating-header-logo img {
     max-height: 20px;
-    margin-right: 10px;
+    margin: 0 10px 1px 0;
 }
 
 .floating-header-divider {
@@ -1173,7 +1174,7 @@ Super neat trick courtesy of @JoelDrapper
     flex: 1;
     margin: 0;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     line-height: 1.3em;
     color: #2e2e2e;
     white-space: nowrap;
@@ -1222,9 +1223,9 @@ Super neat trick courtesy of @JoelDrapper
 .floating-header-share-tw,
 .floating-header-share-fb {
     display: block;
-    width: 48px;
-    height: 48px;
-    line-height: 45px;
+    width: 60px;
+    height: 60px;
+    line-height: 48px;
     align-items: center;
     text-align: center;
     color: #fff;
@@ -1239,8 +1240,51 @@ Super neat trick courtesy of @JoelDrapper
     background: #005e99;
 }
 
+.progress {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    border: none;
+    color: var(--blue);
+    background: transparent;
+    appearance: none;
+}
+
+.progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.progress::-webkit-progress-value {
+  background-color: var(--blue);
+}
+
+.progress-container {
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  display: block;
+}
+
+.progress-bar {
+  background-color: var(--blue);
+  width: 50%;
+  display: block;
+  height: inherit;
+}
+
 @media (max-width: 900px) {
     .floating-header { height: 40px; }
+    .floating-header-logo img { margin-bottom: 0; }
+    .floating-header-title,
+    .floating-header-logo {
+        font-size: 1.5rem;
+    }
     .floating-header-share-tw,
     .floating-header-share-fb {
         height: 40px;

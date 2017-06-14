@@ -162,22 +162,76 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
+// TODO: SOMEONE PLEASE REFACTOR THIS SHITSHOW? 😭
+$(document).ready(function(){
+    $(function() {
+        // Start fitVids
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // End fitVids
 
-    $(window).scroll(function() {
-        var header = $(".floating-header");
-        var title = $(".post-full-title");
-        var trigger = title.offset().top;
-        var scroll = $(window).scrollTop();
+        // Start show/hide floating header
+        $(window).scroll(function() {
+            var header = $(".floating-header");
+            var title = $(".post-full-title");
+            var trigger = title.offset().top;
+            var scroll = $(window).scrollTop();
 
-        if (scroll >= trigger + title.height() + 35 ) {
-            header.addClass("floating-active");
-        } else {
-            header.removeClass("floating-active");
-        }
+            if (scroll >= trigger + title.height() + 35 ) {
+                header.addClass("floating-active");
+            } else {
+                header.removeClass("floating-active");
+            }
+        });
+        // End show/hide floating header
     });
+
+    // Start scroll-progress bar
+    // Source: https://codepen.io/pankajparashar/pen/towxF
+    // Markup: floating-header.hbs
+    var getMax = function(){
+        return $(document).height() - $(window).height();
+    }
+
+    var getValue = function(){
+        return $(window).scrollTop();
+    }
+
+    if('max' in document.createElement('progress')){
+        var progressBar = $('progress');
+        progressBar.attr({ max: getMax() });
+
+        $(document).on('scroll', function(){
+            progressBar.attr({ value: getValue() });
+        });
+
+        $(window).resize(function(){
+            progressBar.attr({ max: getMax(), value: getValue() });
+        });
+    }
+    else {
+        var progressBar = $('.progress-bar'),
+            max = getMax(),
+            value, width;
+
+        var getWidth = function(){
+            value = getValue();
+            width = (value/max) * 100;
+            width = width + '%';
+            return width;
+        }
+
+        var setWidth = function(){
+            progressBar.css({ width: getWidth() });
+        }
+
+        $(document).on('scroll', setWidth);
+        $(window).on('resize', function(){
+            max = getMax();
+            setWidth();
+        });
+    }
+    // End scroll-progress bar
 });
 </script>
 {{/contentFor}}
