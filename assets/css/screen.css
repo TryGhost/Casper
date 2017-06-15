@@ -605,7 +605,9 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-content h3,
 .post-full-content h4,
 .post-full-content h5,
-.post-full-content h6 {
+.post-full-content h6,
+.post-full-comments,
+.footnotes {
     min-width: 100%;
 }
 
@@ -768,6 +770,26 @@ Super neat trick courtesy of @JoelDrapper
     font-size: 1.4rem;
 }
 
+.footnotes-sep {
+    margin-bottom: 30px;
+}
+
+.footnotes {
+    font-size: 1.5rem;
+}
+
+.footnotes p {
+    margin: 0;
+}
+
+.footnote-backref {
+    color: var(--blue) !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 
 /* Subscribe Form
 /* ---------------------------------------------------------- */
@@ -867,6 +889,7 @@ Super neat trick courtesy of @JoelDrapper
 .post-full-footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 840px;
     margin: 0 auto;
     padding: 3vw 0 6vw 0;
@@ -877,30 +900,54 @@ Super neat trick courtesy of @JoelDrapper
     align-items: center;
 }
 
-.author-card-image {
+.author-card .author-profile-image {
     height: 60px;
     width: 60px;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
-.author-card-content h4 {
-    margin: 0;
+.author-card-name {
+    margin: 0 0 2px 0;
     padding: 0;
     font-size: 2rem;
 }
 
-.author-card-content h4 a {
+.author-card-name a {
     color: var(--darkgrey);
     font-weight: 700;
 }
 
-.author-card-content h4 a:hover {
+.author-card-name a:hover {
     text-decoration: none;
 }
 
 .author-card-content p {
     margin: 0;
+    line-height: 1.3em;
     color: var(--midgrey);
+}
+
+.post-full-footer-right {
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.author-card-button {
+    display: block;
+    padding: 9px 16px;
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 500;
+    color: var(--midgrey);
+    border: color(var(--midgrey) l(+20%)) 1px solid;
+    border-radius: 20px;
+    transition: all ease 0.2s;
+}
+
+.author-card-button:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    text-decoration: none;
 }
 
 
@@ -1141,7 +1188,7 @@ Super neat trick courtesy of @JoelDrapper
 
 .floating-header-logo {
     margin: 0 0 0 20px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 1em;
     letter-spacing: -1px;
     white-space: nowrap;
@@ -1162,7 +1209,7 @@ Super neat trick courtesy of @JoelDrapper
 
 .floating-header-logo img {
     max-height: 20px;
-    margin: 0 10px 1px 0;
+    margin: 0 10px 0 0;
 }
 
 .floating-header-divider {
@@ -1174,8 +1221,8 @@ Super neat trick courtesy of @JoelDrapper
     flex: 1;
     margin: 0;
     font-weight: bold;
-    font-size: 1.7rem;
-    line-height: 1.3em;
+    font-size: 1.6rem;
+    line-height: 1em;
     color: #2e2e2e;
     white-space: nowrap;
     overflow: hidden;
@@ -1246,7 +1293,7 @@ Super neat trick courtesy of @JoelDrapper
     left: 0;
     right: 0;
     width: 100%;
-    height: 1px;
+    height: 2px;
     border: none;
     color: var(--blue);
     background: transparent;
@@ -1267,7 +1314,7 @@ Super neat trick courtesy of @JoelDrapper
   position: absolute;
   top: 0;
   left: 0;
-  height: 1px;
+  height: 2px;
   display: block;
 }
 
@@ -1280,7 +1327,6 @@ Super neat trick courtesy of @JoelDrapper
 
 @media (max-width: 900px) {
     .floating-header { height: 40px; }
-    .floating-header-logo img { margin-bottom: 0; }
     .floating-header-title,
     .floating-header-logo {
         font-size: 1.5rem;
@@ -1408,4 +1454,166 @@ Super neat trick courtesy of @JoelDrapper
 
 .error-template .post-feed {
     padding-top: 0;
+}
+
+
+/* ==========================================================================
+   Subscribe / ?.hbs
+   ========================================================================== */
+
+.subscribe-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,25,40,0.97);
+    z-index: 9000;
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+    pointer-events: none;
+    backdrop-filter: blur(3px);
+}
+
+.subscribe-overlay:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.subscribe-overlay-content {
+    position: relative;
+    z-index: 9999;
+    padding: 4vw;
+    margin: 0 0 5vw 0;
+    text-align: center;
+    color: #fff;
+}
+
+.subscribe-overlay-logo {
+    position: fixed;
+    top: 23px;
+    left: 30px;
+    height: 30px;
+}
+
+.subscribe-overlay-title {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    font-size: 6rem;
+    line-height: 1.15em;
+}
+
+.subscribe-overlay-description {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    font-size: 3rem;
+    line-height: 1.3em;
+    font-weight: 300;
+    font-family: Georgia, serif;
+    opacity: 0.8;
+}
+
+.subscribe-overlay form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.subscribe-overlay .form-group {
+    flex-grow: 1;
+}
+
+.subscribe-overlay .subscribe-email {
+    display: block;
+    padding: 14px 20px;
+    width: 100%;
+    border: none;
+    color: var(--midgrey);
+    font-size: 2rem;
+    line-height: 1em;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+    user-select: text;
+    border-radius: 8px;
+    transition: border-color 0.15s linear;
+
+    -webkit-appearance: none;
+}
+
+.subscribe-email:focus {
+    outline: 0;
+    border-color: color(var(--lightgrey) l(-2%));
+}
+
+.subscribe-overlay button {
+    display: inline-block;
+    outline: none;
+    margin: 0 0 0 15px;
+    padding: 0 25px;
+    height: 52px;
+    font-size: 1.7rem;
+    line-height: 37px;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 8px;
+    background: linear-gradient(
+    color(var(--blue) whiteness(+7%)),
+    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--blue) lightness(-4%) saturation(-10%))
+    );
+    box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.subscribe-overlay button:active,
+.subscribe-overlay button:focus {
+    background: color(var(--blue) lightness(-9%) saturation(-10%));
+}
+
+.subscribe-overlay-close {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.subscribe-overlay-close:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(45deg);
+    opacity: 0.8;
+}
+
+.subscribe-overlay-close:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(-45deg);
+    opacity: 0.8;
+}
+
+.subscribe-overlay-close:hover {
+    cursor: default;
 }

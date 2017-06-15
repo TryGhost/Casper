@@ -12,9 +12,6 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{> floating-header}}
-
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
@@ -49,38 +46,27 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <footer class="post-full-footer">
-
                 {{!-- Everything inside the #author tags pulls data from the author --}}
-                <section class="author-card">
                 {{#author}}
 
+                <section class="author-card">
                     {{#if profile_image}}
-                    <figure class="author-card-image">
-                        <a class="img" href="{{url}}" style="background-image: url({{profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
-                    </figure>
+                        <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
                     {{/if}}
-
                     <section class="author-card-content">
-                        <h4><a href="{{url}}">{{name}}</a></h4>
-
+                        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
                         {{#if bio}}
                             <p>{{bio}}</p>
                         {{else}}
                             <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                         {{/if}}
-                        <div class="author-card-meta">
-                            {{#if location}}<span class="author-card-location">{{location}}</span>{{/if}}
-                            {{#if website}}<span class="author-card-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                        </div>
                     </section>
+                </section>
+                <div class="post-full-footer-right">
+                    <a class="author-card-button" href="{{url}}">Read More</a>
+                </div>
 
                 {{/author}}
-                </section>
-
-                <section class="post-full-tags">
-                    {{tags}}
-                </section>
-
             </footer>
 
             {{!--
@@ -157,12 +143,16 @@ into the {body} of the default.hbs template --}}
     </div>
 </aside>
 
+{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
+{{> floating-header}}
+
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
 // TODO: SOMEONE PLEASE REFACTOR THIS SHITSHOW? 😭
+// Note: Scroll performance is poor in Safari
 $(document).ready(function(){
     $(function() {
         // Start fitVids
