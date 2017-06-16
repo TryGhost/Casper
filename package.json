@@ -2,9 +2,9 @@
     "name": "casper",
     "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
     "demo": "https://demo.ghost.io",
-    "version": "1.3.6",
+    "version": "2.0.0",
     "engines": {
-        "ghost": ">=0.9.0 <1.0.0"
+        "ghost": ">=1.0.0"
     },
     "license": "MIT",
     "screenshots": {
@@ -20,7 +20,7 @@
         "type": "theme",
         "categories": [
             "Minimal",
-            "Personal Blogs"
+            "Magazine"
         ]
     },
     "keywords": [
@@ -35,25 +35,17 @@
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "devDependencies": {
         "autoprefixer": "6.3.6",
-        "connect-livereload": "0.5.4",
         "cssnano": "3.7.1",
-        "del": "2.2.1",
         "gulp": "3.9.1",
-        "gulp-csscomb": "3.0.7",
-        "gulp-ext-replace": "0.3.0",
-        "gulp-live-server": "0.0.30",
         "gulp-livereload": "3.8.1",
         "gulp-nodemon": "2.1.0",
         "gulp-postcss": "6.1.1",
-        "gulp-replace": "0.5.4",
         "gulp-sourcemaps": "1.6.0",
-        "gulp-svgmin": "1.2.2",
         "gulp-util": "3.0.7",
         "gulp-watch": "4.3.8",
         "postcss-color-function": "2.0.1",
         "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1",
-        "postcss-import": "8.1.2"
+        "postcss-easy-import": "1.0.1"
     },
     "config": {
         "posts_per_page": 25
