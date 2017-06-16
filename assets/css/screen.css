@@ -1,4 +1,27 @@
-/* Components - Groups of Patterns
+/* Table of Contents
+/* ------------------------------------------------------------
+
+1.  Global Styles
+2.  Layout
+3.  Special Templates
+4.  Site Header
+5.  Site Navigation
+6.  Post Feed
+7.  Single Post
+  7.1. Subscribe Form
+  7.2. Post Footer
+  7.3. Comments
+  7.4. Related Posts
+  7.5. Floating Header
+8.  Author Template
+9.  Error Template
+10. Subscribe Overlay
+11. Site Footer
+
+*/
+
+
+/* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 @import "components/global.css";
 
@@ -22,7 +45,7 @@ body {
 }
 
 
-/* Layout - Groups of Patterns
+/* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
 
 /* Full width page blocks */
@@ -48,7 +71,7 @@ body {
 
 */
 
-/* Special Template Styles
+/* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
 @media (min-width: 900px) {
@@ -65,7 +88,7 @@ body {
 }
 
 
-/* Site Header
+/* 4. Site Header
 /* ---------------------------------------------------------- */
 
 .site-header {
@@ -141,7 +164,7 @@ body {
 }
 
 
-/* Site Navigation
+/* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
 .site-nav {
@@ -308,7 +331,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 
-/* Site Navigation
+/* 6. Post Feed
 /* ---------------------------------------------------------- */
 
 .post-feed {
@@ -460,7 +483,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 
 
-/* Single Post
+/* 7. Single Post
 /* ---------------------------------------------------------- */
 
 .post-template .site-main,
@@ -791,7 +814,7 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* Subscribe Form
+/* 7.1. Subscribe Form
 /* ---------------------------------------------------------- */
 
 .subscribe-form {
@@ -883,7 +906,7 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* Post Footer
+/* 7.2. Post Footer
 /* ---------------------------------------------------------- */
 
 .post-full-footer {
@@ -951,7 +974,7 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* Comments
+/* 7.3. Comments
 /* ---------------------------------------------------------- */
 
 .post-full-comments {
@@ -960,7 +983,7 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* Related posts
+/* 7.4. Related posts
 /* ---------------------------------------------------------- */
 
 .read-next-feed {
@@ -1080,7 +1103,6 @@ Super neat trick courtesy of @JoelDrapper
     font-weight: 500;
     color: #fff;
     transition: opacity 0.3s ease;
-
 }
 
 .read-next-card-content li:first-of-type a {
@@ -1102,67 +1124,8 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* Site Footer
+/* 7.5. Floating Header
 /* ---------------------------------------------------------- */
-
-.site-footer {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 60px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-15%));
-}
-
-.site-footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: rgba(255,255,255,0.7);
-    font-size: 1.3rem;
-}
-
-.site-footer-content a {
-    color: rgba(255,255,255,0.7);;
-}
-
-.site-footer-content a:hover {
-    color: rgba(255,255,255,1);
-    text-decoration: none;
-}
-
-.site-footer-nav {
-    display: flex;
-}
-
-.site-footer-nav a {
-    position: relative;
-    margin-left: 20px;
-}
-
-.site-footer-nav a:before {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 2px;
-    position: absolute;
-    top: 11px;
-    left: -11px;
-    border-radius: 100%;
-    background: #fff;
-}
-
-.site-footer-nav a:first-of-type:before {
-    display: none;
-}
-
-
-
-
-
-
-/* ==========================================================================
-   Floating Header
-   ========================================================================== */
 
 .floating-header {
     visibility: hidden;
@@ -1351,9 +1314,8 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* ==========================================================================
-   Author Template / author.hbs
-   ========================================================================== */
+/* 8. Author Template
+/* ---------------------------------------------------------- */
 
 .site-header-content .author-profile-image {
     flex-shrink: 0;
@@ -1401,9 +1363,8 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* ==========================================================================
-   Error Template / error.hbs
-   ========================================================================== */
+/* 9. Error Template
+/* ---------------------------------------------------------- */
 
 .error-template .site-main {
     padding: 7vw 4vw;
@@ -1457,9 +1418,8 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 
-/* ==========================================================================
-   Subscribe / ?.hbs
-   ========================================================================== */
+/* 10. Subscribe Overlay
+/* ---------------------------------------------------------- */
 
 .subscribe-overlay {
     position: fixed;
@@ -1616,4 +1576,58 @@ Super neat trick courtesy of @JoelDrapper
 
 .subscribe-overlay-close:hover {
     cursor: default;
+}
+
+
+/* 11. Site Footer
+/* ---------------------------------------------------------- */
+
+.site-footer {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    color: #fff;
+    background: color(var(--darkgrey) l(-15%));
+}
+
+.site-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 1.3rem;
+}
+
+.site-footer-content a {
+    color: rgba(255,255,255,0.7);;
+}
+
+.site-footer-content a:hover {
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+}
+
+.site-footer-nav {
+    display: flex;
+}
+
+.site-footer-nav a {
+    position: relative;
+    margin-left: 20px;
+}
+
+.site-footer-nav a:before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 2px;
+    position: absolute;
+    top: 11px;
+    left: -11px;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.site-footer-nav a:first-of-type:before {
+    display: none;
 }
