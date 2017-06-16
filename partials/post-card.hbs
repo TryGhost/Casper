@@ -1,4 +1,4 @@
-<article class="post-card {{post_class}}">
+<article class="post-card {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
     {{#if feature_image}}
         <a class="post-card-image-link" href="{{url}}">
             <div class="post-card-image" style="background-image: url({{feature_image}})"></div>

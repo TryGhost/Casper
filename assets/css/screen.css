@@ -140,7 +140,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10vw 0;
+    padding: 10vw 4vw;
     min-height: 200px;
     max-height: 450px;
     text-align: center;
@@ -164,6 +164,15 @@ body {
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
+}
+
+@media (max-width: 500px) {
+    .site-title {
+        font-size: 3rem;
+    }
+    .site-description {
+        font-size: 1.8rem;
+    }
 }
 
 
@@ -333,6 +342,20 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     fill: #fff;
 }
 
+@media (max-width: 700px) {
+    .site-header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .site-nav-left {
+        padding-left: 4vw;
+        margin-right: 0;
+    }
+    .site-nav-right {
+        display: none;
+    }
+}
+
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
@@ -347,7 +370,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card {
-    order: unset;
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
@@ -440,46 +462,57 @@ The first (most recent) post in the list is styled to be bigger than the others 
  */
 
 @media (min-width: 795px) {
-    .home-template .post-feed .post-card:nth-child(6n+1) {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
         flex: 1 1 100%;
         flex-direction: row;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1) .post-card-image-link {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1) .post-card-image {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
         position: absolute;
         width: 100%;
         height: 100%;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1) .post-card-content {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content {
         flex: 0 1 357px;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1) h2 {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) h2 {
         font-size: 2.6rem;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1) p {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) p {
         font-size: 1.8rem;
         line-height: 1.55em;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1) .post-card-content-link {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content-link {
         padding: 30px 40px 0;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1) .post-card-meta {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-meta {
         padding: 0 40px 30px;
     }
 }
 
 .home-template .site-header:after {
     display: none;
+}
+
+
+/* Adjust some margins for smaller screens */
+@media (max-width: 650px) {
+    .post-feed {
+        padding-top: 5vw;
+    }
+    .post-card {
+        margin: 0 20px 5vw;
+    }
 }
 
 
@@ -730,6 +763,10 @@ Super neat trick courtesy of @JoelDrapper
     margin: 1.5em 0 3em;
 }
 
+.post-full-content hr {
+    margin: 4vw 0;
+}
+
 .post-full-content hr:after {
     content: "";
     position: absolute;
@@ -757,28 +794,13 @@ Super neat trick courtesy of @JoelDrapper
 .post-full-content h1 {
     font-size: 5rem;
 }
-@media (max-width: 500px) {
-    .post-full-content h1 {
-        font-size: 2.2rem;
-    }
-}
 
 .post-full-content h2 {
     font-size: 3.5rem;
 }
-@media (max-width: 500px) {
-    .post-full-content h2 {
-        font-size: 2.9rem;
-    }
-}
 
 .post-full-content h3 {
     font-size: 2.5rem;
-}
-@media (max-width: 500px) {
-    .post-full-content h3 {
-        font-size: 2rem;
-    }
 }
 
 .post-full-content h4 {
@@ -811,6 +833,37 @@ Super neat trick courtesy of @JoelDrapper
     font-weight: bold;
     text-decoration: none !important;
     box-shadow: none !important;
+}
+
+/* Some grouped styles for smaller viewports */
+@media (max-width: 500px) {
+    .post-full-meta {
+        font-size: 1.2rem;
+        line-height: 1.3em;
+    }
+    .post-full-title {
+        font-size: 2.9rem;
+    }
+    .post-full-image {
+        height: 350px;
+        margin-bottom: 4vw;
+    }
+    .post-full-content {
+        padding: 0;
+    }
+    .post-full-content:before,
+    .post-full-content:after {
+        display: none;
+    }
+    .post-full-content h1 {
+        font-size: 2.9rem;
+    }
+    .post-full-content h2 {
+        font-size: 2.9rem;
+    }
+    .post-full-content h3 {
+        font-size: 2rem;
+    }
 }
 
 
@@ -903,6 +956,28 @@ Super neat trick courtesy of @JoelDrapper
 .subscribe-form button:active,
 .subscribe-form button:focus {
     background: color(var(--blue) lightness(-9%) saturation(-10%));
+}
+
+@media (max-width: 650px) {
+    .subscribe-form-title {
+        font-size: 2.4rem;
+    }
+    .subscribe-form p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .subscribe-form form {
+        flex-direction: column;
+    }
+    .subscribe-form .form-group {
+        width: 100%;
+    }
+    .subscribe-form button {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
 }
 
 
@@ -1346,7 +1421,6 @@ Super neat trick courtesy of @JoelDrapper
     line-height: 1.3em;
     font-weight: 300;
     letter-spacing: 0.5px;
-    white-space: pre;
     opacity: 0.8;
 }
 
@@ -1373,6 +1447,18 @@ Super neat trick courtesy of @JoelDrapper
 
 .site-header-content .social-link:first-of-type {
     padding-left: 4px;
+}
+
+@media (max-width: 500px) {
+    .site-header-content .author-bio {
+        font-size: 1.8rem;
+        line-height: 1.15em;
+        letter-spacing: 0;
+    }
+    .author-location,
+    .author-stats {
+        display: none;
+    }
 }
 
 
@@ -1608,6 +1694,7 @@ Super neat trick courtesy of @JoelDrapper
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
 }
@@ -1644,4 +1731,13 @@ Super neat trick courtesy of @JoelDrapper
 
 .site-footer-nav a:first-of-type:before {
     display: none;
+}
+
+@media (max-width: 650px) {
+    .site-footer-content {
+        flex-direction: column;
+    }
+    .site-footer-nav a:first-child {
+        margin-left: 0;
+    }
 }

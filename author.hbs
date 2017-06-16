@@ -38,13 +38,17 @@
 {{/author}}
 
 {{!-- The main content area --}}
-<main class="content" role="main">
+<main id="site-main" class="site-main outer" role="main">
     <div class="inner">
+
         <div class="post-feed">
             {{#foreach posts}}
+
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
+
             {{/foreach}}
         </div>
+
     </div>
 </main>
