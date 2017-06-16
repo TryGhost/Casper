@@ -1,6 +1,9 @@
 /* Table of Contents
 /* ------------------------------------------------------------
 
+This is a development CSS file which is compiled to a minified
+production stylesheet in assets/public/screen.css
+
 1.  Global Styles
 2.  Layout
 3.  Special Templates
@@ -23,7 +26,7 @@
 
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
-@import "components/global.css";
+@import "global.css";
 
 body {
     background: #f4f8fb;
@@ -33,15 +36,15 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 100%;
     background-position: center center;
     background-size: cover;
+    border-radius: 100%;
 }
 
 .hidden {
+    visibility: hidden;
     position: absolute;
     text-indent: -9999px;
-    visibility: hidden;
 }
 
 
@@ -101,7 +104,6 @@ body {
 }
 
 .site-header:before {
-    display: block;
     content: "";
     position: absolute;
     top: 0;
@@ -109,11 +111,11 @@ body {
     bottom: 0;
     left: 0;
     z-index: 10;
+    display: block;
     background: rgba(0,0,0,0.18);
 }
 
 .site-header:after {
-    display: block;
     content: "";
     position: absolute;
     top: 0;
@@ -121,6 +123,7 @@ body {
     bottom: auto;
     left: 0;
     z-index: 10;
+    display: block;
     height: 80px;
     background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
 }
@@ -171,24 +174,24 @@ body {
     position: relative;
     z-index: 100;
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
+    overflow-y: hidden;
     height: 40px;
     font-size: 1.2rem;
-    overflow-y: hidden;
 }
 
 .site-nav-left {
     display: flex;
     align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     margin-right: 10px;
     padding-bottom: 80px;
     letter-spacing: 0.4px;
     white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
 
-    -webkit-overflow-scrolling: touch;
     -ms-overflow-scrolling: touch;
 }
 
@@ -204,10 +207,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: block;
     margin-right: 24px;
+    color: #fff;
     font-size: 1.7rem;
     line-height: 1em;
     font-weight: bold;
-    color: #fff;
     letter-spacing: -0.5px;
 }
 
@@ -217,8 +220,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .site-nav-logo img {
     display: block;
-    height: 21px;
     width: auto;
+    height: 21px;
 }
 
 .nav {
@@ -244,21 +247,21 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav li a:hover {
-    opacity: 1;
     text-decoration: none;
+    opacity: 1;
 }
 
 .site-nav-right {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
     height: 40px;
 }
 
 .social-links {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
 }
 
 .social-links a:last-of-type {
@@ -267,8 +270,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 10px;
     color: #fff;
@@ -325,8 +328,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .rss-button svg {
-    height: 2.1rem;
     margin-bottom: 1px;
+    height: 2.1rem;
     fill: #fff;
 }
 
@@ -344,24 +347,24 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card {
-    flex: 1 1 300px;
     order: unset;
+    flex: 1 1 300px;
     display: flex;
     flex-direction: column;
-    min-height: 300px;
+    overflow: hidden;
     margin: 0 20px 40px;
+    min-height: 300px;
     background: #fff center center;
     background-size: cover;
-    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     border-radius: 5px;
-    overflow: hidden;
+    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     transition: all 0.5s ease;
 }
 
 .post-card:hover {
     box-shadow: 0 0 1px rgba(39,44,49,0.10), 0 3px 16px rgba(39, 44, 49,0.07);
-    transform: translate3D(0, -1px, 0);
     transition: all 0.3s ease;
+    transform: translate3D(0, -1px, 0);
 }
 
 .post-card-image-link {
@@ -390,11 +393,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin-bottom: 4px;
     color: var(--midgrey);
-    text-transform: uppercase;
     font-size: 1.2rem;
     line-height: 1.15em;
-    letter-spacing: 0.5px;
     font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .post-card-title {
@@ -417,17 +420,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .author-profile-image {
-    height: 25px;
-    width: 25px;
     margin-right: 5px;
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
 }
 
 .post-card-author {
-    text-transform: uppercase;
     font-size: 1.3rem;
-    letter-spacing: 0.5px;
     font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 /* Special Styling for home page grid (below):
@@ -437,7 +440,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
  */
 
 @media (min-width: 795px) {
-
     .home-template .post-feed .post-card:nth-child(6n+1) {
         flex: 1 1 100%;
         flex-direction: row;
@@ -474,7 +476,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
     .home-template .post-feed .post-card:nth-child(6n+1) .post-card-meta {
         padding: 0 40px 30px;
     }
-
 }
 
 .home-template .site-header:after {
@@ -499,25 +500,24 @@ The first (most recent) post in the list is styled to be bigger than the others 
 /* ^ Required to make .post-full-content:before/after z-index stacking work */
 
 .post-full-header {
-    max-width: 1040px;
     margin: 0 auto;
     padding: 6vw 3vw 3vw;
+    max-width: 1040px;
     text-align: center;
 }
 
 .post-full-meta {
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-transform: uppercase;
-    font-weight: 600;
+    align-items: center;
+    color: var(--midgrey);
     font-size: 1.4rem;
-    color: var(--midgrey)
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .post-full-meta-date {
     color: var(--blue);
-
 }
 
 .post-full-title {
@@ -531,8 +531,8 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-image {
-    height: 800px;
     margin: 0 -10vw -165px;
+    height: 800px;
     background: var(--lightgrey) center center;
     background-size: cover;
     border-radius: 5px;
@@ -540,8 +540,8 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 @media (max-width: 1170px) {
     .post-full-image {
-        height: 600px;
         margin: 0 -4vw -100px;
+        height: 600px;
         border-radius: 0;
     }
 }
@@ -554,12 +554,12 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-content {
     position: relative;
-    min-height: 230px;
-    padding: 70px 100px 0;
     margin: 0 auto;
+    padding: 70px 100px 0;
+    min-height: 230px;
+    font-family: Georgia, serif;
     font-size: 2.2rem;
     line-height: 1.6em;
-    font-family: Georgia, serif;
     background: #fff;
 }
 
@@ -575,31 +575,31 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-content:before {
-    display: block;
     content: "";
-    width: 20px;
-    height: 200px;
-    transform: rotate(-5deg);
     position: absolute;
     top: 15px;
     left: -5px;
     z-index: -1;
+    display: block;
+    width: 20px;
+    height: 200px;
     background: rgba(39,44,49,0.15);
     filter: blur(5px);
+    transform: rotate(-5deg);
 }
 
 .post-full-content:after {
-    display: block;
     content: "";
-    width: 20px;
-    height: 200px;
-    transform: rotate(5deg);
     position: absolute;
     top: 15px;
     right: -5px;
     z-index: -1;
+    display: block;
+    width: 20px;
+    height: 200px;
     background: rgba(39,44,49,0.15);
     filter: blur(5px);
+    transform: rotate(5deg);
 }
 
 .no-image .post-full-content {
@@ -655,9 +655,9 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-content img {
-    width: 100vw;
-    max-width: 1040px;
     margin: 1.5em 0;
+    max-width: 1040px;
+    width: 100vw;
 }
 
 /*
@@ -672,10 +672,10 @@ Super neat trick courtesy of @JoelDrapper
     margin: 0 0 1.5em 0;
     padding: 1.5em 0;
     border: 0;
-    text-align: center;
+    color: var(--blue);
     font-size: 3rem;
     line-height: 1.6em;
-    color: var(--blue);
+    text-align: center;
 }
 
 .post-full-content blockquote:before {
@@ -688,8 +688,8 @@ Super neat trick courtesy of @JoelDrapper
 
 @media (min-width: 1000px) {
     .post-full-content blockquote {
-        width: 100vw;
         max-width: 1060px;
+        width: 100vw;
     }
 }
 
@@ -707,16 +707,16 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .post-full-content pre {
+    overflow-x: auto;
     margin: 1.5em 0 3em;
     padding: 20px;
+    max-width: 100%;
     border: color(var(--darkgrey) l(-10%)) 1px solid;
+    color: var(--whitegrey);
     font-size: 1.4rem;
     line-height: 1.5em;
-    color: var(--whitegrey);
     background: color(var(--darkgrey) l(-3%));
     border-radius: 5px;
-    overflow-x: auto;
-    max-width: 100%;
 }
 
 .post-full-content pre code {
@@ -731,14 +731,14 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .post-full-content hr:after {
-    display: block;
     content: "";
     position: absolute;
     top: -15px;
     left: 50%;
+    display: block;
     margin-left: -10px;
-    height: 30px;
     width: 1px;
+    height: 30px;
     background: color(var(--lightgrey) l(+10%));
     box-shadow: #fff 0 0 0 5px;
     transform: rotate(45deg);
@@ -750,8 +750,8 @@ Super neat trick courtesy of @JoelDrapper
 .post-full-content h4,
 .post-full-content h5,
 .post-full-content h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: color(var(--darkgrey) l(-5%));
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .post-full-content h1 {
@@ -807,10 +807,10 @@ Super neat trick courtesy of @JoelDrapper
 
 .footnote-backref {
     color: var(--blue) !important;
-    text-decoration: none !important;
-    box-shadow: none !important;
     font-size: 1.2rem;
     font-weight: bold;
+    text-decoration: none !important;
+    box-shadow: none !important;
 }
 
 
@@ -829,26 +829,26 @@ Super neat trick courtesy of @JoelDrapper
 .subscribe-form-title {
     margin: 0 0 3px 0;
     padding: 0;
+    color: var(--darkgrey);
     font-size: 3.5rem;
     line-height: 1;
     font-weight: 700;
-    color: var(--darkgrey)
 }
 
 .subscribe-form p {
     margin-bottom: 1em;
+    color: var(--midgrey);
     font-size: 2.2rem;
     line-height: 1.55em;
     letter-spacing: 0.2px;
-    color: var(--midgrey);
 }
 
 .subscribe-form form {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 420px;
     margin: 0 auto;
+    max-width: 420px;
 }
 
 .subscribe-form .form-group {
@@ -878,23 +878,23 @@ Super neat trick courtesy of @JoelDrapper
 
 .subscribe-form button {
     display: inline-block;
-    outline: none;
     margin: 0 0 0 10px;
     padding: 0 20px;
     height: 41px;
+    outline: none;
+    color: #fff;
     font-size: 1.5rem;
     line-height: 37px;
     font-weight: 400;
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     text-align: center;
-    border-radius: 5px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
     color(var(--blue) whiteness(+7%)),
     color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
     color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
     color(var(--blue) lightness(-4%) saturation(-10%))
     );
+    border-radius: 5px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -913,9 +913,9 @@ Super neat trick courtesy of @JoelDrapper
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 840px;
     margin: 0 auto;
     padding: 3vw 0 6vw 0;
+    max-width: 840px;
 }
 
 .author-card {
@@ -924,9 +924,9 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .author-card .author-profile-image {
-    height: 60px;
-    width: 60px;
     margin-right: 15px;
+    width: 60px;
+    height: 60px;
 }
 
 .author-card-name {
@@ -946,8 +946,8 @@ Super neat trick courtesy of @JoelDrapper
 
 .author-card-content p {
     margin: 0;
-    line-height: 1.3em;
     color: var(--midgrey);
+    line-height: 1.3em;
 }
 
 .post-full-footer-right {
@@ -958,11 +958,11 @@ Super neat trick courtesy of @JoelDrapper
 .author-card-button {
     display: block;
     padding: 9px 16px;
+    border: color(var(--midgrey) l(+20%)) 1px solid;
+    color: var(--midgrey);
     font-size: 1.2rem;
     line-height: 1;
     font-weight: 500;
-    color: var(--midgrey);
-    border: color(var(--midgrey) l(+20%)) 1px solid;
     border-radius: 20px;
     transition: all ease 0.2s;
 }
@@ -978,8 +978,8 @@ Super neat trick courtesy of @JoelDrapper
 /* ---------------------------------------------------------- */
 
 .post-full-comments {
-    max-width: 840px;
     margin: 0 auto;
+    max-width: 840px;
 }
 
 
@@ -998,26 +998,27 @@ Super neat trick courtesy of @JoelDrapper
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     margin: 0 20px 40px;
     padding: 25px;
     color: #fff;
     background: var(--darkgrey) center center;
     background-size: cover;
-    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     border-radius: 5px;
-    overflow: hidden;
+    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
 }
 
 .read-next-card:before {
     content: "";
-    display: block;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    display: block;
     background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
     border-radius: 5px;
+
     backdrop-filter: blur(2px);
 }
 
@@ -1036,12 +1037,12 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .read-next-card-header-title {
-    padding: 0 20px;
     margin: 0;
+    padding: 0 20px;
+    color: #fff;
     font-size: 3rem;
     line-height: 1.2em;
     letter-spacing: 1px;
-    color: #fff;
 }
 
 .read-next-card-header-title a {
@@ -1063,17 +1064,18 @@ Super neat trick courtesy of @JoelDrapper
 
 .read-next-divider svg {
     width: 40px;
+    fill: transparent;
     stroke: #fff;
+
     stroke-width: 0.5px;
     stroke-opacity: 0.65;
-    fill: transparent;
 }
 
 .read-next-card-content {
-    flex-grow: 1;
-    display: flex;
     position: relative;
     z-index: 50;
+    flex-grow: 1;
+    display: flex;
     font-size: 1.7rem;
 }
 
@@ -1082,8 +1084,8 @@ Super neat trick courtesy of @JoelDrapper
     flex-direction: column;
     margin: 0 auto;
     padding: 0;
-    list-style: none;
     text-align: center;
+    list-style: none;
 }
 
 .read-next-card-content li {
@@ -1091,17 +1093,17 @@ Super neat trick courtesy of @JoelDrapper
     padding: 0;
     font-size: 1.6rem;
     line-height: 1.25em;
-    letter-spacing: -0.5px;
     font-weight: 200;
+    letter-spacing: -0.5px;
 }
 
 .read-next-card-content li a {
     display: block;
     padding: 20px 0;
     border-bottom: rgba(255,255,255,0.3) 1px solid;
-    vertical-align: top;
-    font-weight: 500;
     color: #fff;
+    font-weight: 500;
+    vertical-align: top;
     transition: opacity 0.3s ease;
 }
 
@@ -1129,34 +1131,34 @@ Super neat trick courtesy of @JoelDrapper
 
 .floating-header {
     visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    position: fixed;
     height: 60px;
     border-bottom: rgba(0,0,0,0.06) 1px solid;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    right: 0;
     background: rgba(255,255,255,0.95);
-    transform: translate3d(0, -120%, 0);
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translate3d(0, -120%, 0);
 }
 
 .floating-active {
     visibility: visible;
-    transform: translate3d(0, 0, 0);
     transition: all 500ms cubic-bezier(0.22, 1, 0.27, 1);
+    transform: translate3d(0, 0, 0);
 }
 
 .floating-header-logo {
+    overflow: hidden;
     margin: 0 0 0 20px;
     font-size: 1.6rem;
     line-height: 1em;
     letter-spacing: -1px;
-    white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .floating-header-logo a {
@@ -1171,8 +1173,8 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .floating-header-logo img {
-    max-height: 20px;
     margin: 0 10px 0 0;
+    max-height: 20px;
 }
 
 .floating-header-divider {
@@ -1182,14 +1184,14 @@ Super neat trick courtesy of @JoelDrapper
 
 .floating-header-title {
     flex: 1;
+    overflow: hidden;
     margin: 0;
-    font-weight: bold;
+    color: #2e2e2e;
     font-size: 1.6rem;
     line-height: 1em;
-    color: #2e2e2e;
-    white-space: nowrap;
-    overflow: hidden;
+    font-weight: bold;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .floating-header-share {
@@ -1203,14 +1205,14 @@ Super neat trick courtesy of @JoelDrapper
 
 .floating-header-share a {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .floating-header-share svg {
-    fill: #fff;
-    height: 16px;
     width: auto;
+    height: 16px;
+    fill: #fff;
 }
 
 .floating-header-share-label {
@@ -1223,9 +1225,9 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .floating-header-share-label svg {
+    margin: 0 5px 0 10px;
     width: 18px;
     height: 18px;
-    margin: 0 5px 0 10px;
     stroke: rgba(0,0,0,0.7);
     transform: rotate(90deg);
 }
@@ -1233,12 +1235,12 @@ Super neat trick courtesy of @JoelDrapper
 .floating-header-share-tw,
 .floating-header-share-fb {
     display: block;
+    align-items: center;
     width: 60px;
     height: 60px;
-    line-height: 48px;
-    align-items: center;
-    text-align: center;
     color: #fff;
+    line-height: 48px;
+    text-align: center;
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -1252,65 +1254,76 @@ Super neat trick courtesy of @JoelDrapper
 
 .progress {
     position: absolute;
+    right: 0;
     bottom: -1px;
     left: 0;
-    right: 0;
     width: 100%;
     height: 2px;
     border: none;
     color: var(--blue);
     background: transparent;
+
     appearance: none;
 }
 
 .progress::-webkit-progress-bar {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .progress::-webkit-progress-value {
-  background-color: var(--blue);
+    background-color: var(--blue);
 }
 
 .progress-container {
-  width: 100%;
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2px;
-  display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
 }
 
 .progress-bar {
-  background-color: var(--blue);
-  width: 50%;
-  display: block;
-  height: inherit;
+    display: block;
+    width: 50%;
+    height: inherit;
+    background-color: var(--blue);
 }
 
 @media (max-width: 900px) {
-    .floating-header { height: 40px; }
+    .floating-header {
+        height: 40px;
+    }
     .floating-header-title,
     .floating-header-logo {
         font-size: 1.5rem;
     }
     .floating-header-share-tw,
     .floating-header-share-fb {
-        height: 40px;
         width: 40px;
+        height: 40px;
         line-height: 38px;
     }
 }
 
 @media (max-width: 800px) {
-    .floating-header-logo { margin-left: 10px; }
-    .floating-header-logo a { color: #2e2e2e; }
+    .floating-header-logo {
+        margin-left: 10px;
+    }
+    .floating-header-logo a {
+        color: #2e2e2e;
+    }
     .floating-header-title,
-    .floating-header-divider { visibility: hidden; }
+    .floating-header-divider {
+        visibility: hidden;
+    }
 }
 
 @media (max-width: 450px) {
-    .floating-header-share-label { display: none; }
+    .floating-header-share-label {
+        display: none;
+    }
 }
 
 
@@ -1319,22 +1332,22 @@ Super neat trick courtesy of @JoelDrapper
 
 .site-header-content .author-profile-image {
     flex-shrink: 0;
+    margin: 0 0 20px 0;
     width: 100px;
     height: 100px;
-    margin: 0 0 20px 0;
     box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
 }
 
 .site-header-content .author-bio {
     flex-shrink: 0;
-    max-width: 600px;
     margin: 5px 0 10px 0;
+    max-width: 600px;
     font-size: 2rem;
     line-height: 1.3em;
     font-weight: 300;
     letter-spacing: 0.5px;
-    opacity: 0.8;
     white-space: pre;
+    opacity: 0.8;
 }
 
 .site-header-content .author-meta {
@@ -1371,14 +1384,14 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .site-nav-center {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .site-nav-center .site-nav-logo {
-   margin-right: 0;
+    margin-right: 0;
 }
 
 .error-message {
@@ -1395,10 +1408,10 @@ Super neat trick courtesy of @JoelDrapper
 
 .error-description {
     margin: 0;
+    color: var(--midgrey);
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 400;
-    color: var(--midgrey);
 }
 
 @media (max-width: 800px) {
@@ -1427,14 +1440,15 @@ Super neat trick courtesy of @JoelDrapper
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 9000;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(0,25,40,0.97);
-    z-index: 9000;
     opacity: 0;
     transition: opacity 200ms ease-in;
     pointer-events: none;
+
     backdrop-filter: blur(3px);
 }
 
@@ -1446,10 +1460,10 @@ Super neat trick courtesy of @JoelDrapper
 .subscribe-overlay-content {
     position: relative;
     z-index: 9999;
-    padding: 4vw;
     margin: 0 0 5vw 0;
-    text-align: center;
+    padding: 4vw;
     color: #fff;
+    text-align: center;
 }
 
 .subscribe-overlay-logo {
@@ -1467,12 +1481,12 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .subscribe-overlay-description {
-    max-width: 650px;
     margin: 0 auto 50px;
+    max-width: 650px;
+    font-family: Georgia, serif;
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 300;
-    font-family: Georgia, serif;
     opacity: 0.8;
 }
 
@@ -1480,8 +1494,8 @@ Super neat trick courtesy of @JoelDrapper
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 500px;
     margin: 0 auto;
+    max-width: 500px;
 }
 
 .subscribe-overlay .form-group {
@@ -1496,8 +1510,8 @@ Super neat trick courtesy of @JoelDrapper
     color: var(--midgrey);
     font-size: 2rem;
     line-height: 1em;
-    letter-spacing: 0.5px;
     font-weight: normal;
+    letter-spacing: 0.5px;
     user-select: text;
     border-radius: 8px;
     transition: border-color 0.15s linear;
@@ -1512,23 +1526,23 @@ Super neat trick courtesy of @JoelDrapper
 
 .subscribe-overlay button {
     display: inline-block;
-    outline: none;
     margin: 0 0 0 15px;
     padding: 0 25px;
     height: 52px;
+    outline: none;
+    color: #fff;
     font-size: 1.7rem;
     line-height: 37px;
     font-weight: 400;
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     text-align: center;
-    border-radius: 8px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
     color(var(--blue) whiteness(+7%)),
     color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
     color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
     color(var(--blue) lightness(-4%) saturation(-10%))
     );
+    border-radius: 8px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -1540,38 +1554,38 @@ Super neat trick courtesy of @JoelDrapper
 }
 
 .subscribe-overlay-close {
-    display: block;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    display: block;
 }
 
 .subscribe-overlay-close:before {
-    display: block;
     content: "";
     position: absolute;
     top: 40px;
     right: 25px;
+    display: block;
     width: 30px;
     height: 2px;
     background: #fff;
-    transform: rotate(45deg);
     opacity: 0.8;
+    transform: rotate(45deg);
 }
 
 .subscribe-overlay-close:after {
-    display: block;
     content: "";
     position: absolute;
     top: 40px;
     right: 25px;
+    display: block;
     width: 30px;
     height: 2px;
     background: #fff;
-    transform: rotate(-45deg);
     opacity: 0.8;
+    transform: rotate(-45deg);
 }
 
 .subscribe-overlay-close:hover {
@@ -1618,14 +1632,14 @@ Super neat trick courtesy of @JoelDrapper
 
 .site-footer-nav a:before {
     content: "";
-    display: block;
-    height: 2px;
-    width: 2px;
     position: absolute;
     top: 11px;
     left: -11px;
-    border-radius: 100%;
+    display: block;
+    width: 2px;
+    height: 2px;
     background: #fff;
+    border-radius: 100%;
 }
 
 .site-footer-nav a:first-of-type:before {
