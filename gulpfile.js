@@ -41,7 +41,7 @@ gulp.task('css', function () {
         .pipe(sourcemaps.init())
         .pipe(postcss(processors))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('assets/public/'))
+        .pipe(gulp.dest('assets/built/'))
         .pipe(livereload());
 });
 
