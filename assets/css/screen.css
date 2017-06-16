@@ -186,12 +186,12 @@ body {
     align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
     margin-right: 10px;
     padding-bottom: 80px;
     letter-spacing: 0.4px;
     white-space: nowrap;
 
+    -webkit-overflow-scrolling: touch;
     -ms-overflow-scrolling: touch;
 }
 

@@ -1,3 +1,7 @@
+{{!--
+This error template is used for all 400/500 errors which might occur on your site. It's a good idea to keep this template as minimal as possible in terms of both file size and complexity. You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in this file.
+--}}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +27,6 @@
             </div>
         </header>
 
-        {{!-- The main content area --}}
         <main id="site-main" class="site-main outer" role="main">
             <div class="inner">
 
@@ -36,7 +39,6 @@
                 {{#if errorDetails}}
                 <section class="error-stack">
                     <h3>Theme errors</h3>
-
                     <ul class="error-stack-list">
                         {{#each errorDetails}}
                             <li>
@@ -60,7 +62,6 @@
             <div class="inner">
                 <div class="post-feed">
                     {{#foreach posts}}
-                        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                         {{> "post-card"}}
                     {{/foreach}}
                 </div>
