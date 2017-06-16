@@ -2,7 +2,7 @@
     "name": "casper",
     "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
     "demo": "https://demo.ghost.io",
-    "version": "1.3.6",
+    "version": "1.3.7",
     "engines": {
         "ghost": ">=0.9.0 <1.0.0"
     },
