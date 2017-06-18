@@ -151,77 +151,66 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
-// TODO: SOMEONE PLEASE REFACTOR THIS SHITSHOW? 😭
-// Note: Scroll performance is poor in Safari
-$(document).ready(function(){
-    $(function() {
-        // Start fitVids
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-        // End fitVids
 
-        // Start show/hide floating header
-        $(window).scroll(function() {
-            var header = $(".floating-header");
-            var title = $(".post-full-title");
-            var trigger = title.offset().top;
-            var scroll = $(window).scrollTop();
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
 
-            if (scroll >= trigger + title.height() + 35 ) {
-                header.addClass("floating-active");
-            } else {
-                header.removeClass("floating-active");
-            }
-        });
-        // End show/hide floating header
-    });
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
 
-    // Start scroll-progress bar
-    // Source: https://codepen.io/pankajparashar/pen/towxF
-    // Markup: floating-header.hbs
-    var getMax = function(){
-        return $(document).height() - $(window).height();
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
     }
 
-    var getValue = function(){
-        return $(window).scrollTop();
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
     }
 
-    if('max' in document.createElement('progress')){
-        var progressBar = $('progress');
-        progressBar.attr({ max: getMax() });
-
-        $(document).on('scroll', function(){
-            progressBar.attr({ value: getValue() });
-        });
-
-        $(window).resize(function(){
-            progressBar.attr({ max: getMax(), value: getValue() });
-        });
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
     }
-    else {
-        var progressBar = $('.progress-bar'),
-            max = getMax(),
-            value, width;
 
-        var getWidth = function(){
-            value = getValue();
-            width = (value/max) * 100;
-            width = width + '%';
-            return width;
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
         }
 
-        var setWidth = function(){
-            progressBar.css({ width: getWidth() });
-        }
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
 
-        $(document).on('scroll', setWidth);
-        $(window).on('resize', function(){
-            max = getMax();
-            setWidth();
-        });
+        ticking = false;
     }
-    // End scroll-progress bar
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
 });
 </script>
 {{/contentFor}}
