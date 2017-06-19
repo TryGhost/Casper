@@ -113,7 +113,7 @@ into the {body} of the default.hbs template --}}
                 >
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
-                        <h3 class="read-next-card-header-title"><a href="{{@blog.url}}tag/{{../tags.[0].slug}}/">{{../tags.[0].name}}</a></h3>
+                        <h3 class="read-next-card-header-title"><a href="{{@blog.url}}/tag/{{../tags.[0].slug}}/">{{../tags.[0].name}}</a></h3>
                     </header>
                     <div class="read-next-divider">{{> "icons/infinity"}}</div>
                     <div class="read-next-card-content">
@@ -124,7 +124,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{@blog.url}}tag/{{../tags.[0].slug}}/">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        <a href="{{@blog.url}}/tag/{{../tags.[0].slug}}/">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
                     </footer>
                 </article>
             {{/get}}
