@@ -9,7 +9,7 @@
         <nav class="main-nav overlay clearfix">
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
             {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+                <a class="menu-button icon-menu" href="#"><span class="word">{{t "Menu"}}</span></a>
             {{/if}}
         </nav>
     </header>
@@ -27,7 +27,7 @@
         <div class="author-meta">
             {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
             {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-            <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+            <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</span>
         </div>
     </section>
 {{/author}}

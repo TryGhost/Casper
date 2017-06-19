@@ -6,7 +6,7 @@
     <nav class="main-nav overlay clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
         {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            <a class="menu-button icon-menu" href="#"><span class="word">{{t "Menu"}}</span></a>
         {{/if}}
     </nav>
     <div class="vertical">
@@ -17,7 +17,7 @@
                 {{#if description}}
                     {{description}}
                 {{else}}
-                    A {{../pagination.total}}-post collection
+                    {{plural ../pagination.total empty=(t "No posts") singular=(t "A 1-post collection") plural=(t "A %-post collection")}}
                 {{/if}}
             </h2>
         </div>

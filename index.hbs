@@ -6,7 +6,7 @@
     <nav class="main-nav overlay clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
         {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            <a class="menu-button icon-menu" href="#"><span class="word">{{t "Menu"}}</span></a>
         {{/if}}
     </nav>
     <div class="vertical">
@@ -15,7 +15,7 @@
             <h2 class="page-description">{{@blog.description}}</h2>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">{{t "Scroll Down"}}</span></a>
 </header>
 
 {{!-- The main content area on the homepage --}}

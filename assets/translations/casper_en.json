@@ -1,0 +1,23 @@
+{
+    "casper": {
+        "A 1-post collection": "A 1-post collection",
+        "A %-post collection": "A %-post collection",
+        "Close": "Close",
+        "Get the latest posts delivered right to your inbox": "Get the latest posts delivered right to your inbox",
+        "Menu": "Menu",
+        "No posts": "No posts",
+        " on ": " on ",
+        "or subscribe": "or subscribe",
+        "Proudly published with {ghostlink}": "Proudly published with {ghostlink}",
+        "Read <a href='{url}'>more posts</a> by this author": "Read <a href='{url}'>more posts</a> by this author",
+        "Scroll Down": "Scroll Down",
+        "Share this post": "Share this post",
+        "Subscribe": "Subscribe",
+        "Subscribe to": "Subscribe to",
+        "via RSS": "via RSS",
+        "with Feedly!": "with Feedly!",
+        "Your email address": "Your email address",
+        "1 post": "1 post",
+        "% posts": "% posts"
+    }
+}

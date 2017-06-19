@@ -1,0 +1,6 @@
+.read-next-story .post:before {
+    content: "Read This Next";
+}
+.read-next-story.prev .post:before {
+    content: "You Might Enjoy";
+}
