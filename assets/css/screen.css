@@ -866,6 +866,67 @@ Super neat trick courtesy of @JoelDrapper
     }
 }
 
+/* Tables */
+.post-full-content table {
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0.5em 0 2.5em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.6rem;
+}
+
+.post-full-content table {
+    -webkit-overflow-scrolling: touch;
+    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background-size: 10px 100%, 10px 100%;
+    background-attachment: scroll, scroll;
+    background-repeat: no-repeat;
+}
+
+.post-full-content table td:first-child {
+    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 20px 100%;
+}
+
+.post-full-content table td:last-child {
+    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 20px 100%;
+}
+
+.post-full-content table th {
+    font-size: 1.2rem;
+    letter-spacing: 0.2px;
+    color: var(--darkgrey);
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    background: color(var(--whitegrey) l(+4%));
+}
+
+.post-full-content table th,
+.post-full-content table td {
+    padding: 6px 12px;
+    border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
+}
+
+@media (max-width: 800px) {
+    .post-full-content table {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        width: auto;
+    }
+}
+
+
 
 /* 7.1. Subscribe Form
 /* ---------------------------------------------------------- */
