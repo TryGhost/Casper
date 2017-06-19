@@ -38,7 +38,7 @@ Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'l
 
 `$ gulp`
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/public/` automatically.
+Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
 
 # PostCSS Features Used
