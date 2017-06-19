@@ -18,7 +18,15 @@
         $(".menu-button, .nav-cover, .nav-close").on("click", function(e){
             e.preventDefault();
             $("body").toggleClass("nav-opened nav-closed");
+            $(".menu-button").attr("aria-expanded", function(i, val) {return !(val=='true')});
         });
+
+        $(".menu-button").on("click", function(e) {
+          e.preventDefault();
+          $('.nav-close').focus();
+        })
+
+        $(".menu-button").focus()
 
     });
 
