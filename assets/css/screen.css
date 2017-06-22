@@ -748,6 +748,20 @@ body.nav-opened .site-wrapper {
     font-family: 'Open Sans', sans-serif;
 }
 
+.main-nav a.website {
+    position: absolute;
+    left: 140px;
+    color: #3AAE54;
+    border: 1px solid #3AAE54;
+    border-radius: 5px;
+    padding: 2px 13px;
+    font-size: 16px;
+}
+
+.main-nav a.website:hover {
+    opacity: 0.7;
+}
+
 /* Navigation */
 body.nav-opened .nav-cover {
     position: fixed;
@@ -1019,7 +1033,6 @@ body.nav-opened .nav {
     white-space: nowrap;
     border-radius: 3px;
     transition: all 0.5s ease;
-    display: none;
 }
 .menu-button:before {
     font-size: 12px;
