@@ -687,10 +687,20 @@ The first (most recent) post in the list is styled to be bigger than the others 
     color: color(var(--darkgrey) l(-5%));
 }
 
+.post-full-content small {
+    display: inline-block;
+    line-height: 1.6em;
+}
+
+.post-full-content li:first-child {
+    margin-top: 0;
+}
+
 .post-full-content img {
-    margin: 1.5em 0;
+    display: block;
+    margin: 1.5em auto;
     max-width: 1040px;
-    width: 100vw;
+    /*width: 100vw;*/
 }
 
 /*
@@ -698,7 +708,8 @@ If an image url has #full on the end, give it special wide styles.
 Super neat trick courtesy of @JoelDrapper
 */
 .post-full-content img[src$="#full"] {
-    max-width: 100vw;
+    width: 100vw;
+    max-width: none;
 }
 
 .post-full-content blockquote {
@@ -1324,7 +1335,7 @@ Super neat trick courtesy of @JoelDrapper
     margin: 0;
     color: #2e2e2e;
     font-size: 1.6rem;
-    line-height: 1em;
+    line-height: 1.3em;
     font-weight: bold;
     text-overflow: ellipsis;
     white-space: nowrap;
