@@ -7,8 +7,8 @@
     <div class="post-card-content">
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
-                {{#if tags}}
-                    <span class="post-card-tags">{{tags.[0].name}}</span>
+                {{#if primary_tag}}
+                    <span class="post-card-tags">{{primary_tag.name}}</span>
                 {{/if}}
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
