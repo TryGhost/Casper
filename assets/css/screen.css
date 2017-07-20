@@ -701,6 +701,11 @@ The first (most recent) post in the list is styled to be bigger than the others 
     margin: 1.5em auto;
     max-width: 1040px;
 }
+@media (max-width: 1040px) {
+    .post-full-content img {
+        width: 100%;
+    }
+}
 
 /*
 If an image url has #full on the end, give it special wide styles.
