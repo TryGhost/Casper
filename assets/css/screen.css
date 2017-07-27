@@ -718,6 +718,10 @@ Super neat trick courtesy of @JoelDrapper
     max-width: none;
 }
 
+.post-full-content iframe {
+    margin: 0 auto 1.5em;
+}
+
 .post-full-content blockquote {
     margin: 0 0 1.5em 0;
     padding: 1.5em 0;
