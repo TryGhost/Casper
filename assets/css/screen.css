@@ -696,13 +696,15 @@ The first (most recent) post in the list is styled to be bigger than the others 
     margin-top: 0;
 }
 
-.post-full-content img {
+.post-full-content img,
+.post-full-content video {
     display: block;
     margin: 1.5em auto;
     max-width: 1040px;
 }
 @media (max-width: 1040px) {
-    .post-full-content img {
+    .post-full-content img,
+    .post-full-content video {
         width: 100%;
     }
 }
