@@ -762,7 +762,7 @@ body.nav-opened .site-wrapper {
     opacity: 0.7;
 }
 
-.main-nav .vr {
+.main-nav .nav-closed .vr {
     float:right; 
     border-left:1px solid rgba(84, 84, 84, 0.2);
     height:18px; 
