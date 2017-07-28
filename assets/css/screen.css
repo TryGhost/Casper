@@ -767,6 +767,7 @@ body.nav-opened .site-wrapper {
     border-left:1px solid rgba(84, 84, 84, 0.2);
     height:18px; 
     margin: 6px 15px 0 30px;
+    transition: all 0.5s ease;
 }
 
 /* Navigation */
