@@ -766,7 +766,7 @@ body.nav-opened .site-wrapper {
     float:right; 
     border-left:1px solid rgba(84, 84, 84, 0.2);
     height:18px; 
-    margin: 0 30px;
+    margin: 6px 15px 0 30px;
 }
 
 /* Navigation */
@@ -1052,7 +1052,6 @@ body.nav-opened .nav {
     text-align: center;
     font-size: 12px;
     text-transform: uppercase;
-    line-height: 35px;
     white-space: nowrap;
     border-radius: 3px;
     transition: all 0.5s ease;
@@ -1073,14 +1072,17 @@ body.nav-opened .nav {
 /* When the navigation is closed */
 .nav-closed .menu-button {
     color: black;
+    opacity: 0.6;
 }
 .nav-closed .menu-button:hover {
     color: #222;
+    opacity: 0.6;
 }
 
 /* When the navigation is closed and there is no cover image */
 .nav-closed .no-cover .menu-button {
     color: black;
+    opacity: 0.6;
 }
 .nav-closed .no-cover .menu-button:hover {
 }
