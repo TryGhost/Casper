@@ -259,7 +259,7 @@ td, th{ padding: 0; }
 
 /* Apply these base styles to all icons */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
+    font-family: "casper-icons", "Roboto", sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -648,7 +648,7 @@ button {
     outline: none;
     text-decoration: none;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 11px; /* Hacks targeting Firefox. */
     line-height: 13px; /* Hacks targeting Firefox. */
     font-weight: 300;
@@ -745,22 +745,28 @@ body.nav-opened .site-wrapper {
 
 .main-nav a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-.main-nav a.website {
-    position: absolute;
-    left: 140px;
+.main-nav a.website-link {
+    float: right;
     color: #3AAE54;
-    border: 1px solid #3AAE54;
+    border: 1px solid rgba(58, 174, 84, 0.3);
     border-radius: 5px;
-    padding: 2px 13px 0px;
-    font-size: 16px;
-    margin-top: 5px;
+    padding: 1px 9px 0px 16px;
+    font-size: 13px;
+    margin-top: -1px;
 }
 
-.main-nav a.website:hover {
+.main-nav a.website-link:hover {
     opacity: 0.7;
+}
+
+.nav-closed .main-nav .vr {
+    float:right; 
+    border-left:1px solid rgba(84, 84, 84, 0.2);
+    height:18px; 
+    margin: 6px 15px 0 30px;
 }
 
 /* Navigation */
@@ -951,7 +957,7 @@ body.nav-opened .nav {
     color: #09243D !important; /* Overides `.nav a:link, .nav a:visited` colour */
     text-align: center;
     font-size: 12px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 35px;
@@ -1046,7 +1052,6 @@ body.nav-opened .nav {
     text-align: center;
     font-size: 12px;
     text-transform: uppercase;
-    line-height: 35px;
     white-space: nowrap;
     border-radius: 3px;
     transition: all 0.5s ease;
@@ -1067,14 +1072,17 @@ body.nav-opened .nav {
 /* When the navigation is closed */
 .nav-closed .menu-button {
     color: black;
+    opacity: 0.6;
 }
 .nav-closed .menu-button:hover {
     color: #222;
+    opacity: 0.6;
 }
 
 /* When the navigation is closed and there is no cover image */
 .nav-closed .no-cover .menu-button {
     color: black;
+    opacity: 0.6;
 }
 .nav-closed .no-cover .menu-button:hover {
 }
@@ -1569,7 +1577,8 @@ body.page-template .post-title {
 }
 
 .post-head.main-header a.menu-button {
-    color: white;
+    color: black;
+    opacity: 0.6;
 }
 
 .no-cover.post-head.main-header {
@@ -1877,7 +1886,7 @@ body.page-template .post-title {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -2007,7 +2016,7 @@ body.page-template .post-title {
 }
 
 .gh-subscribe-rss {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     line-height: 1.4em;
 }
@@ -2020,7 +2029,7 @@ body.page-template .post-title {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
@@ -2234,7 +2243,7 @@ body.page-template .post-title {
         margin-bottom: 2rem;
     }
 
-    .main-nav a.website {
+    .main-nav a.website-link {
         display: none;
     }
 
