@@ -259,7 +259,7 @@ td, th{ padding: 0; }
 
 /* Apply these base styles to all icons */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
+    font-family: "casper-icons", "Roboto", sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -648,7 +648,7 @@ button {
     outline: none;
     text-decoration: none;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 11px; /* Hacks targeting Firefox. */
     line-height: 13px; /* Hacks targeting Firefox. */
     font-weight: 300;
@@ -745,21 +745,24 @@ body.nav-opened .site-wrapper {
 
 .main-nav a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-.main-nav a.website {
-    position: absolute;
-    left: 140px;
+.main-nav a.website-link {
+    float: right;
     color: #3AAE54;
-    border: 1px solid #3AAE54;
+    border: 1px solid rgba(58, 174, 84, 0.3);
     border-radius: 5px;
-    padding: 2px 13px 0px;
+    padding: 3px 12px 3px 20px;
     font-size: 16px;
-    margin-top: 5px;
+    margin-top: -3px;
+    
+    &:after {
+      border-right: 1px solid white;
+    }
 }
 
-.main-nav a.website:hover {
+.main-nav a.website-link:hover {
     opacity: 0.7;
 }
 
@@ -951,7 +954,7 @@ body.nav-opened .nav {
     color: #09243D !important; /* Overides `.nav a:link, .nav a:visited` colour */
     text-align: center;
     font-size: 12px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 35px;
@@ -1877,7 +1880,7 @@ body.page-template .post-title {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -2007,7 +2010,7 @@ body.page-template .post-title {
 }
 
 .gh-subscribe-rss {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     line-height: 1.4em;
 }
@@ -2020,7 +2023,7 @@ body.page-template .post-title {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
@@ -2234,7 +2237,7 @@ body.page-template .post-title {
         margin-bottom: 2rem;
     }
 
-    .main-nav a.website {
+    .main-nav a.website-link {
         display: none;
     }
 
