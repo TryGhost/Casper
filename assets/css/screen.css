@@ -753,17 +753,20 @@ body.nav-opened .site-wrapper {
     color: #3AAE54;
     border: 1px solid rgba(58, 174, 84, 0.3);
     border-radius: 5px;
-    padding: 3px 12px 3px 20px;
-    font-size: 16px;
-    margin-top: -3px;
-    
-    &:after {
-      border-right: 1px solid white;
-    }
+    padding: 1px 9px 0px 16px;
+    font-size: 13px;
+    margin-top: -1px;
 }
 
 .main-nav a.website-link:hover {
     opacity: 0.7;
+}
+
+.main-nav .vr {
+    float:right; 
+    border-left:1px solid rgba(84, 84, 84, 0.2);
+    height:18px; 
+    margin: 0 30px;
 }
 
 /* Navigation */
