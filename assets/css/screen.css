@@ -1292,8 +1292,21 @@ body.page-template .post-title {
    ========================================================================== */
 
 .post-head.main-header {
-    height: 65vh;
-    min-height: 180px;
+    /*height: 65vh;
+    min-height: 180px;*/
+    height: 520px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.nav-closed .post-head.main-header a.menu-button {
+    color: black;
+    opacity: 0.6;
+}
+
+.nav-opened .post-head.main-header a.menu-button {
+    color: white;
+    opacity: 1;
 }
 
 .no-cover.post-head.main-header {
