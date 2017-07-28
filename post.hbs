@@ -102,7 +102,8 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
         <div class="read-next-feed">
 
-            {{#get "posts" filter="tags:{{tags.[0].slug}}+id:-{{id}}" limit="3"}}
+            {{#get "posts" filter="tags:{{tags.[0].slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                {{#if related_posts}}
                 <article class="read-next-card"
                     {{#if ../tags.[0].feature_image}}
                         style="background-image: url({{../tags.[0].feature_image}})"
@@ -118,7 +119,7 @@ into the {body} of the default.hbs template --}}
                     <div class="read-next-divider">{{> "icons/infinity"}}</div>
                     <div class="read-next-card-content">
                         <ul>
-                            {{#foreach posts}}
+                            {{#foreach related_posts}}
                             <li><a href="{{url}}">{{title}}</a></li>
                             {{/foreach}}
                         </ul>
@@ -127,6 +128,7 @@ into the {body} of the default.hbs template --}}
                         <a href="{{@blog.url}}/tag/{{../tags.[0].slug}}/">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
                     </footer>
                 </article>
+                {{/if}}
             {{/get}}
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
