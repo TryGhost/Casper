@@ -667,6 +667,11 @@ The first (most recent) post in the list is styled to be bigger than the others 
     min-width: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    padding-top: 75px;
+    margin-top: -75px;
+}
+
 .post-template .kg-card-markdown > p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
