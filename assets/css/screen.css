@@ -1323,6 +1323,7 @@ Super neat trick courtesy of @JoelDrapper
     align-items: center;
     color: var(--darkgrey);
     font-weight: 700;
+    line-height: 1.1em;
 }
 
 .floating-header-logo a:hover {
