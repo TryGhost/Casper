@@ -135,7 +135,7 @@ body {
 
 .site-header-content {
     position: relative;
-    z-index: 100;
+    z-index: 300;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -808,6 +808,8 @@ Super neat trick courtesy of @JoelDrapper
 .post-full-content h4,
 .post-full-content h5,
 .post-full-content h6 {
+    padding-top: 75px;
+    margin-top: -75px;
     color: color(var(--darkgrey) l(-5%));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -1323,6 +1325,7 @@ Super neat trick courtesy of @JoelDrapper
     align-items: center;
     color: var(--darkgrey);
     font-weight: 700;
+    line-height: 1.1em;
 }
 
 .floating-header-logo a:hover {
