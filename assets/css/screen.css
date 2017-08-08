@@ -890,9 +890,10 @@ Super neat trick courtesy of @JoelDrapper
 
 /* Tables */
 .post-full-content table {
-    display: table;
-    width: 100%;
+    display: inline-block;
+    width: auto;
     max-width: 100%;
+    vertical-align: top;
     overflow-x: auto;
     margin: 0.5em 0 2.5em;
     border-spacing: 0;
@@ -930,7 +931,7 @@ Super neat trick courtesy of @JoelDrapper
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
-    background: color(var(--whitegrey) l(+4%));
+    background-color: color(var(--whitegrey) l(+4%));
 }
 
 .post-full-content table th,
@@ -938,16 +939,6 @@ Super neat trick courtesy of @JoelDrapper
     padding: 6px 12px;
     border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
 }
-
-@media (max-width: 800px) {
-    .post-full-content table {
-        display: inline-block;
-        width: auto;
-        max-width: 100%;
-        vertical-align: top;
-    }
-}
-
 
 
 /* 7.1. Subscribe Form
