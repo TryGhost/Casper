@@ -213,6 +213,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: block;
     margin-right: 24px;
+    padding: 9px 0;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1em;
