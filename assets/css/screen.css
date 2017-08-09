@@ -732,6 +732,7 @@ Usage (In Ghost editor):
 .post-full-content br + small {
     display: block;
     margin-top: -3em;
+    margin-bottom: 1.5em;
 }
 
 
