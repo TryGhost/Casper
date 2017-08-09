@@ -706,14 +706,34 @@ The first (most recent) post in the list is styled to be bigger than the others 
     }
 }
 
-/*
-If an image url has #full on the end, give it special wide styles.
+
+/* Full bleed images (#full)
 Super neat trick courtesy of @JoelDrapper
+
+Usage (In Ghost edtior):
+
+![img](/some/image.jpg#full)
+
 */
 .post-full-content img[src$="#full"] {
     width: 100vw;
     max-width: none;
 }
+
+
+/* Image captions
+
+Usage (In Ghost editor):
+
+![img](/some/image.jpg)
+<small>Your image caption</small>
+
+*/
+.post-full-content br + small {
+    display: block;
+    margin-top: -3em;
+}
+
 
 .post-full-content iframe {
     margin: 0 auto 1.5em;
