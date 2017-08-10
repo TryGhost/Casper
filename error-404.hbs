@@ -1,7 +1,6 @@
 {{!--
-This error template is used for all 400/500 errors, except 404, which might occur on your site.
+This error template is used for all 404 errors, which might occur on your site.
 It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
-You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in this file.
 --}}
 
 <!DOCTYPE html>
@@ -37,27 +36,21 @@ You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in 
                     <p class="error-description">{{message}}</p>
                     <a class="error-link" href="{{@blog.url}}">Go to the front page →</a>
                 </section>
-
-                {{#if errorDetails}}
-                <section class="error-stack">
-                    <h3>Theme errors</h3>
-                    <ul class="error-stack-list">
-                        {{#each errorDetails}}
-                            <li>
-                                <em class="error-stack-function">{{{rule}}}</em>
-
-                                {{#each failures}}
-                                    <p><span class="error-stack-file">Ref: {{ref}}</span></p>
-                                    <p><span class="error-stack-file">Message: {{message}}</span></p>
-                                {{/each}}
-                            </li>
-                        {{/each}}
-                    </ul>
-                </section>
-                {{/if}}
-
             </div>
         </main>
+
+        {{#get "posts" limit="3"}}
+        <aside class="outer">
+            <div class="inner">
+                <div class="post-feed">
+                    {{#foreach posts}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                </div>
+            </div>
+        </aside>
+        {{/get}}
+
     </div>
 </body>
 </html>
