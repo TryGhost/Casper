@@ -763,7 +763,7 @@ Usage (In Ghost editor):
 }
 
 @media (min-width: 1000px) {
-    .post-full-content blockquote {
+    .post-full-content blockquote:not(:first-of-type) {
         width: 100vw;
         max-width: 1060px;
     }
