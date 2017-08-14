@@ -358,6 +358,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
 
+.site-main {
+    z-index: 100;
+}
+
 .post-feed {
     position: relative;
     display: flex;
