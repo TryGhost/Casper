@@ -1449,6 +1449,10 @@ Usage (In Ghost editor):
     background-color: var(--blue);
 }
 
+.progress::-moz-progress-bar {
+    background-color: var(--blue);
+}
+
 .progress-container {
     position: absolute;
     top: 0;
