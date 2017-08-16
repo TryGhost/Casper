@@ -51,6 +51,17 @@ body {
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
 
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-main {
+    z-index: 100;
+    flex-grow: 1;
+}
+
 /* Full width page blocks */
 .outer {
     position: relative;
@@ -357,10 +368,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
-
-.site-main {
-    z-index: 100;
-}
 
 .post-feed {
     position: relative;
