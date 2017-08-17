@@ -160,6 +160,7 @@ body {
     padding: 0;
     font-size: 3.8rem;
     font-weight: 700;
+    z-index: 10;
 }
 
 .site-logo {
@@ -173,6 +174,7 @@ body {
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
+    z-index: 10;
 }
 
 @media (max-width: 500px) {
