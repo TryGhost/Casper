@@ -1539,6 +1539,7 @@ Usage (In Ghost editor):
 
 .site-header-content .author-meta {
     flex-shrink: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
