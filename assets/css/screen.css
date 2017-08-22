@@ -459,6 +459,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 25px;
     margin-right: 5px;
     border-radius: 100%;
+    object-fit: cover;
 }
 
 .post-card-author {
