@@ -1528,6 +1528,7 @@ Usage (In Ghost editor):
 
 .site-header-content .author-bio {
     flex-shrink: 0;
+    z-index: 10;
     max-width: 600px;
     margin: 5px 0 10px 0;
     font-size: 2rem;
@@ -1539,6 +1540,7 @@ Usage (In Ghost editor):
 
 .site-header-content .author-meta {
     flex-shrink: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
