@@ -6,6 +6,7 @@ var livereload = require('gulp-livereload');
 var nodemon = require('gulp-nodemon');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
+var zip = require('gulp-zip');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -22,6 +23,11 @@ var swallowError = function swallowError(error) {
 
 var nodemonServerInit = function () {
     livereload.listen(1234);
+};
+
+function themeName() {
+    var fs = require('fs');
+    return JSON.parse(fs.readFileSync('./package.json')).name;
 };
 
 gulp.task('build', ['css'], function (/* cb */) {
@@ -47,6 +53,14 @@ gulp.task('css', function () {
 
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
+});
+
+gulp.task('deploy', ['css'], function() {
+    var filename = themeName() + '.zip';
+
+    gulp.src(['**', '!' + filename, '!node_modules', '!node_modules/**'])
+        .pipe(zip(filename))
+        .pipe(gulp.dest('.'))
 });
 
 gulp.task('default', ['build'], function () {
