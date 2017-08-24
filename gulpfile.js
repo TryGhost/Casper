@@ -25,11 +25,6 @@ var nodemonServerInit = function () {
     livereload.listen(1234);
 };
 
-function themeName() {
-    var fs = require('fs');
-    return JSON.parse(fs.readFileSync('./package.json')).name;
-};
-
 gulp.task('build', ['css'], function (/* cb */) {
     return nodemonServerInit();
 });
@@ -55,12 +50,20 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
 });
 
-gulp.task('deploy', ['css'], function() {
-    var filename = themeName() + '.zip';
+gulp.task('build-dist', ['css'], function() {
+    var rimraf = require('rimraf');
+    var fs = require('fs');
 
-    gulp.src(['**', '!' + filename, '!node_modules', '!node_modules/**'])
+    var targetDir = 'dist/';
+    var themeName = JSON.parse(fs.readFileSync('./package.json')).name;
+    var filename = themeName + '.zip';
+
+    // remove the old dist/ directory
+    rimraf.sync(targetDir);
+
+    gulp.src(['**', '!node_modules', '!node_modules/**'])
         .pipe(zip(filename))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest(targetDir));
 });
 
 gulp.task('default', ['build'], function () {
