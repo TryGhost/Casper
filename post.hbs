@@ -35,6 +35,8 @@ into the {body} of the default.hbs template --}}
             <section class="post-full-content">
                 {{content}}
             </section>
+            
+            {{tags separator=" | " prefix="Tagged in:"}}
 
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
