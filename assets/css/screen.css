@@ -485,6 +485,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
+        border-radius: 5px 0 0 5px;
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
