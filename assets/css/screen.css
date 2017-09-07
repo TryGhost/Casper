@@ -156,11 +156,11 @@ body {
 }
 
 .site-title {
+    z-index: 10;
     margin: 0;
     padding: 0;
     font-size: 3.8rem;
     font-weight: 700;
-    z-index: 10;
 }
 
 .site-logo {
@@ -168,13 +168,13 @@ body {
 }
 
 .site-description {
+    z-index: 10;
     margin: 0;
     padding: 5px 0;
     font-size: 2.2rem;
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
-    z-index: 10;
 }
 
 @media (max-width: 500px) {
@@ -226,7 +226,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: block;
     margin-right: 24px;
-    padding: 9px 0;
+    padding: 11px 0;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1em;
@@ -459,6 +459,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 25px;
     margin-right: 5px;
     border-radius: 100%;
+
     object-fit: cover;
 }
 
@@ -484,6 +485,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
+        border-radius: 5px 0 0 5px;
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
@@ -551,6 +553,11 @@ The first (most recent) post in the list is styled to be bigger than the others 
     margin: 0 auto;
     padding: 6vw 3vw 3vw;
     text-align: center;
+}
+@media (max-width: 500px) {
+    .post-full-header {
+        padding: 14vw 3vw 10vw;
+    }
 }
 
 .post-full-meta {
@@ -665,20 +672,29 @@ The first (most recent) post in the list is styled to be bigger than the others 
     max-width: 920px;
 }
 
-.post-full-content p,
-.post-full-content ul,
-.post-full-content ol,
-.post-full-content dl,
-.post-full-content pre,
 .post-full-content h1,
 .post-full-content h2,
 .post-full-content h3,
 .post-full-content h4,
 .post-full-content h5,
 .post-full-content h6,
+.post-full-content p,
+.post-full-content ul,
+.post-full-content ol,
+.post-full-content dl,
+.post-full-content pre,
+.post-full-content blockquote,
 .post-full-comments,
 .footnotes {
     min-width: 100%;
+}
+
+.post-full-content li {
+    word-break: break-word;
+}
+
+.post-full-content li p {
+    margin: 0;
 }
 
 .post-template .kg-card-markdown > p:first-child {
@@ -746,7 +762,7 @@ Usage (In Ghost editor):
 <small>Your image caption</small>
 
 */
-.post-full-content br + small {
+.post-full-content img + br + small {
     display: block;
     margin-top: -3em;
     margin-bottom: 1.5em;
@@ -754,36 +770,25 @@ Usage (In Ghost editor):
 
 
 .post-full-content iframe {
-    margin: 0 auto 1.5em;
+    margin: 0 auto;
 }
 
 .post-full-content blockquote {
-    margin: 0 0 1.5em 0;
-    padding: 1.5em 0;
-    border: 0;
-    color: var(--blue);
-    font-size: 3rem;
-    line-height: 1.6em;
-    text-align: center;
-}
-
-.post-full-content blockquote:before {
-    content: open-quote;
+    margin: 0 0 1.5em;
+    padding: 0 1.5em;
+    border-left: #3eb0ef 3px solid;
 }
 
 .post-full-content blockquote p {
-    margin: 0;
+    margin: 0 0 1em 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-style: italic;
 }
 
-@media (min-width: 1000px) {
-    .post-full-content blockquote:not(:first-of-type) {
-        width: 100vw;
-        max-width: 1060px;
-    }
-}
-
-.post-full-content blockquote + blockquote {
-    padding-top: 0;
+.post-full-content blockquote p:last-child {
+    margin-bottom: 0;
 }
 
 .post-full-content code {
@@ -843,34 +848,87 @@ Usage (In Ghost editor):
 .post-full-content h4,
 .post-full-content h5,
 .post-full-content h6 {
-    margin-top: -75px;
-    padding-top: 75px;
     color: color(var(--darkgrey) l(-5%));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .post-full-content h1 {
-    font-size: 5rem;
+    margin: 0.5em 0 0.2em 0;
+    font-size: 4.6rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h1 {
+        font-size: 2.8rem;
+    }
 }
 
 .post-full-content h2 {
-    font-size: 3.5rem;
+    margin: 0.5em 0 0.2em 0;
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h2 {
+        font-size: 2.6rem;
+    }
 }
 
 .post-full-content h3 {
-    font-size: 2.5rem;
+    margin: 0.5em 0 0.2em 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h3 {
+        font-size: 2.2rem;
+    }
 }
 
 .post-full-content h4 {
-    font-size: 1.6rem;
+    margin: 0.5em 0 0.2em 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h4 {
+        font-size: 2.2rem;
+    }
 }
 
 .post-full-content h5 {
-    font-size: 1.4rem;
+    display: block;
+    margin: 0.5em 0;
+    padding: 1em 0 1.5em;
+    border: 0;
+    color: var(--blue);
+    font-family: Georgia,serif;
+    font-size: 3.2rem;
+    line-height: 1.35em;
+    text-align: center;
+}
+@media (min-width: 1180px) {
+    .post-full-content h5 {
+        width: 100vw;
+        max-width: 1060px;
+    }
+}
+@media (max-width: 500px) {
+    .post-full-content h5 {
+        padding: 0 0 0.5em;
+        font-size: 2.2rem;
+    }
 }
 
 .post-full-content h6 {
-    font-size: 1.4rem;
+    margin: 0.5em 0 0.2em 0;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h6 {
+        font-size: 2rem;
+    }
 }
 
 .footnotes-sep {
@@ -912,15 +970,6 @@ Usage (In Ghost editor):
     .post-full-content:before,
     .post-full-content:after {
         display: none;
-    }
-    .post-full-content h1 {
-        font-size: 2.9rem;
-    }
-    .post-full-content h2 {
-        font-size: 2.9rem;
-    }
-    .post-full-content h3 {
-        font-size: 2rem;
     }
 }
 
@@ -1520,17 +1569,17 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .site-header-content .author-profile-image {
+    z-index: 10;
     flex-shrink: 0;
     width: 100px;
     height: 100px;
     margin: 0 0 20px 0;
     box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
-    z-index: 10;
 }
 
 .site-header-content .author-bio {
-    flex-shrink: 0;
     z-index: 10;
+    flex-shrink: 0;
     max-width: 600px;
     margin: 5px 0 10px 0;
     font-size: 2rem;
@@ -1541,8 +1590,8 @@ Usage (In Ghost editor):
 }
 
 .site-header-content .author-meta {
-    flex-shrink: 0;
     z-index: 10;
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
