@@ -37,7 +37,8 @@ gulp.task('css', function () {
         autoprefixer({browsers: ['last 2 versions']}),
         cssnano()
     ];
-    gulp.src('assets/css/*.css')
+
+    return gulp.src('assets/css/*.css')
         .on('error', swallowError)
         .pipe(sourcemaps.init())
         .pipe(postcss(processors))
@@ -51,13 +52,11 @@ gulp.task('watch', function () {
 });
 
 gulp.task('zip', ['css'], function() {
-    var fs = require('fs');
-
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
 
-    gulp.src(['**', '!node_modules', '!node_modules/**'])
+    return gulp.src(['**', '!node_modules', '!node_modules/**'])
         .pipe(zip(filename))
         .pipe(gulp.dest(targetDir));
 });
