@@ -51,15 +51,11 @@ gulp.task('watch', function () {
 });
 
 gulp.task('zip', ['css'], function() {
-    var rimraf = require('rimraf');
     var fs = require('fs');
 
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
-
-    // remove the old dist/ directory
-    rimraf.sync(targetDir);
 
     gulp.src(['**', '!node_modules', '!node_modules/**'])
         .pipe(zip(filename))

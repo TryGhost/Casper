@@ -46,8 +46,7 @@
         "gulp-zip": "4.0.0",
         "postcss-color-function": "2.0.1",
         "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1",
-        "rimraf": "2.6.1"
+        "postcss-easy-import": "1.0.1"
     },
     "config": {
         "posts_per_page": 25
