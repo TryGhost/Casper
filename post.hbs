@@ -101,7 +101,7 @@ into the {body} of the default.hbs template --}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-
+            {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
                 <article class="read-next-card"
@@ -132,6 +132,7 @@ into the {body} of the default.hbs template --}}
                 </article>
                 {{/if}}
             {{/get}}
+            {{/if}}
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
             {{#next_post}}
