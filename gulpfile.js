@@ -50,12 +50,12 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
 });
 
-gulp.task('build-dist', ['css'], function() {
+gulp.task('zip', ['css'], function() {
     var rimraf = require('rimraf');
     var fs = require('fs');
 
     var targetDir = 'dist/';
-    var themeName = JSON.parse(fs.readFileSync('./package.json')).name;
+    var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
 
     // remove the old dist/ directory
