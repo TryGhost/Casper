@@ -13,14 +13,5 @@ trim_trailing_whitespace = true
 [*.hbs]
 insert_final_newline = false
 
-[{package}.json]
-indent_size = 2
-
 [*.md]
 trim_trailing_whitespace = false
-
-[*.yml]
-indent_size = 2
-
-[Makefile]
-indent_style = tab
