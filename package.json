@@ -43,6 +43,7 @@
         "gulp-sourcemaps": "1.6.0",
         "gulp-util": "3.0.7",
         "gulp-watch": "4.3.8",
+        "gulp-zip": "4.0.0",
         "postcss-color-function": "2.0.1",
         "postcss-custom-properties": "5.0.1",
         "postcss-easy-import": "1.0.1"
