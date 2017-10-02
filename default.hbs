@@ -41,7 +41,6 @@
     </div>
 
     {{!-- The big email subscribe modal content --}}
-    {{#if @labs.subscribers}}
     <div id="subscribe" class="subscribe-overlay">
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
@@ -53,7 +52,6 @@
             {{subscribe_form placeholder="youremail@example.com"}}
         </div>
     </div>
-    {{/if}}
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script
