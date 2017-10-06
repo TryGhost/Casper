@@ -383,7 +383,7 @@ dd {
 blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em 0 1.6em;
-    border-left: var(--whitegrey) 0.5em solid;;
+    border-left: var(--whitegrey) 0.5em solid;
 }
 
 blockquote p {
