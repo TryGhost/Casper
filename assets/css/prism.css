@@ -1,15 +1,15 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
+/* http://prismjs.com/download.html?themes=prism-dark&languages=markup+css+clike+javascript */
 /**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
  * @author Lea Verou
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
+	color: white;
 	background: none;
-	text-shadow: 0 1px white;
+	text-shadow: 0 -.1em .2em black;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
 	white-space: pre;
@@ -28,18 +28,6 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
 @media print {
 	code[class*="language-"],
 	pre[class*="language-"] {
@@ -47,22 +35,27 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	}
 }
 
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+	background: hsl(30, 20%, 25%);
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #f5f2f0;
+	border: .3em solid hsl(30, 20%, 40%);
+	border-radius: .5em;
+	box-shadow: 1px 1px .5em black inset;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
+	padding: .15em .2em .05em;
 	border-radius: .3em;
+	border: .13em solid hsl(30, 20%, 40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
 	white-space: normal;
 }
 
@@ -70,11 +63,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: slategray;
+	color: hsl(30, 20%, 50%);
 }
 
 .token.punctuation {
-	color: #999;
+	opacity: .7;
 }
 
 .namespace {
@@ -86,9 +79,8 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.constant,
-.token.symbol,
-.token.deleted {
-	color: #905;
+.token.symbol {
+	color: hsl(350, 40%, 70%);
 }
 
 .token.selector,
@@ -97,31 +89,26 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #690;
+	color: hsl(75, 70%, 60%);
 }
 
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0, 0%, 100%, .5);
+.style .token.string,
+.token.variable {
+	color: hsl(40, 90%, 60%);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #07a;
-}
-
-.token.function {
-	color: #DD4A68;
+	color: hsl(350, 40%, 70%);
 }
 
 .token.regex,
-.token.important,
-.token.variable {
+.token.important {
 	color: #e90;
 }
 
@@ -135,5 +122,9 @@ pre[class*="language-"] {
 
 .token.entity {
 	cursor: help;
+}
+
+.token.deleted {
+	color: red;
 }
 
