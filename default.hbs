@@ -13,6 +13,7 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}"/>
 
     {{!-- This tag outputes SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -61,6 +62,9 @@
         crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+    {{!-- Prism for syntax highlighting --}}
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
 
     {{#if pagination.pages}}
     <script>
