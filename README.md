@@ -34,12 +34,18 @@ One really neat trick is that you can also create custom one-off templates just 
 
 Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:
 
-`$ npm install`
-
-`$ gulp`
+```bash
+$ npm install
+$ gulp
+```
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
+The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+
+```bash
+$ gulp zip
+```
 
 # PostCSS Features Used
 
