@@ -821,6 +821,10 @@ Usage (In Ghost editor):
     background: transparent;
 }
 
+.post-full-content pre code * {
+    color: inherit;
+}
+
 .post-full-content .fluid-width-video-wrapper {
     margin: 1.5em 0 3em;
 }
