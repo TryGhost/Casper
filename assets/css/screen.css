@@ -1913,3 +1913,52 @@ Usage (In Ghost editor):
         margin-left: 0;
     }
 }
+
+
+
+
+
+.site-title {
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    font-size: 9.5rem;
+    font-weight: 700;
+    font-family: 'Kankin', sans-serif;
+}
+
+/*Youtube featured Video card*/
+.featureArticle {
+  padding: 10px;
+  display: block;
+}
+.featureVid {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.featureVid iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.featureVid .fluid-width-video-wrapper {
+    margin:0px;
+}
+
+/*featured card styling*/
+.post-card.featured  {
+    background: #1F2026;
+    box-shadow: 8px 14px 38px rgba(255,215,0,.25), 1px 3px 8px rgba(255,215,0,.2);
+}
+
+.post-card.featured * .post-card-title {
+  color: #fff;
+}
+
+.post-card.featured * .post-card-excerpt {
+  color: #9d9fa6;
+}

@@ -16,6 +16,12 @@
     --brown: #a3821a;
 }
 
+/*custom font*/
+@font-face{
+font-family: 'Kankin';
+src: url('../fonts/Kankin.otf');
+src: url('../fonts/Kankin.ttf');
+}
 /* Reset
 /* ---------------------------------------------------------- */
 
