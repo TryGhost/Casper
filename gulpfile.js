@@ -58,6 +58,8 @@ gulp.task('zip', ['css'], function() {
 
     return gulp.src([
         '**',
+        '!gulpfile.js',
+        '!assets/css', '!assets/css/**',
         '!node_modules', '!node_modules/**',
         '!dist', '!dist/**'
     ])
