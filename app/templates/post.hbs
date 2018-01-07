@@ -5,7 +5,7 @@ into the {body} of the default.hbs template --}}
 
 <header class="site-header outer">
     <div class="inner">
-        {{> "site-nav"}}
+        {{site-nav}}
     </div>
 </header>
 
@@ -15,7 +15,7 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+        <article class="post-full {{post_class}} {{unless feature_image 'no-image'}}">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
@@ -37,9 +37,9 @@ into the {body} of the default.hbs template --}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
+            {{#if labs.subscribers}}
             <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+                <h3 class="subscribe-form-title">Subscribe to {{blog.title}}</h3>
                 <p>Get the latest posts delivered right to your inbox</p>
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
@@ -105,20 +105,20 @@ into the {body} of the default.hbs template --}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
                 <article class="read-next-card"
-                    {{#if ../primary_tag.feature_image}}
+                    {{!-- {{#if ../primary_tag.feature_image}}
                         style="background-image: url({{../primary_tag.feature_image}})"
                     {{else}}
-                        {{#if @blog.cover_image}}
-                            style="background-image: url({{@blog.cover_image}})"{{/if}}
-                    {{/if}}
+                        {{#if blog.cover_image}}
+                            style="background-image: url({{blog.cover_image}})"{{/if}}
+                    {{/if}} --}}
                 >
                     <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
-                        {{#../primary_tag}}
+                        <small class="read-next-card-header-sitetitle">&mdash; {{blog.title}} &mdash;</small>
+                        {{!-- {{#../primary_tag}}
                         <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                        {{/../primary_tag}}
+                        {{/../primary_tag}} --}}
                     </header>
-                    <div class="read-next-divider">{{> "icons/infinity"}}</div>
+                    <div class="read-next-divider">{{icons/infinity}}</div>
                     <div class="read-next-card-content">
                         <ul>
                             {{#foreach related_posts}}
@@ -127,7 +127,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        {{!-- <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a> --}}
                     </footer>
                 </article>
                 {{/if}}
@@ -135,21 +135,22 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#next_post}}
-                {{> "post-card"}}
-            {{/next_post}}
+            {{#if next_post}}
+              {{post-card post=next_post}}
+            {{/if}}
+
 
             {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#prev_post}}
-                {{> "post-card"}}
-            {{/prev_post}}
+            {{#if prev_post}}
+                {{post-card post=prev_post}}
+            {{/if}}
 
         </div>
     </div>
 </aside>
 
 {{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{> floating-header}}
+{{floating-header}}
 
 {{/post}}
 

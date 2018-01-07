@@ -3,19 +3,19 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+<header class="site-header outer {{if blog.cover_image 'no-cover'}}" style="{{if blog.cover_image coverImageStyle}}">
     <div class="inner">
         <div class="site-header-content">
             <h1 class="site-title">
-                {{#if @blog.logo}}
-                    <img class="site-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                {{#if blog.logo}}
+                    <img class="site-logo" src="{{blog.logo}}" alt="{{blog.title}}" />
                 {{else}}
-                    {{@blog.title}}
+                    {{blog.title}}
                 {{/if}}
             </h1>
-            <h2 class="site-description">{{@blog.description}}</h2>
+            <h2 class="site-description">{{blog.description}}</h2>
         </div>
-        {{> "site-nav"}}
+        {{site-nav}}
     </div>
 </header>
 
@@ -24,12 +24,12 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
 
         <div class="post-feed">
-            {{#foreach posts}}
+            {{#each posts as |post|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
+                {{post-card post=post}}
 
-            {{/foreach}}
+            {{/each}}
         </div>
 
     </div>
