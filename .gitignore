@@ -1,24 +1,23 @@
-b-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-pids
-logs
-results
+# compiled output
+/dist
+/tmp
 
-npm-debug.log
-node_modules
-package-lock.json
+# dependencies
+/node_modules
+/bower_components
 
-.idea/*
-*.iml
-projectFilesBackup
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log*
+yarn-error.log
+testem.log
 
-.DS_Store
-
-dist/
+# ember-try
+.node_modules.ember-try/
+bower.json.ember-try
+package.json.ember-try
