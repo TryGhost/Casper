@@ -30,7 +30,14 @@
     "postcss-color-function": "^4.0.1",
     "postcss-custom-properties": "^6.2.0",
     "postcss-import": "^11.0.0",
-    "resolve": "^1.5.0"
+    "resolve": "^1.5.0",
+    "broccoli-static-site-json": "^1.2.0",
+    "downsize": "0.0.8",
+    "ember-body-class": "^0.4.0",
+    "ember-cli-showdown": "^4.1.1",
+    "ember-lodash": "^4.18.0",
+    "ember-truth-helpers": "^2.0.0",
+    "ember-composable-helpers": "^2.0.3"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -46,6 +53,7 @@
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
+    "ember-data": "~2.18.0",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",

@@ -2,7 +2,6 @@
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-// postcss plugins
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
 

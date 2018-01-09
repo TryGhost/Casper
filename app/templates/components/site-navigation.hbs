@@ -1,0 +1,9 @@
+{{#each blog.navigation as |navigation|}}
+  <li class="nav-{{navigation.label}}" role="menuitem">
+    {{#if navigation.id}}
+      {{#link-to navigation.route navigation.id}} {{navigation.label}} {{/link-to}}
+    {{else}}
+      {{#link-to navigation.route}} {{navigation.label}} {{/link-to}}
+    {{/if}}
+  </li>
+{{/each}}

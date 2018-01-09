@@ -2,34 +2,39 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- Everything inside the #author tags pulls data from the author --}}
-<header class="site-header outer {{unless author.cover_image 'no-cover'}}" style="{{if author.cover_image coverImageStyle}}">
+<header class="site-header outer {{unless model.cover_image 'no-cover'}}" style="{{if model.cover_image coverImageStyle}}">
     <div class="inner">
         {{site-nav}}
         <div class="site-header-content">
-            {{#if author.profile_image}}
-                <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />
+            {{#if model.image}}
+                <img class="author-profile-image" src="{{model.image}}" alt="{{model.name}}" />
             {{/if}}
-            <h1 class="site-title">{{author.name}}</h1>
-            {{#if author.bio}}
-                <h2 class="author-bio">{{author.bio}}</h2>
+            <h1 class="site-title">{{model.name}}</h1>
+            {{#if model.bio}}
+                <h2 class="author-bio">{{model.bio}}</h2>
             {{/if}}
             <div class="author-meta">
-                {{#if author.location}}
-                    <div class="author-location">{{author.location}} <span class="bull">&bull;</span></div>
+                {{#if model.location}}
+                    <div class="author-location">{{model.location}} <span class="bull">&bull;</span></div>
                 {{/if}}
                 <div class="author-stats">
-                    {{plural pagination.total empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
+                  {{#if model.posts}}
+                    {{model.posts.length}} posts
+                  {{else}}
+                    No posts
+                  {{/if}}
+                  <span class="bull">&bull;</span>
                 </div>
-                {{#if author.website}}
-                    <a class="social-link social-link-wb" href="{{author.website}}" target="_blank" rel="noopener">{{icons/website}}</a>
+                {{#if model.website}}
+                    <a class="social-link social-link-wb" href="{{model.website}}" target="_blank" rel="noopener">{{svg-icons/website}}</a>
                 {{/if}}
-                {{#if author.twitter}}
-                    <a class="social-link social-link-tw" href="{{author.twitter_url}}" target="_blank" rel="noopener">{{icons/twitter}}</a>
+                {{#if model.twitter}}
+                    <a class="social-link social-link-tw" href="{{model.twitter_url}}" target="_blank" rel="noopener">{{svg-icons/twitter}}</a>
                 {{/if}}
-                {{#if author.facebook}}
-                    <a class="social-link social-link-fb" href="{{author.facebook_url}}" target="_blank" rel="noopener">{{icons/facebook}}</a>
+                {{#if model.facebook}}
+                    <a class="social-link social-link-fb" href="{{model.facebook_url}}" target="_blank" rel="noopener">{{svg-icons/facebook}}</a>
                 {{/if}}
-                <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{author.url absolute="true"}}/rss/" target="_blank" rel="noopener">{{icons/rss}}</a>
+                {{!-- <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{model.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
             </div>
         </div>
     </div>
@@ -40,7 +45,7 @@
     <div class="inner">
 
         <div class="post-feed">
-            {{#each posts as |post|}}
+            {{#each (sort-by 'date:desc' model.posts) as |post|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{post-card post=post}}

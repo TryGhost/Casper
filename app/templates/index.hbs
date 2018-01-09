@@ -3,7 +3,7 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer {{if blog.cover_image 'no-cover'}}" style="{{if blog.cover_image coverImageStyle}}">
+<header class="site-header outer {{unless blog.cover_image 'no-cover'}}" style="{{if blog.cover_image coverImageStyle}}">
     <div class="inner">
         <div class="site-header-content">
             <h1 class="site-title">
@@ -24,7 +24,7 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
 
         <div class="post-feed">
-            {{#each posts as |post|}}
+            {{#each (sort-by 'date:desc' model) as |post|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{post-card post=post}}

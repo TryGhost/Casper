@@ -9,9 +9,6 @@ into the {body} of the default.hbs template --}}
     </div>
 </header>
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
-{{#post}}
-
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
@@ -27,22 +24,10 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <section class="post-full-content">
-                {{content}}
+                {{markdown-to-html model.content}}
             </section>
 
         </article>
 
     </div>
 </main>
-
-{{/post}}
-
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-<script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-{{/contentFor}}
