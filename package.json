@@ -23,7 +23,7 @@
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^2.0.0",
     "broccoli-postcss": "^3.5.2",
-    "broccoli-static-site-json": "^1.2.0",
+    "broccoli-static-site-json": "github:stonecircle/broccoli-static-site-json#feature/add-references-html",
     "cssnano": "^3.10.0",
     "debug": "^3.1.0",
     "downsize": "github:stonecircle/Downsize",
