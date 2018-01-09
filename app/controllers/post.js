@@ -5,6 +5,7 @@ import { sort } from '@ember/object/computed';
 
 export default Controller.extend({
   blog: service(),
+  url: service(),
   postSorting: ['date:desc'],
   sortedPosts: sort('model.posts', 'postSorting'),
   relatedPosts: computed('model.post.id', 'sortedPosts', function() {
@@ -35,9 +36,9 @@ export default Controller.extend({
 
   tagBackgroundImageStyle: computed(function() {
     if (get(this, 'model.post.primaryTag.image')) {
-      return `background-image: url(${get(this, 'model.post.primaryTag.image')})`;
+      return `background-image: url(${get(this, 'url.prefix')}${get(this, 'model.post.primaryTag.image')})`;
     } else if (get(this, 'blog.cover_image')) {
-      return `background-image: url(${get(this, 'blog.cover_image')})`;
+      return `background-image: url(${get(this, 'url.prefix')}${get(this, 'blog.cover_image')})`;
     }
   })
 })

@@ -2,7 +2,7 @@
     <div class="site-nav-left">
         {{#unless (eq router.currentRouteName 'index')}}
             {{#if blog.logo}}
-                {{#link-to 'index' class="site-nav-logo"}}<img src="{{blog.logo}}" alt="{{blog.title}}" />{{/link-to}}
+                {{#link-to 'index' class="site-nav-logo"}}<img src="{{url blog.logo}}" alt="{{blog.title}}" />{{/link-to}}
             {{else}}
                 {{#link-to 'index' class="site-nav-logo"}}{{blog.title}}{{/link-to}}
             {{/if}}

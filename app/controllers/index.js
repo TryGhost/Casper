@@ -6,8 +6,9 @@ import { htmlSafe } from '@ember/string';
 
 export default Controller.extend({
   blog: service(),
+  url: service(),
 
   coverImageStyle: computed('blog.cover_image', function() {
-    return htmlSafe(`background-image: url(${get(this, 'blog.cover_image')})`);
+    return htmlSafe(`background-image: url(${get(this, 'url.prefix')}${get(this, 'blog.cover_image')})`);
   })
 })

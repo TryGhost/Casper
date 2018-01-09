@@ -8,7 +8,7 @@ into the {body} of the default.hbs template --}}
         <div class="site-header-content">
             <h1 class="site-title">
                 {{#if blog.logo}}
-                    <img class="site-logo" src="{{blog.logo}}" alt="{{blog.title}}" />
+                    <img class="site-logo" src="{{url blog.logo}}" alt="{{blog.title}}" />
                 {{else}}
                     {{blog.title}}
                 {{/if}}
