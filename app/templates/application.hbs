@@ -8,10 +8,10 @@
         <div class="site-footer-content inner">
             <section class="copyright"><a href="{{blog.url}}">{{blog.title}}</a> &copy; {{moment-format now 'YYYY'}}</section>
             <nav class="site-footer-nav">
-                <a href="{{blog.url}}">Latest Posts</a>
+                {{#link-to 'index'}}Latest Posts{{/link-to}}
                 {{#if blog.facebook}}<a href="{{facebook_url blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
                 {{#if blog.twitter}}<a href="{{twitter_url blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                <a href="https://github.com/stonecircle/ember-casper-template" target="_blank" rel="noopener">Ember Casper Tempate</a>
             </nav>
         </div>
     </footer>

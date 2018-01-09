@@ -6,12 +6,13 @@
     <div class="inner">
         {{site-nav}}
         <div class="site-header-content">
-            <h1 class="site-title">{{tag.name}}</h1>
+            {{!-- <h1 class="site-title">{{model.tag.name}}</h1> --}}
+            <h1 class="site-title">{{model.tag}}</h1>
             <h2 class="site-description">
                 {{#if tag.description}}
                     {{tag.description}}
                 {{else}}
-                    A collection of {{plural pagination.total empty='posts' singular='% post' plural='% posts'}}
+                    A collection of {{model.length}} posts
                 {{/if}}
             </h2>
         </div>
@@ -22,7 +23,7 @@
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
         <div class="post-feed">
-            {{#each posts as |post|}}
+            {{#each model.posts as |post|}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{post-card post=post}}
             {{/each}}

@@ -10,30 +10,29 @@ into the {body} of the default.hbs template --}}
 </header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
-{{#post}}
 
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full {{post_class}} {{unless feature_image 'no-image'}}">
+        <article class="post-full {{post_class}} {{unless model.post.image 'no-image'}}">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
+                    <time class="post-full-meta-date" datetime="{{moment-format model.post.date "YYYY-MM-DD"}}">{{moment-format model.post.date "D MMMM YYYY"}}</time>
+                    {{#if model.post.primaryTag}}
+                      <span class="date-divider">/</span> {{#link-to 'tag' model.post.primaryTag}} {{model.post.primaryTag}}{{/link-to}}
+                    {{/if}}
                 </section>
-                <h1 class="post-full-title">{{title}}</h1>
+                <h1 class="post-full-title">{{model.post.title}}</h1>
             </header>
 
-            {{#if feature_image}}
-            <figure class="post-full-image" style="background-image: url({{feature_image}})">
+            {{#if model.post.image}}
+            <figure class="post-full-image" style="background-image: url({{model.post.image}})">
             </figure>
             {{/if}}
 
             <section class="post-full-content">
-                {{content}}
+                {{markdown-to-html model.post.content}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
@@ -46,27 +45,22 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <footer class="post-full-footer">
-                {{!-- Everything inside the #author tags pulls data from the author --}}
-                {{#author}}
-
                 <section class="author-card">
-                    {{#if profile_image}}
-                        <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                    {{#if model.post.author.image}}
+                        <img class="author-profile-image" src="{{model.post.author.image}}" alt="{{model.post.author.name}}" />
                     {{/if}}
                     <section class="author-card-content">
-                        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-                        {{#if bio}}
-                            <p>{{bio}}</p>
+                        <h4 class="author-card-name">{{#link-to 'author' model.post.author.id}}{{name}}{{/link-to}}</h4>
+                        {{#if model.post.author.bio}}
+                            <p>{{model.post.author.bio}}</p>
                         {{else}}
-                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                            <p>Read {{#link-to 'author' model.post.author.id}}more posts{{/link-to}} by this author.</p>
                         {{/if}}
                     </section>
                 </section>
                 <div class="post-full-footer-right">
-                    <a class="author-card-button" href="{{url}}">Read More</a>
+                    {{#link-to 'author' model.post.author.id class="author-card-button"}}Read More{{/link-to}}
                 </div>
-
-                {{/author}}
             </footer>
 
             {{!--
@@ -101,122 +95,42 @@ into the {body} of the default.hbs template --}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-            {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
-                {{#if related_posts}}
-                <article class="read-next-card"
-                    {{!-- {{#if ../primary_tag.feature_image}}
-                        style="background-image: url({{../primary_tag.feature_image}})"
-                    {{else}}
-                        {{#if blog.cover_image}}
-                            style="background-image: url({{blog.cover_image}})"{{/if}}
-                    {{/if}} --}}
-                >
-                    <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{blog.title}} &mdash;</small>
-                        {{!-- {{#../primary_tag}}
-                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                        {{/../primary_tag}} --}}
-                    </header>
-                    <div class="read-next-divider">{{icons/infinity}}</div>
-                    <div class="read-next-card-content">
-                        <ul>
-                            {{#foreach related_posts}}
-                            <li><a href="{{url}}">{{title}}</a></li>
-                            {{/foreach}}
-                        </ul>
-                    </div>
-                    <footer class="read-next-card-footer">
-                        {{!-- <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a> --}}
-                    </footer>
-                </article>
-                {{/if}}
-            {{/get}}
-            {{/if}}
+          {{#if model.post.primaryTag}}
+              {{#if relatedPosts}}
+               <article class="read-next-card" style={{tagBackgroundImageStyle}}>
+                  <header class="read-next-card-header">
+                      <small class="read-next-card-header-sitetitle">&mdash; {{blog.title}} &mdash;</small>
+                      <h3 class="read-next-card-header-title"><a href="{{url}}">{{model.post.primaryTag}}</a></h3>
+                  </header>
+                  <div class="read-next-divider">{{svg-icons/infinity}}</div>
+                  <div class="read-next-card-content">
+                      <ul>
+                          {{#each (take 3 relatedPosts) as |post|}}
+                            <li>{{#link-to 'post' post.id}}{{post.title}}{{/link-to}}</li>
+                          {{/each}}
+                      </ul>
+                  </div>
+
+                  <footer class="read-next-card-footer">
+                      {{#link-to 'tag' model.post.primaryTag}} See all {{relatedPosts.length}} posts →{{/link-to}}
+                  </footer>
+              </article>
+              {{/if}}
+          {{/if}}
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#if next_post}}
-              {{post-card post=next_post}}
+            {{#if nextPost}}
+              {{post-card post=nextPost}}
             {{/if}}
 
 
             {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#if prev_post}}
-                {{post-card post=prev_post}}
+            {{#if prevPost}}
+                {{post-card post=prevPost}}
             {{/if}}
 
         </div>
     </div>
 </aside>
 
-{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{floating-header}}
-
-{{/post}}
-
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-<script>
-
-// NOTE: Scroll performance is poor in Safari
-// - this appears to be due to the events firing much more slowly in Safari.
-//   Dropping the scroll event and using only a raf loop results in smoother
-//   scrolling but continuous processing even when not scrolling
-$(document).ready(function () {
-    // Start fitVids
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-    // End fitVids
-
-    var progressBar = document.querySelector('progress');
-    var header = document.querySelector('.floating-header');
-    var title = document.querySelector('.post-full-title');
-
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $(document).height();
-    var ticking = false;
-
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
-
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
-        requestTick();
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(update);
-        }
-        ticking = true;
-    }
-
-    function update() {
-        var trigger = title.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = title.offsetHeight + 35;
-        var progressMax = lastDocumentHeight - lastWindowHeight;
-
-        // show/hide floating header
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
-        } else {
-            header.classList.remove('floating-active');
-        }
-
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
-
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', onScroll, {passive: true});
-    window.addEventListener('resize', onResize, false);
-
-    update();
-});
-</script>
-{{/contentFor}}
+{{floating-header post=model.post}}
