@@ -1417,6 +1417,10 @@ Usage (In Ghost editor):
     max-height: 20px;
 }
 
+.floating-header-blog-title {
+    margin-right: 1px;
+}
+
 .floating-header-divider {
     margin: 0 5px;
     line-height: 1em;
