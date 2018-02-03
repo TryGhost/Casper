@@ -1,10 +1,17 @@
 <nav class="site-nav">
     <div class="site-nav-left">
         {{^is "home"}}
+<<<<<<< HEAD
             {{#if @site.logo}}
                 <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
                 <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+=======
+            {{#if @blog.logo}}
+                <a class="site-nav-logo" href="https://freelancehunt.com"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+            {{else}}
+                <a class="site-nav-logo" href="https://freelancehunt.com">{{@blog.title}}</a>
+>>>>>>> freelancehunt link in header
             {{/if}}
         {{/is}}
         {{#if @site.navigation}}
