@@ -41,7 +41,7 @@ into the {body} of the default.hbs template --}}
 {{#contentFor "scripts"}}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  reframe('iframe', 'object', 'embed');
+    reframe('iframe, object, embed');
 });
 </script>
 {{/contentFor}}
