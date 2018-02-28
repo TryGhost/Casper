@@ -2,7 +2,7 @@
 // Infinite Scroll
 // By Thomas Vaeth @thomasvaeth
 // ---------------------------------------------- 
-var InfiniteScroll = (() => {
+var InfiniteScroll = (function() {
   var s;
 
   return {
@@ -72,7 +72,7 @@ var InfiniteScroll = (() => {
       request.open('GET', nextPage, true);
       request.send();
 
-      request.onreadystatechange = () => {
+      request.onreadystatechange = function() {
         if (request.readyState < 4) {
           // Do Nothing
         } else if (request.readyState === 4 && request.status === 200) {
@@ -93,7 +93,7 @@ var InfiniteScroll = (() => {
               })();
             }
 
-            [].forEach.call(posts, post => {
+            [].forEach.call(posts, function(post) {
               post.style.opacity = 0;
               s.container.appendChild(post);
               fadeIn(post);
@@ -117,7 +117,7 @@ var InfiniteScroll = (() => {
 // ----------------------------------------------
 // Init
 // ----------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
 
   // Inits
   InfiniteScroll.init();
