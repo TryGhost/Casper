@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var lastScrollY = window.scrollY;
     var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $(document).height();
+    var lastDocumentHeight = document.body.scrollHeight;
     var ticking = false;
 
     function onScroll() {
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function onResize() {
         lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
+        lastDocumentHeight = document.body.scrollHeight;
         requestTick();
     }
 
