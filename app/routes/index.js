@@ -14,7 +14,9 @@ export default Route.extend({
   actions: {
     didTransition() {
       this._super();
-      window.scrollTo(0,0);
+      if(window && window.scrollTo) {
+        window.scrollTo(0,0);
+      }
     }
   }
 });

@@ -1,6 +1,7 @@
 import { helper } from '@ember/component/helper';
 import { htmlSafe } from '@ember/string';
 import _ from 'lodash';
+import downsize from 'downsize';
 
 function getExcerpt(html, truncateOptions) {
     truncateOptions = truncateOptions || {};
