@@ -7,7 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{!-- Base Meta --}}
-    <title>{{meta_title}}</title>
+    <title>
+        {{#is "post, page"}}
+        {{meta_title}} - {{@blog.title}}
+        {{else}}
+        {{meta_title}}
+        {{/is}}
+    </title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
