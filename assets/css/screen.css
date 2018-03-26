@@ -465,6 +465,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     object-fit: cover;
 }
 
+.author-avatar svg {
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+}
+
 .post-card-author {
     font-size: 1.3rem;
     font-weight: 500;
@@ -1164,6 +1170,12 @@ Usage (In Ghost editor):
 }
 
 .author-card .author-profile-image {
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+}
+
+.author-card .author-avatar svg {
     margin-right: 15px;
     width: 60px;
     height: 60px;

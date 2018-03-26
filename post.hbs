@@ -52,6 +52,8 @@ into the {body} of the default.hbs template --}}
                 <section class="author-card">
                     {{#if profile_image}}
                         <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                    {{else}}
+                        <span class="author-avatar">{{> "icons/avatar"}}</span>
                     {{/if}}
                     <section class="author-card-content">
                         <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>

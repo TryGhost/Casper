@@ -19,6 +19,8 @@
         <footer class="post-card-meta">
             {{#if author.profile_image}}
                 <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />
+            {{else}}
+                <span class="author-avatar">{{> "icons/avatar"}}</span>
             {{/if}}
             <span class="post-card-author">{{author}}</span>
         </footer>
