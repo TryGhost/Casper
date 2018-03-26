@@ -46,29 +46,80 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <footer class="post-full-footer">
-                {{!-- Everything inside the #author tags pulls data from the author --}}
-                {{#author}}
 
-                <section class="author-card">
-                    {{#if profile_image}}
-                        <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-                    {{else}}
-                        <span class="author-avatar">{{> "icons/avatar"}}</span>
-                    {{/if}}
-                    <section class="author-card-content">
-                        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-                        {{#if bio}}
-                            <p>{{bio}}</p>
-                        {{else}}
-                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                        {{/if}}
+                {{!-- If there are multiple authors for the post, display all of their avatars in a stack --}}
+                {{#has author="count:>1"}}
+
+                    <section class="authors">
+
+                        <div class="names">
+                            <p>This post was a collaboration between</p>
+                            <p>{{authors}}</p>
+                        </div>
+
+                        <ul class="author-list">
+                        {{#foreach authors}}
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    <div class="name-avatar">
+                                        {{#if profile_image}}
+                                            <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                                        {{else}}
+                                            <span class="author-avatar">{{> "icons/avatar"}}</span>
+                                        {{/if}}
+                                        <h2>{{name}}</h2>
+                                    </div>
+                                    <div class="bio">
+                                        {{#if bio}}
+                                            <p>{{bio}}</p>
+                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                        {{else}}
+                                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                                        {{/if}}
+                                    </div>
+                                </div>
+
+                                {{#if profile_image}}
+                                    <a href="{{url}}" class="avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
+                                {{else}}
+                                    <a href="{{url}}" class="avatar"><span class="author-avatar">{{> "icons/avatar"}}</span></a>
+                                {{/if}}
+
+                            </li>
+                        {{/foreach}}
+                        </ul>
+
                     </section>
-                </section>
-                <div class="post-full-footer-right">
-                    <a class="author-card-button" href="{{url}}">Read More</a>
-                </div>
 
-                {{/author}}
+                {{!-- If there is a single author for the post, display her/his information  --}}
+                {{else}}
+
+                    {{!-- Everything inside the #author tags pulls data from the author --}}
+                    {{#author}}
+
+                    <section class="author-card">
+                        {{#if profile_image}}
+                            <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                        {{else}}
+                            <span class="author-avatar">{{> "icons/avatar"}}</span>
+                        {{/if}}
+                        <section class="author-card-content">
+                            <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
+                            {{#if bio}}
+                                <p>{{bio}}</p>
+                            {{else}}
+                                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                            {{/if}}
+                        </section>
+                    </section>
+                    <div class="post-full-footer-right">
+                        <a class="author-card-button" href="{{url}}">Read More</a>
+                    </div>
+
+                    {{/author}}
+                {{/has}}
+
             </footer>
 
             {{!--
@@ -218,6 +269,7 @@ $(document).ready(function () {
     window.addEventListener('resize', onResize, false);
 
     update();
+
 });
 </script>
 {{/contentFor}}

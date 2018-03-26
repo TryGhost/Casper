@@ -458,17 +458,25 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .author-profile-image {
     margin-right: 5px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
+    border: 1px solid #fff;
 
     object-fit: cover;
 }
 
-.author-avatar svg {
+.author-avatar {
+    display: inline-block;
+    background-color: color(var(--lightgrey) l(+10%));
+    border-radius: 100%;
+    border: 1px solid #fff;
     margin-right: 5px;
-    width: 25px;
-    height: 25px;
+}
+
+.author-avatar svg {
+    width: 28px;
+    height: 28px;
 }
 
 .post-card-author {
@@ -476,6 +484,64 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+}
+
+.author-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2em;
+}
+
+.author-list .author-list-item {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 25px;
+}
+
+.author-list .author-list-item .author-image,
+.author-list .author-list-item .author-avatar {
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+.author-list .author-list-item:nth-child( 1 ) {
+    z-index: 9;
+}
+
+.author-list .author-list-item:nth-child( 2 ) {
+    z-index: 8;
+}
+
+.author-list .author-list-item:nth-child( 3 ) {
+    z-index: 7;
+}
+
+.author-list .author-list-item:nth-child( 4 ) {
+    z-index: 6;
+}
+
+.author-list .author-list-item:nth-child( 5 ) {
+    z-index: 5;
+}
+
+.author-list .author-list-item:nth-child( 6 ) {
+    z-index: 4;
+}
+
+.author-list .author-list-item:nth-child( 7 ) {
+    z-index: 3;
+}
+
+.author-list .author-list-item:nth-child( 8 ) {
+    z-index: 2;
+}
+
+.author-list .author-list-item:nth-child( 9 ) {
+    z-index: 1;
 }
 
 /* Special Styling for home page grid (below):
@@ -1175,8 +1241,11 @@ Usage (In Ghost editor):
     height: 60px;
 }
 
-.author-card .author-avatar svg {
+.author-card .author-avatar {
     margin-right: 15px;
+}
+
+.author-card .author-avatar svg {
     width: 60px;
     height: 60px;
 }
@@ -1223,6 +1292,137 @@ Usage (In Ghost editor):
     border-color: var(--blue);
     color: var(--blue);
     text-decoration: none;
+}
+
+.authors {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
+    padding-top: 40px;
+    margin-top: 20px;
+}
+
+.authors .names p {
+    color: var(--midgrey);
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.authors .names {
+    margin-bottom: 20px;
+}
+
+.authors .names a {
+    display: inline-block;
+    color: color(var(--darkgrey) l(+20%));
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.post-full-footer .author-list .author-list-item {
+    width: 42px;
+}
+
+.post-full-footer .author-list .author-list-item a.avatar {
+    display: inline-block;
+    position: absolute;
+    width: 48px;
+}
+
+.post-full-footer .author-list-item .author-profile-image,
+.post-full-footer .author-list-item .author-avatar {
+    width: 48px;
+    height: 48px;
+}
+
+.post-full-footer .author-avatar svg {
+    width: 46px;
+    height: 46px;
+}
+
+.author-list-item .author-card {
+    display: block;
+    z-index: 999;
+    position: absolute;
+    background: white;
+    width: 320px;
+    left: calc(-160px + 26px);
+    bottom: 4px;
+    border-radius: 6px;
+    box-shadow: rgba(39,44,49,0.08) 0px 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.98) translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.author-list-item .author-card:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: calc(160px - 20px + 6px);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+}
+
+.author-list-item:hover .author-card {
+    opacity: 1.0;
+    transform: scale(1) translateY(0px);
+    pointer-events: auto;
+}
+
+.author-card .name-avatar {
+    background: var(--darkgrey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 20px 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #fff;
+}
+
+.author-card .name-avatar h2 {
+    margin: 1em 0 0.5em;
+}
+
+.author-card .bio {
+    padding: 20px 20px 0;
+}
+
+.post-full-footer .name-avatar .author-profile-image {
+    width: 88px;
+    height: 88px;
+    border: none;
+    margin: 0;
+}
+
+.post-full-footer .name-avatar .author-avatar {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    background: rgba(229, 239, 245, 0.1);
+    border: none;
+    margin: 0;
+}
+
+.post-full-footer .name-avatar .author-avatar svg {
+    width: 88px;
+    height: 88px;
+    margin: 0;
+    opacity: 0.15;
 }
 
 

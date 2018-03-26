@@ -17,12 +17,33 @@
             </section>
         </a>
         <footer class="post-card-meta">
-            {{#if author.profile_image}}
-                <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />
+
+            {{!-- If there are multiple authors for the post, display all of their avatars in a stack --}}
+            {{#has author="count:>1"}}
+
+                <ul class="author-list">
+                {{#foreach authors}}
+                    <li class="author-list-item">
+                        {{#if profile_image}}
+                            <span class="author-image"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></span>
+                        {{else}}
+                            <span class="author-avatar">{{> "icons/avatar"}}</span>
+                        {{/if}}
+                    </li>
+                {{/foreach}}
+                </ul>
+
+            {{!-- If there is a single author for the post, display her/his avatar and name  --}}
             {{else}}
-                <span class="author-avatar">{{> "icons/avatar"}}</span>
-            {{/if}}
-            <span class="post-card-author">{{author}}</span>
+
+                {{#if author.profile_image}}
+                    <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />
+                {{else}}
+                    <span class="author-avatar">{{> "icons/avatar"}}</span>
+                {{/if}}
+                <span class="post-card-author">{{author}}</span>
+
+            {{/has}}
         </footer>
     </div>
 </article>
