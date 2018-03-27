@@ -25,9 +25,9 @@
                 {{#foreach authors}}
                     <li class="author-list-item">
                         {{#if profile_image}}
-                            <span class="author-image"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></span>
+                            <span class="profile-image-wrapper"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></span>
                         {{else}}
-                            <span class="author-avatar">{{> "icons/avatar"}}</span>
+                            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
                         {{/if}}
                     </li>
                 {{/foreach}}

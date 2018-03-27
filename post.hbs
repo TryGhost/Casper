@@ -62,11 +62,11 @@ into the {body} of the default.hbs template --}}
                             <li class="author-list-item">
 
                                 <div class="author-card">
-                                    <div class="name-avatar">
+                                    <div class="basic-info">
                                         {{#if profile_image}}
                                             <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
                                         {{else}}
-                                            <span class="author-avatar">{{> "icons/avatar"}}</span>
+                                            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
                                         {{/if}}
                                         <h2>{{name}}</h2>
                                     </div>
@@ -81,9 +81,9 @@ into the {body} of the default.hbs template --}}
                                 </div>
 
                                 {{#if profile_image}}
-                                    <a href="{{url}}" class="avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
+                                    <a href="{{url}}"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
                                 {{else}}
-                                    <a href="{{url}}" class="avatar"><span class="author-avatar">{{> "icons/avatar"}}</span></a>
+                                    <a href="{{url}}"><span class="avatar-wrapper">{{> "icons/avatar"}}</span></a>
                                 {{/if}}
 
                             </li>
