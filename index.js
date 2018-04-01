@@ -10,7 +10,7 @@ var postcssImport = require('postcss-import');
 
 const StaticSiteJson = require('broccoli-static-site-json');
 const MergeTrees = require('broccoli-merge-trees');
-// const Funnel = require('broccoli-funnel');
+const walkSync = require('walk-sync');
 
 const attributes = ['uuid', 'title', 'slug', 'image', 'featured', 'page', 'status', 'language', 'meta_title', 'meta_description', 'date', 'tags'];
 const references = ['author']
@@ -60,6 +60,18 @@ module.exports = {
 
   treeForPublic() {
     return MergeTrees([...jsonTrees, authorTree]);
+  },
+
+  urlsForPrember() {
+    const staticUrls = ['/'];
+
+    const contentUrls = walkSync('content', {
+      globs: ['*.md'],
+    }).map(file => file.replace(/\.md$/, ''));
+
+    const authorUrls = walkSync('author').map(file => file.replace(/\.md$/, '')).map(file => `/author/${file}`);
+
+    return [...staticUrls, ...contentUrls, ...authorUrls];
   },
 
   included(app) {
