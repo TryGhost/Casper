@@ -1,19 +1,23 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { get, set } from '@ember/object';
+import $ from 'jquery';
 
 export default Component.extend({
   blog: service(),
+  fastboot: service(),
   value: 0,
   classNameBindings: [':floating-header', 'floating:floating-active'],
   init() {
     this._super(...arguments);
 
+    if(get(this, 'fastboot.isFastBoot')) {
+      return;
+    }
+
     set(this, 'lastScrollY', window.scrollY);
     set(this, 'lastWindowHeight', window.innerHeight);
     set(this, 'lastDocumentHeight', $(document).height());
-
-
 
     this.update();
   },
