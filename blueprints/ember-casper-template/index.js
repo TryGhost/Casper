@@ -10,7 +10,7 @@ module.exports = {
   afterInstall() {
     return this.addAddonsToProject({
       packages: [
-        'prember',
+        'prember@0.3.0',
         'ember-cli-cjs-transform',
         'ember-cli-fastboot',
       ]
