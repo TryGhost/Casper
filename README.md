@@ -42,7 +42,7 @@ mkdir content page author
 Add the following to your config/environment.js at the end of the ENV object definition at the top
 of the file
 
-```json
+```javascript
 fastboot: {
   hostWhitelist: ["localhost:4200"]
 }
