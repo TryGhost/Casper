@@ -1,51 +1,48 @@
-# ember-casper
+# ember-casper-template
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This project is designed to be a fully-functional, static site implementation of the official Ghost
+[Casper Template](https://github.com/TryGhost/Casper) built on EmberJS with fully working out of the
+box SEO friendly output. It supports being hosted on AWS S3 or any other static site hosting
+solution.
 
-## Prerequisites
+You do not need to be a web developer to be able to use this system. You just write markdown files
+and the rest of the work is preformed by EmberJS' build system.
 
-You will need the following things properly installed on your computer.
+## Getting Started
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+First you need to generate an ember app:
 
-## Installation
+```sh
+npm install -g ember-cli
 
-* `git clone <repository-url>` this repository
-* `cd ember-casper`
-* `npm install`
+ember new super-blog
+```
 
-## Running / Development
+then install this Ember Addon:
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+```sh
+cd super-blog
 
-### Code Generators
+ember install ember-casper-template
+```
 
-Make use of the many generators for code, try `ember help generate` for more details
+if you want to see the blog system running on your local machine just run `npm start` and you will
+be able to navigate to  [http://localhost:4200](http://localhost:4200) to see the blog in action.
 
-### Running Tests
+### Creating Content
 
-* `ember test`
-* `ember test --server`
+This addon comes with helpful blueprints to generate posts and authors for you in the structure it expects. The
+first thing you should do is generate an author as follows:
 
-### Building
+```sh
+ember g author your-name
+```
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+Then you should be able to edit the file `author/your-name.md` to update the details.
 
-### Deploying
+Next you will want to generate some posts. If you only have one author generated (in a single user blog) you
+can generate a post as simply as running:
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+```sh
+ember g post "this is a post I want to write"
+```
