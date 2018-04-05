@@ -6,7 +6,7 @@ box SEO friendly output. It supports being hosted on AWS S3 or any other static 
 solution.
 
 You do not need to be a web developer to be able to use this system. You just write markdown files
-and the rest of the work is preformed by EmberJS' build system.
+and the rest of the work is performed by EmberJS' build system.
 
 ## Getting Started
 
@@ -33,13 +33,13 @@ be able to navigate to  [http://localhost:4200](http://localhost:4200) to see th
 Currently there are 2 extra steps that are required to get this working. We are tying to make it so
 you don't have to do these but if you want to get started quickly it is required.
 
-Create the following folders:
+1. Create the following folders:
 
 ```sh
 mkdir content page author
 ```
 
-Add the following to your config/environment.js at the end of the ENV object definition at the top
+2. Add the following to your config/environment.js at the end of the ENV object definition at the top
 of the file
 
 ```javascript
