@@ -502,6 +502,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     list-style-type: none;
     padding: 0;
     margin-bottom: 2em;
+    max-width: calc(100% - 120px);
 }
 
 .author-list .author-list-item {
