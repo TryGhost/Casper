@@ -1351,8 +1351,8 @@ Usage (In Ghost editor):
 
 .author-list-item .author-card {
     position: absolute;
-    bottom: 4px;
-    left: calc(-160px + 26px);
+    bottom: 12px;
+    left: calc(-160px + 28px);
     display: block;
     font-size: 1.4rem;
     letter-spacing: 0.2px;
@@ -1380,7 +1380,7 @@ Usage (In Ghost editor):
     height: 0;
 }
 
-.author-list-item:hover .author-card {
+.author-list-item .author-card.hovered {
     opacity: 1.0;
     transform: scale(1) translateY(0px);
     pointer-events: auto;

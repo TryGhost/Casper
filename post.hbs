@@ -271,5 +271,24 @@ $(document).ready(function () {
     update();
 
 });
+
+// Adds a little delay to author card dropups to appear. This gives enough time
+// to interact with it
+$(document).ready(function () {
+
+    var hoverTimeout;
+
+    $('.author-list-item').hover(function(){
+        clearTimeout(hoverTimeout);
+        $('.author-card').removeClass('hovered');
+        $(this).children('.author-card').addClass('hovered');
+    }, function() {
+        var $this = $(this);
+        hoverTimeout = setTimeout(function() {
+            $this.children('.author-card').removeClass('hovered');
+        }, 800);
+    });
+
+});
 </script>
 {{/contentFor}}
