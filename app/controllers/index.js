@@ -8,7 +8,7 @@ export default Controller.extend({
   blog: service(),
   url: service(),
 
-  coverImageStyle: computed('blog.cover_image', function() {
-    return htmlSafe(`background-image: url(${get(this, 'url.prefix')}${get(this, 'blog.cover_image')})`);
+  coverImageStyle: computed('blog.coverImage', function() {
+    return htmlSafe(`background-image: url(${get(this, 'url.prefix')}${get(this, 'blog.coverImage')})`);
   })
 })
