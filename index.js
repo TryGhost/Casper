@@ -69,7 +69,9 @@ module.exports = {
       globs: ['*.md'],
     }).map(file => file.replace(/\.md$/, ''));
 
-    const authorUrls = walkSync('author').map(file => file.replace(/\.md$/, '')).map(file => `/author/${file}`);
+    const authorUrls = walkSync('author', {
+      globs: ['*.md'],
+    }).map(file => file.replace(/\.md$/, '')).map(file => `/author/${file}`);
 
     return [...staticUrls, ...contentUrls, ...authorUrls];
   },
