@@ -13,6 +13,9 @@ export default Service.extend({
   title: configParam('title'),
   description: configParam('description'),
   logo: configParam('logo'),
-  cover_image: configParam('cover'),
+  coverImage: configParam('coverImage'),
+  coverMeta: configParam('coverMeta'),
   navigation: configParam('navigation'),
+  twitter: configParam('twitter'),
+  facebook: configParam('facebook'),
 });

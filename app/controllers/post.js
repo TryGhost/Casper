@@ -37,8 +37,8 @@ export default Controller.extend({
   tagBackgroundImageStyle: computed(function() {
     if (get(this, 'model.post.primaryTag.image')) {
       return `background-image: url(${get(this, 'url.prefix')}${get(this, 'model.post.primaryTag.image')})`;
-    } else if (get(this, 'blog.cover_image')) {
-      return `background-image: url(${get(this, 'url.prefix')}${get(this, 'blog.cover_image')})`;
+    } else if (get(this, 'blog.coverImage')) {
+      return `background-image: url(${get(this, 'url.prefix')}${get(this, 'blog.coverImage')})`;
     }
   })
 })
