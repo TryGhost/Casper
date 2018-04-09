@@ -490,6 +490,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     object-fit: cover;
 }
 
+.post-card-meta > .avatar-wrapper {
+    position: relative;
+}
+
 .author-list {
     display: flex;
     list-style-type: none;
