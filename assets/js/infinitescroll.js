@@ -4,7 +4,7 @@ $(function ($) {
     var pathname = window.location.pathname;
     var $document = $(document);
     var $result = $('.post-feed');
-    var buffer = 100;
+    var buffer = 300;
 
     var ticking = false;
     var isLoading = false;
@@ -29,12 +29,12 @@ $(function ($) {
 
     function requestTick() {
         if (!ticking) {
-            requestAnimationFrame(infiniteScroll)
+            requestAnimationFrame(infiniteScroll);
         }
         ticking = true;
     }
 
-    function infiniteScroll () {
+    function infiniteScroll() {
         // return if already loading
         if (isLoading) {
             return;
@@ -60,15 +60,19 @@ $(function ($) {
         var nextPage = pathname + 'page/' + currentPage + '/';
 
         $.get(nextPage, function (content) {
-            $result.append($(content).find('.post').hide().fadeIn(100));
-
+            var parse = document.createRange().createContextualFragment(content);
+            var posts = parse.querySelectorAll('.post');
+            if (posts.length) {
+                [].forEach.call(posts, function (post) {
+                    $result[0].appendChild(post);
+                });
+            }
         }).fail(function (xhr) {
             // 404 indicates we've run out of pages
             if (xhr.status === 404) {
                 window.removeEventListener('scroll', onScroll, {passive: true});
                 window.removeEventListener('resize', onResize);
             }
-
         }).always(function () {
             lastDocumentHeight = $document.height();
             isLoading = false;
