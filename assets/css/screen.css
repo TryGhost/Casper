@@ -548,6 +548,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 1;
 }
 
+.author-list .author-list-item.z-999 {
+    z-index: 999;
+}
+
 .author-list-item .author-name-tooltip {
     position: absolute;
     bottom: 6px;
@@ -1430,6 +1434,19 @@ Usage (In Ghost editor):
     opacity: 1.0;
     transform: scale(1) translateY(0px);
     pointer-events: auto;
+}
+
+.author-list-item > a {
+    transform: translate(0px);
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.author-list-item > a.right {
+    transform: translateX(10px);
+}
+
+.author-list-item > a.left {
+    transform: translateX(-10px);
 }
 
 .author-card .basic-info {
