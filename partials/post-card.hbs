@@ -21,6 +21,11 @@
             <ul class="author-list">
             {{#foreach authors}}
                 <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        {{name}}
+                    </div>
+
                     {{#if profile_image}}
                         <span class="profile-image-wrapper"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></span>
                     {{else}}

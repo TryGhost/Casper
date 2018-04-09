@@ -547,6 +547,35 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 1;
 }
 
+
+.author-list-item .author-name-tooltip {
+    position: absolute;
+    bottom: 6px;
+    /* left: calc(-160px + 28px); */
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 0.2px;
+    color: white;
+    background: var(--darkgrey);
+    border-radius: 3px;
+    box-shadow: rgba(39,44,49,0.08) 0px 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0;
+    padding: 2px 8px;
+    transform: translateY(6px);
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    white-space: nowrap;
+}
+
+.author-list-item:hover .author-name-tooltip {
+    opacity: 1.0;
+    transform: translateY(0px);
+    pointer-events: auto;
+}
+
+
+
 .reading-time {
     font-size: 1.2rem;
     font-weight: 500;
