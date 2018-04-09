@@ -1,83 +1,125 @@
-// Code snippet inspired by https://github.com/douglasrodrigues5/ghost-blog-infinite-scroll
-$(function ($) {
-    var currentPage = 1;
-    var pathname = window.location.pathname;
-    var $document = $(document);
-    var $result = $('.post-feed');
-    var buffer = 100;
+// ----------------------------------------------
+// Infinite Scroll
+// By Thomas Vaeth @thomasvaeth
+// ---------------------------------------------- 
+var InfiniteScroll = (function() {
+  var s;
 
-    var ticking = false;
-    var isLoading = false;
+  return {
+    settings() {
+      return {
+        container: document.querySelector('.post-feed'),
+        windowHeight: window.innerHeight,
+        documentHeight: document.body.scrollHeight,
+        scrollPosition: window.scrollY,
+        currentPage: 1,
+        pathname: window.location.pathname.replace(/#(.*)$/g, '').replace('//g', '/'),
+        isLoading: false,
+        isTicking: false,
+        buffer: 100
+      };
+    },
 
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $document.height();
+    init() {
+      s = this.settings();
+      this.bindEvents();
+    },
 
-    // remove hash params from pathname
-    pathname = pathname.replace(/#(.*)$/g, '').replace('/\//g', '/');
+    bindEvents() {
+      window.addEventListener('scroll', this.onScroll, {passive: true});
+      window.addEventListener('resize', this.onResize);
 
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
+      this.requestPosts();
+    },
 
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $document.height();
-        requestTick();
-    }
+    onScroll() {
+      s.scrollPosition = window.scrollY;
 
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(infiniteScroll)
-        }
-        ticking = true;
-    }
+      InfiniteScroll.requestTick();
+    },
 
-    function infiniteScroll () {
-        // return if already loading
-        if (isLoading) {
-            return;
-        }
+    onResize() {
+      s.indowHeight = window.innerHeight;
+      s.documentHeight = document.body.scrollHeight;
 
-        // return if not scroll to the bottom
-        if (lastScrollY + lastWindowHeight <= lastDocumentHeight - buffer) {
-            ticking = false;
-            return;
-        }
+      InfiniteScroll.requestTick();
+    },
 
-        // return if currentPage is the last page already
-        if (currentPage === maxPages) {
-            return;
-        }
+    requestTick() {
+      if (!s.isTicking) {
+        requestAnimationFrame(this.requestPosts)
+      }
+      
+      s.isTicking = true;
+    },
 
-        isLoading = true;
+    requestPosts() {
+      if (s.isLoading || s.currentPage === maxPages) {
+        return;
+      }
 
-        // next page
-        currentPage++;
+      if (s.scrollPosition + s.windowHeight <= s.documentHeight - s.buffer) {
+        s.isTicking = false;
+        return;
+      }
 
-        // Load more
-        var nextPage = pathname + 'page/' + currentPage + '/';
+      s.isLoading = true;
+      s.currentPage++;
 
-        $.get(nextPage, function (content) {
-            $result.append($(content).find('.post').hide().fadeIn(100));
+      var request = new XMLHttpRequest();
+      var nextPage = s.pathname + 'page/' + s.currentPage + '/';
 
-        }).fail(function (xhr) {
-            // 404 indicates we've run out of pages
-            if (xhr.status === 404) {
-                window.removeEventListener('scroll', onScroll, {passive: true});
-                window.removeEventListener('resize', onResize);
+      request.open('GET', nextPage, true);
+      request.send();
+
+      request.onreadystatechange = function() {
+        if (request.readyState < 4) {
+          // Do Nothing
+        } else if (request.readyState === 4 && request.status === 200) {
+          var parse = document.createRange().createContextualFragment(request.response);
+          var posts = parse.querySelectorAll('.post');
+
+          if (posts.length) {
+            function fadeIn(el) {
+              el.style.opacity = 0;
+
+              (function fade() {
+                var val = parseFloat(el.style.opacity);
+
+                if (!((val += 0.1) > 1)) {
+                  el.style.opacity = val;
+                  requestAnimationFrame(fade);
+                }
+              })();
             }
 
-        }).always(function () {
-            lastDocumentHeight = $document.height();
-            isLoading = false;
-            ticking = false;
-        });
+            [].forEach.call(posts, function(post) {
+              post.style.opacity = 0;
+              s.container.appendChild(post);
+              fadeIn(post);
+            });
+          }
+        } else {
+          window.removeEventListener('scroll', this.onScroll, {passive: true});
+          window.removeEventListener('resize', this.onResize);
+
+          console.error(request.status + '–' + request.statusText);
+        }
+      }
+
+      s.documentHeight = document.body.scrollHeight;
+      s.isLoading = false;
+      s.isTicking = false;
     }
+  };
+})();
 
-    window.addEventListener('scroll', onScroll, {passive: true});
-    window.addEventListener('resize', onResize);
+// ----------------------------------------------
+// Init
+// ----------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
 
-    infiniteScroll();
+  // Inits
+  InfiniteScroll.init();
+
 });

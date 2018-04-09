@@ -161,7 +161,7 @@ into the {body} of the default.hbs template --}}
 // - this appears to be due to the events firing much more slowly in Safari.
 //   Dropping the scroll event and using only a raf loop results in smoother
 //   scrolling but continuous processing even when not scrolling
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function() {
     // Start fitVids
     var $postContent = $(".post-full-content");
     $postContent.fitVids();
@@ -173,7 +173,7 @@ $(document).ready(function () {
 
     var lastScrollY = window.scrollY;
     var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $(document).height();
+    var lastDocumentHeight = document.body.scrollHeight;
     var ticking = false;
 
     function onScroll() {
@@ -183,7 +183,7 @@ $(document).ready(function () {
 
     function onResize() {
         lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
+        lastDocumentHeight = document.body.scrollHeight;
         requestTick();
     }
 
