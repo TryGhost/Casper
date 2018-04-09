@@ -454,6 +454,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 25px 25px;
 }
 
@@ -544,11 +547,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 1;
 }
 
-.post-card-author {
-    font-size: 1.3rem;
+.reading-time {
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    color: var(--midgrey);
 }
 
 /* Special Styling for home page grid (below):
