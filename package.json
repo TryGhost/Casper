@@ -11,6 +11,10 @@
         "desktop": "assets/screenshot-desktop.jpg",
         "mobile": "assets/screenshot-mobile.jpg"
     },
+    "scripts": {
+      "dev": "gulp",
+      "zip": "gulp zip"
+    },
     "author": {
         "name": "Ghost Foundation",
         "email": "hello@ghost.org",
