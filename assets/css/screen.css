@@ -547,7 +547,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 1;
 }
 
-
 .author-list-item .author-name-tooltip {
     position: absolute;
     bottom: 6px;
@@ -571,10 +570,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .author-list-item:hover .author-name-tooltip {
     opacity: 1.0;
     transform: translateY(0px);
-    pointer-events: auto;
 }
 
-
+@media (max-width: 650px) {
+    .author-list-item .author-name-tooltip {
+        display: none;
+    }
+}
 
 .reading-time {
     font-size: 1.2rem;
@@ -1369,6 +1371,12 @@ Usage (In Ghost editor):
     width: 42px;
 }
 
+@media (max-width: 650px) {
+    .post-full-footer .author-list .author-list-item {
+        width: 54px;
+    }
+}
+
 .post-full-footer .author-list .author-list-item > a {
     position: absolute;
     display: inline-block;
@@ -1440,6 +1448,12 @@ Usage (In Ghost editor):
 
 .author-card .bio {
     padding: 20px 20px 0;
+}
+
+@media (max-width: 650px) {
+    .author-list-item .author-card {
+        display: none;
+    }
 }
 
 .post-full-footer .basic-info .author-profile-image {
