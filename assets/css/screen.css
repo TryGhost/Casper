@@ -1376,6 +1376,7 @@ Usage (In Ghost editor):
 @media (max-width: 650px) {
     .post-full-footer .author-list-item {
         width: 54px;
+        height: 54px;
     }
 }
 
