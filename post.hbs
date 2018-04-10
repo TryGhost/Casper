@@ -81,9 +81,9 @@ into the {body} of the default.hbs template --}}
                                 </div>
 
                                 {{#if profile_image}}
-                                    <a href="{{url}}"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
+                                    <a href="{{url}}" class="moving-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
                                 {{else}}
-                                    <a href="{{url}}"><span class="avatar-wrapper">{{> "icons/avatar"}}</span></a>
+                                    <a href="{{url}}" class="moving-avatar"><span class="avatar-wrapper">{{> "icons/avatar"}}</span></a>
                                 {{/if}}
 
                             </li>
@@ -293,9 +293,9 @@ $(document).ready(function () {
 
             if ($(this)[0] != avatar[0]) {
                 if (Number($(this).css('z-index')) > Number(avatar.css('z-index'))) {
-                    $(this).children('a').addClass('left');
+                    $(this).children('.moving-avatar').addClass('left');
                 } else {
-                    $(this).children('a').addClass('right');
+                    $(this).children('.moving-avatar').addClass('right');
                 }
             }
 
@@ -314,7 +314,7 @@ $(document).ready(function () {
     }, function() {
         var $this = $(this);
 
-        $('.author-list-item').children('a').removeClass('left right');
+        $('.author-list-item').children('.moving-avatar').removeClass('left right');
 
         hoverTimeout = setTimeout(function() {
             $this.children('.author-card').removeClass('hovered');

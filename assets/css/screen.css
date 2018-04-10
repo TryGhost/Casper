@@ -417,7 +417,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-content-link {
     position: relative;
     flex-grow: 1;
-    flex-grow: 1;
     display: block;
     padding: 25px 25px 0;
     color: var(--darkgrey);
@@ -513,16 +512,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     width: 25px;
 }
 
-.author-list-item > a {
+.moving-avatar {
     transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: translate(0px);
 }
 
-.author-list-item > a.right {
+.moving-avatar.right {
     transform: translateX(10px);
 }
 
-.author-list-item > a.left {
+.moving-avatar.left {
     transform: translateX(-10px);
 }
 
