@@ -12,7 +12,22 @@ const StaticSiteJson = require('broccoli-static-site-json');
 const MergeTrees = require('broccoli-merge-trees');
 const walkSync = require('walk-sync');
 
-const attributes = ['uuid', 'title', 'slug', 'image', 'featured', 'page', 'status', 'language', 'meta_title', 'meta_description', 'date', 'tags'];
+const attributes = [
+  'uuid',
+  'title',
+  'slug',
+  'image',
+  'imageMeta',
+  'featured',
+  'page',
+  'status',
+  'language',
+  'meta_title',
+  'meta_description',
+  'date',
+  'tags'
+];
+
 const references = ['author']
 
 const jsonTrees = ['content', 'page'].map((contentFolder) => {
@@ -29,7 +44,7 @@ const jsonTrees = ['content', 'page'].map((contentFolder) => {
 
 const authorTree = new StaticSiteJson(`author`, {
   contentFolder: 'author',
-  attributes: ['name', 'image', 'cover', 'bio', 'website', 'location'],
+  attributes: ['name', 'image', 'cover', 'coverMeta', 'bio', 'website', 'location'],
   collections: [{
     src: 'author',
     output: 'author.json',

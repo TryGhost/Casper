@@ -27,8 +27,10 @@ into the {body} of the default.hbs template --}}
             </header>
 
             {{#if model.post.image}}
-            <figure class="post-full-image" style="background-image: url({{url model.post.image}})">
-            </figure>
+              <figure class="post-full-image" style="background-image: url({{url model.post.image}})">
+              </figure>
+
+              {{image-attribution meta=model.post.imageMeta}}
             {{/if}}
 
             <section class="post-full-content">

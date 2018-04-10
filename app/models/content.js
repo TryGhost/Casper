@@ -7,6 +7,7 @@ export default DS.Model.extend({
   html: DS.attr('string'),
 
   image: DS.attr('string'),
+  imageMeta: DS.attr(),
   featured: DS.attr('boolean'),
   status: DS.attr('string'),
   date: DS.attr('date'),
