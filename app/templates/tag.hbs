@@ -6,13 +6,12 @@
     <div class="inner">
         {{site-nav}}
         <div class="site-header-content">
-            {{!-- <h1 class="site-title">{{model.tag.name}}</h1> --}}
-            <h1 class="site-title">{{model.tag}}</h1>
+            <h1 class="site-title">{{titleize model.tag}}</h1>
             <h2 class="site-description">
                 {{#if tag.description}}
                     {{tag.description}}
                 {{else}}
-                    A collection of {{model.length}} posts
+                    A collection of {{model.posts.length}} posts
                 {{/if}}
             </h2>
         </div>

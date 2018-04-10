@@ -1,16 +1,18 @@
 'use strict';
 
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var postcssImport = require('postcss-import');
-// const debug = require('debug')('ember-casper-template:index');
-// const resolve = require("resolve");
-
+const autoprefixer = require('autoprefixer');
+const colorFunction = require('postcss-color-function');
+const cssnano = require('cssnano');
+const customProperties = require('postcss-custom-properties');
+const postcssImport = require('postcss-import');
+const yamlFront = require('yaml-front-matter');
 const StaticSiteJson = require('broccoli-static-site-json');
 const MergeTrees = require('broccoli-merge-trees');
 const walkSync = require('walk-sync');
+const _ = require('lodash');
+
+const { readFileSync } = require('fs');
+const { join } = require('path');
 
 const attributes = [
   'uuid',
@@ -89,15 +91,25 @@ module.exports = {
   urlsForPrember() {
     const staticUrls = ['/'];
 
-    const contentUrls = walkSync('content', {
+    const content = walkSync('content', {
       globs: ['*.md'],
-    }).map(file => file.replace(/\.md$/, ''));
+    });
+
+    const tagUrls = _.chain(content)
+      .map(path => yamlFront.loadFront(readFileSync(join('content', path))))
+      .map(file => file.tags)
+      .flatten()
+      .uniq()
+      .map(tag => `/tag/${tag}`)
+      .value();
+
+    const contentUrls = content.map(file => file.replace(/\.md$/, ''));
 
     const authorUrls = walkSync('author', {
       globs: ['*.md'],
     }).map(file => file.replace(/\.md$/, '')).map(file => `/author/${file}`);
 
-    return [...staticUrls, ...contentUrls, ...authorUrls];
+    return [...staticUrls, ...contentUrls, ...authorUrls, ...tagUrls];
   },
 
   included(app) {

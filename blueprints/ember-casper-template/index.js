@@ -13,6 +13,7 @@ module.exports = {
         'prember@0.3.0',
         'ember-cli-cjs-transform',
         'ember-cli-fastboot',
+        'ember-moment',
       ]
     });
   },
