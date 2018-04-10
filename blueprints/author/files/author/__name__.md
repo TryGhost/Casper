@@ -5,5 +5,7 @@ image:
 cover:
 bio:
 website:
+twitter:
+facebook:
 location:
 ---

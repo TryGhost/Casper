@@ -15,7 +15,6 @@ const walkSync = require('walk-sync');
 const attributes = [
   'uuid',
   'title',
-  'slug',
   'image',
   'imageMeta',
   'featured',
@@ -44,7 +43,17 @@ const jsonTrees = ['content', 'page'].map((contentFolder) => {
 
 const authorTree = new StaticSiteJson(`author`, {
   contentFolder: 'author',
-  attributes: ['name', 'image', 'cover', 'coverMeta', 'bio', 'website', 'location'],
+  attributes: [
+    'name',
+    'image',
+    'cover',
+    'coverMeta',
+    'bio',
+    'website',
+    'twitter',
+    'facebook',
+    'location',
+  ],
   collections: [{
     src: 'author',
     output: 'author.json',

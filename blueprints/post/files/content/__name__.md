@@ -1,6 +1,5 @@
 ---
 title: <%= title %>
-slug: <%= name %>
 image:
 featured: true
 meta_title: null

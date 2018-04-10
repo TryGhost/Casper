@@ -7,6 +7,8 @@ export default DS.Model.extend({
   coverMeta: DS.attr(),
   bio: DS.attr('string'),
   website: DS.attr('string'),
+  twitter: DS.attr('string'),
+  facebook: DS.attr('string'),
   location: DS.attr('string'),
 
   posts: DS.hasMany('content'),

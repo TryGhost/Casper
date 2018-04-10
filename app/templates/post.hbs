@@ -52,7 +52,7 @@ into the {body} of the default.hbs template --}}
                         <img class="author-profile-image" src="{{model.post.author.image}}" alt="{{model.post.author.name}}" />
                     {{/if}}
                     <section class="author-card-content">
-                        <h4 class="author-card-name">{{#link-to 'author' model.post.author.id}}{{name}}{{/link-to}}</h4>
+                        <h4 class="author-card-name">{{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}</h4>
                         {{#if model.post.author.bio}}
                             <p>{{model.post.author.bio}}</p>
                         {{else}}
