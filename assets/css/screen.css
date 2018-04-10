@@ -562,11 +562,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 1;
 }
 
-.author-list-item.z-999 {
+.z-999 {
     z-index: 999;
 }
 
-.author-list-item .author-name-tooltip {
+.author-name-tooltip {
     position: absolute;
     bottom: 36px;
     z-index: 999;
@@ -591,7 +591,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 @media (max-width: 650px) {
-    .author-list-item .author-name-tooltip {
+    .author-name-tooltip {
         display: none;
     }
 }
@@ -1295,23 +1295,6 @@ Usage (In Ghost editor):
     align-items: center;
 }
 
-.author-card .author-profile-image {
-    margin-right: 15px;
-    width: 60px;
-    height: 60px;
-}
-
-.author-card .avatar-wrapper {
-    margin-right: 15px;
-    position: relative;
-    width: 48px;
-}
-
-.author-card .author-avatar svg {
-    width: 60px;
-    height: 60px;
-}
-
 .author-card-name {
     margin: 0 0 2px 0;
     padding: 0;
@@ -1403,10 +1386,16 @@ Usage (In Ghost editor):
     width: 48px;
 }
 
-.post-full-footer .author-list-item .author-profile-image,
-.post-full-footer .author-list-item .avatar-wrapper {
+.post-full-footer .author-profile-image,
+.post-full-footer .avatar-wrapper {
     width: 48px;
     height: 48px;
+}
+
+.author-card .author-profile-image,
+.author-card .avatar-wrapper {
+    margin-right: 15px;
+    position: relative;
 }
 
 .post-full-footer .avatar-wrapper svg {
@@ -1475,14 +1464,14 @@ Usage (In Ghost editor):
     }
 }
 
-.post-full-footer .basic-info .author-profile-image {
+.basic-info .author-profile-image {
     margin: 0;
     width: 88px;
     height: 88px;
     border: none;
 }
 
-.post-full-footer .basic-info .avatar-wrapper {
+.basic-info .avatar-wrapper {
     position: relative;
     margin: 0;
     width: 88px;
@@ -1491,7 +1480,7 @@ Usage (In Ghost editor):
     background: rgba(229, 239, 245, 0.1);
 }
 
-.post-full-footer .basic-info .avatar-wrapper svg {
+.basic-info .avatar-wrapper svg {
     margin: 0;
     width: 88px;
     height: 88px;
