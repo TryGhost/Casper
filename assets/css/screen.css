@@ -415,8 +415,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-content-link {
-    flex-grow: 1;
     position: relative;
+    flex-grow: 1;
     display: block;
     padding: 25px 25px 0;
     color: var(--darkgrey);
@@ -453,20 +453,151 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 25px 25px;
 }
 
+.profile-image-wrapper,
+.avatar-wrapper {
+    position: absolute;
+    display: inline-block;
+    width: 28px;
+}
+
+.avatar-wrapper {
+    display: inline-block;
+    box-sizing: content-box;
+    margin-right: 3px;
+    border: 2px solid #fff;
+    text-align: center;
+    background-color: color(var(--lightgrey) l(+10%));
+    border-radius: 100%;
+}
+
+.avatar-wrapper svg {
+    width: 28px;
+    height: 28px;
+}
+
 .author-profile-image {
+    box-sizing: content-box;
     margin-right: 5px;
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #fff;
     border-radius: 100%;
 
     object-fit: cover;
 }
 
-.post-card-author {
-    font-size: 1.3rem;
+.post-card-meta .profile-image-wrapper,
+.post-card-meta .avatar-wrapper {
+    position: relative;
+}
+
+.author-list {
+    display: flex;
+    margin-bottom: 0;
+    padding: 0;
+    max-width: calc(100% - 120px);
+    list-style-type: none;
+}
+
+.author-list-item {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+}
+
+.moving-avatar {
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: translate(0px);
+}
+
+.moving-avatar.right {
+    transform: translateX(10px);
+}
+
+.moving-avatar.left {
+    transform: translateX(-10px);
+}
+
+.author-list-item:nth-child( 1 ) {
+    z-index: 9;
+}
+
+.author-list-item:nth-child( 2 ) {
+    z-index: 8;
+}
+
+.author-list-item:nth-child( 3 ) {
+    z-index: 7;
+}
+
+.author-list-item:nth-child( 4 ) {
+    z-index: 6;
+}
+
+.author-list-item:nth-child( 5 ) {
+    z-index: 5;
+}
+
+.author-list-item:nth-child( 6 ) {
+    z-index: 4;
+}
+
+.author-list-item:nth-child( 7 ) {
+    z-index: 3;
+}
+
+.author-list-item:nth-child( 8 ) {
+    z-index: 2;
+}
+
+.author-list-item:nth-child( 9 ) {
+    z-index: 1;
+}
+
+.z-999 {
+    z-index: 999;
+}
+
+.author-name-tooltip {
+    position: absolute;
+    bottom: 36px;
+    z-index: 999;
+    display: block;
+    padding: 2px 8px;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    background: var(--darkgrey);
+    border-radius: 3px;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: translateY(6px);
+    pointer-events: none;
+}
+
+.author-list-item:hover .author-name-tooltip {
+    opacity: 1.0;
+    transform: translateY(0px);
+}
+
+@media (max-width: 650px) {
+    .author-name-tooltip {
+        display: none;
+    }
+}
+
+.reading-time {
+    color: var(--midgrey);
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -1164,12 +1295,6 @@ Usage (In Ghost editor):
     align-items: center;
 }
 
-.author-card .author-profile-image {
-    margin-right: 15px;
-    width: 60px;
-    height: 60px;
-}
-
 .author-card-name {
     margin: 0 0 2px 0;
     padding: 0;
@@ -1212,6 +1337,154 @@ Usage (In Ghost editor):
     border-color: var(--blue);
     color: var(--blue);
     text-decoration: none;
+}
+
+.post-full-authors {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
+}
+
+.post-full-authors-content {
+    margin-bottom: 20px;
+}
+
+.post-full-authors-content p {
+    margin-bottom: 0;
+    color: var(--midgrey);
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.post-full-authors-content a {
+    display: inline-block;
+    color: color(var(--darkgrey) l(+20%));
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.post-full-footer .author-list-item {
+    width: 42px;
+}
+
+@media (max-width: 650px) {
+    .post-full-footer .author-list-item {
+        width: 54px;
+    }
+}
+
+.post-full-footer .author-list-item > a {
+    position: absolute;
+    display: inline-block;
+    width: 48px;
+}
+
+.post-full-footer .author-profile-image,
+.post-full-footer .avatar-wrapper {
+    width: 48px;
+    height: 48px;
+}
+
+.author-card .author-profile-image,
+.author-card .avatar-wrapper {
+    margin-right: 15px;
+    position: relative;
+}
+
+.post-full-footer .avatar-wrapper svg {
+    width: 46px;
+    height: 46px;
+}
+
+.author-list-item .author-card {
+    position: absolute;
+    bottom: 12px;
+    left: calc(-160px + 28px);
+    z-index: 999;
+    display: block;
+    width: 320px;
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: scale(0.98) translateY(10px);
+    pointer-events: none;
+}
+
+.author-list-item .author-card:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: calc(160px - 20px + 6px);
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 12px solid #fff;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+}
+
+.author-list-item .author-card.hovered {
+    opacity: 1.0;
+    transform: scale(1) translateY(0px);
+    pointer-events: auto;
+}
+
+.author-card .basic-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 20px 20px;
+    color: #fff;
+    background: var(--darkgrey);
+    border-radius: 6px 6px 0 0;
+}
+
+.author-card .basic-info h2 {
+    margin: 1em 0 0.5em;
+}
+
+.author-card .bio {
+    padding: 20px 20px 0;
+}
+
+@media (max-width: 650px) {
+    .author-list-item .author-card {
+        display: none;
+    }
+}
+
+.basic-info .author-profile-image {
+    margin: 0;
+    width: 88px;
+    height: 88px;
+    border: none;
+}
+
+.basic-info .avatar-wrapper {
+    position: relative;
+    margin: 0;
+    width: 88px;
+    height: 88px;
+    border: none;
+    background: rgba(229, 239, 245, 0.1);
+}
+
+.basic-info .avatar-wrapper svg {
+    margin: 0;
+    width: 88px;
+    height: 88px;
+    opacity: 0.15;
 }
 
 
