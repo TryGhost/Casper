@@ -415,12 +415,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-content-link {
-    flex-grow: 1;
     position: relative;
+    flex-grow: 1;
+    flex-grow: 1;
     display: block;
     padding: 25px 25px 0;
     color: var(--darkgrey);
-    flex-grow: 1;
 }
 
 .post-card-content-link:hover {
@@ -469,12 +469,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .avatar-wrapper {
     display: inline-block;
+    box-sizing: content-box;
+    margin-right: 3px;
+    border: 2px solid #fff;
     text-align: center;
     background-color: color(var(--lightgrey) l(+10%));
     border-radius: 100%;
-    border: 2px solid #fff;
-    box-sizing: content-box;
-    margin-right: 3px;
 }
 
 .avatar-wrapper svg {
@@ -483,93 +483,106 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .author-profile-image {
+    box-sizing: content-box;
     margin-right: 5px;
     width: 28px;
     height: 28px;
-    border-radius: 100%;
     border: 2px solid #fff;
-    box-sizing: content-box;
+    border-radius: 100%;
 
     object-fit: cover;
 }
 
-.post-card-meta > .avatar-wrapper {
+.post-card-meta .profile-image-wrapper,
+.post-card-meta .avatar-wrapper {
     position: relative;
 }
 
 .author-list {
     display: flex;
-    list-style-type: none;
+    margin-bottom: 0;
     padding: 0;
-    margin-bottom: 2em;
     max-width: calc(100% - 120px);
+    list-style-type: none;
 }
 
-.author-list .author-list-item {
+.author-list-item {
     position: relative;
     margin: 0;
     padding: 0;
     width: 25px;
 }
 
-.author-list .author-list-item:nth-child( 1 ) {
+.author-list-item > a {
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: translate(0px);
+}
+
+.author-list-item > a.right {
+    transform: translateX(10px);
+}
+
+.author-list-item > a.left {
+    transform: translateX(-10px);
+}
+
+.author-list-item:nth-child( 1 ) {
     z-index: 9;
 }
 
-.author-list .author-list-item:nth-child( 2 ) {
+.author-list-item:nth-child( 2 ) {
     z-index: 8;
 }
 
-.author-list .author-list-item:nth-child( 3 ) {
+.author-list-item:nth-child( 3 ) {
     z-index: 7;
 }
 
-.author-list .author-list-item:nth-child( 4 ) {
+.author-list-item:nth-child( 4 ) {
     z-index: 6;
 }
 
-.author-list .author-list-item:nth-child( 5 ) {
+.author-list-item:nth-child( 5 ) {
     z-index: 5;
 }
 
-.author-list .author-list-item:nth-child( 6 ) {
+.author-list-item:nth-child( 6 ) {
     z-index: 4;
 }
 
-.author-list .author-list-item:nth-child( 7 ) {
+.author-list-item:nth-child( 7 ) {
     z-index: 3;
 }
 
-.author-list .author-list-item:nth-child( 8 ) {
+.author-list-item:nth-child( 8 ) {
     z-index: 2;
 }
 
-.author-list .author-list-item:nth-child( 9 ) {
+.author-list-item:nth-child( 9 ) {
     z-index: 1;
 }
 
-.author-list .author-list-item.z-999 {
+.author-list-item.z-999 {
     z-index: 999;
 }
 
 .author-list-item .author-name-tooltip {
     position: absolute;
-    bottom: 6px;
-    /* left: calc(-160px + 28px); */
+    bottom: 36px;
+    z-index: 999;
     display: block;
+    padding: 2px 8px;
+    color: white;
     font-size: 1.2rem;
     letter-spacing: 0.2px;
-    color: white;
+    white-space: nowrap;
     background: var(--darkgrey);
     border-radius: 3px;
-    box-shadow: rgba(39,44,49,0.08) 0px 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-    pointer-events: none;
-    z-index: 999;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
-    padding: 2px 8px;
-    transform: translateY(6px);
     transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    white-space: nowrap;
+    transform: translateY(6px);
+    pointer-events: none;
 }
 
 .author-list-item:hover .author-name-tooltip {
@@ -584,11 +597,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .reading-time {
+    color: var(--midgrey);
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: var(--midgrey);
 }
 
 /* Special Styling for home page grid (below):
@@ -1288,8 +1301,10 @@ Usage (In Ghost editor):
     height: 60px;
 }
 
-.author-card .author-avatar {
+.author-card .avatar-wrapper {
     margin-right: 15px;
+    position: relative;
+    width: 48px;
 }
 
 .author-card .author-avatar svg {
@@ -1341,48 +1356,48 @@ Usage (In Ghost editor):
     text-decoration: none;
 }
 
-.authors {
-    display: flex;
+.post-full-authors {
     flex-grow: 1;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
-    padding-top: 40px;
     margin-top: 20px;
+    padding-top: 40px;
+    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
 }
 
-.authors .names p {
-    font-size: 1.4rem;
-    letter-spacing: 0.2px;
-    color: var(--midgrey);
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 0;
-}
-
-.authors .names {
+.post-full-authors-content {
     margin-bottom: 20px;
 }
 
-.authors .names a {
-    display: inline-block;
+.post-full-authors-content p {
+    margin-bottom: 0;
+    color: var(--midgrey);
     font-size: 1.4rem;
-    font-weight: 600;
-    color: color(var(--darkgrey) l(+20%));
+    letter-spacing: 0.2px;
+    text-align: center;
     text-transform: uppercase;
 }
 
-.post-full-footer .author-list .author-list-item {
+.post-full-authors-content a {
+    display: inline-block;
+    color: color(var(--darkgrey) l(+20%));
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.post-full-footer .author-list-item {
     width: 42px;
 }
 
 @media (max-width: 650px) {
-    .post-full-footer .author-list .author-list-item {
+    .post-full-footer .author-list-item {
         width: 54px;
     }
 }
 
-.post-full-footer .author-list .author-list-item > a {
+.post-full-footer .author-list-item > a {
     position: absolute;
     display: inline-block;
     width: 48px;
@@ -1403,31 +1418,31 @@ Usage (In Ghost editor):
     position: absolute;
     bottom: 12px;
     left: calc(-160px + 28px);
+    z-index: 999;
     display: block;
+    width: 320px;
     font-size: 1.4rem;
     letter-spacing: 0.2px;
     background: white;
     border-radius: 6px;
-    box-shadow: rgba(39,44,49,0.08) 0px 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-    pointer-events: none;
-    z-index: 999;
-    width: 320px;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
-    transform: scale(0.98) translateY(10px);
     transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: scale(0.98) translateY(10px);
+    pointer-events: none;
 }
 
 .author-list-item .author-card:before {
+    content: "";
     position: absolute;
     top: 100%;
     left: calc(160px - 20px + 6px);
     display: block;
-    content: "";
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 12px solid #fff;
     width: 0;
     height: 0;
+    border-top: 12px solid #fff;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
 }
 
 .author-list-item .author-card.hovered {
@@ -1436,28 +1451,14 @@ Usage (In Ghost editor):
     pointer-events: auto;
 }
 
-.author-list-item > a {
-    transform: translate(0px);
-    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-}
-
-.author-list-item > a.right {
-    transform: translateX(10px);
-}
-
-.author-list-item > a.left {
-    transform: translateX(-10px);
-}
-
 .author-card .basic-info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px 20px 20px 20px;
     color: #fff;
     background: var(--darkgrey);
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    padding: 30px 20px 20px 20px;
+    border-radius: 6px 6px 0 0;
 }
 
 .author-card .basic-info h2 {
@@ -1475,25 +1476,25 @@ Usage (In Ghost editor):
 }
 
 .post-full-footer .basic-info .author-profile-image {
-    border: none;
+    margin: 0;
     width: 88px;
     height: 88px;
-    margin: 0;
+    border: none;
 }
 
 .post-full-footer .basic-info .avatar-wrapper {
     position: relative;
-    background: rgba(229, 239, 245, 0.1);
-    border: none;
+    margin: 0;
     width: 88px;
     height: 88px;
-    margin: 0;
+    border: none;
+    background: rgba(229, 239, 245, 0.1);
 }
 
 .post-full-footer .basic-info .avatar-wrapper svg {
+    margin: 0;
     width: 88px;
     height: 88px;
-    margin: 0;
     opacity: 0.15;
 }
 

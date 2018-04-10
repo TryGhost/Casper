@@ -50,9 +50,9 @@ into the {body} of the default.hbs template --}}
                 {{!-- If there are multiple authors for the post, display all of their avatars in a stack --}}
                 {{#has author="count:>1"}}
 
-                    <section class="authors">
+                    <section class="post-full-authors">
 
-                        <div class="names">
+                        <div class="post-full-authors-content">
                             <p>This post was a collaboration between</p>
                             <p>{{authors}}</p>
                         </div>
@@ -103,7 +103,7 @@ into the {body} of the default.hbs template --}}
                         {{#if profile_image}}
                             <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
                         {{else}}
-                            <span class="author-avatar">{{> "icons/avatar"}}</span>
+                            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
                         {{/if}}
                         <section class="author-card-content">
                             <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
