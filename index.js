@@ -120,7 +120,7 @@ module.exports = {
       contentYamls.forEach((item) => {
         feed.item({
             title: item.yaml.title,
-            url: `http://example.com/${item.path.replace(/\.md$/, '')}`,
+            url: `${config.blog.host}/${item.path.replace(/\.md$/, '')}`,
             author: item.yaml.author,
             date: item.yaml.date,
         });
