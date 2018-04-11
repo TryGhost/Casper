@@ -22,8 +22,8 @@
         </div>
         {{#if labs.subscribers}}
             <a class="subscribe-button" href="#subscribe">Subscribe</a>
-        {{else}}
-            {{!-- <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{blog.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
+        {{else if blog.host}}
+            <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{blog.host}}/rss.xml" target="_blank" rel="noopener">{{svg-icons/rss}}</a>
         {{/if}}
     </div>
 </nav>
