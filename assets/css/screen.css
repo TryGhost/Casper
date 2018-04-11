@@ -803,6 +803,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     flex-direction: column;
     align-items: center;
     max-width: 920px;
+    align-items: stretch;
 }
 
 .post-full-content h1,
@@ -863,7 +864,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-content video {
     display: block;
     margin: 1.5em auto;
-    max-width: 1040px;
+    max-width: 840px;
 }
 @media (max-width: 1040px) {
     .post-full-content img,
