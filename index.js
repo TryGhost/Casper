@@ -141,7 +141,7 @@ module.exports = {
   urlsForPrember() {
     const staticUrls = ['/'];
 
-    const tagUrls = contentYamls
+    const tagUrls = _.chain(contentYamls)
       .map(file => file.tags)
       .flatten()
       .uniq()
