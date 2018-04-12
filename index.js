@@ -110,7 +110,7 @@ module.exports = {
       trees.push(new StaticSiteJsonXml(contentTree, {
         title: config.blog.title,
         host: config.blog.host,
-        icon: config.blog.icon,
+        icon: config.blog.rssLogo || config.blog.logo,
       }));
     }
 
