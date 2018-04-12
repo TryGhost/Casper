@@ -13,6 +13,8 @@ production stylesheet in assets/built/screen.css
 7.  Single Post
   7.1. Subscribe Form
   7.2. Post Footer
+     7.2.1 Single Author Byline
+     7.2.2 Multiple Author Byline
   7.3. Comments
   7.4. Related Posts
   7.5. Floating Header
@@ -1253,9 +1255,13 @@ Usage (In Ghost editor):
     max-width: 840px;
 }
 
+/* 7.2.1 Single Author Byline
+/* ---------------------------------------------------------- */
+
 .author-card {
     display: flex;
-    align-items: center;
+}
+
 .author-card .author-profile-image {
     margin-right: 15px;
     width: 60px;
@@ -1263,7 +1269,7 @@ Usage (In Ghost editor):
 }
 
 .author-card-name {
-    margin: 0 0 2px 0;
+    margin: 8px 0 2px 0;
     padding: 0;
     font-size: 2rem;
 }
@@ -1305,6 +1311,9 @@ Usage (In Ghost editor):
     color: var(--blue);
     text-decoration: none;
 }
+
+/* 7.2.2 Multiple Author Byline
+/* ---------------------------------------------------------- */
 
 .post-full-authors {
     flex-grow: 1;
