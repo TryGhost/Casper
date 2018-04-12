@@ -7,8 +7,9 @@ const cssnano = require('cssnano');
 const customProperties = require('postcss-custom-properties');
 const MergeTrees = require('broccoli-merge-trees');
 const postcssImport = require('postcss-import');
-const RSS = require('rss');
+
 const StaticSiteJson = require('broccoli-static-site-json');
+const StaticSiteJsonXml = require('broccoli-static-site-json-xml');
 const walkSync = require('walk-sync');
 const writeFile = require('broccoli-file-creator');
 const yamlFront = require('yaml-front-matter');
@@ -31,9 +32,9 @@ const attributes = [
   'tags'
 ];
 
-const references = ['author']
+const references = ['author'];
 
-const jsonTrees = ['content', 'page'].map((contentFolder) => {
+function makeContentTree(contentFolder) {
   return new StaticSiteJson(contentFolder, {
     attributes,
     references,
@@ -43,7 +44,10 @@ const jsonTrees = ['content', 'page'].map((contentFolder) => {
       output: `${contentFolder}.json`,
     }],
   });
-});
+}
+
+const contentTree = makeContentTree('content');
+const pageTree = makeContentTree('page');
 
 const authorTree = new StaticSiteJson(`author`, {
   contentFolder: 'author',
@@ -98,35 +102,16 @@ module.exports = {
   // },
 
   treeForPublic() {
-
-    const trees = [...jsonTrees, authorTree];
+    const trees = [contentTree, pageTree, authorTree];
 
     const config = this.project.config(process.env.EMBER_ENV || 'development');
 
     if (config.blog.host) {
-      const rssConfig = {
-          title: config.blog.title,
-          generator: 'ember-casper-template',
-          feed_url: `${config.blog.host}/rss.xml`,
-          site_url: `${config.blog.host}/rss.xml`,
-      }
-
-      if (config.blog.icon) {
-        rssConfig.image_url = `${config.blog.host}${config.blog.icon}`;
-      }
-
-      var feed = new RSS(rssConfig);
-
-      contentYamls.forEach((item) => {
-        feed.item({
-            title: item.yaml.title,
-            url: `${config.blog.host}/${item.path.replace(/\.md$/, '')}`,
-            author: item.yaml.author,
-            date: item.yaml.date,
-        });
-      })
-
-      trees.push(writeFile('rss.xml', feed.xml()));
+      trees.push(new StaticSiteJsonXml(contentTree, {
+        title: config.blog.title,
+        host: config.blog.host,
+        icon: config.blog.icon,
+      }));
     }
 
     return MergeTrees(trees);
