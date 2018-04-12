@@ -5,6 +5,10 @@ This project is designed to be a fully-functional, static site implementation of
 box SEO friendly output. It supports being hosted on AWS S3 or any other static site hosting
 solution.
 
+If you want an example of the this "in production" then check out the [Stone Circle
+Blog](https://blog.stonecircle.io). If you use this in production let us know and we can add a
+"built with ember-casper-template" wiki.
+
 You do not need to be a web developer to be able to use this system. You just write markdown files
 and the rest of the work is performed by EmberJS' build system.
 
