@@ -14,7 +14,7 @@
                     {{#if profile_image}}
                         <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
                     {{else}}
-                        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+                        <div class="author-profile-image">{{> "icons/avatar"}}</div>
                     {{/if}}
                     <h2>{{name}}</h2>
                 </div>
@@ -31,7 +31,7 @@
             {{#if profile_image}}
                 <a href="{{url}}" class="moving-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
             {{else}}
-                <a href="{{url}}" class="moving-avatar"><span class="avatar-wrapper">{{> "icons/avatar"}}</span></a>
+                <a href="{{url}}" class="moving-avatar author-profile-image">{{> "icons/avatar"}}</a>
             {{/if}}
 
         </li>
@@ -50,27 +50,6 @@
 $(document).ready(function () {
 
     var hoverTimeout;
-    var direction = 'left';
-
-    $('.author-list-item:first-child').addClass('first-child');
-
-    function makeSpaceForAvatar(avatar) {
-        if (avatar.hasClass('first-child')) {
-            return;
-        }
-
-        $('.author-list-item').each(function(i, obj) {
-
-            if ($(this)[0] != avatar[0]) {
-                if (Number($(this).css('z-index')) > Number(avatar.css('z-index'))) {
-                    $(this).children('.moving-avatar').addClass('left');
-                } else {
-                    $(this).children('.moving-avatar').addClass('right');
-                }
-            }
-
-        });
-    }
 
     $('.author-list-item').hover(function(){
         var $this = $(this);
@@ -80,11 +59,8 @@ $(document).ready(function () {
         $('.author-card').removeClass('hovered');
         $(this).children('.author-card').addClass('hovered');
 
-        makeSpaceForAvatar($this);
     }, function() {
         var $this = $(this);
-
-        $('.author-list-item').children('.moving-avatar').removeClass('left right');
 
         hoverTimeout = setTimeout(function() {
             $this.children('.author-card').removeClass('hovered');

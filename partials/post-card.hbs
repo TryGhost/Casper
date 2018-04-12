@@ -27,9 +27,9 @@
                     </div>
 
                     {{#if profile_image}}
-                        <span class="profile-image-wrapper"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></span>
+                        <a href="{{url}}" class="static-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
                     {{else}}
-                        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+                        <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
                     {{/if}}
                 </li>
             {{/foreach}}
