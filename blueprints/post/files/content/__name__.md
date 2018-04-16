@@ -1,6 +1,9 @@
 ---
 title: <%= title %>
 image:
+imageMeta:
+  attribution:
+  attributionLink:
 featured: true
 meta_title: null
 meta_description: null
