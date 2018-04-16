@@ -3,7 +3,6 @@ var gulp = require('gulp');
 // gulp plugins and utils
 var gutil = require('gulp-util');
 var livereload = require('gulp-livereload');
-var nodemon = require('gulp-nodemon');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
@@ -51,7 +50,7 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
 });
 
-gulp.task('zip', ['css'], function() {
+gulp.task('zip', ['css'], function () {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';

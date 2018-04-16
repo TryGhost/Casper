@@ -13,6 +13,8 @@ production stylesheet in assets/built/screen.css
 7.  Single Post
   7.1. Subscribe Form
   7.2. Post Footer
+     7.2.1 Single Author Byline
+     7.2.2 Multiple Author Byline
   7.3. Comments
   7.4. Related Posts
   7.5. Floating Header
@@ -395,9 +397,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card:hover {
-    box-shadow: 0 0 1px rgba(39,44,49,0.10), 0 3px 16px rgba(39, 44, 49,0.07);
-    transition: all 0.3s ease;
-    transform: translate3D(0, -1px, 0);
+    box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px;
+    transition: all 0.4s ease;
+    transform: translate3D(0, -1px, 0) scale(1.02);
 }
 
 .post-card-image-link {
@@ -416,6 +418,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-content-link {
     position: relative;
+    flex-grow: 1;
     display: block;
     padding: 25px 25px 0;
     color: var(--darkgrey);
@@ -452,20 +455,115 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     padding: 0 25px 25px;
 }
 
 .author-profile-image {
-    margin-right: 5px;
-    width: 25px;
-    height: 25px;
+    display: block;
+    background: color(var(--lightgrey) l(+10%));
     border-radius: 100%;
 
     object-fit: cover;
 }
 
-.post-card-author {
-    font-size: 1.3rem;
+.post-card-meta .profile-image-wrapper,
+.post-card-meta .avatar-wrapper {
+    position: relative;
+}
+
+.author-list {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.author-list-item {
+    flex-shrink: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.author-list-item:nth-child(1) { z-index: 10; }
+.author-list-item:nth-child(2) { z-index: 9; }
+.author-list-item:nth-child(3) { z-index: 8; }
+.author-list-item:nth-child(4) { z-index: 7; }
+.author-list-item:nth-child(5) { z-index: 6; }
+.author-list-item:nth-child(6) { z-index: 5; }
+.author-list-item:nth-child(7) { z-index: 4; }
+.author-list-item:nth-child(8) { z-index: 3; }
+.author-list-item:nth-child(9) { z-index: 2; }
+.author-list-item:nth-child(10) { z-index: 1; }
+
+.static-avatar {
+    display: block;
+    height: 34px;
+    width: 34px;
+    border: #fff 2px solid;
+    margin: 0 -5px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.moving-avatar {
+    display: block;
+    height: 56px;
+    width: 56px;
+    border: #fff 2px solid;
+    margin: 0 -6px;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
+}
+
+@media (min-width: 800px) {
+    .author-list:hover .moving-avatar {
+        margin: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+}
+
+.author-name-tooltip {
+    position: absolute;
+    bottom: 105%;
+    z-index: 999;
+    display: block;
+    padding: 2px 8px;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    background: var(--darkgrey);
+    border-radius: 3px;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: translateY(6px);
+    pointer-events: none;
+}
+
+.author-list-item:hover .author-name-tooltip {
+    opacity: 1.0;
+    transform: translateY(0px);
+}
+
+@media (max-width: 650px) {
+    .author-name-tooltip {
+        display: none;
+    }
+}
+
+.reading-time {
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: var(--midgrey);
+    font-size: 1.2rem;
+    line-height: 33px;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -1157,9 +1255,11 @@ Usage (In Ghost editor):
     max-width: 840px;
 }
 
+/* 7.2.1 Single Author Byline
+/* ---------------------------------------------------------- */
+
 .author-card {
     display: flex;
-    align-items: center;
 }
 
 .author-card .author-profile-image {
@@ -1169,7 +1269,7 @@ Usage (In Ghost editor):
 }
 
 .author-card-name {
-    margin: 0 0 2px 0;
+    margin: 8px 0 2px 0;
     padding: 0;
     font-size: 2rem;
 }
@@ -1210,6 +1310,137 @@ Usage (In Ghost editor):
     border-color: var(--blue);
     color: var(--blue);
     text-decoration: none;
+}
+
+/* 7.2.2 Multiple Author Byline
+/* ---------------------------------------------------------- */
+
+.post-full-authors {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
+}
+
+.post-full-authors-content {
+    margin-bottom: 20px;
+}
+
+.post-full-authors-content p {
+    margin-bottom: 0;
+    color: var(--midgrey);
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.post-full-authors-content a {
+    display: inline-block;
+    color: color(var(--darkgrey) l(+20%));
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.post-full-footer .author-list {
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+.author-card .author-profile-image,
+.author-card .avatar-wrapper {
+    margin-right: 15px;
+    position: relative;
+}
+
+.author-list-item .author-card {
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    z-index: 300;
+    display: block;
+    width: 320px;
+    margin-left: -160px;
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: scale(0.98) translateY(15px);
+    pointer-events: none;
+}
+
+.author-list-item .author-card:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -12px;
+    border-top: 12px solid #fff;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+}
+
+.author-list-item .author-card.hovered {
+    opacity: 1.0;
+    transform: scale(1) translateY(0px);
+    pointer-events: auto;
+}
+
+.author-card .basic-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 20px 20px;
+    color: #fff;
+    background: var(--darkgrey);
+    border-radius: 6px 6px 0 0;
+}
+
+.author-card .basic-info h2 {
+    margin: 1em 0 0.5em;
+}
+
+.author-card .bio {
+    padding: 20px 20px 0;
+}
+
+@media (max-width: 650px) {
+    .author-list-item .author-card {
+        display: none;
+    }
+}
+
+.basic-info .author-profile-image {
+    margin: 0;
+    width: 88px;
+    height: 88px;
+    border: none;
+}
+
+.basic-info .avatar-wrapper {
+    position: relative;
+    margin: 0;
+    width: 88px;
+    height: 88px;
+    border: none;
+    background: rgba(229, 239, 245, 0.1);
+}
+
+.basic-info .avatar-wrapper svg {
+    margin: 0;
+    width: 88px;
+    height: 88px;
+    opacity: 0.15;
 }
 
 
