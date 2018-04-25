@@ -11,25 +11,25 @@ const postcssImport = require('postcss-import');
 const StaticSiteJson = require('broccoli-static-site-json');
 const StaticSiteJsonXml = require('broccoli-static-site-json-xml');
 const walkSync = require('walk-sync');
-const writeFile = require('broccoli-file-creator');
 const yamlFront = require('yaml-front-matter');
 
 const { readFileSync } = require('fs');
 const { join } = require('path');
 
 const attributes = [
-  'uuid',
-  'title',
+  'canonical',
+  'date',
+  'featured',
   'image',
   'imageMeta',
-  'featured',
+  'language',
+  'meta_description',
+  'meta_title',
   'page',
   'status',
-  'language',
-  'meta_title',
-  'meta_description',
-  'date',
-  'tags'
+  'tags',
+  'title',
+  'uuid',
 ];
 
 const references = ['author'];

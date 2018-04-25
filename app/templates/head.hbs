@@ -9,7 +9,9 @@
 
 <meta name="referrer" content="unsafe-url">
 
-{{#if model.url}}
+{{#if model.canonical}}
+  <link rel="canonical" href="{{model.canonical}}">
+{{else if model.url}}
   <link rel="canonical" href="{{model.url}}">
 {{/if}}
 {{!-- End General --}}
