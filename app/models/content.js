@@ -3,6 +3,7 @@ import { get, computed } from '@ember/object';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
+  canonical: DS.attr(),
   content: DS.attr('string'),
   html: DS.attr('string'),
 

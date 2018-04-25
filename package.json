@@ -40,7 +40,7 @@
     "ember-cli-string-helpers": "^1.8.0",
     "ember-composable-helpers": "^2.0.3",
     "ember-lodash": "^4.18.0",
-    "ember-meta": "0.0.6",
+    "ember-meta": "github:stonecircle/ember-meta",
     "ember-moment": "^7.5.0",
     "ember-truth-helpers": "^2.0.0",
     "lodash": "^4.17.5",
