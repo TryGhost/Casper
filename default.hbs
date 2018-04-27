@@ -13,6 +13,7 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome-all.min.css"}}" />
 
     {{!-- This tag outputes SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -75,12 +76,13 @@
     {{ghost_foot}}
     <script type="text/javascript" src="{{asset "js/jquery.ghostHunter.js"}}"></script>
     <script>
-        $("#search-field").ghostHunter({
+        $("#search").ghostHunter({
             results   : "#results",
             onKeyUp   : true,
-            zeroResultsInfo : false
+            before: function(a, b, c) {
+                debugger;
+            }
         });
     </script>
-
 </body>
 </html>
