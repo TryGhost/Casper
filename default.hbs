@@ -14,6 +14,13 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+    {{!-- casper-rjkowalewski custom css --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "custom/css/prism.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "custom/css/custom.css"}}" />
+
+    {{!-- casper-rjkowalewski custom css --}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -62,6 +69,9 @@
         crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+    {{!-- casper-rjkowalewski custom js --}}
+    <script type="text/javascript" src="{{asset "custom/js/prism.js"}}"></script>
 
     {{#if pagination.pages}}
     <script>
