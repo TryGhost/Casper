@@ -11,7 +11,6 @@ const postcssImport = require('postcss-import');
 const StaticSiteJson = require('broccoli-static-site-json');
 const StaticSiteJsonXml = require('broccoli-static-site-json-xml');
 const walkSync = require('walk-sync');
-const writeFile = require('broccoli-file-creator');
 const yamlFront = require('yaml-front-matter');
 
 const { readFileSync } = require('fs');
@@ -113,6 +112,7 @@ module.exports = {
         icon: config.blog.rssLogo || config.blog.logo,
       }));
     } else {
+      // eslint-disable-next-line no-console
       console.warn(`Host is not configured so no RSS feed will be generated
 
 If you want know how to configure the host and other parameters check out our documentation:
