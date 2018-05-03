@@ -112,11 +112,12 @@ module.exports = {
         icon: config.blog.rssLogo || config.blog.logo,
       }));
     } else {
-      // eslint-disable-next-line no-console
-      console.warn(`Host is not configured so no RSS feed will be generated
+      if(this.ui) {
+        this.ui.writeWarnLine(`Host is not configured so no RSS feed will be generated
 
-If you want know how to configure the host and other parameters check out our documentation:
-https://github.com/stonecircle/ember-casper-template`)
+          If you want know how to configure the host and other parameters check out our documentation:
+          https://github.com/stonecircle/ember-casper-template`);
+      }
     }
 
     return MergeTrees(trees);
