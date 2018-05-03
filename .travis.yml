@@ -3,13 +3,17 @@ language: node_js
 node_js:
   # we recommend testing addons with the same minimum supported node version as Ember CLI
   # so that your addon works for all apps
-  - "4"
+  - "6"
 
 sudo: false
 dist: trusty
 
 addons:
   chrome: stable
+
+branches:
+  only:
+    master
 
 cache:
   directories:
@@ -24,7 +28,8 @@ env:
     # as well as latest stable release (bonus points to beta/canary)
     - EMBER_TRY_SCENARIO=ember-lts-2.12
     - EMBER_TRY_SCENARIO=ember-lts-2.16
-    - EMBER_TRY_SCENARIO=ember-release
+    - EMBER_TRY_SCENARIO=ember-lts-2.18
+    # - EMBER_TRY_SCENARIO=ember-release TODO: fix this when it's fixed upstream
     - EMBER_TRY_SCENARIO=ember-beta
     - EMBER_TRY_SCENARIO=ember-canary
     - EMBER_TRY_SCENARIO=ember-default
@@ -36,7 +41,7 @@ matrix:
 
 before_install:
   - npm config set spin false
-  - npm install -g npm@4
+  - npm install -g npm@6
   - npm --version
 
 script:

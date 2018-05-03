@@ -11,7 +11,6 @@ const postcssImport = require('postcss-import');
 const StaticSiteJson = require('broccoli-static-site-json');
 const StaticSiteJsonXml = require('broccoli-static-site-json-xml');
 const walkSync = require('walk-sync');
-const writeFile = require('broccoli-file-creator');
 const yamlFront = require('yaml-front-matter');
 
 const { readFileSync } = require('fs');
@@ -54,7 +53,7 @@ const authorTree = new StaticSiteJson(`author`, {
   attributes: [
     'name',
     'image',
-    'cover',
+    'coverImage',
     'coverMeta',
     'bio',
     'website',
@@ -106,19 +105,26 @@ module.exports = {
 
     const config = this.project.config(process.env.EMBER_ENV || 'development');
 
-    if (config.blog.host) {
+    if (config.blog && config.blog.host) {
       trees.push(new StaticSiteJsonXml(contentTree, {
         title: config.blog.title,
         host: config.blog.host,
         icon: config.blog.rssLogo || config.blog.logo,
       }));
+    } else {
+      if(this.ui) {
+        this.ui.writeWarnLine(`Host is not configured so no RSS feed will be generated
+
+          If you want know how to configure the host and other parameters check out our documentation:
+          https://github.com/stonecircle/ember-casper-template`);
+      }
     }
 
     return MergeTrees(trees);
   },
 
   contentFor(type, config) {
-    if (type === 'head' && config.blog.host) {
+    if (type === 'head' && config.blog && config.blog.host) {
       return `<link rel="alternate" type="application/rss+xml" title="${config.blog.title}" href="${config.blog.host}/rss.xml" />`
     }
   },

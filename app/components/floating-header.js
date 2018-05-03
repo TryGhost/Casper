@@ -38,7 +38,7 @@ export default Component.extend({
   },
 
   didDestroyElement() {
-    let scrollEvent = get(this, 'scrollEvent');
+    let scrollEvent = this.scrollEvent;
 
     if(scrollEvent) {
       set(this, 'scrollEvent', null);
@@ -47,7 +47,7 @@ export default Component.extend({
   },
 
   requestTick() {
-      if (!get(this, 'ticking')) {
+      if (!this.ticking) {
           requestAnimationFrame(() => {
             this.update();
           });
@@ -58,11 +58,11 @@ export default Component.extend({
   update() {
     // debugger
     var title = document.querySelector('.post-full-title');
-    var lastScrollY = get(this, 'lastScrollY');
+    var lastScrollY = this.lastScrollY;
 
     var trigger = title.getBoundingClientRect().top + window.scrollY;
     var triggerOffset = title.offsetHeight + 35;
-    var progressMax = get(this, 'lastDocumentHeight') - get(this, 'lastWindowHeight');
+    var progressMax = this.lastDocumentHeight - this.lastWindowHeight;
 
     // show/hide floating header
     if (lastScrollY >= trigger + triggerOffset) {
@@ -72,7 +72,7 @@ export default Component.extend({
     }
 
     set(this, 'max', progressMax);
-    set(this, 'value', get(this, 'lastScrollY'));
+    set(this, 'value', this.lastScrollY);
 
     set(this, 'ticking', false);
   }
