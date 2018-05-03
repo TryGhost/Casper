@@ -17,18 +17,19 @@ const { readFileSync } = require('fs');
 const { join } = require('path');
 
 const attributes = [
-  'uuid',
-  'title',
+  'canonical',
+  'date',
+  'featured',
   'image',
   'imageMeta',
-  'featured',
+  'language',
+  'meta_description',
+  'meta_title',
   'page',
   'status',
-  'language',
-  'meta_title',
-  'meta_description',
-  'date',
-  'tags'
+  'tags',
+  'title',
+  'uuid',
 ];
 
 const references = ['author'];

@@ -1,8 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import BlogMetaMixin from 'ember-meta/mixins/blog-meta';
 
-export default Route.extend(BlogMetaMixin, {
+export default Route.extend({
   classNames: ["index-template"],
   store: service(),
   model() {

@@ -3,7 +3,7 @@ import { htmlSafe } from '@ember/string';
 import _ from 'lodash';
 import downsize from 'downsize';
 
-function getExcerpt(html, truncateOptions) {
+export function getExcerpt(html, truncateOptions) {
     truncateOptions = truncateOptions || {};
     // Strip inline and bottom footnotes
     var excerpt = html.replace(/<a href="#fn.*?rel="footnote">.*?<\/a>/gi, '');
