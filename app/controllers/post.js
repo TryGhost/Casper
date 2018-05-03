@@ -6,7 +6,12 @@ import { sort } from '@ember/object/computed';
 export default Controller.extend({
   blog: service(),
   url: service(),
-  postSorting: ['date:desc'],
+
+  init() {
+    this._super(...arguments);
+    this.postSorting = ['date:desc'];
+  },
+
   sortedPosts: sort('model.posts', 'postSorting'),
   relatedPosts: computed('model.post.id', 'sortedPosts', function() {
     return get(this, 'sortedPosts').filter((post) => {
