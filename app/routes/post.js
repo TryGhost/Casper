@@ -19,10 +19,6 @@ export default Route.extend({
     })
   },
 
-  afterModel(model) {
-    this._super(model.post);
-  },
-
   actions: {
     didTransition() {
       this._super();
