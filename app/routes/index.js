@@ -7,7 +7,7 @@ export default Route.extend(BlogMetaMixin, {
   classNames: ["index-template"],
   store: service(),
   model() {
-    return get(this, 'store').query('content', {
+    return this.store.query('content', {
       path: 'content',
     });
   },

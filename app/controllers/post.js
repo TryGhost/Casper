@@ -14,27 +14,27 @@ export default Controller.extend({
 
   sortedPosts: sort('model.posts', 'postSorting'),
   relatedPosts: computed('model.post.id', 'sortedPosts', function() {
-    return get(this, 'sortedPosts').filter((post) => {
+    return this.sortedPosts.filter((post) => {
       if (get(post, 'id') === get(this, 'model.post.id')) {
         return false
       }
       return get(post, 'primaryTag') === get(this, 'model.post.primaryTag')
-    })
+    });
   }),
 
   prevPost: computed('model.post.id', 'sortedPosts', function() {
-    let index = get(this, 'sortedPosts').indexOf(get(this, 'model.post'));
+    let index = this.sortedPosts.indexOf(get(this, 'model.post'));
 
     if (index > 0) {
-      return get(this, 'sortedPosts').get(index - 1);
+      return this.sortedPosts.get(index - 1);
     }
   }),
 
   nextPost: computed('model.post.id', 'sortedPosts', function() {
-    let index = get(this, 'sortedPosts').indexOf(get(this, 'model.post'));
+    let index = this.sortedPosts.indexOf(get(this, 'model.post'));
 
     if (index < (get(this, 'sortedPosts.length') - 1)) {
-      return get(this, 'sortedPosts').get(index + 1);
+      return this.sortedPosts.get(index + 1);
     }
   }),
 
