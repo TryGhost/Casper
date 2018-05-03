@@ -44,4 +44,8 @@ export default HeadData.extend({
   date: computed('routeName', function() {
     return this.get('currentRouteModel.date');
   }),
+
+  canonical: computed('routeName', function() {
+    return this.get('currentRouteModel.canonical');
+  })
 });
