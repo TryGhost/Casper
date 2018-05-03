@@ -2,7 +2,7 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- Everything inside the #author tags pulls data from the author --}}
-<header class="site-header outer {{unless model.cover 'no-cover'}}" style="{{if model.cover coverImageStyle}}">
+<header class="site-header outer {{unless model.coverImage 'no-cover'}}" style="{{if model.coverImage coverImageStyle}}">
     <div class="inner">
         {{site-nav}}
         <div class="site-header-content">
@@ -36,6 +36,12 @@
                 {{/if}}
                 {{!-- <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{model.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
             </div>
+
+            {{#if model.coverMeta.attributionLink}}
+              <div style="width:100%">
+                {{image-attribution meta=model.coverMeta}}
+              </div>
+            {{/if}}
         </div>
     </div>
 </header>

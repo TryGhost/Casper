@@ -54,7 +54,7 @@ const authorTree = new StaticSiteJson(`author`, {
   attributes: [
     'name',
     'image',
-    'cover',
+    'coverImage',
     'coverMeta',
     'bio',
     'website',
