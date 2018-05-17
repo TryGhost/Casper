@@ -47,5 +47,9 @@ export default HeadData.extend({
 
   canonical: computed('routeName', function() {
     return this.get('currentRouteModel.canonical');
-  })
+  }),
+
+  title: computed('routeName', function() {
+    return this.getWithDefault('currentRouteModel.title', config['ember-meta'].title);
+  }),
 });
