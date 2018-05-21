@@ -483,41 +483,61 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .author-list-item {
-    flex-shrink: 0;
     position: relative;
+    flex-shrink: 0;
     margin: 0;
     padding: 0;
 }
 
-.author-list-item:nth-child(1) { z-index: 10; }
-.author-list-item:nth-child(2) { z-index: 9; }
-.author-list-item:nth-child(3) { z-index: 8; }
-.author-list-item:nth-child(4) { z-index: 7; }
-.author-list-item:nth-child(5) { z-index: 6; }
-.author-list-item:nth-child(6) { z-index: 5; }
-.author-list-item:nth-child(7) { z-index: 4; }
-.author-list-item:nth-child(8) { z-index: 3; }
-.author-list-item:nth-child(9) { z-index: 2; }
-.author-list-item:nth-child(10) { z-index: 1; }
+.author-list-item:nth-child(1) {
+    z-index: 10;
+}
+.author-list-item:nth-child(2) {
+    z-index: 9;
+}
+.author-list-item:nth-child(3) {
+    z-index: 8;
+}
+.author-list-item:nth-child(4) {
+    z-index: 7;
+}
+.author-list-item:nth-child(5) {
+    z-index: 6;
+}
+.author-list-item:nth-child(6) {
+    z-index: 5;
+}
+.author-list-item:nth-child(7) {
+    z-index: 4;
+}
+.author-list-item:nth-child(8) {
+    z-index: 3;
+}
+.author-list-item:nth-child(9) {
+    z-index: 2;
+}
+.author-list-item:nth-child(10) {
+    z-index: 1;
+}
 
 .static-avatar {
     display: block;
-    height: 34px;
-    width: 34px;
-    border: #fff 2px solid;
-    margin: 0 -5px;
-    border-radius: 100%;
     overflow: hidden;
+    margin: 0 -5px;
+    width: 34px;
+    height: 34px;
+    border: #fff 2px solid;
+    border-radius: 100%;
 }
 
 .moving-avatar {
     display: block;
-    height: 56px;
-    width: 56px;
-    border: #fff 2px solid;
-    margin: 0 -6px;
-    border-radius: 100%;
     overflow: hidden;
+    margin: 0 -6px;
+    width: 56px;
+    height: 56px;
+    border: #fff 2px solid;
+    border-radius: 100%;
     transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
 }
 
@@ -1353,8 +1373,8 @@ Usage (In Ghost editor):
 
 .author-card .author-profile-image,
 .author-card .avatar-wrapper {
-    margin-right: 15px;
     position: relative;
+    margin-right: 15px;
 }
 
 .author-list-item .author-card {
@@ -1363,8 +1383,8 @@ Usage (In Ghost editor):
     left: 50%;
     z-index: 300;
     display: block;
-    width: 320px;
     margin-left: -160px;
+    width: 320px;
     font-size: 1.4rem;
     letter-spacing: 0.2px;
     background: white;
@@ -1382,9 +1402,9 @@ Usage (In Ghost editor):
     top: 100%;
     left: 50%;
     display: block;
+    margin-left: -12px;
     width: 0;
     height: 0;
-    margin-left: -12px;
     border-top: 12px solid #fff;
     border-right: 12px solid transparent;
     border-left: 12px solid transparent;
