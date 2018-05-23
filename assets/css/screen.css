@@ -462,7 +462,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0 25px 25px;
 }
 
-.author-profile-image {
+.author-profile-image,
+.avatar-wrapper {
     display: block;
     background: color(var(--lightgrey) l(+10%));
     border-radius: 100%;
@@ -1271,7 +1272,8 @@ Usage (In Ghost editor):
     display: flex;
 }
 
-.author-card .author-profile-image {
+.author-card .author-profile-image,
+.author-card .avatar-wrapper {
     margin-right: 15px;
     width: 60px;
     height: 60px;
