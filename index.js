@@ -68,17 +68,6 @@ const authorTree = new StaticSiteJson(`author`, {
   }]
 });
 
-const content = walkSync('content', {
-  globs: ['*.md'],
-});
-
-const contentYamls = _.chain(content)
-  .map(path => ({
-    path,
-    yaml: yamlFront.loadFront(readFileSync(join('content', path)))
-  }))
-  .value();
-
 module.exports = {
   name: 'ember-casper-template',
 
@@ -131,6 +120,17 @@ module.exports = {
   },
 
   urlsForPrember() {
+    const content = walkSync('content', {
+      globs: ['*.md'],
+    });
+
+    const contentYamls = _.chain(content)
+      .map(path => ({
+        path,
+        yaml: yamlFront.loadFront(readFileSync(join('content', path)))
+      }))
+      .value();
+
     const staticUrls = ['/'];
 
     const tagUrls = _.chain(contentYamls)
