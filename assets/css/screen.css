@@ -1860,9 +1860,29 @@ Usage (In Ghost editor):
     max-width: 100vw;
 }
 
-.kg-image-card figcaption {
+.kg-image-card figcaption,
+.kg-embed-card figcaption {
     font-size: 80%;
+    text-align: center;
+}
+
+.kg-image-card figcaption {
     margin: -1.5em auto 3em;
+}
+
+.kg-embed-card figcaption {
+    margin: 0 auto 3em;
+}
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+}
+
+.kg-embed-card .fluid-width-video-wrapper {
+    margin: 1.5em 0 0.5em;
 }
 
 .post-full-content .kg-image-full + figcaption {
@@ -1872,19 +1892,6 @@ Usage (In Ghost editor):
 @media (max-width: 1040px) {
     .post-full-content .kg-image-full {
         width: 100vw;
-    }
-}
-
-@media (max-width: 1170px) {
-    .post-full-content .kg-image-full + figcaption {
-        padding: 0 11vw;
-        max-width: 100vw;
-    }
-}
-
-@media (max-width: 500px) {
-    .post-full-content .kg-image-full + figcaption {
-        padding: 0 4vw;
     }
 }
 
