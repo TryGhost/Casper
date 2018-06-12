@@ -1,5 +1,5 @@
 {
-  "name": "ember-casper-template",
+  "name": "ember-ghost-casper-template",
   "version": "1.9.3",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
@@ -23,15 +23,11 @@
   "dependencies": {
     "autoprefixer": "^7.2.4",
     "broccoli-funnel": "^2.0.1",
-    "broccoli-merge-trees": "^2.0.0",
     "broccoli-postcss": "^3.5.2",
-    "broccoli-static-site-json": "^2.0.0",
-    "broccoli-static-site-json-xml": "^1.0.1",
     "case": "^1.5.4",
     "cssnano": "^3.10.0",
     "debug": "^3.1.0",
     "downsize-cjs": "^0.1.1",
-    "ember-body-class": "^1.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-head": "^0.4.0",
     "ember-cli-moment-shim": "^3.5.0",
@@ -43,13 +39,9 @@
     "ember-meta": "^0.1.3",
     "ember-moment": "^7.5.0",
     "ember-truth-helpers": "^2.0.0",
-    "lodash": "^4.17.5",
     "postcss-color-function": "^4.0.1",
     "postcss-custom-properties": "^6.2.0",
-    "postcss-import": "^11.0.0",
-    "resolve": "^1.5.0",
-    "walk-sync": "^0.3.2",
-    "yaml-front-matter": "^4.0.0"
+    "postcss-import": "^11.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -83,7 +75,6 @@
     "node": "6.* || >= 7.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "before": "prember"
+    "configPath": "tests/dummy/config"
   }
 }

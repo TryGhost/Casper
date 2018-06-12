@@ -13,9 +13,7 @@ into the {body} of the default.hbs template --}}
 
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-
-        <article class="post-full {{post_class}} {{unless model.post.image 'no-image'}}">
-
+        <article class="post-full post {{unless model.post.image 'no-image'}}">
             <header class="post-full-header">
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime="{{moment-format model.post.date "YYYY-MM-DD"}}">{{moment-format model.post.date "D MMMM YYYY"}}</time>
