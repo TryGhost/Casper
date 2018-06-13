@@ -32,7 +32,6 @@
     "ember-cli-head": "^0.4.0",
     "ember-cli-moment-shim": "^3.5.0",
     "ember-cli-postcss": "^3.6.2",
-    "ember-cli-showdown": "^4.1.1",
     "ember-cli-string-helpers": "^1.8.0",
     "ember-composable-helpers": "^2.0.3",
     "ember-lodash": "^4.18.0",

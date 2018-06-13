@@ -10,8 +10,8 @@
                 <img class="author-profile-image" src="{{model.image}}" alt="{{model.name}}" />
             {{/if}}
             <h1 class="site-title">{{model.name}}</h1>
-            {{#if model.bio}}
-                <h2 class="author-bio">{{model.bio}}</h2>
+            {{#if model.content}}
+                <h2 class="author-bio">{{markdown-to-html model.content}}</h2>
             {{/if}}
             <div class="author-meta">
                 {{#if model.location}}
