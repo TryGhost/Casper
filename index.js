@@ -7,7 +7,7 @@ const customProperties = require('postcss-custom-properties');
 const postcssImport = require('postcss-import');
 
 module.exports = {
-  name: 'ember-casper-template',
+  name: 'ember-ghost-casper-template',
 
   options: {
     postcssOptions: {

@@ -1,18 +1,24 @@
 {
   "name": "ember-ghost-casper-template",
   "version": "2.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Casper Template for Ember Ghost",
   "keywords": [
     "ember-addon",
-    "prember-plugin"
+    "prember-plugin",
+    "ember-ghost",
+    "ember-ghost-template"
   ],
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name" : "Chris Manson",
+    "email" : "chris@stonecircle.io",
+    "url" : "https://stonecircle.io"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/stonecircle/ember-casper-template",
+  "repository": "https://github.com/stonecircle/ember-ghost-casper-template",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app blueprints config lib server test-support tests",
@@ -74,6 +80,7 @@
     "node": "6.* || >= 7.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://ember-ghost-casper-template.stonecircle.io"
   }
 }
