@@ -21,7 +21,15 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    'ember-meta': {}
+    blog: {
+      title: "ember ghost casper template",
+      description: "The Casper theme for Ember Ghost",
+      coverImage: "/images/blog-cover.jpg",
+      navigation: [
+        { label: 'Home', route: 'index' },
+        { label: 'Built by Stone Circle', route: 'page', id: 'stone-circle' }
+      ]
+    },
   };
 
   if (environment === 'development') {
