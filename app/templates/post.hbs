@@ -51,8 +51,8 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                     <section class="author-card-content">
                         <h4 class="author-card-name">{{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}</h4>
-                        {{#if model.post.author.bio}}
-                            <p>{{model.post.author.bio}}</p>
+                        {{#if model.post.author.content}}
+                            <p>{{markdown-to-html model.post.author.content.content}}</p>
                         {{else}}
                             <p>Read {{#link-to 'author' model.post.author.id}}more posts{{/link-to}} by this author.</p>
                         {{/if}}
