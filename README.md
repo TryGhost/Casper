@@ -1,6 +1,7 @@
 # Casper
 
 O tema padrão para a plataforma de blogs [Ghost](http://github.com/MatheusMK3/Casper-pt_BR/), traduzida para o Português Brasileiro.
+
 Esta é a versão mais recente da tradução, em desenvolvimento. Você pode encontrar as releases mais recentes do tema oficial [aqui](https://github.com/TryGhost/Casper/releases), ou (futuramente) da tradução [aqui](https://github.com/MatheusMK3/Casper-pt_BR/releases).
 
 &nbsp;
@@ -17,6 +18,7 @@ Esta é tradução open-source, com objetivo de incentivar o uso do Ghost no Bra
 ## Não seria melhor usar o [WorldCasper2](https://github.com/juan-g/WorldCasper2)?
 
 Algumas partes do tema, como a formatação de datas, precisam ser alteradas diretamente nos templates. Portanto, foi melhor criar um projeto dedicado ao português brasileiro.
+
 Porém, caso queria utilizar o WorldCasper2, o arquivo de localizações utilizado neste tema utiliza o mesmo padrão de nomenclatura, podendo assim ser usado.
 
 ## As datas dos meus posts estão erradas, como posso corrigir?
