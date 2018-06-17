@@ -9,6 +9,17 @@ Esta é a versão mais recente da tradução, em desenvolvimento. Você pode enc
 
 &nbsp;
 
+
+# Tradução
+
+Esta é tradução open-source, com objetivo de incentivar o uso do Ghost no Brasil e ampliar sua comunidade. Sinta-se à vontade para explorar o código e sugerir novas traduções ou correções!
+
+## As datas dos meus posts estão erradas, como posso corrigir?
+
+Você pode alterar as opções "Set timezone" e "Publication language" de seu blog para corrigir a exibição de datas nos posts.
+Estas opções podem ser encontradas em "SETTINGS > General"
+
+
 # Primeira vez usando um tema do Ghost?
 
 O Ghost usa o sistema de templates [Handlebars](http://handlebarsjs.com/).
@@ -60,11 +71,6 @@ $ yarn zip
 O Casper utiliza ícones inline em SVG, que são incluídos utilizando partials do Handlebars. Você pode encontrar todos os ícones dentro da pasta `/partials/icons`. Para utilizar um ícone, apenas inclua o nome do arquivo relevante. Por exemplo, para incluir o arquivo SVG `/partials/icons/rss.hbs`, utilize: `{{> "icons/rss"}}`.
 
 Você pode adicionar seus próprios ícones SVG da mesma forma.
-
-
-# Tradução
-
-Esta é tradução open-source, com objetivo de incentivar o uso do Ghost no Brasil e ampliar sua comunidade. Sinta-se à vontade para explorar o código e sugerir novas traduções ou correções!
 
 
 # Copyright & Licenças
