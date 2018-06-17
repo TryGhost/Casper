@@ -14,6 +14,11 @@ Esta é a versão mais recente da tradução, em desenvolvimento. Você pode enc
 
 Esta é tradução open-source, com objetivo de incentivar o uso do Ghost no Brasil e ampliar sua comunidade. Sinta-se à vontade para explorar o código e sugerir novas traduções ou correções!
 
+## Não seria melhor usar o [WorldCasper2](https://github.com/juan-g/WorldCasper2)?
+
+Algumas partes do tema, como a formatação de datas, precisam ser alteradas diretamente nos templates. Portanto, foi melhor criar um projeto dedicado ao português brasileiro.
+Porém, caso queria utilizar o WorldCasper2, o arquivo de localizações utilizado neste tema utiliza o mesmo padrão de nomenclatura, podendo assim ser usado.
+
 ## As datas dos meus posts estão erradas, como posso corrigir?
 
 Você pode alterar as opções "Set timezone" e "Publication language" de seu blog para corrigir a exibição de datas nos posts.
