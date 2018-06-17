@@ -1,7 +1,7 @@
 # Casper
 
-O tema padrão para o [Ghost](http://github.com/MatheusMK3/Casper-pt_BR/). Esta é a versão mais recente da tradução, em desenvolvimento.
-Você pode encontrar as releases mais recentes do tema oficial [aqui](https://github.com/TryGhost/Casper/releases), ou (futuramente) da tradução [aqui](https://github.com/MatheusMK3/Casper-pt_BR/releases).
+O tema padrão para a plataforma de blogs [Ghost](http://github.com/MatheusMK3/Casper-pt_BR/), traduzida para o Português Brasileiro.
+Esta é a versão mais recente da tradução, em desenvolvimento. Você pode encontrar as releases mais recentes do tema oficial [aqui](https://github.com/TryGhost/Casper/releases), ou (futuramente) da tradução [aqui](https://github.com/MatheusMK3/Casper-pt_BR/releases).
 
 &nbsp;
 
