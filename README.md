@@ -1,6 +1,7 @@
 # Casper
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper. If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
+O tema padrão para o [Ghost](http://github.com/MatheusMK3/Casper-pt_BR/). Esta é a versão mais recente da tradução, em desenvolvimento.
+Você pode encontrar as releases mais recentes do tema oficial [aqui](https://github.com/TryGhost/Casper/releases), ou (futuramente) da tradução [aqui](https://github.com/MatheusMK3/Casper-pt_BR/releases).
 
 &nbsp;
 
@@ -8,59 +9,64 @@ The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the la
 
 &nbsp;
 
-# First time using a Ghost theme?
+# Primeira vez usando um tema do Ghost?
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
+O Ghost usa o sistema de templates [Handlebars](http://handlebarsjs.com/).
 
-We've documented our default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
+Nós documentamos nosso tema padrão de uma forma que seja bem fácil de se entender o que está sendo feito, apenas lendo o código e os comentários. Quando já estiver mais à vontade com tudo, leia nossa [documentação da API de temas](https://themes.ghost.org), que explica cada um dos helpers e templates do Handlebars.
 
-**The main files are:**
+**Os arquivos principais são:**
 
-- `default.hbs` - The main template file
-- `index.hbs` - Used for the home page
-- `post.hbs` - Used for individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives
-- `author.hbs` - Used for author archives
+- `default.hbs` - Arquivo principal do tema
+- `index.hbs` - Usado na home do blog
+- `post.hbs` - Usado para posts individuais
+- `page.hbs` - Usado para páginas individuais
+- `tag.hbs` - Usado para listagens de tags
+- `author.hbs` - Usado para listagens de autores
 
-One really neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
+Um truque bem interessante é que você pode criar templates espaeciais para páginas e templates! Basta inserir a slug do endereço na frente do arquivo. Por exemplo:
 
-- `page-about.hbs` - Custom template for the `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
+- `page-sobre.hbs` - Template personalizado para a página `/sobre/`
+- `tag-noticias.hbs` - Template personalizado para a listagem de tags `/tag/noticias/`
+- `author-matt.hbs` - Template personalizado para o autor `/author/matt/`
 
 
-# Development
+# Desenvolvimento
 
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:
+Os estilos do Casper são compilados utilizando Gulp e PostCSS para aplicar polyfills de funcionalidades CSS ainda não lançadas. Para utilizar, você precisará ter o Node e o Gulp instalados globalmente. Após isto, vá na pasta do tema e execute:
 
 ```bash
 $ yarn install
 $ yarn dev
 ```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+Agora você pode editar os arquivos `/assets/css/`, que serão compilados para a pasta `/assets/built/` automaticamente.
 
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+A tarefa Gulp `zip` irá comprimir os arquivos do tema em `dist/<nome-do-tema>.zip`, facilitando o upload no seu blog.
 
 ```bash
 $ yarn zip
 ```
 
-# PostCSS Features Used
+# Funcionalidades do PostCSS Utilizadas
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
-
-
-# SVG Icons
-
-Casper uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
-
-You can add your own SVG icons in the same manner.
+- Autoprefixer - Elimina a necessidade de se escrever extensões e prefixos específicos para cada navegador. Tudo é feito automaticamente, com suporte para as últimas duas versões "major" de cada navegador.
+- Variáveis - Variáveis CSS simples e puras
+- [Função Color](https://github.com/postcss/postcss-color-function)
 
 
-# Copyright & License
+# Ícones SVG
+
+O Casper utiliza ícones inline em SVG, que são incluídos utilizando partials do Handlebars. Você pode encontrar todos os ícones dentro da pasta `/partials/icons`. Para utilizar um ícone, apenas inclua o nome do arquivo relevante. Por exemplo, para incluir o arquivo SVG `/partials/icons/rss.hbs`, utilize: `{{> "icons/rss"}}`.
+
+Você pode adicionar seus próprios ícones SVG da mesma forma.
+
+
+# Tradução
+
+Esta é tradução open-source, com objetivo de incentivar o uso do Ghost no Brasil e ampliar sua comunidade. Sinta-se à vontade para explorar o código e sugerir novas traduções ou correções!
+
+
+# Copyright & Licenças
 
 Copyright (c) 2013-2018 Ghost Foundation - Released under the [MIT license](LICENSE).

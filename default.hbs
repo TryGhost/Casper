@@ -30,7 +30,7 @@
             <div class="site-footer-content inner">
                 <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
                 <nav class="site-footer-nav">
-                    <a href="{{@blog.url}}">Latest Posts</a>
+                    <a href="{{@blog.url}}">Últimos Posts</a>
                     {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
                     {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
                     <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
@@ -48,9 +48,9 @@
             {{#if @blog.logo}}
                 <img class="subscribe-overlay-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
             {{/if}}
-            <h1 class="subscribe-overlay-title">Subscribe to {{@blog.title}}</h1>
-            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-            {{subscribe_form placeholder="youremail@example.com"}}
+            <h1 class="subscribe-overlay-title">Inscreva-se em {{@blog.title}}</h1>
+            <p class="subscribe-overlay-description">Fique por dentro das novidades e receba os melhores posts diretamente no seu e-mail</p>
+            {{subscribe_form placeholder="seu@email.com.br"}}
         </div>
     </div>
     {{/if}}
