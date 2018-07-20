@@ -1819,6 +1819,13 @@ Usage (In Ghost editor):
 /* 7.6. Koenig Styles
 /* ---------------------------------------------------------- */
 
+.post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 920px;
+}
+
 /* For Ghost 1.0 */
 .kg-card-markdown {
     display: flex;
@@ -1831,19 +1838,11 @@ Usage (In Ghost editor):
     font-size: 1.25em;
     line-height: 1.5em;
 }
-/* ^ .kg-card-markdown will be deprecated */
+/* ^ .kg-card-markdown will be will disappear in Ghost 2.0 */
 
-
-.post-template .kg-post > p:first-child {
+.post-template .post-content > p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
-}
-
-.kg-post {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 920px;
 }
 
 .post-full-content .kg-image {
@@ -1851,19 +1850,19 @@ Usage (In Ghost editor):
 }
 
 /* Preventing full-width image overlap with post image.  */
-.post-full-image + .post-full-content .kg-post *:first-child .kg-image {
+.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
     width: 100%;
 }
 
-.post-full-content .kg-image-wide {
+.post-full-content .kg-width-wide .kg-image {
     max-width: 1040px;
 }
 
-.post-full-content .kg-image-full {
+.post-full-content .kg-width-full .kg-image {
     max-width: 100vw;
 }
 
-.kg-post figcaption {
+.post-content figcaption {
     font-size: 80%;
     line-height: 1.6em;
     text-align: center;
@@ -1900,7 +1899,7 @@ Usage (In Ghost editor):
 
 
 @media (max-width: 1040px) {
-    .post-full-content .kg-image-full {
+    .post-full-content .kg-width-full .kg-image {
         width: 100vw;
     }
 }
