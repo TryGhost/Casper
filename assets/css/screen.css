@@ -1831,7 +1831,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 920px;
+    max-width: 100%;
 }
 
 .post-template .kg-card-markdown > p:first-child {
