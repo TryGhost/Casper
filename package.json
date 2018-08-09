@@ -27,6 +27,14 @@
             "Magazine"
         ]
     },
+    "scripts": {
+        "precommit": "gscan .",
+        "lint": "eslint src --ext js",
+        "lint:fix": "eslint src --ext js --fix",
+        "test": "gscan .",
+        "prepush": "gscan .",
+        "security": "nsp check --reporter summary"
+    },
     "keywords": [
         "ghost",
         "theme"
@@ -40,6 +48,7 @@
     "devDependencies": {
         "autoprefixer": "6.3.6",
         "cssnano": "3.7.1",
+        "gscan": "^1.4.0",
         "gulp": "3.9.1",
         "gulp-livereload": "3.8.1",
         "gulp-postcss": "6.1.1",
@@ -47,6 +56,7 @@
         "gulp-util": "3.0.7",
         "gulp-watch": "4.3.8",
         "gulp-zip": "4.0.0",
+        "husky": "^0.14.3",
         "postcss-color-function": "2.0.1",
         "postcss-custom-properties": "5.0.1",
         "postcss-easy-import": "1.0.1"
