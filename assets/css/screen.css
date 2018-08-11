@@ -1826,20 +1826,6 @@ Usage (In Ghost editor):
     max-width: 920px;
 }
 
-/* For Ghost 1.0 */
-.kg-card-markdown {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-}
-
-.post-template .kg-card-markdown > p:first-child {
-    font-size: 1.25em;
-    line-height: 1.5em;
-}
-/* ^ .kg-card-markdown will be will disappear in Ghost 2.0 */
-
 .post-template .post-content > p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
