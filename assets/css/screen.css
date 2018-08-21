@@ -1187,6 +1187,16 @@ body.page-template .post-title {
     transform: translateX(-50%);
 }
 
+/* Support Ghost 2.0's wide image style */
+.post-content .kg-width-wide img {
+    /* normal images are already "wide" in Casper 1.4 so this is a no-op */
+}
+
+/* Support Ghost 2.0's full-width image style */
+.post-content .kg-width-full img {
+    max-width: 100vw;
+}
+
 .footnotes {
     font-style: italic;
     font-size: 1.3rem;
