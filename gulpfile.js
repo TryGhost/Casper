@@ -57,16 +57,16 @@ gulp.task('zip', ['css'], function () {
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
 
-    var f = filter(['**/*.js'], {restore: true});
+    var jsFilter = filter(['**/*.js'], {restore: true});
 
     return gulp.src([
         '**',
         '!node_modules', '!node_modules/**',
         '!dist', '!dist/**'
     ])
-        .pipe(f)
+        .pipe(jsFilter)
         .pipe(uglify())
-        .pipe(f.restore)
+        .pipe(jsFilter.restore)
         .pipe(zip(filename))
         .pipe(gulp.dest(targetDir));
 });
