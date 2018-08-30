@@ -1841,8 +1841,7 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
-.post-full-content .kg-width-wide .kg-image,
-.post-full-content .kg-width-wide .kg-gallery-container {
+.post-full-content .kg-width-wide .kg-image {
     max-width: 1040px;
 }
 
@@ -1895,6 +1894,8 @@ Usage (In Ghost editor):
 .kg-gallery-container {
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    max-width: 1040px;
 }
 
 .kg-gallery-row {
