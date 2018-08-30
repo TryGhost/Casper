@@ -842,6 +842,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     display: block;
     margin: 1.5em auto;
     max-width: 1040px;
+    height: auto;
 }
 @media (max-width: 1040px) {
     .post-full-content img,
