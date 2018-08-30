@@ -1841,7 +1841,8 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
-.post-full-content .kg-width-wide .kg-image {
+.post-full-content .kg-width-wide .kg-image,
+.post-full-content .kg-width-wide .kg-gallery-container {
     max-width: 1040px;
 }
 
@@ -1891,6 +1892,31 @@ Usage (In Ghost editor):
     }
 }
 
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img{
+    width: 100%;
+    height:100%;
+    display: block;
+    margin: 0;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin-left: 10px;
+}
 
 /* 8. Author Template
 /* ---------------------------------------------------------- */
