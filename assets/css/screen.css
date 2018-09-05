@@ -842,6 +842,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     display: block;
     margin: 1.5em auto;
     max-width: 1040px;
+    height: auto;
 }
 @media (max-width: 1040px) {
     .post-full-content img,
@@ -881,8 +882,9 @@ Usage (In Ghost editor):
 }
 
 
+/* Override third party iframe styles */
 .post-full-content iframe {
-    margin: 0 auto;
+    margin: 0 auto !important;
 }
 
 .post-full-content blockquote {
@@ -1848,39 +1850,34 @@ Usage (In Ghost editor):
     max-width: 100vw;
 }
 
-.post-content figcaption {
+.post-full-content figure {
+    margin: 1.5em 0 3em;
+}
+
+.post-full-content figure img {
+    margin: 0;
+}
+
+.post-full-content figcaption {
+    margin: 1.0em 0 0;
     font-size: 80%;
     line-height: 1.6em;
     text-align: center;
 }
 
-.kg-image-card {
-    margin: 0 0 1.5em;
-}
-
-.kg-image-card figcaption {
-    margin: -1.0em 0 1.5em;
+.kg-width-full figcaption {
+    padding: 0 1.5em;
 }
 
 .kg-embed-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1.5em 0 3em;
     min-width: 100%;
-}
-
-.kg-embed-card figcaption {
-    margin: 0.5em 0 0;
 }
 
 .kg-embed-card .fluid-width-video-wrapper {
     margin: 0;
-}
-
-
-.kg-image-full + figcaption {
-    padding: 0 1.5em;
 }
 
 
@@ -1890,6 +1887,33 @@ Usage (In Ghost editor):
     }
 }
 
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100vw;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
 
 /* 8. Author Template
 /* ---------------------------------------------------------- */
