@@ -1916,6 +1916,13 @@ Usage (In Ghost editor):
     margin: 0 0 0 0.75em;
 }
 
+.kg-gallery-card + .kg-image-card.kg-width-wide,
+.kg-gallery-card + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+    margin: -2.25em 0 3em;
+}
+
 /* 8. Author Template
 /* ---------------------------------------------------------- */
 
