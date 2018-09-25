@@ -1,0 +1,56 @@
+{{!-- Site header --}}
+<header class="header">
+  {{!-- Top header only on the index Page --}}
+  {{#is "home"}}
+    <div class="header-top">
+      <a href="{{@blog.url}}">
+        {{#if @blog.logo}}
+          <img class="lazyload header-top__logo" data-src="{{@blog.logo}}" alt="{{@blog.title}}">
+        {{else}}
+          <h1 class="header-top__title">{{@blog.title}}</h1>
+        {{/if}}
+      </a>
+    </div>
+  {{/is}}
+
+  <div class="header-main">
+    <div class="container wrapper">
+      <div class="grid">
+        {{^is "home"}}
+          {{!-- Blog logo or name --}}
+          <div class="header-main__brand col-xs">
+            <a href="{{@blog.url}}">
+              {{#if @blog.logo}}
+                <img class="lazyload header-main__logo" data-src="{{@blog.logo}}" alt="{{@blog.title}}">
+              {{else}}
+                <h3 class="header-main__title">{{@blog.title}}</h3>
+              {{/if}}
+            </a>
+          </div>
+        {{/is}}
+
+        <label for="menu--toggle" class="header-main__menu--toggle col-xs{{#is "home"}} left{{else}} right{{/is}}">
+          {{!-- {{>icon name="menu" size="large"}} --}}
+          <i class="icon icon-menu icon--large">
+            <svg class="icon__svg">
+              <use xlink:href="#icon-menu"></use>
+            </svg>
+          </i>
+        </label>
+        <input type="checkbox" id="menu--toggle" title="Menu" class="is-hidden"/>
+
+        {{!-- Blog navigation --}}
+        <nav class="header-main__menu nav col-sm{{#is "home"}} top{{/is}}">
+          {{navigation}}
+        </nav>
+
+        {{!-- Search --}}
+        <div class="header-main__search col-xs">
+          <a class="header-main__search--open" id="search-open" href="#" aria-label="{{t 'Search'}}">
+            {{>icon name="search" size="large"}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

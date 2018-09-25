@@ -1,0 +1,17 @@
+{{!-- Post Card --}}
+<div class="tag-card{{#if class}} {{class}}{{/if}}">
+  {{#if feature_image}}
+    <div class="tag-card__image">
+      <a class="lazyload js-fadein" href="{{url}}" data-src="{{img_url feature_image}}" title="{{name}}" aria-label="{{name}}"></a>
+    </div>
+  {{/if}}
+  <div class="tag-card__content">
+    <h3 class="tag-card__name tag-card-{{id}}">
+      <a href="{{url}}" title="{{name}}" aria-label="{{name}}">{{name}}</a>
+    </h3>
+    {{!-- <div class="tag-card__spacer"></div> --}}
+    <div class="tag-card__action">
+      <a href="{{url}}" class="btn btn__opac" title="{{name}} posts" aria-label="{{name}} posts">{{t "Posts"}}({{count.posts}})</a>
+    </div>
+  </div>
+</div>

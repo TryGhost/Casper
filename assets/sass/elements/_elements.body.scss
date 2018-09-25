@@ -1,0 +1,25 @@
+//===================================
+// Html and body
+//===================================
+
+html, body {
+  color: $color-dark;
+  background-color: $color-white;//$color-background;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  font-family: $font-family-sans-serif;
+  line-height: $line-height-base;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+main {
+  padding-top: $spacing-large;
+}

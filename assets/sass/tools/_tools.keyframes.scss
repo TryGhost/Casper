@@ -1,0 +1,13 @@
+//===================================
+// Tools => Keyframe
+//===================================
+
+@mixin keyframe ($animation) {
+	@-webkit-keyframes #{$animation} {
+		@content;
+	}
+	
+	@keyframes #{$animation} {
+		@content;
+	}
+}

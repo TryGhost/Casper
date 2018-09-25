@@ -1,0 +1,24 @@
+//===================================
+// Blockquote
+//===================================
+
+blockquote {
+  margin: $spacing-large 0;
+  font-size: $font-size-base * 1.25;
+  line-height: $line-height-base;
+  padding: $spacing-base;
+  text-align: center;
+  border-left: 3px solid $color-brand;
+  background-color: rgba($color-brand, 0.1);
+
+  &+ figcaption cite {
+    display: block;
+    font-size: inherit;
+    text-align: right;
+    font-style: italic;
+  }
+
+  p {
+    margin: 0;
+  }
+}

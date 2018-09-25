@@ -1,0 +1,63 @@
+//===================================
+// Components => Tags
+//===================================
+
+.tag-header {
+  &__content {
+    position: relative;
+    padding: $spacing-huge $spacing-large;
+    border-radius: $global-border-radius;
+    background-color: rgba($color-secondary, 0.3);
+    background: linear-gradient(to bottom, rgba($color-secondary, 0.3), rgba($color-secondary, 0.6));
+  }
+
+  &__img {
+    position: absolute;
+    border-radius: inherit;
+    @include full-cover();
+    @include cover-background();
+    @include overlay($color1: rgba($color-secondary, 0.5), $color2: rgba($color-secondary, 0.8), $opacity: 0.9);
+  }
+
+  &__name {
+    position: relative;
+    z-index: 1;
+    color: $color-white;
+  }
+
+  &__description {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    color: $color-white;
+  }
+}
+
+.tags {
+  display: inline-block;
+  padding: $spacing-tiny $spacing-base;
+  margin-right: $spacing-small;
+  margin-bottom: $spacing-small;
+  background-color: $color-brand;
+  color: $color-white;
+  border-radius: $spacing-base; //$global-border-radius;
+  text-transform: lowercase;
+  transition: opacity $global-transition;
+
+  @include attention() {
+    color: $color-white;
+    opacity: 0.8;
+  }
+
+  &:visited {
+    color: $color-white;
+  }
+}
+
+.tag-cloud {
+  .tags {
+    margin-right: $spacing-tiny;
+    margin-bottom: $spacing-small;
+  }
+}

@@ -1,0 +1,89 @@
+//===================================
+// Tools => Helpers
+//===================================
+
+@mixin overlay($direction: to bottom,
+               $color1: rgba($color-dark, 0.5),
+               $color2: rgba($color-dark, 0.8),
+               $opacity: 1) {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: linear-gradient($direction, $color1, $color2);
+    opacity: $opacity;
+    transition: all $global-transition;
+  }
+}
+
+@mixin full-cover {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin cover-background {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+};
+
+@mixin title-special {
+  position: relative;
+  padding-left: $spacing-base;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: $spacing-small;
+    height: $spacing-small;
+    background-color: rgba($color-brand, 0.6);
+    top: $spacing-small;
+    left: 0;
+    z-index: 2;
+    border-radius: $global-border-radius;
+  }
+
+  &:after {
+    background-color: rgba($color-secondary, 0.6);
+    top: 0.4 * $spacing-base;
+    left: 0.1 * $spacing-base;
+    z-index: 1;
+  }
+}
+
+@mixin box-shadow($top: 0, $left: 0, $blur: 1em, $color:rgba($color-black,0.1), $inset: false) {
+  @if $inset {
+    box-shadow: inset $left $top $blur $color;
+  } @else {
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+@mixin child($num) {
+  &:nth-child(#{$num}) {
+    @content;
+  }
+}
+
+@mixin each($num) {
+  &:nth-child(#{$num}n) {
+    @content;
+  }
+}
+
+@mixin nth-child($each, $num) {
+  &:nth-child(#{each}n + #{num}) {
+    @content;
+  }
+}

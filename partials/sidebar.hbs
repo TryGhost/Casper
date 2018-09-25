@@ -1,0 +1,77 @@
+{{!-- Sidebar --}}
+<div class="sidebar">
+
+  {{!-- Author card on Posts --}}
+  {{#primary_author}}
+  <div class="sidebar__section">
+    <h5 class="sidebar__title">{{t "Author"}}</h5>
+    {{> author-card}}
+  </div>
+  {{/primary_author}}
+
+  {{!-- Subscribe --}}
+	{{#if @labs.subscribers}}
+    <div class="sidebar__section">
+      <h5 class="sidebar__title">{{t "Subscribe"}}</h5>
+      <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
+      {{ subscribe_form
+        placeholder=(t "Your email address")
+        form_class="subscribe__form"
+        input_class="subscribe__input"
+        button_class="btn btn__full"
+      }}
+    </div>
+  {{/if}}
+
+  {{!-- Advertisement --}}
+  <div class="sidebar__section">
+    <h5 class="sidebar__title">{{t "Advertisement"}}</h5>
+    <a href="{{@blog.url}}" class="sidebar-ad ad-unit">
+      <img class="lazyload js-fadein" src="/assets/img/ad-unit-300-250.jpg" alt="{{t 'Advertisement'}}"/>
+    </a>
+  </div>
+
+  {{!-- Social Media Links --}}
+  <div class="sidebar__section">
+    <h5 class="sidebar__title">{{t "Follow us"}}</h5>
+    {{>social-media}}
+  </div>
+
+  {{!-- Sidebar featured posts --}}
+  {{#get "posts" filter="featured:true+id:-{{id}}" limit="5" include="authors,tags" as |featured|}}
+    {{#if featured}}
+    <div class="sidebar__section">
+      <h5 class="sidebar__title">{{t "Featured posts"}}</h5>
+      {{#foreach featured}}
+        <article class="sidebar__story">
+          <div class="sidebar__story-number" style="background-image: url({{img_url feature_image}})">{{@number}}</div>
+          <h6 class="sidebar__story-title">
+            <a href="{{url}}">{{{title}}}</a>
+          </h6>
+        </article>
+      {{/foreach}}
+    </div>
+    {{/if}}
+  {{/get}}
+
+  {{!-- Tag Cloud --}}
+  <div class="sidebar__section tag-cloud">
+    <h5 class="sidebar__title">{{t "Tag cloud"}}</h5>
+    {{> tag-cloud}}
+  </div>
+
+  {{!-- Sidebar latest posts --}}
+  {{#get "posts" filter="featured:false+id:-{{id}}" limit="5" include="authors,tags" as |latest|}}
+  <div class="sidebar__section">
+    <h5 class="sidebar__title">{{t "Latest posts"}}</h5>
+    {{#foreach latest}}
+      <article class="sidebar__story">
+        <div class="sidebar__story-number" style="background-image: url({{img_url feature_image}})">{{@number}}</div>
+        <h6 class="sidebar__story-title">
+          <a href="{{url}}">{{{title}}}</a>
+        </h6>
+      </article>
+    {{/foreach}}
+  </div>
+  {{/get}}
+</div>

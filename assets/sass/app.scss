@@ -1,0 +1,27 @@
+//===================================
+// Main style
+//===================================
+
+// 1. Settings
+@import 'settings/_settings._main';
+
+// 2. Tools
+@import 'tools/_tools._main';
+
+// 3. Generic
+@import 'generic/_generic._main';
+
+// 3.1 Vendor
+@import 'vendor/_vendor._main';
+
+// 4. Elements
+@import 'elements/_elements._main';
+
+// 5. Objects
+@import 'objects/_objects._main';
+
+// 6. Components
+@import 'components/_components._main';
+
+// 7. Trumps
+@import 'trumps/_trumps._main';

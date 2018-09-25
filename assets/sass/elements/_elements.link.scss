@@ -1,0 +1,28 @@
+//===================================
+// Links
+//===================================
+
+a {
+  color: $color-link;
+  color: inherit;
+  text-decoration: none;
+  transition: color $global-transition, border $global-transition;
+
+  &:visited {
+    color: inherit;
+  }
+
+  @include attention () {
+    color: $color-link-hover;
+    color: inherit;
+    border-color: inherit;
+  }
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  border-bottom: 1px solid transparent;
+
+  @include attention() {
+    border-color: inherit;
+  }
+}

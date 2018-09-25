@@ -1,0 +1,76 @@
+//===================================
+// Components => Sidebar
+//===================================
+
+.sidebar {
+  &__section {
+    background-color: $color-white;
+    padding: $spacing-large $spacing-base;
+    margin-bottom: $spacing-large;
+    border-radius: $global-border-radius;
+    @include box-shadow($blur: 0.05 * $spacing-base);
+
+    @include mq($from: md) {
+      padding: $spacing-large;
+    }
+  }
+
+  &__title {
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    padding: $spacing-tiny 0;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-regular;
+    text-align: center;
+  }
+
+  // Subscribe
+  .subscribe__input {
+    border: 0;
+    border-bottom: 1px solid $color-border;
+    margin-bottom: $spacing-base;
+    padding: 0;
+  }
+
+  .subscribe__form {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  &__story {
+    display: flex;
+    margin-bottom: $spacing-base;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-number {
+      line-height: 0.9;
+      margin-right: $spacing-tiny;
+      width: 2rem;
+      text-align: center;
+      font-size: 3 * $font-size-base;
+      font-weight: $font-weight-bold;
+      background-color: $color-dark;
+      // background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 0px rgba(0,0,0,0.2);
+      @include cover-background();
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: none;
+        background-image: none!important;
+        color: $color-black;
+        width: 3rem;
+      }
+    }
+
+    &-title {
+      margin: 0;
+      // font-family: $font-family-sans-serif;
+    }
+  }
+}
+

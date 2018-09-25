@@ -1,0 +1,16 @@
+//===================================
+// Settings => Config
+//===================================
+
+// Global config settings
+$config: (
+  debug: false,
+);
+
+// You can access data in this map using the following function
+// config(<key>)
+// Example:
+// @if (config(debug) == true) { ... }
+@function config($key) {
+  @return map-get($config, $key);
+}

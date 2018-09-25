@@ -1,0 +1,57 @@
+//===================================
+// Input and Buttons
+//===================================
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  width: 100%;
+  display: block;
+  padding: $spacing-base;
+  margin-bottom: $spacing-base;
+  border: 1px solid $color-border;
+  border-radius: $global-border-radius;
+  outline: 0;
+  line-height: initial;
+  background-color: $color-white;
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  transition: $global-transition;
+
+  @include attention() {
+    outline: none;
+    border-color: $color-brand;
+  }
+}
+
+button {
+  color: $color-black;
+  font-weight: $font-weight-bold;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  transition: color $global-transition, background $global-transition;
+  background: transparent;
+  text-transform: uppercase;
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: $color-gray-light;
+  border-radius: $global-border-radius;
+  padding: $spacing-base;
+
+  @include attention() { outline: none; }
+}

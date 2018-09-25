@@ -1,0 +1,75 @@
+//===================================
+// Components => Subscribe
+//===================================
+.subscription {
+  margin-bottom: $spacing-large;
+}
+
+.subscribe {
+  padding: $spacing-large $spacing-base;
+  border-left: 20px solid $color-brand;
+  border-right: 20px solid $color-secondary;
+  background-position: 0 0, 0 100% ;
+  background-repeat: no-repeat;
+  background-size: 100% 20px;
+  background-image:
+    linear-gradient(to right, $color-brand 0%, $color-secondary 100%),
+    linear-gradient(to right, $color-brand 0%, $color-secondary 100%);
+  text-align: center;
+  background-color: $color-white;
+
+  @include mq($from: md) {
+    padding: $spacing-huge $spacing-large;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 20em;
+    margin: 0 auto $spacing-base;
+
+    @include mq($from: md) {
+      flex-direction: row;
+    }
+
+    .btn { margin-bottom: 0; }
+  }
+
+  .form-group {
+    flex: 3 1;
+  }
+
+  &__input,
+  &__btn {
+    height: 2.5em;
+    width: 100%;
+    border: 2px solid $color-gray-light;
+  }
+
+  &__input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0;
+
+    @include mq($from: md) {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: $global-border-radius;
+      border-right: 0;
+      border-bottom: 2px solid $color-gray-light;
+    }
+  }
+
+  &__btn {
+    flex: 1 1;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: $color-gray;
+    cursor: pointer;
+
+    @include mq($from: md) {
+      border-top-right-radius: $global-border-radius;
+      border-bottom-left-radius: 0;
+    }
+  }
+}

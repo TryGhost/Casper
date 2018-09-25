@@ -1,0 +1,17 @@
+{{!-- Blog search --}}
+<div class="search" id="search">
+  <div class="search__header">
+    <a class="search--close" id="search-close">
+      {{>icon name="close" size="large"}}
+    </a>
+    <form action="/" method="get" class="search__form" id="search-form">
+      <input type="text" id="search-field" class="search__input" title='{{t "Search"}}' placeholder='{{t "Search"}}' autocomplete="off" required>
+      <div class="search__icon">
+        {{>icon name="search" size="huge"}}
+      </div>
+    </form>
+  </div>
+  <div class="search__content">
+    <div class="search__result" id="results"></div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{{!-- Author Box --}}
+<div class="author-card">
+  {{!-- Author profile image --}}
+  {{#if profile_image}}
+    <a href="{{url}}" class="author-card__image lazyload" data-src="{{img_url profile_image}}"></a>
+  {{/if}}
+  {{!-- Author Name --}}
+  <h5 class="author-card__name"><a href="{{url}}">{{name}}</a></h5>
+  {{!-- Author bio --}}
+  {{#if bio}}
+    <p class="author-card__bio">{{bio}}</p>
+  {{/if}}
+  <div class="author-card__social">
+    {{#if twitter}}
+      <a href="{{twitter_url}}" title="{{name}} Twitter" aria-label="{{name}} Twitter">
+        {{>icon name="twitter"}}
+      </a>
+    {{/if}}
+    {{#if facebook}}
+      <a href="{{facebook_url}}" title="{{name}} Facebook" aria-label="{{name}} Facebook">
+        {{>icon name="facebook"}}
+      </a>
+    {{/if}}
+  </div>
+</div>
+

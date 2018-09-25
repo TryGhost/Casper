@@ -1,0 +1,20 @@
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+<div class="{{post_class}}">
+  <div class="container wrapper">
+    <div class="grid">
+      {{#get "users" limit="all" include="count.posts" order="count.posts desc"}}
+				{{#foreach users}}
+					<div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="author-card-wrapper">
+						  {{>author-card}}
+            </div>
+					</div>
+				{{/foreach}}
+			{{/get}}
+    </div>
+  </div>
+</div>
+{{/post}}

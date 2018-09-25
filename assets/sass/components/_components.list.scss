@@ -1,0 +1,10 @@
+//===================================
+// Components => List Style
+//===================================
+
+.list {
+  &--unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
+}

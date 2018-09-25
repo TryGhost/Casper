@@ -1,0 +1,63 @@
+//===================================
+// Components => Tag Card
+//===================================
+
+.tag-card {
+  position: relative;
+  margin-bottom: $spacing-large;
+  padding: 0;
+  border-radius: $global-border-radius;
+  background-color: rgba($color-secondary,0.9);
+  overflow: hidden;
+  min-height: 15rem;
+  height: 18rem;
+  display: flex;
+  justify-content: center;
+  @include box-shadow($blur: 0.05 * $spacing-base);
+
+  @include attention() {
+    .tag-card__image {
+      @include overlay($color1: rgba($color-dark, 0.5), $color2: rgba($color-dark, 0.8), $opacity: 1);
+      a { transform: scale(1.02); }
+    }
+  }
+
+  @include mq($from: md) { height: 20rem; }
+
+  &__image {
+    position: absolute;
+    @include full-cover();
+    @include overlay($color1: rgba($color-dark, 0.5), $color2: rgba($color-dark, 0.8), $opacity: 0.9);
+
+    a {
+      display: block;
+      height: 100%;
+      transition: transform $global-transition;
+
+      @include cover-background();
+    }
+  }
+
+  &__content {
+    padding: $spacing-large;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    font-family: $font-family-sans-serif;
+    color: $color-white;
+  }
+
+  &__action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: $spacing-base auto;
+    width: 100%;
+  }
+}

@@ -1,0 +1,24 @@
+{{!< default}}
+
+{{!-- The main content area on the About Us page --}}
+<div class="container wrapper">
+  <div class="page-content">
+    {{!-- Page title --}}
+    {{#post}}
+      <h1 class="page__title center-xs">{{title}}</h1>
+      {{#if feature_image}}
+        <img class="lazyload js-fadein" data-src="{{img_url feature_image}}" alt="{{title}}"/>
+      {{/if}}
+    {{/post}}
+
+    <p class="page__about-us">
+      {{t "Our goal is to design and develop clean, fast and responsive themes for the Ghost blogging platform.
+      Each theme we create is completely responsive, that means it will look great across all devices and any screen size."
+      }}
+    </p>
+    <p class="page__about-us">
+      {{t "We beleive customer support is important too, that is why we offer support for free for all our themes.
+      If you need advanced customization we are available for hire, just drop us a message."}}
+    </p>
+  </div>
+</div>

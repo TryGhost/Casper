@@ -1,0 +1,31 @@
+//===================================
+// Code Blocks
+//===================================
+
+pre,
+code {
+  padding: $spacing-tiny/2 $spacing-tiny;
+  font-family: $font-family-monospace;
+  background-color: rgba($color-brand, 0.1);
+  white-space: normal;
+  margin: $spacing-base 0;
+
+  pre, code { background: transparent; }
+}
+
+// Code block
+pre {
+  overflow: auto;
+  margin-top: 0;
+  margin: $spacing-base 0;
+  padding: $spacing-base;
+  font-size: $font-size-base;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+  code {
+    word-wrap: normal;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+  }
+}

@@ -1,53 +1,92 @@
 {{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{#author}}
 {{!-- Everything inside the #author tags pulls data from the author --}}
-<header class="site-header outer {{#if cover_image}}" style="background-image: url({{cover_image}}){{else}}no-cover{{/if}}">
-    <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
+{{#author}}
+  <section class="author-header">
+    <div class="container wrapper">
+      <div class="grid">
+        <div class="col-xs-12">
+          <div class="author-profile center-xs">
+
+            {{!-- Author profile image --}}
+            {{#if cover_image}}
+              <div class="author-profile__cover lazyload" data-src="{{img_url cover_image}}"></div>
+            {{/if}}
+
+            {{!-- Author Name --}}
+            <h2 class="author-profile__name">{{name}}</h2>
+
+            {{!-- Author profile image --}}
             {{#if profile_image}}
-                <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+              <div class="author-profile__image lazyload" data-src="{{img_url profile_image}}"></div>
             {{/if}}
-            <h1 class="site-title">{{name}}</h1>
+
+            {{!-- Author bio --}}
             {{#if bio}}
-                <h2 class="author-bio">{{bio}}</h2>
+              <div class="author-profile__description">{{bio}}</div>
             {{/if}}
-            <div class="author-meta">
-                {{#if location}}
-                    <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
-                {{/if}}
-                <div class="author-stats">
-                    {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
+
+            <div class="author-profile__meta">
+              {{!-- Author location --}}
+              {{#if location}}
+                <div class="author-profile__meta-location">
+                  {{> icon name="map-pin" size="small"}}
+                  <p>{{location}}</p>
                 </div>
-                {{#if website}}
-                    <a class="social-link social-link-wb" href="{{website}}" target="_blank">{{> "icons/website"}}</a>
-                {{/if}}
-                {{#if twitter}}
-                    <a class="social-link social-link-tw" href="{{twitter_url}}" target="_blank">{{> "icons/twitter"}}</a>
-                {{/if}}
-                {{#if facebook}}
-                    <a class="social-link social-link-fb" href="{{facebook_url}}" target="_blank">{{> "icons/facebook"}}</a>
-                {{/if}}
+              {{/if}}
+              {{!-- Author post number --}}
+              <div class="author-profile__meta-count">
+                {{> icon name="bar-chart" size="small"}}
+                <p>
+                  {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+                </p>
+              </div>
             </div>
+
+            {{!-- Author social links --}}
+            <div class="author-profile__social">
+              {{#if twitter}}
+                <a class="author-profile__social-link" href="{{twitter_url}}" target="_blank" title="Twitter" aria-label="Twitter">
+                  {{> icon name="twitter" class="icon--filled"}}
+                </a>
+              {{/if}}
+              {{#if facebook}}
+                <a class="author-profile__social-link" href="{{facebook_url}}" target="_blank" title="Facebook" aria-label="Facebook">
+                  {{> icon name="facebook" class="icon--filled"}}
+                </a>
+              {{/if}}
+              {{!-- Author website --}}
+              {{#if website}}
+                <a class="author-profile__social-link" href="{{website}}" target="_blank" title="Website" aria-label="Website">
+                  {{> icon name="link"}}
+                </a>
+              {{/if}}
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</header>
+  </section>
 {{/author}}
 
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-
-        <div class="post-feed">
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
+{{!-- The main content/post by the author --}}
+{{#if posts}}
+<section class="author-posts" id="content">
+  <div class="container wrapper">
+    <div class="grid">
+      {{#foreach posts}}
+        <div class="col-xs-12 col-md-4 post-wrapper">
+          {{> post-card class="post-card--1-3"}}
         </div>
-
+      {{/foreach}}
     </div>
-</main>
+    <div class="grid more-posts-wrapper">
+    </div>
+    <div class="grid">
+      <div class="col-xs-12 center-xs">
+        <button id="load-more-btn" class="btn btn__large btn__wide" onClick="loadMorePosts();">{{t "Load more posts"}}</button>
+      </div>
+    </div>
+  </div>
+</section>
+{{/if}}

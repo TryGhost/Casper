@@ -1,0 +1,214 @@
+//===================================
+// Components => Top Post
+//===================================
+
+.top-post {
+  display: flex;
+  flex-wrap: wrap;
+  // padding: $spacing-small 0;
+
+  &__wrapper {
+    padding: 0 0 $spacing-base;
+    display: flex;
+    width: 100%;
+
+    &:last-child {
+      padding: 0;
+    }
+
+    @include mq($from: md) {
+      flex: 1;
+
+      &:nth-of-type(1),
+      &:nth-of-type(4) {
+        flex-basis: 100%;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(5),
+      &:nth-of-type(6) {
+        flex-basis: 50%;
+        .top-post__title {
+          font-size: 1.4 * $font-size-base;
+        }
+      }
+
+      &:nth-of-type(2) {
+        padding: 0 $spacing-small $spacing-base 0;
+      }
+
+      &:nth-of-type(3) {
+        padding: 0 0 $spacing-base $spacing-small;
+      }
+
+      &:nth-of-type(5) {
+        padding: 0 $spacing-small 0 0;
+      }
+
+      &:nth-of-type(6) {
+        padding: 0 0 0 $spacing-small;
+      }
+    }
+
+    @include mq($from: lg) {
+      &:nth-of-type(1) {
+        flex-basis: 100%;
+        padding: 0 0 $spacing-base;
+        .top-post__title {
+          font-size: 1.8 * $font-size-base;
+        }
+      }
+
+      &:nth-of-type(2) {
+        flex-basis: 50%;
+        padding: 0 $spacing-small $spacing-base 0;
+      }
+
+      &:nth-of-type(3) {
+        flex-basis: 50%;
+        padding: 0 0 $spacing-base $spacing-small;
+      }
+
+      &:nth-of-type(4),
+      &:nth-of-type(5),
+      &:nth-of-type(6) {
+        flex-basis: 33%;
+        .top-post__title {
+          font-size: 1.4 * $font-size-base;
+        }
+      }
+
+      &:nth-of-type(4) {
+        padding: 0 $spacing-small 0 0;
+      }
+
+      &:nth-of-type(5) {
+        padding: 0 $spacing-small 0;
+      }
+
+      &:nth-of-type(6) {
+        padding: 0 0 0 $spacing-small;
+      }
+    }
+  }
+
+  &__card {
+    padding: $spacing-base;
+    min-height: 15em;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    border-radius: $global-border-radius;
+
+    @include mq($from: md) {
+      padding: $spacing-large;
+      min-height: 20em;
+    };
+
+    @include cover-background();
+
+    @include overlay();
+    
+    @include attention {
+      hr {
+        opacity: 1;
+        margin-bottom: $spacing-base;
+        transition: margin $global-transition-2x, opacity $global-transition;
+      }
+
+      .top-post__info {
+        opacity: 1;
+        margin-bottom: 0;
+        transition: margin $global-transition-2x, opacity $global-transition;
+      }
+    }
+
+    // &.no-img {
+
+    // }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    color: $color-light;
+  }
+
+  &__title, 
+  &__author, 
+  &__author a, 
+  &__date, 
+  &__comment, 
+  &__comment a, 
+  &__excerpt {
+    margin: 0;
+    color: $color-light;
+  }
+
+  &__tag {
+    margin-bottom: $spacing-base;
+  }
+
+  &__link {
+    @include attention() {
+      .top-post__title {
+        // color: rgba($color-brand, 0.85);
+        // transition: color $global-transition;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 1.2 * $font-size-base;
+    color: $color-light;
+    margin-bottom: 0;
+    transition: color $global-transition;
+
+    @include mq($from: sm) {
+      font-size: 1.4 * $font-size-base;
+    }
+
+    @include mq($from: md) {
+      font-size: 1.6 * $font-size-base;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex: 1 0 auto;
+    margin-bottom: -$spacing-base;
+    opacity: 0;
+    transition: margin $global-transition-2x, opacity $global-transition;
+
+    @include mq($from: md) {
+      margin-bottom: -$spacing-large;
+    }
+  }
+
+  &__author {
+    margin-right: $spacing-small;
+    transition: color $global-transition;
+
+    @include attention() {
+      a { 
+        color: rgba($color-brand, 0.85);
+        transition: color $global-transition;
+      }
+    }
+  }
+
+  &__date {
+    margin-right: $spacing-base;
+  }
+
+  hr {
+    background: linear-gradient(to right, rgba($color-brand, 0.5), rgba($color-secondary, 0.5));
+    opacity: 0;
+    margin-bottom: -$spacing-base;
+    transition: margin $global-transition-2x, opacity $global-transition;
+  }
+}

@@ -1,0 +1,14 @@
+//===================================
+// Settings => Breakpoints
+//===================================
+
+// Breakpoints 
+// Example usage:
+// @include mq($from: sm) {}
+$mq-breakpoints: (
+  // xs not necessary, this is default
+  sm:  576px,
+  md:  768px,
+  lg:  992px,
+  xl: 1200px
+);

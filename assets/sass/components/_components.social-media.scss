@@ -1,0 +1,66 @@
+//===================================
+// Components => Social Media Links
+//===================================
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__item {
+    padding: $spacing-tiny;
+    margin-right: $spacing-small;
+
+    @include mq($from: md) {
+      padding: $spacing-small;
+    }
+
+    .icon { display: block; }
+
+    &.facebook {
+      border-color: $color-facebook;
+    }
+
+    &.twitter {
+      border-color: $color-twitter;
+    }
+
+    &.google-plus {
+      border-color: $color-google-plus;
+    }
+
+    &.linkedin,
+    &.linkedin-l {
+      border-color: $color-linkedin;
+    }
+
+    &.instagram {
+      border-color: $color-instagram;
+    }
+
+    &.pinterest,
+    &.pinterest-p {
+      border-color: $color-pinterest;
+    }
+
+    &.github {
+      border-color: $color-github;
+    }
+
+    &.reddit {
+      border-color: $color-reddit;
+    }
+
+    &.rss {
+      border-color: $color-rss;
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+.social-share {
+  // a { display: inline-block; }
+}

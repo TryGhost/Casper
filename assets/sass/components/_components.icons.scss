@@ -1,0 +1,141 @@
+//===================================
+// Components => Icons
+//===================================
+
+.icon {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  stroke-width: 2px;
+  fill: none;
+
+  &--filled {
+    stroke-width: 0px;
+    fill: #000;
+
+    &.icon-facebook {
+      fill: $color-facebook;
+    }
+
+    &.icon-twitter {
+      fill: $color-twitter;
+    }
+
+    &.icon-google-plus {
+      fill: $color-google-plus;
+    }
+
+    &.icon-linkedin {
+      fill: $color-linkedin;
+    }
+
+    &.icon-instagram {
+      fill: $color-instagram;
+    }
+
+    &.icon-pinterest {
+      fill: $color-pinterest;
+    }
+
+    &.icon-github {
+      fill: $color-github;
+    }
+
+    &.icon-reddit {
+      fill: $color-reddit;
+    }
+
+    &.icon-rss {
+      fill: $color-rss;
+    }
+  }
+
+  &--small {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--large {
+    width: 30px;
+    height: 30px;
+  }
+
+  &--huge {
+    width: 40px;
+    height: 40px;
+  }
+
+  &--2x {
+    width: 50px;
+    height: 50px;
+  }
+
+  &--3x {
+    width: 75px;
+    height: 75px;
+  }
+
+  &--4x {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__svg {
+    fill: inherit;
+    background: inherit;
+    stroke: currentcolor;
+    stroke-width: inherit;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: translateX(0);
+    transition: fill $global-transition, stroke $global-transition;
+  }
+
+  &-facebook {
+    color: $color-facebook;
+  }
+
+  &-twitter {
+    color: $color-twitter;
+  }
+
+  &-google-plus {
+    color: $color-google-plus;
+  }
+
+  &-linkedin {
+    color: $color-linkedin;
+  }
+
+  &-instagram {
+    color: $color-instagram;
+  }
+
+  &-pinterest {
+    color: $color-pinterest;
+  }
+
+  &-github {
+    color: $color-github;
+  }
+
+  &-reddit {
+    color: $color-reddit;
+  }
+
+  &-rss {
+    color: $color-rss;
+  }
+
+  &-search,
+  &-close {
+    @include attention() {
+      svg {
+        stroke: $color-brand;
+      }
+    }
+  }
+}

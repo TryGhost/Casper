@@ -1,0 +1,15 @@
+//===================================
+// Tools => Attention
+//===================================
+
+// Apply ‘attention’ styles in one go.
+// @include attention() {
+//   text-decoration: underline;
+// }
+@mixin attention() {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}

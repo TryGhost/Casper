@@ -1,0 +1,22 @@
+//===================================
+// Components => Lazyload
+//===================================
+
+.lazyload {
+  opacity: 0;
+}
+
+.lazyload.loaded {
+  opacity: 1;
+  transition: opacity $global-transition-4x, transform $global-transition;
+}
+
+.initial.loaded {
+  opacity: 1;
+  transition: opacity $global-transition-4x, transform $global-transition;
+}
+
+.loaded.is-in-view {
+  opacity: 1;
+  transition: opacity $global-transition-2x, transform $global-transition;
+}

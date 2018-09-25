@@ -1,26 +1,37 @@
-<article class="post-card {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
-    {{#if feature_image}}
-        <a class="post-card-image-link" href="{{url}}">
-            <div class="post-card-image" style="background-image: url({{feature_image}})"></div>
-        </a>
-    {{/if}}
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="{{url}}">
-            <header class="post-card-header">
-                {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
-                {{/if}}
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-            {{#if author.profile_image}}
-                <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />
-            {{/if}}
-            <span class="post-card-author">{{author}}</span>
-        </footer>
+{{!-- Post Card --}}
+<div class="post-card{{#if class}} {{class}}{{/if}}{{#if featured}} featured{{/if}}">
+  {{#if feature_image}}
+    <div class="post-card__image">
+      {{#if featured}}
+        <div class="post-card__featured">
+          {{> icon name="star"}}
+        </div>
+      {{/if}}
+      <a class="lazyload js-fadein" href="{{url}}" {{#if lazy}}style="background-image: url({{img_url feature_image}})"
+      {{else}}data-src="{{img_url feature_image}}"{{/if}} title="{{title}}" aria-label="{{title}}"></a>
     </div>
-</article>
+  {{/if}}
+  <div class="post-card__content">
+    <h2 class="post-card__title">
+      <a href="{{url}}" title="{{title}}" aria-label="{{title}}">{{title}}</a>
+    </h2>
+
+    {{#if tags}}
+      {{#foreach tags limit="3"}}
+        <a class="tag-{{slug}} post-card__tag" href="{{url}}" title="{{name}}" aria-label="{{name}}s">#{{name}}</a>
+      {{/foreach}}
+    {{/if}}
+
+    <p class="post-card__excerpt">
+      {{excerpt words="26"}}&hellip;
+    </p>
+
+    <div class="post-card__info">
+      <div class="post-card__author">{{#primary_author}}{{name}}{{/primary_author}}</div>
+      <time datetime="{{date format='YYYY-MM-DD'}}" class="post-card__date">{{date published_at}}</time>
+      <div class="post-card__share">
+        {{> social-share}}
+      </div>
+    </div>
+  </div>
+</div>

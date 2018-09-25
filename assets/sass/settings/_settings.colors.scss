@@ -1,0 +1,89 @@
+//===================================
+// Colors
+//===================================
+
+// Brand color
+$color-brand:                 #423dec;
+
+// Secondary color
+$color-secondary:             #CE2B74; //#e235bc;
+
+// Background color.
+$color-background:            #f8f8f8;
+
+// White color.
+$color-white:                 #ffffff;
+
+// Black color.
+$color-black:                 #000000;
+
+// Dark text color
+$color-dark: 						      #222222;
+
+// Light text color
+$color-light:                 #dddddd;
+
+// Gray colors
+$color-gray:                  #808080;
+$color-gray-light:            #f1f1f1;
+$color-gray-dark:             #A9A9A9;
+
+// Placeholder color
+$color-placeholder:           #d1d5dE;
+
+// Global text link color.
+$color-link:                    $color-brand;
+
+// Link hover color.
+$color-link-hover:              darken($color-link, 10%);
+
+// Link visited color.
+$color-link-visited:            darken($color-link, 20%);
+
+// Globar border color
+$color-border:                #e4e4e4;
+
+// Tag colors
+$color-tag-1:                 #af0037;
+$color-tag-2:                 #138098;
+$color-tag-3:                 #0060b6;
+$color-tag-4:                 #f93a48;
+$color-tag-5:                 #00cdac;
+$color-tag-6:                 #414285;
+$color-tag-7:                 #EC7309;
+$color-tag-8:                 #f8ca00;
+$color-tag-9:                 #8000ff;
+$color-tag-10:                #423d37;
+$color-tag-11:                #176ced;
+$color-tag-12:                #d4c900;
+$color-tag-13:                #d94530;
+$color-tag-14:                #1a2940;
+$color-tag-15:                #ffb3a3;
+$color-tag-16:                #4a7c9f;
+$color-tag-17:                #fa5496;
+$color-tag-18:                #0076a3;
+$color-tag-19:                #b0e000;
+$color-tag-20:                #8d9ca3;
+
+// Social Media colors
+$color-behance:               #0077ff;
+$color-dribbble:              #ea4c89;
+$color-email:                 #35c7ed;
+$color-facebook:              #4862a3;
+$color-github:                #333;
+$color-google:                #3f85f4;
+$color-google-plus:           #dd4b39;
+$color-instagram:             #e1306c;
+$color-linkedin:              #0177b5;
+$color-pinterest:             #db242c;
+$color-reddit:                #ff4500;
+$color-rss:                   #fc8f55;
+$color-skype:                 #00aff0;
+$color-soundcloud:            #ff4e00;
+$color-spotify:               #84bd00;
+$color-stumbleupon:           #ea4b24;
+$color-trello:                #026aa7;
+$color-tumblr:                #2c4762;
+$color-twitter:               #55acee;
+$color-whatsapp:              #59ac23;
+$color-youtube:               #d02022;

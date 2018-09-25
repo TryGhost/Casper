@@ -1,0 +1,26 @@
+//===================================
+// Components => Error page
+//===================================
+
+.error {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-around;
+  text-align: center;
+
+  &__icon {
+    margin: 0 auto;
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      stroke-width: 1px;
+
+      @include mq($from: md) {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}

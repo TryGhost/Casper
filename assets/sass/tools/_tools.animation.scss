@@ -1,0 +1,10 @@
+//===================================
+// Tools => Animation
+//===================================
+
+@mixin animation ($animation, $duration, $delay) {
+    animation-name: $animation;
+    animation-duration: $duration;
+    animation-delay: $delay;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}

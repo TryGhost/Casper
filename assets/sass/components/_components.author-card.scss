@@ -1,0 +1,105 @@
+//===================================
+// Components => Author Card
+//===================================
+
+.author-card {
+  text-align: center;
+
+  &__image {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: $spacing-base;
+    border-radius: 50%;
+    @include cover-background();
+  }
+
+  &__social a {
+    display: inline-block;
+  }
+}
+
+.author-card-wrapper {
+  margin-bottom: $spacing-large;
+  padding: $spacing-base;
+  background-color: $color-white;
+  border-radius: $global-border-radius;
+  @include box-shadow($blur: 0.05 * $spacing-base);
+
+  @include mq($from: md) {
+    padding: $spacing-large;
+  }
+}
+
+.author-profile {
+  position: relative;
+  padding: $spacing-huge $spacing-large;
+  border-radius: $global-border-radius;
+  background-color: rgba($color-secondary, 0.3);
+  background: linear-gradient(to bottom, rgba($color-secondary, 0.4), rgba($color-secondary, 0.7));
+
+  &__cover {
+    position: absolute;
+    border-radius: inherit;
+    @include full-cover();
+    @include cover-background();
+    @include overlay($color1: rgba($color-secondary, 0.5), $color2: rgba($color-secondary, 0.8), $opacity: 0.9);
+  }
+
+  &__image {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: $spacing-base;
+    border-radius: 50%;
+    @include cover-background();
+  }
+
+  &__name,
+  &__description,
+  &__meta,
+  &__social {
+    position: relative;
+    color: $color-white;
+  }
+
+  &__description {
+    margin: 0 auto;
+    margin-bottom: $spacing-base;
+    max-width: 600px;
+  }
+
+  &__meta {
+    display: inline-flex;
+    margin-bottom: $spacing-large;
+
+    p { margin: 0; }
+
+    &-location, &-count {
+      display: inline-flex;
+    }
+
+    &-location {
+      margin-right: $spacing-base;
+    }
+
+    .icon {
+      color: $color-white;
+      margin-right: $spacing-tiny;
+
+      &--small { margin-top: 2.5px; }
+    }
+  }
+
+  &__social {
+    &-link {
+      display: inline-block;
+    }
+    .icon-link {
+      color: $color-white;
+    }
+  }
+}

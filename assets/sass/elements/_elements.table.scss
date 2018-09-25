@@ -1,0 +1,26 @@
+//===================================
+// Table
+//===================================
+
+table {
+  margin: $spacing-base 0;
+  border-spacing: 0px;
+  border-collapse: collapse;
+
+  thead {
+    background-color: darken($color-white, 20%);
+  }
+
+  tbody {
+    background-color: darken($color-white, 5%);
+
+    tr:nth-child(even) {
+      background-color: darken($color-white, 10%);
+    }
+  }
+
+  th, td { 
+    padding: $spacing-base;
+    line-height: $line-height-base;
+  }
+}

@@ -1,0 +1,57 @@
+//===================================
+// Misc
+//===================================
+
+em, i, .italic {
+	font-style: italic;
+}
+
+strong, b, .bold {
+  font-weight: $font-weight-bold;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $color-border;
+  margin: $spacing-base 0;
+}
+
+small {
+  font-size: 65%;
+}
+
+abbr {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: $font-weight-bold;
+  text-transform: lowercase;
+  color: gray;
+}
+
+abbr[title]:hover {
+  cursor: help;
+}
+
+::selection {
+  background: rgba($color-brand, 0.5); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgba($color-brand, 0.5); /* Gecko Browsers */
+}
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}

@@ -1,0 +1,17 @@
+{{!-- Related Posts --}}
+{{#get "posts" include="tags,authors" limit="3" filter="id:-{{id}}+tag:{{primary_tag.slug}}" as |related|}}
+  <section class="related-posts">
+    <div class="container wrapper">
+      <div class="grid">
+        <div class="col-xs-12 center-xs">
+          <h3 class="related-title">{{t "Recommended for you"}}</h3>
+        </div>
+        {{#foreach related}}
+          <div class="col-xs-12 col-md-4 post-wrapper">
+            {{> post-card class="post-card--1-3"}}
+          </div>
+        {{/foreach}}
+      </div>
+    </div>
+  </section>
+{{/get}}

@@ -1,0 +1,319 @@
+//===================================
+// Components => Post Card
+//===================================
+
+.post-card {
+  margin-bottom: $spacing-large;
+  padding: 0;
+  border-radius: $global-border-radius;
+  overflow: hidden;
+  width: 100%;
+  @include box-shadow($blur: 0.05 * $spacing-base);
+
+  @include mq($from: md) {
+    display: flex;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include attention() {
+    .post-card__image a {
+      @include overlay($color1: rgba($color-black, 0.1), $color2: rgba($color-black, 0.2), $opacity: 1);
+      transform: scale(1.02);
+    }
+
+    .post-card__image .post-card__featured .icon {
+      color: $color-brand;
+    }
+
+    .post-card__share {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background-color: $color-white;
+    overflow: hidden;
+    background-color: $color-light;
+
+    @include mq($from: md) {
+      flex: 0 1 50%;
+    }
+
+    .post-card__featured {
+      position: absolute;
+      z-index: 5;
+      padding: $spacing-base;
+
+      .icon {
+        color: rgba($color-brand, 0.6);
+        transition: color $global-transition;
+      }
+    }
+
+    a {
+      position: relative;
+      z-index: 2;
+      display: block;
+      height: 100%;
+      transition: transform $global-transition;
+
+      &:before {
+        display: block;
+        content: '';
+        width: 100%;
+        padding-bottom: 60%;
+      }
+
+      @include overlay($color1: rgba($color-black, 0.1), $color2: rgba($color-black, 0.2), $opacity: 0);
+      @include cover-background();
+    }
+  }
+
+  &__content {
+    padding: $spacing-base;
+    background-color: $color-white;
+    position: relative;
+
+    @include mq($from: md) {
+      flex: 1;
+      padding: $spacing-large;
+    }
+  }
+
+  &__tag {
+    display: inline-block;
+    margin-bottom: $spacing-small;
+    text-transform: lowercase;
+    border-radius: $spacing-base;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+  }
+
+  &__excerpt {
+    color: rgba($color-dark, 0.7);
+  }
+
+  &__info {
+    display: flex;
+    padding-top: $spacing-base;
+    border-top: 1px solid $color-border;
+    color: rgba($color-dark, 0.6);
+  }
+
+  &__date,
+  &__author,
+  &__share {
+    margin: 0;
+    margin-right: $spacing-small;
+  }
+
+  &__share {
+    flex: 1;
+    margin-right: 0;
+    opacity: 0;
+    transition: opacity $global-transition;
+
+    .social-share {
+      text-align: right;
+    }
+
+    .icon { display: inline-block; }
+  }
+
+  // Latest post card
+  &--latest {
+    position: relative;
+    flex-direction: row;
+    max-width: 100%;
+    margin-right: 0;
+    min-height: 20rem;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgba($color-secondary, 0.8);
+
+    @include mq($from: sm) {
+      min-height: 24rem;
+      height: auto;
+    }
+
+    @include mq($from: md) {
+      min-height: 28rem;
+    }
+
+    @include mq($from: lg) {
+      min-height: 32rem;
+    }
+
+    @include attention() {
+      .post-card__title a {
+        border-color: $color-white;
+      }
+
+      .post-card__image a {
+        @include overlay($color1: rgba($color-secondary, 0.5), $color2: rgba($color-secondary, 0.8), $opacity: 1);
+      }
+    }
+
+    .post-card__image {
+      position: absolute;
+      @include full-cover();
+
+      .post-card__featured {
+        display: none;
+      }
+    }
+
+    .post-card__image a {
+      // position: absolute;
+      // @include full-cover();
+      // @include cover-background();
+      &:before { display: none; };
+      @include overlay($color1: rgba($color-secondary, 0.5), $color2: rgba($color-secondary, 0.8), $opacity: 0.9);
+    }
+
+    .post-card__content {
+      position: relative;
+      z-index: 10;
+      padding: $spacing-large $spacing-base;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: inherit;
+      color: $color-white;
+      background-color: transparent;
+    }
+
+    .post-card__tag {
+      margin-bottom: $spacing-small;
+      padding: $spacing-small $spacing-base;
+      color: $color-light;
+      background-color: rgba($color-brand, 0.75);
+      border-radius: 2em;
+      order: 1;
+
+      &:not(:first-of-type) {
+        display: none;
+      }
+
+      @include attention() {
+        opacity: 1;
+      }
+    }
+
+    .post-card__title {
+      text-align: center;
+      max-width: 800px;
+      order: 2;
+      color: $color-white;
+      font-size: 1.6 * $font-size-base;
+      padding: $spacing-base 0;
+
+      @include mq($from: sm) {
+        font-size: 1.8 * $font-size-base;
+      }
+
+      @include mq($from: md) {
+        font-size: 2 * $font-size-base;
+      }
+
+      @include mq($from: lg) {
+        font-size: 2.4 * $font-size-base;
+      }
+    }
+
+    .post-card__excerpt {
+      display: none;
+    }
+
+    .post-card__info {
+      background-color: rgba($color-brand, 0.75);
+      border-radius: $spacing-large;
+      padding-top: 0;
+      border: none;
+      order: 3;
+
+      .post-card__share {
+        display: none;
+      }
+
+      .post-card__date,
+      .post-card__author,
+      .post-card__share {
+        padding: $spacing-small;
+        color: $color-light;
+        margin-right: 0;
+      }
+
+      .post-card__date {
+        padding-right: $spacing-base;
+      }
+
+      .post-card__author {
+        padding-left: $spacing-base;
+      }
+
+      .post-card__share .icon-share {
+        fill: $color-light;
+      }
+    }
+
+    .post-card__date {
+      border-left: 1px solid rgba($color-border, 0.25);
+      // border-right: 1px solid rgba($color-border, 0.25);
+
+      a { color: $color-light; }
+    }
+  }
+
+  &--1-3 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    .post-card__title {
+      font-size: 1.2 * $font-size-base;
+    }
+
+    .post-card__excerpt {
+      display: none;
+    }
+
+    .post-card__image {
+      @include mq($from: md) {
+        flex: none;
+      }
+    }
+
+    .post-card__content {
+      flex: 1 0 auto;
+    }
+
+    // related post image?
+    // .post-card__image {
+    //   position: absolute;
+    //   @include full-cover();
+    //   @include overlay($color1: rgba($color-secondary, 0.5), $color2: rgba($color-secondary, 0.8), $opacity: 0.9);
+    // }
+
+    // .post-card__content {
+    //   position: relative;
+    //   padding: $spacing-large $spacing-base;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    //   color: $color-white;
+    //   background-color: $color-white;
+    // }
+  }
+}

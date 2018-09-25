@@ -1,0 +1,139 @@
+//===================================
+// Components => Buttons
+//===================================
+
+.btn, a.btn, button.btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+
+  line-height: $line-height-base;
+
+  margin: 0;
+  margin-bottom: $spacing-base;
+  padding: 0.75 * $spacing-base 0.75 * $spacing-large;
+
+  background: $color-brand;
+  color: $color-white;
+
+  font-size: 0.9 * $font-size-base;
+  font-weight: $font-weight-semi-bold;
+  font-family: inherit;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+
+  border-width: 0;
+  border-style: solid;
+  border-radius: $global-border-radius;
+
+  @include box-shadow($color: rgba($color-black, 0.2));
+
+  transition: background-color $global-transition, color $global-transition, box-shadow $global-transition;
+
+  &:visited { color: $color-white; }
+
+  @include attention () {
+    background-color: rgba($color-brand, 0.8);
+    box-shadow: 0 $spacing-tiny $spacing-base rgba($color-black, 0.25);
+  }
+
+  &__small {
+    font-size: 0.8 * $font-size-base;
+    padding: 0.75 * $spacing-base 0.75 * $spacing-large;
+  }
+
+  &__large {
+    font-size: $font-size-base;
+    padding: $spacing-base $spacing-large;
+  }
+
+  &__huge {
+    font-size: 1.2 * $font-size-base;
+    padding: $spacing-base $spacing-large;
+  }
+
+  &__round {
+    border-radius: 2em;
+  }
+
+  &__full {
+    width: 100%;
+  }
+
+  &__wide {
+    padding-left: $spacing-huge;
+    padding-right: $spacing-huge;
+  }
+
+  &--comfy {
+    margin: $spacing-base;
+  }
+
+  &__rectangle {
+    border-radius: 0;
+  }
+
+  &__secondary {
+    background-color: $color-secondary;
+
+    &:visited { background-color: $color-secondary; }
+
+    @include attention () {
+      background-color: rgba($color-secondary, 0.8);
+    }
+  }
+
+  &__dark {
+    background-color: $color-black;
+
+    &:visited { background-color: $color-black; }
+
+    @include attention () {
+      background-color: rgba($color-black, 0.8);
+    }
+  }
+
+  &__light {
+    background-color: $color-light;
+    color: $color-dark;
+
+    &:visited { color: $color-dark; }
+
+    @include attention () {
+      background-color: rgba($color-light, 0.8);
+    }
+  }
+
+  &__opac {
+    opacity: 0.8;
+  }
+
+  &__shadow {
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.2),
+                0 4px 4px -1px rgba(0, 0, 0, 0.2),
+                0 4px 6px 1px rgba(0, 0, 0, 0.3),
+                0 1px 2px 1px transparent inset,
+                0 18px 32px -2px rgba(255, 255, 255, 0.1) inset;
+  }
+
+  &--disabled {
+    // background: transparent;
+    // border: 2px solid $color-black;
+    // box-shadow: none;
+    // color: $color-black;
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    @include attention () {
+      opacity: 0.6;
+      // background: transparent;
+      // box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{{!-- Post/Page share icons --}}
+<div class="social-share">
+  {{!-- twitter --}}
+  <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute='true'}}"
+      onclick="window.open(this.href, 'twitter-share', 'width=580, height=296'); return false;"
+      title="Share on Twitter" aria-label="{{t 'Share on'}} Twitter" tabindex="-1"
+      class="social-share__item twitter">
+    {{>icon name="twitter" size="small" class="icon--filled"}}
+  </a>
+  {{!-- facebook --}}
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+      onclick="window.open(this.href, 'facebook-share', 'width=580, height=296'); return false;"
+      title="Share on Facebook" aria-label="{{t 'Share on'}} Facebook" tabindex="-1"
+      class="social-share__item facebook">
+    {{>icon name="facebook" size="small" class="icon--filled"}}
+  </a>
+  {{!-- Linkedin --}}
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url}}/&amp;title={{encode title}}"
+      onclick="window.open(this.href, 'facebook-share', 'width=580, height=296'); return false;"
+      title="Share on Linkedin" aria-label="{{t 'Share on'}} Linkedin" tabindex="-1"
+      class="social-share__item linkedin">
+    {{>icon name="linkedin" size="small" class="icon--filled"}}
+  </a>
+</div>

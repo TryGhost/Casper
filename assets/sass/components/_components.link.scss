@@ -1,0 +1,18 @@
+//===================================
+// Components => Link Style
+//===================================
+
+.post-content__inner {
+  a {
+    color: $color-link;
+    // text-decoration: underline;
+    // text-decoration-color: $color-border;
+
+    &:visited { color: $color-link-visited; }
+
+    @include attention () {
+      color: $color-link-hover;
+      border-color: $color-brand;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+//===================================
+// Components => Section
+//===================================
+
+.section-title {
+  position: relative;
+  font-weight: $font-weight-extra-bold;
+
+  span {
+    position: relative;
+    background-color: $color-background;
+    padding: 0 $spacing-base;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    content: '';
+    height: 1px;
+    background: linear-gradient(to right, $color-brand, $color-secondary);
+  }
+}
+
+.more-posts {
+  .btn { margin-bottom: $spacing-large; }
+}
+
+.related-posts {
+  padding: $spacing-large 0 0;
+  background-color: $color-gray-light;
+  margin-bottom: $spacing-tiny/2;
+
+  .related-title {
+    font-size: 1.4 * $font-size-base;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-regular;
+    color: $color-dark;
+
+    @include mq($from: md) {
+      margin-bottom: $spacing-base;
+    }
+  }
+
+  .post-wrapper {
+    display: flex;
+
+    &:last-child {
+      .post-wrapper { margin-bottom: 0; }
+    }
+  }
+}
+
+.author-posts, .tag-posts {
+  padding: $spacing-large 0;
+
+  .post-wrapper {
+    display: flex;
+  }
+}
+
+.ad-unit {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+
+  img {
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+  }
+}

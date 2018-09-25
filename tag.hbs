@@ -1,33 +1,42 @@
 {{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{!-- Tag header --}}
 {{#tag}}
-<header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
-    <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
+  <section class="tag-header">
+    <div class="container wrapper">
+      <div class="grid">
+        <div class="col-xs-12">
+          <div class="tag-header__content center-xs">
+            {{!-- Tag cover image --}}
+            {{#if feature_image}}
+              <div class="tag-header__img lazyload" data-src="{{img_url feature_image}}"></div>
+            {{/if}}
+            <h2 class="tag-header__name">{{name}}</h2>
+            <div class="tag-header__description">{{description}}</div>
+          </div>
         </div>
+      </div>
     </div>
-</header>
+  </section>
 {{/tag}}
 
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-        <div class="post-feed">
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-            {{/foreach}}
+{{!-- The main content --}}
+{{#if posts}}
+<section class="tag-posts" id="content">
+  <div class="container wrapper">
+    <div class="grid">
+      {{#foreach posts}}
+        <div class="col-xs-12 col-md-4 post-wrapper">
+          {{> post-card class="post-card--1-3"}}
         </div>
+      {{/foreach}}
     </div>
-</main>
+    <div class="grid more-posts-wrapper"></div>
+    <div class="grid">
+      <div class="col-xs-12 center-xs">
+        <button id="load-more-btn" class="btn btn__large btn__wide" onClick="loadMorePosts();">{{t "Load more posts"}}</button>
+      </div>
+    </div>
+  </div>
+</section>
+{{/if}}

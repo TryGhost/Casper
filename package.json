@@ -1,54 +1,60 @@
 {
-    "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-    "demo": "https://demo.ghost.io",
-    "version": "2.1.2",
-    "engines": {
-        "ghost": ">=1.2.0"
-    },
-    "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
-    },
-    "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
-    },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
-    "devDependencies": {
-        "autoprefixer": "6.3.6",
-        "cssnano": "3.7.1",
-        "gulp": "3.9.1",
-        "gulp-livereload": "3.8.1",
-        "gulp-nodemon": "2.1.0",
-        "gulp-postcss": "6.1.1",
-        "gulp-sourcemaps": "1.6.0",
-        "gulp-util": "3.0.7",
-        "gulp-watch": "4.3.8",
-        "gulp-zip": "4.0.0",
-        "postcss-color-function": "2.0.1",
-        "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1"
-    },
-    "config": {
-        "posts_per_page": 25
-    }
+  "name": "voice",
+  "version": "1.1.2",
+  "description": "Magazine/News Ghost Blog Theme",
+  "author": {
+    "name": "Biron Themes",
+    "email": "bironthemes@gmail.com"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "private": true,
+  "config": {
+    "posts_per_page": 9
+  },
+  "engines": {
+    "ghost": ">=1.0.0"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Magazine",
+      "News Website",
+      "Personal Blog"
+    ]
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "cssnano": "^3.10.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.3.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "path": "^0.12.7",
+    "pixrem": "^4.0.1",
+    "postcss-color-rgba-fallback": "^3.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-opacity": "^4.0.0",
+    "postcss-pseudoelements": "^5.0.0",
+    "postcss-vmin": "^3.0.0",
+    "postcss-will-change": "^2.0.0",
+    "postcss-zindex": "^2.2.0"
+  },
+  "dependencies": {
+    "feather-icons": "^4.7.3",
+    "fitvids": "^2.0.0",
+    "lunr": "^2.3.0",
+    "vanilla-lazyload": "^8.7.1"
+  }
 }

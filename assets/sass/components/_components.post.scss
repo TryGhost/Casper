@@ -1,0 +1,188 @@
+//===================================
+// Components => Post
+//===================================
+
+.post-header {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: $spacing-large;
+
+	&__tag {
+		display: inline-block;
+		margin-bottom: $spacing-base;
+		padding: $spacing-small $spacing-base;
+		color: $color-white;
+		background-color: rgba($color-brand, 0.8);
+		border-radius: 2em;
+
+    &:visited { color: $color-white; }
+
+    &:first-of-type {
+      color: $color-white;
+      background-color: rgba($color-brand, 1);
+
+      &:visited { color: $color-white; }
+    }
+
+		@include attention() {
+			opacity: 1;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0.75 * $spacing-base;
+	}
+
+	&__info {
+		display: inline-block;
+		margin-bottom: $spacing-small;
+		background-color: rgba($color-brand, 1);
+		border-radius: $spacing-large;
+		padding-top: 0;
+		border: none;
+	}
+
+	&__date,
+  &__author,
+  &__read-time {
+		display: inline-block;
+		padding: $spacing-small;
+		color: $color-white;
+		margin-right: 0;
+	}
+
+	&__read-time {
+		padding-right: $spacing-base;
+	}
+
+	&__author {
+		padding-left: $spacing-base;
+	}
+
+	&__date {
+		border-left: 1px solid rgba($color-border, 0.5);
+		border-right: 1px solid rgba($color-border, 0.5);
+
+		a { color: $color-white; }
+	}
+}
+
+.post-content {
+  position: relative;
+	padding: $spacing-base;
+	margin-bottom: $spacing-large;
+	background-color: $color-white;
+  border-radius: $global-border-radius;
+  overflow: hidden;
+	@include box-shadow($blur: 0.05 * $spacing-base);
+
+	.post-img {
+		margin: -$spacing-base;
+		margin-bottom: $spacing-small;
+		width: calc(100% + 32px);
+		max-width: calc(100% + 32px);
+		border-top-right-radius: inherit;
+		border-top-left-radius: inherit;
+  }
+
+  .social-share {
+    display: flex;
+    background-color: $color-white;
+
+    a {
+      flex: 1;
+      text-align: center;
+      padding: $spacing-base $spacing-small;
+      background-color: rgba($color-border, 0.6);
+      border-right: 3px solid $color-white;
+      border-radius: $global-border-radius;
+      transition: opacity $global-transition;
+
+      @include attention() {
+        opacity: 0.6;
+        transition: opacity $global-transition;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      .icon {
+        margin: 0 auto;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.post-footer {
+	position: fixed;
+	width: 100%;
+	background-color: $color-background;
+}
+
+.kg-post,
+.post-content__inner {
+	max-width: 600px;
+	margin: 0 auto;
+  padding: $spacing-large 0;
+
+  p, blockquote, pre {
+    margin-bottom: $spacing-large;
+  }
+
+  blockquote p { margin: 0; }
+}
+
+// Koenig editor styles
+.kg-embed-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: $spacing-base 0 $spacing-large;
+  min-width: 100%;
+
+  figcaption {
+    margin: $spacing-small 0 0;
+    color: rgba($color-dark, 0.6);
+  }
+
+  .fluid-width-video-wrapper {
+    margin: 0;
+  }
+}
+
+.kg-image-card {
+  margin: 0 0 $spacing-base;
+  figcaption {
+    margin: -$spacing-base 0 $spacing-base;
+    text-align: center;
+    color: rgba($color-dark, 0.6);
+  }
+}
+
+.kg-image-wide, .kg-image-full,
+.kg-width-wide, .kg-width-full {
+  max-width: calc(100% + #{$spacing-large});
+  margin-left: -$spacing-base;
+  margin-right: -$spacing-base;
+}
+
+
+@include mq($from: md) {
+  .kg-image-wide,
+  .kg-width-wide {
+    max-width: calc(100% + #{$spacing-huge});
+    margin-left: -$spacing-large;
+    margin-right: -$spacing-large;
+  }
+
+  .kg-image-full,
+  .kg-width-full {
+    max-width: calc(100% + 3*#{$spacing-huge});
+    margin-left: -1.5*$spacing-huge;
+    margin-right: -1.5*$spacing-huge;
+  }
+}
