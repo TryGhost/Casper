@@ -939,7 +939,7 @@ Usage (In Ghost editor):
     background: transparent;
 }
 
-.post-full-content pre code * {
+.post-full-content pre code :not(span) {
     color: inherit;
 }
 
