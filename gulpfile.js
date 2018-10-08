@@ -6,6 +6,8 @@ var livereload = require('gulp-livereload');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
+var uglify = require('gulp-uglify');
+var filter = require('gulp-filter');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -55,11 +57,16 @@ gulp.task('zip', ['css'], function () {
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
 
+    var jsFilter = filter(['**/*.js'], {restore: true});
+
     return gulp.src([
         '**',
         '!node_modules', '!node_modules/**',
         '!dist', '!dist/**'
     ])
+        .pipe(jsFilter)
+        .pipe(uglify())
+        .pipe(jsFilter.restore)
         .pipe(zip(filename))
         .pipe(gulp.dest(targetDir));
 });
