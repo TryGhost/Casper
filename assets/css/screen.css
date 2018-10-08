@@ -915,6 +915,10 @@ Usage (In Ghost editor):
     border-radius: 3px;
 }
 
+.post-full-content p code {
+    word-break: break-all;
+}
+
 .post-full-content pre {
     overflow-x: auto;
     margin: 1.5em 0 3em;
