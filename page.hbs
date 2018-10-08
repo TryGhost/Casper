@@ -43,8 +43,7 @@ into the {body} of the default.hbs template --}}
 {{#contentFor "scripts"}}
 <script>
 $(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
+    reframe(".post-full-content iframe, .post-full-content object, .post-full-content embed");
 });
 </script>
 {{/contentFor}}
