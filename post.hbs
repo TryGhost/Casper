@@ -85,7 +85,8 @@ into the {body} of the default.hbs template --}}
                         style="background-image: url({{../primary_tag.feature_image}})"
                     {{else}}
                         {{#if @blog.cover_image}}
-                            style="background-image: url({{@blog.cover_image}})"{{/if}}
+                            style="background-image: url({{@blog.cover_image}})"
+                        {{/if}}
                     {{/if}}
                 >
                     <header class="read-next-card-header">
@@ -102,11 +103,18 @@ into the {body} of the default.hbs template --}}
                             {{/foreach}}
                         </ul>
                     </div>
+                {{/if}}
+            {{/get}}
+            {{!-- same conditional result as above but needs splitting to avoid nested {{get}} --}}
+            {{#get "tags" id=primary_tag.id include="count.posts" as |tag|}}
+                {{#tag}}
+                {{#if count.posts}}
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        <a href="{{url}}">{{plural count.posts empty='No posts' singular='% post' plural='See all % posts'}} →</a>
                     </footer>
                 </article>
                 {{/if}}
+                {{/tag}}
             {{/get}}
             {{/if}}
 
