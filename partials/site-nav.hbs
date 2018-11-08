@@ -20,10 +20,12 @@
                 <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
             {{/if}}
         </div>
-        {{#if @labs.subscribers}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
-        {{else}}
-            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+        {{#if @labs.members}}
+            {{#if @member}}
+                <a class="signout-button" href="#signout" data-members-signout>Log out</a>
+            {{else}}
+                <a class="signin-button" href="#signin" data-members-signin>Log in</a>
+            {{/if}}
         {{/if}}
     </div>
 </nav>
