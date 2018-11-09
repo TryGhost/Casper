@@ -815,6 +815,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-content a {
     color: #000;
+    word-break: break-word;
     box-shadow: var(--blue) 0 -1px 0 inset;
 }
 
@@ -914,6 +915,10 @@ Usage (In Ghost editor):
     border-radius: 3px;
 }
 
+.post-full-content p code {
+    word-break: break-all;
+}
+
 .post-full-content pre {
     overflow-x: auto;
     margin: 1.5em 0 3em;
@@ -934,7 +939,7 @@ Usage (In Ghost editor):
     background: transparent;
 }
 
-.post-full-content pre code * {
+.post-full-content pre code :not(span) {
     color: inherit;
 }
 
@@ -1913,6 +1918,13 @@ Usage (In Ghost editor):
 
 .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
+}
+
+.kg-gallery-card + .kg-image-card.kg-width-wide,
+.kg-gallery-card + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+    margin: -2.25em 0 3em;
 }
 
 /* 8. Author Template
