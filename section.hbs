@@ -1,0 +1,58 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+<header class="site-header outer">
+    <div class="inner">
+        {{> "site-nav"}}
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        {{!-- Everything inside the #post tags pulls data from the post --}}
+        {{#post}}
+            <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+
+                <header class="post-full-header">
+                    <h1 class="post-full-title">{{title}}</h1>
+                </header>
+
+                {{#if feature_image}}
+                <figure class="post-full-image" style="background-image: url({{feature_image}})">
+                </figure>
+                {{/if}}
+
+                <section class="post-full-content">
+                    <div class="post-content">
+                        {{content}}
+                    </div>
+                </section>
+
+            </article>
+
+        {{/post}}
+        <div class="post-feed">
+            {{#featured}}
+                {{#each posts}}
+                    {{!-- The tag below includes the markup for each featured post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/each}}
+            {{/featured}}
+        </div>
+    </div>
+</main>
+
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+{{/contentFor}}
