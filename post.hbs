@@ -33,13 +33,29 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <section class="post-full-content">
-                <div class="post-content">
+                {{#if @labs.members}}
                     {{#if html}}
-                        {{content}}
+                        <div class="post-content">
+                            {{content}}
+                        </div>
                     {{else}}
-                        {{excerpt}}
+                        <div class="post-content"
+                            data-members='true'
+                            data-members-drop-in-resource="post"
+                            data-members-blog-url="{{@blog.url}}"
+                            data-members-resource-id="{{id}}"
+                        >
+                            {{excerpt}}
+                            <div class="signin-cta">
+                                <a href="#" data-members-signin-cta>Sign in</a> to view the full content of this post.
+                            </div>
+                        </div>
                     {{/if}}
-                </div>
+                {{else}}
+                    <div class="post-content">
+                        {{content}}
+                    </div>
+                {{/if}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
@@ -131,16 +147,15 @@ into the {body} of the default.hbs template --}}
 {{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
 {{> floating-header}}
 
-{{#if html}}
-    <script> </script>
-{{else}}
-    <script src="{{asset "js/members-dropin.min.js"}}"></script>
-    <script>GhostMembers.init('{{@blog.url}}', '', '{{id}}');</script>
-{{/if}}
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
+
+{{#if @labs.members}}
+    <script src="{{asset "js/members-theme-dropin.min.js"}}"></script>
+{{/if}}
+
 <script>
 
 // NOTE: Scroll performance is poor in Safari

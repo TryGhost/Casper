@@ -373,6 +373,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-decoration: none;
     opacity: 1;
 }
+
+.signin-cta {
+    padding: 4px 10px;
+    color: #39484f;
+    font-size: 1.8rem;
+    line-height: 1em;
+    opacity: 0.8;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 @media (max-width: 700px) {
     .site-header {
         padding-right: 0;
