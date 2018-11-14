@@ -34,7 +34,11 @@ into the {body} of the default.hbs template --}}
 
             <section class="post-full-content">
                 <div class="post-content">
-                    {{content}}
+                    {{#if html}}
+                        {{content}}
+                    {{else}}
+                        {{excerpt}}
+                    {{/if}}
                 </div>
             </section>
 
@@ -127,6 +131,12 @@ into the {body} of the default.hbs template --}}
 {{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
 {{> floating-header}}
 
+{{#if html}}
+    <script> </script>
+{{else}}
+    <script src="{{asset "js/members-dropin.min.js"}}"></script>
+    <script>GhostMembers.init('{{@blog.url}}', '', '{{id}}');</script>
+{{/if}}
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
