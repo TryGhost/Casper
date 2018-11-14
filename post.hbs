@@ -38,6 +38,18 @@ into the {body} of the default.hbs template --}}
                         {{content}}
                     {{else}}
                         {{excerpt}}
+                        <script>
+                            var postId = '{{id}}';
+                            fetch('/ghost/api/v2/content/posts/' + postId + '/', {
+                                credentials: 'same-origin'
+                            }).then(function (res) {
+                                return res.json();
+                            }).then(function (data) {
+                                return data.posts[0];
+                            }).then(function (post) {
+                                document.querySelector('.post-content').innerHTML = post.html;
+                            });
+                        </script>
                     {{/if}}
                 </div>
             </section>
