@@ -151,11 +151,6 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-
-{{#if @labs.members}}
-    <script src="{{asset "js/members-theme-dropin.min.js"}}"></script>
-{{/if}}
-
 <script>
 
 // NOTE: Scroll performance is poor in Safari
