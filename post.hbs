@@ -33,9 +33,29 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <section class="post-full-content">
-                <div class="post-content">
-                    {{content}}
-                </div>
+                {{#if @labs.members}}
+                    {{#if html}}
+                        <div class="post-content">
+                            {{content}}
+                        </div>
+                    {{else}}
+                        <div class="post-content"
+                            data-members='true'
+                            data-members-resource-type="post"
+                            data-members-blog-url="{{@blog.url}}"
+                            data-members-resource-id="{{id}}"
+                        >
+                            {{excerpt}}
+                            <div class="signin-cta">
+                                <a href="#" data-members-signin-cta>Sign in</a> to view the full content of this post.
+                            </div>
+                        </div>
+                    {{/if}}
+                {{else}}
+                    <div class="post-content">
+                        {{content}}
+                    </div>
+                {{/if}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
