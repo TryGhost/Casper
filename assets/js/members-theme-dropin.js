@@ -66,13 +66,11 @@ var create = function create(_ref) {
 
 module.exports.create = create;
 
-},{"superagent":8}],2:[function(require,module,exports){
+},{"superagent":9}],2:[function(require,module,exports){
 "use strict";
 
 /* globals window */
 module.exports = function layer0(frame) {
-  console.log('layer0', frame);
-
   var getuid = function (i) {
     return function () {
       return i += 1;
@@ -90,11 +88,11 @@ module.exports = function layer0(frame) {
     }
 
     if (!event.data || !event.data.uid) {
-      return;
-    }
+      if (event.data.event) {
+        return listener(event.data);
+      }
 
-    if (event.data.event) {
-      return listener(event.data);
+      return;
     }
 
     var handler = handlers[event.data.uid];
@@ -131,17 +129,14 @@ module.exports = function layer0(frame) {
 },{}],3:[function(require,module,exports){
 "use strict";
 
-/* global document window */
+/* global document */
 var layer0 = require('@tryghost/members-layer0');
 
-var store = window.localStorage;
+var events = require('minivents');
 
 function create(options) {
-  console.log('layer1 creatiing', {
-    options: options
-  });
+  var bus = new events();
   var loadGateway = new Promise(function (resolve) {
-    console.log('Creating iframe!');
     var frame = document.createElement('iframe');
     frame.style.display = 'none';
     frame.src = "".concat(options.blogUrl, "/members/gateway");
@@ -150,24 +145,37 @@ function create(options) {
       resolve(layer0(frame));
     };
 
-    console.log('Appppppening iframe!');
+    document.body.appendChild(frame);
+  }).then(function (gateway) {
+    gateway.listen(function (data) {
+      bus.emit(data.event, data.payload);
+    });
+    return gateway;
+  });
+  var loadAuth = new Promise(function (resolve) {
+    var frame = document.createElement('iframe');
+    frame.style.position = 'fixed';
+    frame.style.display = 'none';
+    frame.style.width = '400px';
+    frame.style.height = '600px';
+    frame.style.background = 'lightgray';
+    frame.style.top = '20vw';
+    frame.style.margin = '0 -200px 0';
+    frame.style.left = '50%';
+    frame.style['z-index'] = '9000';
+    frame.src = "".concat(options.blogUrl, "/members/auth");
+
+    frame.onload = function () {
+      resolve(frame);
+    };
+
     document.body.appendChild(frame);
   });
   return {
     getToken: function getToken() {
-      if (!store.getItem('loggedin')) {
-        return Promise.resolve(null);
-      }
-
       return loadGateway.then(function (gateway) {
-        console.log(gateway);
         return new Promise(function (resolve, reject) {
           gateway.call('getToken', {}, function (err, token) {
-            console.log({
-              err: err,
-              token: token
-            });
-
             if (err) {
               reject(err);
             }
@@ -178,19 +186,35 @@ function create(options) {
       });
     },
     login: function login() {
-      store.setItem('loggedin', true);
-      return Promise.resolve(true);
+      return loadAuth.then(function (frame) {
+        frame.style.display = 'block';
+        return new Promise(function (resolve) {
+          bus.on('signedin', function self() {
+            bus.off('signedin', self);
+            resolve(true);
+          });
+        });
+      });
     },
     logout: function logout() {
-      store.removeItem('loggedin');
-      return Promise.resolve(true);
+      return loadGateway.then(function (gateway) {
+        return new Promise(function (resolve, reject) {
+          gateway.call('signout', {}, function (err, successful) {
+            if (err) {
+              reject(err);
+            }
+
+            resolve(successful);
+          });
+        });
+      });
     }
   };
 }
 
 module.exports.create = create;
 
-},{"@tryghost/members-layer0":2}],4:[function(require,module,exports){
+},{"@tryghost/members-layer0":2,"minivents":7}],4:[function(require,module,exports){
 "use strict";
 
 var Members = require('@tryghost/members-layer1');
@@ -205,10 +229,6 @@ function hide(el) {
 
 module.exports = {
   init: function init(options) {
-    console.log('Creating!!!');
-    console.log({
-      options: options
-    }, 'layer2');
     var members = Members.create({
       blogUrl: options.blogUrl
     });
@@ -217,8 +237,6 @@ module.exports = {
     var signout = document.querySelector('[data-members-signout]');
 
     function render(token) {
-      console.log('Renderingggggg');
-
       if (token) {
         show(signout);
         hide(signin);
@@ -453,6 +471,31 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 },{}],7:[function(require,module,exports){
 "use strict";
 
+module.exports = function (n) {
+  var t = {},
+      e = [];
+  n = n || this, n.on = function (e, r, l) {
+    return (t[e] = t[e] || []).push([r, l]), n;
+  }, n.off = function (r, l) {
+    r || (t = {});
+
+    for (var o = t[r] || e, u = o.length = l ? o.length : 0; u--;) {
+      l == o[u][0] && o.splice(u, 1);
+    }
+
+    return n;
+  }, n.emit = function (r) {
+    for (var l, o = t[r] || e, u = o.length > 0 ? o.slice(0, o.length) : o, i = 0; l = u[i++];) {
+      l[0].apply(l[1], e.slice.call(arguments, 1));
+    }
+
+    return n;
+  };
+};
+
+},{}],8:[function(require,module,exports){
+"use strict";
+
 function Agent() {
   this._defaults = [];
 }
@@ -481,7 +524,7 @@ Agent.prototype._setDefaults = function (req) {
 
 module.exports = Agent;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1434,7 +1477,7 @@ request.put = function (url, data, fn) {
   return req;
 };
 
-},{"./agent-base":7,"./is-object":9,"./request-base":10,"./response-base":11,"component-emitter":5}],9:[function(require,module,exports){
+},{"./agent-base":8,"./is-object":10,"./request-base":11,"./response-base":12,"component-emitter":5}],10:[function(require,module,exports){
 'use strict';
 /**
  * Check if `obj` is an object.
@@ -1452,7 +1495,7 @@ function isObject(obj) {
 
 module.exports = isObject;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 /**
  * Module of mixed-in functions shared between node and client code
@@ -2176,7 +2219,7 @@ RequestBase.prototype._setTimeouts = function () {
   }
 };
 
-},{"./is-object":9}],11:[function(require,module,exports){
+},{"./is-object":10}],12:[function(require,module,exports){
 'use strict';
 /**
  * Module dependencies.
@@ -2307,7 +2350,7 @@ ResponseBase.prototype._setStatusProperties = function (status) {
   this.unprocessableEntity = 422 == status;
 };
 
-},{"./utils":12}],12:[function(require,module,exports){
+},{"./utils":13}],13:[function(require,module,exports){
 'use strict';
 /**
  * Return the mime type for the given `str`.
@@ -2379,7 +2422,7 @@ exports.cleanHeader = function (header, changesOrigin) {
   return header;
 };
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";
 
 var DomReady = require('domready');
@@ -2427,10 +2470,8 @@ var init = function init(blogUrl, postId) {
 
 DomReady(function () {
   var postDataObject = document.querySelector("[data-members-resource-type='post']");
-  var blogUrl = postDataObject && postDataObject.getAttribute('data-members-blog-url');
   var postId = postDataObject && postDataObject.getAttribute('data-members-resource-id');
-  console.log(blogUrl);
-  console.log(postId);
+  var blogUrl = window.blogUrl;
 
   if (blogUrl && postId) {
     init(blogUrl, postId);
@@ -2446,4 +2487,4 @@ module.exports = {
   init: init
 };
 
-},{"@tryghost/content-api":1,"@tryghost/members-layer2":4,"domready":6}]},{},[13]);
+},{"@tryghost/content-api":1,"@tryghost/members-layer2":4,"domready":6}]},{},[14]);
