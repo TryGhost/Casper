@@ -86,6 +86,9 @@
     {{/if}}
 
     {{#if @labs.members}}
+    <script>
+        window.blogUrl = "{{@blog.url}}";
+    </script>
     <script src="{{asset "built/members-theme-dropin.js"}}"></script>
     {{/if}}
 
