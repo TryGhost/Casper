@@ -33,12 +33,6 @@
             feedElement.appendChild(item);
         });
 
-        // // push state
-        // window.history.pushState(null, document.title, nextElement.href)
-
-        // // change title
-        // document.title = this.response.title
-
         // set next link
         var resNextElement = this.response.querySelector('link[rel=next]');
         if (resNextElement) {
