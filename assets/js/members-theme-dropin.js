@@ -2537,6 +2537,8 @@ DomReady(function () {
     if (tokenMatch) {
       return members.resetPassword({
         token: token
+      }).then(function () {
+        window.location.hash = '';
       }).then(reload);
     }
   }
