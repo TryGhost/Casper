@@ -40,10 +40,10 @@ into the {body} of the default.hbs template --}}
                         </div>
                     {{else}}
                         <div class="post-content"
-                            data-members='true'
-                            data-members-resource-type="post"
-                            data-members-blog-url="{{@blog.url}}"
+                            data-members
+                            data-members-resource-type="posts"
                             data-members-resource-id="{{id}}"
+                            data-members-content-host="{{@blog.url}}/ghost"
                         >
                             {{excerpt}}
                             <div class="signin-cta">
