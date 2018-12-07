@@ -2529,7 +2529,7 @@ DomReady(function () {
       query = _ref2[2];
 
   if (hashMatch && hash === 'reset-password') {
-    var _ref3 = query.match(/token=([a-zA-z-_]+.[a-zA-Z-_]+.[a-zA-Z-_]+)/) || [],
+    var _ref3 = query.match(/token=([a-zA-Z0-9-_]+.[a-zA-Z0-9-_]+.[a-zA-Z0-9-_]+)/) || [],
         _ref4 = _slicedToArray(_ref3, 2),
         tokenMatch = _ref4[0],
         token = _ref4[1];
