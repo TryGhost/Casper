@@ -276,6 +276,18 @@ module.exports = function layer2(options) {
     return loadAuth.then(function (frame) {
       frame.src = "".concat(authUrl, "#").concat(hash, "?").concat(query);
       frame.style.display = 'block';
+      window.addEventListener('message', function self(event) {
+        if (event.source !== frame.contentWindow) {
+          return;
+        }
+
+        if (event.data !== 'pls-close-auth-popup') {
+          return;
+        }
+
+        window.removeEventListener('message', self);
+        frame.style.display = 'none';
+      });
       return frame;
     });
   }
