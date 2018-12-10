@@ -66,291 +66,7 @@ var create = function create(_ref) {
 
 module.exports.create = create;
 
-},{"superagent":9}],2:[function(require,module,exports){
-"use strict";
-
-/* globals window */
-module.exports = function layer0(frame) {
-  var getuid = function (i) {
-    return function () {
-      return i += 1;
-    };
-  }(1);
-
-  var origin = new URL(frame.getAttribute('src')).origin;
-  var handlers = {};
-
-  var listener = function listener() {};
-
-  window.addEventListener('message', function (event) {
-    if (event.origin !== origin) {
-      return;
-    }
-
-    if (!event.data || !event.data.uid) {
-      if (event.data.event) {
-        return listener(event.data);
-      }
-
-      return;
-    }
-
-    var handler = handlers[event.data.uid];
-
-    if (!handler) {
-      return;
-    }
-
-    delete handlers[event.data.uid];
-    handler(event.data.error, event.data.data);
-  });
-
-  function call(method, options, cb) {
-    var uid = getuid();
-    var data = {
-      uid: uid,
-      method: method,
-      options: options
-    };
-    handlers[uid] = cb;
-    frame.contentWindow.postMessage(data, origin);
-  }
-
-  function listen(fn) {
-    listener = fn;
-  }
-
-  return {
-    call: call,
-    listen: listen
-  };
-};
-
-},{}],3:[function(require,module,exports){
-"use strict";
-
-/* global document */
-var layer0 = require('@tryghost/members-layer0');
-
-var events = require('minivents');
-
-module.exports = function layer1(options) {
-  var members = {
-    getToken: getToken,
-    signout: signout,
-    signin: signin,
-    signup: signup,
-    requestPasswordReset: requestPasswordReset,
-    resetPassword: resetPassword,
-    verifyEmail: verifyEmail,
-    bus: new events()
-  };
-  var loadGateway = loadFrame(options.gatewayUrl, options.container).then(function (frame) {
-    var gateway = layer0(frame);
-    var init = gatewayFn('init');
-    gateway.listen(function (data) {
-      members.bus.emit(data.event, data.payload);
-    });
-    return init(gateway).then(function () {
-      return gateway;
-    });
-  });
-
-  function getToken(_ref) {
-    var audience = _ref.audience;
-    return loadGateway.then(gatewayFn('getToken', {
-      audience: audience
-    }));
-  }
-
-  function signout() {
-    return loadGateway.then(gatewayFn('signout'));
-  }
-
-  function signin(_ref2) {
-    var email = _ref2.email,
-        password = _ref2.password;
-    return loadGateway.then(gatewayFn('signin', {
-      email: email,
-      password: password
-    }));
-  }
-
-  function signup(_ref3) {
-    var name = _ref3.name,
-        email = _ref3.email,
-        password = _ref3.password;
-    return loadGateway.then(gatewayFn('signin', {
-      name: name,
-      email: email,
-      password: password
-    }));
-  }
-
-  function requestPasswordReset(_ref4) {
-    var email = _ref4.email;
-    return loadGateway.then(gatewayFn('request-password-reset', {
-      email: email
-    }));
-  }
-
-  function resetPassword(_ref5) {
-    var token = _ref5.token,
-        password = _ref5.password;
-    return loadGateway.then(gatewayFn('reset-password', {
-      token: token,
-      password: password
-    }));
-  }
-
-  function verifyEmail(_ref6) {
-    var token = _ref6.token;
-    return loadGateway.then(gatewayFn('verify-email', {
-      token: token
-    }));
-  }
-
-  return members;
-};
-
-function gatewayFn(method) {
-  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  return function (gateway) {
-    return new Promise(function (resolve, reject) {
-      gateway.call(method, opts, function (err, res) {
-        if (err) {
-          reject(err);
-        }
-
-        resolve(res);
-      });
-    });
-  };
-}
-
-function loadFrame(src) {
-  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.body;
-  return new Promise(function (resolve) {
-    var frame = document.createElement('iframe');
-    frame.style.display = 'none';
-    frame.src = src;
-
-    frame.onload = function () {
-      resolve(frame);
-    };
-
-    container.appendChild(frame);
-  });
-}
-
-},{"@tryghost/members-layer0":2,"minivents":7}],4:[function(require,module,exports){
-"use strict";
-
-var layer1 = require('@tryghost/members-layer1');
-
-module.exports = function layer2(options) {
-  var authUrl = "".concat(options.membersUrl, "/auth");
-  var gatewayUrl = "".concat(options.membersUrl, "/gateway");
-  var members = layer1({
-    gatewayUrl: gatewayUrl
-  });
-  var loadAuth = loadFrame(authUrl).then(function (frame) {
-    frame.style.position = 'fixed';
-    frame.style.width = '100%';
-    frame.style.height = '100%';
-    frame.style.background = 'transparent';
-    frame.style.top = '0';
-    frame.style['z-index'] = '9999';
-    return frame;
-  });
-
-  function closeAuth() {
-    return loadAuth.then(function (frame) {
-      frame.style.display = 'none';
-      return frame;
-    });
-  }
-
-  function openAuth(hash) {
-    var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-    return loadAuth.then(function (frame) {
-      frame.src = "".concat(authUrl, "#").concat(hash, "?").concat(query);
-      frame.style.display = 'block';
-      window.addEventListener('message', function self(event) {
-        if (event.source !== frame.contentWindow) {
-          return;
-        }
-
-        if (event.data !== 'pls-close-auth-popup') {
-          return;
-        }
-
-        window.removeEventListener('message', self);
-        frame.style.display = 'none';
-      });
-      return frame;
-    });
-  }
-
-  function resetPassword(_ref) {
-    var token = _ref.token;
-    var query = "token=".concat(token);
-    return openAuth('reset-password', query).then(function () {
-      return new Promise(function (resolve) {
-        members.bus.on('signedin', function self() {
-          members.bus.off('signedin', self);
-          resolve(true);
-        });
-      });
-    });
-  }
-
-  function signin() {
-    return openAuth('signin').then(function () {
-      return new Promise(function (resolve) {
-        members.bus.on('signedin', function self() {
-          members.bus.off('signedin', self);
-          resolve(true);
-        });
-      });
-    });
-  }
-
-  function getToken(_ref2) {
-    var audience = _ref2.audience;
-    return members.getToken({
-      audience: audience
-    });
-  }
-
-  function signout() {
-    return members.signout();
-  }
-
-  return Object.assign(members.bus, {
-    getToken: getToken,
-    signout: signout,
-    signin: signin,
-    resetPassword: resetPassword
-  });
-};
-
-function loadFrame(src) {
-  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.body;
-  return new Promise(function (resolve) {
-    var frame = document.createElement('iframe');
-    frame.style.display = 'none';
-    frame.src = src;
-
-    frame.onload = function () {
-      resolve(frame);
-    };
-
-    container.appendChild(frame);
-  });
-}
-
-},{"@tryghost/members-layer1":3}],5:[function(require,module,exports){
+},{"superagent":4}],2:[function(require,module,exports){
 "use strict";
 
 /**
@@ -514,63 +230,7 @@ Emitter.prototype.hasListeners = function (event) {
   return !!this.listeners(event).length;
 };
 
-},{}],6:[function(require,module,exports){
-"use strict";
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-/*!
-  * domready (c) Dustin Diaz 2014 - License MIT
-  */
-!function (name, definition) {
-  if (typeof module != 'undefined') module.exports = definition();else if (typeof define == 'function' && _typeof(define.amd) == 'object') define(definition);else this[name] = definition();
-}('domready', function () {
-  var fns = [],
-      _listener,
-      doc = document,
-      hack = doc.documentElement.doScroll,
-      domContentLoaded = 'DOMContentLoaded',
-      loaded = (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState);
-
-  if (!loaded) doc.addEventListener(domContentLoaded, _listener = function listener() {
-    doc.removeEventListener(domContentLoaded, _listener);
-    loaded = 1;
-
-    while (_listener = fns.shift()) {
-      _listener();
-    }
-  });
-  return function (fn) {
-    loaded ? setTimeout(fn, 0) : fns.push(fn);
-  };
-});
-
-},{}],7:[function(require,module,exports){
-"use strict";
-
-module.exports = function (n) {
-  var t = {},
-      e = [];
-  n = n || this, n.on = function (e, r, l) {
-    return (t[e] = t[e] || []).push([r, l]), n;
-  }, n.off = function (r, l) {
-    r || (t = {});
-
-    for (var o = t[r] || e, u = o.length = l ? o.length : 0; u--;) {
-      l == o[u][0] && o.splice(u, 1);
-    }
-
-    return n;
-  }, n.emit = function (r) {
-    for (var l, o = t[r] || e, u = o.length > 0 ? o.slice(0, o.length) : o, i = 0; l = u[i++];) {
-      l[0].apply(l[1], e.slice.call(arguments, 1));
-    }
-
-    return n;
-  };
-};
-
-},{}],8:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 function Agent() {
@@ -601,7 +261,7 @@ Agent.prototype._setDefaults = function (req) {
 
 module.exports = Agent;
 
-},{}],9:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1554,7 +1214,7 @@ request.put = function (url, data, fn) {
   return req;
 };
 
-},{"./agent-base":8,"./is-object":10,"./request-base":11,"./response-base":12,"component-emitter":5}],10:[function(require,module,exports){
+},{"./agent-base":3,"./is-object":5,"./request-base":6,"./response-base":7,"component-emitter":2}],5:[function(require,module,exports){
 'use strict';
 /**
  * Check if `obj` is an object.
@@ -1572,7 +1232,7 @@ function isObject(obj) {
 
 module.exports = isObject;
 
-},{}],11:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 /**
  * Module of mixed-in functions shared between node and client code
@@ -2296,7 +1956,7 @@ RequestBase.prototype._setTimeouts = function () {
   }
 };
 
-},{"./is-object":10}],12:[function(require,module,exports){
+},{"./is-object":5}],7:[function(require,module,exports){
 'use strict';
 /**
  * Module dependencies.
@@ -2427,7 +2087,7 @@ ResponseBase.prototype._setStatusProperties = function (status) {
   this.unprocessableEntity = 422 == status;
 };
 
-},{"./utils":13}],13:[function(require,module,exports){
+},{"./utils":8}],8:[function(require,module,exports){
 'use strict';
 /**
  * Return the mime type for the given `str`.
@@ -2499,6 +2159,341 @@ exports.cleanHeader = function (header, changesOrigin) {
   return header;
 };
 
+},{}],9:[function(require,module,exports){
+"use strict";
+
+/* globals window */
+module.exports = function layer0(frame) {
+  var getuid = function (i) {
+    return function () {
+      return i += 1;
+    };
+  }(1);
+
+  var origin = new URL(frame.getAttribute('src')).origin;
+  var handlers = {};
+
+  var listener = function listener() {};
+
+  window.addEventListener('message', function (event) {
+    if (event.origin !== origin) {
+      return;
+    }
+
+    if (!event.data || !event.data.uid) {
+      if (event.data.event) {
+        return listener(event.data);
+      }
+
+      return;
+    }
+
+    var handler = handlers[event.data.uid];
+
+    if (!handler) {
+      return;
+    }
+
+    delete handlers[event.data.uid];
+    handler(event.data.error, event.data.data);
+  });
+
+  function call(method, options, cb) {
+    var uid = getuid();
+    var data = {
+      uid: uid,
+      method: method,
+      options: options
+    };
+    handlers[uid] = cb;
+    frame.contentWindow.postMessage(data, origin);
+  }
+
+  function listen(fn) {
+    listener = fn;
+  }
+
+  return {
+    call: call,
+    listen: listen
+  };
+};
+
+},{}],10:[function(require,module,exports){
+"use strict";
+
+/* global document */
+var layer0 = require('@tryghost/members-layer0');
+
+var events = require('minivents');
+
+module.exports = function layer1(options) {
+  var members = {
+    getToken: getToken,
+    signout: signout,
+    signin: signin,
+    signup: signup,
+    requestPasswordReset: requestPasswordReset,
+    resetPassword: resetPassword,
+    verifyEmail: verifyEmail,
+    bus: new events()
+  };
+  var loadGateway = loadFrame(options.gatewayUrl, options.container).then(function (frame) {
+    var gateway = layer0(frame);
+    var init = gatewayFn('init');
+    gateway.listen(function (data) {
+      members.bus.emit(data.event, data.payload);
+    });
+    return init(gateway).then(function () {
+      return gateway;
+    });
+  });
+
+  function getToken(_ref) {
+    var audience = _ref.audience;
+    return loadGateway.then(gatewayFn('getToken', {
+      audience: audience
+    }));
+  }
+
+  function signout() {
+    return loadGateway.then(gatewayFn('signout'));
+  }
+
+  function signin(_ref2) {
+    var email = _ref2.email,
+        password = _ref2.password;
+    return loadGateway.then(gatewayFn('signin', {
+      email: email,
+      password: password
+    }));
+  }
+
+  function signup(_ref3) {
+    var name = _ref3.name,
+        email = _ref3.email,
+        password = _ref3.password;
+    return loadGateway.then(gatewayFn('signin', {
+      name: name,
+      email: email,
+      password: password
+    }));
+  }
+
+  function requestPasswordReset(_ref4) {
+    var email = _ref4.email;
+    return loadGateway.then(gatewayFn('request-password-reset', {
+      email: email
+    }));
+  }
+
+  function resetPassword(_ref5) {
+    var token = _ref5.token,
+        password = _ref5.password;
+    return loadGateway.then(gatewayFn('reset-password', {
+      token: token,
+      password: password
+    }));
+  }
+
+  function verifyEmail(_ref6) {
+    var token = _ref6.token;
+    return loadGateway.then(gatewayFn('verify-email', {
+      token: token
+    }));
+  }
+
+  return members;
+};
+
+function gatewayFn(method) {
+  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return function (gateway) {
+    return new Promise(function (resolve, reject) {
+      gateway.call(method, opts, function (err, res) {
+        if (err) {
+          reject(err);
+        }
+
+        resolve(res);
+      });
+    });
+  };
+}
+
+function loadFrame(src) {
+  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.body;
+  return new Promise(function (resolve) {
+    var frame = document.createElement('iframe');
+    frame.style.display = 'none';
+    frame.src = src;
+
+    frame.onload = function () {
+      resolve(frame);
+    };
+
+    container.appendChild(frame);
+  });
+}
+
+},{"@tryghost/members-layer0":9,"minivents":11}],11:[function(require,module,exports){
+"use strict";
+
+module.exports = function (n) {
+  var t = {},
+      e = [];
+  n = n || this, n.on = function (e, r, l) {
+    return (t[e] = t[e] || []).push([r, l]), n;
+  }, n.off = function (r, l) {
+    r || (t = {});
+
+    for (var o = t[r] || e, u = o.length = l ? o.length : 0; u--;) {
+      l == o[u][0] && o.splice(u, 1);
+    }
+
+    return n;
+  }, n.emit = function (r) {
+    for (var l, o = t[r] || e, u = o.length > 0 ? o.slice(0, o.length) : o, i = 0; l = u[i++];) {
+      l[0].apply(l[1], e.slice.call(arguments, 1));
+    }
+
+    return n;
+  };
+};
+
+},{}],12:[function(require,module,exports){
+"use strict";
+
+var layer1 = require('@tryghost/members-layer1');
+
+module.exports = function layer2(options) {
+  var authUrl = "".concat(options.membersUrl, "/auth");
+  var gatewayUrl = "".concat(options.membersUrl, "/gateway");
+  var container = options.container;
+  var members = layer1({
+    gatewayUrl: gatewayUrl,
+    container: container
+  });
+  var loadAuth = loadFrame(authUrl, container).then(function (frame) {
+    frame.style.position = 'fixed';
+    frame.style.width = '100%';
+    frame.style.height = '100%';
+    frame.style.background = 'transparent';
+    frame.style.top = '0';
+    frame.style['z-index'] = '9999';
+    return frame;
+  });
+
+  function closeAuth() {
+    return loadAuth.then(function (frame) {
+      frame.style.display = 'none';
+      return frame;
+    });
+  }
+
+  function openAuth(hash) {
+    var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+    return loadAuth.then(function (frame) {
+      return new Promise(function (resolve) {
+        frame.src = "".concat(authUrl, "#").concat(hash, "?").concat(query);
+        frame.style.display = 'block';
+        window.addEventListener('message', function messageListener(event) {
+          if (event.source !== frame.contentWindow) {
+            return;
+          }
+
+          if (event.data !== 'pls-close-auth-popup') {
+            return;
+          }
+
+          window.removeEventListener('message', messageListener);
+          frame.style.display = 'none';
+          resolve(false);
+        });
+        members.bus.on('signedin', function signedinListener() {
+          members.bus.off('signedin', signedinListener);
+          frame.style.display = 'none';
+          resolve(true);
+        });
+      });
+    });
+  }
+
+  function resetPassword(_ref) {
+    var token = _ref.token;
+    var query = "token=".concat(token);
+    return openAuth('reset-password', query);
+  }
+
+  function signin() {
+    return openAuth('signin');
+  }
+
+  function getToken(_ref2) {
+    var audience = _ref2.audience;
+    return members.getToken({
+      audience: audience
+    });
+  }
+
+  function signout() {
+    return members.signout();
+  }
+
+  return Object.assign(members.bus, {
+    getToken: getToken,
+    signout: signout,
+    signin: signin,
+    resetPassword: resetPassword
+  });
+};
+
+function loadFrame(src) {
+  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.body;
+  return new Promise(function (resolve) {
+    var frame = document.createElement('iframe');
+    frame.style.display = 'none';
+    frame.src = src;
+
+    frame.onload = function () {
+      resolve(frame);
+    };
+
+    container.appendChild(frame);
+  });
+}
+
+},{"@tryghost/members-layer1":10}],13:[function(require,module,exports){
+"use strict";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/*!
+  * domready (c) Dustin Diaz 2014 - License MIT
+  */
+!function (name, definition) {
+  if (typeof module != 'undefined') module.exports = definition();else if (typeof define == 'function' && _typeof(define.amd) == 'object') define(definition);else this[name] = definition();
+}('domready', function () {
+  var fns = [],
+      _listener,
+      doc = document,
+      hack = doc.documentElement.doScroll,
+      domContentLoaded = 'DOMContentLoaded',
+      loaded = (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState);
+
+  if (!loaded) doc.addEventListener(domContentLoaded, _listener = function listener() {
+    doc.removeEventListener(domContentLoaded, _listener);
+    loaded = 1;
+
+    while (_listener = fns.shift()) {
+      _listener();
+    }
+  });
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn);
+  };
+});
+
 },{}],14:[function(require,module,exports){
 "use strict";
 
@@ -2516,8 +2511,10 @@ var GhostContentApi = require('@tryghost/content-api');
 
 var layer2 = require('@tryghost/members-layer2');
 
-function reload() {
-  window.location.reload();
+function reload(success) {
+  if (success) {
+    window.location.reload();
+  }
 }
 
 function show(el) {
@@ -2549,8 +2546,9 @@ DomReady(function () {
     if (tokenMatch) {
       return members.resetPassword({
         token: token
-      }).then(function () {
+      }).then(function (success) {
         window.location.hash = '';
+        return success;
       }).then(reload);
     }
   }
@@ -2618,4 +2616,4 @@ DomReady(function () {
   });
 });
 
-},{"@tryghost/content-api":1,"@tryghost/members-layer2":4,"domready":6}]},{},[14]);
+},{"@tryghost/content-api":1,"@tryghost/members-layer2":12,"domready":13}]},{},[14]);
