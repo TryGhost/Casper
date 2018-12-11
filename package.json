@@ -10,14 +10,13 @@
   "license": "MIT",
   "author": {
     "name": "Chris Manson",
-    "email": "chris@stonecircle.io",
-    "url": "https://stonecircle.io"
+    "email": "chris.mansona@simplabs.com"
   },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/stonecircle/ember-ghost-casper-template",
+  "repository": "https://github.com/empress/ember-ghost-casper-template",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app blueprints config lib server test-support tests",
@@ -85,6 +84,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "https://ember-ghost-casper-template.stonecircle.io"
+    "demoURL": "https://ember-ghost-casper-template.netlify.com"
   }
 }

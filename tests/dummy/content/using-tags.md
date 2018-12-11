@@ -22,7 +22,7 @@ When you write a post, you can assign tags to help differentiate between categor
 
 If you tag a post with both `News` *and* `Cycling` - then it appears in both sections.
 
-Tag archives are like dedicated home-pages for each category of content that you have. They have their own pages and [hopefully soon](https://github.com/stonecircle/ember-ghost/issues/1) will support their own cover images and meta data.
+Tag archives are like dedicated home-pages for each category of content that you have. They have their own pages and [hopefully soon](https://github.com/empress/ember-ghost/issues/1) will support their own cover images and meta data.
 
 
 ## The primary tag

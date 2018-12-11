@@ -17,7 +17,7 @@ The main difference between the hosted Ghost platform and Ember Ghost is that we
 
 If you want to start a new post we recommend that you use the built in generator `ember generate post "The next big thing - Ember Ghost"`. This will create a file for you and setup the start of the metadata.
 
-For now, though, let's run you through some of the basics of editing Markdown. You can see this post [directly on github](https://github.com/stonecircle/ember-ghost/blob/master/blueprints/ember-ghost/files/content/the-editor.md) if you want to see all the Markdown we've used. (don't forget to click the _Raw_ button to see the source).
+For now, though, let's run you through some of the basics of editing Markdown. You can see this post [directly on github](https://github.com/empress/ember-ghost/blob/master/blueprints/ember-ghost/files/content/the-editor.md) if you want to see all the Markdown we've used. (don't forget to click the _Raw_ button to see the source).
 
 
 ## Formatting text
