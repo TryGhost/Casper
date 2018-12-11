@@ -2517,6 +2517,12 @@ function reload(success) {
   }
 }
 
+function addListener(el, event, fn) {
+  if (el) {
+    el.addEventListener(event, fn);
+  }
+}
+
 function show(el) {
   el.style.display = 'block';
 }
@@ -2577,11 +2583,10 @@ DomReady(function () {
     members.signin().then(reload);
   }
 
-  signoutBtn.addEventListener('click', signout);
-  signinBtn.addEventListener('click', signin);
-  signinCta.addEventListener('click', signin);
+  addListener(signoutBtn, 'click', signout);
+  addListener(signinBtn, 'click', signin);
+  addListener(signinCta, 'click', signin);
   membersContentElements.forEach(function (element) {
-    console.log(element);
     var resourceType = element.getAttribute('data-members-resource-type');
     var resourceId = element.getAttribute('data-members-resource-id');
     var host = element.getAttribute('data-members-content-host');
@@ -2590,20 +2595,13 @@ DomReady(function () {
       version: version
     });
     var audience = new URL(host).origin;
-    console.log(audience);
     members.getToken({
       audience: audience
     }).then(function (token) {
-      console.log(token);
-
       if (!token) {
         return;
       }
 
-      console.log({
-        resourceType: resourceType,
-        resourceId: resourceId
-      });
       api[resourceType].read({
         id: resourceId
       }, {}, token).then(function (_ref5) {
