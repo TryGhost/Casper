@@ -377,11 +377,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .signin-cta {
-    margin: 20px 0 0 20px;
-    padding: 4px 10px;
+    margin: 40px 0;
+    padding: 60px 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    min-width: 100%;
+    text-align: center;
     color: #39484f;
-    font-size: 1.8rem;
-    line-height: 1em;
+    font-size: 1.9rem;
+    line-height: 1.5em;
     opacity: 0.8;
 }
 
