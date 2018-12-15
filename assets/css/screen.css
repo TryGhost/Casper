@@ -885,7 +885,15 @@ Usage (In Ghost editor):
 
 /* Override third party iframe styles */
 .post-full-content iframe {
-    margin: 0 auto !important;
+    margin: 1.5em auto 3em !important;
+    min-height: 520px;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    .post-full-content iframe {
+        min-height: 360px;
+    }
 }
 
 .post-full-content blockquote {
@@ -1885,6 +1893,10 @@ Usage (In Ghost editor):
     margin: 0;
 }
 
+.post-full-content .kg-embed-card iframe {
+    margin: 0 auto !important;
+    min-height: 100%;
+}
 
 @media (max-width: 1040px) {
     .post-full-content .kg-width-full .kg-image {
