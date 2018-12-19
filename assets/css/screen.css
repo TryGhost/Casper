@@ -411,10 +411,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-image {
-    width: auto;
+    width: 100%;
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
-    background-size: cover;
+    object-fit: cover;
 }
 
 .post-card-content-link {
@@ -595,46 +595,48 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 /* Special Styling for home page grid (below):
 
-The first (most recent) post in the list is styled to be bigger than the others and take over the full width of the grid to give it more emphasis. Wrapped in a media query to make sure this only happens on large viewports / desktop-ish devices.
+The first post in the list is styled to be bigger than the others and take over
+the full width of the grid to give it more emphasis. Wrapped in a media query to
+make sure this only happens on large viewports / desktop-ish devices.
 
  */
 
 @media (min-width: 795px) {
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
+    .post-card-large {
         flex: 1 1 100%;
         flex-direction: row;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
+    .post-card-large .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
         border-radius: 5px 0 0 5px;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
+    .post-card-large .post-card-image {
         position: absolute;
         width: 100%;
         height: 100%;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content {
+    .post-card-large .post-card-content {
         flex: 0 1 357px;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) h2 {
+    .post-card-large h2 {
         font-size: 2.6rem;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) p {
+    .post-card-large p {
         font-size: 1.8rem;
         line-height: 1.55em;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content-link {
+    .post-card-large .post-card-content-link {
         padding: 30px 40px 0;
     }
 
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-meta {
+    .post-card-large .post-card-meta {
         padding: 0 40px 30px;
     }
 }
@@ -709,22 +711,29 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-image {
     margin: 0 -10vw -165px;
-    height: 800px;
     background: var(--lightgrey) center center;
-    background-size: cover;
     border-radius: 5px;
+    overflow: hidden;
+}
+
+.post-full-image img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
 }
 
 @media (max-width: 1170px) {
     .post-full-image {
         margin: 0 -4vw -100px;
-        height: 600px;
         border-radius: 0;
+    }
+    .post-full-image img {
+        height: 600px;
     }
 }
 
 @media (max-width: 800px) {
-    .post-full-image {
+    .post-full-image img {
         height: 400px;
     }
 }
