@@ -8,7 +8,7 @@ be a background image using CSS, we end up with a handful of inline styles.
 
 If the template in question has a background image, then we render responsive image styles
 for it, and apply those styles to the <header> tag. Else, we just output a <header> tag
-with a `no-image` class so we can style it accordingly.
+with a `no-cover` class so we can style it accordingly.
 --}}
 
 {{#if background}}
@@ -46,6 +46,6 @@ with a `no-image` class so we can style it accordingly.
 
 {{else}}
 
-<header class="site-header outer no-image">
+<header class="site-header outer no-cover">
 
 {{/if}}
