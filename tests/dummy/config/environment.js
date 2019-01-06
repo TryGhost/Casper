@@ -27,9 +27,9 @@ module.exports = function(environment) {
       coverImage: "/images/blog-cover.jpg",
       navigation: [
         { label: 'Home', route: 'index' },
-        { label: 'Built by Stone Circle', route: 'page', id: 'stone-circle' }
+        { label: 'Built by Chris Manson', route: 'page', id: 'chris-manson' }
       ]
-    },
+    }
   };
 
   if (environment === 'development') {

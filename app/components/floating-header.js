@@ -30,19 +30,30 @@ export default Component.extend({
     set(this, 'scrollEvent', scrollEvent);
     window.addEventListener('scroll', scrollEvent, {passive: true});
 
-    window.addEventListener('resize', () => {
+    let resizeEvent = () => {
       set(this, 'lastWindowHeight', window.innerHeight);
       set(this, 'lastDocumentHeight', $(document).height());
       this.requestTick();
-    }, false);
+    };
+
+    set(this, 'resizeEvent', resizeEvent);
+
+    window.addEventListener('resize', resizeEvent, false);
   },
 
   didDestroyElement() {
-    let scrollEvent = this.scrollEvent;
+    let scrollEvent = this.get('scrollEvent');
 
     if(scrollEvent) {
-      set(this, 'scrollEvent', null);
       window.removeEventListener('scroll', scrollEvent);
+      set(this, 'scrollEvent', null);
+    }
+
+    let resizeEvent = this.get('resizeEvent');
+
+    if(resizeEvent) {
+      window.removeEventListener('resize', resizeEvent);
+      set(this, 'resizeEvent', null);
     }
   },
 
