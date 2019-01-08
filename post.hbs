@@ -54,7 +54,7 @@ into the {body} of the default.hbs template --}}
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
                 <p>Get the latest posts delivered right to your inbox</p>
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
@@ -97,12 +97,12 @@ into the {body} of the default.hbs template --}}
                     {{#if ../primary_tag.feature_image}}
                         style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
                     {{else}}
-                        {{#if @blog.cover_image}}
-                            style="background-image: url({{img_url @blog.cover_image size="m"}})"{{/if}}
+                        {{#if @site.cover_image}}
+                            style="background-image: url({{img_url @site.cover_image size="m"}})"{{/if}}
                     {{/if}}
                 >
                     <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
+                        <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
                         {{#../primary_tag}}
                         <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
