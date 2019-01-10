@@ -15,7 +15,7 @@
         "dev": "gulp",
         "zip": "gulp zip",
         "test": "gscan .",
-        "create_ghost_branch": "GENERATE_DATE=\"$(date '+%Y%m%d-%H%M%S')\"; git co master; git pull origin master; git co -b nuxt-$GENERATE_DATE; git push -u origin nuxt-$GENERATE_DATE;",
+        "checkout_push_ghost_branch": "GENERATE_DATE=\"$(date '+%Y%m%d-%H%M%S')\"; git co master; git pull origin master; git co -b nuxt-$GENERATE_DATE; git push -u origin nuxt-$GENERATE_DATE;",
         "push_ghost_branch": "git add .; git commit -m 'added nuxt dist'; git push;"
     },
     "author": {
