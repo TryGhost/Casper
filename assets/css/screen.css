@@ -142,8 +142,8 @@ body {
     background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
 }
 
-.site-header.no-cover:before,
-.site-header.no-cover:after {
+.site-header.no-image:before,
+.site-header.no-image:after {
     display: none;
 }
 
