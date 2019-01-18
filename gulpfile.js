@@ -6,6 +6,8 @@ var livereload = require('gulp-livereload');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
+var uglify = require('gulp-uglify');
+var filter = require('gulp-filter');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -24,9 +26,11 @@ var nodemonServerInit = function () {
     livereload.listen(1234);
 };
 
-gulp.task('build', ['css'], function (/* cb */) {
+gulp.task('build', ['css', 'js'], function (/* cb */) {
     return nodemonServerInit();
 });
+
+gulp.task('generate', ['css', 'js']);
 
 gulp.task('css', function () {
     var processors = [
@@ -46,11 +50,25 @@ gulp.task('css', function () {
         .pipe(livereload());
 });
 
+gulp.task('js', function () {
+    var jsFilter = filter(['**/*.js'], {restore: true});
+
+    return gulp.src('assets/js/*.js')
+        .on('error', swallowError)
+        .pipe(sourcemaps.init())
+        .pipe(jsFilter)
+        .pipe(uglify())
+        .pipe(jsFilter.restore)
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('assets/built/'))
+        .pipe(livereload());
+});
+
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
 });
 
-gulp.task('zip', ['css'], function () {
+gulp.task('zip', ['css', 'js'], function () {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';

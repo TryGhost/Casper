@@ -32,7 +32,7 @@ One really neat trick is that you can also create custom one-off templates just 
 
 # Development
 
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node and Gulp installed globally. After that, from the theme's root directory:
+Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash
 $ yarn install
@@ -63,4 +63,4 @@ You can add your own SVG icons in the same manner.
 
 # Copyright & License
 
-Copyright (c) 2013-2018 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2019 Ghost Foundation - Released under the [MIT license](LICENSE).
