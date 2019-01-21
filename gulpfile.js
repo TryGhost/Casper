@@ -8,6 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
+var beeper = require('beeper');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -19,6 +20,15 @@ var easyimport = require('postcss-easy-import');
 var nodemonServerInit = function () {
     livereload.listen(1234);
 };
+
+function handleError(done) {
+    return function (err) {
+        if (err) {
+            beeper();
+        }
+        return done(err);
+    };
+}
 
 gulp.task('build', ['css', 'js'], function (/* cb */) {
     return nodemonServerInit();
@@ -42,7 +52,7 @@ gulp.task('css', function (done) {
         sourcemaps.write('.'),
         gulp.dest('assets/built/'),
         livereload()
-    ], done);
+    ], handleError(done));
 });
 
 gulp.task('js', function (done) {
@@ -57,7 +67,7 @@ gulp.task('js', function (done) {
         sourcemaps.write('.'),
         gulp.dest('assets/built/'),
         livereload()
-    ], done);
+    ], handleError(done));
 });
 
 gulp.task('watch', function () {
@@ -77,7 +87,7 @@ gulp.task('zip', ['css', 'js'], function (done) {
         ]),
         zip(filename),
         gulp.dest(targetDir)
-    ], done);
+    ], handleError(done));
 });
 
 gulp.task('default', ['build'], function () {
