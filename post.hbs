@@ -3,7 +3,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<header class="site-header outer">
+{{> header background=@site.cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
         {{> "site-nav"}}
     </div>

@@ -98,10 +98,6 @@ body {
         margin-top: -70px;
         padding-top: 0;
     }
-    .home-template .site-nav {
-        position: relative;
-        top: -70px;
-    }
 }
 
 
@@ -115,6 +111,7 @@ body {
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
+    height: 400px;
 }
 
 .site-header:before {
@@ -152,7 +149,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10vw 4vw;
+    padding: 5vw 4vw;
     min-height: 200px;
     max-height: 450px;
     text-align: center;
@@ -167,7 +164,7 @@ body {
 }
 
 .site-logo {
-    max-height: 45px;
+    max-height: 90px;
 }
 
 .site-description {
@@ -368,6 +365,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
     .site-nav-right {
         display: none;
+    }
+    .site-header {
+        height: unset;
     }
 }
 
