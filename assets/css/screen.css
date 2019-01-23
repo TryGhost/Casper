@@ -23,7 +23,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 10. Subscribe Overlay
 11. Site Footer
-
+12. Image
 */
 
 
@@ -112,6 +112,10 @@ body {
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
     height: 400px;
+}
+
+.posts {
+    height: unset;
 }
 
 .site-header:before {
@@ -2278,3 +2282,6 @@ Usage (In Ghost editor):
         margin-left: 0;
     }
 }
+
+
+/* 12. Image */

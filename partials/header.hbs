@@ -44,7 +44,15 @@ with a `no-image` class so we can style it accordingly.
     }
 }
 </style>
+{{#if class}}
+
+<header class="site-header outer responsive-header-img {{class}}">
+
+{{else}}
+
 <header class="site-header outer responsive-header-img">
+
+{{/if}}
 
 {{else}}
 
