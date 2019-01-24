@@ -77,7 +77,7 @@ gulp.task('watch', function () {
 gulp.task('zip', ['css', 'js'], function (done) {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
-    var filename = themeName + '.zip';
+    var filename = themeName + '_timescale.zip';
 
     pump([
         gulp.src([
