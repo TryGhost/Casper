@@ -179,7 +179,7 @@ body {
     max-height: 450px;
     text-align: center;
 }
-
+.site-title-mobile,
 .site-title {
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     z-index: 10;
@@ -187,6 +187,12 @@ body {
     padding: 0;
     font-size: 36pt;
     font-weight: 400;
+}
+.site-title-mobile {
+    margin: 0 auto;
+    visibility: hidden;
+    position: relative;
+    top: 100px;
 }
 
 .site-logo {
@@ -216,6 +222,11 @@ body {
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
+.site__inner {
+    display: flex;
+    flex-direction: column;
+}
+
 .site-nav {
     position: relative;
     z-index: 100;
@@ -224,7 +235,7 @@ body {
     align-items: flex-start;
     overflow-y: hidden;
     /* font-size: 1.5rem; */
-    top: 140px;
+    top: 130px;
     margin-top: 20px;
 }
 
@@ -2389,7 +2400,7 @@ Usage (In Ghost editor):
     /* height: 12em; */
     align-items: center;
     justify-content: flex-end;
-    margin-top: 2em;
+    margin-top: -8em;
 }
 
 .header__button {
@@ -2456,9 +2467,10 @@ div.header__mobile .header__button {
     transition: .5s ease-in-out;
 }
 .header__mobile.header__menu-background.active {
-    height: 100%;
+    height: 110%;
     padding: 50px 0 30px;
-    z-index: 100;
+    z-index: 8000;
+    margin-top: -14px;
 }
 
 .four-oh-four.header__mobile.header__menu-background {
@@ -2596,7 +2608,7 @@ div.header__mobile .header__button {
         height: 55px;
         right: 0;
         left: 0;
-        z-index: 100;
+        z-index: 9000;
         width: 100%;
         top: 0;
         padding: 0 2em;
@@ -2611,7 +2623,7 @@ div.header__mobile .header__button {
     .header.scrolldown.mobileshow {
         top: 0;
         height: 65px;
-        z-index: 2000;
+        z-index: 9000;
      }
      .header__inner .header__links {
          display: none;
@@ -2697,10 +2709,12 @@ div.header__mobile .header__button {
 }
 
 @media (max-width: 800px) {
+    .site-title-mobile {
+        visibility: visible
+    }
     .site-title {
+        visibility: hidden;
         position: absolute;
-        left: 45%;
-        top: 3px;
     }
     .nav {
         justify-content: space-evenly;
