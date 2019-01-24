@@ -4,17 +4,13 @@ into the {body} of the default.hbs template --}}
 
 {{> header background=@site.cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
-            <h1 class="site-title">
-                {{#if @site.logo}}
-                    <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </h1>
-            <h2 class="site-description">{{@site.description}}</h2>
-        </div>
+            {{!-- {{#if @site.logo}}
+                <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+            {{else}}
+                {{@site.title}}
+            {{/if}} --}}
+            {{> "site-nav"}}
+        {{!-- <h2 class="site-description">{{@site.description}}</h2> --}}
     </div>
 </header>
 

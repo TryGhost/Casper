@@ -8,7 +8,7 @@
 {{> header background=feature_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
         {{> "site-nav"}}
-        <div class="site-header-content">
+        {{!-- <div class="site-header-content">
             {{#if profile_image}}
                 <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
             {{/if}}
@@ -34,7 +34,7 @@
                 {{/if}}
                 <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </header>
 {{/author}}

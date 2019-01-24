@@ -76,7 +76,6 @@ body {
     margin: 0 auto;
     max-width: 1040px;
     width: 100%;
-    margin-top: 70px;
 }
 
 /* Usage:
@@ -89,17 +88,23 @@ body {
 
 */
 
+.home-template .post-feed,
+    .tag-template .post-feed,
+    .author-template .post-feed {
+        margin-top: -155px;
+        padding-top: 0;
+    }
+
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
-@media (min-width: 900px) {
+/* @media (max-width: 700px) {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        margin-top: -70px;
         padding-top: 0;
     }
-}
+} */
 
 
 /* 4. Site Header
@@ -127,11 +132,11 @@ body {
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
-    height: 400px;
+    height: 422px;
 }
 
 .posts {
-    height: unset;
+    height: 254px;
 }
 
 .site-header:before {
@@ -176,11 +181,12 @@ body {
 }
 
 .site-title {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 3.8rem;
-    font-weight: 700;
+    font-size: 36pt;
+    font-weight: 400;
 }
 
 .site-logo {
@@ -217,10 +223,9 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     overflow-y: hidden;
-    height: 40px;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #e0e0e0;
-    border-top: 1px solid #e0e0e0;
+    /* font-size: 1.5rem; */
+    top: 90px;
+    margin-top: 20px;
 }
 
 
@@ -228,7 +233,7 @@ body {
 .site-nav-taglist {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
@@ -238,6 +243,7 @@ body {
     
     -webkit-overflow-scrolling: touch;
     -ms-overflow-scrolling: touch;
+    height: 80px;
 }
 .site-nav-title {
     margin-right: 24px;
@@ -298,10 +304,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .nav li a {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-size: 18px;
     display: block;
     margin: 0;
     padding: 10px 12px;
@@ -408,8 +416,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     .site-nav-right {
         display: none;
     }
-    .site-header {
-        height: unset;
+    .nav li a {
+        font-size: 12pt;
+    }
+    .site-title {
+        font-size: 36pt;
+    }
+    .site-nav-taglist {
+        width: 90%;
+        margin: 0 auto;
     }
 }
 
@@ -717,7 +732,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-header {
     margin: 0 auto;
-    padding: 6vw 3vw 3vw;
+    padding: 3vw 3vw 3vw;
     max-width: 1040px;
     text-align: center;
 }
@@ -2334,7 +2349,7 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 .header__logo, 
 .header__link,
@@ -2349,7 +2364,7 @@ Usage (In Ghost editor):
 .header__link {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'source-sans-pro', Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
@@ -2679,4 +2694,23 @@ div.header__mobile .header__button {
 
 .inactive {
     z-index: -1;
+}
+
+@media (max-width: 800px) {
+    .site-title {
+        position: absolute;
+        left: 45%;
+        top: 3px;
+    }
+    .nav {
+        justify-content: space-evenly;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .site-nav {
+        margin-top: 0;
+    }
+    .site-nav-taglist {
+        height: 200px;
+    }
 }
