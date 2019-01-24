@@ -224,7 +224,7 @@ body {
     align-items: flex-start;
     overflow-y: hidden;
     /* font-size: 1.5rem; */
-    top: 90px;
+    top: 140px;
     margin-top: 20px;
 }
 
@@ -2709,8 +2709,9 @@ div.header__mobile .header__button {
     }
     .site-nav {
         margin-top: 0;
+        top: 100px;
     }
     .site-nav-taglist {
-        height: 200px;
+        height: 170px;
     }
 }
