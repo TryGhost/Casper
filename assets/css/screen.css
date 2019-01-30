@@ -136,7 +136,7 @@ body {
 }
 
 .posts {
-    height: 254px;
+    height: 264px;
 }
 
 .site-header:before {
@@ -254,7 +254,7 @@ body {
     
     -webkit-overflow-scrolling: touch;
     -ms-overflow-scrolling: touch;
-    height: 80px;
+    height: 60px;
 }
 .site-nav-title {
     margin-right: 24px;
@@ -2404,18 +2404,16 @@ Usage (In Ghost editor):
 }
 
 .header__button {
-    width: 200px;
+    width: 170px;
     height: 36px;
-    font-size: 16px;
     letter-spacing: 0.36px;
     margin-left: 15px;
     color: #FFFFFF;
     background-color: #EF7C15;
-    font-weight: normal;
     border-radius: 50px;
     border: none;
     display: flex;
-    font-weight: normal;
+    font-weight: bold;
     align-items: center;
     justify-content: center;
     padding: 0;
