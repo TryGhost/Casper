@@ -189,11 +189,11 @@ $(document).ready(function () {
         var progressMax = lastDocumentHeight - lastWindowHeight;
 
         // show/hide floating header
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
-        } else {
-            header.classList.remove('floating-active');
-        }
+        //if (lastScrollY >= trigger + triggerOffset) {
+        //    header.classList.add('floating-active');
+        //} else {
+        //    header.classList.remove('floating-active');
+        //}
 
         progressBar.setAttribute('max', progressMax);
         progressBar.setAttribute('value', lastScrollY);
