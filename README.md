@@ -1,66 +1,61 @@
-# Casper
+# Bloody Mary
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper. If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
-
-&nbsp;
-
-![screenshot-desktop](https://user-images.githubusercontent.com/120485/27221326-1e31d326-5280-11e7-866d-82d550a7683b.jpg)
-
-&nbsp;
-
-# First time using a Ghost theme?
-
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
-
-We've documented our default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
-
-**The main files are:**
-
-- `default.hbs` - The main template file
-- `index.hbs` - Used for the home page
-- `post.hbs` - Used for individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives
-- `author.hbs` - Used for author archives
-
-One really neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
-
-- `page-about.hbs` - Custom template for the `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
+This theme was modified from Casper theme for Ghost blog. The design is the same except for some added features.
 
 
-# Development
+# Added Features
 
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+**List of added features:**
 
-```bash
-$ yarn install
-$ yarn dev
+- Disqus - add Disqus to posts as a commenting platform (you need to make adjustments described bellow)
+- Font Awesome - Added support for [Font Awesome](https://fontawesome.com/)
+- Social Links - Added new social buttons (instagram, github...) and support for new ones via font awesome
+
+# Disqus
+
+In the file post.hbs you have to replace the "EXAMPLE" in '''s.src = 'https://EXAMPLE.disqus.com/embed.js';''' for your shortname. To get a shortname sign up in the official [Disqus](https://disqus.com/) website.
+
+Example of Disqus code:
+```
+<section class="post-full-comments">
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    this.page.url = "{{url absolute="true"}}";
+    this.page.identifier = "ghost-{{comment_id}}"
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://EXAMPLE.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+</section>
 ```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+# Social Links
 
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+For the Social Links you have to edit the file `partials/site-nav.hbs`.
 
-```bash
-$ yarn zip
 ```
+<div class="social-links">
+{{#if @site.facebook}}
+    <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+{{/if}}
+{{#if @site.twitter}}
+    <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+{{/if}}
+    <a class="social-link social-link-it" href="https://www.instagram.com/bertav.png/" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    <a class="social-link social-link-yt" href="https://www.youtube.com/channel/UCbKpGQNwmm1kz2pWdjU8AJQ" title="Youtube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+    <a class="social-link social-link-vm" href="https://vimeo.com/bertav" title="Vimeo" target="_blank" rel="noopener"><i class="fab fa-vimeo-v"></i></a>
+    <a class="social-link social-link-lk" href="https://www.linkedin.com/in/bernardo-taveira/" title="linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+    <a class="social-link social-link-gh" href="https://github.com/bertaveira" title="Vimeo" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+</div>
+```
+This is the section you need to edit! Each line is a social link. Replace the URL in `href="https://github.com/bertaveira"` for example.
 
-# PostCSS Features Used
-
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
-
-
-# SVG Icons
-
-Casper uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
-
-You can add your own SVG icons in the same manner.
-
-
-# Copyright & License
-
-Copyright (c) 2013-2019 Ghost Foundation - Released under the [MIT license](LICENSE).
+If you wish to add another social link that is not here it is simple. Since there is support for Font Awesome just select an icon from their site [HERE](https://fontawesome.com/icons) and copy the html code for it (should look something like this `<i class="fab fa-github"></i>`). Then add this line under the others like it:
+```
+<a class="social-link social-link-gh" href="INSER-URL-HERE" title="INSERT-NAME-OF-LINK-(anything you want)" target="_blank" rel="noopener">INSERT-FontAwesome-ICON-CODE-HERE</a>
+```
