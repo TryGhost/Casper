@@ -13,7 +13,7 @@ This theme was modified from Casper theme for Ghost blog. The design is the same
 
 # Disqus
 
-In the file post.hbs you have to replace the "EXAMPLE" in ```s.src = (...)``` for your shortname. To get a shortname sign up in the official [Disqus](https://disqus.com/) website.
+In the file post.hbs you have to replace the "EXAMPLE" in `s.src = 'https://bernardotaveira.disqus.com/embed.js';` for your shortname. To get a shortname sign up in the official [Disqus](https://disqus.com/) website.
 
 Example of Disqus code:
 ```html
