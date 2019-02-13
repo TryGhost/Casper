@@ -2,6 +2,7 @@
 
 This theme was modified from Casper theme for Ghost blog. The design is the same except for some added features.
 
+### [LIVE DEMO](https://bernardotaveira.com/)
 
 # Added Features
 
