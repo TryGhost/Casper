@@ -10,7 +10,7 @@ This theme was modified from Casper theme for Ghost blog. The design is the same
 - Disqus - add Disqus to posts as a commenting platform (you need to make adjustments described bellow)
 - Font Awesome - Added support for [Font Awesome](https://fontawesome.com/)
 - Social Links - Added new social buttons (instagram, github...) and support for new ones via font awesome
-- Change estimated read time to date of publishing (commit here: [5aa6f73](ttps://github.com/bertaveira/Bloody-Mary/commit/5aa6f73433bd4db230bf2ea5a2a15809f5c97294) )
+- Change estimated read time to date of publishing (commit [here](ttps://github.com/bertaveira/Bloody-Mary/commit/5aa6f73433bd4db230bf2ea5a2a15809f5c97294) )
 
 # Disqus
 
