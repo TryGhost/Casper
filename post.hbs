@@ -40,14 +40,15 @@ into the {body} of the default.hbs template --}}
                         </div>
                     {{else}}
                         <div class="post-content"
-                            data-members
+                            data-members-content
                             data-members-resource-type="posts"
                             data-members-resource-id="{{id}}"
                             data-members-content-host="{{@blog.url}}"
                         >
                             {{excerpt}}
                             <div class="signin-cta">
-                                <a href="#" data-members-signin-cta>Sign in</a> to view the full content of this post.
+                                <a href="#" data-members-signin-cta>Sign in</a>
+                                <a href="#" data-members-upgrade-cta>Upgrade</a> to view the full content of this post.
                             </div>
                         </div>
                     {{/if}}

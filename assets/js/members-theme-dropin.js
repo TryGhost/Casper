@@ -124,7 +124,7 @@ module.exports = GhostContentAPI;
 },{"axios":6}],2:[function(require,module,exports){
 "use strict";
 
-/* global window */
+/* global document window */
 var layer1 = require('@tryghost/members-layer1');
 
 module.exports = function layer2(options) {
@@ -178,6 +178,10 @@ module.exports = function layer2(options) {
     return openAuth('signin');
   }
 
+  function upgrade() {
+    return openAuth('upgrade');
+  }
+
   function getToken(_ref2) {
     var audience = _ref2.audience;
     return members.getToken({
@@ -193,6 +197,7 @@ module.exports = function layer2(options) {
     getToken: getToken,
     signout: signout,
     signin: signin,
+    upgrade: upgrade,
     resetPassword: resetPassword
   });
 };
@@ -2135,17 +2140,21 @@ DomReady(function () {
     }
   }
 
-  var membersContentElements = Array.from(document.querySelectorAll('[data-members]')); // TODO use data-members-content;
-
+  var membersContentElements = Array.from(document.querySelectorAll('[data-members-content]'));
   var signinBtn = document.querySelector('[data-members-signin]');
   var signinCta = document.querySelector('[data-members-signin-cta]');
+  var upgradeCta = document.querySelector('[data-members-upgrade-cta]');
   var signoutBtn = document.querySelector('[data-members-signout]');
   members.on('signedin', function () {
     show(signoutBtn);
+    show(upgradeCta);
+    hide(signinCta);
     hide(signinBtn);
   });
   members.on('signedout', function () {
     show(signinBtn);
+    show(signinCta);
+    hide(upgradeCta);
     hide(signoutBtn);
   });
 
@@ -2159,9 +2168,15 @@ DomReady(function () {
     members.signin().then(reload);
   }
 
+  function upgrade(event) {
+    event.preventDefault();
+    members.upgrade().then(reload);
+  }
+
   signoutBtn.addEventListener('click', signout);
   signinBtn.addEventListener('click', signin);
   signinCta.addEventListener('click', signin);
+  upgradeCta.addEventListener('click', upgrade);
   membersContentElements.forEach(function (element) {
     var resourceType = element.getAttribute('data-members-resource-type');
     var resourceId = element.getAttribute('data-members-resource-id');
@@ -2182,7 +2197,10 @@ DomReady(function () {
         id: resourceId
       }, {}, token).then(function (_ref5) {
         var html = _ref5.html;
-        element.innerHTML = html;
+
+        if (html) {
+          element.innerHTML = html;
+        }
       }).catch(function (err) {
         element.innerHTML = err.message;
       });
