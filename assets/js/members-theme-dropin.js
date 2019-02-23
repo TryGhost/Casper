@@ -2145,6 +2145,10 @@ DomReady(function () {
   var signinCta = document.querySelector('[data-members-signin-cta]');
   var upgradeCta = document.querySelector('[data-members-upgrade-cta]');
   var signoutBtn = document.querySelector('[data-members-signout]');
+  var showForbidden = document.querySelector('[data-members-show-forbidden]');
+  var showUnauthorized = document.querySelector('[data-members-show-unauthorized]');
+  hide(showForbidden);
+  hide(showUnauthorized);
   members.on('signedin', function () {
     show(signoutBtn);
     show(upgradeCta);
@@ -2190,6 +2194,7 @@ DomReady(function () {
       audience: audience
     }).then(function (token) {
       if (!token) {
+        show(showUnauthorized);
         return;
       }
 
@@ -2200,6 +2205,8 @@ DomReady(function () {
 
         if (html) {
           element.innerHTML = html;
+        } else {
+          show(showForbidden);
         }
       }).catch(function (err) {
         element.innerHTML = err.message;
