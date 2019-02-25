@@ -21,8 +21,11 @@
             {{/if}}
         </div>
         {{#if @labs.members}}
-            <a class="signin-button" href="#signin" data-members-signin>Log in</a>
-            <a class="signout-button" href="#signout" data-members-signout>Log out</a>
+            {{#if member}}
+                <a class="signout-button" href="#signout" data-members-signout>Log out</a>
+            {{else}}
+                <a class="signin-button" href="#signin" data-members-signin>Log in</a>
+            {{/if}}
         {{/if}}
     </div>
 </nav>

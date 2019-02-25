@@ -33,32 +33,22 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <section class="post-full-content">
-                {{#if @labs.members}}
-                    {{#if html}}
-                        <div class="post-content">
-                            {{content}}
-                        </div>
-                    {{else}}
-                        <div class="post-content"
-                            data-members-content
-                            data-members-resource-type="posts"
-                            data-members-resource-id="{{id}}"
-                            data-members-content-host="{{@blog.url}}"
-                        >
-                            {{excerpt}}
-                            <div class="signin-cta" data-members-show-unauthorized>
-                                <a href="#" data-members-signin-cta>Sign in</a> to view the full content of this post.
+                <div class="post-content">
+                    {{content}}
+                    {{#unless html}}
+{{#if @labs.members}}
+                        {{#if member}}
+                            <div class="upgrade-cta">
+                                <a href="#" data-members-upgrade>Upgrade</a> to view the full content of this post.
                             </div>
-                            <div class="upgrade-cta" data-members-show-forbidden>
-                                <a href="#" data-members-upgrade-cta>Upgrade</a> to view the full content of this post.
+                        {{else}}
+                            <div class="signin-cta">
+                                <a href="#" data-members-signin>Sign in</a> to view the full content of this post.
                             </div>
-                        </div>
-                    {{/if}}
-                {{else}}
-                    <div class="post-content">
-                        {{content}}
-                    </div>
-                {{/if}}
+                        {{/if}}
+{{/if}}
+                    {{/unless}}
+                </div>
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}

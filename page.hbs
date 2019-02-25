@@ -29,6 +29,19 @@ into the {body} of the default.hbs template --}}
             <section class="post-full-content">
                 <div class="post-content">
                     {{content}}
+                    {{#unless html}}
+{{#if @labs.members}}
+                        {{#if member}}
+                            <div class="upgrade-cta">
+                                <a href="#" data-members-upgrade>Upgrade</a> to view the full content of this post.
+                            </div>
+                        {{else}}
+                            <div class="signin-cta">
+                                <a href="#" data-members-signin>Sign in</a> to view the full content of this post.
+                            </div>
+                        {{/if}}
+{{/if}}
+                    {{/unless}}
                 </div>
             </section>
 
