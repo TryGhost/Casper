@@ -351,10 +351,6 @@ function reload(success) {
   }
 }
 
-var log = function log(x) {
-  return window['con' + 'sole']['l' + 'og'](x);
-};
-
 function setupMembersListeners() {
   var members = layer2({
     membersUrl: window.membersUrl
@@ -386,8 +382,18 @@ function setupMembersListeners() {
   var signinEls = document.querySelectorAll('[data-members-signin]');
   var upgradeEls = document.querySelectorAll('[data-members-upgrade]');
   var signoutEls = document.querySelectorAll('[data-members-signout]');
+
+  function setCookie(token) {
+    var claims = getClaims(token);
+    var expiry = new Date(claims.exp * 1000);
+    document.cookie = 'member=' + token + ';Path=/;expires=' + expiry.toUTCString();
+  }
+
+  function removeCookie() {
+    document.cookie = 'member=null;Path=/;max-age=0';
+  }
+
   members.on('signedin', function () {
-    log('signedin event');
     var currentCookies = document.cookie;
 
     var _ref5 = currentCookies.match(/member=([a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]*)/) || [null],
@@ -403,18 +409,17 @@ function setupMembersListeners() {
     members.getToken({
       audience: tokenAudience
     }).then(function (token) {
-      log('Setting the cookie from signedin event');
-      document.cookie = 'member=' + token;
+      setCookie(token);
     });
   });
   members.on('signedout', function () {
-    document.cookie = 'member=null';
+    removeCookie();
   });
 
   function signout(event) {
     event.preventDefault();
     members.signout().then(function () {
-      document.cookie = 'member=null';
+      removeCookie();
       return true;
     }).then(reload);
   }
@@ -425,7 +430,7 @@ function setupMembersListeners() {
       return members.getToken({
         audience: tokenAudience
       }).then(function (token) {
-        document.cookie = 'member=' + token;
+        setCookie(token);
         return true;
       });
     }).then(reload);
