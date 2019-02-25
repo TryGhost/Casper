@@ -397,7 +397,7 @@ function setupMembersListeners() {
 
 
     if (currentToken && isTokenExpired(currentToken)) {
-      return members.logout();
+      return members.signout();
     }
 
     members.getToken({
@@ -415,16 +415,18 @@ function setupMembersListeners() {
     event.preventDefault();
     members.signout().then(function () {
       document.cookie = 'member=null';
+      return true;
     }).then(reload);
   }
 
   function signin(event) {
     event.preventDefault();
     members.signin().then(function () {
-      members.getToken({
+      return members.getToken({
         audience: tokenAudience
       }).then(function (token) {
         document.cookie = 'member=' + token;
+        return true;
       });
     }).then(reload);
   }
