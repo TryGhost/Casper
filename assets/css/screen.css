@@ -359,7 +359,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .signin-button,
 .signout-button {
-    display: none;
     margin: 0 0 0 5px;
     padding: 4px 10px;
     border: #fff 1px solid;
@@ -377,7 +376,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .signin-cta, .upgrade-cta {
-    display: none;
     margin: 40px 0;
     padding: 60px 20px;
     border-top: 1px solid rgba(0,0,0,0.1);
