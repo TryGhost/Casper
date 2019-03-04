@@ -4,8 +4,8 @@
   ],
   "packageRules": [
     {
-      "packagePatterns": ["^postcss", "precss"],
-      "groupName": "postcss"
+      "packagePatterns": ["^postcss", "css", "autoprefixer"],
+      "groupName": "css"
     },
     {
       "packagePatterns": ["gulp"],
