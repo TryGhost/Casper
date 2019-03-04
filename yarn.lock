@@ -454,7 +454,7 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beeper@^1.0.0, beeper@^1.1.1:
+beeper@1.1.1, beeper@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.1.tgz#e6d5ea8c5dad001304a70b22638447f69cb2f809"
 
@@ -1784,7 +1784,7 @@ graceful-fs@~1.2.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
-gscan@^2.0.0:
+gscan@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.0.0.tgz#049e791ce3315359f7cd2280f0a334a88c22de77"
   dependencies:
