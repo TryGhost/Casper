@@ -1,5 +1,15 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": ["^postcss", "precss"],
+      "groupName": "postcss"
+    },
+    {
+      "packagePatterns": ["gulp"],
+      "groupName": "gulp"
+    }
   ]
 }
