@@ -1522,9 +1522,9 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-ghost-ignition@2.9.2:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/ghost-ignition/-/ghost-ignition-2.9.2.tgz#e68de88fa4a20fc09c833fe3278bdc20dca6d525"
+ghost-ignition@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/ghost-ignition/-/ghost-ignition-3.0.2.tgz#a74480c337b917c9350ed0c34dfbd13cac24accd"
   dependencies:
     bunyan "1.8.12"
     bunyan-loggly "^1.3.1"
@@ -1646,9 +1646,9 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-gscan@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.2.1.tgz#38bc8597f7579ab0a0b5b023cf59f71b43f567b0"
+gscan@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.3.0.tgz#0636aa97b0c34c5fdb1b069418fed0440aa7dea2"
   dependencies:
     "@tryghost/extract-zip" "1.6.6"
     bluebird "^3.4.6"
@@ -1657,12 +1657,13 @@ gscan@2.2.1:
     express "^4.16.2"
     express-hbs "^1.0.3"
     fs-extra "^0.26.2"
-    ghost-ignition "2.9.2"
+    ghost-ignition "3.0.2"
     glob "^7.0.5"
-    lodash "4.17.10"
+    lodash "^4.17.11"
     multer "^1.1.0"
     require-dir "^0.3.2"
     semver "^5.3.0"
+    upath "^1.1.0"
     uuid "^3.0.0"
     validator "^6.3.0"
 
@@ -2354,9 +2355,13 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.10, lodash@^4.16.4:
+lodash@^4.16.4:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+
+lodash@^4.17.11:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
 lodash@^4.17.4:
   version "4.17.5"
