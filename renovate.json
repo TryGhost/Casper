@@ -5,7 +5,7 @@
   "packageRules": [
     {
       "packagePatterns": ["^postcss", "css", "autoprefixer"],
-      "groupName": "css"
+      "groupName": "css processors"
     },
     {
       "packagePatterns": ["gulp"],
