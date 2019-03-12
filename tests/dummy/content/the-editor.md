@@ -1,5 +1,5 @@
 ---
-title: Editing Posts with Ember Ghost
+title: Editing Posts with empress-blog
 image: /images/writing.jpg
 imageMeta:
   attribution:
@@ -11,13 +11,13 @@ tags:
   - getting-started
 ---
 
-Ember Ghost uses a language called **Markdown** to format text, and so does the original Ghost 🎉
+empress-blog uses a language called **Markdown** to format text, and so does the original Ghost 🎉
 
-The main difference between the hosted Ghost platform and Ember Ghost is that we just use files on disk, so you can either edit your Markdown files directly or you can use a desktop Markdown editor. It keeps things simple but it can sometimes feel like you are writing on pro-mode 😎
+The main difference between the hosted Ghost platform and empress-blog is that we just use files on disk, so you can either edit your Markdown files directly or you can use a desktop Markdown editor. It keeps things simple but it can sometimes feel like you are writing on pro-mode 😎
 
-If you want to start a new post we recommend that you use the built in generator `ember generate post "The next big thing - Ember Ghost"`. This will create a file for you and setup the start of the metadata.
+If you want to start a new post we recommend that you use the built in generator `ember generate post "The next big thing - empress-blog"`. This will create a file for you and setup the start of the metadata.
 
-For now, though, let's run you through some of the basics of editing Markdown. You can see this post [directly on github](https://github.com/empress/ember-ghost/blob/master/blueprints/ember-ghost/files/content/the-editor.md) if you want to see all the Markdown we've used. (don't forget to click the _Raw_ button to see the source).
+For now, though, let's run you through some of the basics of editing Markdown. You can see this post [directly on github](https://github.com/empress/empress-blog/blob/master/blueprints/empress-blog/files/content/the-editor.md) if you want to see all the Markdown we've used. (don't forget to click the _Raw_ button to see the source).
 
 
 ## Formatting text
@@ -35,9 +35,9 @@ Images in Markdown look just the same as links, except they're prefixed with an 
 
 ![Computer](https://casper.ghost.org/v1.0.0/images/computer.jpg)
 
-If you want to add images to your Ember Ghost app you can just drop them in the `/public` folder, which you should see if you are running this locally!
+If you want to add images to your empress-blog app you can just drop them in the `/public` folder, which you should see if you are running this locally!
 
-_**Important Note:** Ember Ghost does not currently have automatic image resizing, so it's always a good idea to make sure your images aren't gigantic files **before** adding them to your project._
+_**Important Note:** empress-blog does not currently have automatic image resizing, so it's always a good idea to make sure your images aren't gigantic files **before** adding them to your project._
 
 
 ## Making lists
