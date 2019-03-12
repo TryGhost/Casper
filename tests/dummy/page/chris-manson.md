@@ -20,4 +20,4 @@ the evolution of the Ember Static site ecosystem.
 
 Ember Ghost is entirely open source so if you want to see how it works or if you
 would like to contribute please [check out the git
-repository](https://github.com/empress/ember-ghost) or join us on the
+repository](https://github.com/empress/empress-blog) or join us on the

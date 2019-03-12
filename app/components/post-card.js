@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { htmlSafe } from '@ember/string';
 import { computed } from '@ember/object';
-import { url } from 'ember-ghost-casper-template/helpers/url'
+import { url } from 'empress-blog-casper-template/helpers/url'
 
 export default Component.extend({
   blog: service(),

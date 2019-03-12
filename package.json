@@ -1,11 +1,13 @@
 {
-  "name": "ember-ghost-casper-template",
+  "name": "empress-blog-casper-template",
   "version": "2.0.4",
   "description": "Casper Template for Ember Ghost",
   "keywords": [
     "ember-addon",
     "ember-ghost",
-    "ember-ghost-template"
+    "ember-ghost-template",
+    "empress-blog",
+    "empress-blog-template"
   ],
   "license": "MIT",
   "author": {
@@ -16,7 +18,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/empress/ember-ghost-casper-template",
+  "repository": "https://github.com/empress/empress-blog-casper-template",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app blueprints config lib server test-support tests",
@@ -65,7 +67,7 @@
     "ember-data": "~2.18.0",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
-    "ember-ghost": "^1.0.8",
+    "empress-blog": "^1.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-moment": "^7.7.0",
@@ -84,6 +86,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "https://ember-ghost-casper-template.netlify.com"
+    "demoURL": "https://empress-blog-casper-template.netlify.com"
   }
 }

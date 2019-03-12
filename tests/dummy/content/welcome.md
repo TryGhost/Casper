@@ -33,7 +33,7 @@ npm install -g ember-cli
 ember new super-blog
 cd super-blog
 
-ember install ember-ghost ember-ghost-casper-template
+ember install empress-blog empress-blog-casper-template
 ```
 
 It will ask you if you want to update the `index.html` file and you should say yes 👍

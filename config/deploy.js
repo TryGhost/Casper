@@ -40,7 +40,7 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'production') {
 
-    const bucket = 'ember-ghost-casper-template';
+    const bucket = 'empress-blog-casper-template';
     const region = 'eu-west-1'
 
     const keys = ['s3-standard', 's3-xml', 's3-index'];
