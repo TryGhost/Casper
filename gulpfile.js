@@ -32,7 +32,7 @@ const handleError = (done) => {
 function css(done) {
     var processors = [
         easyimport,
-        customProperties,
+        customProperties({preserve: false}),
         colorFunction(),
         autoprefixer({browsers: ['last 2 versions']}),
         cssnano()
