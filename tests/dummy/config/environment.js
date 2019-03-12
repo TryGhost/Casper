@@ -22,8 +22,8 @@ module.exports = function(environment) {
       // when it is created
     },
     blog: {
-      title: "ember ghost casper template",
-      description: "The Casper theme for Ember Ghost",
+      title: "empress-blog casper template",
+      description: "The Casper theme for empress-blog",
       coverImage: "/images/blog-cover.jpg",
       navigation: [
         { label: 'Home', route: 'index' },

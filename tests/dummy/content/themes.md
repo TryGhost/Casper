@@ -10,11 +10,11 @@ date: Tue Jun 12 2018 17:49:21 GMT+0100 (IST)
 tags:
   - getting-started
 ---
-Ember Ghost currently only supports 2 themes, the default [Casper template](https://github.com/empress/empress-blog-casper-template) and the [Attila template](https://github.com/empress/empress-blog-attila-template). If you want to swap between templates it is as simple as installing a different npm dependency 🎉
+empress-blog currently only supports 2 themes, the default [Casper template](https://github.com/empress/empress-blog-casper-template) and the [Attila template](https://github.com/empress/empress-blog-attila-template). If you want to swap between templates it is as simple as installing a different npm dependency 🎉
 
-The [Ember Ghost documentation](https://github.com/empress/empress-blog/blob/master/README.md) recommends that you use the default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for most purposes. The empress-blog-casper-template is a direct fork of Ghost's official Casper repository so it aims to be as close as possible to the original.
+The [empress-blog documentation](https://github.com/empress/empress-blog/blob/master/README.md) recommends that you use the default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for most purposes. The empress-blog-casper-template is a direct fork of Ghost's official Casper repository so it aims to be as close as possible to the original.
 
-If you are interested in writing your own theme for Ember Ghost you can get started using
+If you are interested in writing your own theme for empress-blog you can get started using
 
 ```sh
 npm init empress-blog-template <template-name>

@@ -1,12 +1,12 @@
 # empress-blog-casper-template
 
-This is a template designed to work with [Ember Ghost](https://github.com/empress/empress-blog)
+This is a template designed to work with [empress-blog](https://github.com/empress/empress-blog)
 and is a fully-functional, static site implementation of the official Ghost [Casper
 Template](https://github.com/TryGhost/Casper) built on EmberJS with fully working out of the box SEO
 friendly output. It supports being hosted on Github Pages, AWS S3 or any other static site hosting
 solution.
 
-For more information on how to use this system [read the Ember Ghost
+For more information on how to use this system [read the empress-blog
 documentation](https://github.com/empress/empress-blog/blob/master/README.md) but if you want to
 get started straight away, try the quick start below.
 

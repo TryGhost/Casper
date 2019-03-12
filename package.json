@@ -1,7 +1,7 @@
 {
   "name": "empress-blog-casper-template",
   "version": "2.0.4",
-  "description": "Casper Template for Ember Ghost",
+  "description": "Casper Template for empress-blog",
   "keywords": [
     "ember-addon",
     "ember-ghost",
