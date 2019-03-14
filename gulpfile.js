@@ -2,18 +2,18 @@ const {series, watch, src, dest} = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
-var livereload = require('gulp-livereload');
-var postcss = require('gulp-postcss');
-var zip = require('gulp-zip');
-var uglify = require('gulp-uglify');
-var beeper = require('beeper');
+const livereload = require('gulp-livereload');
+const postcss = require('gulp-postcss');
+const zip = require('gulp-zip');
+const uglify = require('gulp-uglify');
+const beeper = require('beeper');
 
 // postcss plugins
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var easyimport = require('postcss-easy-import');
+const autoprefixer = require('autoprefixer');
+const colorFunction = require('postcss-color-function');
+const cssnano = require('cssnano');
+const customProperties = require('postcss-custom-properties');
+const easyimport = require('postcss-easy-import');
 
 function serve(done) {
     livereload.listen();
@@ -30,7 +30,7 @@ const handleError = (done) => {
 };
 
 function css(done) {
-    var processors = [
+    const processors = [
         easyimport,
         customProperties({preserve: false}),
         colorFunction(),
@@ -56,9 +56,9 @@ function js(done) {
 }
 
 function zipper(done) {
-    var targetDir = 'dist/';
-    var themeName = require('./package.json').name;
-    var filename = themeName + '.zip';
+    const targetDir = 'dist/';
+    const themeName = require('./package.json').name;
+    const filename = themeName + '.zip';
 
     pump([
         src([
