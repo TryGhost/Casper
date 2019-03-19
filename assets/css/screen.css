@@ -166,10 +166,24 @@ body {
     font-weight: 700;
 }
 
+/* Customized for correct SVG display */
 .site-logo {
-    max-height: 45px;
+   display: block;
+   background: none !important;
+   border: none !important;
 }
 
+/* Customized for correct SVG display */
+img.site-logo {
+    width: auto;
+    height: 180px;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px 0 5px 0;
+}
+    
 .site-description {
     z-index: 10;
     margin: 0;
@@ -368,6 +382,22 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
     .site-nav-right {
         display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    img.site-logo {
+	padding: 16px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .site-logo {
+	padding: 20px;
+    }
+
+    img.site-logo {
+        height: 100px;
     }
 }
 
