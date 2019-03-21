@@ -176,7 +176,7 @@ body {
 /* Customized for correct SVG display */
 img.site-logo {
     width: auto;
-    height: 180px;
+    height: 75px;
     box-sizing: border-box;
     display: block;
     margin-left: auto;

@@ -1,8 +1,8 @@
 {
     "name": "casper-ridehome",
-    "description": "The theme for Ride Home Media on Ghost.",
-    "demo": "https://demo.ghost.io",
-    "version": "1.0.0",
+    "description": "The customized version of Casper for Ride Home Media.",
+    "demo": "https://ridehome.info",
+    "version": "1.0.1",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
@@ -19,7 +19,6 @@
     },
     "author": {
         "name": "James Welsh, building on the work of Ghost Foundation",
-        "email": "james@ridehome.info",
         "url": "https://ridehome.info"
     },
     "gpm": {
