@@ -2,38 +2,31 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer {{unless (and blog.cover blog.coverImage) 'no-cover'}}" style="{{if blog.coverImage coverImageStyle}}">
+<Header @background={{blog.coverImage}}> {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
         <div class="site-header-content">
             <h1 class="site-title">
                 {{#if blog.logo}}
-                    <img class="site-logo" src="{{url blog.logo}}" alt="{{blog.title}}" />
+                    <img class="site-logo" src={{blog.logo}} alt={{blog.title}} />
                 {{else}}
                     {{blog.title}}
                 {{/if}}
             </h1>
             <h2 class="site-description">{{blog.description}}</h2>
         </div>
-
-        {{site-nav}}
-
-        {{#if blog.coverMeta.attributionLink}}
-          {{image-attribution meta=blog.coverMeta}}
-        {{/if}}
+        <SiteNav />
     </div>
-
-</header>
+</Header>
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
+<main id="site-main" class="site-main outer">
     <div class="inner">
 
         <div class="post-feed">
-            {{#each (sort-by 'date:desc' model) as |post|}}
+            {{#each (sort-by 'date:desc' model) as |post index|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{post-card post=post}}
+                <PostCard @index={{index}} @post={{post}}/>
 
             {{/each}}
         </div>

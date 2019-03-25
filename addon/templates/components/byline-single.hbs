@@ -1,0 +1,18 @@
+<section class="author-card">
+    {{#if @author.image}}
+        <img class="author-profile-image" src={{@author.image}} alt={{@author.name}} />
+    {{else}}
+        <span class="avatar-wrapper">{{svg-icons/avatar}}</span>
+    {{/if}}
+    <section class="author-card-content">
+        <h4 class="author-card-name">{{#link-to 'author' @author.id}}{{@author.name}}{{/link-to}}</h4>
+        {{#if @author.content}}
+            <p>{{@author.content}}</p>
+        {{else}}
+            <p>Read {{#link-to 'author' @author.id}}more posts{{/link-to}} by this author.</p>
+        {{/if}}
+    </section>
+</section>
+<div class="post-full-footer-right">
+    {{#link-to 'author' @author.id class="author-card-button"}}Read More{{/link-to}}
+</div>

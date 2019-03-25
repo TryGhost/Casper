@@ -5,7 +5,8 @@ imageMeta:
   attribution:
   attributionLink:
 featured: true
-author: ghost
+authors:
+  - ghost
 date: Tue Jun 12 2018 17:55:01 GMT+0100 (IST)
 tags:
   - getting-started

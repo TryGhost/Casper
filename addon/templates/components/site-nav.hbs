@@ -1,0 +1,29 @@
+<nav class="site-nav">
+    <div class="site-nav-left">
+        {{#unless isHome}}
+            {{#if blog.logo}}
+                {{#link-to 'index' class="site-nav-logo"}}<img src={{blog.logo}} alt={{blog.title}} />{{/link-to}}
+            {{else}}
+                {{#link-to 'index' class="site-nav-logo"}}{{blog.title}}{{/link-to}}
+            {{/if}}
+        {{/unless}}
+        {{#if blog.navigation}}
+            <NavigationLinks />
+        {{/if}}
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            {{#if blog.facebook}}
+                <a class="social-link social-link-fb" href="https://www.facebook.com/{{blog.facebook}}" title="Facebook" target="_blank" rel="noopener">{{svg-icons/facebook}}</a>
+            {{/if}}
+            {{#if blog.twitter}}
+                <a class="social-link social-link-tw" href="https://twitter.com/{{blog.twitter}}" title="Twitter" target="_blank" rel="noopener">{{svg-icons/twitter}}</a>
+            {{/if}}
+        </div>
+        {{#if @labs.subscribers}}
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        {{else if blog.host}}
+            <a class="rss-button" href={{rssFeed}} target="_blank" rel="noopener">{{svg-icons/rss}}</a>
+        {{/if}}
+    </div>
+</nav>

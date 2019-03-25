@@ -1,60 +1,53 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
+{{#let model as |author|}}
 {{!-- Everything inside the #author tags pulls data from the author --}}
-<header class="site-header outer {{unless model.coverImage 'no-cover'}}" style="{{if model.coverImage coverImageStyle}}">
+
+
+<Header @background={{blog.coverImage}}>
     <div class="inner">
-        {{site-nav}}
+        <SiteNav />
         <div class="site-header-content">
-            {{#if model.image}}
-                <img class="author-profile-image" src="{{model.image}}" alt="{{model.name}}" />
+            {{#if author.image}}
+                <img class="author-profile-image" src={{author.image}} alt="{{author.name}}" />
             {{/if}}
-            <h1 class="site-title">{{model.name}}</h1>
-            {{#if model.content}}
-                <h2 class="author-bio">{{markdown-to-html model.content}}</h2>
+            <h1 class="site-title">{{author.name}}</h1>
+            {{#if author.content}}
+                <h2 class="author-bio">{{author.content}}</h2>
             {{/if}}
             <div class="author-meta">
-                {{#if model.location}}
-                    <div class="author-location">{{model.location}} <span class="bull">&bull;</span></div>
+                {{#if author.location}}
+                    <div class="author-location">{{author.location}} <span class="bull">&bull;</span></div>
                 {{/if}}
                 <div class="author-stats">
-                  {{#if model.posts}}
-                    {{model.posts.length}} posts
-                  {{else}}
-                    No posts
-                  {{/if}}
-                  <span class="bull">&bull;</span>
+                    {{plural author.posts.length empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
                 </div>
-                {{#if model.website}}
-                    <a class="social-link social-link-wb" href="{{model.website}}" target="_blank" rel="noopener">{{svg-icons/website}}</a>
+                {{#if author.website}}
+                    <a class="social-link social-link-wb" href={{author.website}} target="_blank" rel="noopener">{{svg-icons/website}}</a>
                 {{/if}}
-                {{#if model.twitter}}
-                    <a class="social-link social-link-tw" href="https://twitter.com/{{model.twitter}}" target="_blank" rel="noopener">{{svg-icons/twitter}}</a>
+                {{#if author.twitter}}
+                    <a class="social-link social-link-tw" href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">{{svg-icons/twitter}}</a>
                 {{/if}}
-                {{#if model.facebook}}
-                    <a class="social-link social-link-fb" href="{{model.facebook}}" target="_blank" rel="noopener">{{svg-icons/facebook}}</a>
+                {{#if author.facebook}}
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/{{author.facebook}}" target="_blank" rel="noopener">{{svg-icons/facebook}}</a>
                 {{/if}}
-                {{!-- <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{model.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
+                {{!-- <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
             </div>
-
-            {{#if model.coverMeta.attributionLink}}
-              <div style="width:100%">
-                {{image-attribution meta=model.coverMeta}}
-              </div>
-            {{/if}}
         </div>
     </div>
-</header>
+</Header>
+{{/let}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
+<main id="site-main" class="site-main outer">
     <div class="inner">
 
         <div class="post-feed">
             {{#each (sort-by 'date:desc' model.posts) as |post|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{post-card post=post}}
+                <PostCard @post={{post}}/>
 
             {{/each}}
         </div>
