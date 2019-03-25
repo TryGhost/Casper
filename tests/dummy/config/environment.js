@@ -21,14 +21,20 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
     blog: {
       title: "empress-blog casper template",
       description: "The Casper theme for empress-blog",
-      coverImage: "/images/blog-cover.jpg",
-      navigation: [
-        { label: 'Home', route: 'index' },
-        { label: 'Built by Chris Manson', route: 'page', id: 'chris-manson' }
-      ]
+      coverImage: '/images/blog-cover.jpg',
+
+      navigation: [{
+        label: 'Home',
+        route: 'index'
+      }, {
+        label: 'Built by Chris Manson',
+        route: 'page',
+        id: 'chris-manson'
+      }]
     }
   };
 

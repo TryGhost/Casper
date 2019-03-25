@@ -5,84 +5,66 @@ into the {body} of the default.hbs template --}}
 
 <header class="site-header outer">
     <div class="inner">
-        {{site-nav}}
+        <SiteNav />
     </div>
 </header>
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#let model.post as |post|}}
 
-<main id="site-main" class="site-main outer" role="main">
+<main id="site-main" class="site-main outer">
     <div class="inner">
-        <article class="post-full post {{unless model.post.image 'no-image'}}">
+
+        <article class="post-full {{post_class}} {{unless post.image 'no-image'}}">
+
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{moment-format model.post.date "YYYY-MM-DD"}}">{{moment-format model.post.date "D MMMM YYYY"}}</time>
-                    {{#if model.post.primaryTag}}
-                      <span class="date-divider">/</span> {{#link-to 'tag' model.post.primaryTag}} {{model.post.primaryTag}}{{/link-to}}
+                    <time class="post-full-meta-date" datetime="{{date post format="YYYY-MM-DD"}}">{{date post format="D MMMM YYYY"}}</time>
+                    {{#if post.primaryTag}}
+                        <span class="date-divider">/</span> {{#link-to 'tag' post.primaryTag}}{{post.primaryTag}}{{/link-to}}
                     {{/if}}
                 </section>
-                <h1 class="post-full-title">{{model.post.title}}</h1>
+                <h1 class="post-full-title">{{post.title}}</h1>
             </header>
 
-            {{#if model.post.image}}
-              <figure class="post-full-image" style="background-image: url({{url model.post.image}})">
-              </figure>
-
-              {{image-attribution meta=model.post.imageMeta}}
+            {{#if post.image}}
+            <figure class="post-full-image">
+                <ResponsiveImage @image={{responsive-image-url post.image}} />
+            </figure>
             {{/if}}
 
             <section class="post-full-content">
-                {{markdown-to-html model.post.content}}
+                <div class="post-content">
+                    {{markdown-to-html post.content tagName=""}}
+                </div>
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if labs.subscribers}}
+            {{#if @labs.subscribers}}
             <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{blog.title}}</h3>
+                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
                 <p>Get the latest posts delivered right to your inbox</p>
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
 
             <footer class="post-full-footer">
-                <section class="author-card">
-                    {{#if model.post.author.image}}
-                        <img class="author-profile-image" src="{{model.post.author.image}}" alt="{{model.post.author.name}}" />
-                    {{/if}}
-                    <section class="author-card-content">
-                        <h4 class="author-card-name">{{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}</h4>
-                        {{#if model.post.author.content}}
-                            <p>{{markdown-to-html model.post.author.content.content}}</p>
-                        {{else}}
-                            <p>Read {{#link-to 'author' model.post.author.id}}more posts{{/link-to}} by this author.</p>
-                        {{/if}}
-                    </section>
-                </section>
-                <div class="post-full-footer-right">
-                    {{#link-to 'author' model.post.author.id class="author-card-button"}}Read More{{/link-to}}
-                </div>
+
+                {{!-- There are two options for how we display the byline/author-info.
+                If the post has more than one author, we load a specific template
+                from includes/byline-multiple.hbs, otherwise, we just use the
+                default byline. --}}
+
+                {{#if (gt posts.length 1)}}
+                    <BylineMultiple @authors={{post.authors}} />
+                {{else}}
+                    <BylineSingle @author={{post.authors.firstObject}} />
+                {{/if}}
+
             </footer>
 
             {{!--
-
-            If you use Disqus comments, just uncomment this block.
-            The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id.
-
             <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = '{{url absolute="true"}}';
-                        this.page.identifier = 'ghost-{{comment_id}}';
-                    };
-                    (function() {
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
+                If you want to embed comments, this is a good place to do it!
             </section>
             --}}
 
@@ -95,42 +77,44 @@ into the {body} of the default.hbs template --}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-          {{#if model.post.primaryTag}}
-              {{#if relatedPosts}}
-               <article class="read-next-card" style={{tagBackgroundImageStyle}}>
-                  <header class="read-next-card-header">
-                      <small class="read-next-card-header-sitetitle">&mdash; {{blog.title}} &mdash;</small>
-                      <h3 class="read-next-card-header-title"><a href="{{url}}">{{model.post.primaryTag}}</a></h3>
-                  </header>
-                  <div class="read-next-divider">{{svg-icons/infinity}}</div>
-                  <div class="read-next-card-content">
-                      <ul>
-                          {{#each (take 3 relatedPosts) as |post|}}
+            {{#if post.primaryTag}}
+                {{#if this.relatedPosts}}
+                <article class="read-next-card" style={{tagBackgroundImageStyle}}>
+                    <header class="read-next-card-header">
+                        <small class="read-next-card-header-sitetitle">&mdash; {{blog.title}} &mdash;</small>
+
+                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{post.primaryTag}}</a></h3>
+
+                    </header>
+                    <div class="read-next-divider">{{svg-icons/infinity}}</div>
+                    <div class="read-next-card-content">
+                        <ul>
+                            {{#each (take 3 relatedPosts) as |post|}}
                             <li>{{#link-to 'post' post.id}}{{post.title}}{{/link-to}}</li>
-                          {{/each}}
-                      </ul>
-                  </div>
-
-                  <footer class="read-next-card-footer">
-                      {{#link-to 'tag' model.post.primaryTag}} See all {{relatedPosts.length}} posts →{{/link-to}}
-                  </footer>
-              </article>
-              {{/if}}
-          {{/if}}
-
-            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#if nextPost}}
-              {{post-card post=nextPost}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <footer class="read-next-card-footer">
+                        {{#link-to 'tag' model.post.primaryTag}}{{plural relatedPosts.length empty='No posts' singular='% post' plural='See all % posts'}} →{{/link-to}}
+                    </footer>
+                </article>
+                {{/if}}
             {{/if}}
 
+            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
+            {{#if this.nextPost}}
+                <PostCard @post={{this.nextPost}} />
+            {{/if}}
 
             {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#if prevPost}}
-                {{post-card post=prevPost}}
+            {{#if this.prevPost}}
+                <PostCard @post={{this.prevPost}} />
             {{/if}}
 
         </div>
     </div>
 </aside>
 
-{{floating-header post=model.post}}
+<FloatingHeader @post={{model.post}} />
+
+{{/let}}

@@ -1,0 +1,28 @@
+<div class="floating-header {{if floating 'floating-active'}}">
+    <div class="floating-header-logo">
+        {{#link-to 'index'}}
+            {{#if blog.icon}}
+                <img src="{{blog.icon}}" alt="{{blog.title}} icon" />
+            {{/if}}
+            <span>{{blog.title}}</span>
+        {{/link-to}}
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">{{@post.title}}</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this {{svg-icons/point}}</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode @post.title}}&amp;url={{encode location}}"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            {{svg-icons/twitter}}
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{encode location}}"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            {{svg-icons/facebook}}
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value={{value}} max={{max}}>
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>

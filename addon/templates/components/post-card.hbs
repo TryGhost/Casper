@@ -1,0 +1,53 @@
+<article class="post-card {{post_class}} {{unless @post.image 'no-image'}} {{if (and isHome (has index index='nth:6')) 'post-card-large'}}">
+
+    {{#if @post.image}}
+      {{#link-to 'post' @post.id class="post-card-image-link"}}
+        <ResponsiveImage class="post-card-image" @image={{responsive-image-url @post.image}} />
+      {{/link-to}}
+    {{/if}}
+
+    <div class="post-card-content">
+
+        {{#link-to 'post' @post.id class="post-card-content-link"}}
+
+            <header class="post-card-header">
+                {{#if @post.primaryTag}}
+                    <span class="post-card-tags">{{@post.primaryTag}}</span>
+                {{/if}}
+                <h2 class="post-card-title">{{@post.title}}</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>{{excerpt @post.html words="33"}}</p>
+            </section>
+
+        {{/link-to}}
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+            {{#each @post.authors as |author|}}
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        {{author.name}}
+                    </div>
+
+                    {{#if author.image}}
+                        {{#link-to 'author' author.id class="static-avatar"}}
+                            <img class="author-profile-image" src={{author.image}} alt={{author.name}} />
+                        {{/link-to}}
+                    {{else}}
+                        {{#link-to 'author' author.id class="static-avatar author-profile-image"}}{{svg-icons/avatar}}{{/link-to}}
+                    {{/if}}
+                </li>
+            {{/each}}
+            </ul>
+
+            <span class="reading-time">{{reading-time @post}}</span>
+
+        </footer>
+
+    </div>{{!--/.post-card-content--}}
+
+</article>

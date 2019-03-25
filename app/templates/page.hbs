@@ -5,29 +5,37 @@ into the {body} of the default.hbs template --}}
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
 <header class="site-header outer">
     <div class="inner">
-        {{site-nav}}
+        <SiteNav />
     </div>
 </header>
 
-<main id="site-main" class="site-main outer" role="main">
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#let model as |post|}}
+
+<main id="site-main" class="site-main outer">
     <div class="inner">
 
-        <article class="post-full page {{unless model.image 'no-image'}}">
+        <article class="post-full {{post_class}} {{unless post.image 'no-image'}}">
 
             <header class="post-full-header">
-                <h1 class="post-full-title">{{model.title}}</h1>
+                <h1 class="post-full-title">{{post.title}}</h1>
             </header>
 
-            {{#if model.image}}
-            <figure class="post-full-image" style="background-image: url({{model.image}})">
+            {{#if post.image}}
+            <figure class="post-full-image">
+                <ResponsiveImage @image={{responsive-image-url post.image}} />
             </figure>
             {{/if}}
 
             <section class="post-full-content">
-                {{markdown-to-html model.content}}
+                <div class="post-content">
+                    {{markdown-to-html post.content}}
+                </div>
             </section>
 
         </article>
 
     </div>
 </main>
+
+{{/let}}

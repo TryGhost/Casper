@@ -1,0 +1,39 @@
+    <div class="site-wrapper">
+
+        <Header @background={{blog.coverImage}}>
+            <div class="inner">
+                <nav class="site-nav-center">
+                    {{#if blog.logo}}
+                        {{#link-to 'index' class="site-nav-logo"}}<img src={{blog.logo}} alt={{blog.title}} />{{/link-to}}
+                    {{else}}
+                        {{#link-to 'index' class="site-nav-logo"}}{{blog.title}}{{/link-to}}
+                    {{/if}}
+                </nav>
+            </div>
+        </Header>
+
+        <main id="site-main" class="site-main outer">
+            <div class="inner">
+
+                <section class="error-message">
+                    {{log error}}
+                    <h1 class="error-code">{{error.status}}</h1>
+                    <p class="error-description">{{error.title}}</p>
+                    {{#link-to 'index' class="error-link"}}Go to the front page →{{/link-to}}
+                </section>
+            </div>
+        </main>
+
+        {{#get "posts" limit="3"}}
+        <aside class="outer">
+            <div class="inner">
+                <div class="post-feed">
+                    {{#each posts as |post|}}
+                        <PostCard @post={{post}} />
+                    {{/each}}
+                </div>
+            </div>
+        </aside>
+        {{/get}}
+
+    </div>
