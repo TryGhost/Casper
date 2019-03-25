@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape,no-console */
+
 // # Has Helper
 // Usage: `{{#has tag="video, music"}}`, `{{#has author="sam, pat"}}`
 //        `{{#has author="count:1"}}`, `{{#has tag="count:>1"}}`
