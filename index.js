@@ -26,6 +26,7 @@ module.exports = {
     postcssOptions
   },
 
+  // TODO get this to work properly and remove the need for the default blueprint
   config(env, config) {
     if(!config['responsive-image']) {
       return {
