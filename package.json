@@ -36,7 +36,6 @@
     "ember-composable-helpers": "^2.2.0",
     "ember-meta": "^0.5.0",
     "ember-moment": "^7.8.1",
-    "ember-responsive-image": "^1.0.0-rc.6",
     "postcss-color-function": "^4.0.1",
     "postcss-custom-properties": "^8.0.9",
     "postcss-easy-import": "^3.0.0"
@@ -61,6 +60,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-qunit": "^3.4.1",
     "ember-resolver": "^5.0.1",
+    "ember-responsive-image": "^1.0.0-rc.6",
     "ember-source": "~3.8.0",
     "ember-source-channel-url": "^1.1.0",
     "ember-try": "^1.0.0",
