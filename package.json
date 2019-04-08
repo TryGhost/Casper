@@ -46,7 +46,7 @@
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.3.1",
-        "autoprefixer": "9.5.0",
+        "autoprefixer": "9.5.1",
         "beeper": "1.1.1",
         "cssnano": "4.1.10",
         "gscan": "2.3.0",
@@ -55,8 +55,8 @@
         "gulp-postcss": "8.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "4.2.0",
-        "postcss-color-function": "4.0.1",
-        "postcss-custom-properties": "8.0.9",
+        "postcss-color-function": "4.1.0",
+        "postcss-custom-properties": "8.0.10",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0"
     },
