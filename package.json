@@ -18,7 +18,8 @@
         "postship": "git fetch && gulp release"
     },
     "author": {
-        "name": "James Welsh, building on the work of Ghost Foundation",
+        "name": "James Welsh",
+	"email": "james@ridehome.info",
         "url": "https://ridehome.info"
     },
     "gpm": {
