@@ -69,6 +69,7 @@ var events = require('minivents');
 module.exports = function layer1(options) {
   var members = {
     getToken: getToken,
+    getConfig: getConfig,
     signout: signout,
     signin: signin,
     signup: signup,
@@ -95,6 +96,10 @@ module.exports = function layer1(options) {
       audience: audience,
       fresh: fresh
     }));
+  }
+
+  function getConfig() {
+    return loadGateway.then(gatewayFn('getConfig'));
   }
 
   function signout() {
@@ -191,19 +196,23 @@ module.exports = function layer2(options) {
     gatewayUrl: gatewayUrl,
     container: container
   });
-  var loadAuth = loadFrame(authUrl, container).then(function (frame) {
-    frame.style.position = 'fixed';
-    frame.style.width = '100%';
-    frame.style.height = '100%';
-    frame.style.background = 'transparent';
-    frame.style.top = '0';
-    frame.style['z-index'] = '9999';
-    return frame;
-  });
+  var loadAuth = lazyLoadFrame(authUrl, container);
+
+  var getAuthFrame = function getAuthFrame() {
+    return loadAuth().then(function (frame) {
+      frame.style.position = 'fixed';
+      frame.style.width = '100%';
+      frame.style.height = '100%';
+      frame.style.background = 'transparent';
+      frame.style.top = '0';
+      frame.style['z-index'] = '9999';
+      return frame;
+    });
+  };
 
   function openAuth(hash) {
     var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-    return loadAuth.then(function (frame) {
+    return getAuthFrame().then(function (frame) {
       return new Promise(function (resolve) {
         frame.src = "".concat(authUrl, "#").concat(hash, "?").concat(query);
         frame.style.display = 'block';
@@ -247,18 +256,44 @@ module.exports = function layer2(options) {
     });
   }
 
+  function getSSRToken() {
+    var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        fresh = _ref3.fresh;
+
+    return members.getConfig().then(function (_ref4) {
+      var issuer = _ref4.issuer;
+      return members.getToken({
+        audience: issuer,
+        fresh: fresh
+      });
+    });
+  }
+
   function signout() {
     return members.signout();
   }
 
   return Object.assign(members.bus, {
     getToken: getToken,
+    getSSRToken: getSSRToken,
     signout: signout,
     signin: signin,
     upgrade: upgrade,
     resetPassword: resetPassword
   });
 };
+
+function lazyLoadFrame(src, container) {
+  var promise;
+  return function getFrame() {
+    if (promise) {
+      return promise;
+    }
+
+    promise = loadFrame(src, container);
+    return promise;
+  };
+}
 
 function loadFrame(src) {
   var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.body;
@@ -342,7 +377,7 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-/* global window document atob */
+/* global window document fetch */
 var domready = require('domready');
 
 var layer2 = require('@tryghost/members-layer2');
@@ -359,7 +394,6 @@ function setupMembersListeners() {
   var members = layer2({
     membersUrl: window.membersUrl
   });
-  var tokenAudience = new URL(window.location.href).origin;
 
   var _ref = window.location.hash.match(/^#([^?]+)\??(.*)$/) || [],
       _ref2 = _slicedToArray(_ref, 3),
@@ -388,30 +422,26 @@ function setupMembersListeners() {
   var signoutEls = document.querySelectorAll('[data-members-signout]');
 
   function setCookie(token) {
-    var claims = getClaims(token);
-    var expiry = new Date(claims.exp * 1000);
-    document.cookie = 'member=' + token + ';Path=/;expires=' + expiry.toUTCString();
+    return fetch('/members/ssr', {
+      method: 'post',
+      credentials: 'include',
+      body: token
+    }).then(function (res) {
+      return !!res.ok;
+    });
   }
 
   function removeCookie() {
-    document.cookie = 'member=null;Path=/;max-age=0';
+    return fetch('/members/ssr', {
+      method: 'delete'
+    }).then(function (res) {
+      return !!res.ok;
+    });
   }
 
   members.on('signedin', function () {
-    var currentCookies = document.cookie;
-
-    var _ref5 = currentCookies.match(/member=([a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]*)/) || [null],
-        _ref6 = _slicedToArray(_ref5, 2),
-        hasCurrentToken = _ref6[0],
-        currentToken = _ref6[1]; // eslint-disable-line no-unused-vars
-
-
-    if (currentToken && isTokenExpired(currentToken)) {
-      return members.signout();
-    }
-
-    members.getToken({
-      audience: tokenAudience
+    members.getSSRToken({
+      fresh: true
     }).then(function (token) {
       setCookie(token);
     });
@@ -423,20 +453,17 @@ function setupMembersListeners() {
   function signout(event) {
     event.preventDefault();
     members.signout().then(function () {
-      removeCookie();
-      return true;
+      return removeCookie();
     }).then(reload);
   }
 
   function signin(event) {
     event.preventDefault();
     members.signin().then(function () {
-      return members.getToken({
-        audience: tokenAudience,
+      return members.getSSRToken({
         fresh: true
       }).then(function (token) {
-        setCookie(token);
-        return true;
+        return setCookie(token);
       });
     }).then(reload);
   }
@@ -444,12 +471,10 @@ function setupMembersListeners() {
   function upgrade(event) {
     event.preventDefault();
     members.upgrade().then(function () {
-      return members.getToken({
-        audience: tokenAudience,
+      return members.getSSRToken({
         fresh: true
       }).then(function (token) {
-        setCookie(token);
-        return true;
+        return setCookie(token);
       });
     }).then(reload);
   }
@@ -526,39 +551,6 @@ function setupMembersListeners() {
         throw _iteratorError3;
       }
     }
-  }
-}
-
-function isTokenExpired(token) {
-  var claims = getClaims(token);
-
-  if (!claims) {
-    return true;
-  }
-
-  var expiry = claims.exp * 1000;
-  var now = Date.now();
-
-  if (expiry < now) {
-    return true;
-  }
-
-  return false;
-}
-
-function getClaims(token) {
-  try {
-    var _token$split = token.split('.'),
-        _token$split2 = _slicedToArray(_token$split, 3),
-        header = _token$split2[0],
-        claims = _token$split2[1],
-        signature = _token$split2[2]; // eslint-disable-line no-unused-vars
-
-
-    var parsedClaims = JSON.parse(atob(claims.replace('+', '-').replace('/', '_')));
-    return parsedClaims;
-  } catch (e) {
-    return null;
   }
 }
 
