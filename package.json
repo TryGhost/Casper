@@ -47,7 +47,7 @@
     "devDependencies": {
         "@tryghost/release-utils": "0.3.2",
         "autoprefixer": "9.5.1",
-        "beeper": "1.1.1",
+        "beeper": "2.0.0",
         "cssnano": "4.1.10",
         "gscan": "2.4.0",
         "gulp": "4.0.0",

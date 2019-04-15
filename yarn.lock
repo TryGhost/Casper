@@ -330,9 +330,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beeper@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.1.tgz#e6d5ea8c5dad001304a70b22638447f69cb2f809"
+beeper@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/beeper/-/beeper-2.0.0.tgz#ecda02439e3c0539d300c363303e4ffeb2daec70"
+  dependencies:
+    delay "^4.1.0"
 
 binary-extensions@^1.0.0:
   version "1.13.1"
@@ -984,6 +986,10 @@ define-property@^2.0.2:
   dependencies:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
+
+delay@^4.1.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/delay/-/delay-4.2.0.tgz#3f6c39dbd28aef50355e670fecee050ef01242ce"
 
 delayed-stream@~1.0.0:
   version "1.0.0"
