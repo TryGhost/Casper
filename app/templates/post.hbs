@@ -54,7 +54,7 @@ into the {body} of the default.hbs template --}}
                 from includes/byline-multiple.hbs, otherwise, we just use the
                 default byline. --}}
 
-                {{#if (gt posts.length 1)}}
+                {{#if (gt posts.authors.length 1)}}
                     <BylineMultiple @authors={{post.authors}} />
                 {{else}}
                     <BylineSingle @author={{post.authors.firstObject}} />
