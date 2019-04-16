@@ -27,15 +27,15 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "autoprefixer": "^9.5.0",
+    "autoprefixer": "^9.5.1",
     "cssnano": "^4.1.10",
     "ember-cli-babel": "^7.1.2",
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-postcss": "^4.2.0",
     "ember-composable-helpers": "^2.2.0",
     "ember-moment": "^7.8.1",
-    "postcss-color-function": "^4.0.1",
-    "postcss-custom-properties": "^8.0.9",
+    "postcss-color-function": "^4.1.0",
+    "postcss-custom-properties": "^8.0.10",
     "postcss-easy-import": "^3.0.0",
     "recast": "^0.17.4"
   },
