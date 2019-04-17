@@ -196,23 +196,19 @@ module.exports = function layer2(options) {
     gatewayUrl: gatewayUrl,
     container: container
   });
-  var loadAuth = lazyLoadFrame(authUrl, container);
-
-  var getAuthFrame = function getAuthFrame() {
-    return loadAuth().then(function (frame) {
-      frame.style.position = 'fixed';
-      frame.style.width = '100%';
-      frame.style.height = '100%';
-      frame.style.background = 'transparent';
-      frame.style.top = '0';
-      frame.style['z-index'] = '9999';
-      return frame;
-    });
-  };
+  var loadAuth = loadFrame(authUrl, container).then(function (frame) {
+    frame.style.position = 'fixed';
+    frame.style.width = '100%';
+    frame.style.height = '100%';
+    frame.style.background = 'transparent';
+    frame.style.top = '0';
+    frame.style['z-index'] = '9999';
+    return frame;
+  });
 
   function openAuth(hash) {
     var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-    return getAuthFrame().then(function (frame) {
+    return loadAuth.then(function (frame) {
       return new Promise(function (resolve) {
         frame.src = "".concat(authUrl, "#").concat(hash, "?").concat(query);
         frame.style.display = 'block';
@@ -247,9 +243,17 @@ module.exports = function layer2(options) {
     return openAuth('upgrade');
   }
 
-  function getToken(_ref2) {
-    var audience = _ref2.audience,
-        fresh = _ref2.fresh;
+  function signup() {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        coupon = _ref2.coupon;
+
+    var query = "coupon=".concat(coupon);
+    return openAuth('signup', query);
+  }
+
+  function getToken(_ref3) {
+    var audience = _ref3.audience,
+        fresh = _ref3.fresh;
     return members.getToken({
       audience: audience,
       fresh: fresh
@@ -257,11 +261,11 @@ module.exports = function layer2(options) {
   }
 
   function getSSRToken() {
-    var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        fresh = _ref3.fresh;
+    var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        fresh = _ref4.fresh;
 
-    return members.getConfig().then(function (_ref4) {
-      var issuer = _ref4.issuer;
+    return members.getConfig().then(function (_ref5) {
+      var issuer = _ref5.issuer;
       return members.getToken({
         audience: issuer,
         fresh: fresh
@@ -278,22 +282,11 @@ module.exports = function layer2(options) {
     getSSRToken: getSSRToken,
     signout: signout,
     signin: signin,
+    signup: signup,
     upgrade: upgrade,
     resetPassword: resetPassword
   });
 };
-
-function lazyLoadFrame(src, container) {
-  var promise;
-  return function getFrame() {
-    if (promise) {
-      return promise;
-    }
-
-    promise = loadFrame(src, container);
-    return promise;
-  };
-}
 
 function loadFrame(src) {
   var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.body;
@@ -418,6 +411,7 @@ function setupMembersListeners() {
   }
 
   var signinEls = document.querySelectorAll('[data-members-signin]');
+  var signupEls = document.querySelectorAll('[data-members-signup]');
   var upgradeEls = document.querySelectorAll('[data-members-upgrade]');
   var signoutEls = document.querySelectorAll('[data-members-signout]');
 
@@ -450,15 +444,13 @@ function setupMembersListeners() {
     removeCookie();
   });
 
-  function signout(event) {
-    event.preventDefault();
+  function signout() {
     members.signout().then(function () {
       return removeCookie();
     }).then(reload);
   }
 
-  function signin(event) {
-    event.preventDefault();
+  function signin() {
     members.signin().then(function () {
       return members.getSSRToken({
         fresh: true
@@ -468,8 +460,21 @@ function setupMembersListeners() {
     }).then(reload);
   }
 
-  function upgrade(event) {
-    event.preventDefault();
+  function signup(_ref5) {
+    var _ref5$coupon = _ref5.coupon,
+        coupon = _ref5$coupon === void 0 ? '' : _ref5$coupon;
+    members.signup({
+      coupon: coupon
+    }).then(function () {
+      return members.getSSRToken({
+        fresh: true
+      }).then(function (token) {
+        return setCookie(token);
+      });
+    }).then(reload);
+  }
+
+  function upgrade() {
     members.upgrade().then(function () {
       return members.getSSRToken({
         fresh: true
@@ -486,7 +491,10 @@ function setupMembersListeners() {
   try {
     for (var _iterator = signinEls[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var el = _step.value;
-      el.addEventListener('click', signin);
+      el.addEventListener('click', function (event) {
+        event.preventDefault();
+        signin();
+      });
     }
   } catch (err) {
     _didIteratorError = true;
@@ -508,10 +516,19 @@ function setupMembersListeners() {
   var _iteratorError2 = undefined;
 
   try {
-    for (var _iterator2 = upgradeEls[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var _el = _step2.value;
+    var _loop = function _loop() {
+      var el = _step2.value;
+      el.addEventListener('click', function (event) {
+        event.preventDefault();
+        var coupon = el.dataset.membersCoupon;
+        signup({
+          coupon: coupon
+        });
+      });
+    };
 
-      _el.addEventListener('click', upgrade);
+    for (var _iterator2 = signupEls[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      _loop();
     }
   } catch (err) {
     _didIteratorError2 = true;
@@ -533,10 +550,13 @@ function setupMembersListeners() {
   var _iteratorError3 = undefined;
 
   try {
-    for (var _iterator3 = signoutEls[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-      var _el2 = _step3.value;
+    for (var _iterator3 = upgradeEls[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+      var _el = _step3.value;
 
-      _el2.addEventListener('click', signout);
+      _el.addEventListener('click', function (event) {
+        event.preventDefault();
+        upgrade();
+      });
     }
   } catch (err) {
     _didIteratorError3 = true;
@@ -549,6 +569,34 @@ function setupMembersListeners() {
     } finally {
       if (_didIteratorError3) {
         throw _iteratorError3;
+      }
+    }
+  }
+
+  var _iteratorNormalCompletion4 = true;
+  var _didIteratorError4 = false;
+  var _iteratorError4 = undefined;
+
+  try {
+    for (var _iterator4 = signoutEls[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+      var _el2 = _step4.value;
+
+      _el2.addEventListener('click', function (event) {
+        event.preventDefault();
+        signout();
+      });
+    }
+  } catch (err) {
+    _didIteratorError4 = true;
+    _iteratorError4 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+        _iterator4.return();
+      }
+    } finally {
+      if (_didIteratorError4) {
+        throw _iteratorError4;
       }
     }
   }
