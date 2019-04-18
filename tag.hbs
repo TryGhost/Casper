@@ -14,6 +14,30 @@
                     A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
                 {{/if}}
             </h2>
+	    <div class="site-listen">
+		{{#has tag="primary-ride-home"}}
+			<a aria-label="apple-podcast" href="https://podcasts.apple.com/us/podcast/primary-ride-home/id1459176271?uo=4">
+				{{> "listen-apple"}}
+			</a>
+			<a aria-label="google-podcast" href="https://podcasts.google.com/?feed=aHR0cHM6Ly9mZWVkcHJlc3MubWUvcHJo">
+				{{> "listen-google"}}
+			</a>
+			<a aria-label="spotify-podcast" href="https://open.spotify.com/show/2bvbeZdYfe6ru6lbzqGarO">
+				{{> "listen-spotify"}}
+			</a>
+		{{/has}}
+		{{#has tag="techmeme-ride-home"}}
+			<a aria-label="apple-podcast" href="https://podcasts.apple.com/us/podcast/techmeme-ride-home/id1355212895?uo=4">
+				{{> "listen-apple"}}
+			</a>
+			<a aria-label="google-podcast" href="https://podcasts.google.com/?feed=aHR0cHM6Ly9mZWVkcHJlc3MubWUvUmlkZUhvbWU%3D">
+				{{> "listen-google"}}
+			</a>
+			<a aria-label="spotify-podcast" href="https://open.spotify.com/show/0xyL4fhg7CdUMsXS7BFvjs">
+                                {{> "listen-spotify"}}
+                        </a>
+		{{/has}}
+	    </div>
         </div>
     </div>
 </header>
