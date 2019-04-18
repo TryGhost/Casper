@@ -196,6 +196,7 @@ img.site-logo {
 
 .site-listen {
     padding: 2vw;
+    z-index: 10;
 }
 
 @media (max-width: 500px) {
