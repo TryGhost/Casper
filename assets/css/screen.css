@@ -194,6 +194,10 @@ img.site-logo {
     opacity: 0.8;
 }
 
+.site-listen {
+    padding: 2vw;
+}
+
 @media (max-width: 500px) {
     .site-title {
         font-size: 3rem;
