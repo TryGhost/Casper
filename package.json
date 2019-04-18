@@ -2,7 +2,7 @@
     "name": "casper-ridehome",
     "description": "The customized version of Casper for Ride Home Media.",
     "demo": "https://ridehome.info",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
