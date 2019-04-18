@@ -25,6 +25,16 @@ into the {body} of the default.hbs template --}}
                     {{/primary_tag}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
+                {{#has tag="Primary Ride Home"}}
+		<div class="post-listen">
+			{{> "link-prh"}}
+		</div>
+                {{/has}}
+                {{#has tag="Techmeme Ride Home"}}
+                <div class="post-listen">
+                        {{> "link-trh"}}
+                </div>
+                {{/has}}
             </header>
 
             {{#if feature_image}}
