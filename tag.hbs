@@ -14,30 +14,16 @@
                     A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
                 {{/if}}
             </h2>
-	    <div class="site-listen">
 		{{#has slug="primary-ride-home"}}
-			<a aria-label="apple-podcast" href="https://podcasts.apple.com/us/podcast/primary-ride-home/id1459176271?uo=4">
-				{{> "icons/listen-apple"}}
-			</a>
-			<a aria-label="google-podcast" href="https://podcasts.google.com/?feed=aHR0cHM6Ly9mZWVkcHJlc3MubWUvcHJo">
-				{{> "icons/listen-google"}}
-			</a>
-			<a aria-label="spotify-podcast" href="https://open.spotify.com/show/2bvbeZdYfe6ru6lbzqGarO">
-				{{> "icons/listen-spotify"}}
-			</a>
+		<div class="site-listen">
+                        {{> "link-prh"}}
+                </div>
 		{{/has}}
 		{{#has slug="techmeme-ride-home"}}
-			<a aria-label="apple-podcast" href="https://podcasts.apple.com/us/podcast/techmeme-ride-home/id1355212895?uo=4">
-				{{> "icons/listen-apple"}}
-			</a>
-			<a aria-label="google-podcast" href="https://podcasts.google.com/?feed=aHR0cHM6Ly9mZWVkcHJlc3MubWUvUmlkZUhvbWU%3D">
-				{{> "icons/listen-google"}}
-			</a>
-			<a aria-label="spotify-podcast" href="https://open.spotify.com/show/0xyL4fhg7CdUMsXS7BFvjs">
-                                {{> "icons/listen-spotify"}}
-                        </a>
+                <div class="site-listen">
+                        {{> "link-trh"}}
+                </div>
 		{{/has}}
-	    </div>
         </div>
     </div>
 </header>

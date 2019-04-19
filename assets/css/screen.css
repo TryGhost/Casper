@@ -199,6 +199,14 @@ img.site-logo {
     z-index: 10;
 }
 
+.site-listen a {
+	color: transparent;
+	margin-left: 20px;
+	margin-top: 10px;
+	position: relative;
+	display: inline-block;
+}
+
 @media (max-width: 500px) {
     .site-title {
         font-size: 3rem;
@@ -1190,6 +1198,19 @@ Usage (In Ghost editor):
 .post-full-content table td {
     padding: 6px 12px;
     border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
+}
+
+.post-listen {
+    padding: 5vw 0 0 0;
+    z-index: 10;
+}
+
+.post-listen a {
+        color: transparent;
+        margin-left: 20px;
+        margin-top: 10px;
+        position: relative;
+        display: inline-block;
 }
 
 
