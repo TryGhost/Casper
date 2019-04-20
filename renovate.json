@@ -1,22 +1,9 @@
 {
   "extends": [
-    "config:base",
-    ":maintainLockFilesWeekly",
-    "schedule:earlyMondays",
-    ":automergeMinor"
+    "@tryghost:theme"
   ],
   "travis": { "enabled": true },
   "node": {
     "supportPolicy": ["lts_latest"]
-  },
-  "packageRules": [
-    {
-      "packagePatterns": ["^postcss", "css", "autoprefixer"],
-      "groupName": "css processors"
-    },
-    {
-      "packagePatterns": ["gulp"],
-      "groupName": "gulp"
-    }
-  ]
+  }
 }

@@ -11,6 +11,13 @@
     mkdirp "0.5.0"
     yauzl "2.4.1"
 
+"@tryghost/pretty-cli@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@tryghost/pretty-cli/-/pretty-cli-1.2.1.tgz#b419e936c81c8aabf7f081645751c17004a5bb09"
+  dependencies:
+    chalk "^2.4.1"
+    sywac "^1.2.1"
+
 "@tryghost/release-utils@0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.3.2.tgz#019ff4d653ad5ae7f805aa912a4a522e11e00ba0"
@@ -495,8 +502,8 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000955, caniuse-lite@^1.0.30000957:
-  version "1.0.30000957"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000957.tgz#fb1026bf184d7d62c685205358c3b24b9e29f7b3"
+  version "1.0.30000958"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000958.tgz#f6307b1512bccc64269e3ac4733072454ede1fd0"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -666,17 +673,9 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.15.1:
-  version "2.15.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
-
-commander@^2.9.0:
+commander@2.20.0, commander@^2.9.0, commander@~2.20.0:
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
-
-commander@~2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
 
 component-emitter@^1.2.1:
   version "1.2.1"
@@ -926,7 +925,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
+debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -935,6 +934,12 @@ debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
 debug@^3.1.0:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
+  dependencies:
+    ms "^2.1.1"
+
+debug@^4.0.0, debug@^4.1.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   dependencies:
     ms "^2.1.1"
 
@@ -1463,9 +1468,9 @@ from@~0:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
 
-fs-extra@^0.26.2:
-  version "0.26.7"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-0.26.7.tgz#9ae1fdd94897798edab76d0918cf42d0c3184fa9"
+fs-extra@^0.30.0:
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-0.30.0.tgz#f233ffcc08d4da7d432daa449776989db1df93f0"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
@@ -1522,6 +1527,16 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
+gelf-stream@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gelf-stream/-/gelf-stream-1.1.1.tgz#9cea9b6386ac301c741838ca3cb91e66dbfbf669"
+  dependencies:
+    gelfling "^0.3.0"
+
+gelfling@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/gelfling/-/gelfling-0.3.1.tgz#336a98f81510f9ae0af2a494e17468a116a9dc04"
+
 get-caller-file@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
@@ -1546,16 +1561,17 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-ghost-ignition@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/ghost-ignition/-/ghost-ignition-3.0.2.tgz#a74480c337b917c9350ed0c34dfbd13cac24accd"
+ghost-ignition@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ghost-ignition/-/ghost-ignition-3.1.0.tgz#4a0d7f0a15e54fbc0e16d398da62ff68737e4e23"
   dependencies:
     bunyan "1.8.12"
     bunyan-loggly "^1.3.1"
     caller "1.0.1"
-    debug "^2.6.9"
+    debug "^4.0.0"
     find-root "1.1.0"
     fs-extra "^3.0.1"
+    gelf-stream "^1.1.1"
     json-stringify-safe "^5.0.1"
     lodash "^4.16.4"
     moment "^2.15.2"
@@ -1655,22 +1671,23 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6,
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
 
-gscan@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.4.0.tgz#73d9873f4561c8b00366143f1bba17d865d09e0e"
+gscan@2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.4.1.tgz#db8b649f0f3377b848f2f879b95215a76d214d0e"
   dependencies:
     "@tryghost/extract-zip" "1.6.6"
+    "@tryghost/pretty-cli" "1.2.1"
     bluebird "^3.4.6"
     chalk "^1.1.1"
-    commander "2.15.1"
+    commander "2.20.0"
     express "^4.16.2"
     express-hbs "^1.0.3"
-    fs-extra "^0.26.2"
-    ghost-ignition "3.0.2"
+    fs-extra "^0.30.0"
+    ghost-ignition "3.1.0"
     glob "^7.0.5"
     lodash "^4.17.11"
     multer "^1.1.0"
-    require-dir "^0.3.2"
+    require-dir "^1.0.0"
     semver "^5.3.0"
     upath "^1.1.0"
     uuid "^3.0.0"
@@ -2563,10 +2580,10 @@ ncp@~2.0.0:
   resolved "https://registry.yarnpkg.com/ncp/-/ncp-2.0.0.tgz#195a21d6c46e361d2fb1281ba38b91e9df7bdbb3"
 
 needle@^2.2.1:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-2.2.4.tgz#51931bff82533b1928b7d1d69e01f1b00ffd2a4e"
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/needle/-/needle-2.3.0.tgz#ce3fea21197267bacb310705a7bbe24f2a3a3492"
   dependencies:
-    debug "^2.1.2"
+    debug "^4.1.0"
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
@@ -2606,8 +2623,8 @@ node-pre-gyp@^0.10.0:
     tar "^4"
 
 node-releases@^1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.13.tgz#8c03296b5ae60c08e2ff4f8f22ae45bd2f210083"
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.14.tgz#f1f41c83cac82caebd6739e6313d56b3b09c9189"
   dependencies:
     semver "^5.3.0"
 
@@ -3538,9 +3555,9 @@ request-promise@^4.2.4:
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
 
-require-dir@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/require-dir/-/require-dir-0.3.2.tgz#c1d5c75e9fbffde9f2e6b33e383db4f594b5a6a9"
+require-dir@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/require-dir/-/require-dir-1.2.0.tgz#0d443b75e96012d3ca749cf19f529a789ae74817"
 
 require-directory@^2.1.1:
   version "2.1.1"
@@ -3985,6 +4002,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+sywac@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/sywac/-/sywac-1.2.1.tgz#528e482b2f2a18e764ffccc59eb40eea16a7f97d"
+
 tar@^4:
   version "4.4.8"
   resolved "https://registry.yarnpkg.com/tar/-/tar-4.4.8.tgz#b19eec3fde2a96e64666df9fdb40c5ca1bc3747d"
@@ -4105,10 +4126,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 uglify-js@^3.0.5, uglify-js@^3.1.4:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.3.tgz#d490bb5347f23025f0c1bc0dee901d98e4d6b063"
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.4.tgz#4a64d57f590e20a898ba057f838dcdfb67a939b9"
   dependencies:
-    commander "~2.19.0"
+    commander "~2.20.0"
     source-map "~0.6.1"
 
 unc-path-regex@^0.1.2:
