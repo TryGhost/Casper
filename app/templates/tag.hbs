@@ -1,14 +1,11 @@
-{{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
-
-<Header @background={{blog.coverImage}}> {{!--Special header.hbs partial to generate the <header> tag--}}
+<Header @background={{if coverImage coverImage blog.coverImage}}>
     <div class="inner">
         <SiteNav />
         <div class="site-header-content">
-            <h1 class="site-title">{{model.tag}}</h1>
+            <h1 class="site-title">{{if model.name model.name model.tag}}</h1>
             <h2 class="site-description">
-                {{#if description}}
-                    {{description}}
+                {{#if model.content}}
+                    {{markdown-to-html model.content tagName=""}}
                 {{else}}
                     A collection of {{plural model.posts.length empty='posts' singular='% post' plural='% posts'}}
                 {{/if}}

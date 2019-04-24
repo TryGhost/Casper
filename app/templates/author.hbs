@@ -5,7 +5,7 @@
 {{!-- Everything inside the #author tags pulls data from the author --}}
 
 
-<Header @background={{blog.coverImage}}>
+<Header @background={{if coverImage coverImage blog.coverImage}}>
     <div class="inner">
         <SiteNav />
         <div class="site-header-content">
@@ -14,7 +14,7 @@
             {{/if}}
             <h1 class="site-title">{{author.name}}</h1>
             {{#if author.content}}
-                <h2 class="author-bio">{{author.content}}</h2>
+                <h2 class="author-bio">{{markdown-to-html author.content tagName=""}}</h2>
             {{/if}}
             <div class="author-meta">
                 {{#if author.location}}
