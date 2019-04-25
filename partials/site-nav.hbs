@@ -20,12 +20,13 @@
                 <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
             {{/if}}
         </div>
-        {{#if @labs.members}}
-            {{#if @member}}
-                <a class="signout-button" href="#signout" data-members-signout>Log out</a>
-            {{else}}
-                <a class="signin-button" href="#signin" data-members-signin>Log in</a>
-            {{/if}}
-        {{/if}}
+            {{#member}}
+                {{#if member.loggedIn}}
+                    <span style="font-weight: bold;font-size:14px"> Welcome twice again {{member.name}} </span>
+                    <a class="signout-button" href="#signout" data-members-signout>Log out</a>
+                {{else}}
+                    <a class="signin-button" href="#signin" data-members-signin>Log in</a>
+                {{/if}}
+            {{/member}}
     </div>
 </nav>
