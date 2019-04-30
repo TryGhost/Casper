@@ -62,6 +62,7 @@ sub { bottom: -0.25em; }
 img { border: 0; }
 svg:not(:root) { overflow: hidden; }
 figure { margin: 1em 40px; }
+figcaption { text-align: center; }
 hr { box-sizing: content-box; height: 0; }
 pre { overflow: auto; }
 code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
