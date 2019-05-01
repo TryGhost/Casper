@@ -1936,6 +1936,15 @@ Usage (In Ghost editor):
     margin: -2.25em 0 3em;
 }
 
+/* keep existing <pre> styles for code cards with captions */
+.kg-code-card {
+    min-width: 100%;
+}
+
+.kg-code-card pre {
+    margin: 0;
+}
+
 /* 8. Author Template
 /* ---------------------------------------------------------- */
 
