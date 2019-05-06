@@ -2,42 +2,41 @@
 
     <div class="post-full-authors-content">
         <p>This post was a collaboration between</p>
-        <p>{{authors}}</p>
     </div>
 
     <ul class="author-list">
-    {{#foreach authors}}
+    {{#each @authors as |author|}}
         <li class="author-list-item">
 
             <div class="author-card">
                 <div class="basic-info">
-                    {{#if profile_image}}
-                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    {{#if author.image}}
+                        <img class="author-profile-image" src={{author.image}} alt={{author.name}} />
                     {{else}}
                         <div class="author-profile-image">{{svg-icons/avatar}}</div>
                     {{/if}}
-                    <h2>{{name}}</h2>
+                    <h2>{{author.name}}</h2>
                 </div>
                 <div class="bio">
-                    {{#if bio}}
-                        <p>{{bio}}</p>
-                        <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                    {{#if author.content}}
+                        <p>{{author.content}}</p>
+                        <p>{{#link-to 'author' author.id}}More posts{{/link-to}} by {{author.name}}.</p>
                     {{else}}
-                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                        <p>Read {{#link-to 'author' author.id}}more posts{{/link-to}} by this author.</p>
                     {{/if}}
                 </div>
             </div>
 
-            {{#if profile_image}}
-                <a href="{{url}}" class="moving-avatar">
-                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                </a>
+            {{#if author.image}}
+                {{#link-to 'author' author.id class="moving-avatar"}}
+                    <img class="author-profile-image" src={{author.image}} alt={{author.name}} />
+                {{/link-to}}
             {{else}}
-                <a href="{{url}}" class="moving-avatar author-profile-image">{{svg-icons/avatar}}</a>
+                {{#link-to 'author' author.id class="moving-avatar author-profile-image"}}{{svg-icons/avatar}}{{/link-to}}
             {{/if}}
 
         </li>
-    {{/foreach}}
+    {{/each}}
 
     </ul>
 
