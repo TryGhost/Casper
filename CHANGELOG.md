@@ -1,4 +1,12 @@
 
+3.1.0 / 2019-05-07
+==================
+
+  * Resync with upstream
+  * General Updates #25 from @mansona
+  * Make tags a first class citizen #21 from @mansona
+  * Fix multi-byline #24 from @happycollision
+
 3.0.4 / 2019-04-16
 ==================
 
