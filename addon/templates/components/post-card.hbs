@@ -12,7 +12,7 @@
 
             <header class="post-card-header">
                 {{#if @post.primaryTag}}
-                    <span class="post-card-tags">{{@post.primaryTag}}</span>
+                    <span class="post-card-tags">{{if @post.primaryTag.name @post.primaryTag.name @post.primaryTag}}</span>
                 {{/if}}
                 <h2 class="post-card-title">{{@post.title}}</h2>
             </header>

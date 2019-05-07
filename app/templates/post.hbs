@@ -20,7 +20,7 @@ into the {body} of the default.hbs template --}}
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime="{{date post format="YYYY-MM-DD"}}">{{date post format="D MMMM YYYY"}}</time>
                     {{#if post.primaryTag}}
-                        <span class="date-divider">/</span> {{#link-to 'tag' post.primaryTag}}{{post.primaryTag}}{{/link-to}}
+                        <span class="date-divider">/</span> {{#link-to 'tag' post.primaryTag}}{{if post.primaryTag.name post.primaryTag.name post.primaryTag}}{{/link-to}}
                     {{/if}}
                 </section>
                 <h1 class="post-full-title">{{post.title}}</h1>
@@ -83,7 +83,7 @@ into the {body} of the default.hbs template --}}
                     <header class="read-next-card-header">
                         <small class="read-next-card-header-sitetitle">&mdash; {{blog.title}} &mdash;</small>
 
-                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{post.primaryTag}}</a></h3>
+                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{if post.primaryTag.name post.primaryTag.name post.primaryTag}}</a></h3>
 
                     </header>
                     <div class="read-next-divider">{{svg-icons/infinity}}</div>
