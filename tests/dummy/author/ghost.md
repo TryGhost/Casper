@@ -2,7 +2,7 @@
 name: Ghost
 id: ghost
 image: /images/ghost-icon.png
-coverImage: 
+cover:
 website: https://github.com/empress/empress-blog
 twitter:
 facebook:
