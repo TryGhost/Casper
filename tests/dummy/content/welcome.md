@@ -21,7 +21,7 @@ We know that first impressions are important, so we've populated your new site w
 
 1. empress-blog is designed to be a static site version of the amazing [Ghost blogging platform](https://ghost.org/)
 
-1. empress-blog is designed for developers who know how to deploy a satic site (folder of html files and assets) using something like S3 or even just on NGINX.
+1. empress-blog is designed for developers who know how to deploy a static site (folder of html files and assets) using something like S3 or even just on NGINX.
 
 1. If you are slightly less tech savvy or if you want to manage your blog outside of just a set of files in a git repo we highly recommend signing up for [Ghost](https://ghost.org/pricing/)
 
