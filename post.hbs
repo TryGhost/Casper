@@ -48,14 +48,14 @@ into the {body} of the default.hbs template --}}
             <section class="post-full-content">
                 <div class="post-content">
                     {{content}}
-                        {{#if (member 'restrictedPost')}}
-                            <div class="membersonly-excerpt">
-                                {{excerpt}}
-                            </div>
-                            <div class="signin-cta">
-                                <a href="#" data-members-signin>Sign in</a> to view the full content of this post.
-                            </div>
-                        {{/if}}
+                    {{#if (member 'isRestrictedPost')}}
+                        <div class="membersonly-excerpt">
+                            {{excerpt}}
+                        </div>
+                        <div class="signin-cta">
+                            <a href="#" data-members-signin>Sign in</a> to view the full content of this post.
+                        </div>
+                    {{/if}}
                 </div>
             </section>
 
