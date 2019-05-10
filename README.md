@@ -82,4 +82,4 @@ Você pode adicionar seus próprios ícones SVG da mesma forma.
 
 # Copyright & Licenças
 
-Copyright (c) 2013-2018 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2019 Ghost Foundation - Released under the [MIT license](LICENSE).

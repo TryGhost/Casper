@@ -2,9 +2,10 @@
     "name": "casper-pt_br",
     "description": "O tema padrão para a plataforma de blogs Ghost. Belo, mínimo e responsivo.",
     "demo": "https://demo.ghost.io",
-    "version": "2.3.3",
+    "version": "2.10.0",
     "engines": {
-        "ghost": ">=1.2.0"
+        "ghost": ">=2.0.0",
+        "ghost-api": "v2"
     },
     "license": "MIT",
     "screenshots": {
@@ -12,8 +13,13 @@
         "mobile": "assets/screenshot-mobile.jpg"
     },
     "scripts": {
-      "dev": "gulp",
-      "zip": "gulp zip"
+        "dev": "gulp",
+        "zip": "gulp zip",
+        "test": "gscan .",
+        "pretest": "gulp build",
+        "preship": "yarn test",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+        "postship": "git fetch && gulp release"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -29,7 +35,8 @@
     },
     "keywords": [
         "ghost",
-        "theme"
+        "theme",
+        "ghost-theme"
     ],
     "repository": {
         "type": "git",
@@ -38,20 +45,42 @@
     "bugs": "https://github.com/MatheusMK3/Casper-pt_BR/issues",
     "contributors": "https://github.com/MatheusMK3/Casper-pt_BR/graphs/contributors",
     "devDependencies": {
-        "autoprefixer": "6.3.6",
-        "cssnano": "3.7.1",
-        "gulp": "3.9.1",
-        "gulp-livereload": "3.8.1",
-        "gulp-postcss": "6.1.1",
-        "gulp-sourcemaps": "1.6.0",
-        "gulp-util": "3.0.7",
-        "gulp-watch": "4.3.8",
-        "gulp-zip": "4.0.0",
-        "postcss-color-function": "2.0.1",
-        "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1"
+        "@tryghost/release-utils": "0.3.2",
+        "autoprefixer": "9.5.1",
+        "beeper": "1.1.1",
+        "cssnano": "4.1.10",
+        "gscan": "2.5.1",
+        "gulp": "4.0.1",
+        "gulp-livereload": "4.0.1",
+        "gulp-postcss": "8.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-zip": "4.2.0",
+        "postcss-color-function": "4.1.0",
+        "postcss-custom-properties": "8.0.10",
+        "postcss-easy-import": "3.0.0",
+        "pump": "3.0.0"
     },
     "config": {
-        "posts_per_page": 25
+        "posts_per_page": 25,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1000
+            },
+            "xl": {
+                "width": 2000
+            }
+        }
     }
 }

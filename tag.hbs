@@ -1,9 +1,8 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
 {{#tag}}
-<header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+{{> header background=feature_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
         {{> "site-nav"}}
         <div class="site-header-content">
