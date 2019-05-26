@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
+
 <head>
 
     {{!-- Document Settings --}}
@@ -7,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{!-- Base Meta --}}
-    <title>{{meta_title}}</title>
+    <title>{{meta_title page=(t " (Page %)")}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -18,6 +19,7 @@
     {{ghost_head}}
 
 </head>
+
 <body class="{{body_class}}">
 
     <div class="site-wrapper">
@@ -28,12 +30,14 @@
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+                </section>
                 <nav class="site-footer-nav">
-                    <a href="{{@site.url}}">Latest Posts</a>
-                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                    <a href="{{@site.url}}">{{t "Latest Posts"}}</a>
+                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank"
+                        rel="noopener">Facebook</a>{{/if}}
+                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank"
+                        rel="noopener">Twitter</a>{{/if}}
                 </nav>
             </div>
         </footer>
@@ -46,11 +50,12 @@
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
             {{#if @site.logo}}
-                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
             {{/if}}
-            <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-            {{subscribe_form placeholder="youremail@example.com"}}
+            <h1 class="subscribe-overlay-title">{{t "Subscribe to {blogtitle}" blogtitle=@site.title}}</h1>
+            <p class="subscribe-overlay-description">
+                {{t "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox"}}</p>
+            {{subscribe_form placeholder=(t "youremail@example.com")}}
         </div>
     </div>
     {{/if}}
@@ -68,11 +73,9 @@
 
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
 
     {{#if pagination.pages}}
@@ -86,4 +89,5 @@
     {{ghost_foot}}
 
 </body>
+
 </html>
