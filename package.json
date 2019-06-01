@@ -50,7 +50,7 @@
         "beeper": "1.1.1",
         "cssnano": "4.1.10",
         "gscan": "2.6.0",
-        "gulp": "4.0.1",
+        "gulp": "4.0.2",
         "gulp-livereload": "4.0.1",
         "gulp-postcss": "8.0.0",
         "gulp-uglify": "3.0.2",
