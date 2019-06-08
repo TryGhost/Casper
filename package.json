@@ -27,17 +27,17 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.0",
     "cssnano": "^4.1.10",
     "ember-cli-babel": "^7.1.2",
     "ember-cli-htmlbars": "^3.0.0",
-    "ember-cli-postcss": "^4.2.0",
+    "ember-cli-postcss": "^4.2.1",
     "ember-composable-helpers": "^2.3.1",
     "ember-moment": "^7.8.1",
     "postcss-color-function": "^4.1.0",
     "postcss-custom-properties": "^8.0.10",
     "postcss-easy-import": "^3.0.0",
-    "recast": "^0.17.6"
+    "recast": "^0.18.1"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
@@ -63,12 +63,12 @@
     "ember-source": "~3.9.0",
     "ember-source-channel-url": "^1.1.0",
     "ember-try": "^1.2.1",
-    "empress-blog": "^1.7.0",
+    "empress-blog": "^1.7.1",
     "empress-blog-base-template": "^0.1.3",
     "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-node": "^7.0.1",
     "loader.js": "^4.7.0",
-    "prember": "^1.0.2",
+    "prember": "^1.0.3",
     "qunit-dom": "^0.8.0"
   },
   "engines": {

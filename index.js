@@ -13,7 +13,7 @@ const postcssOptions = {
       { module: easyImport },
       { module: customProperties, options: { preserve: false } },
       { module: colorFunction },
-      { module: autoprefixer, options: { browsers: ['last 2 versions'] } },
+      { module: autoprefixer, options: { overrideBrowserslist: ['last 2 versions'] } },
       { module: cssnano },
     ]
   }
