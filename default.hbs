@@ -85,6 +85,13 @@
     </script>
     {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
     <script src="{{asset "built/casper.js"}}"></script>
+    <script>
+        $(document).ready(function(){
+            $('#menu-btn, .nav-dropdown-container').click(function(){
+                $(this).toggleClass('open');
+            });
+        });
+    </script>
 
     {{!-- Scripts for Members subscription --}}
     <script>
