@@ -4,6 +4,11 @@
     flex-wrap: wrap;
 }
 
+.site-nav > * {
+    /* workaround for .site-nav's `flex-direction: column & column-reverse` property in Safari */
+    flex-shrink: 0;
+}
+
 .site-nav-left {
     overflow: initial !important;
     padding-bottom: 0 !important;
@@ -165,7 +170,7 @@
 /* Centering content for 2-line layout: menu+social buttons */
 @media (max-width: 1024px) {
     body.post-template .site-nav-right {
-        display: none;
+        display: none !important;
     }
 }
 
