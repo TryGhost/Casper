@@ -74,6 +74,13 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    <script>
+        $(document).ready(function(){
+            $('#menu-btn, .nav-dropdown-container').click(function(){
+                $(this).toggleClass('open');
+            });
+        });
+    </script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
 
     {{#if pagination.pages}}

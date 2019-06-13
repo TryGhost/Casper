@@ -1,0 +1,24 @@
+<div id="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="nav-container">
+    <ul class="nav" role="menu">
+        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{@site.url}}" class="nav-item-title">Все статьи</a></li>
+        {{#get 'tags' filter='slug:-[polieznyie-soviety, soviety-zakazchikam]' limit='all' as |tags|}}
+            <li class="nav-dropdown-container" role="menuitem"><span class="nav-item-title">Разделы <span id="dropdown-icon"></span></span>
+                <ul class="nav-dropdown">
+                    {{#foreach tags}}
+                        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a
+                            href="{{url absolute="true"}}" class="nav-item-title">{{name}}</a></li>
+                    {{/foreach}}
+                </ul>
+            </li>
+        {{/get}}
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}" class="nav-item-title">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+</div>
