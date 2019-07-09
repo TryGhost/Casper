@@ -357,6 +357,37 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     fill: #fff;
 }
 
+.signin-button,
+.signout-button {
+    margin: 0 0 0 5px;
+    padding: 4px 10px;
+    border: #fff 1px solid;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1em;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.signin-button:hover,
+.signout-button:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.signin-cta, .upgrade-cta {
+    margin: 40px 0;
+    padding: 60px 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    min-width: 100%;
+    text-align: center;
+    color: #39484f;
+    font-size: 1.9rem;
+    line-height: 1.5em;
+    opacity: 0.8;
+}
+
 @media (max-width: 700px) {
     .site-header {
         padding-right: 0;
@@ -366,8 +397,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
         margin-right: 0;
         padding-left: 4vw;
     }
-    .site-nav-right {
+    .social-links {
         display: none;
+    }
+    .site-nav-right {
+        margin-left: 0;
+        padding-right: 4vw;
+    }
+    .signin-button,
+    .signout-button {
+        margin-left: 20px;
     }
 }
 
