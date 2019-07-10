@@ -1665,7 +1665,7 @@ Usage (In Ghost editor):
     display: flex;
     align-items: center;
     color: var(--darkgrey);
-    line-height: 1.1em;
+    line-height: normal;
     font-weight: 700;
 }
 
