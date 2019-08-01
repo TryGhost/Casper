@@ -19,9 +19,9 @@ into the {body} of the default.hbs template --}}
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    Published on&nbsp;<time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
                     {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+                        <span class="date-divider">in</span> <a href="{{url}}">{{name}}</a>
                     {{/primary_tag}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
