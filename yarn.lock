@@ -1674,9 +1674,9 @@ graceful-fs@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.0.tgz#8d8fdc73977cb04104721cb53666c1ca64cd328b"
 
-gscan@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.6.2.tgz#a411de170a358417b1f2badf61c1d72b191a4892"
+gscan@2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.7.0.tgz#c4ae05a4ca4ac9f178b060622b3531b39024bee4"
   dependencies:
     "@tryghost/extract-zip" "1.6.6"
     "@tryghost/pretty-cli" "1.2.1"
