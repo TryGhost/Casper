@@ -2,12 +2,7 @@
 
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
-
-<header class="site-header outer">
-    <div class="inner">
-        {{> "site-nav"}}
-    </div>
-</header>
+{{> "site-nav"}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
@@ -144,6 +139,7 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
+<script src="{{asset "js/utility.js"}}"></script>
 <script>
 
 // NOTE: Scroll performance is poor in Safari

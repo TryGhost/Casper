@@ -31,10 +31,6 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 @import "global.css";
 
-body {
-    background: #f4f8fb;
-}
-
 .img {
     display: block;
     width: 100%;
@@ -63,6 +59,7 @@ body {
 .site-main {
     z-index: 100;
     flex-grow: 1;
+    margin-top: 3em;
 }
 
 /* Full width page blocks */
@@ -95,12 +92,10 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        margin-top: -70px;
         padding-top: 0;
     }
     .home-template .site-nav {
         position: relative;
-        top: -70px;
     }
 }
 
@@ -108,38 +103,29 @@ body {
 /* 4. Site Header
 /* ---------------------------------------------------------- */
 
+.hamburger-menu-icon,
+.hamburger-menu-icon .close-icon {
+    display: none;
+    cursor: pointer;
+}
+
 .site-header {
-    position: relative;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 12px 24px 0px;
+    opacity: 0.9;
+    padding: 1rem 3rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
-    background-size: cover;
-}
-
-.site-header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-    background: rgba(0,0,0,0.18);
-}
-
-.site-header:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    z-index: 10;
-    display: block;
-    height: 80px;
-    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
+    max-height: 72px
+    /*background-color: rgba(255,255,255,0.98);*/
+    /*background-size: cover;*/
 }
 
 .site-header.no-image:before,
@@ -147,7 +133,7 @@ body {
     display: none;
 }
 
-.site-header-content {
+/*.site-header-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,7 +142,7 @@ body {
     min-height: 200px;
     max-height: 450px;
     text-align: center;
-}
+}*/
 
 .site-title {
     z-index: 10;
@@ -167,7 +153,9 @@ body {
 }
 
 .site-logo {
-    max-height: 45px;
+    /*max-height: 45px;*/
+    width: 144px;
+    height: 38px;
 }
 
 .site-description {
@@ -198,26 +186,32 @@ body {
     z-index: 300;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    overflow-y: hidden;
-    height: 40px;
+    align-items: center;
+    height: 60px;
     font-size: 1.2rem;
 }
 
 .site-nav-left {
     display: flex;
     align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
-    padding-bottom: 80px;
+    margin-right: 2em;
+    /*padding-bottom: 80px;*/
     letter-spacing: 0.4px;
     white-space: nowrap;
-
+    font-family: "Poppins";
     -ms-overflow-scrolling: touch;
 }
 
+.site-nav-left a {
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 1.35;
+}
+
+.site-nav-left .nav-blog a {
+      color: #e23445;
+}
 /* Site Nav Hack Explanation (above):
 
 What's happening above it .site-nav-left is set to overflow-x and allow sideways scrolling, so that when there isn't enough space for all nav items (either due to lots of nav items, or a small viewport), you can still scroll side-to-side to reach them.
@@ -259,20 +253,22 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .nav li a {
     display: block;
     margin: 0;
-    padding: 10px 12px;
-    color: #fff;
+    padding: 0 0.7em;
+    color: #2f3030;
+    font-weight: 500;
     opacity: 0.8;
 }
 
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
+    color: var(--brand);
 }
 
 .site-nav-right {
@@ -286,6 +282,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    margin-top: 6px;
 }
 
 .social-links a:last-of-type {
@@ -298,17 +295,19 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     align-items: center;
     margin: 0;
     padding: 10px;
-    color: #fff;
+    color: #2f3030;
+    font-weight: bold;
     opacity: 0.8;
 }
 
 .social-link:hover {
+    color: var(--brand);
     opacity: 1;
 }
 
 .social-link svg {
     height: 1.8rem;
-    fill: #fff;
+    fill: #2f3030;
 }
 
 .social-link-fb svg {
@@ -320,7 +319,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link-wb svg path {
-    stroke: #fff;
+    stroke: #2f3030;
 }
 
 .social-link-rss svg {
@@ -330,8 +329,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .subscribe-button {
     display: block;
     padding: 4px 10px;
-    border: #fff 1px solid;
-    color: #fff;
+    border: #2f3030 1px solid;
+    color: #2f3030;
     font-size: 1.2rem;
     line-height: 1em;
     border-radius: 10px;
@@ -359,15 +358,55 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 @media (max-width: 700px) {
     .site-header {
-        padding-right: 0;
-        padding-left: 0;
+        flex-direction: column;
+        padding: 1em;
+        max-height: none;
+    }
+    .brand-container {
+        display: flex;
+        width: 100%;
+    }
+    .site-header-content {
+        width: 100%;
+        text-align: center;
+    }
+    .hamburger-menu-icon {
+        display: inline-block;
+    }
+    .site-nav {
+        width: 100%;
+        display: block;
+        visibility: hidden;
+        height: 0;
+        transition: height 0.35s ease-in 0s;
     }
     .site-nav-left {
-        margin-right: 0;
-        padding-left: 4vw;
+        overflow-x: visible;
     }
-    .site-nav-right {
+    .site-nav-left ul {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+    .site-nav-left li {
+        border-bottom: 1px solid #d6d6d6;
+    }
+    .site-nav-left li:last-child {
+        border-bottom: 0;
+    }
+    .nav-active {
+        visibility: visible;
+        height: auto;
+    }
+    .social-links {
         display: none;
+    }
+    .nav-start-a-project-with-us a {
+        padding: 0.8em 1.1em !important;
+        margin: 1em 0 0 1em !important;
+    }
+    .nav li a {
+        padding: 16px 4px;
     }
 }
 
@@ -442,6 +481,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-title {
     margin-top: 0;
+    font-family: "Poppins";
 }
 
 .post-card-content {
@@ -572,7 +612,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .author-list-item:hover .author-name-tooltip {
-    opacity: 1.0;
+    opacity: 1;
     transform: translateY(0px);
 }
 
@@ -696,7 +736,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-meta-date {
-    color: var(--blue);
+    color: var(--brand);
 }
 
 .post-full-title {
@@ -825,11 +865,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content a {
     color: #000;
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: var(--brand) 0 -1px 0 inset;
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
+    color: var(--brand);
     text-decoration: none;
 }
 
@@ -920,7 +960,8 @@ Usage (In Ghost editor):
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400!important;
-    background: var(--whitegrey);
+    background: #f6f3f2;
+    color: #223545;
     border-radius: 3px;
 }
 
@@ -933,11 +974,11 @@ Usage (In Ghost editor):
     margin: 1.5em 0 3em;
     padding: 20px;
     max-width: 100%;
-    border: color(var(--darkgrey) l(-10%)) 1px solid;
+    /*border: color(var(--darkgrey) l(-10%)) 1px solid;*/
     color: var(--whitegrey);
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: color(var(--darkgrey) l(-3%));
+    background: #f6f3f2;
     border-radius: 5px;
 }
 
@@ -981,7 +1022,7 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Poppins";
 }
 
 .post-full-content h1 {
@@ -1034,7 +1075,7 @@ Usage (In Ghost editor):
     padding: 1em 0 1.5em;
     border: 0;
     color: var(--blue);
-    font-family: Georgia,serif;
+    font-family: "Poppins";
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1114,7 +1155,7 @@ Usage (In Ghost editor):
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Poppins";
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
@@ -1421,7 +1462,7 @@ Usage (In Ghost editor):
 }
 
 .author-list-item .author-card.hovered {
-    opacity: 1.0;
+    opacity: 1;
     transform: scale(1) translateY(0px);
     pointer-events: auto;
 }
@@ -1873,7 +1914,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content figcaption {
-    margin: 1.0em 0 0;
+    margin: 1em 0 0;
     font-size: 80%;
     line-height: 1.6em;
     text-align: center;
@@ -1975,8 +2016,8 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 10px 0;
-    font-family: Georgia, serif;
+    margin: 0 0 40px 0;
+    font-family: "Poppins";
     font-style: italic;
 }
 
@@ -2115,7 +2156,7 @@ Usage (In Ghost editor):
 .subscribe-overlay-description {
     margin: 0 auto 50px;
     max-width: 650px;
-    font-family: Georgia, serif;
+    font-family: "Poppins";
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 300;
@@ -2169,10 +2210,10 @@ Usage (In Ghost editor):
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
+    color(var(--brand) whiteness(+7%)),
+    color(var(--brand) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--brand) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--brand) lightness(-4%) saturation(-10%))
     );
     border-radius: 8px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
@@ -2182,7 +2223,7 @@ Usage (In Ghost editor):
 
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--brand) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-overlay-close {
@@ -2286,4 +2327,56 @@ Usage (In Ghost editor):
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
+}
+
+.algolia-autocomplete {
+    width: 100%;
+}
+
+.algolia-autocomplete .aa-input,
+.algolia-autocomplete .aa-hint {
+    width: 100%;
+}
+
+.algolia-autocomplete .aa-hint {
+    color: #999;
+}
+
+.algolia-autocomplete .aa-dropdown-menu {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-top: none;
+    z-index: 999;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 8px;
+    text-align: left;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #b2d7ff;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.search-input {
+    display: block;
+    padding: 14px 20px;
+    width: 100%;
+    border: none;
+    color: #2f3030;
+    font-size: 2rem;
+    line-height: 1em;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    user-select: text;
+    transition: border-color 0.15s linear;
+
+    -webkit-appearance: none;
 }

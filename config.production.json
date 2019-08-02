@@ -1,0 +1,37 @@
+{
+    "app": "blog.kiprosh.com",
+    "cred": {
+        "appid": "9NUGJYZ95A",
+        "apikey": "8aff627907af07fff57454108bd570ec"
+    },
+    "oldentries": 86400000,
+    "index": {
+        "name": "kiprosh_blog_posts",
+        "settings": {
+            "attributesToIndex": [
+                "title",
+                "unordered(description)",
+                "unordered(text)"
+            ],
+            "attributesForFaceting": ["lang"]
+        }
+    },
+    "sitemaps": [
+        { "url": "https://blog.kiprosh.com/sitemap.xml", "lang": "en" },
+        { "url": "https://blog.kiprosh.com/sitemap-posts.xml", "lang": "en" }
+    ],
+    "http": {
+        "auth": ""
+    },
+    "selectors": {
+        "title": "title",
+        "image": "meta[property=\"og:image\"]",
+        "description": "meta[name=\"description\"]",
+        "text": "h1, h2, h3, h4, h5, h6, p, li"
+    },
+    "formatters": {
+        "title": "-"
+    },
+    "defaults": {},
+    "blacklist": []
+}
