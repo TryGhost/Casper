@@ -1493,7 +1493,7 @@ Usage (In Ghost editor):
 .read-next-feed {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -20px;
+    margin: 0 -14px;
     padding: 40px 0 0 0;
 }
 
