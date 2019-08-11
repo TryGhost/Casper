@@ -44,20 +44,18 @@ into the {body} of the default.hbs template --}}
                 </div>
             </section>
 
+            <div class="post-feed">
+                {{#get "posts" filter="tag:project" limit="all" include="tags"}}
+                {{#foreach posts}}
+
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+
+                {{/foreach}}
+                {{/get}}
+            </div>
         </article>
         {{/post}}
-
-        <div class="post-feed">
-            {{#get "posts" filter="tag:project" limit="all"}}
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
-            {{/get}}
-        </div>
-
     </div>
 </main>
 
