@@ -19,11 +19,11 @@ into the {body} of the default.hbs template --}}
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    {{#get "tags" filter="slug:-project"}}
                     {{#foreach tags}}
-                    {{#if @index}}<span class="date-divider">/</span>{{/if}} <a href="{{url}}">{{name}}</a>
+                        {{^has slug="project"}}
+                            {{#if @index}}<span class="date-divider">/</span>{{/if}} <a href="{{url}}">{{name}}</a>
+                        {{/has}}
                     {{/foreach}}
-                    {{/get}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
