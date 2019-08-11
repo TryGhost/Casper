@@ -21,7 +21,7 @@ into the {body} of the default.hbs template --}}
                 <section class="post-full-meta">
                     {{#foreach tags}}
                         {{^has slug="project"}}
-                            {{#if @index}}<span class="date-divider">/</span>{{/if}} <a href="{{url}}">{{name}}</a>
+                            <a href="{{url}}">{{name}}</a> <span class="date-divider">/</span>
                         {{/has}}
                     {{/foreach}}
                 </section>

@@ -709,6 +709,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 6px 1px;
 }
 
+.date-divider:last-child {
+    display: none;
+}
+
 .post-full-image {
     margin: 0 -10vw -165px;
     background: var(--lightgrey) center center;
