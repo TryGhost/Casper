@@ -152,7 +152,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4vw 4vw;
+    padding: 10vw 4vw;
     min-height: 200px;
     max-height: 450px;
     text-align: center;
@@ -168,6 +168,8 @@ body {
 
 .site-logo {
     max-height: 180px;
+    margin-top: -6vw;
+    margin-bottom: -6vw;
 }
 
 .site-description {
