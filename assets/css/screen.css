@@ -464,6 +464,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0 25px 25px;
 }
 
+.post-pro .post-card-meta {
+    display: none;
+}
+
 .author-profile-image,
 .avatar-wrapper {
     display: block;
@@ -593,10 +597,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-}
-
-.post-pro .reading-time {
-    display: none;
 }
 
 /* Special Styling for home page grid (below):
