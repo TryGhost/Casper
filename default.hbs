@@ -75,9 +75,7 @@
     </script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
 
-    {{#if pagination.pages}}
     <script src="{{asset "built/infinitescroll.js"}}"></script>
-    {{/if}}
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
