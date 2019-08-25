@@ -2291,3 +2291,88 @@ Usage (In Ghost editor):
         margin-left: 0;
     }
 }
+
+.kg-bookmark-card {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--whitegrey);
+    background: var(--white);
+}
+
+.kg-bookmark-container a {
+    display: flex;
+    color: var(--darkgrey);
+    text-decoration: none;
+    box-shadow: none;
+    max-height: 160px;
+}
+
+.kg-bookmark-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 100%;
+    align-items: flex-start;
+    justify-content: start;
+    padding: 20px;
+}
+
+.kg-bookmark-title {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    font-weight: 600;
+}
+
+.kg-bookmark-container a:hover .kg-bookmark-title {
+    color: var(--blue);
+}
+
+.kg-bookmark-description {
+    display: -webkit-box;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    margin-top: 12px;
+    color: var(--middarkgrey);
+    font-weight: 400;
+    max-height: 44px;
+    overflow-y: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.kg-bookmark-thumbnail {
+    flex-basis: 33%;
+    flex-grow: 1;
+    min-width: 33%;
+    max-height: 100%;
+}
+
+.kg-bookmark-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kg-bookmark-metadata {
+    color: var(--darkgrey);
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.kg-bookmark-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.kg-bookmark-author:after {
+    content: "•";
+    margin: 0 6px;
+}
+
+.kg-bookmark-url {
+    color: var(--blue);
+}
