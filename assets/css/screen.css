@@ -2022,6 +2022,7 @@ Usage (In Ghost editor):
     font-weight: 400;
     color: color(var(--midgrey) l(-10%));
     margin-top: 14px;
+    flex-wrap: wrap;
 }
 
 .post-full-content .kg-bookmark-logo {
@@ -2033,6 +2034,22 @@ Usage (In Ghost editor):
 .kg-bookmark-author:after {
     content: "•";
     margin: 0 6px;
+}
+
+@media (max-width: 500px) {
+    .kg-bookmark-container a {
+        flex-direction: column;
+    }
+
+    .kg-bookmark-thumbnail {
+        order: 1;
+        width: 100%;
+        min-height: 160px;
+    }
+
+    .kg-bookmark-content {
+        order: 2
+    }
 }
 
 /* 8. Author Template
