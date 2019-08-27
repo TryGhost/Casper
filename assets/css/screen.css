@@ -2033,9 +2033,21 @@ Usage (In Ghost editor):
     margin-right: 8px;
 }
 
+.kg-bookmark-author {
+    line-height: 1.5em;
+}
+
 .kg-bookmark-author:after {
     content: "•";
     margin: 0 6px;
+}
+
+.kg-bookmark-publisher {
+    max-width: 240px;
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @media (max-width: 500px) {
