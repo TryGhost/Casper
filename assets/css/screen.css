@@ -2043,11 +2043,11 @@ Usage (In Ghost editor):
 }
 
 .kg-bookmark-publisher {
-    max-width: 240px;
-    line-height: 1.5em;
     overflow: hidden;
+    line-height: 1.5em;
     text-overflow: ellipsis;
     white-space: nowrap;
+    max-width: 240px;
 }
 
 @media (max-width: 500px) {
