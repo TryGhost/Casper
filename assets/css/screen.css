@@ -1955,16 +1955,17 @@ Usage (In Ghost editor):
 }
 
 .kg-card + .kg-bookmark-card {
-    margin: 0 0 3em;
+    margin-top: 0;
 }
 
-.kg-bookmark-container a {
+.post-full-content .kg-bookmark-container {
     display: flex;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: var(--darkgrey);
     text-decoration: none;
     min-height: 148px;
-    box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+    border-radius: 3px;
 }
 
 .kg-bookmark-content {
@@ -1983,7 +1984,7 @@ Usage (In Ghost editor):
     color: color(var(--midgrey) l(-30%));
 }
 
-.kg-bookmark-container a:hover .kg-bookmark-title {
+.post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
     color: var(--blue);
 }
 
@@ -2013,6 +2014,7 @@ Usage (In Ghost editor):
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 0 3px 3px 0;
 }
 
 .kg-bookmark-metadata {
@@ -2025,7 +2027,7 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
 }
 
-.post-full-content .kg-bookmark-logo {
+.post-full-content .kg-bookmark-icon {
     width: 22px;
     height: 22px;
     margin-right: 8px;
@@ -2037,7 +2039,7 @@ Usage (In Ghost editor):
 }
 
 @media (max-width: 500px) {
-    .kg-bookmark-container a {
+    .post-full-content .kg-bookmark-container {
         flex-direction: column;
     }
 
@@ -2045,6 +2047,10 @@ Usage (In Ghost editor):
         order: 1;
         width: 100%;
         min-height: 160px;
+    }
+
+    .kg-bookmark-thumbnail img {
+        border-radius: 3px 3px 0 0;
     }
 
     .kg-bookmark-content {
