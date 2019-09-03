@@ -390,7 +390,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     overflow: hidden;
     margin: 0 20px 40px;
     min-height: 300px;
-    background: #fff center center;
+    background: transparent center center;
     background-size: cover;
     border-radius: 5px;
     box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
@@ -445,6 +445,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-content {
+    background-color: #fff;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
