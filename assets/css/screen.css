@@ -68,7 +68,7 @@ body {
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 4vw;
+    padding: 0 5vw;
 }
 
 /* Centered content container blocks */
@@ -219,24 +219,24 @@ body {
 }
 
 @media (max-width: 700px) {
-    .site-header:not(.responsive-header-img) .site-nav:before,
     .site-header:not(.responsive-header-img) .site-nav:after {
         position: absolute;
         content: "";
         z-index: 999;
         top: 0;
-        width: 15px;
+        width: 40px;
         height: 100%;
     }
-
     .site-header:not(.responsive-header-img) .site-nav:before {
         left: 0;
         background: linear-gradient(to left, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
     }
-
     .site-header:not(.responsive-header-img) .site-nav:after {
         right: 0;
         background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
+    }
+    .nav li:last-of-type {
+        padding-right: 20px;
     }
 }
 
@@ -701,9 +701,15 @@ make sure this only happens on large viewports / desktop-ish devices.
     max-width: 1040px;
     text-align: center;
 }
+@media (max-width: 800px) {
+    .post-full-header {
+        padding: 10vw 3vw 3vw;
+    }
+}
+
 @media (max-width: 500px) {
     .post-full-header {
-        padding: 14vw 3vw 10vw;
+        padding: 12vw 3vw 12vw;
     }
 }
 
@@ -746,7 +752,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 0 -4vw -100px;
+        margin: 0 -6vw -100px;
         border-radius: 0;
     }
     .post-full-image img {
@@ -778,7 +784,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 @media (max-width: 800px) {
     .post-full-content {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -834,6 +840,25 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-comments,
 .footnotes {
     min-width: 100%;
+    margin: 0 0 1.5em 0;
+}
+@media (max-width: 500px) {
+    .post-full-content h1,
+    .post-full-content h2,
+    .post-full-content h3,
+    .post-full-content h4,
+    .post-full-content h5,
+    .post-full-content h6,
+    .post-full-content p,
+    .post-full-content ul,
+    .post-full-content ol,
+    .post-full-content dl,
+    .post-full-content pre,
+    .post-full-content blockquote,
+    .post-full-comments,
+    .footnotes {
+        margin-bottom: 1.28em;
+    }
 }
 
 .post-full-content li {
@@ -923,6 +948,11 @@ Usage (In Ghost editor):
     margin: 0 0 1.5em;
     padding: 0 1.5em;
     border-left: #3eb0ef 3px solid;
+}
+@media (max-width: 500px) {
+    .post-full-content blockquote {
+        padding: 0 1em;
+    }
 }
 
 .post-full-content blockquote p {
@@ -1022,7 +1052,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h2 {
-    margin: 0.5em 0 0.2em 0;
+    margin: 0.5em 0 0.3em 0;
     font-size: 3.6rem;
     font-weight: 700;
 }
@@ -1116,10 +1146,10 @@ Usage (In Ghost editor):
         line-height: 1.3em;
     }
     .post-full-title {
-        font-size: 2.9rem;
+        font-size: 3.8rem;
     }
     .post-full-image {
-        margin-bottom: 4vw;
+        margin-bottom: 5vw;
         height: 350px;
     }
     .post-full-content {
@@ -1869,7 +1899,7 @@ Usage (In Ghost editor):
 }
 
 .post-template .post-content > p:first-child {
-    font-size: 1.25em;
+    font-size: 1.2em;
     line-height: 1.5em;
 }
 
