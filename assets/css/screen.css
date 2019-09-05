@@ -1114,7 +1114,10 @@ Usage (In Ghost editor):
 @media (max-width: 500px) {
     .post-full-content h5 {
         padding: 0 0 0.5em;
-        font-size: 2.2rem;
+        margin-bottom: 1em;
+        margin-left: 1.3em;
+        text-align: initial;
+        font-size: 2.4rem;
     }
 }
 
@@ -2139,7 +2142,7 @@ Usage (In Ghost editor):
     }
 
     .post-full-content figcaption {
-        margin-bottom: 0.6em;
+        margin-bottom: 0.4em;
     }
 
     .post-full-content .kg-bookmark-container {
