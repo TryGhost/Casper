@@ -1784,7 +1784,7 @@ Usage (In Ghost editor):
     justify-content: flex-end;
     align-items: center;
     padding-left: 2%;
-    margin-right: calc(5vw - 12px);
+    margin-right: 8px;
     font-size: 1.3rem;
     line-height: 1;
 }
@@ -1797,23 +1797,24 @@ Usage (In Ghost editor):
 
 .floating-header-share svg {
     width: auto;
+    fill: #fff;
 }
 
 .floating-header-share-tw svg {
-    fill: #33b1ff;
     height: 20px;
+    fill: #33b1ff;
 }
 
 .floating-header-share-fb svg {
-    fill: #005e99;
     height: 17px;
+    fill: #005e99;
 }
 
 .floating-header-share-label {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 12px;
     color: rgba(0,0,0,0.7);
     font-weight: 500;
 }
@@ -1830,7 +1831,7 @@ Usage (In Ghost editor):
 .floating-header-share-fb {
     display: block;
     align-items: center;
-    width: 60px;
+    width: 54px;
     height: 60px;
     color: #fff;
     line-height: 48px;
@@ -1883,11 +1884,14 @@ Usage (In Ghost editor):
 
 @media (max-width: 900px) {
     .floating-header {
-        height: 64px;
+        height: 56px;
     }
     .floating-header-title,
     .floating-header-logo {
         font-size: 1.7rem;
+    }
+    .floating-header-share {
+        margin-right: calc(5vw - 14px);
     }
     .floating-header-share-tw,
     .floating-header-share-fb {
