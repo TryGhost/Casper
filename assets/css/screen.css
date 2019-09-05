@@ -1736,9 +1736,10 @@ Usage (In Ghost editor):
 .floating-header-logo {
     overflow: hidden;
     margin: 0 0 0 20px;
+    padding: 4px 0;
     font-size: 1.6rem;
     line-height: 1em;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -1782,6 +1783,7 @@ Usage (In Ghost editor):
     justify-content: flex-end;
     align-items: center;
     padding-left: 2%;
+    margin-right: calc(5vw - 12px);
     font-size: 1.3rem;
     line-height: 1;
 }
@@ -1794,8 +1796,16 @@ Usage (In Ghost editor):
 
 .floating-header-share svg {
     width: auto;
-    height: 16px;
-    fill: #fff;
+}
+
+.floating-header-share-tw svg {
+    fill: #33b1ff;
+    height: 20px;
+}
+
+.floating-header-share-fb svg {
+    fill: #005e99;
+    height: 17px;
 }
 
 .floating-header-share-label {
@@ -1825,14 +1835,6 @@ Usage (In Ghost editor):
     line-height: 48px;
     text-align: center;
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.floating-header-share-tw {
-    background: #33b1ff;
-}
-
-.floating-header-share-fb {
-    background: #005e99;
 }
 
 .progress {
@@ -1880,23 +1882,23 @@ Usage (In Ghost editor):
 
 @media (max-width: 900px) {
     .floating-header {
-        height: 40px;
+        height: 64px;
     }
     .floating-header-title,
     .floating-header-logo {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
     .floating-header-share-tw,
     .floating-header-share-fb {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         line-height: 38px;
     }
 }
 
 @media (max-width: 800px) {
     .floating-header-logo {
-        margin-left: 10px;
+        margin-left: 5vw;
     }
     .floating-header-logo a {
         color: #2e2e2e;
