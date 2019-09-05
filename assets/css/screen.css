@@ -1359,6 +1359,7 @@ Usage (In Ghost editor):
 
 .author-card {
     display: flex;
+    align-items: center;
 }
 
 .author-card .author-profile-image,
@@ -1369,7 +1370,7 @@ Usage (In Ghost editor):
 }
 
 .author-card-name {
-    margin: 8px 0 2px 0;
+    margin: 0 0 2px;
     padding: 0;
     font-size: 2rem;
 }
@@ -1387,6 +1388,7 @@ Usage (In Ghost editor):
     margin: 0;
     color: var(--midgrey);
     line-height: 1.3em;
+    margin-bottom: 2px;
 }
 
 .post-full-footer-right {
@@ -1546,7 +1548,6 @@ Usage (In Ghost editor):
 @media (max-width: 500px) {
     .author-card-name {
         font-size: 1.7rem;
-        margin-top: 4px;
     }
 
     .author-card-content p {
