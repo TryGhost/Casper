@@ -1795,6 +1795,7 @@ Usage (In Ghost editor):
     color: #2e2e2e;
     font-size: 1.6rem;
     line-height: 1.3em;
+    letter-spacing: -0.5px;
     font-weight: bold;
     text-overflow: ellipsis;
     white-space: nowrap;
