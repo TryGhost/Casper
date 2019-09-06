@@ -428,7 +428,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-image {
     width: 100%;
-    height: 170px;
+    height: 180px;
     background: var(--lightgrey) no-repeat center center;
     object-fit: cover;
     transition: all 0.5s ease;
@@ -462,7 +462,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-tags:after {
-    content: " —";
+    content: " /";
     color: color(var(--midgrey) l(+10%));
     font-weight: 400;
 }
