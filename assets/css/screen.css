@@ -2170,6 +2170,13 @@ Usage (In Ghost editor):
         margin: 0.2em 0 1.3em;
     }
 
+    .post-full-content h1 + figure,
+    .post-full-content h2 + figure,
+    .post-full-content h3 + figure,
+    .post-full-content h4 + figure {
+        margin-top: 0.9em;
+    }
+
     .post-full-content .kg-width-wide,
     .post-full-content .kg-width-full {
         margin-left: -5vw;
