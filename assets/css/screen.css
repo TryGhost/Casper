@@ -789,6 +789,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 @media (max-width: 1170px) {
     .post-full-content {
         padding: 5vw 7vw 0;
+        max-width: calc(700px + 14vw);
     }
 }
 @media (max-width: 800px) {
@@ -1055,7 +1056,7 @@ Usage (In Ghost editor):
 .post-full-content p + h1 {
     margin-top: 0.8em;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .post-full-content h1 {
         font-size: 3.2rem;
         line-height: 1.25em;
@@ -1071,7 +1072,7 @@ Usage (In Ghost editor):
 .post-full-content p + h2 {
     margin-top: 0.8em;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .post-full-content h2 {
         margin-bottom: 0.3em;
         font-size: 2.8rem;
@@ -1088,7 +1089,7 @@ Usage (In Ghost editor):
 .post-full-content h2 + h3 {
     margin-top: 0.7em;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .post-full-content h3 {
         margin-bottom: 0.3em;
         font-size: 2.4rem;
@@ -1107,7 +1108,7 @@ Usage (In Ghost editor):
 .post-full-content h3 + h4 {
     margin-top: 0em;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .post-full-content h4 {
         margin-bottom: 0.3em;
         font-size: 2.4rem;
@@ -1132,7 +1133,7 @@ Usage (In Ghost editor):
         width: 100vw;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .post-full-content h5 {
         padding: 0 0 0.5em;
         margin-bottom: 1em;
@@ -1147,7 +1148,7 @@ Usage (In Ghost editor):
     font-size: 2.0rem;
     font-weight: 700;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .post-full-content h6 {
         font-size: 1.8rem;
         line-height: 1.4em;
@@ -2166,7 +2167,7 @@ Usage (In Ghost editor):
     max-width: 240px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .post-full-content figure {
         margin: 0.2em 0 1.3em;
     }
@@ -2177,7 +2178,9 @@ Usage (In Ghost editor):
     .post-full-content h4 + figure {
         margin-top: 0.9em;
     }
+}
 
+@media (max-width: 500px) {
     .post-full-content .kg-width-wide,
     .post-full-content .kg-width-full {
         margin-left: -5vw;
