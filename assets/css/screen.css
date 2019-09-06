@@ -456,7 +456,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     color: var(--darkgrey);
     font-size: 1.2rem;
     line-height: 1.15em;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -721,18 +721,26 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-header {
     position: relative;
     margin: 0 auto;
-    padding: 30px 170px 20px;
+    padding: 30px 190px 20px;
     background: #fff;
 }
+@media (max-width: 1170px) {
+    .post-full-header {
+        padding: 20px 7vw;
+        max-width: calc(700px + 14vw);
+    }
+}
+
 @media (max-width: 800px) {
     .post-full-header {
-        padding: 10vw 3vw 3vw;
+        padding: 20px 7vw;
+        max-width: calc(700px + 14vw);
     }
 }
 
 @media (max-width: 500px) {
     .post-full-header {
-        padding: 12vw 3vw 12vw;
+        padding: 0 0 15px;
     }
 }
 
@@ -745,6 +753,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 40px;
+}
+@media (max-width: 500px) {
+    .post-full-meta {
+        margin-bottom: 20px;
+    }
 }
 
 .post-full-meta a {
@@ -781,11 +794,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 0 -6vw -100px;
+        margin: 0 -6vw;
         border-radius: 0;
     }
     .post-full-image img {
-        height: 600px;
+        height: 520px;
     }
 }
 
@@ -798,7 +811,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 170px;
+    padding: 0 190px;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
@@ -808,7 +821,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-content {
-        padding: 5vw 7vw 0;
+        padding: 0 7vw;
         max-width: calc(700px + 14vw);
     }
 }
@@ -1391,9 +1404,11 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    padding: 3vw 0 6vw 0;
+    margin: 2vw auto 0;
+    padding: 4vw 0 4vw 0;
     max-width: 700px;
+    border-top: 1px solid color(var(--lightgrey) l(+10%));
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 /* 7.2.1 Single Author Byline
@@ -1464,9 +1479,6 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-    padding-top: 40px;
-    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
 }
 
 .post-full-authors-content {
