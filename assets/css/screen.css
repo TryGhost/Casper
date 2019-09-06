@@ -32,7 +32,7 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 
 body {
-    background: #f4f8fb;
+    background: #fff;
 }
 
 .img {
@@ -74,7 +74,7 @@ body {
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1040px;
+    max-width: 1080px;
     width: 100%;
 }
 
@@ -95,12 +95,12 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        margin-top: -70px;
+        margin-top: 44px;
         padding-top: 0;
     }
     .home-template .site-nav {
         position: relative;
-        top: -70px;
+        bottom: -8px;
     }
 }
 
@@ -152,7 +152,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10vw 4vw;
+    padding: 10vw 4vw calc(10vw - 40px);
     min-height: 200px;
     max-height: 450px;
     text-align: center;
@@ -200,7 +200,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     overflow-y: hidden;
-    height: 40px;
+    height: 44px;
     font-size: 1.2rem;
 }
 
@@ -410,40 +410,39 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 20px 40px;
+    margin: 0 22px 80px;
+    padding: 0 0 15px;
     min-height: 300px;
     background: #fff center center;
     background-size: cover;
-    border-radius: 5px;
-    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     transition: all 0.5s ease;
-}
-
-.post-card:hover {
-    box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px;
-    transition: all 0.4s ease;
-    transform: translate3D(0, -1px, 0) scale(1.02);
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 .post-card-image-link {
     position: relative;
     display: block;
     overflow: hidden;
-    border-radius: 5px 5px 0 0;
+    border-radius: 2px;
 }
 
 .post-card-image {
     width: 100%;
-    height: 200px;
+    height: 170px;
     background: var(--lightgrey) no-repeat center center;
     object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.post-card:hover .post-card-image {
+    transform: scale(1.075, 1.075);
 }
 
 .post-card-content-link {
     position: relative;
     flex-grow: 1;
     display: block;
-    padding: 25px 25px 0;
+    padding: 8px 0 0;
     color: var(--darkgrey);
 }
 
@@ -452,9 +451,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-tags {
-    display: block;
+    display: inline-block;
     margin-bottom: 4px;
-    color: var(--midgrey);
+    color: var(--darkgrey);
     font-size: 1.2rem;
     line-height: 1.15em;
     font-weight: 500;
@@ -462,8 +461,25 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: uppercase;
 }
 
+.post-card-tags:after {
+    content: " —";
+    color: color(var(--midgrey) l(+10%));
+    font-weight: 400;
+}
+
+.reading-time {
+    display: inline-block;
+    color: color(var(--midgrey) l(+10%));
+    font-size: 1.2rem;
+    line-height: 1.15em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
 .post-card-title {
-    margin-top: 0;
+    margin: 0.6em 0 0.2em;
+    transition: color 0.5s ease;
 }
 
 .post-card-content {
@@ -481,7 +497,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 25px 25px;
+    padding: 0;
 }
 
 .author-profile-image,
@@ -549,7 +565,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .static-avatar {
     display: block;
     overflow: hidden;
-    margin: 0 -5px;
+    margin: 0;
     width: 34px;
     height: 34px;
     border: #fff 2px solid;
@@ -604,17 +620,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
-.reading-time {
-    flex-shrink: 0;
-    margin-left: 20px;
-    color: var(--midgrey);
-    font-size: 1.2rem;
-    line-height: 33px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
 /* Special Styling for home page grid (below):
 
 The first post in the list is styled to be bigger than the others and take over
@@ -627,12 +632,16 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-large {
         flex: 1 1 100%;
         flex-direction: row;
+        padding-bottom: 44px;
+    }
+
+    .post-card-large .post-card-header {
+        margin-top: -7px;
     }
 
     .post-card-large .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
-        border-radius: 5px 0 0 5px;
     }
 
     .post-card-large .post-card-image {
@@ -641,12 +650,17 @@ make sure this only happens on large viewports / desktop-ish devices.
         height: 100%;
     }
 
+    .post-card-large:hover .post-card-image {
+        transform: scale(1.04, 1.04);
+    }
+
     .post-card-large .post-card-content {
-        flex: 0 1 357px;
+        flex: 0 1 373px;
     }
 
     .post-card-large h2 {
-        font-size: 2.6rem;
+        font-size: 2.9rem;
+        margin-top: 0.8em;
     }
 
     .post-card-large p {
@@ -655,11 +669,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content-link {
-        padding: 30px 40px 0;
+        padding: 0 0 0 44px;
     }
 
     .post-card-large .post-card-meta {
-        padding: 0 40px 30px;
+        padding: 0 0 0 44px;
     }
 }
 
@@ -705,10 +719,10 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ^ Required to make .post-full-content:before/after z-index stacking work */
 
 .post-full-header {
+    position: relative;
     margin: 0 auto;
-    padding: 6vw 3vw 3vw;
-    max-width: 1040px;
-    text-align: center;
+    padding: 30px 170px 20px;
+    background: #fff;
 }
 @media (max-width: 800px) {
     .post-full-header {
@@ -724,16 +738,22 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-meta {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: var(--midgrey);
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.post-full-meta a {
+    color: var(--darkgrey);
 }
 
 .post-full-meta-date {
-    color: var(--blue);
+    color: var(--midgrey);
+    font-weight: 500;
 }
 
 .post-full-title {
@@ -747,7 +767,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 -10vw -165px;
+    margin: 0 calc(-100vw + 1080px);
     background: var(--lightgrey) center center;
     border-radius: 5px;
     overflow: hidden;
@@ -755,7 +775,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-image img {
     width: 100%;
-    height: 800px;
+    height: 66vh;
     object-fit: cover;
 }
 
@@ -778,7 +798,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 80px 170px 0;
+    padding: 0 170px;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
@@ -798,7 +818,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 }
 
-.post-full-content:before {
+/* .post-full-content:before {
     content: "";
     position: absolute;
     top: 15px;
@@ -824,7 +844,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     background: rgba(39,44,49,0.15);
     filter: blur(5px);
     transform: rotate(5deg);
-}
+} */
 
 .no-image .post-full-content {
     padding-top: 0;
@@ -1951,12 +1971,13 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 920px;
+    max-width: 700px;
 }
 
 .post-template .post-content > p:first-child {
-    font-size: 1.175em;
+    font-size: 1.2em;
     line-height: 1.5em;
+    margin-top: -0.3em;
 }
 
 .post-full-content .kg-image {
