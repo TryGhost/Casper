@@ -74,7 +74,7 @@ body {
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1080px;
+    max-width: 1040px;
     width: 100%;
 }
 
@@ -254,7 +254,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo {
     flex-shrink: 0;
     display: block;
-    margin-right: 24px;
+    margin-right: 32px;
     padding: 11px 0;
     color: #fff;
     font-size: 1.7rem;
@@ -518,6 +518,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-meta .avatar-wrapper {
     position: relative;
 }
+@media (max-width: 720px) {
+    .post-card-meta {
+        margin-top: -12px;
+    }
+}
 
 .author-list {
     display: flex;
@@ -686,12 +691,17 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 
 /* Adjust some margins for smaller screens */
+@media (max-width: 720px) {
+    .post-card {
+        margin: 0 20px 7vw;
+    }
+}
 @media (max-width: 650px) {
     .post-feed {
         padding-top: 5vw;
     }
     .post-card {
-        margin: 0 20px 5vw;
+        margin: 0 20px 10vw;
     }
 }
 
@@ -731,6 +741,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 @media (max-width: 1170px) {
     .post-full-header {
+        margin: 0 auto;
         padding: 20px 7vw;
         max-width: calc(700px + 14vw);
     }
@@ -781,18 +792,20 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .date-divider {
     display: inline-block;
+    font-weight: 300;
     margin: 0 6px 1px;
 }
 
 .post-full-image {
-    margin: 0 calc(-100vw + 1080px) -172px;
+    margin: 0 calc(-100vw + 1040px) -172px;
     background: var(--lightgrey) center center;
     overflow: hidden;
 }
 
 .post-full-image img {
     width: 100%;
-    height: 60vh;
+    height: 33vw;
+    min-height: 540px;
     object-fit: cover;
 }
 
