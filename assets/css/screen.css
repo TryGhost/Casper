@@ -95,12 +95,15 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        margin-top: 44px;
-        padding-top: 0;
+        padding: 44px 22px 0;
+        margin: -88px -44px 0;
+        background: #fff;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
     }
     .home-template .site-nav {
         position: relative;
-        bottom: -8px;
+        bottom: 80px;
     }
 }
 
@@ -152,7 +155,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10vw 4vw calc(10vw - 40px);
+    padding: 9vw 4vw 10vw;
     min-height: 200px;
     max-height: 450px;
     text-align: center;
@@ -424,6 +427,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     overflow: hidden;
     border-radius: 2px;
+    margin-bottom: 8px;
 }
 
 .post-card-image {
@@ -442,7 +446,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     flex-grow: 1;
     display: block;
-    padding: 8px 0 0;
+    padding: 0;
     color: var(--darkgrey);
 }
 
@@ -462,7 +466,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-tags:after {
-    content: " /";
     color: color(var(--midgrey) l(+10%));
     font-weight: 400;
 }
@@ -496,7 +499,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-meta {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     padding: 0;
 }
 
@@ -720,9 +723,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-header {
     position: relative;
-    margin: 0 auto;
-    padding: 30px 190px 20px;
+    margin: 0 -44px;
+    padding: 63px 234px 20px;
     background: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 @media (max-width: 1170px) {
     .post-full-header {
@@ -780,15 +785,14 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 calc(-100vw + 1080px);
+    margin: 0 calc(-100vw + 1080px) -172px;
     background: var(--lightgrey) center center;
-    border-radius: 5px;
     overflow: hidden;
 }
 
 .post-full-image img {
     width: 100%;
-    height: 66vh;
+    height: 60vh;
     object-fit: cover;
 }
 
@@ -1987,9 +1991,11 @@ Usage (In Ghost editor):
 }
 
 .post-template .post-content > p:first-child {
-    font-size: 1.2em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.25em;
     line-height: 1.5em;
-    margin-top: -0.3em;
+    margin: -0.3em 0 2.0em;
+    color: color(var(--midgrey) l(-35%));
 }
 
 .post-full-content .kg-image {
