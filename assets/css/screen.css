@@ -116,7 +116,7 @@ body {
     padding-top: 12px;
     padding-bottom: 12px;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    background: linear-gradient(color(var(--darkgrey) l(-6%)), color(var(--darkgrey) l(+2%))) no-repeat center center;
     background-size: cover;
 }
 
@@ -129,7 +129,7 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
+    background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.48))
 }
 
 .site-header:after {
@@ -421,6 +421,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
+.post-card:hover {
+    border-bottom-color: var(--lightgrey);
+}
+
 .post-card-image-link {
     position: relative;
     display: block;
@@ -688,7 +692,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content {
-        flex: 0 1 373px;
+        flex: 0 1 363px;
         transition: all 0.5s ease;
     }
 
@@ -812,7 +816,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-meta-date {
     color: var(--midgrey);
-    font-weight: 500;
+    font-weight: 400;
+    text-transform: none;
 }
 
 .post-full-title {
@@ -834,7 +839,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-image img {
     width: 100%;
-    height: 38vw;
+    height: 44vw;
     min-height: 540px;
     object-fit: cover;
 }
@@ -1677,7 +1682,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-wrap: wrap;
     margin: 0 -20px;
-    padding: 40px 0 0 0;
+    padding: 80px 0 0 0;
 }
 
 .read-next-card {
