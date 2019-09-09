@@ -409,6 +409,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card {
+    position: relative;
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
@@ -418,12 +419,35 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     min-height: 240px;
     background-size: cover;
     transition: all 0.5s ease;
-    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
+    /* border-bottom: 1px solid color(var(--lightgrey) l(+10%)); */
 }
 
-.post-card:hover {
-    border-bottom-color: var(--lightgrey);
+.post-card:before,
+.post-card:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 1px;
+    background: color(var(--lightgrey) l(+10%));
+    z-index: 9999;
 }
+
+.post-card:after {
+    right: 100%;
+    background: color(var(--lightgrey) l(-5%));
+    transition: all 0.5s ease;
+}
+
+.post-card:hover:after {
+    right: 0%;
+}
+
+/* .post-card:hover {
+    border-bottom-color: var(--lightgrey);
+} */
 
 .post-card-image-link {
     position: relative;
@@ -489,7 +513,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card:hover .post-card-header {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .post-card-title {
@@ -513,7 +537,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card:hover .post-card-excerpt {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .post-card-meta {
@@ -697,7 +721,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large:hover .post-card-content {
-        transform: translateX(-6px);
+        transform: translateX(-5px);
     }
 
     .post-card-large h2 {
