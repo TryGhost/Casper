@@ -840,7 +840,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-image img {
     width: 100%;
     height: 44vw;
-    min-height: 540px;
+    min-height: 680px;
     object-fit: cover;
 }
 
@@ -851,6 +851,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
     .post-full-image img {
         height: 520px;
+        min-height: 520px;
     }
 }
 
