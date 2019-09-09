@@ -415,8 +415,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     overflow: hidden;
     margin: 0 22px 80px;
     padding: 0 0 15px;
-    min-height: 300px;
-    background: #fff center center;
+    min-height: 240px;
     background-size: cover;
     transition: all 0.5s ease;
     border-bottom: 1px solid color(var(--lightgrey) l(+10%));
@@ -428,6 +427,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     overflow: hidden;
     border-radius: 2px;
     margin-bottom: 8px;
+    transition: all 0.5s ease;
 }
 
 .post-card-image {
@@ -439,7 +439,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card:hover .post-card-image {
-    transform: scale(1.075, 1.075);
+    transform: scale(1.05, 1.05);
 }
 
 .post-card-content-link {
@@ -480,9 +480,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: uppercase;
 }
 
+.post-card .post-card-header {
+    transition: all 0.5s ease;
+}
+
+.post-card:hover .post-card-header {
+    transform: translateY(-4px);
+}
+
 .post-card-title {
     margin: 0.6em 0 0.2em;
-    transition: color 0.5s ease;
 }
 
 .post-card-content {
@@ -494,6 +501,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt {
     font-family: Georgia, serif;
+    transition: all 0.5s ease;
+}
+
+.post-card-excerpt p {
+    margin-bottom: 1.2em;
+}
+
+.post-card:hover .post-card-excerpt {
+    transform: translateY(-4px);
 }
 
 .post-card-meta {
@@ -643,6 +659,14 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding-bottom: 44px;
     }
 
+    .post-card-large:hover .post-card-header {
+        transform: none;
+    }
+
+    .post-card-large:hover .post-card-excerpt {
+        transform: none;
+    }
+
     .post-card-large .post-card-header {
         margin-top: -7px;
     }
@@ -650,6 +674,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-large .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
+        margin-bottom: 0;
     }
 
     .post-card-large .post-card-image {
@@ -664,6 +689,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-content {
         flex: 0 1 373px;
+        transition: all 0.5s ease;
+    }
+
+    .post-card-large:hover .post-card-content {
+        transform: translateX(-6px);
     }
 
     .post-card-large h2 {
@@ -734,7 +764,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-header {
     position: relative;
     margin: 0 -44px;
-    padding: 63px 234px 20px;
+    padding: 63px 214px 20px;
     background: #fff;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -804,7 +834,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-image img {
     width: 100%;
-    height: 33vw;
+    height: 38vw;
     min-height: 540px;
     object-fit: cover;
 }
@@ -828,7 +858,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 190px;
+    padding: 0 170px;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
@@ -1425,7 +1455,6 @@ Usage (In Ghost editor):
     padding: 4vw 0 4vw 0;
     max-width: 700px;
     border-top: 1px solid color(var(--lightgrey) l(+10%));
-    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 /* 7.2.1 Single Author Byline
@@ -1640,6 +1669,10 @@ Usage (In Ghost editor):
 /* 7.4. Related posts
 /* ---------------------------------------------------------- */
 
+.read-next {
+    border-top: 1px solid color(var(--lightgrey) l(+10%));
+}
+
 .read-next-feed {
     display: flex;
     flex-wrap: wrap;
@@ -1653,7 +1686,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 20px 40px;
+    margin: 0 20px 80px;
     padding: 25px;
     color: #fff;
     background: var(--darkgrey) center center;
@@ -1841,7 +1874,7 @@ Usage (In Ghost editor):
 .floating-header-title {
     flex: 1;
     overflow: hidden;
-    margin: 0;
+    margin: 0 20px 0 0;
     color: #2e2e2e;
     font-size: 1.6rem;
     line-height: 1.3em;
@@ -1980,10 +2013,6 @@ Usage (In Ghost editor):
     .floating-header-logo a {
         color: #2e2e2e;
     }
-    .floating-header-title,
-    .floating-header-divider {
-        visibility: hidden;
-    }
 }
 
 @media (max-width: 450px) {
@@ -2007,6 +2036,7 @@ Usage (In Ghost editor):
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.25em;
     line-height: 1.5em;
+    letter-spacing: -0.1px;
     margin: -0.3em 0 2.0em;
     color: color(var(--midgrey) l(-35%));
 }
