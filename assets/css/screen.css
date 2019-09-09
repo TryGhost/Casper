@@ -510,10 +510,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all 0.5s ease;
 }
 
-.post-card:hover .post-card-header {
-    transform: translateY(-3px);
-}
-
 .post-card-title {
     margin: 0.1em 0 0.2em;
 }
@@ -537,10 +533,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt p {
     margin-bottom: 1.2em;
-}
-
-.post-card:hover .post-card-excerpt {
-    transform: translateY(-3px);
 }
 
 .post-card-meta {
@@ -691,14 +683,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         min-height: 300px;
     }
 
-    .post-card-large:hover .post-card-header {
-        transform: none;
-    }
-
-    .post-card-large:hover .post-card-excerpt {
-        transform: none;
-    }
-
     .post-card-large .post-card-header {
         margin-top: -7px;
     }
@@ -722,10 +706,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-large .post-card-content {
         flex: 0 1 363px;
         transition: all 0.5s ease;
-    }
-
-    .post-card-large:hover .post-card-content {
-        transform: translateX(-5px);
     }
 
     .post-card-large h2 {
