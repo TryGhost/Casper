@@ -515,7 +515,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-tags + .post-card-title,
-.post-card:not(.no-image) .post-card-title {
+.post-card:not(.no-image):not(.post-card-large) .post-card-title {
     margin-top: 0.6em;
 }
 
@@ -708,12 +708,12 @@ make sure this only happens on large viewports / desktop-ish devices.
         transition: all 0.5s ease;
     }
 
-    .post-card-large h2 {
+    .post-card-large .post-card-title {
         font-size: 2.9rem;
         margin-top: 0.1em;
     }
 
-    .post-card-large .post-card-tags + h2 {
+    .post-card-large .post-card-tags + .post-card-title {
         margin-top: 0.8em;
     }
 
