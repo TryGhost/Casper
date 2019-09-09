@@ -419,7 +419,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     min-height: 240px;
     background-size: cover;
     transition: all 0.5s ease;
-    /* border-bottom: 1px solid color(var(--lightgrey) l(+10%)); */
 }
 
 .post-card:before,
@@ -444,10 +443,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card:hover:after {
     right: 0%;
 }
-
-/* .post-card:hover {
-    border-bottom-color: var(--lightgrey);
-} */
 
 .post-card-image-link {
     position: relative;
