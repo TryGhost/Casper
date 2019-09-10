@@ -91,7 +91,7 @@ body {
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
-@media (min-width: 900px) {
+@media (min-width: 1170px) {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
@@ -742,9 +742,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 
 /* Adjust some margins for smaller screens */
-@media (max-width: 720px) {
+@media (max-width: 1170px) {
     .post-card {
-        margin: 0 20px 7vw;
+        margin: 0 20px 5vw;
     }
 }
 @media (max-width: 650px) {
@@ -867,8 +867,8 @@ make sure this only happens on large viewports / desktop-ish devices.
         border-radius: 0;
     }
     .post-full-image img {
-        height: 520px;
-        min-height: 520px;
+        height: 480px;
+        min-height: 480px;
     }
 }
 
