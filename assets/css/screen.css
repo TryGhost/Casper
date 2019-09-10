@@ -155,17 +155,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 9vw 4vw 10vw;
+    padding: 9vw 4vw 12vw;
     min-height: 200px;
     max-height: 450px;
     text-align: center;
+}
+
+.site-nav + .site-header-content {
+    padding: 8vw 4vw 13vw;
 }
 
 .site-title {
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 3.8rem;
+    font-size: 4.5rem;
     font-weight: 700;
 }
 
@@ -181,6 +185,12 @@ body {
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .site-header-content {
+        padding-bottom: 9vw;
+    }
 }
 
 @media (max-width: 500px) {
@@ -728,6 +738,10 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin-top: 0.8em;
     }
 
+    .post-card-large .static-avatar {
+        margin-left: -5px;
+    }
+
     .post-card-large p {
         font-size: 1.8rem;
         line-height: 1.55em;
@@ -753,6 +767,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin: 0 20px 5vw;
     }
 }
+
 @media (max-width: 650px) {
     .post-feed {
         padding-top: 5vw;
@@ -782,12 +797,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     background: #fff;
 }
 
-.post-full {
-    position: relative;
-    z-index: 50;
-}
-/* ^ Required to make .post-full-content:before/after z-index stacking work */
-
 .post-full-header {
     position: relative;
     margin: 0 auto;
@@ -795,24 +804,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     background: #fff;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-}
-
-@media (max-width: 1170px) {
-    .post-full-header {
-        padding: 20px 11vw;
-    }
-}
-
-@media (max-width: 800px) {
-    .post-full-header {
-        padding: 20px 5vw;
-    }
-}
-
-@media (max-width: 500px) {
-    .post-full-header {
-        padding: 0 0 15px;
-    }
 }
 
 .post-full-meta {
@@ -825,11 +816,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     text-transform: uppercase;
     margin-bottom: 40px;
 }
-@media (max-width: 500px) {
-    .post-full-meta {
-        margin-bottom: 20px;
-    }
-}
 
 .post-full-meta a {
     color: var(--darkgrey);
@@ -839,6 +825,31 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: var(--midgrey);
     font-weight: 400;
     text-transform: none;
+}
+
+@media (max-width: 1170px) {
+    .post-full-header {
+        padding-top: 20px;
+        padding-right: 11vw;
+        padding-left: 11vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-full-header {
+        padding-right: 5vw;
+        padding-left: 5vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .post-full-header {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .post-full-meta {
+        margin-bottom: 20px;
+    }
 }
 
 .post-full-title {
@@ -853,7 +864,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 calc(-100vw + 1088px) -172px;
+    margin: 0 calc((1088px - 110vw) / 2) -172px;
     background: var(--lightgrey) center center;
     overflow: hidden;
 }
@@ -1336,10 +1347,10 @@ Usage (In Ghost editor):
 .subscribe-form {
     margin: 1.5em 0;
     padding: 6.5vw 7vw 7vw;
-    border: color(var(--whitegrey) l(+2%)) 1px solid;
+    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
+    border-bottom: color(var(--lightgrey) l(+10%)) 1px solid;
     text-align: center;
     background: color(var(--whitegrey) l(+4%));
-    border-radius: 7px;
 }
 
 .subscribe-form-title {
@@ -1455,6 +1466,11 @@ Usage (In Ghost editor):
     padding: 4vw 0 4vw 0;
     max-width: 700px;
     border-top: 1px solid color(var(--lightgrey) l(+10%));
+}
+
+.subscribe-form + .post-full-footer {
+    margin-top: 0;
+    border-top: none;
 }
 
 /* 7.2.1 Single Author Byline
@@ -1691,7 +1707,7 @@ Usage (In Ghost editor):
     color: #fff;
     background: var(--darkgrey) center center;
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 2px;
     box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
 }
 
@@ -1704,7 +1720,7 @@ Usage (In Ghost editor):
     left: 0;
     display: block;
     background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
-    border-radius: 5px;
+    border-radius: 2px;
 
     backdrop-filter: blur(2px);
 }
