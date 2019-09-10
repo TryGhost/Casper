@@ -91,18 +91,19 @@ body {
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
-@media (min-width: 1170px) {
+@media (min-width: 900px) {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
         padding: 44px 22px 0;
-        margin: -88px -44px 0;
+        margin: -88px 0 0;
         background: #fff;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
     .home-template .site-nav {
         position: relative;
+        padding: 0 44px;
         bottom: 80px;
     }
 }
@@ -784,21 +785,14 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-header {
     position: relative;
-    margin: 0 -44px;
-    padding: 63px 214px 20px;
+    margin: 0 auto;
+    padding: 63px 170px 20px;
     background: #fff;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
-@media (max-width: 1170px) {
-    .post-full-header {
-        margin: 0 auto;
-        padding: 20px 7vw;
-        max-width: calc(700px + 14vw);
-    }
-}
 
-@media (max-width: 800px) {
+@media (max-width: 1170px) {
     .post-full-header {
         padding: 20px 7vw;
         max-width: calc(700px + 14vw);
@@ -863,18 +857,19 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 0 -6vw;
+        margin: 0 -10vw -130px;
         border-radius: 0;
     }
     .post-full-image img {
-        height: 480px;
-        min-height: 480px;
+        height: 580px;
+        min-height: 580px;
     }
 }
 
 @media (max-width: 800px) {
     .post-full-image img {
         height: 400px;
+        min-height: 400px;
     }
 }
 
