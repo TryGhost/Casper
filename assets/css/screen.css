@@ -429,6 +429,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     margin: 0 22px 80px;
     padding: 0 0 15px;
     min-height: 240px;
