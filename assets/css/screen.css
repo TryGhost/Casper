@@ -953,14 +953,16 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: #000;
+    color: var(--darkgrey);
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: var(--darkgrey) 0 -1px 0 inset;
+    transition: all 0.2s ease;
 }
 
 .post-full-content a:hover {
     color: var(--blue);
     text-decoration: none;
+    box-shadow: var(--blue) 0 -1px 0 inset;
 }
 
 .post-full-content strong,
@@ -1336,10 +1338,11 @@ Usage (In Ghost editor):
 .subscribe-form {
     margin: 1.5em 0;
     padding: 6.5vw 7vw 7vw;
-    border-top: color(var(--lightgrey) l(+10%)) 1px solid;
+    border: color(var(--lightgrey) l(+10%)) 1px solid;
     border-bottom: color(var(--lightgrey) l(+10%)) 1px solid;
     text-align: center;
     background: color(var(--whitegrey) l(+4%));
+    border-radius: 3px;
 }
 
 .subscribe-form-title {
