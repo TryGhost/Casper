@@ -74,7 +74,7 @@ body {
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1040px;
+    max-width: 1088px;
     width: 100%;
 }
 
@@ -103,7 +103,6 @@ body {
     }
     .home-template .site-nav {
         position: relative;
-        padding: 0 44px;
         bottom: 80px;
     }
 }
@@ -241,6 +240,12 @@ body {
     }
     .nav li:last-of-type {
         padding-right: 20px;
+    }
+}
+
+@media (min-width: 900px) {
+    .site-nav {
+        padding: 0 44px;
     }
 }
 
@@ -786,7 +791,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-header {
     position: relative;
     margin: 0 auto;
-    padding: 63px 170px 20px;
+    padding: 63px 194px 20px;
     background: #fff;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -794,8 +799,13 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-header {
-        padding: 20px 7vw;
-        max-width: calc(700px + 14vw);
+        padding: 20px 11vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-full-header {
+        padding: 20px 5vw;
     }
 }
 
@@ -843,7 +853,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 calc(-100vw + 1040px) -172px;
+    margin: 0 calc(-100vw + 1088px) -172px;
     background: var(--lightgrey) center center;
     overflow: hidden;
 }
@@ -876,7 +886,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 170px;
+    padding: 0 194px;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
@@ -886,43 +896,15 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-content {
-        padding: 0 7vw;
-        max-width: calc(700px + 14vw);
+        padding: 0 11vw;
     }
 }
 @media (max-width: 800px) {
     .post-full-content {
         font-size: 1.8rem;
+        padding: 0 5vw;
     }
 }
-
-/* .post-full-content:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(-5deg);
-}
-
-.post-full-content:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(5deg);
-} */
 
 .no-image .post-full-content {
     padding-top: 0;
@@ -999,10 +981,10 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content video {
     display: block;
     margin: 1.5em auto;
-    max-width: 1040px;
+    max-width: 1088px;
     height: auto;
 }
-@media (max-width: 1040px) {
+@media (max-width: 1088px) {
     .post-full-content img,
     .post-full-content video {
         width: 100%;
@@ -2047,7 +2029,6 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 700px;
 }
 
 .post-template .post-content > p:first-child {
@@ -2069,7 +2050,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-width-wide .kg-image {
-    max-width: 1040px;
+    max-width: 1088px;
 }
 
 .post-full-content .kg-width-full .kg-image {
@@ -2116,7 +2097,7 @@ Usage (In Ghost editor):
 }
 
 
-@media (max-width: 1040px) {
+@media (max-width: 1088px) {
     .post-full-content .kg-width-full .kg-image {
         width: 100vw;
     }
@@ -2125,7 +2106,7 @@ Usage (In Ghost editor):
 .kg-gallery-container {
     display: flex;
     flex-direction: column;
-    max-width: 1040px;
+    max-width: 1088px;
     width: 100vw;
 }
 
