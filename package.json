@@ -2,14 +2,24 @@
     "name": "casper",
     "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
     "demo": "https://demo.ghost.io",
-    "version": "1.3.6",
+    "version": "2.11.1",
     "engines": {
-        "ghost": ">=0.9.0 <1.0.0"
+        "ghost": ">=2.0.0",
+        "ghost-api": "v2"
     },
     "license": "MIT",
     "screenshots": {
         "desktop": "assets/screenshot-desktop.jpg",
         "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip",
+        "test": "gscan .",
+        "pretest": "gulp build",
+        "preship": "yarn test",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+        "postship": "git fetch && gulp release"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -20,17 +30,57 @@
         "type": "theme",
         "categories": [
             "Minimal",
-            "Personal Blogs"
+            "Magazine"
         ]
     },
     "keywords": [
         "ghost",
-        "theme"
+        "theme",
+        "ghost-theme"
     ],
     "repository": {
         "type": "git",
         "url": "https://github.com/TryGhost/Casper.git"
     },
     "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors"
+    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "devDependencies": {
+        "@tryghost/release-utils": "0.3.2",
+        "autoprefixer": "9.6.1",
+        "beeper": "1.1.1",
+        "cssnano": "4.1.10",
+        "gscan": "2.7.0",
+        "gulp": "4.0.2",
+        "gulp-livereload": "4.0.1",
+        "gulp-postcss": "8.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-zip": "4.2.0",
+        "postcss-color-function": "4.1.0",
+        "postcss-custom-properties": "8.0.11",
+        "postcss-easy-import": "3.0.0",
+        "pump": "3.0.0"
+    },
+    "config": {
+        "posts_per_page": 25,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1000
+            },
+            "xl": {
+                "width": 2000
+            }
+        }
+    }
 }

@@ -13,9 +13,16 @@ results
 
 npm-debug.log
 node_modules
+package-lock.json
 
 .idea/*
 *.iml
 projectFilesBackup
 
 .DS_Store
+
+dist/
+
+config.json
+changelog.md
+changelog.md.bk
