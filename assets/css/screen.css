@@ -764,7 +764,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* Adjust some margins for smaller screens */
 @media (max-width: 1170px) {
     .post-card {
-        margin: 0 20px 5vw;
+        margin-bottom: 5vw;
     }
 }
 
@@ -773,7 +773,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding-top: 5vw;
     }
     .post-card {
-        margin: 0 20px 10vw;
+        margin-bottom: 10vw;
     }
 }
 
@@ -1828,6 +1828,12 @@ Usage (In Ghost editor):
     color: #fff;
 }
 
+@media (max-width: 1170px) {
+    .read-next-card {
+        margin-bottom: 5vw;
+    }
+}
+
 
 /* 7.5. Floating Header
 /* ---------------------------------------------------------- */
@@ -1900,66 +1906,6 @@ Usage (In Ghost editor):
     white-space: nowrap;
 }
 
-.floating-header-share {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-left: 2%;
-    margin-right: 8px;
-    font-size: 1.3rem;
-    line-height: 1;
-}
-
-.floating-header-share a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.floating-header-share svg {
-    width: auto;
-    fill: #fff;
-}
-
-.floating-header-share-tw svg {
-    height: 20px;
-    fill: #33b1ff;
-}
-
-.floating-header-share-fb svg {
-    height: 17px;
-    fill: #005e99;
-}
-
-.floating-header-share-label {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    margin-right: 12px;
-    color: rgba(0,0,0,0.7);
-    font-weight: 500;
-}
-
-.floating-header-share-label svg {
-    margin: 0 5px 0 10px;
-    width: 18px;
-    height: 18px;
-    stroke: rgba(0,0,0,0.7);
-    transform: rotate(90deg);
-}
-
-.floating-header-share-tw,
-.floating-header-share-fb {
-    display: block;
-    align-items: center;
-    width: 54px;
-    height: 60px;
-    color: #fff;
-    line-height: 48px;
-    text-align: center;
-    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
 .progress {
     position: absolute;
     right: 0;
@@ -2011,15 +1957,6 @@ Usage (In Ghost editor):
     .floating-header-logo {
         font-size: 1.7rem;
     }
-    .floating-header-share {
-        margin-right: calc(5vw - 14px);
-    }
-    .floating-header-share-tw,
-    .floating-header-share-fb {
-        width: 42px;
-        height: 42px;
-        line-height: 38px;
-    }
 }
 
 @media (max-width: 800px) {
@@ -2028,12 +1965,6 @@ Usage (In Ghost editor):
     }
     .floating-header-logo a {
         color: #2e2e2e;
-    }
-}
-
-@media (max-width: 450px) {
-    .floating-header-share-label {
-        display: none;
     }
 }
 
@@ -2401,7 +2332,10 @@ Usage (In Ghost editor):
 }
 
 .error-message {
+    padding-bottom: 5vw;
+    margin-bottom: -3vw;
     text-align: center;
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 .error-code {
@@ -2482,15 +2416,15 @@ Usage (In Ghost editor):
 .subscribe-overlay-title {
     display: inline-block;
     margin: 0 0 10px 0;
-    font-size: 6rem;
+    font-size: 5.2rem;
     line-height: 1.15em;
 }
 
 .subscribe-overlay-description {
     margin: 0 auto 50px;
-    max-width: 650px;
+    max-width: 620px;
     font-family: Georgia, serif;
-    font-size: 3rem;
+    font-size: 2.4rem;
     line-height: 1.3em;
     font-weight: 300;
     opacity: 0.8;
@@ -2615,6 +2549,7 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 0 44px;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
 }
