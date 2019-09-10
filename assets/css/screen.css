@@ -429,35 +429,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     margin: 0 22px 80px;
     padding: 0 0 15px;
     min-height: 240px;
     background-size: cover;
     transition: all 0.5s ease;
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
-.post-card:before,
-.post-card:after {
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 1px;
-    background: color(var(--lightgrey) l(+10%));
-    z-index: 9999;
-}
-
-.post-card:after {
-    right: 100%;
-    background: color(var(--lightgrey) l(-5%));
-    transition: all 0.5s ease;
-}
-
-.post-card:hover:after {
-    right: 0%;
+.post-card:hover {
+    border-color: color(var(--lightgrey) l(-5%));
 }
 
 .post-card-image-link {
@@ -490,6 +471,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-content-link:hover {
     text-decoration: none;
+}
+
+@media (min-width: 1170px) {
+    .no-image {
+        border-top: 1px solid color(var(--lightgrey) l(+10%));
+        padding-top: 20px;
+    }
 }
 
 .no-image .post-card-content-link {
