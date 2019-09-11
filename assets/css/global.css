@@ -431,14 +431,14 @@ h5,
 h6 {
     margin-top: 0;
     line-height: 1.15;
-    font-weight: 700;
+    font-weight: 600;
     text-rendering: optimizeLegibility;
 }
 
 h1 {
     margin: 0 0 0.5em 0;
     font-size: 4.5rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 @media (max-width: 500px) {
     h1 {

@@ -4,7 +4,11 @@
 {{#tag}}
 {{> header background=feature_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
-        {{> "site-nav"}}
+        {{#if @site.logo}}
+            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+        {{else}}
+            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+        {{/if}}
         <div class="site-header-content">
             <h1 class="site-title">{{name}}</h1>
             <h2 class="site-description">
@@ -15,6 +19,7 @@
                 {{/if}}
             </h2>
         </div>
+        {{> "site-nav"}}
     </div>
 </header>
 {{/tag}}

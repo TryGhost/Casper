@@ -7,7 +7,11 @@
 
 {{> header background=cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
-        {{> "site-nav"}}
+        {{#if @site.logo}}
+            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+        {{else}}
+            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+        {{/if}}
         <div class="site-header-content">
             {{#if profile_image}}
                 <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
@@ -35,6 +39,7 @@
                 <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
             </div>
         </div>
+        {{> "site-nav"}}
     </div>
 </header>
 {{/author}}

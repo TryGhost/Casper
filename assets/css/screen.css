@@ -74,7 +74,7 @@ body {
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1088px;
+    max-width: 1040px;
     width: 100%;
 }
 
@@ -95,15 +95,13 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        padding: 44px 22px 0;
-        margin: -88px 0 0;
+        padding: 44px 0 0;
         background: #fff;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
     .home-template .site-nav {
         position: relative;
-        bottom: 80px;
     }
 }
 
@@ -155,10 +153,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 9vw 4vw 12vw;
+    padding: 5vw 0;
     min-height: 200px;
-    max-height: 450px;
+    max-height: 340px;
     text-align: center;
+}
+
+.home-header {
+    margin-top: 40px;
 }
 
 .site-nav + .site-header-content {
@@ -169,8 +171,8 @@ body {
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 4.5rem;
-    font-weight: 700;
+    font-size: 4.2rem;
+    font-weight: 600;
 }
 
 .site-logo {
@@ -250,12 +252,6 @@ body {
     }
     .nav li:last-of-type {
         padding-right: 20px;
-    }
-}
-
-@media (min-width: 900px) {
-    .site-nav {
-        padding: 0 44px;
     }
 }
 
@@ -420,7 +416,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -20px;
+    margin: 0 -22px;
     padding: 40px 0 0 0;
 }
 
@@ -430,9 +426,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 22px 80px;
-    padding: 0 0 15px;
-    min-height: 240px;
+    margin: 0 22px 44px;
+    padding: 0 0 18px;
+    min-height: 220px;
     background-size: cover;
     transition: all 0.5s ease;
     border-bottom: 1px solid color(var(--lightgrey) l(+10%));
@@ -440,6 +436,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card:hover {
     border-color: color(var(--lightgrey) l(-5%));
+}
+
+.no-image .post-card-header {
+    margin-top: -4px;
 }
 
 .post-card-image-link {
@@ -474,13 +474,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-decoration: none;
 }
 
-@media (min-width: 1170px) {
-    .no-image {
-        border-top: 1px solid color(var(--lightgrey) l(+10%));
-        padding-top: 20px;
-    }
-}
-
 .no-image .post-card-content-link {
     padding: 0;
 }
@@ -488,12 +481,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-tags {
     display: inline-block;
     margin-bottom: 4px;
-    color: var(--darkgrey);
     font-size: 1.2rem;
     line-height: 1.15em;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    color: color(var(--midgrey) l(-2%));
+}
+
+.no-image .post-card-tags {
+    margin-top: -4px;
 }
 
 .post-card-tags:after {
@@ -501,24 +498,29 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 400;
 }
 
+.reading-time-divider {
+    color: color(var(--midgrey) l(+10%));
+    font-weight: 300;
+}
+
 .reading-time {
     display: inline-block;
-    color: color(var(--midgrey) l(+10%));
-    font-size: 1.2rem;
+    color: color(var(--midgrey) l(+12%));
+    /* font-size: 1.2rem;
     line-height: 1.15em;
     font-weight: 400;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
+    text-transform: uppercase; */
 }
 
 .post-card-title {
-    margin: 0.1em 0 0.2em;
+    margin: 0.3em 0;
     transition: all 0.5s ease;
+    line-height: 1.25em;
 }
 
-.post-card-tags + .post-card-title,
-.post-card:not(.no-image):not(.post-card-large) .post-card-title {
-    margin-top: 0.6em;
+.no-image .post-card-title {
+    margin-top: 0;
 }
 
 .post-card-content {
@@ -531,15 +533,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-excerpt {
     font-family: Georgia, serif;
     transition: all 0.5s ease;
-}
-
-.post-card-excerpt p {
-    margin-bottom: 1.2em;
-}
-
-.post-card:not(.post-card-large):hover .post-card-title,
-.post-card:not(.post-card-large):hover .post-card-excerpt {
-    transform: translateY(-3px);
+    color: color(var(--midgrey) l(-15%));
 }
 
 .post-card-meta {
@@ -673,6 +667,31 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
+.single-author-byline {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: color(var(--midgrey) l(-2%));
+}
+
+.single-author-byline time {
+    color: color(var(--midgrey) l(+5%));
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.single-author {
+    display: flex;
+    align-items: center;
+}
+
+.single-author-name {
+    display: inline-block;
+}
+
 /* Special Styling for home page grid (below):
 
 The first post in the list is styled to be bigger than the others and take over
@@ -686,7 +705,8 @@ make sure this only happens on large viewports / desktop-ish devices.
         flex: 1 1 100%;
         flex-direction: row;
         padding-bottom: 44px;
-        min-height: 300px;
+        min-height: 250px;
+        /* border-bottom: none; */
     }
 
     .post-card-large .post-card-header {
@@ -710,21 +730,13 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content {
-        flex: 0 1 363px;
+        flex: 0 1 360px;
         transition: all 0.5s ease;
-    }
-
-    .post-card-large:hover .post-card-content {
-        transform: translateX(-4px);
     }
 
     .post-card-large .post-card-title {
         font-size: 2.9rem;
-        margin-top: 0.1em;
-    }
-
-    .post-card-large .post-card-tags + .post-card-title {
-        margin-top: 0.8em;
+        margin: 0 0 0.8em;
     }
 
     .post-card-large .static-avatar {
@@ -1132,7 +1144,7 @@ Usage (In Ghost editor):
 .post-full-content h1 {
     margin: 0.5em 0 0.4em;
     font-size: 4.2rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.25em;
 }
 .post-full-content p + h1 {
@@ -1148,7 +1160,7 @@ Usage (In Ghost editor):
 .post-full-content h2 {
     margin: 0.5em 0 0.4em;
     font-size: 3.2rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.25em;
 }
 .post-full-content p + h2 {
@@ -1165,7 +1177,7 @@ Usage (In Ghost editor):
 .post-full-content h3 {
     margin: 0.5em 0 0.2em;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.3em;
 }
 .post-full-content h2 + h3 {
@@ -1182,7 +1194,7 @@ Usage (In Ghost editor):
 .post-full-content h4 {
     margin: 0.5em 0 0.2em;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 .post-full-content h2 + h4 {
     margin-top: 0.7em;

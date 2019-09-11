@@ -21,40 +21,68 @@
         <a class="post-card-content-link" href="{{url}}">
 
             <header class="post-card-header">
-                {{#if primary_tag}}
+                {{!-- {{#if primary_tag}}
                     <span class="post-card-tags">{{primary_tag.name}}</span>
+                    <span class="reading-time-divider">–</span>
                 {{/if}}
+                <span class="reading-time">{{reading_time}}</span> --}}
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
 
             <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
+                {{#if feature_image}}
+                    <p>{{excerpt words="32"}}</p>
+                {{else}}
+                    <p>{{excerpt words="48"}}</p>
+                {{/if}}
             </section>
 
         </a>
 
         <footer class="post-card-meta">
 
-            <ul class="author-list">
-            {{#foreach authors}}
-                <li class="author-list-item">
+            {{#has author="count:>1"}}
+                <ul class="author-list">
+                    {{#foreach authors}}
+                        <li class="author-list-item">
 
-                    <div class="author-name-tooltip">
-                        {{name}}
-                    </div>
+                            <div class="author-name-tooltip">
+                                {{name}}
+                            </div>
 
-                    {{#if profile_image}}
+                            {{#if profile_image}}
+                                <a href="{{url}}" class="static-avatar">
+                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                </a>
+                            {{else}}
+                                <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                            {{/if}}
+                        </li>
+                    {{/foreach}}
+                </ul>
+            {{else}}
+                <div class="single-author">
+                    
+                    {{#primary_author}}
+                        {{#if profile_image}}
                         <a href="{{url}}" class="static-avatar">
                             <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
                         </a>
-                    {{else}}
+                        {{else}}
                         <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-            </ul>
+                        {{/if}}
+                    {{/primary_author}}
 
-            <span class="reading-time">{{reading_time}}</span>
+                    <div class="single-author-byline">
+                        {{#primary_author}}<span class="single-author-name">{{name}}</span>{{/primary_author}}
+                        <div>
+                            <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                            <span class="reading-time">– {{reading_time}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            {{/has}}
 
         </footer>
 
