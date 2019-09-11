@@ -22,9 +22,12 @@ into the {body} of the default.hbs template --}}
                     {{#primary_tag}}
                     <a href="{{url}}">{{name}}</a> <span class="date-divider">—</span>
                     {{/primary_tag}}
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
+                {{#if custom_excerpt}}
+                    <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
+                {{/if}}
             </header>
 
             {{#if feature_image}}
