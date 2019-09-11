@@ -809,7 +809,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 40px;
 }
 
 .post-full-meta a {
@@ -859,7 +858,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 44px -6vw;
+    margin: 5vw 0 44px;
     background: var(--lightgrey) center center;
     overflow: hidden;
 }
@@ -872,7 +871,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 0 -10vw -130px;
+        margin: 22px -5vw;
         border-radius: 0;
     }
     .post-full-image img {
@@ -988,10 +987,10 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content video {
     display: block;
     margin: 1.5em auto;
-    max-width: 1088px;
+    max-width: 1040px;
     height: auto;
 }
-@media (max-width: 1088px) {
+@media (max-width: 1040px) {
     .post-full-content img,
     .post-full-content video {
         width: 100%;
@@ -1994,7 +1993,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-width-wide .kg-image {
-    max-width: 1088px;
+    max-width: 1040px;
 }
 
 .post-full-content .kg-width-full .kg-image {
@@ -2041,7 +2040,7 @@ Usage (In Ghost editor):
 }
 
 
-@media (max-width: 1088px) {
+@media (max-width: 1040px) {
     .post-full-content .kg-width-full .kg-image {
         width: 100vw;
     }
@@ -2050,7 +2049,7 @@ Usage (In Ghost editor):
 .kg-gallery-container {
     display: flex;
     flex-direction: column;
-    max-width: 1088px;
+    max-width: 1040px;
     width: 100vw;
 }
 
