@@ -706,7 +706,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         flex-direction: row;
         padding-bottom: 44px;
         min-height: 250px;
-        /* border-bottom: none; */
     }
 
     .post-card-large .post-card-header {
