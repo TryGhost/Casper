@@ -509,7 +509,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-title {
-    margin: 0.3em 0;
+    margin: 0.3em 0 0.6em;
     transition: all 0.5s ease;
     line-height: 1.25em;
 }
@@ -528,7 +528,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-excerpt {
     font-family: Georgia, serif;
     transition: all 0.5s ease;
-    color: color(var(--midgrey) l(-15%));
+    color: color(var(--darkgrey) l(+10%));
 }
 
 .post-card-meta {
@@ -808,7 +808,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: var(--midgrey);
     font-size: 1.4rem;
     font-weight: 600;
+    line-height: 1.4em;
     text-transform: uppercase;
+    margin-bottom: 4px;
 }
 
 .post-full-meta a {
@@ -817,13 +819,13 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-meta-date {
     color: var(--midgrey);
+    font-size: 1.3rem;
     font-weight: 400;
-    text-transform: none;
 }
 
 @media (max-width: 1170px) {
     .post-full-header {
-        padding-top: 20px;
+        padding-top: 44px;
         padding-right: 11vw;
         padding-left: 11vw;
     }
@@ -838,16 +840,14 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 500px) {
     .post-full-header {
+        padding-top: 20px;
         padding-right: 0;
         padding-left: 0;
-    }
-    .post-full-meta {
-        margin-bottom: 20px;
     }
 }
 
 .post-full-title {
-    margin: 0;
+    margin-bottom: 0.2em;
     color: color(var(--darkgrey) l(-5%));
 }
 
@@ -861,6 +861,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 5vw 0 44px;
     background: var(--lightgrey) center center;
     overflow: hidden;
+    border-radius: 3px;
 }
 
 .post-full-image img {
@@ -1979,8 +1980,12 @@ Usage (In Ghost editor):
     font-size: 1.25em;
     line-height: 1.5em;
     letter-spacing: -0.1px;
-    margin: 0.4em 0 2.0em;
-    color: color(var(--midgrey) l(-35%));
+    margin: 1.3em 0 2.0em;
+}
+
+.post-full-image + .post-full-content .post-content > p:first-child {
+    font-family: Georgia, serif;
+    margin-top: 0;
 }
 
 .post-full-content .kg-image {
