@@ -426,7 +426,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 22px 44px;
+    margin: 0 22px 60px;
     padding: 0 0 18px;
     min-height: 220px;
     background-size: cover;
@@ -506,11 +506,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .reading-time {
     display: inline-block;
     color: color(var(--midgrey) l(+12%));
-    /* font-size: 1.2rem;
-    line-height: 1.15em;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-transform: uppercase; */
 }
 
 .post-card-title {
@@ -704,8 +699,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-large {
         flex: 1 1 100%;
         flex-direction: row;
-        padding-bottom: 44px;
+        padding-bottom: 0px;
         min-height: 250px;
+        border-bottom: 0;
     }
 
     .post-card-large .post-card-header {
@@ -800,8 +796,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-header {
     position: relative;
     margin: 0 auto;
-    padding: 63px 194px 20px;
-    background: #fff;
+    padding: 5vw 170px 0;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
@@ -864,15 +859,14 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 calc((1088px - 110vw) / 2) -172px;
+    margin: 44px -6vw;
     background: var(--lightgrey) center center;
     overflow: hidden;
 }
 
 .post-full-image img {
     width: 100%;
-    height: 44vw;
-    min-height: 680px;
+    height: 800px;
     object-fit: cover;
 }
 
@@ -897,7 +891,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 194px;
+    padding: 0 170px;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
@@ -1986,7 +1980,7 @@ Usage (In Ghost editor):
     font-size: 1.25em;
     line-height: 1.5em;
     letter-spacing: -0.1px;
-    margin: -0.3em 0 2.0em;
+    margin: 0.4em 0 2.0em;
     color: color(var(--midgrey) l(-35%));
 }
 
