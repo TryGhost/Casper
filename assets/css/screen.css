@@ -817,12 +817,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-header {
     position: relative;
     margin: 0 auto;
-    padding: 88px 170px 0;
+    padding: 50px 170px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
-.post-full-meta {
+.post-full-tags {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -831,16 +831,16 @@ make sure this only happens on large viewports / desktop-ish devices.
     font-weight: 600;
     line-height: 1.4em;
     text-transform: uppercase;
-    margin-bottom: 4px;
 }
 
-.post-full-meta a {
-    color: var(--darkgrey);
+.post-full-tags a {
+    color: color(var(--midgrey) l(-20%));
 }
 
 .post-full-meta-date {
     color: var(--midgrey);
     font-weight: 400;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 1170px) {
@@ -867,14 +867,14 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-title {
-    margin-bottom: 0.2em;
+    margin: 0.4em 0 0.2em;
     color: color(var(--darkgrey) l(-5%));
 }
 
 .post-full-custom-excerpt {
     font-size: 2.5rem;
     line-height: 1.4em;
-    margin: 1.3em 0 -22px;
+    margin: 20px 0 0;
     color: var(--midgrey);
 }
 
@@ -885,7 +885,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 88px 0 66px;
+    margin: 10px 0 50px;
     background: var(--lightgrey) center center;
     overflow: hidden;
     border-radius: 3px;
@@ -1480,17 +1480,15 @@ Usage (In Ghost editor):
 }
 
 
-/* 7.2. Post Footer
+/* 7.2. Byline
 /* ---------------------------------------------------------- */
 
-.post-full-footer {
+.post-full-byline {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2vw auto 0;
-    padding: 4vw 0 4vw 0;
+    margin: 25px auto 0;
     max-width: 700px;
-    border-top: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 .subscribe-form + .post-full-footer {
@@ -1501,61 +1499,43 @@ Usage (In Ghost editor):
 /* 7.2.1 Single Author Byline
 /* ---------------------------------------------------------- */
 
-.author-card {
+.single-byline {
     display: flex;
-    align-items: center;
+    margin-left: -2px;
 }
 
-.author-card .author-profile-image,
-.author-card .avatar-wrapper {
-    margin-right: 15px;
-    width: 60px;
-    height: 60px;
+.single-byline .author-profile-image,
+.single-byline .avatar-wrapper {
+    margin-right: 10px;
+    width: 36px;
+    height: 36px;
+}
+
+.byline-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .author-card-name {
-    margin: 0 0 2px;
+    margin: 2px 0;
     padding: 0;
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 .author-card-name a {
-    color: var(--darkgrey);
-    font-weight: 700;
+    color: color(var(--midgrey) l(-20%));
+    font-weight: 500;
 }
 
 .author-card-name a:hover {
-    text-decoration: none;
+    color: var(--darkgrey);
 }
 
-.author-card-content p {
-    margin: 0;
+.byline-meta {
+    font-size: 1.2rem;
     color: var(--midgrey);
     line-height: 1.3em;
-    margin-bottom: 2px;
-}
-
-.post-full-footer-right {
-    flex-shrink: 0;
-    margin-left: 20px;
-}
-
-.author-card-button {
-    display: block;
-    padding: 9px 16px;
-    border: color(var(--midgrey) l(+20%)) 1px solid;
-    color: var(--midgrey);
-    font-size: 1.2rem;
-    line-height: 1;
-    font-weight: 500;
-    border-radius: 20px;
-    transition: all ease 0.2s;
-}
-
-.author-card-button:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-    text-decoration: none;
 }
 
 /* 7.2.2 Multiple Author Byline
@@ -1597,7 +1577,7 @@ Usage (In Ghost editor):
 .author-card .author-profile-image,
 .author-card .avatar-wrapper {
     position: relative;
-    margin-right: 15px;
+    margin-right: 8px;
 }
 
 .author-list-item .author-card {
@@ -2003,13 +1983,14 @@ Usage (In Ghost editor):
     align-items: center;
 }
 
-.post-full.no-image .post-content > p:first-child {
+/* .post-full.no-image .post-content > p:first-child {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.25em;
     line-height: 1.4em;
     letter-spacing: -0.1px;
-    margin: 1.3em 0 2.0em;
-}
+    color: var(--midgrey);
+    margin: 40px 0 1.5em;
+} */
 
 .post-full-content .kg-image {
     max-width: 100%;

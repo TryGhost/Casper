@@ -18,16 +18,31 @@ into the {body} of the default.hbs template --}}
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
             <header class="post-full-header">
-                <section class="post-full-meta">
+                <section class="post-full-tags">
                     {{#primary_tag}}
-                    <a href="{{url}}">{{name}}</a> <span class="date-divider">—</span>
+                    <a href="{{url}}">{{name}}</a>
                     {{/primary_tag}}
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
+
                 {{#if custom_excerpt}}
                     <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
                 {{/if}}
+
+                <div class="post-full-byline">
+                
+                    {{!-- There are two options for how we display the byline/author-info.
+                                If the post has more than one author, we load a specific template
+                                from includes/byline-multiple.hbs, otherwise, we just use the
+                                default byline. --}}
+                
+                    {{#has author="count:>1"}}
+                    {{> "byline-multiple"}}
+                    {{else}}
+                    {{> "byline-single"}}
+                    {{/has}}
+                
+                </div>
             </header>
 
             {{#if feature_image}}
@@ -62,21 +77,6 @@ into the {body} of the default.hbs template --}}
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
-
-            <footer class="post-full-footer">
-
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{#has author="count:>1"}}
-                    {{> "byline-multiple"}}
-                {{else}}
-                    {{> "byline-single"}}
-                {{/has}}
-
-            </footer>
 
             {{!--
             <section class="post-full-comments">
