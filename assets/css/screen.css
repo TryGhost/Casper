@@ -427,19 +427,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-direction: column;
     overflow: hidden;
     margin: 0 25px 60px;
-    padding: 0 0 18px;
+    padding: 0 0 15px;
     min-height: 220px;
     background-size: cover;
     transition: all 0.5s ease;
-    border-bottom: 1px solid color(var(--lightgrey) l(+5%));
-}
-
-.no-image {
-    min-height: unset;
-}
-
-.no-image .post-card-header {
-    margin-top: -4px;
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 .post-card-image-link {
@@ -474,7 +466,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-decoration: none;
 }
 
-.no-image .post-card-content-link {
+.post-feed .no-image .post-card-header {
+    margin-top: -4px;
+}
+
+.post-feed .no-image .post-card-content-link {
     padding: 0;
 }
 
@@ -498,18 +494,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 400;
 }
 
-.reading-time-divider {
-    color: color(var(--midgrey) l(+12%));
-    font-weight: 300;
-}
-
 .reading-time {
     display: inline-block;
     color: color(var(--midgrey) l(+12%));
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
 }
 
 .post-card-title {
@@ -661,12 +650,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     margin-left: 5px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    line-height: 1.3em;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-    color: color(var(--darkgrey) l(+22%));
+    line-height: 1.4em;
+    color: color(var(--midgrey) l(-10%));
 }
 
 .single-author {
@@ -1471,7 +1458,6 @@ Usage (In Ghost editor):
 .post-full-byline {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 35px 0 0;
     padding-top: 15px;
     border-top: 1px solid color(var(--lightgrey) l(+10%));
@@ -1506,8 +1492,9 @@ Usage (In Ghost editor):
 }
 
 .post-full-byline-meta h4 {
-    font-size: 1.4rem;
     margin: 0 0 3px;
+    font-size: 1.4rem;
+    line-height: 1.4em;
 }
 
 .post-full-byline-meta h4 a {
