@@ -416,26 +416,22 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -22px;
+    margin: 0 -25px;
     padding: 40px 0 0 0;
 }
 
 .post-card {
     position: relative;
-    flex: 1 1 317px;
+    flex: 1 1 301px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 22px 60px;
+    margin: 0 25px 60px;
     padding: 0 0 18px;
     min-height: 220px;
     background-size: cover;
     transition: all 0.5s ease;
-    border-bottom: 1px solid var(--lightgrey);
-}
-
-.post-card:hover {
-    border-color: color(var(--lightgrey) l(-20%));
+    border-bottom: 1px solid color(var(--lightgrey) l(+5%));
 }
 
 .no-image {
@@ -490,7 +486,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: color(var(--midgrey) l(-2%));
+    color: color(var(--darkgrey) l(+22%));
 }
 
 .no-image .post-card-tags {
@@ -503,18 +499,21 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .reading-time-divider {
-    color: color(var(--midgrey) l(+10%));
+    color: color(var(--midgrey) l(+12%));
     font-weight: 300;
 }
 
 .reading-time {
     display: inline-block;
     color: color(var(--midgrey) l(+12%));
+    font-size: 1.2rem;
     font-weight: 400;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
 }
 
 .post-card-title {
-    margin: 0.4em 0 0.6em;
+    margin: 0.4em 0;
     transition: all 0.5s ease;
     line-height: 1.25em;
 }
@@ -534,7 +533,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-family: Georgia, serif;
     transition: all 0.5s ease;
     max-width: 56em;
-    color: color(var(--darkgrey) l(+10%));
+    color: color(var(--darkgrey) l(+22%));
+}
+
+.post-card-excerpt p {
+    margin-bottom: 1.2em;
 }
 
 .post-card-meta {
@@ -613,11 +616,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .static-avatar {
     display: block;
     overflow: hidden;
-    margin: 0;
+    margin: 0 0 0 -5px;
     width: 34px;
     height: 34px;
     border: #fff 2px solid;
     border-radius: 100%;
+}
+
+.author-list-item:nth-child(1) .static-avatar {
+    margin-left: -2px;
 }
 
 .moving-avatar {
@@ -671,22 +678,22 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .single-author-byline {
     display: flex;
     flex-direction: column;
-    margin-left: 6px;
-    font-size: 1.3rem;
+    margin-left: 5px;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.3em;
-    color: color(var(--darkgrey) l(+25%));
-}
-
-.single-author-byline time {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: color(var(--midgrey) l(+12%));
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: color(var(--darkgrey) l(+22%));
 }
 
 .single-author {
     display: flex;
     align-items: center;
+}
+
+.single-author .static-avatar {
+    margin-left: -2px;
 }
 
 .single-author-name {
@@ -739,17 +746,17 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content {
-        flex: 0 1 360px;
+        flex: 0 1 363px;
         transition: all 0.5s ease;
     }
 
     .post-card-large .post-card-title {
         font-size: 3.2rem;
-        margin: 0 0 0.8em;
+        margin-top: 0;
     }
 
-    .post-card-large .static-avatar {
-        margin-left: -5px;
+    .post-card-large .post-card-excerpt p {
+        margin-bottom: 1.5em;
     }
 
     .post-card-large p {
@@ -758,11 +765,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content-link {
-        padding: 0 0 0 44px;
+        padding: 0 0 0 50px;
     }
 
     .post-card-large .post-card-meta {
-        padding: 0 0 0 44px;
+        padding: 0 0 0 50px;
     }
 }
 
