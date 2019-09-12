@@ -114,7 +114,7 @@ body {
     padding-top: 12px;
     padding-bottom: 12px;
     color: #fff;
-    background: linear-gradient(color(var(--darkgrey) l(-6%)), color(var(--darkgrey) l(+2%))) no-repeat center center;
+    background: linear-gradient(color(var(--darkgrey) l(-7%)), color(var(--darkgrey) l(+4%))) no-repeat center center;
     background-size: cover;
 }
 
@@ -153,7 +153,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5vw 3vw;
+    padding: 7vw 3vw;
     min-height: 200px;
     max-height: 340px;
     text-align: center;
@@ -893,6 +893,11 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding: 0 5vw;
     }
 }
+@media (max-width: 500px) {
+    .post-full-custom-excerpt {
+        font-size: 2.0rem;
+    }
+}
 
 .no-image .post-full-content {
     padding-top: 0;
@@ -1248,7 +1253,7 @@ Usage (In Ghost editor):
 /* Some grouped styles for smaller viewports */
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 50px -5vw;
+        margin: 25px -6vw 50px;
         border-radius: 0;
     }
     .post-full-image img {
