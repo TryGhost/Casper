@@ -44,15 +44,16 @@ into the {body} of the default.hbs template --}}
                                     <div class="author-profile-image">{{> "icons/avatar"}}</div>
                                     {{/if}}
                                     <div class="author-info">
-                                        <h2>{{name}}</h2>
-                                        <div class="bio">
-                                            {{#if bio}}
-                                            <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
-                                            {{else}}
+                                        {{#if bio}}
+                                            <div class="bio">
+                                                <h2>{{name}}</h2>
+                                                <p>{{bio}}</p>
+                                                <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                            </div>
+                                        {{else}}
+                                            <h2>{{name}}</h2>
                                             <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                                            {{/if}}
-                                        </div>
+                                        {{/if}}
                                     </div>
                                 </div>
                     

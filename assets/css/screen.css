@@ -1507,13 +1507,13 @@ Usage (In Ghost editor):
 } */
 
 .post-full-byline-meta {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.3em;
     color: var(--midgrey);
 }
 
 .post-full-byline-meta h4 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin: 0 0 3px;
 }
 
@@ -1566,7 +1566,7 @@ Usage (In Ghost editor):
 }
 
 .author-card {
-    padding: 18px 20px 20px;
+    padding: 20px 20px 22px;
 }
 
 .author-card .author-info {
@@ -1580,15 +1580,16 @@ Usage (In Ghost editor):
 }
 
 .author-card .author-info p {
-    margin: 1em 0 0;
-}
-
-.author-card .author-info p:first-of-type {
-    margin-top: 4px;
-}
-
-.author-card .author-info .bio {
+    margin: 4px 0 0;
     color: color(var(--midgrey) l(-10%));
+}
+
+.author-card .author-info .bio h2 {
+    margin-top: 0;
+}
+
+.author-card .author-info .bio p {
+    margin-top: 0.8em;
 }
 
 @media (max-width: 650px) {
@@ -1652,7 +1653,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-wrap: wrap;
     margin: 0 -20px;
-    padding: 80px 0 0 0;
+    padding: 60px 0 0 0;
 }
 
 .read-next-card {
