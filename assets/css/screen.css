@@ -831,9 +831,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-header {
-        padding-top: 44px;
-        padding-right: 11vw;
-        padding-left: 11vw;
+        padding: 50px 11vw;
     }
 }
 
@@ -1260,7 +1258,7 @@ Usage (In Ghost editor):
 /* Some grouped styles for smaller viewports */
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 44px -5vw;
+        margin: 20px -5vw;
         border-radius: 0;
     }
     .post-full-image img {
@@ -1473,8 +1471,7 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 25px auto 0;
-    max-width: 700px;
+    margin: 25px 0 0;
 }
 
 .post-full-byline-content {
@@ -1523,6 +1520,13 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta h4 a:hover {
     color: var(--darkgrey);
+}
+
+@media (min-width: 1170px) {
+    .post-full-byline {
+        margin: 25px auto 0;
+        max-width: 700px;
+    }
 }
 
 .author-list-item .author-card {
@@ -1590,6 +1594,16 @@ Usage (In Ghost editor):
 
 .author-card .author-info .bio p {
     margin-top: 0.8em;
+}
+
+@media (max-width: 1170px) {
+    .author-list-item .author-card {
+        margin-left: -50px;
+    }
+
+    .author-list-item .author-card:before {
+        left: 50px;
+    }
 }
 
 @media (max-width: 650px) {
