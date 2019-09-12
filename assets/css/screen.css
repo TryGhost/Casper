@@ -210,7 +210,7 @@ body {
 
 .site-nav {
     position: relative;
-    z-index: 300;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -616,7 +616,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .static-avatar {
     display: block;
     overflow: hidden;
-    margin: 0 0 0 -5px;
+    margin: 0 0 0 -6px;
     width: 34px;
     height: 34px;
     border: #fff 2px solid;
@@ -625,24 +625,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .author-list-item:nth-child(1) .static-avatar {
     margin-left: -2px;
-}
-
-.moving-avatar {
-    display: block;
-    overflow: hidden;
-    margin: 0 -6px;
-    width: 56px;
-    height: 56px;
-    border: #fff 2px solid;
-    border-radius: 100%;
-    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
-}
-
-@media (min-width: 800px) {
-    .author-list:hover .moving-avatar {
-        margin: 0;
-        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    }
 }
 
 .author-name-tooltip {
@@ -817,7 +799,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-header {
     position: relative;
     margin: 0 auto;
-    padding: 50px 170px;
+    padding: 60px 170px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
@@ -835,6 +817,10 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-tags a {
     color: color(var(--midgrey) l(-20%));
+}
+
+.post-full-tags a:hover {
+    color: var(--darkgrey);
 }
 
 .post-full-meta-date {
@@ -1491,108 +1477,68 @@ Usage (In Ghost editor):
     max-width: 700px;
 }
 
-.subscribe-form + .post-full-footer {
-    margin-top: 0;
-    border-top: none;
-}
-
-/* 7.2.1 Single Author Byline
-/* ---------------------------------------------------------- */
-
-.single-byline {
-    display: flex;
-    margin-left: -2px;
-}
-
-.single-byline .author-profile-image,
-.single-byline .avatar-wrapper {
-    margin-right: 10px;
-    width: 36px;
-    height: 36px;
-}
-
-.byline-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.author-card-name {
-    margin: 2px 0;
-    padding: 0;
-    font-size: 1.3rem;
-}
-
-.author-card-name a {
-    color: color(var(--midgrey) l(-20%));
-    font-weight: 500;
-}
-
-.author-card-name a:hover {
-    color: var(--darkgrey);
-}
-
-.byline-meta {
-    font-size: 1.2rem;
-    color: var(--midgrey);
-    line-height: 1.3em;
-}
-
-/* 7.2.2 Multiple Author Byline
-/* ---------------------------------------------------------- */
-
-.post-full-authors {
+.post-full-byline-content {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
-.post-full-authors-content {
-    margin-bottom: 20px;
+.post-full-byline-content .author-list {
+    justify-content: flex-start;
+    padding: 0 12px 0 0;
 }
 
-.post-full-authors-content p {
-    margin-bottom: 0;
+.author-avatar {
+    display: block;
+    overflow: hidden;
+    margin: 0 -4px;
+    width: 40px;
+    height: 40px;
+    border: #fff 2px solid;
+    border-radius: 100%;
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
+}
+
+/* @media (min-width: 800px) {
+    .author-list:hover .moving-avatar {
+        margin: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+} */
+
+.post-full-byline-meta {
+    font-size: 1.2rem;
+    line-height: 1.3em;
     color: var(--midgrey);
-    font-size: 1.4rem;
-    letter-spacing: 0.2px;
-    text-align: center;
-    text-transform: uppercase;
 }
 
-.post-full-authors-content a {
-    display: inline-block;
-    color: color(var(--darkgrey) l(+20%));
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-transform: uppercase;
+.post-full-byline-meta h4 {
+    font-size: 1.3rem;
+    margin: 0 0 3px;
 }
 
-.post-full-footer .author-list {
-    justify-content: center;
-    padding: 10px 20px;
+.post-full-byline-meta h4 a {
+    color: color(var(--midgrey) l(-20%));
 }
 
-.author-card .author-profile-image,
-.author-card .avatar-wrapper {
-    position: relative;
-    margin-right: 8px;
+.post-full-byline-meta h4 a:hover {
+    color: var(--darkgrey);
 }
 
 .author-list-item .author-card {
     position: absolute;
     bottom: 130%;
     left: 50%;
-    z-index: 300;
-    display: block;
-    margin-left: -160px;
-    width: 320px;
+    z-index: 600;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -200px;
+    width: 400px;
     font-size: 1.4rem;
-    letter-spacing: 0.2px;
+    line-height: 1.5em;
     background: white;
-    border-radius: 6px;
-    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    border-radius: 3px;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(0.98) translateY(15px);
@@ -1605,12 +1551,12 @@ Usage (In Ghost editor):
     top: 100%;
     left: 50%;
     display: block;
-    margin-left: -12px;
+    margin-left: -8px;
     width: 0;
     height: 0;
-    border-top: 12px solid #fff;
-    border-right: 12px solid transparent;
-    border-left: 12px solid transparent;
+    border-top: 8px solid #fff;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
 }
 
 .author-list-item .author-card.hovered {
@@ -1619,22 +1565,30 @@ Usage (In Ghost editor):
     pointer-events: auto;
 }
 
-.author-card .basic-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px 20px 20px;
-    color: #fff;
-    background: var(--darkgrey);
-    border-radius: 6px 6px 0 0;
+.author-card {
+    padding: 18px 20px 20px;
 }
 
-.author-card .basic-info h2 {
-    margin: 1em 0 0.5em;
+.author-card .author-info {
+    flex: 1 1 auto;
+    padding: 0 0 0 20px;
 }
 
-.author-card .bio {
-    padding: 20px 20px 0;
+.author-card .author-info h2 {
+    margin: 8px 0 0;
+    font-size: 1.6rem;
+}
+
+.author-card .author-info p {
+    margin: 1em 0 0;
+}
+
+.author-card .author-info p:first-of-type {
+    margin-top: 4px;
+}
+
+.author-card .author-info .bio {
+    color: color(var(--midgrey) l(-10%));
 }
 
 @media (max-width: 650px) {
@@ -1643,10 +1597,11 @@ Usage (In Ghost editor):
     }
 }
 
-.basic-info .author-profile-image {
+.author-card .author-profile-image {
+    flex: 0 1 60px;
     margin: 0;
-    width: 88px;
-    height: 88px;
+    width: 60px;
+    height: 60px;
     border: none;
 }
 
@@ -1674,7 +1629,6 @@ Usage (In Ghost editor):
     .author-card-content p {
         font-size: 1.4rem;
     }
-
 }
 
 

@@ -1,18 +1,23 @@
 {{!-- Everything inside the #author tags pulls data from the author --}}
+{{#primary_author}}
 
-<section class="single-byline">
-    {{#primary_author}}
-        {{#if profile_image}}
-            <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+<section class="author-card">
+    {{#if profile_image}}
+        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+    {{else}}
+        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+    {{/if}}
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
+        {{#if bio}}
+            <p>{{bio}}</p>
         {{else}}
-            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
         {{/if}}
-    {{/primary_author}}
-    <section class="byline-content">
-        {{#primary_author}}<h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>{{/primary_author}}
-        <div class="byline-meta">
-            <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-            <span class="byline-reading-time">– {{reading_time}}</span>
-        </div>
     </section>
 </section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="{{url}}">Read More</a>
+</div>
+
+{{/primary_author}}

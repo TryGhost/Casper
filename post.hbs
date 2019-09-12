@@ -30,17 +30,54 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
 
                 <div class="post-full-byline">
-                
-                    {{!-- There are two options for how we display the byline/author-info.
-                                If the post has more than one author, we load a specific template
-                                from includes/byline-multiple.hbs, otherwise, we just use the
-                                default byline. --}}
-                
-                    {{#has author="count:>1"}}
-                    {{> "byline-multiple"}}
-                    {{else}}
-                    {{> "byline-single"}}
-                    {{/has}}
+
+                    <section class="post-full-byline-content">
+                    
+                        <ul class="author-list">
+                            {{#foreach authors}}
+                            <li class="author-list-item">
+                    
+                                <div class="author-card">
+                                    {{#if profile_image}}
+                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                    {{else}}
+                                    <div class="author-profile-image">{{> "icons/avatar"}}</div>
+                                    {{/if}}
+                                    <div class="author-info">
+                                        <h2>{{name}}</h2>
+                                        <div class="bio">
+                                            {{#if bio}}
+                                            <p>{{bio}}</p>
+                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                            {{else}}
+                                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                {{#if profile_image}}
+                                <a href="{{url}}" class="author-avatar">
+                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                </a>
+                                {{else}}
+                                <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                                {{/if}}
+                    
+                            </li>
+                            {{/foreach}}
+                        </ul>
+                    
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name">{{authors}}</h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                <span class="byline-reading-time">– {{reading_time}}</span>
+                            </div>
+                        </section>
+                    
+                    </section>
+
                 
                 </div>
             </header>
@@ -208,6 +245,26 @@ $(document).ready(function () {
     window.addEventListener('resize', onResize, false);
 
     update();
+
+
+    // Hover on avatar
+    var hoverTimeout;
+
+    $('.author-list-item').hover(function () {
+        var $this = $(this);
+
+        clearTimeout(hoverTimeout);
+
+        $('.author-card').removeClass('hovered');
+        $(this).children('.author-card').addClass('hovered');
+
+    }, function () {
+        var $this = $(this);
+
+        hoverTimeout = setTimeout(function () {
+            $this.children('.author-card').removeClass('hovered');
+        }, 800);
+    });
 
 });
 </script>
