@@ -127,7 +127,7 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.48))
+    background: rgba(0,0,0,.18);
 }
 
 .site-header:after {
@@ -264,8 +264,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 */
 
 .site-nav-logo {
+    position: relative;
     flex-shrink: 0;
-    display: block;
+    display: inline-block;
     margin-right: 32px;
     padding: 11px 0;
     color: #fff;
@@ -273,6 +274,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     line-height: 1em;
     font-weight: bold;
     letter-spacing: -0.5px;
+    z-index: 100;
 }
 
 .site-nav-logo:hover {
