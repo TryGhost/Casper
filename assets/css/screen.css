@@ -12,7 +12,7 @@ production stylesheet in assets/built/screen.css
 6.  Post Feed
 7.  Single Post
   7.1. Subscribe Form
-  7.2. Post Footer
+  7.2. Post Byline
      7.2.1 Single Author Byline
      7.2.2 Multiple Author Byline
   7.3. Comments
@@ -651,7 +651,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transform: translateY(0px);
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
     .author-name-tooltip {
         display: none;
     }
@@ -799,7 +799,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-header {
     position: relative;
     margin: 0 auto;
-    padding: 60px 170px;
+    padding: 70px 170px 50px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
@@ -831,7 +831,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-header {
-        padding: 50px 11vw;
+        padding: 60px 11vw 50px;
     }
 }
 
@@ -844,19 +844,17 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 500px) {
     .post-full-header {
-        padding-top: 20px;
-        padding-right: 0;
-        padding-left: 0;
+        padding: 20px 0 35px;
     }
 }
 
 .post-full-title {
-    margin: 0.4em 0 0.2em;
+    margin: 0 0 0.2em;
     color: color(var(--darkgrey) l(-5%));
 }
 
 .post-full-custom-excerpt {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     line-height: 1.4em;
     margin: 20px 0 0;
     color: var(--midgrey);
@@ -869,7 +867,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 10px 0 50px;
+    margin: 25px 0 50px;
     background: var(--lightgrey) center center;
     overflow: hidden;
     border-radius: 3px;
@@ -1258,7 +1256,7 @@ Usage (In Ghost editor):
 /* Some grouped styles for smaller viewports */
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 20px -5vw;
+        margin: 50px -5vw;
         border-radius: 0;
     }
     .post-full-image img {
@@ -1267,7 +1265,10 @@ Usage (In Ghost editor):
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
+    .post-full-image {
+        margin: 25px -5vw;
+    }
     .post-full-image img {
         height: 400px;
         min-height: 400px;
@@ -1283,7 +1284,7 @@ Usage (In Ghost editor):
         font-size: 3.8rem;
     }
     .post-full-image {
-        margin-top: 22px;
+        margin-top: 5px;
         margin-bottom: 5vw;
         height: 350px;
     }
@@ -1464,14 +1465,16 @@ Usage (In Ghost editor):
 }
 
 
-/* 7.2. Byline
+/* 7.2. Post Byline
 /* ---------------------------------------------------------- */
 
 .post-full-byline {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 25px 0 0;
+    margin: 35px 0 0;
+    padding-top: 15px;
+    border-top: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 .post-full-byline-content {
@@ -1496,13 +1499,6 @@ Usage (In Ghost editor):
     transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
 }
 
-/* @media (min-width: 800px) {
-    .author-list:hover .moving-avatar {
-        margin: 0;
-        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    }
-} */
-
 .post-full-byline-meta {
     font-size: 1.3rem;
     line-height: 1.3em;
@@ -1520,13 +1516,6 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta h4 a:hover {
     color: var(--darkgrey);
-}
-
-@media (min-width: 1170px) {
-    .post-full-byline {
-        margin: 25px auto 0;
-        max-width: 700px;
-    }
 }
 
 .author-list-item .author-card {
@@ -1596,9 +1585,34 @@ Usage (In Ghost editor):
     margin-top: 0.8em;
 }
 
+.author-card .author-profile-image {
+    flex: 0 0 60px;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    border: none;
+}
+
+.basic-info .avatar-wrapper {
+    position: relative;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: rgba(229, 239, 245, 0.1);
+}
+
+.basic-info .avatar-wrapper svg {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    opacity: 0.15;
+}
+
 @media (max-width: 1170px) {
     .author-list-item .author-card {
         margin-left: -50px;
+        width: 430px;
     }
 
     .author-list-item .author-card:before {
@@ -1609,40 +1623,22 @@ Usage (In Ghost editor):
 @media (max-width: 650px) {
     .author-list-item .author-card {
         display: none;
-    }
-}
-
-.author-card .author-profile-image {
-    flex: 0 1 60px;
-    margin: 0;
-    width: 60px;
-    height: 60px;
-    border: none;
-}
-
-.basic-info .avatar-wrapper {
-    position: relative;
-    margin: 0;
-    width: 88px;
-    height: 88px;
-    border: none;
-    background: rgba(229, 239, 245, 0.1);
-}
-
-.basic-info .avatar-wrapper svg {
-    margin: 0;
-    width: 88px;
-    height: 88px;
-    opacity: 0.15;
+    }   
 }
 
 @media (max-width: 500px) {
-    .author-card-name {
-        font-size: 1.7rem;
+    .author-avatar {
+        width: 32px;
+        height: 32px;
     }
 
-    .author-card-content p {
-        font-size: 1.4rem;
+    .post-full-byline-meta {
+        font-size: 1.2rem;
+    }
+
+    .post-full-byline-meta h4 {
+        font-size: 1.2rem;
+        margin-bottom: 2px;
     }
 }
 
@@ -1951,15 +1947,6 @@ Usage (In Ghost editor):
     flex-direction: column;
     align-items: center;
 }
-
-/* .post-full.no-image .post-content > p:first-child {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.25em;
-    line-height: 1.4em;
-    letter-spacing: -0.1px;
-    color: var(--midgrey);
-    margin: 40px 0 1.5em;
-} */
 
 .post-full-content .kg-image {
     max-width: 100%;
