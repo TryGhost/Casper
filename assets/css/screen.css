@@ -91,7 +91,7 @@ body {
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
-@media (min-width: 900px) {
+/* TODO: @media (min-width: 900px) {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
@@ -103,7 +103,7 @@ body {
     .home-template .site-nav {
         position: relative;
     }
-}
+} */
 
 
 /* 4. Site Header
@@ -417,6 +417,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
 
+.posts {
+    overflow: hidden;
+}
+
 .post-feed {
     position: relative;
     display: flex;
@@ -431,11 +435,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 25px 50px;
-    padding: 0;
+    margin: 0 0 50px;
+    padding: 0 25px 40px;
     min-height: 220px;
     background-size: cover;
     transition: all 0.5s ease;
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 .post-card-image-link {
@@ -673,8 +678,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-large {
         flex: 1 1 100%;
         flex-direction: row;
-        padding-bottom: 0;
         min-height: 250px;
+        padding-bottom: 50px;
         border-top: 0;
     }
 
