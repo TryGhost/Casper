@@ -439,7 +439,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0 25px 40px;
     min-height: 220px;
     background-size: cover;
-    transition: all 0.5s ease;
     border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
