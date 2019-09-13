@@ -1684,7 +1684,7 @@ Usage (In Ghost editor):
 .read-next-card-content ul {
     display: flex;
     flex-direction: column;
-    margin: 5px 0 0;
+    margin: 10px 0 0;
     padding: 0;
     list-style: none;
 }
@@ -1694,27 +1694,17 @@ Usage (In Ghost editor):
     flex-direction: column;
     align-items: flex-start;
     margin: 0;
-    padding: 20px 0 0;
-}
-
-.read-next-card-content li:after {
-    content: "";
-    display: block;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20px;
+    padding: 20px 0;
     border-bottom: 1px solid color(var(--lightgrey) l(+12%));
 }
 
-.read-next-card-content li:last-of-type:after {
+.read-next-card-content li:last-of-type {
     border: none;
-    height: 10px;
 }
 
 .read-next-card-content h4 {
     margin: 0;
-    font-size: 1.7rem;
+    font-size: 1.75rem;
     font-weight: 600;
     line-height: 1.35em;
 }
@@ -1740,7 +1730,7 @@ Usage (In Ghost editor):
 
 .read-next-card-meta {
     margin-top: 2px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.4em;
 }
@@ -1748,13 +1738,6 @@ Usage (In Ghost editor):
 .read-next-card-meta p {
     margin: 0;
     color: color(var(--midgrey) l(+10%));
-}
-
-.read-next-card-meta p a {
-    display: inline-block;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--midgrey);
 }
 
 .read-next-card-footer {
