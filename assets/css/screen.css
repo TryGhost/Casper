@@ -476,6 +476,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0;
 }
 
+.post-feed .no-image .post-card-header {
+    margin-top: -3px;
+}
+
 .post-card-title {
     margin: 0.8em 0 0.4em;
     transition: all 0.5s ease;
