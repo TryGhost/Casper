@@ -138,25 +138,21 @@ into the {body} of the default.hbs template --}}
             {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
-                <article class="read-next-card"
-                    {{#if ../primary_tag.feature_image}}
-                        style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
-                    {{else}}
-                        {{#if @site.cover_image}}
-                            style="background-image: url({{img_url @site.cover_image size="m"}})"{{/if}}
-                    {{/if}}
-                >
+                <article class="read-next-card">
                     <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
                         {{#../primary_tag}}
-                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
+                        <h3 class="read-next-card-header-title"><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
                     </header>
-                    <div class="read-next-divider">{{> "icons/infinity"}}</div>
                     <div class="read-next-card-content">
                         <ul>
                             {{#foreach related_posts}}
-                            <li><a href="{{url}}">{{title}}</a></li>
+                            <li>
+                                <h4><a href="{{url}}">{{title}}</a></h4>
+                                <div class="read-next-card-meta">
+                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> – {{reading_time}}</p>
+                                </div>
+                            </li>
                             {{/foreach}}
                         </ul>
                     </div>

@@ -460,10 +460,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-content-link {
     position: relative;
-    /* TODO: remove
-     flex-grow: 1; */
     display: block;
-    padding: 8px 0 0;
     color: var(--darkgrey);
 }
 
@@ -475,30 +472,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0;
 }
 
-/* 
-TODO: remove
-.post-card-tags {
-    display: inline-block;
-    margin-bottom: 4px;
-    font-size: 1.2rem;
-    line-height: 1.15em;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: color(var(--darkgrey) l(+22%));
-}
-
-.post-feed .no-image .post-card-tags {
-    margin-top: -4px;
-}
-
-.post-card-tags:after {
-    color: color(var(--midgrey) l(+10%));
-    font-weight: 400;
-} */
-
 .post-card-title {
-    margin: 0.4em 0;
+    margin: 0.8em 0 0.4em;
     transition: all 0.5s ease;
     line-height: 1.25em;
 }
@@ -511,8 +486,6 @@ TODO: remove
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    /* TODO: remove
-    justify-content: space-between; */
 }
 
 .post-card-excerpt {
@@ -528,8 +501,6 @@ TODO: remove
 
 .post-card-meta {
     display: flex;
-    /* TODO: remove
-    justify-content: space-between; */
     align-items: center;
     padding: 0;
 }
@@ -1677,130 +1648,130 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 20px 60px;
-    padding: 25px;
-    color: #fff;
-    background: var(--darkgrey) center center;
-    background-size: cover;
-    border-radius: 2px;
-    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-}
-
-.read-next-card:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
-    border-radius: 2px;
-
-    backdrop-filter: blur(2px);
-}
-
-.read-next-card-header {
-    position: relative;
-    z-index: 50;
-    padding-top: 20px;
-    text-align: center;
-}
-
-.read-next-card-header-sitetitle {
-    display: block;
-    font-size: 1.3rem;
-    line-height: 1.3em;
-    opacity: 0.8;
+    margin: 0 20px 50px;
+    /* padding: 20px 0 0;
+    border-top: 1px solid color(var(--lightgrey) l(+10%)); */
 }
 
 .read-next-card-header-title {
     margin: 0;
-    padding: 0 20px;
-    color: #fff;
-    font-size: 3rem;
-    line-height: 1.2em;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1em;
+    color: var(--midgrey);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
 }
 
 .read-next-card-header-title a {
-    color: #fff;
-    font-weight: 300;
+    font-weight: 500;
     text-decoration: none;
+    color: color(var(--midgrey) l(-15%));
 }
 
 .read-next-card-header-title a:hover {
-    text-decoration: none;
-}
-
-.read-next-divider {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 80px;
-}
-
-.read-next-divider svg {
-    width: 40px;
-    fill: transparent;
-    stroke: #fff;
-
-    stroke-width: 0.5px;
-    stroke-opacity: 0.65;
+    color: var(--darkgrey);
+    text-decoration: underline;
 }
 
 .read-next-card-content {
-    position: relative;
-    z-index: 50;
-    flex-grow: 1;
-    display: flex;
     font-size: 1.7rem;
 }
 
 .read-next-card-content ul {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 5px 0 0;
     padding: 0;
-    text-align: center;
     list-style: none;
 }
 
 .read-next-card-content li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin: 0;
-    padding: 0;
-    font-size: 1.6rem;
-    line-height: 1.25em;
-    font-weight: 200;
-    letter-spacing: -0.5px;
+    padding: 20px 0 0;
+}
+
+.read-next-card-content li:after {
+    content: "";
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid color(var(--lightgrey) l(+12%));
+}
+
+.read-next-card-content li:last-of-type:after {
+    border: none;
+    height: 10px;
+}
+
+.read-next-card-content h4 {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.35em;
 }
 
 .read-next-card-content li a {
     display: block;
-    padding: 20px 0;
-    border-bottom: rgba(255,255,255,0.3) 1px solid;
-    color: #fff;
-    font-weight: 500;
-    vertical-align: top;
     transition: opacity 0.3s ease;
-}
-
-.read-next-card-content li:first-of-type a {
-    padding-top: 10px;
+    color: var(--darkgrey);
 }
 
 .read-next-card-content li a:hover {
     opacity: 1;
+    text-decoration: none;
+}
+
+.read-next-card-excerpt {
+    font-size: 1.4rem;
+    line-height: 1.2em;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.read-next-card-meta {
+    margin-top: 2px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+.read-next-card-meta p {
+    margin: 0;
+    color: color(var(--midgrey) l(+10%));
+}
+
+.read-next-card-meta p a {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--midgrey);
 }
 
 .read-next-card-footer {
     position: relative;
-    margin: 15px 0 3px 0;
-    text-align: center;
+    margin: 20px 0;
 }
 
 .read-next-card-footer a {
-    color: #fff;
+    border: 1px solid color(var(--midgrey) l(-10%));
+    border-radius: 999px;
+    padding: 7px 12px 8px 14px;
+    font-size: 1.3rem;
+    color: color(var(--midgrey) l(-10%));
+    transition: all 0.3s ease;
+}
+
+.read-next-card-footer a:hover {
+    text-decoration: none;
+    border-color: var(--blue);
+    color: var(--blue);
 }
 
 @media (max-width: 1170px) {
