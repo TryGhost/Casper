@@ -1640,7 +1640,8 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .read-next {
-    border-top: 1px solid color(var(--lightgrey) l(+10%));
+    border-top: 1px solid color(var(--lightgrey) l(+14%) s(+40%));
+    background: color(var(--lightgrey) l(+17%) s(+30%));
 }
 
 .read-next .post-card {
@@ -1703,7 +1704,7 @@ Usage (In Ghost editor):
     align-items: flex-start;
     margin: 0;
     padding: 20px 0;
-    border-bottom: 1px solid color(var(--lightgrey) l(+12%));
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 .read-next-card-content li:last-of-type {
