@@ -2473,7 +2473,6 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0 44px;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
 }
