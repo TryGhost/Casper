@@ -438,26 +438,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all 0.5s ease;
 }
 
-.post-feed .no-image {
-    padding-top: 10px;
-    border-top: 1px solid color(var(--lightgrey) l(+8%));
-}
-
-.post-feed .no-image:nth-of-type(1),
-.post-feed .no-image:nth-of-type(2),
-.post-feed .no-image:nth-of-type(3) {
-    border-top: none;
-    padding-top: 0;
-    margin-top: -10px;
-}
-
-.post-card-large + .no-image,
-.post-card-large + .post-card + .no-image {
-    border-top: 1px solid color(var(--lightgrey) l(+8%));
-    padding-top: 10px;
-    margin-top: 0;
-}
-
 .post-card-image-link {
     position: relative;
     display: block;
@@ -523,6 +503,10 @@ TODO: remove
     line-height: 1.25em;
 }
 
+.no-image .post-card-title {
+    margin-top: 0;
+}
+
 .post-card-content {
     flex-grow: 1;
     display: flex;
@@ -539,7 +523,7 @@ TODO: remove
 }
 
 .post-card-excerpt p {
-    margin-bottom: 1.2em;
+    margin-bottom: 1em;
 }
 
 .post-card-meta {
