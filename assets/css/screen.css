@@ -1661,6 +1661,7 @@ Usage (In Ghost editor):
     flex-direction: column;
     overflow: hidden;
     margin: 0 20px 50px;
+    padding: 0 25px;
 }
 
 .read-next-card-header-title {
