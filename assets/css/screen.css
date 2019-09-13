@@ -1684,7 +1684,7 @@ Usage (In Ghost editor):
 .read-next-card-content ul {
     display: flex;
     flex-direction: column;
-    margin: 10px 0 0;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -1700,6 +1700,7 @@ Usage (In Ghost editor):
 
 .read-next-card-content li:last-of-type {
     border: none;
+    padding-bottom: 5px;
 }
 
 .read-next-card-content h4 {
