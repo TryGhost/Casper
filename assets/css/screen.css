@@ -98,9 +98,13 @@ body {
         margin-top: -70px;
         padding-top: 0;
     }
-    .home-template .site-nav {
+    .home-template .site-nav,
+    .page-pro .site-nav {
         position: relative;
         top: -70px;
+    }
+    .page-pro .site-main {
+        margin-top: -70px;
     }
 }
 
