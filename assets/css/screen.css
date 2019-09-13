@@ -615,19 +615,27 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
-.post-card-byline-content {
+.post-card-byline-content{
     display: flex;
     flex-direction: column;
-    line-height: 1.2em;
+    line-height: 1.4em;
     margin-left: 6px;
     font-size: 1.3rem;
     font-weight: 400;
     color: color(var(--midgrey) l(+10%));
 }
 
-.post-card-author-name a {
+.post-card-byline-content p {
+    margin: 0;
+}
+
+.post-card-byline-content a {
     color: color(var(--midgrey) l(-10%));
     font-weight: 500;
+}
+
+.post-card-byline-date {
+    font-size: 1.2rem;
 }
 
 .single-author-byline {
@@ -709,12 +717,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-excerpt p {
-        margin-bottom: 1.5em;
-    }
-
-    .post-card-large p {
         font-size: 1.8rem;
         line-height: 1.55em;
+        margin-bottom: 1.5em;
     }
 
     .post-card-large .post-card-content-link {
@@ -1476,8 +1481,8 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta {
     font-size: 1.3rem;
-    line-height: 1.3em;
-    color: var(--midgrey);
+    line-height: 1.2em;
+    color: color(var(--midgrey) l(+10%));;
 }
 
 .post-full-byline-meta h4 {
@@ -1487,7 +1492,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-byline-meta h4 a {
-    color: color(var(--midgrey) l(-20%));
+    color: color(var(--midgrey) l(-10%));
 }
 
 .post-full-byline-meta h4 a:hover {
@@ -1649,8 +1654,6 @@ Usage (In Ghost editor):
     flex-direction: column;
     overflow: hidden;
     margin: 0 20px 50px;
-    /* padding: 20px 0 0;
-    border-top: 1px solid color(var(--lightgrey) l(+10%)); */
 }
 
 .read-next-card-header-title {
