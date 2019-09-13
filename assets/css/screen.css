@@ -91,11 +91,11 @@ body {
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
-/* TODO: @media (min-width: 900px) {
+@media (min-width: 900px) {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        padding: 44px 0 0;
+        padding: 50px 0 0;
         background: #fff;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
@@ -103,7 +103,7 @@ body {
     .home-template .site-nav {
         position: relative;
     }
-} */
+}
 
 
 /* 4. Site Header
@@ -153,7 +153,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 7vw 3vw;
+    padding: 6vw 3vw;
     min-height: 200px;
     max-height: 340px;
     text-align: center;
@@ -426,7 +426,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-wrap: wrap;
     margin: 0 -25px;
-    padding: 40px 0 0 0;
+    padding: 50px 0 0;
 }
 
 .post-card {
@@ -523,11 +523,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-meta .profile-image-wrapper,
 .post-card-meta .avatar-wrapper {
     position: relative;
-}
-@media (max-width: 720px) {
-    .post-card-meta {
-        margin-top: -12px;
-    }
 }
 
 .author-list {
@@ -1645,6 +1640,10 @@ Usage (In Ghost editor):
     border-top: 1px solid color(var(--lightgrey) l(+10%));
 }
 
+.read-next .post-card {
+    border-bottom: none;
+}
+
 .read-next-feed {
     display: flex;
     flex-wrap: wrap;
@@ -1654,7 +1653,7 @@ Usage (In Ghost editor):
 
 .read-next-card {
     position: relative;
-    flex: 1 1 317px;
+    flex: 1 1 301px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
