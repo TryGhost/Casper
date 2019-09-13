@@ -1640,29 +1640,55 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .read-next {
-    border-top: 1px solid color(var(--lightgrey) l(+14%) s(+40%));
-    background: color(var(--lightgrey) l(+17%) s(+30%));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
 }
 
 .read-next .post-card {
+    padding-bottom: 0;
     border-bottom: none;
+}
+
+.read-next .post-card-title {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.read-next .post-card-excerpt {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.read-next .static-avatar {
+    border-color: #000;
+}
+
+.read-next .post-card-byline-content {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.read-next .post-card-byline-content a {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .read-next-feed {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -20px;
+    margin: 0 -25px;
     padding: 60px 0 0 0;
 }
 
 .read-next-card {
     position: relative;
-    flex: 1 1 301px;
+    flex: 0 1 313px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 20px 50px;
-    padding: 0 25px;
+    margin: 0 25px 50px;
+    padding: 25px;
+    background: linear-gradient(var(--darkgrey), #000);
+    border-radius: 3px;
 }
 
 .read-next-card-header-title {
@@ -1670,7 +1696,7 @@ Usage (In Ghost editor):
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 1em;
-    color: var(--midgrey);
+    color: rgba(255, 255, 255, 0.6);
     letter-spacing: 0.4px;
     text-transform: uppercase;
 }
@@ -1678,11 +1704,11 @@ Usage (In Ghost editor):
 .read-next-card-header-title a {
     font-weight: 500;
     text-decoration: none;
-    color: color(var(--midgrey) l(-15%));
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .read-next-card-header-title a:hover {
-    color: var(--darkgrey);
+    color: #fff;
     text-decoration: underline;
 }
 
@@ -1704,7 +1730,7 @@ Usage (In Ghost editor):
     align-items: flex-start;
     margin: 0;
     padding: 20px 0;
-    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
+    border-bottom: rgba(255, 255, 255, 0.1);
 }
 
 .read-next-card-content li:last-of-type {
@@ -1714,7 +1740,7 @@ Usage (In Ghost editor):
 
 .read-next-card-content h4 {
     margin: 0;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.35em;
 }
@@ -1722,12 +1748,13 @@ Usage (In Ghost editor):
 .read-next-card-content li a {
     display: block;
     transition: opacity 0.3s ease;
-    color: var(--darkgrey);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .read-next-card-content li a:hover {
     opacity: 1;
     text-decoration: none;
+    color: #fff;
 }
 
 .read-next-card-excerpt {
@@ -1747,20 +1774,20 @@ Usage (In Ghost editor):
 
 .read-next-card-meta p {
     margin: 0;
-    color: color(var(--midgrey) l(+10%));
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .read-next-card-footer {
     position: relative;
-    margin: 20px 0;
+    margin: 40px 0 5px;
 }
 
 .read-next-card-footer a {
-    border: 1px solid color(var(--midgrey) l(-10%));
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 999px;
     padding: 7px 12px 8px 14px;
     font-size: 1.3rem;
-    color: color(var(--midgrey) l(-10%));
+    color: rgba(255, 255, 255, 0.6);
     transition: all 0.3s ease;
 }
 
