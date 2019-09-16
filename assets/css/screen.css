@@ -194,7 +194,7 @@ body {
 }
 
 .site-archive-header .no-image .site-description {
-    color: var(--midgrey);
+    color: color(var(--midgrey) l(-10%));
     opacity: 1.0;
 }
 
@@ -708,7 +708,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-large {
         flex: 1 1 100%;
         flex-direction: row;
-        min-height: 250px;
+        min-height: 280px;
         padding-bottom: 44px;
         border-top: 0;
     }
@@ -743,7 +743,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-title {
-        font-size: 3.2rem;
+        font-size: 3.0rem;
         margin-top: 0;
     }
 
@@ -759,6 +759,19 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-meta {
         padding: 0 0 0 44px;
+    }
+
+    .post-card-large.featured:first-of-type {
+        min-height: 480px;
+    }
+
+    .post-card-large.featured:first-of-type .post-card-content {
+        justify-content: center;
+    }
+
+    .post-card-large.featured:first-of-type .post-card-title {
+        font-size: 3.8rem;
+        line-height: 1.15em;
     }
 }
 
@@ -2276,7 +2289,7 @@ Usage (In Ghost editor):
 }
 
 .no-image .archive-header-content .author-bio {
-    color: var(--midgrey);
+    color: color(var(--midgrey) l(-10%));
     opacity: 1.0;
 }
 
