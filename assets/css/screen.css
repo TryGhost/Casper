@@ -750,11 +750,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content-link {
-        padding: 0 0 0 50px;
+        padding: 0 0 0 44px;
     }
 
     .post-card-large .post-card-meta {
-        padding: 0 0 0 50px;
+        padding: 0 0 0 44px;
     }
 }
 
@@ -858,7 +858,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-custom-excerpt {
     font-size: 2.3rem;
-    font-weight: 300;
     line-height: 1.4em;
     margin: 20px 0 0;
     color: var(--midgrey);

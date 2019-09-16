@@ -9,17 +9,15 @@
         </div>
     </div>
     {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-        <div class="inner">
-            <div class="archive-header-content">
-                <h1 class="site-title">{{name}}</h1>
-                <h2 class="site-description">
-                    {{#if description}}
-                    {{description}}
-                    {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                    {{/if}}
-                </h2>
-            </div>
+        <div class="inner archive-header-content">
+            <h1 class="site-title">{{name}}</h1>
+            <h2 class="site-description">
+                {{#if description}}
+                {{description}}
+                {{else}}
+                A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/if}}
+            </h2>
         </div>
     </div>
 </header>
