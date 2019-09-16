@@ -227,6 +227,9 @@ body {
     .site-description {
         font-size: 1.8rem;
     }
+    .archive-header-content {
+        min-height: unset;
+    }
 }
 
 
@@ -772,7 +775,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding-top: 5vw;
     }
     .post-card {
-        margin-bottom: 10vw;
+        margin-bottom: 5vw;
     }
 }
 
@@ -2312,9 +2315,22 @@ Usage (In Ghost editor):
 }
 
 @media (max-width: 500px) {
+    .author-header {
+        padding: 10px 0 0;
+    }
+    .no-image .author-header {
+        padding-bottom: 10px;
+    }
+    .author-header-content {
+        margin-left: 20px;
+    }
+    .archive-header-content .author-profile-image {
+        width: 80px;
+        height: 80px;
+    }
     .archive-header-content .author-bio {
         font-size: 1.8rem;
-        line-height: 1.15em;
+        line-height: 1.3em;
         letter-spacing: 0;
     }
     .author-location,
