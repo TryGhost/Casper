@@ -133,14 +133,14 @@ body {
 .site-header-background:after {
     content: "";
     position: absolute;
-    top: 0;
+    top: auto;
     right: 0;
-    bottom: auto;
+    bottom: 0;
     left: 0;
     z-index: 10;
     display: block;
-    height: 80px;
-    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
+    height: 140px;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.15));
 }
 
 .site-header-background.no-image:before,
