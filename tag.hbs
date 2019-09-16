@@ -2,31 +2,32 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{#tag}}
-{{> header background=feature_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
-    <div class="inner">
-        {{#if @site.logo}}
-            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-        {{else}}
-            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-        {{/if}}
-        <div class="site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
+<header class="site-archive-header">
+    <div class="outer site-nav-main">
+        <div class="inner">
+            {{> "site-nav"}}
         </div>
-        {{> "site-nav"}}
+    </div>
+    {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+        <div class="inner">
+            <div class="archive-header-content">
+                <h1 class="site-title">{{name}}</h1>
+                <h2 class="site-description">
+                    {{#if description}}
+                    {{description}}
+                    {{else}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                    {{/if}}
+                </h2>
+            </div>
+        </div>
     </div>
 </header>
 {{/tag}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-    <div class="inner posts">
+    <div class="inner">
         <div class="post-feed">
             {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}

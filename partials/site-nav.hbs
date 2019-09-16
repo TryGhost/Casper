@@ -1,10 +1,6 @@
 <nav class="site-nav">
     <div class="site-nav-left">
-        {{#is "post"}}
-            {{> "site-logo"}}
-        {{/is}}
-
-        {{#is "page"}}
+        {{^is "index"}}
             {{> "site-logo"}}
         {{/is}}
 

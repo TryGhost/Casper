@@ -109,7 +109,7 @@ body {
 /* 4. Site Header
 /* ---------------------------------------------------------- */
 
-.site-header {
+.site-header-background {
     position: relative;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -118,7 +118,7 @@ body {
     background-size: cover;
 }
 
-.site-header:before {
+.site-header-background:before {
     content: "";
     position: absolute;
     top: 0;
@@ -130,7 +130,7 @@ body {
     background: rgba(0,0,0,.18);
 }
 
-.site-header:after {
+.site-header-background:after {
     content: "";
     position: absolute;
     top: 0;
@@ -143,8 +143,8 @@ body {
     background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
 }
 
-.site-header.no-image:before,
-.site-header.no-image:after {
+.site-header-background.no-image:before,
+.site-header-background.no-image:after {
     display: none;
 }
 
@@ -159,19 +159,11 @@ body {
     text-align: center;
 }
 
-.home-header {
-    margin-top: 40px;
-}
-
-.site-nav + .site-header-content {
-    padding: 8vw 4vw 13vw;
-}
-
 .site-title {
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 4.2rem;
+    font-size: 4.6rem;
     font-weight: 600;
 }
 
@@ -187,6 +179,22 @@ body {
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
+}
+
+.site-archive-header .site-header-background {
+    color: var(--darkgrey);
+    background: #fff;
+}
+
+.archive-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 6vw 0 25px;
+    min-height: 200px;
+    max-height: 340px;
+    border-bottom: 1px solid var(--lightgrey);
 }
 
 @media (max-width: 900px) {
@@ -207,6 +215,11 @@ body {
 
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
+
+.site-nav-main {
+    padding: 10px 0;
+    background: #000;
+}
 
 .site-nav {
     position: relative;
@@ -861,7 +874,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 170px;
+    padding: 0 170px 6vw;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
@@ -2213,7 +2226,7 @@ Usage (In Ghost editor):
 /* 8. Author Template
 /* ---------------------------------------------------------- */
 
-.site-header-content .author-profile-image {
+.archive-header-content .author-profile-image {
     z-index: 10;
     flex-shrink: 0;
     margin: 0 0 20px 0;
@@ -2222,7 +2235,7 @@ Usage (In Ghost editor):
     box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
 }
 
-.site-header-content .author-bio {
+.archive-header-content .author-bio {
     z-index: 10;
     flex-shrink: 0;
     margin: 0.6em 0 0.4em;
@@ -2234,7 +2247,7 @@ Usage (In Ghost editor):
     opacity: 0.8;
 }
 
-.site-header-content .author-meta {
+.archive-header-content .author-meta {
     z-index: 10;
     flex-shrink: 0;
     display: flex;
@@ -2245,23 +2258,23 @@ Usage (In Ghost editor):
     font-style: italic;
 }
 
-.site-header-content .author-location svg {
+.archive-header-content .author-location svg {
     height: 1.9rem;
     stroke: #fff;
 }
 
-.site-header-content .bull {
+.archive-header-content .bull {
     display: inline-block;
     margin: 0 12px;
     opacity: 0.5;
 }
 
-.site-header-content .social-link:first-of-type {
+.archive-header-content .social-link:first-of-type {
     padding-left: 4px;
 }
 
 @media (max-width: 500px) {
-    .site-header-content .author-bio {
+    .archive-header-content .author-bio {
         font-size: 1.8rem;
         line-height: 1.15em;
         letter-spacing: 0;
