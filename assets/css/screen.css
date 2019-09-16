@@ -159,6 +159,10 @@ body {
     text-align: center;
 }
 
+.home-header {
+    padding: 6vw 3vw 5vw;
+}
+
 .site-title {
     z-index: 10;
     margin: 0;
