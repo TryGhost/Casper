@@ -487,10 +487,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all 0.5s ease;
 }
 
-.post-card:hover .post-card-image {
-    transform: scale(1.05, 1.05);
-}
-
 .post-card-content-link {
     position: relative;
     display: block;
@@ -529,7 +525,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-family: Georgia, serif;
     transition: all 0.5s ease;
     max-width: 56em;
-    color: color(var(--darkgrey) l(+22%));
+    color: color(var(--midgrey) l(-10%));
 }
 
 .post-card-excerpt p {
@@ -734,10 +730,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         height: 100%;
     }
 
-    .post-card-large:hover .post-card-image {
-        transform: scale(1.04, 1.04);
-    }
-
     .post-card-large .post-card-content {
         flex: 0 1 363px;
         transition: all 0.5s ease;
@@ -863,6 +855,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-custom-excerpt {
     font-size: 2.3rem;
+    font-weight: 300;
     line-height: 1.4em;
     margin: 20px 0 0;
     color: var(--midgrey);
@@ -2276,7 +2269,7 @@ Usage (In Ghost editor):
     opacity: 0.8;
 }
 
-.no-image .author-bio {
+.no-image .archive-header-content .author-bio {
     color: var(--midgrey);
     opacity: 1.0;
 }
@@ -2290,7 +2283,7 @@ Usage (In Ghost editor):
     font-weight: 300;
 }
 
-.no-image .author-meta {
+.no-image .archive-header-content .author-meta {
     color: var(--midgrey);
     opacity: 1.0;
 }
@@ -2300,11 +2293,11 @@ Usage (In Ghost editor):
     stroke: #fff;
 }
 
-.no-image .social-link svg {
+.no-image .archive-header-content .social-link svg {
     fill: var(--midgrey);
 }
 
-.no-image .social-link-wb svg path {
+.no-image .archive-header-content .social-link-wb svg path {
     stroke: var(--midgrey);
 }
 
