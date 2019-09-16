@@ -95,7 +95,7 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        padding: 50px 0 0;
+        padding: 44px 0 2vw;
         background: #fff;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
@@ -177,24 +177,40 @@ body {
     padding: 5px 0;
     font-size: 2.2rem;
     font-weight: 300;
-    letter-spacing: 0.5px;
+    line-height: 1.4em;
     opacity: 0.8;
 }
 
-.site-archive-header .site-header-background {
-    color: var(--darkgrey);
+.site-archive-header .no-image {
+    padding: 0;
+    opacity: 1.0;
     background: #fff;
+    color: var(--darkgrey);
+}
+
+.site-archive-header .no-image .site-description {
+    color: var(--midgrey);
+    opacity: 1.0;
 }
 
 .archive-header-content {
+    position: relative;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 6vw 0 25px;
+    padding: 12vw 0 20px;
     min-height: 200px;
-    max-height: 340px;
-    border-bottom: 1px solid var(--lightgrey);
+    max-height: 600px;
+}
+
+.no-image .archive-header-content {
+    padding: 7vw 0 10px;
+}
+
+.no-image .archive-header-content {
+    border-bottom: 1px solid var(--midgrey);
 }
 
 @media (max-width: 900px) {
@@ -438,7 +454,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -25px;
+    margin: 0 -22px;
     padding: 50px 0 0;
 }
 
@@ -448,8 +464,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 0 50px;
-    padding: 0 25px 40px;
+    margin: 0 0 44px;
+    padding: 0 22px 40px;
     min-height: 220px;
     background-size: cover;
     border-bottom: 1px solid color(var(--lightgrey) l(+10%));
@@ -690,7 +706,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         flex: 1 1 100%;
         flex-direction: row;
         min-height: 250px;
-        padding-bottom: 50px;
+        padding-bottom: 44px;
         border-top: 0;
     }
 
@@ -2225,37 +2241,58 @@ Usage (In Ghost editor):
 
 /* 8. Author Template
 /* ---------------------------------------------------------- */
+.author-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10vw 0 10px;
+}
+
+.no-image .author-header {
+    padding-bottom: 20px;
+}
+
+.author-header-content {
+    margin-left: 33px;
+}
 
 .archive-header-content .author-profile-image {
     z-index: 10;
     flex-shrink: 0;
-    margin: 0 0 20px 0;
-    width: 88px;
-    height: 88px;
+    margin: 5px 0 20px;
+    width: 110px;
+    height: 110px;
     box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
 }
 
 .archive-header-content .author-bio {
     z-index: 10;
     flex-shrink: 0;
-    margin: 0.6em 0 0.4em;
-    max-width: 600px;
-    font-size: 1.8rem;
-    line-height: 1.3em;
+    margin: 2px 0 0;
+    font-size: 2.2rem;
+    line-height: 1.4em;
     font-weight: 300;
-    letter-spacing: 0.5px;
     opacity: 0.8;
+}
+
+.no-image .author-bio {
+    color: var(--midgrey);
+    opacity: 1.0;
 }
 
 .archive-header-content .author-meta {
     z-index: 10;
     flex-shrink: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0 0 10px 0;
-    font-family: Georgia, serif;
-    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.no-image .author-meta {
+    color: var(--midgrey);
+    opacity: 1.0;
 }
 
 .archive-header-content .author-location svg {
@@ -2263,10 +2300,18 @@ Usage (In Ghost editor):
     stroke: #fff;
 }
 
+.no-image .social-link svg {
+    fill: var(--midgrey);
+}
+
+.no-image .social-link-wb svg path {
+    stroke: var(--midgrey);
+}
+
 .archive-header-content .bull {
     display: inline-block;
     margin: 0 12px;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .archive-header-content .social-link:first-of-type {
