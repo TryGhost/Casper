@@ -32,7 +32,7 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 
 body {
-    background: #f4f8fb;
+    /*background: #f4f8fb;*/
 }
 
 .img {
@@ -112,8 +112,8 @@ body {
     position: relative;
     padding-top: 12px;
     padding-bottom: 12px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    color: var(--darkgrey);
+    background: color(var(--green) l(+50%)) no-repeat center center;
     background-size: cover;
 }
 
@@ -126,7 +126,7 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
+    /*background: rgba(0,0,0,0.18);*/
 }
 
 .site-header:after {
@@ -139,7 +139,7 @@ body {
     z-index: 10;
     display: block;
     height: 80px;
-    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
+    background: linear-gradient(rgba(58, 174, 84,0.1),rgba(0,0,0,0));
 }
 
 .site-header.no-image:before,
@@ -167,7 +167,7 @@ body {
 }
 
 .site-logo {
-    max-height: 45px;
+    max-height: 75px;
 }
 
 .site-description {
@@ -176,8 +176,7 @@ body {
     padding: 5px 0;
     font-size: 2.2rem;
     font-weight: 300;
-    letter-spacing: 0.5px;
-    opacity: 0.8;
+    color: var(--green);
 }
 
 @media (max-width: 500px) {
@@ -230,7 +229,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: block;
     margin-right: 24px;
-    padding: 11px 0;
+    padding: 5px 0;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1em;
@@ -245,7 +244,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 21px;
+    height: 30px;
 }
 
 .nav {
@@ -266,7 +265,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin: 0;
     padding: 10px 12px;
-    color: #fff;
+    color: color(var(--darkgrey) l(+10%));
     opacity: 0.8;
 }
 
@@ -288,9 +287,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     align-items: center;
 }
 
-.social-links a:last-of-type {
+/*.social-links a:last-of-type {
     padding-right: 20px;
-}
+}*/
 
 .social-link {
     display: flex;
@@ -298,7 +297,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     align-items: center;
     margin: 0;
     padding: 10px;
-    color: #fff;
+    color: var(--midgrey);
     opacity: 0.8;
 }
 
@@ -308,7 +307,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link svg {
     height: 1.8rem;
-    fill: #fff;
+    fill: var(--midgrey);
 }
 
 .social-link-fb svg {
@@ -320,7 +319,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link-wb svg path {
-    stroke: #fff;
+    stroke: var(--midgrey);
 }
 
 .social-link-rss svg {
@@ -441,6 +440,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-title {
+    font-family: "Radikal", sans-serif;
     margin-top: 0;
 }
 
@@ -452,7 +452,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-excerpt {
-    font-family: Georgia, serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .post-card-meta {
@@ -696,11 +696,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-meta-date {
-    color: var(--blue);
+    color: var(--green);
 }
 
 .post-full-title {
     margin: 0;
+    font-family: "Radikal", sans-serif;
     color: color(var(--darkgrey) l(-5%));
 }
 
@@ -743,9 +744,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 70px 100px 0;
     min-height: 230px;
-    font-family: Georgia, serif;
-    font-size: 2.2rem;
-    line-height: 1.6em;
+    font-family: "Roboto", sans-serif;
+    color: var(--midgrey);
+    font-size: 1.8rem;
+    line-height: 28px;
     background: #fff;
 }
 
@@ -756,7 +758,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 @media (max-width: 800px) {
     .post-full-content {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -823,14 +825,17 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: #000;
+    color: var(--green);
+    text-decoration: none;
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: var(--green) 0 -1px 0 inset;
 }
 
 .post-full-content a:hover {
     color: var(--blue);
     text-decoration: none;
+    box-shadow: var(--blue) 0 -1px 0 inset;
+
 }
 
 .post-full-content strong,
@@ -961,7 +966,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content hr {
-    margin: 4vw 0;
+    margin: 3vw 0;
 }
 
 .post-full-content hr:after {
@@ -985,7 +990,7 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Radikal", sans-serif;
 }
 
 .post-full-content h1 {
@@ -1001,7 +1006,7 @@ Usage (In Ghost editor):
 
 .post-full-content h2 {
     margin: 0.5em 0 0.2em 0;
-    font-size: 3.6rem;
+    font-size: 26px;
     font-weight: 700;
 }
 @media (max-width: 500px) {
@@ -1038,7 +1043,7 @@ Usage (In Ghost editor):
     padding: 1em 0 1.5em;
     border: 0;
     color: var(--blue);
-    font-family: Georgia,serif;
+    font-family: "Roboto", sans-serif;
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1660,7 +1665,7 @@ Usage (In Ghost editor):
     margin: 0 0 0 20px;
     font-size: 1.6rem;
     line-height: 1em;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -1695,6 +1700,7 @@ Usage (In Ghost editor):
     font-size: 1.6rem;
     line-height: 1.3em;
     font-weight: bold;
+    letter-spacing: 1px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -1750,11 +1756,11 @@ Usage (In Ghost editor):
 }
 
 .floating-header-share-tw {
-    background: #33b1ff;
+    background:  color(var(--green) l(+20%));
 }
 
 .floating-header-share-fb {
-    background: #005e99;
+    background: var(--green);
 }
 
 .progress {
@@ -1765,7 +1771,7 @@ Usage (In Ghost editor):
     width: 100%;
     height: 2px;
     border: none;
-    color: var(--blue);
+    color: color(var(--green) l(+20%));
     background: transparent;
 
     appearance: none;
@@ -1776,11 +1782,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--blue);
+    background-color: color(var(--green) l(+20%));
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--blue);
+    background-color: color(var(--green) l(+20%));
 }
 
 .progress-container {
@@ -1797,7 +1803,7 @@ Usage (In Ghost editor):
     display: block;
     width: 50%;
     height: inherit;
-    background-color: var(--blue);
+    background-color: color(var(--green) l(+20%));
 }
 
 @media (max-width: 900px) {
@@ -1846,10 +1852,10 @@ Usage (In Ghost editor):
     max-width: 920px;
 }
 
-.post-template .post-content > p:first-child {
+/*.post-template .post-content > p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
-}
+}*/
 
 .post-full-content .kg-image {
     max-width: 100%;
@@ -2101,7 +2107,7 @@ Usage (In Ghost editor):
     justify-content: center;
     align-items: center;
     margin: 0 0 10px 0;
-    font-family: Georgia, serif;
+    font-family: "Roboto", sans-serif;
     font-style: italic;
 }
 
@@ -2240,7 +2246,7 @@ Usage (In Ghost editor):
 .subscribe-overlay-description {
     margin: 0 auto 50px;
     max-width: 650px;
-    font-family: Georgia, serif;
+    font-family: "Roboto", sans-serif;
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 300;
@@ -2358,7 +2364,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: color(var(--darkgrey) l(-15%));
+    background: var(--green);
 }
 
 .site-footer-content {
