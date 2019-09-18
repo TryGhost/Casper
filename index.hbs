@@ -5,6 +5,7 @@ into the {body} of the default.hbs template --}}
 <header class="site-home-header">
     {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner">
+            {{> "site-nav"}}
             <div class="site-header-content home-header">
                 <h1 class="site-title">
                     {{#if @site.logo}}
@@ -15,7 +16,6 @@ into the {body} of the default.hbs template --}}
                 </h1>
                 <h2 class="site-description">{{@site.description}}</h2>
             </div>
-            {{> "site-nav"}}
         </div>
     </div>
 </header>
