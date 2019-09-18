@@ -199,7 +199,7 @@ body {
 }
 
 .site-archive-header .no-image .site-description {
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--darkgrey) l(+20%));
     opacity: 1.0;
 }
 
@@ -220,7 +220,7 @@ body {
 }
 
 .no-image .archive-header-content {
-    border-bottom: 1px solid var(--lightgrey);
+    border-bottom: 1px solid var(--darkgrey);
 }
 
 @media (max-width: 900px) {
@@ -259,7 +259,7 @@ body {
     align-items: flex-start;
     overflow-y: hidden;
     height: 44px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .site-nav-left {
@@ -273,7 +273,6 @@ body {
     letter-spacing: 0.2px;
     font-weight: 500;
     white-space: nowrap;
-    text-transform: uppercase;
 
     -ms-overflow-scrolling: touch;
 }
@@ -1764,7 +1763,7 @@ Usage (In Ghost editor):
 
 .read-next-card {
     position: relative;
-    flex: 0 1 313px;
+    flex: 0 1 317px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1876,8 +1875,8 @@ Usage (In Ghost editor):
 
 .read-next-card-footer a:hover {
     text-decoration: none;
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--yellow);
+    color: var(--yellow);
 }
 
 @media (max-width: 1170px) {
@@ -2323,7 +2322,7 @@ Usage (In Ghost editor):
 .archive-header-content .author-bio {
     z-index: 10;
     flex-shrink: 0;
-    margin: 2px 0 0;
+    margin: 0;
     max-width: 46em;
     font-size: 1.8rem;
     line-height: 1.4em;
@@ -2332,7 +2331,7 @@ Usage (In Ghost editor):
 }
 
 .no-image .archive-header-content .author-bio {
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--darkgrey) l(+20%));
     opacity: 1.0;
 }
 
@@ -2341,12 +2340,13 @@ Usage (In Ghost editor):
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    margin-top: -3px;
     font-size: 1.4rem;
     font-weight: 400;
 }
 
 .no-image .archive-header-content .author-meta {
-    color: var(--midgrey);
+    color: color(var(--darkgrey) l(+20%));
     opacity: 1.0;
 }
 
@@ -2356,17 +2356,17 @@ Usage (In Ghost editor):
 }
 
 .no-image .archive-header-content .social-link svg {
-    fill: var(--midgrey);
+    fill: color(var(--midgrey) l(-20%));
 }
 
 .no-image .archive-header-content .social-link-wb svg path {
-    stroke: var(--midgrey);
+    stroke: color(var(--midgrey) l(-20%));
 }
 
 .archive-header-content .bull {
     display: inline-block;
     margin: 0 12px;
-    opacity: 0.2;
+    opacity: 0.6;
 }
 
 .archive-header-content .social-link:first-of-type {
