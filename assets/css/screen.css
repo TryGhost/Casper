@@ -491,7 +491,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 180px;
     background: var(--lightgrey) no-repeat center center;
     object-fit: cover;
-    transition: all 0.5s ease;
+    transition: all 0.35s ease;
+}
+
+.post-card:hover .post-card-image {
+    opacity: 0.85;
 }
 
 .post-card-content-link {
@@ -514,8 +518,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-title {
     margin: 0.8em 0 0.4em;
-    transition: all 0.5s ease;
+    transition: all 0.35s ease;
     line-height: 1.25em;
+}
+
+.post-card:hover .post-card-title {
+    opacity: 0.85;
 }
 
 .no-image .post-card-title {
@@ -1692,6 +1700,15 @@ Usage (In Ghost editor):
 
 .read-next .post-card-title {
     color: rgba(255, 255, 255, 0.8);
+}
+
+.read-next .post-card:hover .post-card-image {
+    opacity: 1.0;
+}
+
+.read-next .post-card:hover .post-card-title {
+    color: #fff;
+    opacity: 1.0;
 }
 
 .read-next .post-card-excerpt {
