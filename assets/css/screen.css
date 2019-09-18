@@ -167,7 +167,7 @@ body {
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 4.6rem;
+    font-size: 5.2rem;
     font-weight: 600;
 }
 
@@ -529,7 +529,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-excerpt {
-    font-family: Georgia, serif;
+    /* font-family: Georgia, serif; */
     transition: all 0.5s ease;
     max-width: 56em;
     color: color(var(--midgrey) l(-10%));
@@ -743,14 +743,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-title {
-        font-size: 3.0rem;
+        font-size: 3.2rem;
         margin-top: 0;
-    }
-
-    .post-card-large .post-card-excerpt p {
-        font-size: 1.8rem;
-        line-height: 1.55em;
-        margin-bottom: 1.5em;
     }
 
     .post-card-large .post-card-content-link {
@@ -770,8 +764,14 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large.featured:first-of-type .post-card-title {
-        font-size: 3.8rem;
+        font-size: 4.2rem;
         line-height: 1.15em;
+    }
+
+    .post-card-large.featured:first-of-type .post-card-excerpt p {
+        font-size: 1.8rem;
+        line-height: 1.55em;
+        margin-bottom: 1.5em;
     }
 }
 
