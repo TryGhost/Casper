@@ -133,14 +133,14 @@ body {
 .site-header-background:after {
     content: "";
     position: absolute;
-    top: auto;
+    top: 0;
     right: 0;
-    bottom: 0;
+    bottom: auto;
     left: 0;
     z-index: 10;
     display: block;
     height: 140px;
-    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.15));
+    background: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0));
 }
 
 .site-header-background.no-image:before,
@@ -167,7 +167,7 @@ body {
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 5.2rem;
+    font-size: 5.5rem;
     font-weight: 600;
 }
 
@@ -262,23 +262,6 @@ body {
     font-size: 1.2rem;
 }
 
-.site-nav-main .nav {
-    position: relative;
-    margin-left: 12px;
-    padding-left: 12px;
-}
-
-.site-nav-main .nav:before {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
-    width: 1px;
-    background: rgba(255, 255, 255, 0.25);
-}
-
 .site-nav-left {
     display: flex;
     align-items: center;
@@ -327,7 +310,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     flex-shrink: 0;
     display: inline-block;
-    margin-right: 12px;
+    margin-right: 32px;
     padding: 11px 0;
     color: #fff;
     font-size: 1.7rem;
@@ -383,7 +366,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     bottom: 8px;
     height: 1px;
     background: #fff;
-    opacity: 0;
+    opacity: 0.25;
     transition: all 0.35s ease-in-out;
 }
 
