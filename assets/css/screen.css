@@ -273,10 +273,10 @@ body {
     position: absolute;
     display: block;
     left: 0;
-    top: 10px;
-    bottom: 10px;
+    top: 8px;
+    bottom: 8px;
     width: 1px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .site-nav-left {
@@ -361,16 +361,35 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav li a {
+    position: relative;
     display: block;
     margin: 0 0 1px;
     padding: 10px 12px;
     color: #fff;
     opacity: 0.8;
+    transition: all 0.35s ease-in-out;
 }
 
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
+}
+
+.nav li a:before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 100%;
+    bottom: 8px;
+    height: 1px;
+    background: #fff;
+    opacity: 0;
+    transition: all 0.35s ease-in-out;
+}
+
+.nav li a:hover:before {
+    opacity: 0.5;
+    right: 12px;
 }
 
 .site-nav-right {
