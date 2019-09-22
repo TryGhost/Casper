@@ -772,8 +772,8 @@ make sure this only happens on large viewports / desktop-ish devices.
         border-bottom-color: color(var(--lightgrey) l(+10%));
     }
 
-    .post-card-grow {
-        flex-grow: 1;
+    .post-card-large .post-card-header {
+        margin-top: 0;
     }
 
     .post-card-large .post-card-image-link {
