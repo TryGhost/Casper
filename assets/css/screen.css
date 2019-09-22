@@ -486,7 +486,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -22px;
+    margin: 0 -40px;
     padding: 50px 0 0;
 }
 
@@ -496,11 +496,22 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 0 44px;
-    padding: 0 22px 40px;
+    margin: 0 0 40px;
+    padding: 0 40px 40px;
     min-height: 220px;
     background-size: cover;
     border-bottom: 1px solid color(var(--lightgrey) l(+10%));
+}
+
+.post-card:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 40px;
+    right: 0;
+    width: 1px;
+    background: color(var(--lightgrey) l(+10%));
 }
 
 .post-card-image-link {
@@ -772,7 +783,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content {
-        flex: 0 1 363px;
+        flex: 0 1 335px;
         transition: all 0.5s ease;
         justify-content: center;
     }
