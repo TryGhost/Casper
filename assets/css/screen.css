@@ -95,7 +95,7 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        padding: 44px 0 5vw;
+        padding: 40px 0 5vw;
         background: #fff;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
@@ -548,18 +548,27 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0;
 }
 
-.post-feed .no-image .post-card-header {
-    margin-top: -3px;
+.post-feed:not(.no-image) .post-card-header {
+    margin: 15px 0 0;
+}
+
+.post-card-primary-tag {
+    margin: 0 0 0.2em;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: var(--blue);
 }
 
 .post-card-title {
-    margin: 0.8em 0 0.4em;
-    transition: all 0.35s ease;
+    margin: 0 0 0.4em;
+    transition: color 0.35s ease;
     line-height: 1.25em;
 }
 
 .post-card:hover .post-card-title {
-    opacity: 0.85;
+    color: var(--blue);
 }
 
 .no-image .post-card-title {
@@ -576,7 +585,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-family: Georgia, serif;
     transition: all 0.5s ease;
     max-width: 56em;
-    color: color(var(--darkgrey) l(+20%));
+    color: var(--midgrey);
 }
 
 .post-card-excerpt p {
@@ -701,6 +710,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin-left: 6px;
     font-size: 1.3rem;
     font-weight: 400;
+    text-transform: uppercase;
     color: color(var(--midgrey) l(+10%));
 }
 
@@ -709,8 +719,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-byline-content a {
-    color: color(var(--midgrey) l(-10%));
-    font-weight: 500;
+    color: color(var(--darkgrey) l(+20%));
+    font-weight: 600;
 }
 
 .post-card-byline-date {
@@ -753,7 +763,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         flex: 1 1 100%;
         flex-direction: row;
         min-height: 280px;
-        padding-bottom: 44px;
+        padding-bottom: 40px;
         border-top: 0;
     }
 
@@ -763,10 +773,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-grow {
         flex-grow: 1;
-    }
-
-    .post-card-large .post-card-header {
-        margin-top: -7px;
     }
 
     .post-card-large .post-card-image-link {
@@ -794,11 +800,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content-link {
-        padding: 0 0 0 44px;
+        padding: 0 0 0 40px;
     }
 
     .post-card-large .post-card-meta {
-        padding: 0 0 0 44px;
+        padding: 0 0 0 40px;
     }
 
     .post-card-large .post-card-excerpt p {
