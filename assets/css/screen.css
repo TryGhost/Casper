@@ -772,7 +772,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         border-bottom-color: color(var(--lightgrey) l(+10%));
     }
 
-    .post-card-large .post-card-header {
+    .post-card-large:not(.no-image) .post-card-header {
         margin-top: 0;
     }
 
