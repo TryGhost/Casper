@@ -524,7 +524,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-image {
     width: 100%;
-    height: 220px;
+    height: 200px;
     background: var(--lightgrey) no-repeat center center;
     object-fit: cover;
     transition: all 0.35s ease;
