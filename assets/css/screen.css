@@ -548,13 +548,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0;
 }
 
-.post-feed:not(.no-image) .post-card-header {
+.post-card:not(.no-image) .post-card-header {
     margin: 15px 0 0;
 }
 
 .post-card-primary-tag {
     margin: 0 0 0.2em;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
     text-transform: uppercase;
@@ -708,9 +708,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-direction: column;
     line-height: 1.4em;
     margin-left: 6px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: 0.2px;
     color: color(var(--midgrey) l(+10%));
 }
 
@@ -872,14 +873,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     font-weight: 600;
     line-height: 1.4em;
     text-transform: uppercase;
-}
-
-.post-full-tags a {
-    color: color(var(--midgrey) l(-20%));
-}
-
-.post-full-tags a:hover {
-    color: var(--darkgrey);
 }
 
 .post-full-meta-date {
@@ -1563,19 +1556,22 @@ Usage (In Ghost editor):
 }
 
 .post-full-byline-meta {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
     line-height: 1.2em;
     color: color(var(--midgrey) l(+10%));;
 }
 
 .post-full-byline-meta h4 {
     margin: 0 0 3px;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     line-height: 1.4em;
 }
 
 .post-full-byline-meta h4 a {
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--darkgrey) l(+10%));
 }
 
 .post-full-byline-meta h4 a:hover {
@@ -1729,6 +1725,10 @@ Usage (In Ghost editor):
     border-bottom: none;
 }
 
+.read-next .post-card:after {
+    display: none;
+}
+
 .read-next .post-card-title {
     color: rgba(255, 255, 255, 0.8);
 }
@@ -1738,7 +1738,7 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card:hover .post-card-title {
-    color: #fff;
+    color: var(--blue);
     opacity: 1.0;
 }
 
@@ -1882,8 +1882,8 @@ Usage (In Ghost editor):
 
 .read-next-card-footer a:hover {
     text-decoration: none;
-    border-color: var(--yellow);
-    color: var(--yellow);
+    border-color: var(--blue);
+    color: var(--blue);
 }
 
 @media (max-width: 1170px) {
