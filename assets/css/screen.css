@@ -780,7 +780,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         position: relative;
         flex: 1 1 auto;
         margin-bottom: 0;
-        min-height: 380px;
+        min-height: 420px;
     }
 
     .post-card-large .post-card-image {
