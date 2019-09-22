@@ -220,7 +220,7 @@ body {
 }
 
 .no-image .archive-header-content {
-    border-bottom: 1px solid var(--lightgrey);
+    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
 }
 
 @media (max-width: 900px) {
