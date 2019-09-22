@@ -199,7 +199,7 @@ body {
 }
 
 .site-archive-header .no-image .site-description {
-    color: color(var(--darkgrey) l(+20%));
+    color: var(--midgrey);
     opacity: 1.0;
 }
 
@@ -220,7 +220,7 @@ body {
 }
 
 .no-image .archive-header-content {
-    border-bottom: 1px solid var(--darkgrey);
+    border-bottom: 1px solid var(--lightgrey);
 }
 
 @media (max-width: 900px) {
@@ -2321,7 +2321,7 @@ Usage (In Ghost editor):
 }
 
 .no-image .archive-header-content .author-bio {
-    color: color(var(--darkgrey) l(+20%));
+    color: var(--midgrey);
     opacity: 1.0;
 }
 
@@ -2336,7 +2336,7 @@ Usage (In Ghost editor):
 }
 
 .no-image .archive-header-content .author-meta {
-    color: color(var(--darkgrey) l(+20%));
+    color: var(--midgrey);
     opacity: 1.0;
 }
 
@@ -2346,11 +2346,11 @@ Usage (In Ghost editor):
 }
 
 .no-image .archive-header-content .social-link svg {
-    fill: color(var(--midgrey) l(-20%));
+    fill: var(--midgrey);
 }
 
 .no-image .archive-header-content .social-link-wb svg path {
-    stroke: color(var(--midgrey) l(-20%));
+    stroke: var(--midgrey);
 }
 
 .archive-header-content .bull {
