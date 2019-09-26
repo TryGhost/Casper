@@ -4,11 +4,7 @@
 into the {body} of the default.hbs template --}}
 
 <header class="site-header">
-    <div class="outer site-nav-main">
-        <div class="inner">
-            {{> "site-nav"}}
-        </div>
-    </div>
+    {{> fixed-site-header}}
 </header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
@@ -182,7 +178,7 @@ into the {body} of the default.hbs template --}}
 </aside>
 
 {{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{> floating-header}}
+{{!-- {{> floating-header}} --}}
 
 {{/post}}
 
@@ -200,8 +196,8 @@ $(document).ready(function () {
     $postContent.fitVids();
     // End fitVids
 
-    var progressBar = document.querySelector('#reading-progress');
-    var header = document.querySelector('.floating-header');
+    // var progressBar = document.querySelector('#reading-progress');
+    var nav = document.querySelector('.site-nav-main');
     var title = document.querySelector('.post-full-title');
 
     var lastScrollY = window.scrollY;
@@ -232,15 +228,15 @@ $(document).ready(function () {
         var triggerOffset = title.offsetHeight + 35;
         var progressMax = lastDocumentHeight - lastWindowHeight;
 
-        // show/hide floating header
+        // show/hide post title
         if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
+            nav.classList.add('nav-post-title-active');
         } else {
-            header.classList.remove('floating-active');
+            nav.classList.remove('nav-post-title-active');
         }
 
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
+        //progressBar.setAttribute('max', progressMax);
+        //progressBar.setAttribute('value', lastScrollY);
 
         ticking = false;
     }

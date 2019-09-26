@@ -4,9 +4,14 @@
             {{> "site-logo"}}
         {{/is}}
 
-        {{#if @site.navigation}}
-            {{navigation}}
-        {{/if}}
+        <div class="site-nav-content">
+            {{#if @site.navigation}}
+                {{navigation}}
+            {{/if}}
+            {{#is "post"}}
+                <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
+            {{/is}}
+        </div>
     </div>
     <div class="site-nav-right">
         <div class="social-links">
