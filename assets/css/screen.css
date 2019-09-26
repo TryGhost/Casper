@@ -518,7 +518,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: block;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 3px;
     transition: all 0.5s ease;
 }
 
@@ -780,7 +780,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         position: relative;
         flex: 1 1 auto;
         margin-bottom: 0;
-        min-height: 420px;
+        min-height: 380px;
     }
 
     .post-card-large .post-card-image {
@@ -790,7 +790,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content {
-        flex: 0 1 335px;
+        flex: 0 1 375px;
         transition: all 0.5s ease;
         justify-content: center;
     }
