@@ -5,15 +5,14 @@ into the {body} of the default.hbs template --}}
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
 {{> header background=@site.cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner" lang="en">
-        <div class="site-header-content">
+        <div class="site-header-image">
+            <img class="site-logo" src="../assets/header-pro.svg" alt="{{@site.title}}" />
+        </div>
+        <div class="site-header-content-home">
             <h1 class="site-title">
-                {{#if @site.logo}}
-                    <img class="site-logo" src="../assets/header-pro.svg" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
+                Alexandra JANIN
             </h1>
-            <h2 class="site-description">{{@site.description}}</h2>
+            <h2 class="site-description">Front-end developer</h2>
         </div>
         {{> "site-nav"}}
     </div>

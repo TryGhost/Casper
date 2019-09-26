@@ -73,6 +73,7 @@ body {
 
 /* Centered content container blocks */
 .inner {
+    position: relative;
     margin: 0 auto;
     max-width: 1040px;
     width: 100%;
@@ -151,28 +152,38 @@ body {
     display: none;
 }
 
+.site-header-image,
 .site-header-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4vw 4vw 8vw 4vw;
-    min-height: 200px;
+    padding: 4vw 4vw 6vw 4vw;
+    min-height: 180px;
     max-height: 450px;
     text-align: center;
+}
+
+.site-header-content-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw 0;
+    text-align: left;
 }
 
 .site-title {
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 3.8rem;
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
 .site-logo {
     max-height: 180px;
-    margin-top: -2vw;
+    margin-top: -4vw;
     margin-bottom: -4vw;
 }
 
@@ -180,18 +191,31 @@ body {
     z-index: 10;
     margin: 0;
     padding: 5px 0;
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
 }
 
-@media (max-width: 500px) {
+@media (min-width: 768px) {
+    .site-header-image {
+        min-height: 280px;
+    }
+    .site-header-content-home {
+        position: absolute;
+        top: 0;
+        text-align: left;
+        align-items: start;
+    }
     .site-title {
-        font-size: 3rem;
+        text-align: left;
+        font-size: 2rem;
+        color: var(--darkgrey);
     }
     .site-description {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        text-align: left;
+        color: var(--darkgrey);
     }
 }
 
