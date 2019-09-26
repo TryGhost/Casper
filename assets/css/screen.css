@@ -298,7 +298,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     left: 0;
     width: 98%;
     height: 2rem;
-    background: var(--purple);
+    background: var(--green);
     display: block;
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     opacity: .6;
@@ -754,7 +754,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-meta-date {
-    color: var(--purple);
+    color: var(--green);
 }
 
 .post-full-title {
@@ -898,11 +898,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content a {
     color: #000;
     word-break: break-word;
-    box-shadow: var(--purple) 0 -1px 0 inset;
+    box-shadow: var(--green) 0 -1px 0 inset;
 }
 
 .post-full-content a:hover {
-    color: var(--purple);
+    color: var(--green);
     text-decoration: none;
 }
 
@@ -1110,7 +1110,7 @@ Usage (In Ghost editor):
     margin: 0.5em 0;
     padding: 1em 0 1.5em;
     border: 0;
-    color: var(--purple);
+    color: var(--green);
     font-family: Georgia,serif;
     font-size: 3.2rem;
     line-height: 1.35em;
@@ -1153,7 +1153,7 @@ Usage (In Ghost editor):
 }
 
 .footnote-backref {
-    color: var(--purple) !important;
+    color: var(--green) !important;
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none !important;
@@ -1310,10 +1310,10 @@ Usage (In Ghost editor):
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
-    color(var(--purple) whiteness(+7%)),
-    color(var(--purple) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--purple) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--purple) lightness(-4%) saturation(-10%))
+    color(var(--green) whiteness(+7%)),
+    color(var(--green) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--green) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--green) lightness(-4%) saturation(-10%))
     );
     border-radius: 5px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
@@ -1323,7 +1323,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button:active,
 .subscribe-form button:focus {
-    background: color(var(--purple) lightness(-9%) saturation(-10%));
+    background: color(var(--green) lightness(-9%) saturation(-10%));
 }
 
 @media (max-width: 650px) {
@@ -1414,8 +1414,8 @@ Usage (In Ghost editor):
 }
 
 .author-card-button:hover {
-    border-color: var(--purple);
-    color: var(--purple);
+    border-color: var(--green);
+    color: var(--green);
     text-decoration: none;
 }
 
@@ -1838,7 +1838,7 @@ Usage (In Ghost editor):
     width: 100%;
     height: 2px;
     border: none;
-    color: var(--purple);
+    color: var(--green);
     background: transparent;
 
     appearance: none;
@@ -1849,11 +1849,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--purple);
+    background-color: var(--green);
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--purple);
+    background-color: var(--green);
 }
 
 .progress-container {
@@ -1870,7 +1870,7 @@ Usage (In Ghost editor):
     display: block;
     width: 50%;
     height: inherit;
-    background-color: var(--purple);
+    background-color: var(--green);
 }
 
 @media (max-width: 900px) {
@@ -2367,10 +2367,10 @@ Usage (In Ghost editor):
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
-    color(var(--purple) whiteness(+7%)),
-    color(var(--purple) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--purple) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--purple) lightness(-4%) saturation(-10%))
+    color(var(--green) whiteness(+7%)),
+    color(var(--green) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--green) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--green) lightness(-4%) saturation(-10%))
     );
     border-radius: 8px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
@@ -2380,7 +2380,7 @@ Usage (In Ghost editor):
 
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
-    background: color(var(--purple) lightness(-9%) saturation(-10%));
+    background: color(var(--green) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-overlay-close {
