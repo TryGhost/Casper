@@ -260,6 +260,18 @@ body {
     z-index: 1000;
 }
 
+.home-template .site-nav-main {
+    visibility: hidden;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translate3d(0, -120%, 0);
+}
+
+.home-template .fixed-nav-active {
+    visibility: visible;
+    transition: all 500ms cubic-bezier(0.22, 1, 0.27, 1);
+    transform: translate3d(0, 0, 0);
+}
+
 .site-nav {
     position: relative;
     z-index: 100;
@@ -338,6 +350,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     width: auto;
     height: 21px;
+}
+
+.site-home-header .site-nav-logo {
+    display: none;
 }
 
 .site-nav-content {

@@ -1,9 +1,6 @@
 <nav class="site-nav">
     <div class="site-nav-left">
-        {{^is "index"}}
-            {{> "site-logo"}}
-        {{/is}}
-
+        {{> "site-logo"}}
         <div class="site-nav-content">
             {{#if @site.navigation}}
                 {{navigation}}
