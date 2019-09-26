@@ -256,9 +256,29 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .nav {
     display: flex;
-    margin: 0 0 0 -12px;
+    margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.nav-current {
+    position: relative;
+    font-weight: bold;
+}
+
+.nav-current:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 0;
+    width: 98%;
+    height: 2rem;
+    background: var(--purple);
+    display: block;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    opacity: .6;
+    /* border-radius: 1rem; */
 }
 
 .nav li {
@@ -269,16 +289,20 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav li a {
+    position: relative;
+    z-index: 2;
     display: block;
     margin: 0;
     padding: 10px 12px;
     color: #fff;
     opacity: 0.8;
+    font-size: 1.25rem;
 }
 
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
+    color: white;
 }
 
 .site-nav-right {
