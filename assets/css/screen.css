@@ -549,7 +549,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -40px;
+    margin: 0 -20px;
     padding: 50px 0 0;
 }
 
@@ -560,21 +560,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-direction: column;
     overflow: hidden;
     margin: 0 0 40px;
-    padding: 0 40px 40px;
+    padding: 0 20px 40px;
     min-height: 220px;
     background-size: cover;
     border-bottom: 1px solid color(var(--lightgrey) l(+12%));
-}
-
-.post-card:after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    bottom: 40px;
-    right: 0;
-    width: 1px;
-    background: color(var(--lightgrey) l(+12%));
 }
 
 .post-card-image-link {
@@ -613,6 +602,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card:not(.no-image) .post-card-header {
     margin: 15px 0 0;
+}
+
+.no-image .post-card-header {
+    margin-top: -6px;
 }
 
 .post-card-primary-tag {
