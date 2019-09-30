@@ -1826,7 +1826,7 @@ Usage (In Ghost editor):
 
 .read-next-card {
     position: relative;
-    flex: 0 1 317px;
+    flex: 0 1 326px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1944,6 +1944,7 @@ Usage (In Ghost editor):
 
 @media (max-width: 1170px) {
     .read-next-card {
+        flex: 1 1 261px;
         margin-bottom: 5vw;
     }
 }
