@@ -846,7 +846,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content {
-        flex: 0 1 375px;
+        flex: 0 1 361px;
         transition: all 0.5s ease;
         justify-content: center;
     }
