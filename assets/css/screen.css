@@ -117,7 +117,7 @@ body {
     margin-top: 64px;
     padding-bottom: 12px;
     color: #fff;
-    background: #000 no-repeat center center;
+    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
 }
 
@@ -261,7 +261,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: #000;
+    background: color(var(--darkgrey) l(-5%));
     z-index: 1000;
 }
 
@@ -1781,7 +1781,7 @@ Usage (In Ghost editor):
 
 .read-next {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: #000;
+    background: color(var(--darkgrey) l(-5%));
 }
 
 .read-next .post-card {
@@ -1793,8 +1793,15 @@ Usage (In Ghost editor):
     display: none;
 }
 
+.read-next .post-card-primary-tag {
+    color: #fff;
+    opacity: 0.6;
+}
+
 .read-next .post-card-title {
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
 }
 
 .read-next .post-card:hover .post-card-image {
@@ -1802,7 +1809,7 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card:hover .post-card-title {
-    color: var(--blue);
+    color: #fff;
     opacity: 1.0;
 }
 
@@ -1837,8 +1844,16 @@ Usage (In Ghost editor):
     overflow: hidden;
     margin: 0 25px 50px;
     padding: 25px;
-    background: linear-gradient(var(--darkgrey), #000);
+    background: linear-gradient(color(var(--darkgrey) l(+2%)), color(var(--darkgrey) l(-5%)));
     border-radius: 3px;
+}
+
+.read-next-card a {
+    transition: all 0.2s ease-in-out;
+}
+
+.read-next-card a:hover {
+    text-decoration: none;
 }
 
 .read-next-card-header-title {
@@ -1854,12 +1869,12 @@ Usage (In Ghost editor):
 .read-next-card-header-title a {
     font-weight: 500;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
+    opacity: 0.8;
 }
 
 .read-next-card-header-title a:hover {
-    color: #fff;
-    text-decoration: underline;
+    opacity: 1;
 }
 
 .read-next-card-content {
@@ -1897,14 +1912,12 @@ Usage (In Ghost editor):
 
 .read-next-card-content li a {
     display: block;
-    transition: opacity 0.35s ease-in-out;
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
+    opacity: 0.8;
 }
 
 .read-next-card-content li a:hover {
     opacity: 1;
-    text-decoration: none;
-    color: #fff;
 }
 
 .read-next-card-excerpt {
@@ -1943,8 +1956,8 @@ Usage (In Ghost editor):
 
 .read-next-card-footer a:hover {
     text-decoration: none;
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--yellow);
+    color: var(--yellow);
 }
 
 @media (max-width: 1170px) {
@@ -2259,7 +2272,7 @@ Usage (In Ghost editor):
     flex-shrink: 0;
     margin: 0;
     max-width: 46em;
-    font-size: 2.1rem;
+    font-size: 2.0rem;
     line-height: 1.4em;
     font-weight: 400;
     opacity: 0.8;
@@ -2562,7 +2575,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: color(var(--darkgrey) l(-15%));
+    background: color(var(--darkgrey) l(-5%));
 }
 
 .site-footer-content {
