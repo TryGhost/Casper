@@ -50,7 +50,7 @@ into the {body} of the default.hbs template --}}
 
         console.log("there must be a way to debug");
         
-        var nav = document.querySelector('.site-nav-main');
+        var nav = document.querySelector('.site-nav-main .site-nav');
         var feed = document.querySelector('.post-feed');
 
         var lastScrollY = window.scrollY;
@@ -81,7 +81,7 @@ into the {body} of the default.hbs template --}}
             var progressMax = lastDocumentHeight - lastWindowHeight;
 
             // show/hide nav
-            if (lastScrollY >= trigger - 200) {
+            if (lastScrollY >= trigger - 20) {
                 nav.classList.add('fixed-nav-active');
             } else {
                 nav.classList.remove('fixed-nav-active');
