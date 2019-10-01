@@ -656,7 +656,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-meta {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 0;
 }
 
@@ -768,8 +768,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-byline-content{
     display: flex;
     flex-direction: column;
+    flex: 1 1 50%;
     line-height: 1.4em;
-    margin-left: 6px;
+    margin: 2px 0 0 6px;
     font-size: 1.2rem;
     font-weight: 400;
     text-transform: uppercase;
