@@ -302,7 +302,7 @@ body {
     .site-nav-main .site-nav:after {
         position: absolute;
         content: "";
-        z-index: 999;
+        z-index: 1000;
         top: 0;
         width: 40px;
         height: 100%;
@@ -330,7 +330,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: inline-block;
     margin-right: 32px;
-    padding: 11px 0;
+    padding: 12px 0;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1em;
@@ -378,8 +378,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .nav li a {
     position: relative;
     display: block;
-    margin: 0 0 1px;
-    padding: 10px 12px;
+    padding: 12px 12px;
     color: #fff;
     opacity: 0.8;
     transition: all 0.35s ease-in-out;
