@@ -267,12 +267,12 @@ body {
 
 .home-template .site-nav-main .site-nav {
     opacity: 0;
-    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
 }
 
 .home-template .site-nav-main .fixed-nav-active {
     opacity: 1;
-    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
 }
 
 .site-nav {
@@ -413,12 +413,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav-post-title-active .nav {
+    visibility: hidden;
     opacity: 0;
-    pointer-events: none;
     transform: translateY(-175%);
 }
 
 .nav-post-title {
+    visibility: hidden;
     position: absolute;
     top: 10px;
     font-size: 1.7rem;
@@ -427,7 +428,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     color: #fff;
     opacity: 0;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
-    pointer-events: none;
     transform: translateY(175%);
 }
 
@@ -441,6 +441,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav-post-title-active .nav-post-title {
+    visibility: visible;
     opacity: 1;
     transform: translateY(0);
 }
@@ -579,7 +580,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     overflow: hidden;
     border-radius: 3px;
-    transition: all 0.5s ease;
 }
 
 .post-card-image {
@@ -587,11 +587,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
     object-fit: cover;
-    transition: all 0.35s ease;
-}
-
-.post-card:hover .post-card-image {
-    opacity: 0.85;
 }
 
 .post-card-content-link {
@@ -627,7 +622,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-title {
     margin: 0 0 0.4em;
-    transition: color 0.35s ease;
+    transition: color 0.2s ease-in-out;
     line-height: 1.25em;
 }
 
@@ -647,7 +642,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt {
     font-family: Georgia, serif;
-    transition: all 0.5s ease;
     max-width: 56em;
     color: var(--midgrey);
 }
@@ -751,7 +745,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     border-radius: 3px;
     box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: translateY(6px);
     pointer-events: none;
 }
@@ -855,7 +849,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-content {
         flex: 0 1 361px;
-        transition: all 0.5s ease;
         justify-content: center;
     }
 
@@ -1076,7 +1069,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: var(--darkgrey);
     word-break: break-word;
     box-shadow: var(--darkgrey) 0 -1px 0 inset;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
 }
 
 .post-full-content a:hover {
@@ -1619,7 +1612,7 @@ Usage (In Ghost editor):
     height: 40px;
     border: #fff 2px solid;
     border-radius: 100%;
-    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
 }
 
 .post-full-byline-meta {
@@ -1660,7 +1653,7 @@ Usage (In Ghost editor):
     border-radius: 3px;
     box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
     opacity: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(0.98) translateY(15px);
     pointer-events: none;
 }
@@ -1900,7 +1893,7 @@ Usage (In Ghost editor):
 
 .read-next-card-content li a {
     display: block;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s ease-in-out;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -1941,7 +1934,7 @@ Usage (In Ghost editor):
     padding: 7px 12px 8px 14px;
     font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.6);
-    transition: all 0.3s ease;
+    transition: all 0.35s ease-in-out;
 }
 
 .read-next-card-footer a:hover {
@@ -2410,7 +2403,7 @@ Usage (In Ghost editor):
     align-items: center;
     background: rgba(0,25,40,0.97);
     opacity: 0;
-    transition: opacity 200ms ease-in;
+    transition: opacity 0.2s ease-in;
     pointer-events: none;
 
     backdrop-filter: blur(3px);
