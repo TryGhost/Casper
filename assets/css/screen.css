@@ -111,7 +111,6 @@ body {
 .site-header-background {
     position: relative;
     margin-top: 64px;
-    padding-top: 12px;
     padding-bottom: 12px;
     color: #fff;
     background: #000 no-repeat center center;
@@ -254,8 +253,6 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
     background: #000;
     z-index: 1000;
 }
@@ -279,18 +276,19 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     overflow-y: hidden;
-    height: 44px;
+    height: 64px;
     font-size: 1.3rem;
 }
 
 .site-nav-left {
+    flex: 1 0 auto;
     display: flex;
     align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     margin-right: 10px;
-    padding-bottom: 80px;
+    padding: 10px 0 80px;
     letter-spacing: 0.2px;
     font-weight: 500;
     white-space: nowrap;
@@ -358,15 +356,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .site-nav-content {
     position: relative;
+    align-self: flex-start;
 }
 
 .nav {
-    position: relative;
+    position: absolute;
     display: flex;
     margin: 0 0 0 -12px;
     padding: 0;
     list-style: none;
-    transition: all 0.35s ease-in-out;
+    transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 1000;
 }
 
@@ -411,6 +410,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .nav-post-title-active .nav {
     opacity: 0;
     pointer-events: none;
+    transform: translateY(-175%);
 }
 
 .nav-post-title {
@@ -421,8 +421,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: none;
     color: #fff;
     opacity: 0;
-    transition: all 0.35s ease-in-out;
+    transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
     pointer-events: none;
+    transform: translateY(175%);
 }
 
 .nav-post-title.dash {
@@ -436,13 +437,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .nav-post-title-active .nav-post-title {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .site-nav-right {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    height: 40px;
+    padding: 10px 0;
+    height: 64px;
 }
 
 .social-links {
