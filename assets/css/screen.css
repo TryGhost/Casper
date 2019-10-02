@@ -99,6 +99,7 @@ body {
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
+
     .home-template .site-nav {
         position: relative;
     }
@@ -164,6 +165,7 @@ body {
     padding: 0;
     font-size: 5.0rem;
     font-weight: 600;
+    line-height: 1em;
 }
 
 .site-logo {
@@ -178,21 +180,6 @@ body {
     font-weight: 400;
     line-height: 1.4em;
     opacity: 0.8;
-}
-
-@media (max-width: 900px) {
-    .site-header-content {
-        padding-bottom: 9vw;
-    }
-}
-
-@media (max-width: 500px) {
-    .site-title {
-        font-size: 3.2rem;
-    }
-    .site-description {
-        font-size: 1.8rem;
-    }
 }
 
 /* 4.1 Home header
@@ -251,7 +238,24 @@ body {
     border-bottom: 1px solid color(var(--lightgrey) l(+12%));
 }
 
+
+/* Special header styles for smaller screens */
+
+@media (max-width: 900px) {
+    .site-header-content {
+        padding-bottom: 9vw;
+    }
+}
+
 @media (max-width: 500px) {
+    .site-home-header .site-title {
+        font-size: 3.2rem;
+    }
+
+    .site-home-header .site-description {
+        font-size: 1.8rem;
+    }
+
     .site-archive-header .site-header-content {
         min-height: unset;
     }
@@ -308,11 +312,13 @@ body {
         width: 40px;
         height: 100%;
     }
+
     .site-header-background:not(.responsive-header-img) .site-nav:after,
     .site-nav-main .site-nav:after {
         right: 0;
         background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
     }
+
     .nav li:last-of-type {
         padding-right: 20px;
     }
@@ -544,14 +550,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     .site-home-header .site-nav {
         margin-left: -5vw;
     }
+
     .site-nav-main {
         padding-left: 0;
         padding-right: 0;
     }
+
     .site-nav-left {
         margin-right: 0;
         padding-left: 5vw;
     }
+
     .site-nav-right {
         display: none;
     }
@@ -861,6 +870,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-feed {
         padding-top: 5vw;
     }
+
     .post-card {
         margin-bottom: 5vw;
     }
@@ -870,6 +880,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-title {
         font-size: 1.9rem;
     }
+
     .post-card-excerpt {
         font-size: 1.6rem;
     }
@@ -1349,6 +1360,7 @@ Usage (In Ghost editor):
         margin: 25px -6vw 50px;
         border-radius: 0;
     }
+
     .post-full-image img {
         height: 580px;
         min-height: 580px;
@@ -1359,6 +1371,7 @@ Usage (In Ghost editor):
     .post-full-image {
         margin: 25px -5vw;
     }
+
     .post-full-image img {
         height: 400px;
         min-height: 400px;
@@ -1370,17 +1383,21 @@ Usage (In Ghost editor):
         font-size: 1.2rem;
         line-height: 1.3em;
     }
+
     .post-full-title {
         font-size: 3.8rem;
     }
+
     .post-full-image {
         margin-top: 5px;
         margin-bottom: 5vw;
         height: 350px;
     }
+
     .post-full-content {
         padding: 0;
     }
+
     .post-full-content:before,
     .post-full-content:after {
         display: none;
@@ -1714,6 +1731,7 @@ Usage (In Ghost editor):
     .subscribe-form-title {
         font-size: 2.4rem;
     }
+
     .subscribe-form p {
         font-size: 1.6rem;
     }
@@ -1723,9 +1741,11 @@ Usage (In Ghost editor):
     .subscribe-form form {
         flex-direction: column;
     }
+
     .subscribe-form .form-group {
         width: 100%;
     }
+
     .subscribe-form button {
         margin: 10px 0 0 0;
         width: 100%;
@@ -1748,6 +1768,13 @@ Usage (In Ghost editor):
 .read-next {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background: color(var(--darkgrey) l(-5%));
+}
+
+.read-next-feed {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -25px;
+    padding: 60px 0 0 0;
 }
 
 .read-next .post-card {
@@ -1793,13 +1820,6 @@ Usage (In Ghost editor):
 
 .read-next .post-card-byline-content a {
     color: rgba(255, 255, 255, 0.8);
-}
-
-.read-next-feed {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -25px;
-    padding: 60px 0 0 0;
 }
 
 .read-next-card {
@@ -1930,6 +1950,27 @@ Usage (In Ghost editor):
     .read-next-card {
         flex: 1 1 261px;
         margin-bottom: 5vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .read-next-feed {
+        flex-direction: column;
+        padding: 25px 0 0;
+    }
+
+    .read-next-card {
+        flex: 1 1 auto;
+        margin: 0 25px;
+        padding: 0;
+        background: none;
+    }
+
+    .read-next .post-card {
+        flex: 1 1 auto;
+        margin: 25px;
+        padding: 25px 0 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 
@@ -2221,7 +2262,7 @@ Usage (In Ghost editor):
 }
 
 .author-header-content {
-    margin-left: 33px;
+    margin: 5px 0 0 30px;
 }
 
 .site-header-content .author-profile-image {
@@ -2291,21 +2332,26 @@ Usage (In Ghost editor):
     .author-header {
         padding: 10px 0 0;
     }
+
     .no-image .author-header {
         padding-bottom: 10px;
     }
+
     .author-header-content {
         margin-left: 20px;
     }
+
     .site-header-content .author-profile-image {
         width: 80px;
         height: 80px;
     }
+
     .author-header-content .author-bio {
         font-size: 1.8rem;
         line-height: 1.3em;
         letter-spacing: 0;
     }
+
     .author-location,
     .author-stats {
         display: none;
@@ -2589,6 +2635,7 @@ Usage (In Ghost editor):
     .site-footer-content {
         flex-direction: column;
     }
+
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
