@@ -677,8 +677,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .author-list {
     display: flex;
-    flex-wrap: wrap-reverse;
-    margin: 0;
+    flex-wrap: wrap;
+    margin: 0 0 0 4px;
     padding: 0;
     list-style: none;
 }
@@ -690,37 +690,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 0;
 }
 
-.author-list-item:nth-child(1) {
-    z-index: 10;
-}
-.author-list-item:nth-child(2) {
-    z-index: 9;
-}
-.author-list-item:nth-child(3) {
-    z-index: 8;
-}
-.author-list-item:nth-child(4) {
-    z-index: 7;
-}
-.author-list-item:nth-child(5) {
-    z-index: 6;
-}
-.author-list-item:nth-child(6) {
-    z-index: 5;
-}
-.author-list-item:nth-child(7) {
-    z-index: 4;
-}
-.author-list-item:nth-child(8) {
-    z-index: 3;
-}
-.author-list-item:nth-child(9) {
-    z-index: 2;
-}
-.author-list-item:nth-child(10) {
-    z-index: 1;
-}
-
 .static-avatar {
     display: block;
     overflow: hidden;
@@ -729,10 +698,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 34px;
     border: #fff 2px solid;
     border-radius: 100%;
-}
-
-.author-list-item:nth-child(1) .static-avatar {
-    margin-left: -2px;
 }
 
 .author-name-tooltip {
@@ -1601,7 +1566,7 @@ Usage (In Ghost editor):
 .post-full-byline-content {
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .post-full-byline-content .author-list {
@@ -1621,6 +1586,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-byline-meta {
+    margin: 2px 0 0;
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.2px;
