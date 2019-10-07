@@ -1619,7 +1619,7 @@ Usage (In Ghost editor):
 @media (max-width: 650px) {
     .author-list-item .author-card {
         display: none;
-    }   
+    }
 }
 
 @media (max-width: 500px) {
@@ -2115,7 +2115,7 @@ Usage (In Ghost editor):
     flex-direction: column;
     flex-grow: 1;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 20px;
 }
 
