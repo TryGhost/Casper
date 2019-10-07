@@ -35,8 +35,11 @@ One neat trick is that you can also create custom one-off templates by adding th
 Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash
-$ yarn install
-$ yarn dev
+# install dependencies
+yarn install
+
+# run development server
+yarn dev
 ```
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
@@ -44,7 +47,8 @@ Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/
 The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
 ```bash
-$ yarn zip
+# create .zip file
+yarn zip
 ```
 
 # PostCSS Features Used
