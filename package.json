@@ -60,6 +60,7 @@
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0"
     },
+    "browserslist": ["defaults"],
     "config": {
         "posts_per_page": 25,
         "image_sizes": {
