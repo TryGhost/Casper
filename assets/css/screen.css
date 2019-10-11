@@ -22,6 +22,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 10. Subscribe Overlay
 11. Site Footer
+12. Dark Theme
 
 */
 
@@ -2642,7 +2643,7 @@ Usage (In Ghost editor):
 }
 
 
-/* 12. Dark theme
+/* 12. Dark Theme
 /* ---------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
     body  {
