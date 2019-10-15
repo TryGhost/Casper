@@ -51,14 +51,6 @@ into the {body} of the default.hbs template --}}
                 </div>
             </section>
 
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
-            {{/if}}
 
             <footer class="post-full-footer">
 
@@ -80,6 +72,31 @@ into the {body} of the default.hbs template --}}
                 If you want to embed comments, this is a good place to do it!
             </section>
             --}}
+            <section class="post-full-comments">
+              {{!- <div id="commento"></div>
+              <script defer
+                  src="https://www.thenaylors.co.uk/commento/js/commento.js">
+                </script>
+               --}}
+              <script data-isso="https://www.thenaylors.co.uk/isso"
+                        data-isso-require-author="true"
+                        data-isso-avatar="false"
+                        data-isso-gravatar="true"
+              src="https://www.thenaylors.co.uk/isso/js/embed.min.js">
+              </script>
+
+              {{!-- Email subscribe form at the bottom of the page --}}
+              {{#if @labs.subscribers}}
+              <section class="subscribe-form">
+                  <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
+                  <p>Get the latest posts delivered right to your inbox</p>
+                  {{subscribe_form placeholder="youremail@example.com"}}
+              </section>
+              {{/if}}
+
+          <section id="isso-thread">
+          </section>
+        </section>
 
         </article>
 
