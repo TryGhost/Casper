@@ -2103,6 +2103,12 @@ Usage (In Ghost editor):
     border-radius: 3px;
 }
 
+.post-full-content .kg-bookmark-container:hover {
+    text-decoration: none;
+    color: var(--darkgrey);
+    box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+}
+
 .kg-bookmark-content {
     display: flex;
     flex-direction: column;
@@ -2117,6 +2123,7 @@ Usage (In Ghost editor):
     line-height: 1.5em;
     font-weight: 600;
     color: color(var(--midgrey) l(-30%));
+    transition: color 0.2s ease-in-out;
 }
 
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
