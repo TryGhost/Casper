@@ -22,7 +22,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 10. Subscribe Overlay
 11. Site Footer
-12. Dark Theme
+12. Dark Mode
 
 */
 
@@ -2643,11 +2643,11 @@ Usage (In Ghost editor):
 }
 
 
-/* 12. Dark Theme
+/* 12. Dark Mode
 /* ---------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
     body  {
-        background: var(--dark-theme-background);
+        background: var(--darkmode);
         color: rgba(255, 255, 255, 0.75);
     }
 
@@ -2655,17 +2655,21 @@ Usage (In Ghost editor):
         opacity: 0.9;
     }
 
+    .site-header-background:before {
+        background: rgba(0,0,0,0.6);
+    }
+
     .post-feed {
-        background: var(--dark-theme-background);
+        background: var(--darkmode);
     }
 
     .post-card,
     .post-card:hover {
-        border-bottom-color: color(var(--dark-theme-background) l(+8%));
+        border-bottom-color: color(var(--darkmode) l(+8%));
     }
     
     .author-profile-image {
-        background: var(--dark-theme-background);
+        background: var(--darkmode);
     }
 
     .post-card-byline-content a {
@@ -2677,7 +2681,7 @@ Usage (In Ghost editor):
     }
     
     .post-card-image {
-        background: var(--dark-theme-background);
+        background: var(--darkmode);
     }
 
     .post-card-title {
@@ -2694,11 +2698,11 @@ Usage (In Ghost editor):
     }
 
     .site-main, .post-template .site-main {
-        background: var(--dark-theme-background);
+        background: var(--darkmode);
     }
 
     .post-full-content {
-        background: var(--dark-theme-background);
+        background: var(--darkmode);
     }
 
     .post-full-title {
@@ -2710,11 +2714,11 @@ Usage (In Ghost editor):
     }
 
     .post-full-image {
-        background-color: color(var(--dark-theme-background) l(+8%));
+        background-color: color(var(--darkmode) l(+8%));
     }
 
     .post-full-byline {
-        border-top-color: color(var(--dark-theme-background) l(+15%));
+        border-top-color: color(var(--darkmode) l(+15%));
     }
 
     .post-full-byline-meta h4 a {
@@ -2726,12 +2730,12 @@ Usage (In Ghost editor):
     }
 
     .author-list-item .author-card {
-        background: color(var(--dark-theme-background) l(+4%));
+        background: color(var(--darkmode) l(+4%));
         box-shadow: 0 12px 26px rgba(0,0,0,0.4);
     }
 
     .author-list-item .author-card:before {
-        border-top-color: color(var(--dark-theme-background) l(+4%));
+        border-top-color: color(var(--darkmode) l(+4%));
     }
 
     .post-full-content h1,
@@ -2761,7 +2765,7 @@ Usage (In Ghost editor):
     }
 
     hr {
-        border-top-color: color(var(--dark-theme-background) l(+8%));
+        border-top-color: color(var(--darkmode) l(+8%));
     }
 
     .post-full-content figcaption {
@@ -2786,12 +2790,12 @@ Usage (In Ghost editor):
     }
 
     .site-archive-header .no-image {
-        background: var(--dark-theme-background);
+        background: var(--darkmode);
         color: rgba(255, 255, 255, 0.9);
     }
 
     .site-archive-header .no-image .site-header-content {
-        border-bottom-color: color(var(--dark-theme-background) l(+15%));
+        border-bottom-color: color(var(--darkmode) l(+15%));
     }
 
     .site-header-content .author-profile-image {
