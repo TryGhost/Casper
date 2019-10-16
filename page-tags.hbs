@@ -15,9 +15,9 @@
     </header>
     {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
     {{#foreach tags}}
-        <img src="{{feature_image}}">  
+        <img src="{{feature_image}}">
+        <h4>{{ name }} <small>({{ count.posts }})</small></h4>
         <a href='{{ url }}'>
-        <h2>{{ name }} <small>({{ count.posts }})</small></h2>
         </a>
     {{/foreach}}
     {{/get}}
