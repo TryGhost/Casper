@@ -213,7 +213,7 @@ body {
 
 .site-archive-header .site-header-content {
     position: relative;
-    align-items: flex-start;
+    align-items: stretch;
     padding: 12vw 0 20px;
     min-height: 200px;
     max-height: 600px;
@@ -466,38 +466,29 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     margin: 0;
-    padding: 10px;
-    color: #fff;
+    padding: 10px 0;
+}
+
+.social-link a {
+    font-weight: 600;
+    color: var(--darkgrey);
     opacity: 0.8;
 }
 
-.social-link:hover {
+.social-link a:hover {
     opacity: 1;
 }
 
-.social-link svg {
-    height: 1.8rem;
-    fill: #fff;
-}
-
-.social-link-fb svg {
-    height: 1.6rem;
-}
-
-.social-link-wb svg {
-    height: 1.6rem;
-}
-
-.social-link-wb svg path {
-    stroke: #fff;
-}
-
-.social-link-rss svg {
-    height: 1.9rem;
+.author-location + .author-stats:before,
+.author-stats + .social-link:before,
+.social-link + .social-link:before {
+    content: "\2022";
+    display: inline-block;
+    margin: 0 12px;
+    color: var(--midgrey);
+    opacity: 0.6;
 }
 
 .subscribe-button {
@@ -769,6 +760,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-size: 1.2rem;
 }
 
+.post-card-byline-date .bull {
+    display: inline-block;
+    margin: 0 4px;
+    opacity: 0.6;
+}
+
 .single-author-byline {
     display: flex;
     flex-direction: column;
@@ -960,8 +957,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 25px 0 50px;
-    background: var(--lightgrey);
+    background: color(var(--lightgrey) l(+10%));
     overflow: hidden;
     border-radius: 3px;
 }
@@ -1493,6 +1493,12 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta h4 a:hover {
     color: var(--darkgrey);
+}
+
+.post-full-byline-meta .bull {
+    display: inline-block;
+    margin: 0 4px;
+    opacity: 0.6;
 }
 
 .author-avatar {
@@ -2244,18 +2250,21 @@ Usage (In Ghost editor):
     padding: 10vw 0 10px;
 }
 
-.no-image .author-header {
+.site-archive-header .no-image .author-header {
     padding-bottom: 20px;
 }
 
 .author-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 5px 0 0 30px;
 }
 
 .site-header-content .author-profile-image {
     z-index: 10;
     flex-shrink: 0;
-    margin: 5px 0 20px;
+    margin: 5px 0 0;
     width: 110px;
     height: 110px;
     box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
@@ -2264,7 +2273,7 @@ Usage (In Ghost editor):
 .author-header-content .author-bio {
     z-index: 10;
     flex-shrink: 0;
-    margin: 0;
+    margin: 6px 0 -6px;
     max-width: 46em;
     font-size: 2.0rem;
     line-height: 1.4em;
@@ -2277,20 +2286,11 @@ Usage (In Ghost editor):
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    margin-top: -3px;
-    font-size: 1.5rem;
+    margin: 0 0 0 1px;
+    font-size: 1.2rem;
     font-weight: 400;
-}
-
-.author-header-content .author-location svg {
-    height: 1.9rem;
-    stroke: #fff;
-}
-
-.author-header-content .bull {
-    display: inline-block;
-    margin: 0 12px;
-    opacity: 0.6;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
 }
 
 .author-header-content .social-link:first-of-type {
