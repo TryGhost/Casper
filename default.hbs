@@ -24,7 +24,11 @@
 
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
-
+        <form>
+            <input id="search-field" />
+            <input type="submit" value="search">
+        </form>
+        <section id="results"></section>
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
@@ -78,7 +82,12 @@
     <script src="{{asset "built/infinitescroll.js"}}"></script>
     {{! - added ghostHunter MJN 16-10-2019 --}}
     <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
-    
+    <script>
+      $("#search-field").ghostHunter({
+        results: "#results"
+      });
+    </script>
+
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
 
