@@ -465,30 +465,37 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding-right: 20px;
 }
 
+
 .social-link {
     display: inline-block;
     margin: 0;
-    padding: 10px 0;
-}
-
-.social-link a {
-    font-weight: 600;
-    color: var(--darkgrey);
+    padding: 10px;
     opacity: 0.8;
 }
 
-.social-link a:hover {
-    opacity: 1;
+.social-link:hover {
+    opacity: 1.0;
 }
 
-.author-location + .author-stats:before,
-.author-stats + .social-link:before,
-.social-link + .social-link:before {
-    content: "\2022";
-    display: inline-block;
-    margin: 0 12px;
-    color: var(--midgrey);
-    opacity: 0.6;
+.social-link svg {
+    height: 1.8rem;
+    fill: #fff;
+}
+
+.social-link-fb svg {
+    height: 1.6rem;
+}
+
+.social-link-wb svg {
+    height: 1.6rem;
+}
+
+.social-link-wb svg path {
+    stroke: #fff;
+}
+
+.social-link-rss svg {
+    height: 1.9rem;
 }
 
 .subscribe-button {
@@ -2314,12 +2321,33 @@ Usage (In Ghost editor):
     opacity: 1.0;
 }
 
-.no-image .author-header-content .social-link svg {
-    fill: var(--midgrey);
+.author-social-link a {
+    font-weight: 600;
+    color: var(--darkgrey);
 }
 
-.no-image .author-header-content .social-link-wb svg path {
-    stroke: var(--midgrey);
+.author-social-link a:hover {
+    opacity: 1;
+}
+
+.author-social-link {
+    padding: 10px 0;
+}
+
+.author-social-link {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.author-location + .author-stats:before,
+.author-stats + .author-social-link:before,
+.author-social-link + .author-social-link:before {
+    content: "\2022";
+    display: inline-block;
+    margin: 0 12px;
+    color: var(--midgrey);
+    opacity: 0.6;
 }
 
 @media (max-width: 500px) {
