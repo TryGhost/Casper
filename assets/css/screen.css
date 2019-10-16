@@ -388,7 +388,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 12px 12px;
     color: #fff;
     opacity: 0.8;
-    transition: all 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out;
 }
 
 .nav li a:hover {
@@ -644,11 +644,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-title {
     margin: 0 0 0.4em;
     transition: color 0.2s ease-in-out;
-    line-height: 1.25em;
-}
-
-.post-card:hover .post-card-title {
-    color: var(--blue);
+    line-height: 1.15em;
 }
 
 .no-image .post-card-title {
@@ -760,7 +756,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     color: color(var(--midgrey) l(+10%));
 }
 
-.post-card-byline-content p {
+.post-card-byline-content span {
     margin: 0;
 }
 
@@ -965,15 +961,15 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-image {
     margin: 25px 0 50px;
-    background: var(--lightgrey) center center;
+    background: var(--lightgrey);
     overflow: hidden;
     border-radius: 3px;
 }
 
 .post-full-image img {
     width: 100%;
-    height: 690px;
-    object-fit: cover;
+    max-width: 1040px;
+    height: auto;
 }
 
 .post-full-content {
@@ -1000,7 +996,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 @media (max-width: 500px) {
     .post-full-custom-excerpt {
-        font-size: 2.0rem;
+        font-size: 1.9rem;
+        line-height: 1.5em;
     }
 }
 
@@ -1363,19 +1360,13 @@ Usage (In Ghost editor):
     }
 
     .post-full-image img {
-        height: 580px;
-        min-height: 580px;
+        max-width: 1170px;
     }
 }
 
 @media (max-width: 700px) {
     .post-full-image {
         margin: 25px -5vw;
-    }
-
-    .post-full-image img {
-        height: 400px;
-        min-height: 400px;
     }
 }
 
@@ -1386,13 +1377,13 @@ Usage (In Ghost editor):
     }
 
     .post-full-title {
-        font-size: 3.8rem;
+        margin-top: 0.2em;
+        font-size: 3.3rem;
     }
 
     .post-full-image {
         margin-top: 5px;
         margin-bottom: 5vw;
-        height: 350px;
     }
 
     .post-full-content {
@@ -1799,11 +1790,6 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card:hover .post-card-image {
-    opacity: 1.0;
-}
-
-.read-next .post-card:hover .post-card-title {
-    color: #fff;
     opacity: 1.0;
 }
 

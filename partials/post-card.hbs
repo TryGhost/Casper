@@ -59,8 +59,8 @@
                 {{/foreach}}
             </ul>
             <div class="post-card-byline-content">
-                <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
-                <p class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> – {{reading_time}}</p>
+                <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
+                <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> – {{reading_time}}</span>
             </div>
         </footer>
 
