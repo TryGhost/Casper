@@ -22,6 +22,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 10. Subscribe Overlay
 11. Site Footer
+12. Dark Mode
 
 */
 
@@ -95,7 +96,6 @@ body {
     .tag-template .post-feed,
     .author-template .post-feed {
         padding: 40px 0 5vw;
-        background: #fff;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
@@ -580,6 +580,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-wrap: wrap;
     margin: 0 -20px;
     padding: 50px 0 0;
+    background: #fff;
 }
 
 .post-card {
@@ -2638,5 +2639,166 @@ Usage (In Ghost editor):
 
     .site-footer-nav a:first-child {
         margin-left: 0;
+    }
+}
+
+
+/* 12. Dark Mode
+/* ---------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+    body  {
+        background: var(--darkmode);
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    img {
+        opacity: 0.9;
+    }
+
+    .site-header-background:before {
+        background: rgba(0,0,0,0.6);
+    }
+
+    .post-feed {
+        background: var(--darkmode);
+    }
+
+    .post-card,
+    .post-card:hover {
+        border-bottom-color: color(var(--darkmode) l(+8%));
+    }
+    
+    .author-profile-image {
+        background: var(--darkmode);
+    }
+
+    .post-card-byline-content a {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .post-card-byline-content a:hover {
+        color: #fff;
+    }
+    
+    .post-card-image {
+        background: var(--darkmode);
+    }
+
+    .post-card-title {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .post-card-excerpt {
+        color: color(var(--midgrey) l(+10%));
+    }
+
+    .author-avatar,
+    .static-avatar {
+        border-color: color(var(--darkgrey) l(+2%));
+    }
+
+    .site-main, .post-template .site-main {
+        background: var(--darkmode);
+    }
+
+    .post-full-content {
+        background: var(--darkmode);
+    }
+
+    .post-full-title {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .post-full-custom-excerpt {
+        color: color(var(--midgrey) l(+10%));
+    }
+
+    .post-full-image {
+        background-color: color(var(--darkmode) l(+8%));
+    }
+
+    .post-full-byline {
+        border-top-color: color(var(--darkmode) l(+15%));
+    }
+
+    .post-full-byline-meta h4 a {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .post-full-byline-meta h4 a:hover {
+        color: #fff;
+    }
+
+    .author-list-item .author-card {
+        background: color(var(--darkmode) l(+4%));
+        box-shadow: 0 12px 26px rgba(0,0,0,0.4);
+    }
+
+    .author-list-item .author-card:before {
+        border-top-color: color(var(--darkmode) l(+4%));
+    }
+
+    .post-full-content h1,
+    .post-full-content h2,
+    .post-full-content h3,
+    .post-full-content h4,
+    .post-full-content h6 {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .post-full-content a {
+        color: #fff;
+        box-shadow: inset 0 -1px 0 #fff;
+    }
+
+    .post-full-content strong {
+        color: #fff;
+    }
+
+    .post-full-content em {
+        color: #fff;
+    }
+
+    .post-full-content code {
+        background: #000;
+        color: #fff;
+    }
+
+    hr {
+        border-top-color: color(var(--darkmode) l(+8%));
+    }
+
+    .post-full-content figcaption {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .post-full-content .kg-bookmark-container {
+        box-shadow: 0 0 1px rgba(255,255,255,.9);
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .kg-bookmark-title {
+        color: #fff;
+    }
+
+    .kg-bookmark-description {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .kg-bookmark-metadata {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .site-archive-header .no-image {
+        background: var(--darkmode);
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .site-archive-header .no-image .site-header-content {
+        border-bottom-color: color(var(--darkmode) l(+15%));
+    }
+
+    .site-header-content .author-profile-image {
+        box-shadow: 0 0 0 6px hsla(0,0%,100%,.04);
     }
 }
