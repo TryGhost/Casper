@@ -1,10 +1,10 @@
 # Casper
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper. If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
+The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
 
 &nbsp;
 
-![screenshot-desktop](https://user-images.githubusercontent.com/120485/27221326-1e31d326-5280-11e7-866d-82d550a7683b.jpg)
+![screenshot-desktop](https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png)
 
 &nbsp;
 
@@ -12,20 +12,20 @@ The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the la
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
 
-We've documented our default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://ghost.org/docs/api/handlebars-themes/) which explains every possible Handlebars helper and template.
+This theme has lots of code comments to help explain what's going on just by reading the code. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://ghost.org/docs/api/handlebars-themes/) which explains every possible Handlebars helper and template.
 
 **The main files are:**
 
-- `default.hbs` - The main template file
-- `index.hbs` - Used for the home page
-- `post.hbs` - Used for individual posts
+- `default.hbs` - The parent template file, which includes your global header/footer
+- `index.hbs` - The main template to generate a list of posts, usually the home page
+- `post.hbs` - The template used to render individual posts
 - `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives
-- `author.hbs` - Used for author archives
+- `tag.hbs` - Used for tag archives, eg. "all posts tagged with `news`"
+- `author.hbs` - Used for author archives, eg. "all posts written by Jamie"
 
-One really neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
+One neat trick is that you can also create custom one-off templates by adding the slug of a page to a template file. For example:
 
-- `page-about.hbs` - Custom template for the `/about/` page
+- `page-about.hbs` - Custom template for an `/about/` page
 - `tag-news.hbs` - Custom template for `/tag/news/` archive
 - `author-ali.hbs` - Custom template for `/author/ali/` archive
 
@@ -35,8 +35,11 @@ One really neat trick is that you can also create custom one-off templates just 
 Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash
-$ yarn install
-$ yarn dev
+# install dependencies
+yarn install
+
+# run development server
+yarn dev
 ```
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
@@ -44,7 +47,8 @@ Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/
 The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
 ```bash
-$ yarn zip
+# create .zip file
+yarn zip
 ```
 
 # PostCSS Features Used

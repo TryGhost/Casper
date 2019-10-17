@@ -41,7 +41,7 @@ function css(done) {
         easyimport,
         customProperties({preserve: false}),
         colorFunction(),
-        autoprefixer({browsers: ['last 2 versions']}),
+        autoprefixer(),
         cssnano()
     ];
 
