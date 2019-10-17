@@ -4,7 +4,7 @@ The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the la
 
 &nbsp;
 
-![screenshot-desktop](https://user-images.githubusercontent.com/120485/27221326-1e31d326-5280-11e7-866d-82d550a7683b.jpg)
+![screenshot-desktop](https://user-images.githubusercontent.com/353959/66985631-7ee60600-f0bd-11e9-8f56-409c9d1c9893.jpg)
 
 &nbsp;
 
