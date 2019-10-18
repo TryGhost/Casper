@@ -90,6 +90,45 @@ body {
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 
+.subscription-success-message {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    text-align: center;
+    background: var(--green);
+    color: #fff;
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    transform: translateY(-175%);
+}
+
+.subscription-success .subscription-success-message {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.subscription-success-message.hide {
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-175%);
+    visibility: hidden;
+}
+
+.subscription-success-message .close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.subscription-success-message svg {
+    width: 15px;
+}
+
 @media (min-width: 900px) {
     .home-template .post-feed,
     .tag-template .post-feed,
