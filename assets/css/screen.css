@@ -627,7 +627,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .no-image .post-card-header {
-    margin-top: -6px;
+    margin-top: 0;
 }
 
 .post-card-primary-tag {
