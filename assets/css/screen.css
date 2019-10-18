@@ -20,8 +20,9 @@ production stylesheet in assets/built/screen.css
   7.5. Koenig Styles
 8.  Author Template
 9.  Error Template
-10. Site Footer
-11. Dark Mode
+10. Subscribe Overlay
+11. Site Footer
+12. Dark Mode
 
 */
 
@@ -89,45 +90,6 @@ body {
 
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
-
-.subscription-success-message {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 20px 0;
-    text-align: center;
-    background: var(--green);
-    color: #fff;
-    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
-    transform: translateY(-175%);
-}
-
-.subscription-success .subscription-success-message {
-    transform: translateY(0);
-    visibility: visible;
-}
-
-.subscription-success-message.hide {
-    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(-175%);
-    visibility: hidden;
-}
-
-.subscription-success-message .close {
-    position: absolute;
-    right: 12px;
-    top: 8px;
-    background: none;
-    border: none;
-    outline: none;
-    padding: 10px;
-}
-
-.subscription-success-message svg {
-    width: 15px;
-}
 
 @media (min-width: 900px) {
     .home-template .post-feed,
@@ -926,7 +888,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 
-
 /* 7. Single Post
 /* ---------------------------------------------------------- */
 
@@ -1702,7 +1663,7 @@ Usage (In Ghost editor):
     font-weight: 600;
 }
 
-.subscribe-form p {
+.subscribe-form-description {
     margin-bottom: 0.2em 0 1em;
     color: var(--midgrey);
     font-size: 2.1rem;
@@ -1823,7 +1784,7 @@ Usage (In Ghost editor):
         font-size: 2.4rem;
     }
 
-    .subscribe-form p {
+    .subscribe-form-description {
         font-size: 1.6rem;
     }
 }
@@ -2525,7 +2486,210 @@ Usage (In Ghost editor):
     padding-top: 0;
 }
 
-/* 10. Site Footer
+
+/* 10. Subscribe Message and Overlay
+/* ---------------------------------------------------------- */
+
+.subscribe-success-message {
+    position: fixed;
+    z-index: 9000;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    text-align: center;
+    background: var(--green);
+    color: #fff;
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    transform: translateY(-175%);
+}
+
+.subscribe-success .subscribe-success-message {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.subscribe-success-message.close {
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-175%);
+    visibility: hidden;
+}
+
+.subscribe-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+.subscribe-close:before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    right: 25px;
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    opacity: 0.8;
+    transform: rotate(45deg);
+}
+
+.subscribe-close:after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    right: 25px;
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    opacity: 0.8;
+    transform: rotate(-45deg);
+}
+
+.subscribe-close:hover {
+    cursor: default;
+}
+
+.subscribe-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(9,10,11,0.97);
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    pointer-events: none;
+
+    backdrop-filter: blur(3px);
+}
+
+.subscribe-overlay .subscribe-close:before,
+.subscribe-overlay .subscribe-close:after {
+    top: 36px;
+    width: 30px;
+}
+
+.subscribe-overlay:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.subscribe-overlay-content {
+    position: relative;
+    z-index: 9999;
+    margin: 0 0 5vw 0;
+    padding: 4vw;
+    color: #fff;
+    text-align: center;
+}
+
+.subscribe-overlay .subscribe-form {
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+.subscribe-overlay-logo {
+    position: fixed;
+    top: 23px;
+    left: 30px;
+    height: 30px;
+}
+
+.subscribe-overlay-title {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    font-size: 5.2rem;
+    line-height: 1.15em;
+}
+
+.subscribe-overlay-description {
+    margin: 0 auto 50px;
+    max-width: 650px;
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+    line-height: 1.3em;
+    font-weight: 300;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.subscribe-overlay form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 540px;
+}
+
+.subscribe-overlay .form-group {
+    flex-grow: 1;
+}
+
+.subscribe-overlay .subscribe-email {
+    display: block;
+    padding: 14px 20px;
+    width: 100%;
+    border: none;
+    color: var(--midgrey);
+    font-size: 2rem;
+    line-height: 1em;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    user-select: text;
+    border-radius: 8px;
+    transition: border-color 0.15s linear;
+
+    -webkit-appearance: none;
+}
+
+.subscribe-email:focus {
+    outline: 0;
+    border-color: color(var(--lightgrey) l(-2%));
+}
+
+.subscribe-overlay button {
+    display: inline-block;
+    margin: 0 0 0 15px;
+    padding: 0 25px;
+    height: 52px;
+    outline: none;
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    background: linear-gradient(
+    color(var(--blue) whiteness(+7%)),
+    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--blue) lightness(-4%) saturation(-10%))
+    );
+    border-radius: 8px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.subscribe-overlay button:active,
+.subscribe-overlay button:focus {
+    background: color(var(--blue) lightness(-9%) saturation(-10%));
+}
+
+.subscribe-overlay .loading .button-loader {
+    top: 5px;
+}
+
+
+/* 11. Site Footer
 /* ---------------------------------------------------------- */
 
 .site-footer {
@@ -2590,7 +2754,7 @@ Usage (In Ghost editor):
 }
 
 
-/* 11. Dark Mode
+/* 12. Dark Mode
 /* ---------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
     body  {
