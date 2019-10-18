@@ -123,6 +123,12 @@
             $('.subscribe-success-message .subscribe-close').click(function () {
                 $('.subscribe-success-message').addClass('close');
             });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function() {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
         });
     </script>
 
