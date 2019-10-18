@@ -14,15 +14,14 @@ production stylesheet in assets/built/screen.css
 6.  Post Feed
 7.  Single Post
   7.1. Post Byline
-  7.2. Subscribe Form
+  7.2. Members Subscribe Form
   7.3. Comments
   7.4. Related Posts
   7.5. Koenig Styles
 8.  Author Template
 9.  Error Template
-10. Subscribe Overlay
-11. Site Footer
-12. Dark Mode
+10. Site Footer
+11. Dark Mode
 
 */
 
@@ -1644,12 +1643,11 @@ Usage (In Ghost editor):
 }
 
 
-/* 7.2. Subscribe Form
+/* 7.2. Members Subscribe Form
 /* ---------------------------------------------------------- */
-
 .subscribe-form {
     margin: 1.5em 0;
-    padding: 6.5vw 7vw 7vw;
+    padding: 6.5vw 7vw 8vw;
     border: color(var(--lightgrey) l(+10%)) 1px solid;
     text-align: center;
     background: linear-gradient(color(var(--whitegrey) l(+6%)), color(var(--whitegrey) l(+4%)));
@@ -1666,7 +1664,7 @@ Usage (In Ghost editor):
 }
 
 .subscribe-form p {
-    margin-bottom: 1em;
+    margin-bottom: 0.2em 0 1em;
     color: var(--midgrey);
     font-size: 2.1rem;
     line-height: 1.55em;
@@ -1674,14 +1672,16 @@ Usage (In Ghost editor):
 
 .subscribe-form form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    max-width: 420px;
+    max-width: 460px;
 }
 
 .subscribe-form .form-group {
-    flex-grow: 1;
+    display: flex;
+    align-self: stretch;
 }
 
 .subscribe-email {
@@ -1707,6 +1707,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button {
     display: inline-block;
+    position: relative;
     margin: 0 0 0 10px;
     padding: 0 20px;
     height: 43px;
@@ -1732,6 +1733,52 @@ Usage (In Ghost editor):
     background: color(var(--blue) lightness(-9%) saturation(-10%));
 }
 
+.subscribe-form .button-loader,
+.subscribe-form .message-success,
+.subscribe-form .message-error {
+    display: none;
+}
+
+.subscribe-form .loading .button-content {
+    visibility: hidden;
+}
+
+.subscribe-form .loading .button-loader {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -19px;
+    transform: scale(0.7);
+}
+
+.subscribe-form .button-loader svg path,
+.subscribe-form .button-loader svg rect {
+    fill: #fff;
+}
+
+.subscribe-form .success .message-success,
+.subscribe-form .invalid .message-error,
+.subscribe-form .error .message-error {
+    margin: 1em auto 0;
+    max-width: 400px;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    text-align: center;
+    color: var(--red);
+}
+
+.subscribe-form .success .message-success {
+    display: block;
+    color: color(var(--green) l(-5%));
+}
+
+.subscribe-form .invalid .message-error,
+.subscribe-form .error .message-error {
+    display: block;
+}
+
+
 @media (max-width: 650px) {
     .subscribe-form-title {
         font-size: 2.4rem;
@@ -1748,6 +1795,7 @@ Usage (In Ghost editor):
     }
 
     .subscribe-form .form-group {
+        flex-direction: column;
         width: 100%;
     }
 
@@ -2438,168 +2486,7 @@ Usage (In Ghost editor):
     padding-top: 0;
 }
 
-
-/* 10. Subscribe Overlay
-/* ---------------------------------------------------------- */
-
-.subscribe-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,25,40,0.97);
-    opacity: 0;
-    transition: opacity 0.2s ease-in;
-    pointer-events: none;
-
-    backdrop-filter: blur(3px);
-}
-
-.subscribe-overlay:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.subscribe-overlay-content {
-    position: relative;
-    z-index: 9999;
-    margin: 0 0 5vw 0;
-    padding: 4vw;
-    color: #fff;
-    text-align: center;
-}
-
-.subscribe-overlay-logo {
-    position: fixed;
-    top: 23px;
-    left: 30px;
-    height: 30px;
-}
-
-.subscribe-overlay-title {
-    display: inline-block;
-    margin: 0 0 10px 0;
-    font-size: 5.2rem;
-    line-height: 1.15em;
-}
-
-.subscribe-overlay-description {
-    margin: 0 auto 50px;
-    max-width: 620px;
-    font-family: Georgia, serif;
-    font-size: 2.4rem;
-    line-height: 1.3em;
-    font-weight: 300;
-    opacity: 0.8;
-}
-
-.subscribe-overlay form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 500px;
-}
-
-.subscribe-overlay .form-group {
-    flex-grow: 1;
-}
-
-.subscribe-overlay .subscribe-email {
-    display: block;
-    padding: 14px 20px;
-    width: 100%;
-    border: none;
-    color: var(--midgrey);
-    font-size: 2rem;
-    line-height: 1em;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-    user-select: text;
-    border-radius: 8px;
-    transition: border-color 0.15s linear;
-
-    -webkit-appearance: none;
-}
-
-.subscribe-email:focus {
-    outline: 0;
-    border-color: color(var(--lightgrey) l(-2%));
-}
-
-.subscribe-overlay button {
-    display: inline-block;
-    margin: 0 0 0 15px;
-    padding: 0 25px;
-    height: 52px;
-    outline: none;
-    color: #fff;
-    font-size: 1.7rem;
-    line-height: 37px;
-    font-weight: 400;
-    text-align: center;
-    background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
-    );
-    border-radius: 8px;
-
-    -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.subscribe-overlay button:active,
-.subscribe-overlay button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
-}
-
-.subscribe-overlay-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-}
-
-.subscribe-overlay-close:before {
-    content: "";
-    position: absolute;
-    top: 40px;
-    right: 25px;
-    display: block;
-    width: 30px;
-    height: 2px;
-    background: #fff;
-    opacity: 0.8;
-    transform: rotate(45deg);
-}
-
-.subscribe-overlay-close:after {
-    content: "";
-    position: absolute;
-    top: 40px;
-    right: 25px;
-    display: block;
-    width: 30px;
-    height: 2px;
-    background: #fff;
-    opacity: 0.8;
-    transform: rotate(-45deg);
-}
-
-.subscribe-overlay-close:hover {
-    cursor: default;
-}
-
-
-/* 11. Site Footer
+/* 10. Site Footer
 /* ---------------------------------------------------------- */
 
 .site-footer {
@@ -2664,7 +2551,7 @@ Usage (In Ghost editor):
 }
 
 
-/* 12. Dark Mode
+/* 11. Dark Mode
 /* ---------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
     body  {
@@ -2821,5 +2708,41 @@ Usage (In Ghost editor):
 
     .site-header-content .author-profile-image {
         box-shadow: 0 0 0 6px hsla(0,0%,100%,.04);
+    }
+
+    .subscribe-form {
+        background: linear-gradient(color(var(--darkmode) l(-6%)), color(var(--darkmode) l(-3%)));
+        border: none;
+    }
+
+    .subscribe-form-title {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .subscribe-form p {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .subscribe-email {
+        border-color: color(var(--darkmode) l(+6%));
+        background: color(var(--darkmode) l(+3%));
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .subscribe-email:focus {
+        border-color: color(var(--darkmode) l(+25%));
+    }
+
+    .subscribe-form button {
+        opacity: 0.9;
+    }
+
+    .subscribe-form .invalid .message-error,
+    .subscribe-form .error .message-error {
+        color: color(var(--red) l(+5%) s(-5%));
+    }
+
+    .subscribe-form .success .message-success {
+        color: color(var(--green) l(+5%) s(-5%));
     }
 }

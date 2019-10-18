@@ -95,7 +95,7 @@ into the {body} of the default.hbs template --}}
                             {{img_url feature_image size="l"}} 1000w,
                             {{img_url feature_image size="xl"}} 2000w"
                     sizes="(max-width: 800px) 400px,
-                            (max-width: 1170px) 1170px,
+                        (max-width: 1170px) 1170px,
                             2000px"
                     src="{{img_url feature_image size="xl"}}"
                     alt="{{title}}"
@@ -110,12 +110,8 @@ into the {body} of the default.hbs template --}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
+            {{#if @labs.members}}
+                {{> subscribe-form}}
             {{/if}}
 
             {{!--
