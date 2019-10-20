@@ -15,7 +15,7 @@
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
-        "test": "gscan .",
+        "test": "gscan --v2 .",
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
@@ -49,7 +49,7 @@
         "autoprefixer": "9.6.1",
         "beeper": "1.1.1",
         "cssnano": "4.1.10",
-        "gscan": "2.9.0",
+        "gscan": "3.0.0",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "8.0.0",
