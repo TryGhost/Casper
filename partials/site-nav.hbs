@@ -1,6 +1,10 @@
 <nav class="site-nav">
     <div class="site-nav-left">
-        {{> "site-logo"}}
+        {{#if @site.logo}}
+            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+        {{else}}
+            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+        {{/if}}
         <div class="site-nav-content">
             {{#if @site.navigation}}
                 {{navigation}}
