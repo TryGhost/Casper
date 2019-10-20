@@ -1,15 +1,30 @@
+/* eslint-env browser */
+
 /**
  * Infinite Scroll
+ * Used on all pages where there is a list of posts (homepage, tag index, etc).
+ *
+ * When the page is scrolled to 300px from the bottom, the next page of posts
+ * is fetched by following the the <link rel="next" href="..."> that is output
+ * by {{ghost_head}}.
+ *
+ * The individual post items are extracted from the fetched pages by looking for
+ * a wrapper element with the class "post-card". Any found elements are appended
+ * to the element with the class "post-feed" in the currently viewed page.
  */
 
-(function(window, document) {
+(function (window, document) {
     // next link element
     var nextElement = document.querySelector('link[rel=next]');
-    if (!nextElement) return;
+    if (!nextElement) {
+        return;
+    }
 
     // post feed element
     var feedElement = document.querySelector('.post-feed');
-    if (!feedElement) return;
+    if (!feedElement) {
+        return;
+    }
 
     var buffer = 300;
 
@@ -50,7 +65,9 @@
 
     function onUpdate() {
         // return if already loading
-        if (loading) return;
+        if (loading) {
+            return;
+        }
 
         // return if not scroll to the bottom
         if (lastScrollY + lastWindowHeight <= lastDocumentHeight - buffer) {
@@ -85,7 +102,7 @@
         requestTick();
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, {passive: true});
     window.addEventListener('resize', onResize);
 
     requestTick();
