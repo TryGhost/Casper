@@ -2084,7 +2084,7 @@ Usage (In Ghost editor):
 
 /* keep existing <pre> styles for code cards with captions */
 .kg-code-card {
-    min-width: 100%;
+    width: 100%;
 }
 
 .kg-code-card pre {
@@ -2688,7 +2688,7 @@ Usage (In Ghost editor):
     .post-card:hover {
         border-bottom-color: color(var(--darkmode) l(+8%));
     }
-    
+
     .author-profile-image {
         background: var(--darkmode);
     }
@@ -2700,7 +2700,7 @@ Usage (In Ghost editor):
     .post-card-byline-content a:hover {
         color: #fff;
     }
-    
+
     .post-card-image {
         background: var(--darkmode);
     }
