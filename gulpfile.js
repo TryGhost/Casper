@@ -5,6 +5,7 @@ const pump = require('pump');
 const livereload = require('gulp-livereload');
 const postcss = require('gulp-postcss');
 const zip = require('gulp-zip');
+const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
 const fs = require('fs');
@@ -56,7 +57,12 @@ function css(done) {
 
 function js(done) {
     pump([
-        src('assets/js/*.js', {sourcemaps: true}),
+        src([
+            // pull in lib files first so our own code can depend on it
+            'assets/js/lib/*.js',
+            'assets/js/*.js'
+        ], {sourcemaps: true}),
+        concat('casper.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
