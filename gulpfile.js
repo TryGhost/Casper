@@ -7,6 +7,7 @@ const postcss = require('gulp-postcss');
 const zip = require('gulp-zip');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
+const fs = require('fs');
 
 // postcss plugins
 const autoprefixer = require('autoprefixer');
@@ -130,9 +131,9 @@ const previousRelease = () => {
                 console.log('No releases found. Skipping');
                 return;
             }
-
-            console.log(`Previous version ${response[0].name}`);
-            return response[0].name;
+            let prevVersion = response[0].tag_name || response[0].name;
+            console.log(`Previous version ${prevVersion}`);
+            return prevVersion;
         });
 };
 
@@ -152,7 +153,9 @@ const previousRelease = () => {
  */
 const release = () => {
     // @NOTE: https://yarnpkg.com/lang/en/docs/cli/version/
-    const newVersion = process.env.npm_package_version;
+    // require(./package.json) can run into caching issues, this re-reads from file everytime on release
+    var packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+    const newVersion = packageJSON.version;
     let shipsWithGhost = '{version}';
     let compatibleWithGhost = '2.10.0';
     const ghostEnvValues = process.env.GHOST || null;
