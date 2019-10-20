@@ -1942,7 +1942,7 @@ Usage (In Ghost editor):
 
 /* keep existing <pre> styles for code cards with captions */
 .kg-code-card {
-    min-width: 100%;
+    width: 100%;
 }
 
 .kg-code-card pre {
