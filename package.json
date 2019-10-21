@@ -1,11 +1,11 @@
 {
     "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "description": "A clean, minimal default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
-    "version": "2.11.2",
+    "version": "3.0.0-beta.6",
     "engines": {
-        "ghost": ">=2.0.0",
-        "ghost-api": "v2"
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
     },
     "license": "MIT",
     "screenshots": {
@@ -15,7 +15,7 @@
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
-        "test": "gscan --v2 .",
+        "test": "gscan --v3 .",
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
@@ -61,6 +61,9 @@
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0"
     },
+    "browserslist": [
+        "defaults"
+    ],
     "config": {
         "posts_per_page": 25,
         "image_sizes": {
