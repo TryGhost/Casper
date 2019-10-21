@@ -86,8 +86,5 @@
                 "width": 2000
             }
         }
-    },
-    "browserslist": [
-        "last 2 versions"
-    ]
+    }
 }
