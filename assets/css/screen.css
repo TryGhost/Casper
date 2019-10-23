@@ -2374,7 +2374,7 @@ Usage (In Ghost editor):
 }
 
 .author-social-link a {
-    color: var(--darkgrey);
+    color: var(--midgrey);
     font-weight: 600;
 }
 
