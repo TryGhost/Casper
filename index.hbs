@@ -23,6 +23,7 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
 
         <div class="post-feed">
+        {{#get "posts" filter="tags:-[Entrevistas]"}}
             {{#foreach posts}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
