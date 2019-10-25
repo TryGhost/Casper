@@ -2374,7 +2374,7 @@ Usage (In Ghost editor):
 }
 
 .author-social-link a {
-    color: var(--midgrey);
+    color: var(--darkgrey);
     font-weight: 600;
 }
 
@@ -2852,6 +2852,10 @@ Usage (In Ghost editor):
 
     .author-list-item .author-card:before {
         border-top-color: color(var(--darkmode) l(+4%));
+    }
+
+    .author-social-link a {
+        color: var(--midgrey);
     }
 
     .post-full-content h1,
