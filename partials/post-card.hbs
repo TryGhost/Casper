@@ -1,4 +1,4 @@
-<article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#has index="nth:6"}}post-card-large{{/has}}{{/unless}}">
+<article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#has index="nth:6"}}post-card-large{{/has}}{{/is}}{{/unless}}">
 
     {{#if feature_image}}
     <a class="post-card-image-link" href="{{url}}">
