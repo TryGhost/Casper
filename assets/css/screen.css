@@ -2068,11 +2068,11 @@ Usage (In Ghost editor):
 
 .post-full-content figcaption {
     margin: 1.0em 0 0;
-    color: color(var(--midgrey) l(-10%));;
+    color: color(var(--midgrey) l(-10%));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 75%;
     line-height: 1.5em;
-    text-align: center;
+    text-align: center;;
 }
 
 .kg-width-full figcaption {
@@ -2436,14 +2436,15 @@ Usage (In Ghost editor):
 /* 9. Error Template
 /* ---------------------------------------------------------- */
 
-.error-template .site-main {
-    padding: 7vw 4vw;
+.error-content {
+    padding: 14vw 4vw 6vw;
 }
 
 .site-nav-center {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -2452,18 +2453,18 @@ Usage (In Ghost editor):
 }
 
 .error-message {
-    margin-bottom: -3vw;
-    padding-bottom: 5vw;
+    padding-bottom: 10vw;
     border-bottom: 1px solid color(var(--lightgrey) l(+10%));
     text-align: center;
 }
 
 .error-code {
     margin: 0;
+    color: var(--lightgrey);
     font-size: 12vw;
     line-height: 1em;
     letter-spacing: -5px;
-    opacity: 0.3;
+    opacity: 0.75;
 }
 
 .error-description {
@@ -2474,20 +2475,42 @@ Usage (In Ghost editor):
     font-weight: 400;
 }
 
+.error-link {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+@media (min-width: 940px) {
+    .error-content .post-card {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
 @media (max-width: 800px) {
+    .error-content {
+        padding-top: 24vw;
+    }
+    .error-code {
+        font-size: 11.2rem;
+    }
+    .error-message {
+        padding-bottom: 16vw;
+    }
     .error-description {
         margin: 5px 0 0 0;
         font-size: 1.8rem;
     }
 }
 
-.error-link {
-    display: inline-block;
-    margin-top: 5px;
-}
-
-.error-template .post-feed {
-    padding-top: 0;
+@media (max-width: 500px) {
+    .error-content {
+        padding-top: 28vw;
+    }
+    .error-message {
+        padding-bottom: 14vw;
+    }
 }
 
 
