@@ -2916,6 +2916,24 @@ Usage (In Ghost editor):
         box-shadow: 0 0 1px rgba(255,255,255,0.9);
     }
 
+    .post-full-content table td:first-child {
+        background-image: linear-gradient(to right, var(--darkmode) 50%, color(var(--darkmode) a(0%)) 100%);
+    }
+
+    .post-full-content table td:last-child {
+        background-image: linear-gradient(to left, var(--darkmode) 50%, color(var(--darkmode) a(0%)) 100%);
+    }
+
+    .post-full-content table th {
+        color: rgba(255, 255, 255, 0.85);
+        background-color: color(var(--darkmode) l(+8%));
+    }
+
+    .post-full-content table th,
+    .post-full-content table td {
+        border: color(var(--darkmode) l(+8%)) 1px solid;
+    }
+
     .kg-bookmark-title {
         color: #fff;
     }
