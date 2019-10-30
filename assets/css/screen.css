@@ -2846,7 +2846,8 @@ Usage (In Ghost editor):
     }
 
     .site-main,
-    .post-template .site-main {
+    .post-template .site-main,
+    .page-template .site-main {
         background: var(--darkmode);
     }
 
