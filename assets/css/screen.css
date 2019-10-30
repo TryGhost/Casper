@@ -2374,8 +2374,12 @@ Usage (In Ghost editor):
 }
 
 .author-social-link a {
-    color: var(--darkgrey);
+    color: #fff;
     font-weight: 600;
+}
+
+.no-image .author-social-link a {
+    color: var(--darkgrey);
 }
 
 .author-social-link a:hover {
@@ -2398,8 +2402,14 @@ Usage (In Ghost editor):
     content: "\2022";
     display: inline-block;
     margin: 0 12px;
-    color: var(--midgrey);
+    color: #fff;
     opacity: 0.6;
+}
+
+.no-image .author-location + .author-stats:before,
+.no-image .author-stats + .author-social-link:before,
+.no-image .author-social-link + .author-social-link:before {
+    color: var(--midgrey);
 }
 
 @media (max-width: 500px) {
@@ -2836,7 +2846,8 @@ Usage (In Ghost editor):
     }
 
     .site-main,
-    .post-template .site-main {
+    .post-template .site-main,
+    .page-template .site-main {
         background: var(--darkmode);
     }
 
@@ -2877,6 +2888,10 @@ Usage (In Ghost editor):
         border-top-color: color(var(--darkmode) l(+4%));
     }
 
+    .no-image .author-social-link a {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
     .post-full-content h1,
     .post-full-content h2,
     .post-full-content h3,
@@ -2911,11 +2926,6 @@ Usage (In Ghost editor):
         color: rgba(255, 255, 255, 0.6);
     }
 
-    .post-full-content .kg-bookmark-container {
-        color: rgba(255, 255, 255, 0.75);
-        box-shadow: 0 0 1px rgba(255,255,255,0.9);
-    }
-
     .post-full-content table td:first-child {
         background-image: linear-gradient(to right, var(--darkmode) 50%, color(var(--darkmode) a(0%)) 100%);
     }
@@ -2932,6 +2942,12 @@ Usage (In Ghost editor):
     .post-full-content table th,
     .post-full-content table td {
         border: color(var(--darkmode) l(+8%)) 1px solid;
+    }
+
+    .post-full-content .kg-bookmark-container,
+    .post-full-content .kg-bookmark-container:hover {
+        color: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 0 1px rgba(255,255,255,0.9);
     }
 
     .kg-bookmark-title {
