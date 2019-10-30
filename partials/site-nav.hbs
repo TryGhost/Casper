@@ -1,15 +1,18 @@
 <nav class="site-nav">
     <div class="site-nav-left">
-        {{^is "home"}}
-            {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-            {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-            {{/if}}
-        {{/is}}
-        {{#if @site.navigation}}
-            {{navigation}}
+        {{#if @site.logo}}
+            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+        {{else}}
+            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
         {{/if}}
+        <div class="site-nav-content">
+            {{#if @site.navigation}}
+                {{navigation}}
+            {{/if}}
+            {{#is "post"}}
+                <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
+            {{/is}}
+        </div>
     </div>
     <div class="site-nav-right">
         <div class="social-links">
@@ -20,7 +23,7 @@
                 <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
             {{/if}}
         </div>
-        {{#if @labs.subscribers}}
+        {{#if @labs.members}}
             <a class="subscribe-button" href="#subscribe">Subscribe</a>
         {{else}}
             <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>

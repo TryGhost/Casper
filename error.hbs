@@ -1,7 +1,7 @@
 {{!--
 This error template is used for all 400/500 errors, except 404, which might occur on your site.
 It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
-You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in this file.
+You'll notice that we *don't* use any JavaScript, or ghost_head / ghost_foot in this file.
 --}}
 
 <!DOCTYPE html>
@@ -14,22 +14,25 @@ You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 </head>
-<body class="error-template">
+<body>
     <div class="site-wrapper">
 
-        <header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-image{{/if}}">
-            <div class="inner">
-                <nav class="site-nav-center">
-                    {{#if @site.logo}}
-                        <a class="site-nav-logo" href="{{@site.url}}"><img src="{{img_url @site.logo size="xs"}}" alt="{{@site.title}}" /></a>
-                    {{else}}
+        <header class="site-header no-image">
+            <div class="site-nav-main outer">
+                <div class="inner">
+                    <nav class="site-nav-center">
+                        {{#if @site.logo}}
+                        <a class="site-nav-logo" href="{{@site.url}}"><img src="{{img_url @site.logo size="xs"}}"
+                                alt="{{@site.title}}" /></a>
+                        {{else}}
                         <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-                    {{/if}}
-                </nav>
+                        {{/if}}
+                    </nav>
+                </div>
             </div>
         </header>
 
-        <main id="site-main" class="site-main outer">
+        <main id="site-main" class="site-main outer error-content">
             <div class="inner">
 
                 <section class="error-message">

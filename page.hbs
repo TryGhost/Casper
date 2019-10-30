@@ -3,9 +3,11 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer">
-    <div class="inner">
-        {{> "site-nav"}}
+<header class="site-header">
+    <div class="outer site-nav-main">
+        <div class="inner">
+            {{> "site-nav"}}
+        </div>
     </div>
 </header>
 
@@ -31,8 +33,8 @@ into the {body} of the default.hbs template --}}
                             {{img_url feature_image size="l"}} 1000w,
                             {{img_url feature_image size="xl"}} 2000w"
                     sizes="(max-width: 800px) 400px,
-                            (max-width: 1170px) 700px,
-                            1400px"
+                            (max-width: 1170px) 1170px,
+                            2000px"
                     src="{{img_url feature_image size="xl"}}"
                     alt="{{title}}"
                 />
@@ -55,9 +57,9 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
+    $(function() {
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+    });
 </script>
 {{/contentFor}}

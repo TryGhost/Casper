@@ -1,11 +1,11 @@
 {
-    "name": "lighter",
+    "name": "lighter3",
     "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
     "demo": "https://lightit.io/blog",
-    "version": "2.11.5",
+    "version": "3.0.1",
     "engines": {
-        "ghost": ">=2.0.0",
-        "ghost-api": "v2"
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
     },
     "license": "MIT",
     "screenshots": {
@@ -15,7 +15,7 @@
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
-        "test": "gscan .",
+        "test": "gscan --v3 .",
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
@@ -46,20 +46,24 @@
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.3.2",
-        "autoprefixer": "9.6.1",
-        "beeper": "1.1.1",
+        "autoprefixer": "9.6.5",
+        "beeper": "2.0.0",
         "cssnano": "4.1.10",
-        "gscan": "2.7.0",
+        "gscan": "3.0.0",
         "gulp": "4.0.2",
-        "gulp-livereload": "4.0.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-livereload": "4.0.2",
         "gulp-postcss": "8.0.0",
         "gulp-uglify": "3.0.2",
-        "gulp-zip": "4.2.0",
+        "gulp-zip": "5.0.1",
         "postcss-color-function": "4.1.0",
-        "postcss-custom-properties": "8.0.11",
+        "postcss-custom-properties": "9.0.2",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0"
     },
+    "browserslist": [
+        "defaults"
+    ],
     "config": {
         "posts_per_page": 25,
         "image_sizes": {
