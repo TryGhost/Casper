@@ -38,12 +38,12 @@ You'll notice that we *don't* use any JavaScript, or ghost_head / ghost_foot in 
                 <section class="error-message">
                     <h1 class="error-code">{{statusCode}}</h1>
                     <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+                    <a class="error-link" href="{{@site.url}}">Перейти на главную страницу</a>
                 </section>
 
                 {{#if errorDetails}}
                 <section class="error-stack">
-                    <h3>Theme errors</h3>
+                    <h3>Ошибки шаблоны</h3>
                     <ul class="error-stack-list">
                         {{#foreach errorDetails}}
                             <li>
@@ -51,7 +51,7 @@ You'll notice that we *don't* use any JavaScript, or ghost_head / ghost_foot in 
 
                                 {{#foreach failures}}
                                     <p><span class="error-stack-file">Ref: {{ref}}</span></p>
-                                    <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                    <p><span class="error-stack-file">Сообщение: {{message}}</span></p>
                                 {{/foreach}}
                             </li>
                         {{/foreach}}

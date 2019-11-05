@@ -50,11 +50,11 @@ into the {body} of the default.hbs template --}}
                                         <div class="bio">
                                             <h2>{{name}}</h2>
                                             <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                            <p><a href="{{url}}">Еще публикации</a> {{name}}.</p>
                                         </div>
                                         {{else}}
                                         <h2>{{name}}</h2>
-                                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                                        <p>Читайте <a href="{{url}}">другие публикации</a> этого автора.</p>
                                         {{/if}}
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@ into the {body} of the default.hbs template --}}
                 <article class="read-next-card">
                     <header class="read-next-card-header">
                         {{#../primary_tag}}
-                        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
+                        <h3><span>Еще о </span> <a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
                     </header>
                     <div class="read-next-card-content">
@@ -152,7 +152,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='Нет публикаций' singular='% публикация' plural='Смотреть все публикации (%) '}}
                             →</a>
                     </footer>
                 </article>
