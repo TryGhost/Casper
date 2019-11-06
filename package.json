@@ -1,10 +1,11 @@
 {
     "name": "casper-ro",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal, responsive and localized.",
-    "version": "2.9.6",
+    "description": "A clean, minimal default and localized theme for the Ghost publishing platform",
+    "demo": "https://demo.ghost.io",
+    "version": "3.0.2",
     "engines": {
-        "ghost": ">=2.0.0",
-        "ghost-api": "v2"
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
     },
     "license": "MIT",
     "screenshots": {
@@ -14,7 +15,7 @@
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
-        "test": "gscan .",
+        "test": "gscan --v3 .",
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
@@ -44,21 +45,25 @@
     "bugs": "https://github.com/Shoane/Casper-Ro/issues",
     "contributors": "https://github.com/Shoane/Casper-Ro/graphs/contributors",
     "devDependencies": {
-        "@tryghost/release-utils": "0.3.1",
-        "autoprefixer": "9.5.0",
-        "beeper": "1.1.1",
+        "@tryghost/release-utils": "0.3.3",
+        "autoprefixer": "9.7.1",
+        "beeper": "2.0.0",
         "cssnano": "4.1.10",
-        "gscan": "2.3.0",
-        "gulp": "4.0.0",
-        "gulp-livereload": "4.0.1",
+        "gscan": "3.1.1",
+        "gulp": "4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-livereload": "4.0.2",
         "gulp-postcss": "8.0.0",
         "gulp-uglify": "3.0.2",
-        "gulp-zip": "4.2.0",
-        "postcss-color-function": "4.0.1",
-        "postcss-custom-properties": "8.0.9",
+        "gulp-zip": "5.0.1",
+        "postcss-color-function": "4.1.0",
+        "postcss-custom-properties": "9.0.2",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0"
     },
+    "browserslist": [
+        "defaults"
+    ],
     "config": {
         "posts_per_page": 25,
         "image_sizes": {

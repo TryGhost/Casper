@@ -1,16 +1,9 @@
 {
   "extends": [
-    "config:base",
-    "schedule:earlyMondays"
+    "@tryghost:theme"
   ],
-  "packageRules": [
-    {
-      "packagePatterns": ["^postcss", "css", "autoprefixer"],
-      "groupName": "css processors"
-    },
-    {
-      "packagePatterns": ["gulp"],
-      "groupName": "gulp"
-    }
-  ]
+  "travis": { "enabled": true },
+  "node": {
+    "supportPolicy": ["lts_latest"]
+  }
 }

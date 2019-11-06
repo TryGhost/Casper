@@ -3,10 +3,8 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<header class="site-header outer">
-    <div class="inner">
-        {{> "site-nav"}}
-    </div>
+<header class="site-header">
+    {{> site-header}}
 </header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
@@ -18,13 +16,73 @@ into the {body} of the default.hbs template --}}
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
             <header class="post-full-header">
-                <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+
+                {{#if primary_tag}}
+                <section class="post-full-tags">
                     {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+                    <a href="{{url}}">{{name}}</a>
                     {{/primary_tag}}
                 </section>
+                {{/if}}
+
                 <h1 class="post-full-title">{{title}}</h1>
+
+                {{#if custom_excerpt}}
+                <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
+                {{/if}}
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+                            {{#foreach authors}}
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    {{#if profile_image}}
+                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                    {{else}}
+                                    <div class="author-profile-image">{{> "icons/avatar"}}</div>
+                                    {{/if}}
+                                    <div class="author-info">
+                                        {{#if bio}}
+                                        <div class="bio">
+                                            <h2>{{name}}</h2>
+                                            <p>{{bio}}</p>
+                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                        </div>
+                                        {{else}}
+                                        <h2>{{name}}</h2>
+                                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                                        {{/if}}
+                                    </div>
+                                </div>
+
+                                {{#if profile_image}}
+                                <a href="{{url}}" class="author-avatar">
+                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                </a>
+                                {{else}}
+                                <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                                {{/if}}
+
+                            </li>
+                            {{/foreach}}
+                        </ul>
+
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name">{{authors}}</h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
             </header>
 
             {{#if feature_image}}
@@ -37,8 +95,8 @@ into the {body} of the default.hbs template --}}
                             {{img_url feature_image size="l"}} 1000w,
                             {{img_url feature_image size="xl"}} 2000w"
                     sizes="(max-width: 800px) 400px,
-                            (max-width: 1170px) 700px,
-                            1400px"
+                        (max-width: 1170px) 1170px,
+                            2000px"
                     src="{{img_url feature_image size="xl"}}"
                     alt="{{title}}"
                 />
@@ -52,28 +110,9 @@ into the {body} of the default.hbs template --}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@site.title }}</h3>
-                <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
+            {{#if @labs.members}}
+                {{> subscribe-form}}
             {{/if}}
-
-            <footer class="post-full-footer">
-
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{#has author="count:>1"}}
-                    {{> "byline-multiple"}}
-                {{else}}
-                    {{> "byline-single"}}
-                {{/has}}
-
-            </footer>
 
             {{!--
             <section class="post-full-comments">
@@ -93,30 +132,28 @@ into the {body} of the default.hbs template --}}
             {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
-                <article class="read-next-card"
-                    {{#if ../primary_tag.feature_image}}
-                        style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
-                    {{else}}
-                        {{#if @site.cover_image}}
-                            style="background-image: url({{img_url @site.cover_image size="m"}})"{{/if}}
-                    {{/if}}
-                >
+                <article class="read-next-card">
                     <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
                         {{#../primary_tag}}
-                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
+                        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
                     </header>
-                    <div class="read-next-divider">{{> "icons/infinity"}}</div>
                     <div class="read-next-card-content">
                         <ul>
                             {{#foreach related_posts}}
-                            <li><a href="{{url}}">{{title}}</a></li>
+                            <li>
+                                <h4><a href="{{url}}">{{title}}</a></h4>
+                                <div class="read-next-card-meta">
+                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
+                                        {{reading_time}}</p>
+                                </div>
+                            </li>
                             {{/foreach}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t "No posts") singular=(t "% post") plural=(t "See all % posts") }} →</a>
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t "No posts") singular=(t "% post") plural=(t "See all % posts") }}
+                            →</a>
                     </footer>
                 </article>
                 {{/if}}
@@ -132,80 +169,46 @@ into the {body} of the default.hbs template --}}
             {{#prev_post}}
                 {{> "post-card"}}
             {{/prev_post}}
-
         </div>
     </div>
 </aside>
-
-{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{> floating-header}}
 
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
 
-// NOTE: Scroll performance is poor in Safari
-// - this appears to be due to the events firing much more slowly in Safari.
-//   Dropping the scroll event and using only a raf loop results in smoother
-//   scrolling but continuous processing even when not scrolling
-$(document).ready(function () {
-    // Start fitVids
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-    // End fitVids
+        // Replace nav with title on scroll - start
+        Casper.stickyNavTitle({
+            navSelector: '.site-nav-main',
+            titleSelector: '.post-full-title',
+            activeClass: 'nav-post-title-active'
+        });
+        // Replace nav with title on scroll - end
 
-    var progressBar = document.querySelector('#reading-progress');
-    var header = document.querySelector('.floating-header');
-    var title = document.querySelector('.post-full-title');
+        // Hover on avatar
+        var hoverTimeout;
+        $('.author-list-item').hover(function () {
+            var $this = $(this);
 
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $(document).height();
-    var ticking = false;
+            clearTimeout(hoverTimeout);
 
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
+            $('.author-card').removeClass('hovered');
+            $(this).children('.author-card').addClass('hovered');
 
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
-        requestTick();
-    }
+        }, function () {
+            var $this = $(this);
 
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(update);
-        }
-        ticking = true;
-    }
-
-    function update() {
-        var trigger = title.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = title.offsetHeight + 35;
-        var progressMax = lastDocumentHeight - lastWindowHeight;
-
-        // show/hide floating header
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
-        } else {
-            header.classList.remove('floating-active');
-        }
-
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
-
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', onScroll, {passive: true});
-    window.addEventListener('resize', onResize, false);
-
-    update();
-
-});
+            hoverTimeout = setTimeout(function () {
+                $this.children('.author-card').removeClass('hovered');
+            }, 800);
+        });
+    });
 </script>
 {{/contentFor}}
