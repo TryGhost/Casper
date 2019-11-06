@@ -43,7 +43,7 @@
         "url": "https://github.com/Shoane/Casper-Ro.git"
     },
     "bugs": "https://github.com/Shoane/Casper-Ro/issues",
-    "contributors": "https://github.com/Shoane/Casper-Ro/graphs/contributors",
+    "contributors": ["https://github.com/Shoane/Casper-Ro/graphs/contributors"],
     "devDependencies": {
         "@tryghost/release-utils": "0.3.3",
         "autoprefixer": "9.7.1",
