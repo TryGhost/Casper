@@ -15,7 +15,8 @@
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
-        "test": "gscan --v3 .",
+        "test": "gscan .",
+        "test:ci": "gscan --fatal --verbose .",
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
