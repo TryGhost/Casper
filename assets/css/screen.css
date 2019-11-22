@@ -2605,8 +2605,6 @@ Usage (In Ghost editor):
     opacity: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
-
-    backdrop-filter: blur(3px);
 }
 
 .subscribe-overlay .subscribe-close:before,
