@@ -13,6 +13,13 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <style>
+        {{#if @site.brand_color}}
+            :root {
+                --brand-color: {{@site.brand_color}};
+            }
+        {{/if}}
+    </style>
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
