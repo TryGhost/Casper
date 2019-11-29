@@ -2611,6 +2611,7 @@ Usage (In Ghost editor):
 .subscribe-overlay .subscribe-close:after {
     top: 36px;
     width: 30px;
+    z-index: 2;
 }
 
 .subscribe-overlay:target {
@@ -2625,6 +2626,7 @@ Usage (In Ghost editor):
     padding: 4vw;
     color: #fff;
     text-align: center;
+    z-index: 1;
 }
 
 .subscribe-overlay .subscribe-form {
