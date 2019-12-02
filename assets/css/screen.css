@@ -448,7 +448,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .site-nav-right {
-    flex: 1 0 auto;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -458,6 +458,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .site-nav-right .nav {
     position: relative;
+    margin: 0;
+}
+
+.site-nav-right .nav a {
+    white-space: nowrap;
 }
 
 .site-nav-right .nav a:before {
