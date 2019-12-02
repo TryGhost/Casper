@@ -1,17 +1,19 @@
 <nav class="site-nav">
-    <div class="site-nav-left">
-        {{#if @site.logo}}
-            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-        {{else}}
-            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-        {{/if}}
-        <div class="site-nav-content">
-            {{#if @site.navigation}}
-                {{navigation}}
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+            {{#if @site.logo}}
+                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+            {{else}}
+                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
             {{/if}}
-            {{#is "post"}}
-                <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
-            {{/is}}
+            <div class="site-nav-content">
+                {{#if @site.navigation}}
+                    {{navigation}}
+                {{/if}}
+                {{#is "post"}}
+                    <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
+                {{/is}}
+            </div>
         </div>
     </div>
     <div class="site-nav-right">

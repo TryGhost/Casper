@@ -285,6 +285,28 @@ body {
     font-size: 1.3rem;
 }
 
+.site-nav-left-wrapper {
+    position: relative;
+    flex: 1 0 auto;
+    display: flex;
+}
+
+.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
+.site-nav-main .site-nav-left-wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 40px;
+    height: 100%;
+}
+
+.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
+.site-nav-main .site-nav-left-wrapper:after {
+    right: 0;
+    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
+}
+
 .site-nav-left {
     flex: 1 0 auto;
     display: flex;
@@ -302,26 +324,8 @@ body {
     -ms-overflow-scrolling: touch;
 }
 
-@media (max-width: 700px) {
-    .site-header-background:not(.responsive-header-img) .site-nav:after,
-    .site-nav-main .site-nav:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        z-index: 1000;
-        width: 40px;
-        height: 100%;
-    }
-
-    .site-header-background:not(.responsive-header-img) .site-nav:after,
-    .site-nav-main .site-nav:after {
-        right: 0;
-        background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
-    }
-
-    .nav li:last-of-type {
-        padding-right: 20px;
-    }
+.site-nav-left .nav li:last-of-type {
+    padding-right: 20px;
 }
 
 /* Site Nav Hack Explanation (above):
