@@ -1,5 +1,5 @@
 {
-"a href='{{url}}'>more posts</a> by this author": "a href=''{{url}}''>more posts</a> by this author",
+"<a href='{{url}}'>more posts</a> by this author": "<a href='{{url}}'>more posts</a> by this author",
 "Go to the front page": "Go to the front page",
 "Latest Posts": "Latest Posts",
 "You've successfully subscribed to @site.title": "You've successfully subscribed to @site.title",
@@ -14,6 +14,6 @@
 "% posts": "% posts",
 "Get the latest posts delivered right to your inbox": "Get the latest posts delivered right to your inbox",
 "A collection of": "A collection of",
-"a href='{{url}}'>More posts</a> by {{name}}.": "a href='{{url}}'>More posts</a> by {{name}}.",
+"<a href='{{url}}'>More posts</a> by {{name}}.": "<a href='{{url}}'>More posts</a> by {{name}}.",
 "More in": "More in",
 }

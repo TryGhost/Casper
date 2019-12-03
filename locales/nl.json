@@ -1,5 +1,5 @@
 {
-"a href='{{url}}'>more posts</a> by this author": "a href=''{{url}}''>meer berichten</a> van deze auteur",
+"<a href='{{url}}'>more posts</a> by this author": "<a href=''{{url}}''>meer berichten</a> van deze auteur",
 "Go to the front page": "Ga naar de hoofdpagina",
 "Latest Posts": "Laatste berichten",
 "You've successfully subscribed to @site.title": "Je bent succescvol geabonneerd op @site.title",
@@ -14,6 +14,6 @@
 "% posts": "% berichten",
 "Get the latest posts delivered right to your inbox": "Ontvang de laatste berichten direct in uw inbox",
 "A collection of": "Een collectie van",
-"a href='{{url}}'>More posts</a> by {{name}}.": "a href='{{url}}'>Meer berichten</a> van {{name}}.",
+"<a href='{{url}}'>More posts</a> by {{name}}.": "<a href='{{url}}'>Meer berichten</a> van {{name}}.",
 "More in": "Meer in",
 }
