@@ -1,5 +1,5 @@
 {
-    "Read <a href='{{url}}'>more posts</a> by this author": "Read <a href='{{url}}'>more posts</a> by this author",
+    "Read <a href='{url}'>more posts</a> by this author": "Read <a href='{url}'>more posts</a> by this author",
     "Go to the front page": "Go to the front page",
     "Latest Posts": "Latest Posts",
     "You've successfully subscribed to @site.title": "You've successfully subscribed to @site.title",
@@ -10,17 +10,18 @@
     "Check your inbox and click the link to confirm your subscription.": "Check your inbox and click the link to confirm your subscription.",
     "Please enter a valid email address!": "Please enter a valid email address!",
     "No posts": "No posts",
+    "posts": "posts",
     "% post": "% post",
     "% posts": "% posts",
     "Get the latest posts delivered right to your inbox": "Get the latest posts delivered right to your inbox",
     "A collection of": "A collection of",
-    "<a href='{{url}}'>More posts</a> by {{name}}.": "<a href='{{url}}'>More posts</a> by {{name}}.",
+    "<a href='{url}'>More posts</a> by {name}.": "<a href='{url}'>More posts</a> by {name}.",
     "More in": "More in",
     "1 min read": "1 min read",
     "% min read": "% min read",
     "Newer Posts": "Newer Posts",
     "Older Posts": "Older Posts",
-    "Page {{page}} of {{pages}}": "Page {{page}} of {{pages}}",
+    "Page {page} of {pages}": "Page {page} of {pages}",
     "Multiple authors": "Multiple authors",
     "Page %": "Page %"
 }

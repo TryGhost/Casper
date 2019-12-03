@@ -1,5 +1,5 @@
 {
-    "Read <a href='{{url}}'>more posts</a> by this author": "Lees <a href='{{url}}'>meer berichten</a> van deze auteur",
+    "Read <a href='{url}'>more posts</a> by this author": "Lees <a href='{url}'>meer berichten</a> van deze auteur",
     "Go to the front page": "Ga naar de hoofdpagina",
     "Latest Posts": "Laatste berichten",
     "You've successfully subscribed to @site.title": "Je bent succescvol geabonneerd op @site.title",
@@ -10,17 +10,18 @@
     "Check your inbox and click the link to confirm your subscription.": "Check je inbox en klik op de link om je abonnement te activeren",
     "Please enter a valid email address!": "Vul alstublieft een geldig e-mailadres in",
     "No posts": "Geen berichten",
+    "posts": "berichten",
     "% post": "% bericht",
     "% posts": "% berichten",
     "Get the latest posts delivered right to your inbox": "Ontvang de laatste berichten direct in uw inbox",
     "A collection of": "Een collectie van",
-    "<a href='{{url}}'>More posts</a> by {{name}}.": "<a href='{{url}}'>Meer berichten</a> van {{name}}.",
+    "<a href='{url}'>More posts</a> by {name}.": "<a href='{url}'>Meer berichten</a> van {name}.",
     "More in": "Meer in",
     "1 min read": "1 min lezen",
     "% min read": "% min lezen",
     "Newer Posts": "Nieuwste berichten",
     "Older Posts": "Oudere berichten",
-    "Page {{page}} of {{pages}}": "Pagina {{page}} van {{pages}}",
+    "Page {page} of {pages}": "Pagina {page} van {pages}",
     "Multiple authors": "Verschillende auteurs",
     "Page %": "Pagina %"
 }
