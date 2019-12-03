@@ -54,7 +54,7 @@ into the {body} of the default.hbs template --}}
                                         </div>
                                         {{else}}
                                         <h2>{{name}}</h2>
-                                        <p>{{t Read "<a href='{{url}}'>more posts</a> by this author."}}</p>
+                                        <p>{{t "Read <a href='{{url}}'>more posts</a> by this author."}}</p>
                                         {{/if}}
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@ into the {body} of the default.hbs template --}}
                                 <h4><a href="{{url}}">{{title}}</a></h4>
                                 <div class="read-next-card-meta">
                                     <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
-                                        {{reading_time}}</p>
+                                        {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
                                 </div>
                             </li>
                             {{/foreach}}

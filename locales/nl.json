@@ -1,5 +1,5 @@
 {
-    "<a href='{{url}}'>more posts</a> by this author": "<a href=''{{url}}''>meer berichten</a> van deze auteur",
+    "Read <a href='{{url}}'>more posts</a> by this author": "Lees <a href='{{url}}'>meer berichten</a> van deze auteur",
     "Go to the front page": "Ga naar de hoofdpagina",
     "Latest Posts": "Laatste berichten",
     "You've successfully subscribed to @site.title": "Je bent succescvol geabonneerd op @site.title",
@@ -17,5 +17,43 @@
     "<a href='{{url}}'>More posts</a> by {{name}}.": "<a href='{{url}}'>Meer berichten</a> van {{name}}.",
     "More in": "Meer in",
     "1 min read": "1 min lezen",
-    "% min read": "% min lezen"
+    "% min read": "% min lezen",
+    "Newer Posts": "Nieuwste berichten",
+    "Older Posts": "Oudere berichten",
+    "Page {{page}} of {{pages}}": "Pagina {{page}} van {{pages}}",
+    "Multiple authors": "Verschillende auteurs"
 }
+
+
+
+// {
+//     "Back": "Terug",
+//     "Newer Posts": "Nieuwste berichten",
+//     "Older Posts": "Oudere berichten",
+//     "Page {page} of {pages}": "Pagina {page} van {pages}",
+//     "Subscribe": "Meld je aan",
+//     "Subscribe to {blogtitle}": "Melde je aan op {blogtitle}",
+//     "Subscribed!": "Aangemeld!",
+//     "with the email address": "met het e-mailadres",
+//     "Your email address": "Jouw e-mailadres",
+//     "You've successfully subscribed to": "Je bent succesvol aangemeld",
+//     "A collection of posts": "Berichten in deze categorie",
+//     "A collection of 1 post": "1 bericht in deze categorie",
+//     "A collection of % posts": "% berichten in deze categorie",
+//     "Get the latest posts delivered right to your inbox": "Krijg de laatste berichten automatisch in je mailbox",
+//     "Latest Posts": "Laatste berichten",
+//     "<a href='{url}'>More posts</a> by {name}": "<a href='{url}'>Meer berichten</a> van {name}",
+//     "No posts": "Geen berichten",
+//     " (Page %)": " (Pagina %)",
+//     "Read More": "Lees meer",
+//     "Read <a href='{url}'>more posts</a> by this author": "Lees <a href='{url}'>meer berichten</a> van deze auteur",
+//     "See all % posts": "Bekijk alle % berichten",
+//     "Share this": "Delen",
+//     "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox": "Blijf up to date! Krijg alle laatste berichten rechtstreeks in je mailbox",
+//     "This post was a collaboration between": "Dit bericht is gemaakt in samenwerking met",
+//     "youremail@example.com": "youremail@example.com",
+//     "1 post": "1 bericht",
+//     "% posts": "% berichten",
+//     "1 min read": "1 min lezen",
+//     "% min read": "% min lezen"
+// }
