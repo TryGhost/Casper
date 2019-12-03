@@ -114,8 +114,7 @@ body {
     margin-top: 64px;
     padding-bottom: 12px;
     color: #fff;
-    /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
-    background: color(var(--darkgreen) l(-5%)) no-repeat center center;
+    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
 }
 
