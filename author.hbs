@@ -23,7 +23,7 @@
                             <div class="author-location">{{location}}</div>
                         {{/if}}
                         <div class="author-stats">
-                            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+                            {{plural ../pagination.total empty=(t "No posts") singular=(t "% post") plural=(t "% posts")}}
                         </div>
                         {{#if website}}
                             <span class="author-social-link"><a href="{{website}}" target="_blank" rel="noopener">Website</a></span>
