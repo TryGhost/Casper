@@ -21,5 +21,6 @@
     "Newer Posts": "Newer Posts",
     "Older Posts": "Older Posts",
     "Page {{page}} of {{pages}}": "Page {{page}} of {{pages}}",
-    "Multiple authors": "Multiple authors"
+    "Multiple authors": "Multiple authors",
+    "Page %": "Page %"
 }
