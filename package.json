@@ -2,7 +2,7 @@
     "name": "casper",
     "description": "A clean, minimal default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
-    "version": "3.0.4",
+    "version": "3.0.5",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"
