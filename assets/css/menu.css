@@ -1,88 +1,133 @@
-.site-nav {
-    overflow: initial !important;
+/*<editor-fold desc="Base theme modifications">*/
 
-    flex-wrap: wrap;
+/* vertically align social network icons with "Subscribe" btn */
+.social-link {
+    line-height: 100%;
 }
 
-.site-nav > * {
-    /* workaround for .site-nav's `flex-direction: column & column-reverse` property in Safari */
-    flex-shrink: 0;
+/* vertically align menu items with social buttons */
+.site-nav-content {
+    align-self: center !important;
+}
+
+.site-nav-right {
+    /* we don't need padding as it's a 100% parent's height block */
+    padding: 0 !important;
 }
 
 .site-nav-left {
+    /* we don't need padding as we're making it a 100% parent's height block, .site-nav-right already is */
+    padding: 0 !important;
+    height: 64px;
+}
+
+.nav {
+    /* can't see reasons why it's been made absolute */
+    /* also it aligns menu items vertically with "Subscribe" btn */
+    position: relative !important;
+}
+
+.site-nav, .site-nav-left {
+    /* allow menu bar overflow for dropdown submenu */
     overflow: initial !important;
-    padding-bottom: 0 !important;
-    margin-right: 0 !important;;
-
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/*<editor-fold desc="Hamburger btn">*/
-
-#menu-btn {
-    display: none;
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
-    cursor: pointer;
-}
-
-#menu-btn span {
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background: #fff;
-    border-radius: 4px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-}
-
-#menu-btn span:nth-child(1) {
-    top: 5px;
-}
-
-#menu-btn span:nth-child(2),#menu-btn span:nth-child(3) {
-    top: 17px;
-}
-
-#menu-btn span:nth-child(4) {
-    top: 29px;
-}
-
-#menu-btn.open span:nth-child(1) {
-    top: 17px;
-    width: 0%;
-    left: 50%;
-}
-
-#menu-btn.open span:nth-child(2) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-#menu-btn.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-#menu-btn.open span:nth-child(4) {
-    top: 23px;
-    width: 0%;
-    left: 50%;
 }
 
 /*</editor-fold>*/
+
+/*<editor-fold desc="FH own styles">*/
+
+.site-nav-logo img {
+    height: 28px !important;
+}
+
+/*</editor-fold>*/
+
+
+/*.site-nav {*/
+/*    overflow: initial !important;*/
+
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.site-nav > * {*/
+/*    !* workaround for .site-nav's `flex-direction: column & column-reverse` property in Safari *!*/
+/*    flex-shrink: 0;*/
+/*}*/
+
+/*.site-nav-left {*/
+/*    overflow: initial !important;*/
+/*    padding-bottom: 0 !important;*/
+/*    margin-right: 0 !important;;*/
+
+/*    justify-content: center;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*!*<editor-fold desc="Hamburger btn">*!*/
+
+/*#menu-btn {*/
+/*    display: none;*/
+/*    flex-shrink: 0;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    position: relative;*/
+/*    transform: rotate(0deg);*/
+/*    transition: .5s ease-in-out;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*#menu-btn span {*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    height: 4px;*/
+/*    width: 100%;*/
+/*    background: #fff;*/
+/*    border-radius: 4px;*/
+/*    opacity: 1;*/
+/*    left: 0;*/
+/*    transform: rotate(0deg);*/
+/*    transition: .25s ease-in-out;*/
+/*}*/
+
+/*#menu-btn span:nth-child(1) {*/
+/*    top: 5px;*/
+/*}*/
+
+/*#menu-btn span:nth-child(2),#menu-btn span:nth-child(3) {*/
+/*    top: 17px;*/
+/*}*/
+
+/*#menu-btn span:nth-child(4) {*/
+/*    top: 29px;*/
+/*}*/
+
+/*#menu-btn.open span:nth-child(1) {*/
+/*    top: 17px;*/
+/*    width: 0%;*/
+/*    left: 50%;*/
+/*}*/
+
+/*#menu-btn.open span:nth-child(2) {*/
+/*    -webkit-transform: rotate(45deg);*/
+/*    -moz-transform: rotate(45deg);*/
+/*    -o-transform: rotate(45deg);*/
+/*    transform: rotate(45deg);*/
+/*}*/
+
+/*#menu-btn.open span:nth-child(3) {*/
+/*    -webkit-transform: rotate(-45deg);*/
+/*    -moz-transform: rotate(-45deg);*/
+/*    -o-transform: rotate(-45deg);*/
+/*    transform: rotate(-45deg);*/
+/*}*/
+
+/*#menu-btn.open span:nth-child(4) {*/
+/*    top: 23px;*/
+/*    width: 0%;*/
+/*    left: 50%;*/
+/*}*/
+
+/*!*</editor-fold>*!*/
 
 #dropdown-icon {
     background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiBmaWxsPSJ3aGl0ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTY4MyA4MDhsLTc0MiA3NDFxLTE5IDE5LTQ1IDE5dC00NS0xOWwtNzQyLTc0MXEtMTktMTktMTktNDUuNXQxOS00NS41bDE2Ni0xNjVxMTktMTkgNDUtMTl0NDUgMTlsNTMxIDUzMSA1MzEtNTMxcTE5LTE5IDQ1LTE5dDQ1IDE5bDE2NiAxNjVxMTkgMTkgMTkgNDUuNXQtMTkgNDUuNXoiLz48L3N2Zz4=");
@@ -126,7 +171,7 @@
 
 .nav-dropdown {
     max-width: initial;
-
+    overflow-y: auto;
     position: absolute;
     visibility: hidden;
     opacity: 0;
@@ -139,7 +184,7 @@
     visibility: visible;
     opacity: 1;
     transform: translateY(0%);
-    max-height: 900px;
+    max-height: 75vh;
     transition: all 0.3s ease-in-out, max-height 0.6s ease-in-out;
     background: rgba(0,0,0,0.8);
     z-index: 1;
@@ -160,114 +205,114 @@
 
 /*</editor-fold>*/
 
-/* Centering content for 2-line layout: menu+social buttons */
-@media (min-width: 992px) and (max-width: 1024px) {
-    body:not(.home-template) .site-nav {
-        justify-content: center !important;
-    }
-}
+/*!* Centering content for 2-line layout: menu+social buttons *!*/
+/*@media (min-width: 992px) and (max-width: 1024px) {*/
+/*    body:not(.home-template) .site-nav {*/
+/*        justify-content: center !important;*/
+/*    }*/
+/*}*/
 
-/* Centering content for 2-line layout: menu+social buttons */
-@media (max-width: 1024px) {
-    body.post-template .site-nav-right {
-        display: none !important;
-    }
-}
+/*!* Centering content for 2-line layout: menu+social buttons *!*/
+/*@media (max-width: 1024px) {*/
+/*    body.post-template .site-nav-right {*/
+/*        display: none !important;*/
+/*    }*/
+/*}*/
 
-@media (max-width: 992px) {
-    /*<editor-fold desc="Homepage specific styling">*/
+/*@media (max-width: 992px) {*/
+/*    !*<editor-fold desc="Homepage specific styling">*!*/
 
-    body.home-template .site-nav {
-        flex-direction: column-reverse;
-    }
+/*    body.home-template .site-nav {*/
+/*        flex-direction: column-reverse;*/
+/*    }*/
 
-    body.home-template .site-nav-left {
-        justify-content: flex-end;
-    }
+/*    body.home-template .site-nav-left {*/
+/*        justify-content: flex-end;*/
+/*    }*/
 
-    /*</editor-fold>*/
+/*    !*</editor-fold>*!*/
 
-    .site-nav {
-        flex-direction: column;
-        justify-content: flex-start !important;
-        flex-wrap: nowrap;
-        align-items: center !important;
-    }
+/*    .site-nav {*/
+/*        flex-direction: column;*/
+/*        justify-content: flex-start !important;*/
+/*        flex-wrap: nowrap;*/
+/*        align-items: center !important;*/
+/*    }*/
 
-    .site-nav-left {
-        margin: 0 !important;
+/*    .site-nav-left {*/
+/*        margin: 0 !important;*/
 
-        width: 100%;
-        justify-content: space-between;
-        align-items: baseline;
-    }
+/*        width: 100%;*/
+/*        justify-content: space-between;*/
+/*        align-items: baseline;*/
+/*    }*/
 
-    #menu-btn {
-        display: block;
-    }
+/*    #menu-btn {*/
+/*        display: block;*/
+/*    }*/
 
-    .nav-container {
-        width: 100%;
-    }
+/*    .nav-container {*/
+/*        width: 100%;*/
+/*    }*/
 
-    .nav {
-        margin: 0 !important;
+/*    .nav {*/
+/*        margin: 0 !important;*/
 
-        position: absolute;
-        max-width: initial;
-        width: 100vw;
-        left: -4vw; /*.outer's padding*/
-        flex-direction: column;
-        align-items: flex-end;
-        background: rgba(0,0,0,0.8);
-        z-index: 1;
+/*        position: absolute;*/
+/*        max-width: initial;*/
+/*        width: 100vw;*/
+/*        left: -4vw; !*.outer's padding*!*/
+/*        flex-direction: column;*/
+/*        align-items: flex-end;*/
+/*        background: rgba(0,0,0,0.8);*/
+/*        z-index: 1;*/
 
-        visibility: hidden;
-        opacity: 0;
-        max-height: 0;
-        transform: translateY(-2em);
-        transition: all 0.3s ease-in-out;
-    }
+/*        visibility: hidden;*/
+/*        opacity: 0;*/
+/*        max-height: 0;*/
+/*        transform: translateY(-2em);*/
+/*        transition: all 0.3s ease-in-out;*/
+/*    }*/
 
-    .open + .nav-container .nav {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0%);
-        max-height: 500px;
-        transition-delay: 0s;
-    }
+/*    .open + .nav-container .nav {*/
+/*        visibility: visible;*/
+/*        opacity: 1;*/
+/*        transform: translateY(0%);*/
+/*        max-height: 500px;*/
+/*        transition-delay: 0s;*/
+/*    }*/
 
-    .nav-dropdown-container {
-        text-align: right;
-    }
+/*    .nav-dropdown-container {*/
+/*        text-align: right;*/
+/*    }*/
 
-    .nav-dropdown {
-        position: relative;
-        padding: 0;
-        border-right: solid 4px white;
-        margin: 0 12px 0 0;
-        background: none !important;
-    }
+/*    .nav-dropdown {*/
+/*        position: relative;*/
+/*        padding: 0;*/
+/*        border-right: solid 4px white;*/
+/*        margin: 0 12px 0 0;*/
+/*        background: none !important;*/
+/*    }*/
 
-    .nav-dropdown::before {
-        display: none !important;
-    }
-}
+/*    .nav-dropdown::before {*/
+/*        display: none !important;*/
+/*    }*/
+/*}*/
 
-/*<editor-fold desc="Override base theme styles">*/
+/*!*<editor-fold desc="Override base theme styles">*!*/
 
-@media (max-width: 700px) {
-    .site-header {
-        padding: 12px 4vw !important;
-    }
+/*@media (max-width: 700px) {*/
+/*    .site-header {*/
+/*        padding: 12px 4vw !important;*/
+/*    }*/
 
-    .site-nav-left {
-        padding-left: 0 !important;
-    }
+/*    .site-nav-left {*/
+/*        padding-left: 0 !important;*/
+/*    }*/
 
-    .site-nav-right {
-        display: flex !important;
-    }
-}
+/*    .site-nav-right {*/
+/*        display: flex !important;*/
+/*    }*/
+/*}*/
 
-/*</editor-fold>*/
+/*!*</editor-fold>*!*/
