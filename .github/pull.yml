@@ -3,3 +3,7 @@ rules:
   - base: master
     upstream: TryGhost:master    # change `wei` to the owner of upstream repo
     mergeMethod: merge
+    assignees:
+      - flosoft
+    reviewers:
+      - flosoft
