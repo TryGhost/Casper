@@ -285,6 +285,28 @@ body {
     font-size: 1.3rem;
 }
 
+.site-nav-left-wrapper {
+    position: relative;
+    flex: 1 0 auto;
+    display: flex;
+}
+
+.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
+.site-nav-main .site-nav-left-wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 40px;
+    height: 100%;
+}
+
+.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
+.site-nav-main .site-nav-left-wrapper:after {
+    right: 0;
+    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
+}
+
 .site-nav-left {
     flex: 1 0 auto;
     display: flex;
@@ -302,26 +324,8 @@ body {
     -ms-overflow-scrolling: touch;
 }
 
-@media (max-width: 700px) {
-    .site-header-background:not(.responsive-header-img) .site-nav:after,
-    .site-nav-main .site-nav:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        z-index: 1000;
-        width: 40px;
-        height: 100%;
-    }
-
-    .site-header-background:not(.responsive-header-img) .site-nav:after,
-    .site-nav-main .site-nav:after {
-        right: 0;
-        background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
-    }
-
-    .nav li:last-of-type {
-        padding-right: 20px;
-    }
+.site-nav-left .nav li:last-of-type {
+    padding-right: 20px;
 }
 
 /* Site Nav Hack Explanation (above):
@@ -448,11 +452,29 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .site-nav-right {
-    flex-shrink: 0;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     padding: 10px 0;
     height: 64px;
+}
+
+.site-nav-right .nav {
+    position: relative;
+    margin: 0;
+}
+
+.site-nav-right .nav a {
+    white-space: nowrap;
+}
+
+.site-nav-right .nav a:before {
+    display: none;
+}
+
+.site-nav-right .nav li:last-of-type a {
+    margin-right: -12px;
 }
 
 .social-links {
@@ -460,11 +482,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     align-items: center;
 }
-
-.social-links a:last-of-type {
-    padding-right: 20px;
-}
-
 
 .social-link {
     display: inline-block;
@@ -501,9 +518,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .subscribe-button {
     display: block;
     padding: 4px 10px;
+    margin: 0 0 0 10px;
     border: #fff 1px solid;
     color: #fff;
-    font-size: 1.2rem;
     line-height: 1em;
     border-radius: 10px;
     opacity: 0.8;
@@ -514,7 +531,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 1;
 }
 
+.site-nav-right .nav + .subscribe-button {
+    margin-left: 24px;
+}
+
 .rss-button {
+    padding: 10px 8px;
     opacity: 0.8;
 }
 
@@ -2605,8 +2627,6 @@ Usage (In Ghost editor):
     opacity: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
-
-    backdrop-filter: blur(3px);
 }
 
 .subscribe-overlay .subscribe-close:before,
