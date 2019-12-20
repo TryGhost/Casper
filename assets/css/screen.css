@@ -474,7 +474,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .site-nav-right .nav li:last-of-type a {
-    margin-right: -12px;
+    margin-right: 0px;
 }
 
 .social-links {
