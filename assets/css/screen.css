@@ -2165,7 +2165,6 @@ Usage (In Ghost editor):
 
 .kg-bookmark-card {
     width: 100%;
-    background: var(--white);
 }
 
 .kg-card + .kg-bookmark-card {
