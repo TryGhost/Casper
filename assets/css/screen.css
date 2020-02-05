@@ -2232,11 +2232,11 @@ Usage (In Ghost editor):
     position: absolute;
     top: 0;
     left: 0;
-    width: auto;
+    width: 100%;
     height: 100%;
     border-radius: 0 3px 3px 0;
 
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .kg-bookmark-metadata {
