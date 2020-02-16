@@ -1,40 +1,82 @@
 <nav class="site-nav">
+
+
     <div class="site-nav-left-wrapper">
         <div class="site-nav-left">
             {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
             {{/if}}
             <div class="site-nav-content">
                 {{#if @site.navigation}}
-                    {{navigation}}
+                {{navigation}}
                 {{/if}}
                 {{#is "post"}}
-                    <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
+                <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
                 {{/is}}
             </div>
         </div>
     </div>
     <div class="site-nav-right">
+
+        {{!-- Dark Mode Btn --}}
+        <button class="dark-mode-toggler" onclick="setDarkMode()"></button>
+
+        <script>
+            // Sets darkmode on initial load based on localstorage value
+            document.addEventListener("DOMContentLoaded", () => {
+                var darkMode = JSON.parse(localStorage.getItem('darkmode'))
+                var element = document.body;
+
+                if (darkMode) {
+                    element.classList.add("dark-mode")
+                } else {
+                    element.classList.remove("dark-mode")
+                }
+            });
+
+            // Sets darkmode on btn click from site-nav.hbs
+            const setDarkMode = () => {
+                let darkMode = JSON.parse(localStorage.getItem('darkmode'))
+                var element = document.body;
+                localStorage.setItem("darkmode", !darkMode)
+                let newDarkMode = JSON.parse(localStorage.getItem('darkmode'))
+                if (newDarkMode) {
+                    element.classList.add("dark-mode")
+                } else {
+                    element.classList.remove("dark-mode")
+                }
+
+                // element.classList.toggle("dark-mode");
+                //  localStorage.setItem("darkmode", true)
+            }
+        </script>
+
+
         {{#if @site.secondary_navigation}}
-            {{navigation type="secondary"}}
+        {{navigation type="secondary"}}
         {{else}}
-            <div class="social-links">
-                {{#if @site.facebook}}
-                    <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                    <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-            </div>
-            {{#unless @labs.members}}
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            {{/unless}}
+        <div class="social-links">
+            {{#if @site.facebook}}
+            <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook"
+                target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+            {{/if}}
+            {{#if @site.twitter}}
+            <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
+                rel="noopener">{{> "icons/twitter"}}</a>
+            {{/if}}
+        </div>
+        {{#unless @labs.members}}
+        <a class="rss-button social-links" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
+            target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+        {{/unless}}
         {{/if}}
 
         {{#if @labs.members}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        <a class="subscribe-button" href="#subscribe">Subscribe</a>
         {{/if}}
+
+
     </div>
 </nav>

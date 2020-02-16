@@ -22,7 +22,7 @@ projectFilesBackup
 .DS_Store
 
 dist/
-
+node_module/
 config.json
 changelog.md
 changelog.md.bk
