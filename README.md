@@ -42,7 +42,10 @@ yarn install
 yarn dev
 ```
 
+
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+
+The development server handles live reload of assets only. If you want to develop your theme against a local Ghost installation, the [recommended method](https://ghost.org/docs/install/local/#developing-themes) is to checkout your theme repository in `/content/themes/`.
 
 The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
