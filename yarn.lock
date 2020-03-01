@@ -20,10 +20,10 @@
     chalk "^2.4.1"
     sywac "^1.2.1"
 
-"@tryghost/release-utils@0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.3.3.tgz#b4c849f8570ea06229ff941f0dee5dfdd6187d13"
-  integrity sha512-b6Q6CiAPrIPhVTryzEyEtq8UVaN8VJ5yKOW0eeJjbQFNwIQOQ/Gawxr2ryESLv60JJuAxmK5zjWNd5MMhDFlzw==
+"@tryghost/release-utils@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.4.1.tgz#1d5bb32a6f16e00a413ae44b3e1eb1aeb052fd84"
+  integrity sha512-Yrl/6/HItC8LiMJHMAqBRTVK48+JC4FLZoshUYGR0Qja7hjdY4C5t51xTXqNxJefdjiyXv9+YfWDUisiDF3TPA==
   dependencies:
     bluebird "^3.5.3"
     emoji-regex "^8.0.0"
@@ -3466,10 +3466,10 @@ postcss-convert-values@^4.0.1:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
-postcss-custom-properties@9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-9.0.2.tgz#091aefaa309826302d53ec6d780fbe1df8f40fd4"
-  integrity sha512-WHaQrEp3gJ6mgxBA4mGJKW6DSVfy2IFnKPFAb2IEulgxGUW8nWp1NkOD/rWR6e2uIuAdnTa0LXSupST7daniAw==
+postcss-custom-properties@9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-9.1.1.tgz#55822d70ff48004f6d307a338ba64a7fb0a4bfff"
+  integrity sha512-GVu+j7vwMTKUGhGXckYAFAAG5tTJUkSt8LuSyimtZdVVmdAEZYYqserkAgX8vwMhgGDPA4vJtWt7VgFxgiooDA==
   dependencies:
     postcss "^7.0.17"
     postcss-values-parser "^3.0.5"
