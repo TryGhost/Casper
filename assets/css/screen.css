@@ -2057,6 +2057,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-image {
+    margin: 0 auto;
     max-width: 100%;
 }
 
