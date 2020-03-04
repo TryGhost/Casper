@@ -1,0 +1,22 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+# Define the jobs available
+  jobs:
+    build:
+      docker:
+        - image: circleci/node:10.18
+      working_directory: ~/repo
+      steps:
+        # Fetch the code from Git
+        - checkout
+        # Try the standard install for a ghost theme
+        - run: npm install
+        # Test that the theme builds
+        - run: yarn test
+
+  # Define the workflows to run
+  workflows:
+    version: 2
+    build_and_deploy:
+      jobs:
+        - build
