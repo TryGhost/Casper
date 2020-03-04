@@ -2574,7 +2574,7 @@ Usage (In Ghost editor):
     transform: translateY(-175%);
 }
 
-.subscribe-close {
+.subscribe-close-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -2583,33 +2583,44 @@ Usage (In Ghost editor):
     display: block;
 }
 
-.subscribe-close:before {
+.subscribe-close-button {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    z-index: 2000;
+}
+
+.subscribe-close-button:before {
     content: "";
     position: absolute;
-    top: 32px;
-    right: 25px;
+    top: 20px;
+    right: 4px;
     display: block;
-    width: 20px;
+    width: 32px;
     height: 1px;
     background: #fff;
     opacity: 0.8;
     transform: rotate(45deg);
 }
 
-.subscribe-close:after {
+.subscribe-close-button:after {
     content: "";
     position: absolute;
-    top: 32px;
-    right: 25px;
+    top: 20px;
+    right: 4px;
     display: block;
-    width: 20px;
+    width: 32px;
     height: 1px;
     background: #fff;
     opacity: 0.8;
     transform: rotate(-45deg);
 }
 
-.subscribe-close:hover {
+.subscribe-close-overlay:hover,
+.subscribe-close-button:hover {
     cursor: default;
 }
 
@@ -2619,7 +2630,7 @@ Usage (In Ghost editor):
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 9000;
+    z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2629,20 +2640,14 @@ Usage (In Ghost editor):
     pointer-events: none;
 }
 
-.subscribe-overlay .subscribe-close:before,
-.subscribe-overlay .subscribe-close:after {
-    top: 36px;
-    width: 30px;
-}
-
 .subscribe-overlay:target {
     opacity: 1;
     pointer-events: auto;
+    z-index: 2001;
 }
 
 .subscribe-overlay-content {
     position: relative;
-    z-index: 9999;
     margin: 0 0 5vw 0;
     padding: 4vw;
     color: #fff;
@@ -2743,6 +2748,12 @@ Usage (In Ghost editor):
 
 .subscribe-overlay .loading .button-loader {
     top: 5px;
+}
+
+@media (max-width: 500px) {
+    .subscribe-overlay button {
+        margin: 12px 0 0;
+    }
 }
 
 
