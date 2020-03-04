@@ -12,6 +12,8 @@
             <div class="site-header-content author-header">
                 {{#if profile_image}}
                     <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                {{else}}
+                    <span class="author-profile-image">{{> "icons/avatar"}}</span>
                 {{/if}}
                 <div class="author-header-content">
                     <h1 class="site-title">{{name}}</h1>
