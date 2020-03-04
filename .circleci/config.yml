@@ -1,21 +1,84 @@
-version: 2
-  # Define the jobs available
-  jobs:
-    build:
-      docker:
-        - image: circleci/node:10.18
-      working_directory: ~/repo
-      steps:
-        # Fetch the code from Git
-        - checkout
-        # Try the standard install for a ghost theme
-        - run: npm install
-        # Test that the theme builds
-        - run: yarn test
+  
+# CIRCLECI Config file for ghost theme
+# Based on: Javascript Node CircleCI 2.0 configuration file
 
-  # Define the workflows to run
-  workflows:
-    version: 2
-    build_and_deploy:
-      jobs:
-        - build
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.18
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      # Try the standard install for a ghost theme
+      - run: npm install
+      # run gulp via yarn because we haven't installed globally
+      - run: yarn pretest
+      - run: yarn test
+      - run: yarn zip
+      - run: yarn test:ci
+      # Let's see what we made...
+      - run: ls dist -a
+      # Store for posterity
+      - store_artifacts:
+          path: dist
+      # Store in a way we can reach later
+      - persist_to_workspace:
+          root: dist
+          paths:
+            - "*.zip"
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+  deploy_master:
+    docker:
+      - image: circleci/node:10.18
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: "Check that we have something to upload."
+          command: ls /tmp/workspace -a
+      - run:
+          name: "Add the remote host to the known hosts file pre-ssh"
+          # NB The host tends to use the EDCSA style key and so should OVERLOAD_FINGERPRINT should be of the form "ecdsa-sha2-nistp256 AAAXYZ...="
+          command: mkdir -p ~/.ssh && echo "$OVERLOAD_HOST $OVERLOAD_FINGERPRINT" >> ~/.ssh/known_hosts
+      - run:
+          name: "Copy files to overload server"
+          command: scp -o ConnectTimeout=10 -o BatchMode=yes -r /tmp/workspace/* "$OVERLOAD_USER@$OVERLOAD_HOST:~/"
+      - run:
+          name: "Unzip and copy"
+          command: ssh -o ConnectTimeout=10 "$OVERLOAD_USER@$OVERLOAD_HOST" 'rm -rf overload2 && mkdir overload2 && unzip overload-casper.zip -d overload2 && rm -rf /var/www/ghost/content/themes/overload2 &&  cp -R overload2 /var/www/ghost/content/themes'
+      - run:
+          name: "Restart Ghost"
+          command: ssh -o ConnectTimeout=10 "$OVERLOAD_USER@$OVERLOAD_HOST" 'ghost restart --dir /var/www/ghost'
+      - run:
+          name: "Cleanup Remote"
+          command: ssh -o ConnectTimeout=10 "$OVERLOAD_USER@$OVERLOAD_HOST" 'rm overload-casper.zip && rm -rf overload2'
+
+# Define the workflows to run
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      # - deploy_stage:
+      #     requires:
+      #       - build
+      #     filters:
+      #       branches:
+      #         only: staging
+      - deploy_master:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
