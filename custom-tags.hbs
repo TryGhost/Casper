@@ -1,0 +1,28 @@
+{{!< default}}
+
+<header class="site-header">
+  <div class="outer site-nav-main">
+    <div class="inner">
+      {{> "site-nav"}}
+    </div>
+  </div>
+</header>
+
+{{#post}}
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    <header class="post-full-header">
+      <h1 class="post-full-title">{{title}}</h1>
+    </header>
+    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+    {{#foreach tags}}
+        <a href='{{ url }}'>
+        <h2>{{ name }} <small>({{ count.posts }})</small></h2>
+        </a>
+    {{/foreach}}
+    {{/get}}
+  </div>
+</main>
+
+{{/post}}
