@@ -21,8 +21,10 @@
         <a class="post-card-content-link" href="{{url}}">
 
             <header class="post-card-header">
-                {{#if tags}}
-                    <div class="post-card-primary-tag">{{tags}}</div>
+                {{#if primary_tag}}
+                    {{#primary_tag}}
+                    <div class="post-card-primary-tag">{{name}}</div>
+                    {{/primary_tag}}
                 {{/if}}
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
