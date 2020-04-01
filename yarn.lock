@@ -20,10 +20,10 @@
     chalk "^2.4.1"
     sywac "^1.2.1"
 
-"@tryghost/release-utils@0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.4.2.tgz#256594c8faa1ebd63af6c61d9de5870a870dcfca"
-  integrity sha512-+Qk4z4MyTPhWp58L63lO1y28GdojhzFc+DRQBhT2kAd9z2jVdr7/7EuK82NxZlpd1DUP6tbjwi40VFpqdz8+kg==
+"@tryghost/release-utils@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.5.0.tgz#39ec5d0095bc26f7aba7fa461047a393a196f3f8"
+  integrity sha512-HJoXlaTDFfem6ivnHMRhdpdXat9DLl4gQ22/OwseZ0ItrTDb4BNb0wes/hCafktfACPeqB5IOT0tmy6rAystgA==
   dependencies:
     bluebird "^3.5.3"
     emoji-regex "^8.0.0"
