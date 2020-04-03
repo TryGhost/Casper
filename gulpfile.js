@@ -168,7 +168,7 @@ exports.release = () => {
         draft: true,
         preRelease: false,
         tagName: newVersion,
-        releaseName: newVersion + '+banana',
+        releaseName: newVersion,
         userAgent: 'Casper',
         uri: `https://api.github.com/repos/${REPO}/releases`,
         github: {
