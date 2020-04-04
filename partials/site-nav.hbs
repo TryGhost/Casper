@@ -18,17 +18,7 @@
     </div>
     <div class="site-nav-right">
         {{#if @site.secondary_navigation}}
-            <ul class="nav" role="menu">
-                {{#foreach secondary_navigation}}
-                    <li class="nav-{{slug}}" role="menuitem">
-                        <a href="{{url}}" class="social-link">
-                            <svg width="16" height="16" role="img" aria-label="{{slug}} icon">
-                                <use xlink:href="#{{slug}}"></use>
-                            </svg>
-                        </a>
-                    </li>
-                {{/foreach}}
-            </ul>
+            {{navigation type="secondary"}}
         {{else}}
             <div class="social-links">
                 {{#if @site.facebook}}
@@ -42,5 +32,5 @@
                 <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
             {{/unless}}
         {{/if}}
-    </div>
+            </div>
 </nav>
