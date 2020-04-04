@@ -17,7 +17,8 @@
         </div>
     </div>
     <div class="site-nav-right">
-        {{#if isSecondary}}
+        {{#if @site.secondary_navigation}}
+            {{#if isSecondary}}
             <ul class="nav" role="menu">
                 {{#foreach navigation}}
                     <li class="nav-{{slug}}" role="menuitem">
@@ -29,6 +30,7 @@
                     </li>
                 {{/foreach}}
             </ul>
+            {{/if}}
         {{else}}
             <div class="social-links">
                 {{#if @site.facebook}}
