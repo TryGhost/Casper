@@ -18,27 +18,29 @@
     </div>
     <div class="site-nav-right">
         {{#if @site.secondary_navigation}}
-            {{navigation type="secondary"}}
+            <ul class="nav" role="menu">
+                {{#foreach navigation}}
+                    <li class="nav-{{slug}}" role="menuitem">
+                        <a href="{{url}}" class="social-link">
+                            <svg width="16" height="16" role="img" aria-label="{{slug}} icon">
+                                <use xlink:href="#{{slug}}"></use>
+                            </svg>
+                        </a>
+                    </li>
+                {{/foreach}}
+            </ul>
         {{else}}
             <div class="social-links">
+                {{#if @site.facebook}}
+                    <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                {{/if}}
+                {{#if @site.twitter}}
                     <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                    <a class="social-link social-link-tw" href="https://github.com/russmckendrick/" title="GitHub" target="_blank" rel="noopener">{{> "icons/github"}}</a>
-                    <a class="social-link social-link-tw" href="https://www.linkedin.com/in/russmckendrick/" target="_blank" rel="noopener">{{> "icons/linkedin"}}</a>
-                    <a class="social-link social-link-tw" href="https://medium.com/@russmckendrick" target="_blank" rel="noopener">{{> "icons/medium"}}</a>
-                    <a class="social-link social-link-tw" href="https://hub.docker.com/u/russmckendrick/" target="_blank" rel="noopener">{{> "icons/docker"}}</a>
-                    <a class="social-link social-link-tw" href="https://www.amazon.com/Russ-McKendrick/e/B079KJV88Z}" target="_blank" rel="noopener">{{> "icons/amazon"}}</a>
-                    <a class="social-link social-link-tw" href="https://www.instagram.com/russmckendrick/" target="_blank" rel="noopener">{{> "icons/instagram"}}</a>
-                    <a class="social-link social-link-tw" href="https://www.discogs.com/user/russmck/collection/covers?page=1&limit=250&sort_by=added" target="_blank" rel="noopener">{{> "icons/discogs"}}</a>
-                    <a class="social-link social-link-tw" href="https://www.mckendrick.io" target="_blank" rel="noopener">{{> "icons/tumblr"}}</a>
-                    <a class="social-link social-link-tw" href="https://open.spotify.com/user/russmckendrick" target="_blank" rel="noopener">{{> "icons/spotify"}}</a>
+                {{/if}}
             </div>
             {{#unless @labs.members}}
                 <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
             {{/unless}}
-        {{/if}}
-
-        {{#if @labs.members}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
         {{/if}}
     </div>
 </nav>
