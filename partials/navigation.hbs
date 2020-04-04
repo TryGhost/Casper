@@ -1,0 +1,21 @@
+{{#if isSecondary}}
+    <ul class="nav" role="menu">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}" role="menuitem">
+                <a href="{{url}}" class="social-link">
+                    <svg width="16" height="16" role="img" aria-label="{{slug}} icon">
+                        <use xlink:href="#{{slug}}"></use>
+                    </svg>
+                </a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{else}}
+    <ul class="nav" role="menu">
+        {{#foreach navigation}}
+            <li class="{{link_class for=(url) class=(concat "nav-" slug)}}" role="menuitem">
+                <a href="{{url absolute="true"}}">{{label}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{/if}}
