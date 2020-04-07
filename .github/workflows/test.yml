@@ -6,17 +6,10 @@ on:
       - master
       - 'renovate/*'
 jobs:
-  build:
-    runs-on: ubuntu-18.04
+  test:
+    runs-on: ubuntu-latest
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
-    strategy:
-      matrix:
-        node: [ 10 ]
-    name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
       - run: yarn
       - run: yarn test:ci
