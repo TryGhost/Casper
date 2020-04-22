@@ -2076,10 +2076,10 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
   integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
 
-gscan@3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-3.5.2.tgz#9f696f7134c1ef8c2234b5137e15458df2872c9f"
-  integrity sha512-Ue85VySXf5k1Tqmw8Mx21VyjNAe0964eJeZmqcmkKXjySt9QVP1UTP4MWnq0/oGMmg2oPvYEIIO13FYtWWN6VA==
+gscan@3.5.3:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-3.5.3.tgz#331939ef434c5ac15b13804f5118e4ba5f04d341"
+  integrity sha512-+AJbPBMAQP5SUfiJL58biPORqEwaI5xpMdQnlQNxnfUXsDF2XbdQwZjdb/W0IKIQYLuTg9GdeJjQqaZ7Mr6meg==
   dependencies:
     "@tryghost/pretty-cli" "1.2.5"
     "@tryghost/zip" "^1.0.0"
