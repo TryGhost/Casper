@@ -28,7 +28,7 @@
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+                <section class="copyright">&copy; 2019-{{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> </section>
                 <nav class="site-footer-nav">
                     <a href="{{@site.url}}">Latest Posts</a>
                     {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
