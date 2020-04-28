@@ -1168,8 +1168,11 @@ Usage (In Ghost editor):
 
 .post-full-content blockquote {
     margin: 0 0 1.5em;
-    padding: 0 1.5em;
+    padding: 1.5em 1.5em;
     border-left: color(var(--orange)) 3px solid;
+    font-style: italic;
+    background: color(var(--orange) l(-30%));
+
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
