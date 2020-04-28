@@ -3,18 +3,18 @@
 
 :root {
     /* Colours */
-    --blue: #3eb0ef;
+    --orange: #ffbb4d;
     --green: #a4d037;
     --purple: #ad26b4;
     --yellow: #fecd35;
     --red: #f05230;
-    --darkgrey: #15171A;
+    --darkblue: #1c2d4f;
     --midgrey: #738a94;
     --lightgrey: #c5d2d9;
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
     --brown: #a3821a;
-    --darkmode: color(var(--darkgrey) l(+2%));
+    --darkmode: color(var(--darkblue) l(+2%));
 }
 
 /* Reset
@@ -298,7 +298,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--blue) lightness(+30%));
+    background: color(var(--orange) lightness(+30%));
 }
 
 hr {
@@ -375,7 +375,7 @@ dt {
     float: left;
     margin: 0 20px 0 0;
     width: 120px;
-    color: var(--darkgrey);
+    color: var(--darkblue);
     font-weight: 500;
     text-align: right;
 }
@@ -416,7 +416,7 @@ blockquote cite a {
 }
 
 a {
-    color: color(var(--blue) l(-5%));
+    color: color(var(--orange) l(-5%));
     text-decoration: none;
 }
 
