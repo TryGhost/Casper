@@ -1176,7 +1176,7 @@ Usage (In Ghost editor):
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
-        padding: 0 1.3em;
+        padding: 1.3em 1.3em;
     }
 }
 
