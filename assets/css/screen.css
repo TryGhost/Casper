@@ -1171,7 +1171,7 @@ Usage (In Ghost editor):
     padding: 1.5em 1.5em;
     border-left: color(var(--orange)) 3px solid;
     font-style: italic;
-    background: color(var(--orange) l(-25%));
+    background: color(var(--orange) l(+32%));
 
 }
 @media (max-width: 500px) {
