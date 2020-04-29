@@ -92,6 +92,7 @@ body {
 /* ---------------------------------------------------------- */
 
 @media (min-width: 900px) {
+
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
@@ -127,7 +128,7 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
+    background: rgba(0, 0, 0, 0.18);
 }
 
 .site-header-background:after {
@@ -140,7 +141,7 @@ body {
     z-index: 10;
     display: block;
     height: 140px;
-    background: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
 }
 
 .site-header-background.no-image:before,
@@ -169,7 +170,7 @@ body {
 }
 
 .site-logo {
-    max-height: 55px;
+    max-height: 72px;
 }
 
 .site-description {
@@ -316,7 +317,7 @@ body {
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     right: 0;
-    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
+    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%, color(var(--darkgrey) l(-5%)) 100%);
 }
 
 .site-nav-left {
@@ -334,10 +335,6 @@ body {
     white-space: nowrap;
 
     -ms-overflow-scrolling: touch;
-}
-
-.site-nav-left .nav li:last-of-type {
-    padding-right: 20px;
 }
 
 /* Site Nav Hack Explanation (above):
@@ -380,6 +377,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-content {
     position: relative;
     align-self: flex-start;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .nav {
@@ -543,7 +543,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 1;
 }
 
-.site-nav-right .nav + .subscribe-button {
+.site-nav-right .nav+.subscribe-button {
     margin-left: 24px;
 }
 
@@ -759,7 +759,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     white-space: nowrap;
     background: var(--darkgrey);
     border-radius: 3px;
-    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
     transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: translateY(6px);
@@ -1030,12 +1030,14 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding: 0 11vw;
     }
 }
+
 @media (max-width: 800px) {
     .post-full-content {
         padding: 0 5vw;
         font-size: 1.8rem;
     }
 }
+
 @media (max-width: 500px) {
     .post-full-custom-excerpt {
         font-size: 1.9rem;
@@ -1069,7 +1071,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 0 1.5em 0;
     min-width: 100%;
 }
+
 @media (max-width: 500px) {
+
     .post-full-content p,
     .post-full-content ul,
     .post-full-content ol,
@@ -1123,7 +1127,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     max-width: 1040px;
     height: auto;
 }
+
 @media (max-width: 1040px) {
+
     .post-full-content img,
     .post-full-content video {
         width: 100%;
@@ -1153,7 +1159,7 @@ Usage (In Ghost editor):
 <small>Your image caption</small>
 
 */
-.post-full-content img + br + small {
+.post-full-content img+br+small {
     display: block;
     margin-top: -3em;
     margin-bottom: 1.5em;
@@ -1171,6 +1177,7 @@ Usage (In Ghost editor):
     padding: 0 1.5em;
     border-left: color(var(--blue)) 3px solid;
 }
+
 @media (max-width: 500px) {
     .post-full-content blockquote {
         padding: 0 1.3em;
@@ -1193,7 +1200,7 @@ Usage (In Ghost editor):
     padding: 0 5px 2px;
     font-size: 0.8em;
     line-height: 1em;
-    font-weight: 400!important;
+    font-weight: 400 !important;
     background: var(--whitegrey);
     border-radius: 3px;
 }
@@ -1252,7 +1259,7 @@ Usage (In Ghost editor):
     transform: rotate(45deg);
 }
 
-.post-full-content hr + p {
+.post-full-content hr+p {
     margin-top: 1.2em;
 }
 
@@ -1272,9 +1279,11 @@ Usage (In Ghost editor):
     line-height: 1.25em;
     font-weight: 600;
 }
-.post-full-content p + h1 {
+
+.post-full-content p+h1 {
     margin-top: 0.8em;
 }
+
 @media (max-width: 800px) {
     .post-full-content h1 {
         font-size: 3.2rem;
@@ -1288,9 +1297,11 @@ Usage (In Ghost editor):
     line-height: 1.25em;
     font-weight: 600;
 }
-.post-full-content p + h2 {
+
+.post-full-content p+h2 {
     margin-top: 0.8em;
 }
+
 @media (max-width: 800px) {
     .post-full-content h2 {
         margin-bottom: 0.3em;
@@ -1305,9 +1316,11 @@ Usage (In Ghost editor):
     line-height: 1.3em;
     font-weight: 600;
 }
-.post-full-content h2 + h3 {
+
+.post-full-content h2+h3 {
     margin-top: 0.7em;
 }
+
 @media (max-width: 800px) {
     .post-full-content h3 {
         margin-bottom: 0.3em;
@@ -1321,12 +1334,15 @@ Usage (In Ghost editor):
     font-size: 2.5rem;
     font-weight: 600;
 }
-.post-full-content h2 + h4 {
+
+.post-full-content h2+h4 {
     margin-top: 0.7em;
 }
-.post-full-content h3 + h4 {
+
+.post-full-content h3+h4 {
     margin-top: 0;
 }
+
 @media (max-width: 800px) {
     .post-full-content h4 {
         margin-bottom: 0.3em;
@@ -1341,17 +1357,19 @@ Usage (In Ghost editor):
     padding: 0.4em 1em 0.9em;
     border: 0;
     color: var(--blue);
-    font-family: Georgia,serif;
+    font-family: Georgia, serif;
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
 }
+
 @media (min-width: 1180px) {
     .post-full-content h5 {
         max-width: 1060px;
         width: 100vw;
     }
 }
+
 @media (max-width: 800px) {
     .post-full-content h5 {
         margin-bottom: 1em;
@@ -1367,6 +1385,7 @@ Usage (In Ghost editor):
     font-size: 2.0rem;
     font-weight: 700;
 }
+
 @media (max-width: 800px) {
     .post-full-content h6 {
         font-size: 1.8rem;
@@ -1463,13 +1482,13 @@ Usage (In Ghost editor):
 }
 
 .post-full-content table td:first-child {
-    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
 .post-full-content table td:last-child {
-    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     background-position: 100% 0;
     background-size: 20px 100%;
     background-repeat: no-repeat;
@@ -1520,7 +1539,8 @@ Usage (In Ghost editor):
     font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.2px;
-    text-transform: uppercase;;
+    text-transform: uppercase;
+    ;
 }
 
 .post-full-byline-meta h4 {
@@ -1568,7 +1588,7 @@ Usage (In Ghost editor):
     line-height: 1.5em;
     background: white;
     border-radius: 3px;
-    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
+    box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
     opacity: 0;
     transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(0.98) translateY(15px);
@@ -1758,12 +1778,10 @@ Usage (In Ghost editor):
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
-    );
+    background: linear-gradient(color(var(--blue) whiteness(+7%)),
+            color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
+            color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
+            color(var(--blue) lightness(-4%) saturation(-10%)));
     border-radius: 5px;
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -2079,7 +2097,7 @@ Usage (In Ghost editor):
 }
 
 /* Preventing full-width image overlap with post image.  */
-.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
+.post-full-image+.post-full-content .kg-content *:first-child .kg-image {
     width: 100%;
 }
 
@@ -2095,10 +2113,10 @@ Usage (In Ghost editor):
     margin: 0.8em 0 2.3em;
 }
 
-.post-full-content h1 + figure,
-.post-full-content h2 + figure,
-.post-full-content h3 + figure,
-.post-full-content h4 + figure {
+.post-full-content h1+figure,
+.post-full-content h2+figure,
+.post-full-content h3+figure,
+.post-full-content h4+figure {
     margin-top: 2em;
 }
 
@@ -2166,10 +2184,10 @@ Usage (In Ghost editor):
     margin: 0 0 0 0.75em;
 }
 
-.kg-gallery-card + .kg-image-card.kg-width-wide,
-.kg-gallery-card + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+.kg-gallery-card+.kg-image-card.kg-width-wide,
+.kg-gallery-card+.kg-gallery-card,
+.kg-image-card.kg-width-wide+.kg-gallery-card,
+.kg-image-card.kg-width-wide+.kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
 }
 
@@ -2186,7 +2204,7 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
-.kg-card + .kg-bookmark-card {
+.kg-card+.kg-bookmark-card {
     margin-top: 0;
 }
 
@@ -2296,15 +2314,16 @@ Usage (In Ghost editor):
         margin: 0.2em 0 1.3em;
     }
 
-    .post-full-content h1 + figure,
-    .post-full-content h2 + figure,
-    .post-full-content h3 + figure,
-    .post-full-content h4 + figure {
+    .post-full-content h1+figure,
+    .post-full-content h2+figure,
+    .post-full-content h3+figure,
+    .post-full-content h4+figure {
         margin-top: 0.9em;
     }
 }
 
 @media (max-width: 500px) {
+
     .post-full-content .kg-width-wide,
     .post-full-content .kg-width-full {
         margin-right: -5vw;
@@ -2377,7 +2396,26 @@ Usage (In Ghost editor):
     margin: -4px 0 0;
     width: 110px;
     height: 110px;
-    box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
+}
+
+.site-header-subnav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px 20px;
+}
+
+.site-header-subnav .nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.site-header-subnav .nav>li>a {
+    padding: 4px 8px;
 }
 
 .author-header-content .author-bio {
@@ -2437,9 +2475,9 @@ Usage (In Ghost editor):
     padding: 6px 0;
 }
 
-.author-location + .author-stats:before,
-.author-stats + .author-social-link:before,
-.author-social-link + .author-social-link:before {
+.author-location+.author-stats:before,
+.author-stats+.author-social-link:before,
+.author-social-link+.author-social-link:before {
     content: "\2022";
     display: inline-block;
     margin: 0 12px;
@@ -2447,16 +2485,17 @@ Usage (In Ghost editor):
     opacity: 0.6;
 }
 
-.no-image .author-location + .author-stats:before,
-.no-image .author-stats + .author-social-link:before,
-.no-image .author-social-link + .author-social-link:before {
+.no-image .author-location+.author-stats:before,
+.no-image .author-stats+.author-social-link:before,
+.no-image .author-social-link+.author-social-link:before {
     color: var(--midgrey);
 }
 
 @media (max-width: 700px) {
+
     .author-location,
     .author-stats,
-    .author-stats + .author-social-link:first-of-type:before {
+    .author-stats+.author-social-link:first-of-type:before {
         display: none;
     }
 }
@@ -2491,9 +2530,9 @@ Usage (In Ghost editor):
         margin-top: 8px;
     }
 
-    .author-location + .author-stats:before,
-    .author-stats + .author-social-link:before,
-    .author-social-link + .author-social-link:before {
+    .author-location+.author-stats:before,
+    .author-stats+.author-social-link:before,
+    .author-social-link+.author-social-link:before {
         display: inline;
         margin: 0 6px;
     }
@@ -2559,12 +2598,15 @@ Usage (In Ghost editor):
     .error-content {
         padding-top: 24vw;
     }
+
     .error-code {
         font-size: 11.2rem;
     }
+
     .error-message {
         padding-bottom: 16vw;
     }
+
     .error-description {
         margin: 5px 0 0 0;
         font-size: 1.8rem;
@@ -2575,6 +2617,7 @@ Usage (In Ghost editor):
     .error-content {
         padding-top: 28vw;
     }
+
     .error-message {
         padding-bottom: 14vw;
     }
@@ -2669,7 +2712,7 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(9,10,11,0.97);
+    background: rgba(9, 10, 11, 0.97);
     opacity: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
@@ -2765,12 +2808,10 @@ Usage (In Ghost editor):
     line-height: 38px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
-    );
+    background: linear-gradient(color(var(--blue) whiteness(+7%)),
+            color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
+            color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
+            color(var(--blue) lightness(-4%) saturation(-10%)));
     border-radius: 8px;
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -2808,16 +2849,16 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.3rem;
 }
 
 .site-footer-content a {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .site-footer-content a:hover {
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
 
@@ -2870,7 +2911,7 @@ Usage (In Ghost editor):
     }
 
     .site-header-background:before {
-        background: rgba(0,0,0,0.6);
+        background: rgba(0, 0, 0, 0.6);
     }
 
     .post-feed {
@@ -2947,7 +2988,7 @@ Usage (In Ghost editor):
 
     .author-list-item .author-card {
         background: color(var(--darkmode) l(+4%));
-        box-shadow: 0 12px 26px rgba(0,0,0,0.4);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
     }
 
     .author-list-item .author-card:before {
@@ -3013,7 +3054,7 @@ Usage (In Ghost editor):
     .post-full-content .kg-bookmark-container,
     .post-full-content .kg-bookmark-container:hover {
         color: rgba(255, 255, 255, 0.75);
-        box-shadow: 0 0 1px rgba(255,255,255,0.9);
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
     }
 
     .kg-bookmark-title {
@@ -3038,7 +3079,7 @@ Usage (In Ghost editor):
     }
 
     .site-header-content .author-profile-image {
-        box-shadow: 0 0 0 6px hsla(0,0%,100%,0.04);
+        box-shadow: 0 0 0 6px hsla(0, 0%, 100%, 0.04);
     }
 
     .subscribe-form {
