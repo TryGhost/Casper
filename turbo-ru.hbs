@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<rss xmlns:yandex="http://news.yandex.ru" xmlns:media="http://search.yahoo.com/mrss/"
+    xmlns:turbo="http://turbo.yandex.ru" version="2.0">
+    <channel>
+        <title>
+            <![CDATA[ {{@blog.title}} ]]>
+        </title>
+        <description>
+            <![CDATA[ {{@blog.description}} ]]>
+        </description>
+        <link>{{@blog.url}}</link>
+        <language>ru</language>
+        <image>
+            <url>{{@blog.url}}/favicon.png</url>
+            <title>{{@blog.title}}</title>
+            <link>{{@blog.url}}</link>
+        </image>
+        <lastBuildDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</lastBuildDate>
+
+        {{#get "posts" limit="all"}}
+        {{#foreach posts}}
+        <item turbo="true">
+            <title>
+                <![CDATA[ {{title}} ]]>
+            </title>
+            <link>{{url absolute="true"}}</link>
+            <turbo:topic>
+                <![CDATA[ {{title}} ]]>
+            </turbo:topic>
+            <turbo:source>{{url absolute="true"}}</turbo:source>
+            <author>
+                <![CDATA[ {{author.name}} ]]>
+            </author>
+            <pubDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</pubDate>
+            <media:content url="{{feature_image}}" medium="image" />
+            <turbo:content>
+                <![CDATA[ {{content}} ]]>
+            </turbo:content>
+        </item>
+        {{/foreach}}
+        {{/get}}
+
+    </channel>
+</rss>
