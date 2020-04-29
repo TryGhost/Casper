@@ -2873,7 +2873,7 @@ Usage (In Ghost editor):
     }
 
     .post-full-content blockquote {
-        background: #69748A;
+        background: color(var(--darkmode) l(30%));
     }
 
     .site-header-background:before {
