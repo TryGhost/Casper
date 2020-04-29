@@ -2868,10 +2868,6 @@ Usage (In Ghost editor):
         background: var(--darkmode);
     }
 
-    img {
-        opacity: 0.9;
-    }
-
     .post-full-content blockquote {
         background: color(var(--darkmode) l(30%));
     }
