@@ -2872,6 +2872,10 @@ Usage (In Ghost editor):
         opacity: 0.9;
     }
 
+    blockquote {
+        background: #69748A;
+    }
+
     .site-header-background:before {
         background: rgba(0,0,0,0.6);
     }
