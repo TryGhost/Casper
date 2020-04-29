@@ -2872,7 +2872,7 @@ Usage (In Ghost editor):
         opacity: 0.9;
     }
 
-    blockquote {
+    .post-full-content blockquote {
         background: #69748A;
     }
 
