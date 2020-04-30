@@ -2712,7 +2712,7 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(9, 10, 11, 0.97);
+    background: rgba(9, 10, 11, 0.94);
     opacity: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
@@ -3116,5 +3116,213 @@ Usage (In Ghost editor):
 
     .subscribe-form .success .message-success {
         color: color(var(--green) l(+5%) s(-5%));
+    }
+}
+
+/* 13. Modal
+/* ---------------------------------------------------------- */
+
+.modal-success-message {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9000;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    background: var(--green);
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    transform: translateY(-175%);
+}
+
+.modal-success .modal-success-message {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.modal-success-message.close {
+    visibility: hidden;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-175%);
+}
+
+.modal-close-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    z-index: 2000;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.modal-close-button:before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 4px;
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: #fff;
+    opacity: 0.8;
+    transform: rotate(45deg);
+}
+
+.modal-close-button:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 4px;
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: #fff;
+    opacity: 0.8;
+    transform: rotate(-45deg);
+}
+
+.modal-close-overlay:hover,
+.modal-close-button:hover {
+    cursor: default;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(9, 10, 11, 0.94);
+    transition: opacity 0.2s ease-in;
+    pointer-events: none;
+}
+
+.modal-overlay:target {
+    z-index: 2001;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-overlay-content {
+    position: relative;
+    margin: 0 0 5vw 0;
+    padding: 4vw;
+    color: #fff;
+    text-align: center;
+}
+
+.modal-overlay .modal-form {
+    border: none;
+    color: #fff;
+    background: none;
+}
+
+.modal-overlay-logo {
+    position: fixed;
+    top: 23px;
+    left: 30px;
+    height: 30px;
+}
+
+.modal-overlay-title {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    font-size: 5.2rem;
+    line-height: 1.15em;
+}
+
+.modal-overlay-description {
+    margin: 0 auto 50px;
+    max-width: 650px;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+    line-height: 1.3em;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.modal-overlay form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 540px;
+}
+
+.modal-overlay .form-group {
+    flex-grow: 1;
+}
+
+.modal-overlay .modal-input {
+    display: block;
+    padding: 14px 20px;
+    width: 100%;
+    border: none;
+    color: var(--midgrey);
+    font-size: 2rem;
+    line-height: 1em;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    user-select: text;
+    border-radius: 8px;
+    transition: border-color 0.15s linear;
+
+    -webkit-appearance: none;
+}
+
+.modal-input:focus {
+    outline: 0;
+    border-color: color(var(--lightgrey) l(-2%));
+}
+
+.modal-overlay button {
+    display: inline-block;
+    margin: 0 0 0 15px;
+    padding: 0 25px;
+    height: 52px;
+    outline: none;
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    background: linear-gradient(color(var(--blue) whiteness(+7%)),
+            color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
+            color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
+            color(var(--blue) lightness(-4%) saturation(-10%)));
+    border-radius: 8px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.modal-overlay button:active,
+.modal-overlay button:focus {
+    background: color(var(--blue) lightness(-9%) saturation(-10%));
+}
+
+.modal-overlay .loading .button-loader {
+    top: 5px;
+}
+
+@media (max-width: 500px) {
+    .modal-overlay button {
+        margin: 12px 0 0;
     }
 }

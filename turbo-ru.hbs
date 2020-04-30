@@ -3,17 +3,17 @@
     xmlns:turbo="http://turbo.yandex.ru" version="2.0">
     <channel>
         <title>
-            <![CDATA[ {{@blog.title}} ]]>
+            <![CDATA[ {{@site.title}} ]]>
         </title>
         <description>
-            <![CDATA[ {{@blog.description}} ]]>
+            <![CDATA[ {{@site.description}} ]]>
         </description>
-        <link>{{@blog.url}}</link>
+        <link>{{@site.url}}</link>
         <language>ru</language>
         <image>
-            <url>{{@blog.url}}/favicon.png</url>
-            <title>{{@blog.title}}</title>
-            <link>{{@blog.url}}</link>
+            <url>{{@site.url}}/favicon.png</url>
+            <title>{{@site.title}}</title>
+            <link>{{@site.url}}</link>
         </image>
         <lastBuildDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</lastBuildDate>
 
@@ -29,7 +29,7 @@
             </turbo:topic>
             <turbo:source>{{url absolute="true"}}</turbo:source>
             <author>
-                <![CDATA[ {{author.name}} ]]>
+                <![CDATA[ {{primary_author.name}} ]]>
             </author>
             <pubDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</pubDate>
             <media:content url="{{feature_image}}" medium="image" />

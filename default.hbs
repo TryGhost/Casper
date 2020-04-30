@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
+
 <head>
 
     {{!-- Document Settings --}}
@@ -18,6 +19,7 @@
     {{ghost_head}}
 
 </head>
+
 <body class="{{body_class}}">
 
     <div class="site-wrapper">
@@ -28,16 +30,40 @@
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+                </section>
                 <nav class="site-footer-nav">
                     <a href="{{@site.url}}">Latest Posts</a>
-                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank"
+                        rel="noopener">Facebook</a>{{/if}}
+                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank"
+                        rel="noopener">Twitter</a>{{/if}}
                     <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
                 </nav>
             </div>
         </footer>
 
+    </div>
+
+    {{!-- Search modal --}}
+
+    <div class="modal-overlay" id="search">
+        <a class="modal-close-overlay" href="#"></a>
+        <a class="modal-close-button" href="#"></a>
+        <div class="modal-overlay-content">
+            <div class="modal-form">
+                <h1 class="modal-overlay-title">
+                    Поиск по блогу
+                </h1>
+                <p class="modal-overlay-description">
+                    Введите свой поисковый запрос в поле ниже
+                </p>
+                <div style="display: flex; flex-direction: row; flex-grow: 1;">
+                    <input class="modal-input" id="search-input" placeholder="Я не умею в SMM" />
+                </div>
+                <div id="search-result" style="max-height: 400; overflow-y: auto;"></div>
+            </div>
+        </div>
     </div>
 
     {{!-- The big email subscribe modal content --}}
@@ -52,11 +78,12 @@
         <a class="subscribe-close-button" href="#"></a>
         <div class="subscribe-overlay-content">
             {{#if @site.logo}}
-                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
             {{/if}}
             <div class="subscribe-form">
                 <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered straight to your inbox</p>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
                 <form data-members-form="subscribe">
                     <div class="form-group">
                         <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
@@ -79,12 +106,13 @@
     {{/if}}
 
     {{!-- jQuery, required for fitvids --}}
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
     {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
+    <script src="https://unpkg.com/@tryghost/content-api@1.4.1/umd/content-api.min.js"></script>
+    <script src="https://unpkg.com/dompurify@2.0.10/dist/purify.js"></script>
+
     <script src="{{asset "built/casper.js"}}"></script>
 
     {{!-- Scripts for Members subscription --}}
@@ -113,9 +141,20 @@
             });
 
             // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
+            $('.subscribe-button').click(function () {
                 $('.subscribe-overlay form').removeClass();
                 $('.subscribe-email').val('');
+            });
+
+            $('#search-button').click(function () {
+                $('.modal-input').val('');
+            })
+
+            new Search({
+                homeUrl: window.location.origin + "/blog",
+                input: '#search-input',
+                showResult: '#search-result',
+                contentApiKey: window.location.href.includes("smmplanner.com") ? "382959cfb92692287cefa17e75" : "f2d873a20a245d4f2b094b7564",
             });
         });
     </script>
@@ -127,4 +166,5 @@
     {{ghost_foot}}
 
 </body>
+
 </html>
