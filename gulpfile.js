@@ -5,12 +5,9 @@ const releaseUtils = require("@tryghost/release-utils");
 const inquirer = require("inquirer");
 
 // gulp plugins and utils
-const babel = require("gulp-babel");
 const livereload = require("gulp-livereload");
 const postcss = require("gulp-postcss");
 const zip = require("gulp-zip");
-const concat = require("gulp-concat");
-const uglify = require("gulp-uglify");
 const beeper = require("beeper");
 const fs = require("fs");
 const webpack = require("webpack-stream");
@@ -68,11 +65,13 @@ function css(done) {
 function js(done) {
     pump(
         [
-            src(["assets/js/**/*.js"]),
+            src(["assets/js/index.js"]),
             webpack({
+                devtool: "source-map",
                 output: {
                     filename: "casper.js",
                 },
+                mode: "production",
                 module: {
                     rules: [
                         {
@@ -83,9 +82,7 @@ function js(done) {
                     ],
                 },
             }),
-            // concat("casper.js"),
-            // uglify(),
-            dest("assets/built/"),
+            dest("assets/built/", { sourcemaps: "." }),
             livereload(),
         ],
         handleError(done)
@@ -112,8 +109,10 @@ function zipper(done) {
 }
 
 const cssWatcher = () => watch("assets/css/**", css);
+const jsWatcher = () => watch("assets/js/**/*.js", js);
 const hbsWatcher = () => watch(["*.hbs", "partials/**/*.hbs"], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher);
+
+const watcher = parallel(jsWatcher, cssWatcher, hbsWatcher);
 const build = series(css, js);
 
 exports.build = build;
