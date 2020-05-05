@@ -1,0 +1,37 @@
+{{!-- The footer at the very bottom of the screen --}}
+<footer class="site-footer outer">
+    <div class="site-footer-content inner">
+        <div class="site-footer-logo">
+            {{#if @site.logo}}
+                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+            {{else}}
+                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+            {{/if}}
+        </div>
+        <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+        <nav class="site-footer-nav">
+            <ul class="site-footer-list">
+                <li><h4>PUBLICACIONES</h4></li>
+                <li  class="rss-link__footer">
+                    <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+                    <a class="social-link__footer" href="{{@site.url}}">&Uacute;ltimas publicaciones</a>
+                </li>
+            </ul>
+            <ul class="site-footer-list">
+                <li><h4>REDES SOCIALES</h4></li>
+                {{#if @site.facebook}}
+                    <li>
+                        <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                        <a class="social-link__footer" href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>
+                    </li>
+                {{/if}}
+                {{#if @site.twitter}}
+                    <li>
+                        <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                        <a class="social-link__footer" href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </nav>
+    </div>
+</footer>

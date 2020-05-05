@@ -1,0 +1,35 @@
+.landing {
+  text-align: center;
+}
+
+.landing__title {
+  font-size: 36px;
+}
+
+.landing__description {
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 667px) {
+  .site-footer-logo {
+    bottom: 76px;
+    position: absolute;
+    top: 16px;
+  }
+}
+
+.site-footer-list {
+  list-style-type: none;
+  display: block;
+  margin-right: 74px;
+}
+
+.social-link__footer {
+  margin-left: -10px !important;
+  top: 1px;
+}
+
+.rss-link__footer {
+  margin-left: -30px !important;
+  top: 1px;
+}
