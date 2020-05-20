@@ -29,6 +29,18 @@ One neat trick is that you can also create custom one-off templates by adding th
 - `tag-news.hbs` - Custom template for `/tag/news/` archive
 - `author-ali.hbs` - Custom template for `/author/ali/` archive
 
+# Translations
+
+This theme is made translatable into any language.
+
+The translation files are located in the `locales/` directory. You can add your own if needed.
+
+For example, in _.hbs_ theme templates:
+```
+{{t "Go to the front page"}}
+```
+
+Details in Ghost's blog post [Theme translations and blog localisation](https://dev.ghost.org/theme-translations/).
 
 # Development
 
@@ -67,4 +79,4 @@ You can add your own SVG icons in the same manner.
 
 # Copyright & License
 
-Copyright (c) 2013-2019 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2020 Ghost Foundation - Released under the [MIT license](LICENSE).
