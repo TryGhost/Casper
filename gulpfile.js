@@ -7,7 +7,7 @@ const inquirer = require('inquirer');
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
 const postcss = require('gulp-postcss');
-const zip = require('gulp-zip');
+const zip = require('gulp-vinyl-zip');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
@@ -79,12 +79,11 @@ function zipper(done) {
 
     pump([
         src([
-            '**',
+            '**/*',
             '!node_modules', '!node_modules/**',
             '!dist', '!dist/**'
         ]),
-        zip(filename),
-        dest('dist/')
+        zip.dest(`dist/${filename}`),
     ], handleError(done));
 }
 
