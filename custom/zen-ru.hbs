@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss" version="2.0">
+  <channel>
+    <description>
+      <![CDATA[ {{@site.description}} ]]>
+    </description>
+    <language>ru</language>
+    <link>{{@site.url}}</link>
+    <title>
+      <![CDATA[ {{@site.title}} ]]>
+    </title>
+
+    {{#get "posts" limit="150"}}
+
+    {{#foreach posts}}
+    <item>
+      <amplink>{{url absolute="true"}}amp</amplink>
+      <author>
+        <![CDATA[ {{primary_author.name}} ]]>
+      </author>
+      <category>Технологии</category>
+      <category>Экономика</category>
+      <content:encoded>
+        <![CDATA[ {{content}} ]]>
+      </content:encoded>
+
+      {{#if feature_image}}
+      <enclosure url="{{feature_image}}" type="image/*" />
+      {{/if}}
+
+      <guid>{{id}}</guid>
+      <link>{{url absolute="true"}}</link>
+      <pubDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</pubDate>
+      <title>
+        <![CDATA[ {{title}} ]]>
+      </title>
+    </item>
+    {{/foreach}}
+
+    {{/get}}
+
+  </channel>
+</rss>
