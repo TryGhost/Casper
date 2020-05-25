@@ -1,0 +1,1 @@
+{"version":3,"sources":["misc.css"],"names":[],"mappings":"AAAA,eAEI,qBACJ,CACA,OACI,UAAU,CACV,cACJ","file":"misc.css","sourcesContent":[".commento-root {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box\n}\n.ascii {  \n    width:100%;\n    max-width:100%;\n}"]}
