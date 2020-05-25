@@ -1,0 +1,2 @@
+img[data-action=zoom]{cursor:pointer;cursor:-moz-zoom-in}.zoom-img,.zoom-img-wrap{position:relative;z-index:666;transition:all .3s}img.zoom-img{cursor:pointer;cursor:-moz-zoom-out}.zoom-overlay{z-index:420;background:#fff;position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;filter:"alpha(opacity=0)";opacity:0;transition:opacity .3s}.zoom-overlay-open .zoom-overlay{filter:"alpha(opacity=100)";opacity:1}.zoom-overlay-open,.zoom-overlay-transitioning{cursor:default}
+/*# sourceMappingURL=zoom.css.map */
