@@ -89,10 +89,10 @@
     chalk "^3.0.0"
     sywac "^1.2.1"
 
-"@tryghost/release-utils@0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.6.2.tgz#e98c609111264f06f5a93f277bc36533e7aa70c2"
-  integrity sha512-msHTaIwdG4tqKtbyUKizTDfZRz8zY2OISq3U16bJ6CKIQjNTcyfml4oJkcViB8WwzC+1byqJIcRP6osTQKT7Cw==
+"@tryghost/release-utils@0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.6.3.tgz#df0a6badfa0a265c954cf7753b4b3cc5ad703fd8"
+  integrity sha512-L9yoEPqDjI+whcaRz4v4zwJYJ4OXC5T11dT7739mWaZqh4yvxo0cgsUCUxdAX7k7SbuWL2MEbLCWGJWmmRehMA==
   dependencies:
     bluebird "3.7.2"
     emoji-regex "9.0.0"
@@ -1985,7 +1985,6 @@ fsevents@^1.2.7:
   dependencies:
     bindings "^1.5.0"
     nan "^2.12.1"
-    node-pre-gyp "*"
 
 function-bind@^1.1.1:
   version "1.1.1"
