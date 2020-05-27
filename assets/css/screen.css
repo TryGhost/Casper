@@ -1202,6 +1202,30 @@ Usage (In Ghost editor):
     word-break: break-all;
 }
 
+.code-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.code-filename {
+    position: absolute;
+    top: -10px;
+    right: .8rem;
+    background: #ff0;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    color: black;
+    font-family: monospace;
+}
+
 .post-full-content pre {
     overflow-x: auto;
     margin: 1.5em 0 3em;
