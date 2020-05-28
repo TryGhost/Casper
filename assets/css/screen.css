@@ -163,9 +163,11 @@ body {
     z-index: 10;
     margin: 0 0 0 -2px;
     padding: 0;
-    font-size: 5.0rem;
+    font-size: 3.5rem;
     line-height: 1em;
     font-weight: 600;
+    font-family: "Michelin Bold";
+    color: var(--blue);
 }
 
 .site-logo {
@@ -179,7 +181,8 @@ body {
     font-size: 2.1rem;
     line-height: 1.4em;
     font-weight: 400;
-    opacity: 0.8;
+    color: white;
+    font-family: "Michelin Bold";
 }
 
 /* 4.1 Home header
@@ -283,7 +286,7 @@ body {
     right: 0;
     left: 0;
     z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
+    background: white;
 }
 
 .site-nav {
@@ -316,7 +319,6 @@ body {
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     right: 0;
-    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
 }
 
 .site-nav-left {
@@ -354,7 +356,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: inline-block;
     margin-right: 32px;
-    padding: 12px 0;
+    padding: 7px 0;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1.8rem;
@@ -370,7 +372,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 21px;
+    height: 25px;
 }
 
 .site-home-header .site-nav-logo {
@@ -402,14 +404,19 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: block;
     padding: 12px 12px;
-    color: #fff;
-    opacity: 0.8;
+    color: var(--blue);
+    font-weight: 700;
     transition: opacity 0.35s ease-in-out;
+}
+
+.site-header-background .nav li a {
+    color: white;
 }
 
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
+    color: var(--blue);
 }
 
 .nav li a:before {
@@ -439,13 +446,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     visibility: hidden;
     position: absolute;
     top: 9px;
-    color: #fff;
+    color: var(--blue);
     font-size: 1.7rem;
     font-weight: 400;
     text-transform: none;
     opacity: 0;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateY(175%);
+    font-family: "Michelin SemiBold";
 }
 
 .nav-post-title.dash {
@@ -499,7 +507,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: inline-block;
     margin: 0;
     padding: 10px;
-    opacity: 0.8;
 }
 
 .social-link:hover {
@@ -508,7 +515,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link svg {
     height: 1.8rem;
-    fill: #fff;
+    fill: var(--blue);
+}
+
+.site-header-background .social-link svg {
+    fill: white;
 }
 
 .social-link-fb svg {
@@ -559,7 +570,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .rss-button svg {
     margin-bottom: 1px;
     height: 2.1rem;
-    fill: #fff;
+    fill: var(--blue);
+}
+
+.site-header-background .rss-button svg {
+    fill: white;
 }
 
 /* Special behaviors for home navigation */
@@ -576,6 +591,19 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .home-template .site-nav-main .fixed-nav-active {
     opacity: 1;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
+}
+
+.home-template .site-nav-main .fixed-nav-active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    border-bottom: 2px solid rgba(83,86,81,.2);
+    z-index: 2000;
+    pointer-events: none;
 }
 
 @media (max-width: 700px) {
@@ -678,6 +706,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 0.4em;
     line-height: 1.15em;
     transition: color 0.2s ease-in-out;
+    color: var(--blue);
+    font-family: "Michelin Semi-Bold";
 }
 
 .no-image .post-card-title {
@@ -692,8 +722,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt {
     max-width: 56em;
-    color: var(--midgrey);
-    font-family: Georgia, serif;
+    color: color(var(--midgrey) l(+5%));
+    font-family: 'Open Sans',sans-serif;
 }
 
 .post-card-excerpt p {
@@ -795,7 +825,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-byline-content a {
-    color: color(var(--darkgrey) l(+20%));
+    color: var(--darkgrey);
     font-weight: 600;
 }
 
@@ -877,7 +907,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-title {
         margin-top: 0;
-        font-size: 3.2rem;
+        font-size: 2.7rem;
     }
 
     .post-card-large .post-card-content-link {
@@ -980,14 +1010,15 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-title {
     margin: 0 0 0.2em;
-    color: color(var(--darkgrey) l(-5%));
+    color: color(var(--blue) l(-5%));
+    font-family: "Michelin Bold";
 }
 
 .post-full-custom-excerpt {
     margin: 20px 0 0;
     color: var(--midgrey);
-    font-family: Georgia, serif;
-    font-size: 2.3rem;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 2rem;
     line-height: 1.4em;
     font-weight: 300;
 }
@@ -1019,8 +1050,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 0 170px 6vw;
     min-height: 230px;
-    font-family: Georgia, serif;
-    font-size: 2.0rem;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1.8rem;
     line-height: 1.6em;
     background: #fff;
 }
@@ -1104,7 +1135,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-content strong,
 .post-full-content em {
-    color: color(var(--darkgrey) l(-5%));
+    color: var(--darkgrey);
 }
 
 .post-full-content small {
@@ -1169,7 +1200,8 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: color(var(--blue)) 3px solid;
+    border-left: var(--blue) 3px solid;
+    font-style: italic;
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
@@ -1263,7 +1295,7 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .post-full-content h1 {
@@ -1341,7 +1373,7 @@ Usage (In Ghost editor):
     padding: 0.4em 1em 0.9em;
     border: 0;
     color: var(--blue);
-    font-family: Georgia,serif;
+    font-family: 'Open Sans',sans-serif;
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1422,6 +1454,7 @@ Usage (In Ghost editor):
         margin-top: 0.2em;
         font-size: 4.2rem;
         line-height: 1.05em;
+
     }
 
     .post-full-image {
@@ -1448,7 +1481,7 @@ Usage (In Ghost editor):
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
@@ -1860,8 +1893,7 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .read-next {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: color(var(--darkgrey) l(-5%));
+    background-color: color(var(--lightgrey) l(+16%));
 }
 
 .read-next-feed {
@@ -1880,35 +1912,8 @@ Usage (In Ghost editor):
     display: none;
 }
 
-.read-next .post-card-primary-tag {
-    color: #fff;
-    opacity: 0.6;
-}
-
 .read-next .post-card-title {
-    color: #fff;
-    opacity: 0.8;
     transition: all 0.2s ease-in-out;
-}
-
-.read-next .post-card:hover .post-card-image {
-    opacity: 1.0;
-}
-
-.read-next .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.read-next .static-avatar {
-    border-color: #000;
-}
-
-.read-next .post-card-byline-content {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.read-next .post-card-byline-content a {
-    color: rgba(255, 255, 255, 0.8);
 }
 
 .read-next-card {
@@ -1919,8 +1924,8 @@ Usage (In Ghost editor):
     overflow: hidden;
     margin: 0 25px 50px;
     padding: 25px;
-    background: linear-gradient(color(var(--darkgrey) l(+2%)), color(var(--darkgrey) l(-5%)));
     border-radius: 3px;
+    background: linear-gradient(color(var(--lightgrey) l(+10%)), color(var(--lightgrey) l(+16%)));
 }
 
 .read-next-card a {
@@ -1933,7 +1938,6 @@ Usage (In Ghost editor):
 
 .read-next-card-header h3 {
     margin: 0;
-    color: rgba(255, 255, 255, 0.6);
     font-size: 1.2rem;
     line-height: 1em;
     font-weight: 300;
@@ -1942,7 +1946,6 @@ Usage (In Ghost editor):
 }
 
 .read-next-card-header h3 a {
-    color: #fff;
     font-weight: 500;
     text-decoration: none;
     opacity: 0.8;
@@ -1970,7 +1973,7 @@ Usage (In Ghost editor):
     align-items: flex-start;
     margin: 0;
     padding: 20px 0;
-    border-bottom: rgba(255, 255, 255, 0.1);
+    border-bottom: rgba(0, 0, 0, 0.1);
 }
 
 .read-next-card-content li:last-of-type {
@@ -1987,7 +1990,6 @@ Usage (In Ghost editor):
 
 .read-next-card-content li a {
     display: block;
-    color: #fff;
     opacity: 0.8;
 }
 
@@ -2012,7 +2014,6 @@ Usage (In Ghost editor):
 
 .read-next-card-meta p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.6);
 }
 
 .read-next-card-footer {
@@ -2022,8 +2023,7 @@ Usage (In Ghost editor):
 
 .read-next-card-footer a {
     padding: 7px 12px 8px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.6);
     font-size: 1.3rem;
     border-radius: 999px;
     transition: all 0.35s ease-in-out;
@@ -2059,7 +2059,7 @@ Usage (In Ghost editor):
         flex: 1 1 auto;
         margin: 25px;
         padding: 25px 0 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -2109,7 +2109,7 @@ Usage (In Ghost editor):
 .post-full-content figcaption {
     margin: 1.0em auto 0;
     color: color(var(--midgrey) l(-10%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 75%;
     line-height: 1.5em;
     text-align: center;
@@ -2713,7 +2713,7 @@ Usage (In Ghost editor):
     margin: 0 auto 50px;
     max-width: 650px;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: 'Open Sans',sans-serif;
     font-size: 2.4rem;
     line-height: 1.3em;
     font-weight: 300;
@@ -2799,8 +2799,8 @@ Usage (In Ghost editor):
     position: relative;
     padding-top: 20px;
     padding-bottom: 60px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%));
+    color: color(var(--darkgrey) l(-5%));
+    background: white;
 }
 
 .site-footer-content {
@@ -2813,11 +2813,11 @@ Usage (In Ghost editor):
 }
 
 .site-footer-content a {
-    color: rgba(255,255,255,0.7);
+    color: rgba(115, 138, 148, 0.85);
 }
 
 .site-footer-content a:hover {
-    color: rgba(255,255,255,1);
+    color: rgba(115, 138, 148, 1);
     text-decoration: none;
 }
 
@@ -2887,7 +2887,7 @@ Usage (In Ghost editor):
     }
 
     .post-card-byline-content a {
-        color: rgba(255, 255, 255, 0.75);
+        color: color(var(--darkgrey));
     }
 
     .post-card-byline-content a:hover {
@@ -2903,7 +2903,7 @@ Usage (In Ghost editor):
     }
 
     .post-card-excerpt {
-        color: color(var(--midgrey) l(+10%));
+        color: color(var(--midgrey) l(+5%));
     }
 
     .author-avatar,
