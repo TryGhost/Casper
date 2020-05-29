@@ -27,10 +27,18 @@
                 {{#if @site.twitter}}
                     <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                 {{/if}}
+                <a href="https://github.com/carlosfaria94" class="social-link" title="GitHub" target="_blank" rel="noopener">
+                    <svg width="16" height="16" role="img" aria-label="github icon">
+                        <use xlink:href="#github"></use>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/carlosfaria9" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
+                    <svg width="16" height="16" role="img" aria-label="linkedin icon">
+                        <use xlink:href="#linkedin"></use>
+                    </svg>
+                </a>
             </div>
-            {{#unless @labs.members}}
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            {{/unless}}
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
         {{/if}}
 
         {{#if @labs.members}}
