@@ -5,6 +5,7 @@ into the {body} of the default.hbs template --}}
 
 <header class="site-header">
     {{> site-header}}
+    <progress class="reading-progress-bar"></progress>
 </header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
@@ -210,5 +211,18 @@ into the {body} of the default.hbs template --}}
             }, 800);
         });
     });
+</script>
+{{!-- Reading progress script 
+    Inspired by https://ghost.org/tutorials/show-reading-time-progress/
+    But that was crap code...
+    64 is the height of the nav bar.
+ --}}
+<script>
+    const progressBar = document.querySelector(".reading-progress-bar");
+    const contentBox = document.querySelector('.post-full')
+    window.addEventListener('scroll', function() {
+        const boundingBox = contentBox.getBoundingClientRect();
+        progressBar.value = Math.abs(64 - boundingBox.top) / boundingBox.height;
+    }, {passive: true});
 </script>
 {{/contentFor}}
