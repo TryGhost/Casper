@@ -10,6 +10,7 @@ production stylesheet in assets/built/screen.css
 4.  Site Header
   4.1 Home header
   4.2 Archive header
+  4.3 Reading progress
 5.  Site Navigation
 6.  Post Feed
 7.  Single Post
@@ -273,6 +274,24 @@ body {
     }
 }
 
+/* 4.3 Reading Progress bar under the nav bar
+/* ---------------------------------------------------------- */
+progress.reading-progress-bar {
+    appearance: none;
+    position: fixed;
+    top: 64px;
+    width: 100%;
+    height: 3px;
+    z-index:1000;
+}
+
+progress.reading-progress-bar[value]::-webkit-progress-bar {
+    background-color: rgba(0,0,0,0.5);
+}
+
+progress.reading-progress-bar[value]::-webkit-progress-value {
+    background-color: #3eb0ef;
+}
 
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
