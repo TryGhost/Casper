@@ -1290,12 +1290,16 @@ Usage (In Ghost editor):
 
 .post-full-content h1,
 .post-full-content h2,
-.post-full-content h3,
+.post-full-content h3{
+    color: var(--blue);
+    font-family: "Michelin Semi-Bold";
+}
+
 .post-full-content h4,
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: "Open Sans", sans-serif;
+    font-family: "Michelin Light";
 }
 
 .post-full-content h1 {
@@ -1350,7 +1354,7 @@ Usage (In Ghost editor):
 
 .post-full-content h4 {
     margin: 0.5em 0 0.2em;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 .post-full-content h2 + h4 {
@@ -2808,7 +2812,7 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: rgba(255,255,255,0.7);
+    color: rgba(115, 138, 148, 0.85);
     font-size: 1.3rem;
 }
 
@@ -2963,7 +2967,7 @@ Usage (In Ghost editor):
     .post-full-content h3,
     .post-full-content h4,
     .post-full-content h6 {
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--blue);
     }
 
     .post-full-content a {
