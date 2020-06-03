@@ -453,7 +453,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 0;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateY(175%);
-    font-family: "Michelin SemiBold";
+    font-family: "Michelin Semi-Bold";
 }
 
 .nav-post-title.dash {
