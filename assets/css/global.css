@@ -104,17 +104,21 @@ video {
     font-size: 100%;
     vertical-align: baseline;
 }
+
 body {
     line-height: 1;
 }
+
 ol,
 ul {
     list-style: none;
 }
+
 blockquote,
 q {
     quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -122,13 +126,16 @@ q:after {
     content: "";
     content: none;
 }
+
 table {
     border-spacing: 0;
     border-collapse: collapse;
 }
+
 img {
     max-width: 100%;
 }
+
 html {
     box-sizing: border-box;
     font-family: sans-serif;
@@ -136,34 +143,42 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
+
 *,
 *:before,
 *:after {
     box-sizing: inherit;
 }
+
 a {
     background-color: transparent;
 }
+
 a:active,
 a:hover {
     outline: 0;
 }
+
 b,
 strong {
     font-weight: bold;
 }
+
 i,
 em,
 dfn {
     font-style: italic;
 }
+
 h1 {
     margin: 0.67em 0;
     font-size: 2em;
 }
+
 small {
     font-size: 80%;
 }
+
 sub,
 sup {
     position: relative;
@@ -171,21 +186,27 @@ sup {
     line-height: 0;
     vertical-align: baseline;
 }
+
 sup {
     top: -0.5em;
 }
+
 sub {
     bottom: -0.25em;
 }
+
 img {
     border: 0;
 }
+
 svg:not(:root) {
     overflow: hidden;
 }
+
 mark {
     background-color: #fdffb6;
 }
+
 code,
 kbd,
 pre,
@@ -193,76 +214,103 @@ samp {
     font-family: monospace, monospace;
     font-size: 1em;
 }
+
 button,
 input,
 optgroup,
 select,
 textarea {
-    margin: 0; /* 3 */
-    color: inherit; /* 1 */
-    font: inherit; /* 2 */
+    margin: 0;
+    /* 3 */
+    color: inherit;
+    /* 1 */
+    font: inherit;
+    /* 2 */
 }
+
 button {
     overflow: visible;
     border: none;
 }
+
 button,
 select {
     text-transform: none;
 }
+
 button,
 html input[type="button"],
 /* 1 */
 input[type="reset"],
 input[type="submit"] {
-    cursor: pointer; /* 3 */
+    cursor: pointer;
+    /* 3 */
 
-    -webkit-appearance: button; /* 2 */
+    -webkit-appearance: button;
+    /* 2 */
 }
+
 button[disabled],
 html input[disabled] {
     cursor: default;
 }
+
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
+
 input {
     line-height: normal;
 }
+
 input:focus {
     outline: none;
 }
+
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */
 }
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
-input[type="search"] {
-    box-sizing: content-box; /* 2 */
 
-    -webkit-appearance: textfield; /* 1 */
+input[type="search"] {
+    box-sizing: content-box;
+    /* 2 */
+
+    -webkit-appearance: textfield;
+    /* 1 */
 }
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
+
 legend {
-    padding: 0; /* 2 */
-    border: 0; /* 1 */
+    padding: 0;
+    /* 2 */
+    border: 0;
+    /* 1 */
 }
+
 textarea {
     overflow: auto;
 }
+
 table {
     border-spacing: 0;
     border-collapse: collapse;
 }
+
 td,
 th {
     padding: 0;
@@ -279,6 +327,7 @@ html {
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 body {
     overflow-x: hidden;
     color: color(var(--midgrey) l(-30%));
@@ -293,7 +342,7 @@ body {
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: "liga" on;
+    -moz-font-feature-settings: "liga"on;
 }
 
 ::selection {
@@ -403,6 +452,7 @@ blockquote small {
     font-size: 0.9em;
     opacity: 0.8;
 }
+
 /* Quotation marks */
 blockquote small:before {
     content: "\2014 \00A0";
@@ -411,6 +461,7 @@ blockquote small:before {
 blockquote cite {
     font-weight: bold;
 }
+
 blockquote cite a {
     font-weight: normal;
 }
@@ -441,6 +492,7 @@ h1 {
     font-size: 5.5rem;
     font-weight: 600;
 }
+
 @media (max-width: 500px) {
     h1 {
         font-size: 2.2rem;
@@ -451,6 +503,7 @@ h2 {
     margin: 1.5em 0 0.5em 0;
     font-size: 2.2rem;
 }
+
 @media (max-width: 500px) {
     h2 {
         font-size: 1.8rem;
@@ -462,6 +515,7 @@ h3 {
     font-size: 1.8rem;
     font-weight: 500;
 }
+
 @media (max-width: 500px) {
     h3 {
         font-size: 1.7rem;

@@ -1094,9 +1094,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: var(--darkgrey);
+    color: var(--blue);
     word-break: break-word;
-    box-shadow: var(--darkgrey) 0 -1px 0 inset;
+    box-shadow: var(--blue) 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 }
 
