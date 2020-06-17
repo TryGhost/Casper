@@ -32,7 +32,7 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 
 body {
-    background: #fff;
+    background: var(--slback);
 }
 
 .img {
@@ -63,6 +63,7 @@ body {
 .site-main {
     z-index: 100;
     flex-grow: 1;
+    background-color: #fff;
 }
 
 /* Full width page blocks */
@@ -114,8 +115,8 @@ body {
     margin-top: 64px;
     padding-bottom: 12px;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
-    background-size: cover;
+    background: color(var(--darkgrey) l(-5%)) repeat 50%;
+    background-size: 17px;
 }
 
 .site-header-background:before {
@@ -169,13 +170,13 @@ body {
 }
 
 .site-logo {
-    max-height: 55px;
+    max-height: 48px;
 }
 
 .site-description {
     z-index: 10;
     margin: 0;
-    padding: 5px 0;
+    padding: 20px 0 5px 0;
     font-size: 2.1rem;
     line-height: 1.4em;
     font-weight: 400;
@@ -283,7 +284,7 @@ body {
     right: 0;
     left: 0;
     z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
+    background: var(--slblack);
 }
 
 .site-nav {
@@ -316,7 +317,8 @@ body {
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     right: 0;
-    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
+    background: none;
+    background-size: 17px;
 }
 
 .site-nav-left {
@@ -387,7 +389,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 1000;
     display: flex;
     margin: 0 0 0 -12px;
-    padding: 0;
+    padding: 2px 0 0 0;
     list-style: none;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -439,13 +441,21 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     visibility: hidden;
     position: absolute;
     top: 9px;
-    color: #fff;
+    padding-top: 3px;
+    color: var(--gold);
     font-size: 1.7rem;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: none;
     opacity: 0;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateY(175%);
+}
+
+.right-nav {
+  color: rgba(255, 255, 255, 0.8);
+  width: 110px;
+  top: 18px;
+  z-index: 2000;
 }
 
 .nav-post-title.dash {
@@ -507,12 +517,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link svg {
-    height: 1.8rem;
+    height: 2.4rem;
     fill: #fff;
 }
 
 .social-link-fb svg {
     height: 1.6rem;
+}
+
+.social-link-gh svg {
+    heigh: 1.6rem;
 }
 
 .social-link-wb svg {
@@ -667,7 +681,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-primary-tag {
     margin: 0 0 0.2em;
-    color: var(--blue);
+    color: var(--gold);
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
@@ -1169,7 +1183,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: color(var(--blue)) 3px solid;
+    border-left: #F0EDD9 3px solid;
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
@@ -2800,7 +2814,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%));
+    background: var(--slblack);
 }
 
 .site-footer-content {
@@ -2819,6 +2833,11 @@ Usage (In Ghost editor):
 .site-footer-content a:hover {
     color: rgba(255,255,255,1);
     text-decoration: none;
+}
+
+.site-footer-nav img {
+  height: 24px;
+  width: 24px;
 }
 
 .site-footer-nav {
