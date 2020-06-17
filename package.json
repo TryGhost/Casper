@@ -70,6 +70,7 @@
         "postcss-color-function": "4.1.0",
         "postcss-custom-properties": "9.1.1",
         "postcss-easy-import": "3.0.0",
+        "preact": "10.4.4",
         "pump": "3.0.0",
         "webpack-stream": "^5.2.1"
     },
@@ -98,5 +99,8 @@
                 "width": 2000
             }
         }
+    },
+    "dependencies": {
+        "@babel/plugin-transform-react-jsx": "^7.10.1"
     }
 }

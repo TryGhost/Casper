@@ -81,6 +81,13 @@ function js(done) {
                         },
                     ],
                 },
+                resolve: {
+                    alias: {
+                        react: "preact/compat",
+                        "react-dom/test-utils": "preact/test-utils",
+                        "react-dom": "preact/compat",
+                    },
+                },
             }),
             dest("assets/built/", { sourcemaps: "." }),
             livereload(),
