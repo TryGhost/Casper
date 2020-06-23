@@ -2531,11 +2531,12 @@ Usage (In Ghost editor):
 
 .error-code {
     margin: 0;
-    color: var(--lightgrey);
-    font-size: 12vw;
+    color: var(--blue);
+    font-size: 10vw;
     line-height: 1em;
     letter-spacing: -5px;
-    opacity: 0.75;
+    opacity: 0.9;
+    font-family: "Michelin Semi-Bold";
 }
 
 .error-description {
@@ -2544,6 +2545,7 @@ Usage (In Ghost editor):
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 400;
+    font-family: "Michelin Semi-Bold";
 }
 
 .error-link {
