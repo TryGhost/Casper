@@ -1,8 +1,9 @@
 import { h, render } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
-import { SvgSend } from "./svg/send";
-import { SvgStatic } from "./svg/static";
+import { Box } from "./Box";
+import { SvgSend } from "./svg/SvgSend";
+import { SvgStatic } from "./svg/SvgStatic";
 
 //
 // styles
@@ -22,7 +23,8 @@ const styleButton = {
 
 const styleInput = {
     border: 0,
-    padding: "10px",
+    maxWidth: "100%",
+    minWidth: 150,
 };
 
 const styleTextLine = {
@@ -34,68 +36,10 @@ const styleTextLine = {
 // view
 //
 
-const Box = ({
-    alignItems = "flex-start",
-    backgroundColor = "none",
-    borderRadius = "0px",
-    children,
-    display = "flex",
-    elementProps = {},
-    flex = "0 0 auto",
-    flexBasis = "auto",
-    flexDirection = "row",
-    flexGrow = 0,
-    flexShrink = 0,
-    height = "auto",
-    justifyContent = "flex-start",
-    marginBottom = 0,
-    marginLeft = 0,
-    marginTop = 0,
-    overflow = "auto",
-    padding,
-    paddingBottom,
-    paddingTop,
-    position = "realtive",
-    style = {},
-    width = "auto",
-}) => {
-    return (
-        <div
-            style={{
-                alignItems,
-                backgroundColor,
-                borderRadius,
-                display,
-                flex,
-                flexBasis,
-                flexDirection,
-                flexGrow,
-                flexShrink,
-                height,
-                justifyContent,
-                marginBottom,
-                marginLeft,
-                marginTop,
-                overflow,
-                padding,
-                paddingBottom,
-                paddingTop,
-                position,
-                width,
-                ...elementProps,
-                ...style,
-            }}
-        >
-            {children}
-        </div>
-    );
-};
-
 const FormSubscribe = () => {
     const [email, setEmail] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const refCotainer = useRef(null);
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -130,12 +74,12 @@ const FormSubscribe = () => {
         <Box
             backgroundColor="#F2F5FA"
             display="flex"
-            elementProps={{ ref: refCotainer }}
             flexDirection="row"
             flexWrap="nowrap"
-            height="220px"
-            marginBottom="20px"
-            marginTop="20px"
+            height={220}
+            marginBottom={20}
+            marginTop={20}
+            paddingRight={10}
             overflow="visible"
             width="100%"
         >
@@ -186,18 +130,21 @@ const FormSubscribe = () => {
                             ? "rgba(255,255,255,1)"
                             : "rgba(255,255,255,0)"
                     }
-                    borderRadius="55px"
+                    borderRadius={55}
                     flexDirection="row"
                     flexGrow={0}
-                    height="55px"
+                    height={55}
                     justifyContent="center"
-                    marginTop="30px"
-                    padding="20px"
+                    paddingLeft={20}
+                    paddingRight={20}
+                    marginTop={30}
+                    width="100%"
                 >
                     <Box
                         alignItems="center"
                         display="flex"
                         flexGrow={1}
+                        flexShrink={1}
                         justifyContent="center"
                     >
                         {!isSubmitted ? (
@@ -233,6 +180,10 @@ const FormSubscribe = () => {
     );
 };
 
+const $preactFormSubscribe = document.getElementById("preact-form-subscribe");
+
 const FormSubscribeApp = <FormSubscribe />;
 
-render(FormSubscribeApp, document.getElementById("preact-form-subscribe"));
+if ($preactFormSubscribe) {
+    render(FormSubscribeApp, $preactFormSubscribe);
+}
