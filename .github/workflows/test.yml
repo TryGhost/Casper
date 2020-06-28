@@ -4,29 +4,12 @@ on:
   push:
     branches:
       - master
-
+      - 'renovate/*'
 jobs:
-  build:
-    runs-on: ubuntu-18.04
-    strategy:
-      matrix:
-        node: [ '10' ]
-    name: Node ${{ matrix.node }}
+  test:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     steps:
       - uses: actions/checkout@v1
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm install yarn
-      - run: yarn install
+      - run: yarn
       - run: yarn test:ci

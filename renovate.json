@@ -1,8 +1,5 @@
 {
   "extends": [
     "@tryghost:theme"
-  ],
-  "node": {
-    "supportPolicy": ["lts_latest"]
-  }
+  ]
 }
