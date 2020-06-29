@@ -2208,10 +2208,10 @@ gulp-uglify@3.0.2:
     uglify-js "^3.0.5"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-zip@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/gulp-zip/-/gulp-zip-5.0.1.tgz#0dba5094901b0d91bcc8b53b3f6ff797c0f2002d"
-  integrity sha512-M/IWLh9RvOpuofDZkgDirtiyz9J3yIqnDOJ3muzk2D/XnZ1ruqPlPLRIpXnl/aZU+xXwKPdOIxjRzkUcVEQyZQ==
+gulp-zip@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-zip/-/gulp-zip-5.0.2.tgz#2edf797ec842e770f4dfde8bef97d139015b1972"
+  integrity sha512-rZd0Ppuc8Bf7J2/WzcdNaeb+lcEXf1R8mV/PJ9Kdu7PmnInWVeLSmiXIka/2QSe6uhAsGVFAMffWSaMzAPGTBg==
   dependencies:
     get-stream "^5.1.0"
     plugin-error "^1.0.1"
