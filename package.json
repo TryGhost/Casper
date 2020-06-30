@@ -101,6 +101,7 @@
         }
     },
     "dependencies": {
-        "@babel/plugin-transform-react-jsx": "^7.10.1"
+        "@babel/plugin-transform-react-jsx": "^7.10.1",
+        "use-media": "^1.4.0"
     }
 }
