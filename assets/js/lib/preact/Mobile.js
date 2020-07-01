@@ -133,12 +133,7 @@ export const Mobile = ({
                             ⭢
                         </button>
                     ) : (
-                        <span
-                            className="subscription-form-button"
-                            onClick={handleSubscribe}
-                        >
-                            ✓
-                        </span>
+                        <span className="subscription-form-button">✓</span>
                     )}
                 </Box>
             </Box>

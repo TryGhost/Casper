@@ -129,12 +129,7 @@ export const Desktop = ({
                             ⭢
                         </button>
                     ) : (
-                        <span
-                            className="subscription-form-button"
-                            onClick={handleSubscribe}
-                        >
-                            ✓
-                        </span>
+                        <span className="subscription-form-button">✓</span>
                     )}
                 </Box>
             </Box>
