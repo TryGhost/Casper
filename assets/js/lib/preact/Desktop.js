@@ -81,7 +81,7 @@ export const Desktop = ({
                     узнавай о новых статьях
                 </p>
                 <p className="subscription-form-textline_desktop">
-                    из рассылки главреда
+                    из рассылки главреда.
                 </p>
             </Box>
             <Box
@@ -115,7 +115,7 @@ export const Desktop = ({
                         />
                     ) : (
                         <p className="subscription-form-textline_desktop">
-                            Спасибо за подписку
+                            Спасибо за подписку!
                         </p>
                     )}
                 </Box>
