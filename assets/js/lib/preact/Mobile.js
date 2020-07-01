@@ -27,8 +27,17 @@ const styleInput = {
 };
 
 const styleTextLine = {
+    color: "#333",
     lineHeight: 1.25,
     margin: 0,
+    textAlign: "center",
+};
+
+const styleSvg = {
+    position: "absolute",
+    left: "50%",
+    transform: "translate(-50%, -20%)",
+    maxWidth: 280,
 };
 
 //
@@ -41,145 +50,112 @@ export const Mobile = ({
     isSubmitting,
     onEmailChange,
     onSubscribe,
-}) => {
-    return (
+}) => (
+    <Box
+        alignItems="center"
+        backgroundColor="#F2F5FA"
+        display="flex"
+        flexDirection="column"
+        flexWrap="nowrap"
+        justifyContent="center"
+        height={480}
+        marginBottom={50}
+        marginTop={50}
+        overflow="visible"
+        paddingBottom={20}
+        paddingLeft={20}
+        paddingRight={20}
+        paddingTop={20}
+        width="100%"
+    >
         <Box
             alignItems="center"
-            backgroundColor="#F2F5FA"
-            display="flex"
-            flexDirection="column"
-            flexWrap="nowrap"
+            height="100%"
             justifyContent="center"
-            height={480}
-            marginBottom={50}
-            marginTop={50}
+            flexBasis={0}
+            flexGrow={3}
+            flexShrink={0}
             overflow="visible"
+            position="relative"
+            width="100%"
+        >
+            {!isSubmitted ? (
+                <SvgStatic style={styleSvg} />
+            ) : (
+                <SvgSend style={styleSvg} />
+            )}
+        </Box>
+        <Box
+            alignItems="center"
+            display="flex"
+            height={200}
+            justifyContent="center"
+            flexBasis={0}
+            flexGrow={2}
+            flexDirection="column"
+            flexShrink={0}
             width="100%"
         >
             <Box
-                alignItems="center"
-                height="100%"
+                display="flex"
+                flexDirection="column"
+                flexGrow={1}
                 justifyContent="center"
-                flexBasis="0"
-                flexGrow="1"
-                flexShrink="0"
-                overflow="visible"
-                position="relative"
                 width="100%"
             >
-                {!isSubmitted ? (
-                    <SvgStatic
-                        style={{
-                            position: "absolute",
-                            left: "50%",
-                            transform: "translate(-50%, -20%)",
-                            width: "70%",
-                        }}
-                    />
-                ) : (
-                    <SvgSend
-                        style={{
-                            maxHeight: "calc(100% + 40px)",
-                            width: "50%",
-                        }}
-                    />
-                )}
+                <p style={styleTextLine}>Каждое воскресенье</p>
+                <p style={styleTextLine}>узнавай о новых статьях</p>
+                <p style={styleTextLine}>из рассылки главреда</p>
             </Box>
             <Box
                 alignItems="center"
-                display="flex"
-                height={200}
+                backgroundColor={
+                    !isSubmitted ? "rgba(255,255,255,1)" : "rgba(255,255,255,0)"
+                }
+                borderRadius={55}
+                flexDirection="row"
+                flexGrow={0}
+                height={55}
                 justifyContent="center"
-                flexBasis="0"
-                flexGrow="1"
-                flexDirection="column"
-                flexShrink="0"
+                paddingLeft={20}
+                paddingRight={20}
                 width="100%"
             >
                 <Box
-                    display="flex"
-                    flexDirection="column"
-                    flexGrow={0}
-                    width="100%"
-                >
-                    <p
-                        style={{
-                            ...styleTextLine,
-                            textAlign: "center",
-                        }}
-                    >
-                        Каждое воскресенье
-                    </p>
-                    <p
-                        style={{
-                            ...styleTextLine,
-                            textAlign: "center",
-                        }}
-                    >
-                        узнавай о новых статьях
-                    </p>
-                    <p
-                        style={{
-                            ...styleTextLine,
-                            textAlign: "center",
-                        }}
-                    >
-                        из рассылки главреда
-                    </p>
-                </Box>
-                <Box
                     alignItems="center"
-                    backgroundColor={
-                        !isSubmitted
-                            ? "rgba(255,255,255,1)"
-                            : "rgba(255,255,255,0)"
-                    }
-                    borderRadius={55}
-                    flexDirection="row"
-                    flexGrow={0}
-                    height={55}
+                    display="flex"
+                    flexGrow={1}
+                    flexShrink={1}
                     justifyContent="center"
-                    paddingLeft={20}
-                    paddingRight={20}
-                    marginTop={30}
-                    width="100%"
                 >
-                    <Box
-                        alignItems="center"
-                        display="flex"
-                        flexGrow={1}
-                        flexShrink={1}
-                        justifyContent="center"
-                    >
-                        {!isSubmitted ? (
-                            <input
-                                onChange={onEmailChange}
-                                placeholder="Введите ваш email"
-                                style={styleInput}
-                                type="text"
-                                value={email}
-                            />
-                        ) : (
-                            <p style={styleTextLine}>Спасибо за подписку</p>
-                        )}
-                    </Box>
-                    <Box display="flex" flexGrow={0} marginLeft={10}>
-                        {!isSubmitted ? (
-                            <button
-                                disabled={isSubmitting}
-                                onClick={onSubscribe}
-                                style={styleButton}
-                            >
-                                ⭢
-                            </button>
-                        ) : (
-                            <span onClick={handleSubscribe} style={styleButton}>
-                                ✓
-                            </span>
-                        )}
-                    </Box>
+                    {!isSubmitted ? (
+                        <input
+                            onChange={onEmailChange}
+                            placeholder="Введите ваш email"
+                            style={styleInput}
+                            type="text"
+                            value={email}
+                        />
+                    ) : (
+                        <p style={styleTextLine}>Спасибо за подписку</p>
+                    )}
+                </Box>
+                <Box display="flex" flexGrow={0} marginLeft={10}>
+                    {!isSubmitted ? (
+                        <button
+                            disabled={isSubmitting}
+                            onClick={onSubscribe}
+                            style={styleButton}
+                        >
+                            ⭢
+                        </button>
+                    ) : (
+                        <span onClick={handleSubscribe} style={styleButton}>
+                            ✓
+                        </span>
+                    )}
                 </Box>
             </Box>
         </Box>
-    );
-};
+    </Box>
+);
