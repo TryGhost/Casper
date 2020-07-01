@@ -8,31 +8,6 @@ import { SvgStatic } from "./svg/SvgStatic";
 // styles
 //
 
-const styleButton = {
-    alignItems: "center",
-    backgroundColor: "#2f46b2",
-    borderRadius: "32px",
-    color: "white",
-    display: "flex",
-    height: "32px",
-    justifyContent: "center",
-    outlined: "none",
-    width: "32px",
-};
-
-const styleInput = {
-    border: 0,
-    maxWidth: "100%",
-    minWidth: 150,
-};
-
-const styleTextLine = {
-    color: "#333",
-    lineHeight: 1.25,
-    margin: 0,
-    textAlign: "center",
-};
-
 const styleSvg = {
     position: "absolute",
     left: "50%",
@@ -103,9 +78,15 @@ export const Mobile = ({
                 justifyContent="center"
                 width="100%"
             >
-                <p style={styleTextLine}>Каждое воскресенье</p>
-                <p style={styleTextLine}>узнавай о новых статьях</p>
-                <p style={styleTextLine}>из рассылки главреда</p>
+                <p className="subscription-form-textline_mobile">
+                    Каждое воскресенье
+                </p>
+                <p className="subscription-form-textline_mobile">
+                    узнавай о новых статьях
+                </p>
+                <p className="subscription-form-textline_mobile">
+                    из рассылки главреда
+                </p>
             </Box>
             <Box
                 alignItems="center"
@@ -130,27 +111,32 @@ export const Mobile = ({
                 >
                     {!isSubmitted ? (
                         <input
+                            className="subscription-form-input"
                             onChange={onEmailChange}
                             placeholder="Введите ваш email"
-                            style={styleInput}
                             type="text"
                             value={email}
                         />
                     ) : (
-                        <p style={styleTextLine}>Спасибо за подписку</p>
+                        <p className="subscription-form-textline_mobile">
+                            Спасибо за подписку
+                        </p>
                     )}
                 </Box>
                 <Box display="flex" flexGrow={0} marginLeft={10}>
                     {!isSubmitted ? (
                         <button
+                            className="subscription-form-button"
                             disabled={isSubmitting}
                             onClick={onSubscribe}
-                            style={styleButton}
                         >
                             ⭢
                         </button>
                     ) : (
-                        <span onClick={handleSubscribe} style={styleButton}>
+                        <span
+                            className="subscription-form-button"
+                            onClick={handleSubscribe}
+                        >
                             ✓
                         </span>
                     )}

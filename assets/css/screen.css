@@ -23,6 +23,7 @@ production stylesheet in assets/built/screen.css
 10. Subscribe Overlay
 11. Site Footer
 12. Dark Mode
+13. Subscription Form
 
 */
 
@@ -3325,4 +3326,41 @@ Usage (In Ghost editor):
     .modal-overlay button {
         margin: 12px 0 0;
     }
+}
+
+/* 13. Subscription form
+/* ---------------------------------------------------------- */
+.subscription-form-button {
+    align-items: center;
+    background-color: #2f46b2;
+    border-radius: 32px;
+    color: white;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+}
+
+.subscription-form-input {
+    border: 0;
+    color: #333333;
+    max-width: 100%;
+    min-width: 150;
+}
+
+.subscription-form-input::placeholder {
+    color: #777777;
+}
+
+.subscription-form-textline_desktop {
+    color: #333;
+    line-height: 1.25;
+    margin: 0 !important;
+}
+
+.subscription-form-textline_mobile {
+    color: #333;
+    line-height: 1.25;
+    margin: 0 !important;
+    text-align: center;
 }
