@@ -114,11 +114,14 @@ into the {body} of the default.hbs template --}}
                 {{> subscribe-form}}
             {{/if}}
 
-            {{!--
+            {{!-- Comments --}}
             <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
+                <div id="disqus_thread"
+                    data-page-url="{{url absolute="true"}}"
+                    data-page-identifier="ghost-{{comment_id}}"
+                >
+                </div>
             </section>
-            --}}
 
         </article>
 
@@ -209,6 +212,26 @@ into the {body} of the default.hbs template --}}
                 $this.children('.author-card').removeClass('hovered');
             }, 800);
         });
+
+        // disqus
+        if (window.DISQUS_SHORTNAME) {
+            const scriptElement = document.createElement('script');
+            const commentsElement = document.getElementById('disqus_thread');
+
+            if (commentsElement) {
+                window.disqus_config = () => {
+                    this.page.url = commentsElement.dataset.pageUrl;
+                    this.page.identifier = commentsElement.dataset.pageIdentifier;
+                };
+
+                scriptElement.src = `https://${window.DISQUS_SHORTNAME}.disqus.com/embed.js`;
+                scriptElement.setAttribute('data-timestamp', new Date().getTime());
+
+                (document.body || document.head).appendChild(scriptElement);
+            }
+        } else {
+            console.warn('[WARNING] No DISQUS_SHORTNAME detected');
+        }
     });
 </script>
 {{/contentFor}}
