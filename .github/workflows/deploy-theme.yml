@@ -1,15 +1,24 @@
 name: Deploy Theme
 on:
-  push:	
-    branches:	
+  push:
+    branches:
       - master
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  deploy_to_onlythepixel:
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
       - uses: TryGhost/action-deploy-theme@v1.2.1
         with:
-          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-          theme-name: "casper-master"
+          api-url: ${{ secrets.ONLYTHEPIXEL_GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.ONLYTHEPIXEL_GHOST_ADMIN_API_KEY }}
+          theme-name: "ectoplasm-master"
+  deploy_to_genomagames:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - uses: TryGhost/action-deploy-theme@v1.2.1
+        with:
+          api-url: ${{ secrets.GENOMAGAMES_GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GENOMAGAMES_GHOST_ADMIN_API_KEY }}
+          theme-name: "ectoplasm-master"

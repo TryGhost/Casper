@@ -13,7 +13,7 @@ If you're filing a bug 🐛, please include the following information:
 
 ### Technical details
 
-* Casper Version:
+* Ectoplasm Version:
 * Ghost Version:
 * Browser Version:
 * OS Version:
