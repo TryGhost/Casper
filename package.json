@@ -2,7 +2,7 @@
     "name": "ghost-theme-ectoplasm",
     "description": "A clean, minimal default theme for the Ghost publishing platform (fork of Casper)",
     "demo": "https://demo.ghost.io",
-    "version": "3.0.13-0.1.0",
+    "version": "3.0.13-0.1.1",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"
