@@ -234,6 +234,7 @@ body {
 .site-archive-header .no-image .site-description {
     color: var(--midgrey);
     opacity: 1.0;
+    font-size: 1.5rem;
 }
 
 
@@ -267,12 +268,12 @@ body {
     }
 
     .site-archive-header .site-title {
-        font-size: 4.2rem;
+        font-size: 2.5rem;
         text-align: center;
     }
 
     .site-archive-header .no-image .site-header-content {
-        padding: 12vw 0 20px;
+        padding: 7vw 0 0;
     }
 }
 
@@ -1048,7 +1049,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 170px 6vw;
+    padding: 0 170px 4vw;
     min-height: 230px;
     font-family: 'Open Sans',sans-serif;
     font-size: 1.8rem;
@@ -1320,7 +1321,7 @@ Usage (In Ghost editor):
 
 .post-full-content h2 {
     margin: 0.5em 0 0.4em;
-    font-size: 3.2rem;
+    font-size: 2.7rem;
     line-height: 1.25em;
     font-weight: 600;
 }
@@ -1330,7 +1331,7 @@ Usage (In Ghost editor):
 @media (max-width: 800px) {
     .post-full-content h2 {
         margin-bottom: 0.3em;
-        font-size: 2.8rem;
+        font-size: 2.3rem;
         line-height: 1.25em;
     }
 }
@@ -1456,7 +1457,7 @@ Usage (In Ghost editor):
 
     .post-full-title {
         margin-top: 0.2em;
-        font-size: 4.2rem;
+        font-size: 2.6rem;
         line-height: 1.05em;
 
     }
@@ -2034,8 +2035,8 @@ Usage (In Ghost editor):
 }
 
 .read-next-card-footer a:hover {
-    border-color: var(--yellow);
-    color: var(--yellow);
+    border-color: var(--darkgrey);
+    color: var(--darkgrey);
     text-decoration: none;
 }
 
@@ -2855,6 +2856,11 @@ Usage (In Ghost editor):
 @media (max-width: 650px) {
     .site-footer-content {
         flex-direction: column;
+    }
+
+    .site-footer-nav {
+        text-align: center;
+        display: block;
     }
 
     .site-footer-nav a:first-child {
