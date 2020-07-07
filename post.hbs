@@ -114,6 +114,28 @@ into the {body} of the default.hbs template --}}
                 {{> subscribe-form}}
             {{/if}}
 
+
+            <div class="post-full-social">
+                <h4>Share this:</h4>
+
+                <a class="f" href="https://www.facebook.com/sharer/sharer.php?u={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
+                'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-facebook-official fa"></i><span> facebook</span></a>
+
+                <a class="t" href="https://twitter.com/intent/tweet?text={{ title }} by %23Michelin&url={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
+                'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span> twitter</span></a>
+
+                <a class="w" href="http://service.weibo.com/share/share.php?url={{@site.url}}{{ url }}&title={{ title }} by %23Michelin&pic={{img_url feature_image}}&ralateUid=&language=en" onclick="window.open(this.href, 'share-bib',
+                'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-weibo fa"></i><span> weibo</span></a>
+
+                <a class="r" href="http://www.reddit.com/submit?url={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
+                'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-reddit fa"></i><span> reddit</span></a>
+
+                <a class="l" href="https://www.linkedin.com/shareArticle?mini=true&url={{@site.url}}{{ url }}&title={{ title }} by %23Michelin&summary={{meta_description}}" onclick="window.open(this.href, 'share-bib',
+                'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-linkedin fa"></i><span> linkedin</span></a>
+
+                <a class="e" href="mailto:?subject={{ title }} by Michelin&amp;body=Check out this post {{@site.url}}{{ url }}"><i class="fa fa-envelope fa"></i><span> email</span></a>
+            </div>
+
             {{!--
             <section class="post-full-comments">
                 If you want to embed comments, this is a good place to do it!

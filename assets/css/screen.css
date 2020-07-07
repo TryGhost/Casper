@@ -990,6 +990,70 @@ make sure this only happens on large viewports / desktop-ish devices.
     font-weight: 400;
 }
 
+.post-full-social {
+    margin: 0 auto;
+    padding: 0 170px 1vw;
+    text-align: center;
+}
+
+.post-full-social h4{
+    text-align: left;
+    color: #27509b;
+    font-family: Michelin Semi-Bold;
+    margin-bottom: 23px;
+}
+
+.post-full-social a {
+    display: inline-block;
+    -webkit-box-shadow: 0 0 1px #5d5d5d;
+    box-shadow: 0 0 1px #5d5d5d;
+    padding: 5px 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    text-decoration: none; }
+.post-full-social a:hover {
+    text-decoration: none;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear; }
+
+.f {
+    color: #3b5998; }
+.f:hover {
+    color: #fff;
+    background-color: #3b5998; }
+
+.t {
+    color: #4099FF; }
+.t:hover {
+    color: #fff;
+    background-color: #4099FF; }
+
+.w {
+    color: #d34836; }
+.w:hover {
+    color: #fff;
+    background-color: #d34836; }
+
+.r {
+    color: #ff5700; }
+.r:hover {
+    color: #fff;
+    background-color: #ff5700; }
+
+.l {
+    color: #0077b5; }
+.l:hover {
+    color: #fff;
+    background-color: #0077b5; }
+
+.e {
+    color: #444444; }
+.e:hover {
+    color: #fff;
+    background-color: #444444; }
+
 @media (max-width: 1170px) {
     .post-full-header {
         padding: 60px 11vw 50px;
