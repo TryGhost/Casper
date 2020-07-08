@@ -1,0 +1,22 @@
+<div class="post-full-social{{small}}">
+    {{#unless small}}<h4>Share this:</h4>{{/unless}}
+
+    {{#unless small}}
+    <a class="f" href="https://www.facebook.com/sharer/sharer.php?u={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
+    'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on facebook"><i class="fa fa-facebook-official"></i>{{#unless author}}<span> facebook</span>{{/unless}}</a>
+    {{/unless}}
+    <a {{#unless small}}class="t"{{/unless}} href="https://twitter.com/intent/tweet?text={{ title }} by %23Michelin&url={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
+    'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on twitter"><i class="fa fa-twitter"></i>{{#unless small}}<span> twitter</span>{{/unless}}</a>
+
+    <a {{#unless small}}class="w"{{/unless}} href="http://service.weibo.com/share/share.php?url={{@site.url}}{{ url }}&title={{ title }} by %23Michelin&pic={{img_url feature_image}}&ralateUid=&language=en" onclick="window.open(this.href, 'share-bib',
+    'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on weibo"><i class="fa fa-weibo"></i>{{#unless small}}<span> weibo</span>{{/unless}}</a>
+
+    <a {{#unless small}}class="r"{{/unless}} href="http://www.reddit.com/submit?url={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
+    'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on reddit"><i class="fa fa-reddit"></i>{{#unless small}}<span> reddit</span>{{/unless}}</a>
+
+    <a {{#unless small}}class="l"{{/unless}} href="https://www.linkedin.com/shareArticle?mini=true&url={{@site.url}}{{ url }}&title={{ title }} by %23Michelin&summary={{meta_description}}" onclick="window.open(this.href, 'share-bib',
+    'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on linkedin"><i class="fa fa-linkedin"></i>{{#unless small}}<span> linkedin</span>{{/unless}}</a>
+    {{#unless small}}
+    <a class="e" href="mailto:?subject={{ title }} by Michelin&amp;body=Check out this post {{@site.url}}{{ url }}" title="Share by mail"><i class="fa fa-envelope"></i><span> email</span></a>
+    {{/unless}}
+</div>

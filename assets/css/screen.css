@@ -984,6 +984,30 @@ make sure this only happens on large viewports / desktop-ish devices.
     text-transform: uppercase;
 }
 
+.post-full-tags-content {
+    margin-top: 25px;
+}
+
+.post-full-tags-content ul.tags {
+    margin: 0;
+    padding: 0;
+}
+
+.post-full-tags-content li {
+    display: inline-block;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.post-full-tags-content li a.tag{
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: var(--midgrey);
+    font-size: 13px;
+    background: var(--whitegrey);
+    box-shadow: none;
+}
+
 .post-full-meta-date {
     color: var(--midgrey);
     font-size: 1.2rem;
@@ -1011,45 +1035,43 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin-right: 5px;
     margin-bottom: 5px;
     border-radius: 2px;
-    text-decoration: none; }
+    text-decoration: none;
+}
 .post-full-social a:hover {
     text-decoration: none;
     -webkit-transition: background-color 200ms linear;
     -ms-transition: background-color 200ms linear;
-    transition: background-color 200ms linear; }
-
-.f {
-    color: #3b5998; }
+    transition: background-color 200ms linear;
+}
+.post-full-social-small{
+    position: absolute;
+    right: 170px;
+}
+.post-full-social-small a{
+    padding: 2px 5px;
+    cursor: pointer;
+    font-size: 17px;
+}
 .f:hover {
     color: #fff;
     background-color: #3b5998; }
 
-.t {
-    color: #4099FF; }
 .t:hover {
     color: #fff;
     background-color: #4099FF; }
 
-.w {
-    color: #d34836; }
 .w:hover {
     color: #fff;
     background-color: #d34836; }
 
-.r {
-    color: #ff5700; }
 .r:hover {
     color: #fff;
     background-color: #ff5700; }
 
-.l {
-    color: #0077b5; }
 .l:hover {
     color: #fff;
     background-color: #0077b5; }
 
-.e {
-    color: #444444; }
 .e:hover {
     color: #fff;
     background-color: #444444; }
@@ -1058,6 +1080,12 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-full-header {
         padding: 60px 11vw 50px;
     }
+    .post-full-social {
+        padding: 0 11vw;
+    }
+    .post-full-social-small{
+        right: 11vw;
+    }
 }
 
 @media (max-width: 800px) {
@@ -1065,11 +1093,23 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding-right: 5vw;
         padding-left: 5vw;
     }
+    .post-full-social {
+        padding: 0 5vw;
+    }
+    .post-full-social-small{
+        right: 5vw;
+    }
 }
 
 @media (max-width: 500px) {
     .post-full-header {
         padding: 20px 0 35px;
+    }
+    .post-full-social{
+        padding: 0;
+    }
+    .post-full-social-small{
+        display: none;
     }
 }
 
@@ -1113,7 +1153,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 170px 4vw;
+    padding: 0 170px 2vw;
     min-height: 230px;
     font-family: 'Open Sans',sans-serif;
     font-size: 1.8rem;
