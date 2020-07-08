@@ -3,7 +3,7 @@
 
     {{#unless small}}
     <a class="f" href="https://www.facebook.com/sharer/sharer.php?u={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
-    'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on facebook"><i class="fa fa-facebook-official"></i>{{#unless author}}<span> facebook</span>{{/unless}}</a>
+    'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on facebook"><i class="fa fa-facebook-official"></i><span> facebook</span></a>
     {{/unless}}
     <a {{#unless small}}class="t"{{/unless}} href="https://twitter.com/intent/tweet?text={{ title }} by %23Michelin&url={{@site.url}}{{ url }}" onclick="window.open(this.href, 'share-bib',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on twitter"><i class="fa fa-twitter"></i>{{#unless small}}<span> twitter</span>{{/unless}}</a>
