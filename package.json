@@ -2,7 +2,7 @@
     "name": "lighter3",
     "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
     "demo": "https://lightit.io/blog",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"
