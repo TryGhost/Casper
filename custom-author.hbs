@@ -1,0 +1,67 @@
+{{!< default}}
+
+<header class="site-header">
+  <div class="outer site-nav-main">
+    <div class="inner">
+      {{> "site-nav"}}
+    </div>
+  </div>
+</header>
+
+{{#post}}
+
+<main id="site-main" class="site-main outer" role="main">
+
+  <div class="inner">
+    <header class="site-header-content">
+      <h1 class="site-title">{{title}}</h1>
+    </header>
+
+    {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+      <div class="post-feed authors-list">
+        {{#foreach authors}}
+          <article class="post-card">
+            <a class="author-link" href="{{url}}">
+                {{#if profile_image}}
+                    <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                {{else}}
+                    <span class="author-profile-image">{{> "icons/avatar"}}</span>
+                {{/if}}
+            </a>
+            <div class="post-card-content">
+              <header class="post-card-header">
+                <h2 class="post-card-title">
+                  <a class="author-link" href="{{url}}">{{name}}</a>
+                </h2>
+                </header>
+                <section class="post-card-excerpt">
+                {{#if location}}
+                  <p>
+                    <a class="author-location" href="https://maps.google.com?q={{location}}" target="_blank">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> {{location}}
+                    </a>
+                  </p>
+                {{/if}}
+                  <p>{{bio}}</p>
+                </section>
+                <p>
+                 {{#if twitter_url}}
+                  <a href="{{twitter_url}}" class="author-link author-social" target="_blank" title="Twitter">
+                      <i class="fa fa-2 fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  {{/if}}
+                  {{#if website}}
+                  <a href="{{website}}" class="author-link author-social" target="_blank" title="Website">
+                      <i class="fa fa-2 fa-globe" aria-hidden="true"></i>
+                  </a>
+                  {{/if}}
+                </p>
+            </div>
+          </article>
+        {{/foreach}}
+      </div>
+    {{/get}}
+  </div>
+</main>
+
+{{/post}}

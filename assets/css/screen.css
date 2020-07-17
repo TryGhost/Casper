@@ -644,6 +644,40 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     background: #fff;
 }
 
+.authors-list .author-profile-image{
+    max-width: 132px;
+    max-height: 132px;
+    margin: 0 auto;
+}
+
+.authors-list .post-card{
+    text-align: center;
+    margin: 0;
+    border: none;
+}
+
+a.author-link, a.author-link:hover{
+    text-decoration: none;
+}
+
+a.author-location{
+    text-decoration: none;
+    color: var(--darkgrey);
+    font-size: 15px;
+}
+
+a.author-social{
+    color: var(--darkgrey)
+}
+
+a.author-social:hover{
+    color: var(--blue)
+}
+
+.fa-2{
+    font-size: 22px !important;
+}
+
 .post-card {
     position: relative;
     flex: 1 1 301px;
@@ -1031,11 +1065,13 @@ make sure this only happens on large viewports / desktop-ish devices.
     display: inline-block;
     -webkit-box-shadow: 0 0 1px #5d5d5d;
     box-shadow: 0 0 1px #5d5d5d;
-    padding: 5px 12px;
+    padding: 5px 7px;
     margin-right: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 2px;
     text-decoration: none;
+    min-width: 106px;
+    height: 36px;
 }
 .post-full-social a:hover {
     text-decoration: none;
@@ -1983,6 +2019,75 @@ Usage (In Ghost editor):
     }
 
     .subscribe-form button {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
+
+.contact-form {
+    margin: 1.5em 0;
+    padding: 3vw 3vw 2.5vw;
+    border: color(var(--lightgrey) l(+10%)) 1px solid;
+    text-align: center;
+    background: linear-gradient(color(var(--whitegrey) l(+6%)), color(var(--whitegrey) l(+4%)));
+    border-radius: 3px;
+}
+
+.contact-form-title {
+    margin: 0 0 3px 0;
+    padding: 0;
+    color: var(--blue);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 600;
+    font-family: "Michelin semi-bold";
+}
+
+.contact-form-description {
+    margin-bottom: 1em;
+    color: var(--midgrey);
+    font-size: 1.8rem;
+    line-height: 1.55em;
+}
+
+.contact-form a {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 20px;
+    height: 41px;
+    outline: none;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 39px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(
+        color(var(--blue) whiteness(+7%)),
+        var(--blue)
+    );
+    border-radius: 2px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.contact-form a:hover,
+.contact-form a:active,
+.contact-form a:focus {
+    background: color(var(--blue) lightness(-9%) saturation(-10%));
+}
+
+@media (max-width: 650px) {
+
+    .contact-form-description {
+        font-size: 1.6rem;
+        margin-bottom: 0.5em;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .contact-form a {
         margin: 10px 0 0 0;
         width: 100%;
     }
