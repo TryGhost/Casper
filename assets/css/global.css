@@ -14,7 +14,7 @@
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
     --brown: #a3821a;
-    --darkmode: color(var(--darkgrey) l(+2%));
+    --darkmode: color-mod(var(--darkgrey) l(+2%));
 }
 
 /* Reset
@@ -281,7 +281,7 @@ html {
 }
 body {
     overflow-x: hidden;
-    color: color(var(--midgrey) l(-30%));
+    color: color-mod(var(--midgrey) l(-30%));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.6rem;
     line-height: 1.6em;
@@ -298,7 +298,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--blue) lightness(+30%));
+    background: color-mod(var(--blue) lightness(+30%));
 }
 
 hr {
@@ -309,7 +309,7 @@ hr {
     padding: 0;
     height: 1px;
     border: 0;
-    border-top: 1px solid color(var(--lightgrey) l(+10%));
+    border-top: 1px solid color-mod(var(--lightgrey) l(+10%));
 }
 
 audio,
@@ -416,7 +416,7 @@ blockquote cite a {
 }
 
 a {
-    color: color(var(--blue) l(-5%));
+    color: color-mod(var(--blue) l(-5%));
     text-decoration: none;
 }
 
