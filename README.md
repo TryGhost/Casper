@@ -54,8 +54,7 @@ yarn zip
 # PostCSS Features Used
 
 - Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
+- [Color Mod](https://github.com/jonathantneal/postcss-color-mod-function)
 
 
 # SVG Icons
