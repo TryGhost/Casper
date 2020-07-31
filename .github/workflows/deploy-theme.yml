@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - uses: TryGhost/action-deploy-theme@v1.2.1
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
