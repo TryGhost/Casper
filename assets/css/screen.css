@@ -2988,6 +2988,11 @@ Usage (In Ghost editor):
         border-top-color: color-mod(var(--darkmode) l(+8%));
     }
 
+    .post-full-content hr:after {
+        background: color(var(--darkmode) l(+8%));
+        box-shadow: var(--darkmode) 0 0 0 5px;
+    }
+
     .post-full-content figcaption {
         color: rgba(255, 255, 255, 0.6);
     }
