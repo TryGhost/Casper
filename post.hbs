@@ -79,7 +79,7 @@ into the {body} of the default.hbs template --}}
                                 <time class="byline-meta-date"
                                     datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                                 <span class="byline-reading-time"><span class="bull">&bull;</span>
-                                    {{reading_time}}</span>
+                                    {{reading_time minute="1 МИН" minutes="% МИН"}}</span>
                             </div>
                         </section>
 
@@ -157,7 +157,7 @@ into the {body} of the default.hbs template --}}
                             <h4><a href="{{url}}">{{title}}</a></h4>
                             <div class="read-next-card-meta">
                                 <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
-                                    {{reading_time}}</p>
+                                    {{reading_time minute="1 МИН" minutes="% МИН"}}</p>
                             </div>
                         </li>
                         {{/foreach}}
