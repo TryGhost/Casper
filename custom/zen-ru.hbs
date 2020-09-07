@@ -12,7 +12,7 @@
       <![CDATA[ {{@site.title}} ]]>
     </title>
 
-    {{#get "posts" limit="150"}}
+    {{#get "posts" limit="20" order="published_at desc"}}
 
     {{#foreach posts}}
     <item>
@@ -22,6 +22,7 @@
       </author>
       <category>Технологии</category>
       <category>Экономика</category>
+      <description>{{meta_description}}</description>
       <content:encoded>
         <![CDATA[ {{content}} ]]>
       </content:encoded>
