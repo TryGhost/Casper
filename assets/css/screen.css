@@ -2609,6 +2609,21 @@ Usage (In Ghost editor):
     transform: translateY(-175%);
 }
 
+.subscribe-success-message .subscribe-close-button {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.subscribe-success-message .subscribe-close-button:before,
+.subscribe-success-message .subscribe-close-button:after {
+    top: 31px;
+    right: 20px;
+    width: 18px;
+    height: 2px;
+}
+
 .subscribe-close-overlay {
     position: absolute;
     top: 0;
