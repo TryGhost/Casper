@@ -83,15 +83,15 @@
     chalk "4.1.0"
     sywac "1.3.0"
 
-"@tryghost/release-utils@0.6.6":
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.6.6.tgz#1d2751bf7724d0c57a109ff753de34f7f87c3307"
-  integrity sha512-h3ULisG5eU5N1+UQ3GVAOaTx7Q5vAIw0XrM0bG8Wx2HHGElVvwLoVG+aEFSGcq3hy0btd9H0KZ6HaGwBDpQ19Q==
+"@tryghost/release-utils@0.6.7":
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.6.7.tgz#8ef90c56c8c6f18ccfe387875a130897e8bc05fe"
+  integrity sha512-wecRAGPtz2jD1PpKamtb0Hs9fj+HwwQP+bzZP/HzRfLNrXjCOLRoZIevfdM57tRv6CHloPifoVeYh818QQKUnQ==
   dependencies:
     bluebird "3.7.2"
     emoji-regex "9.0.0"
     execa "4.0.3"
-    lodash "4.17.19"
+    lodash "4.17.20"
     request "2.88.2"
     request-promise "4.2.6"
 
