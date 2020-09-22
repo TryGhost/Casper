@@ -43,7 +43,7 @@
     {{!-- The big email subscribe modal content --}}
     {{#if @labs.members}}
     <div class="subscribe-success-message">
-        <a class="subscribe-close" href="javascript:;"></a>
+        <a class="subscribe-close-button" href="javascript:;"></a>
         You've successfully subscribed to {{@site.title}}!
     </div>
 
@@ -108,7 +108,7 @@
                 $('body').addClass("subscribe-success");
             }
 
-            $('.subscribe-success-message .subscribe-close').click(function () {
+            $('.subscribe-success-message .subscribe-close-button').click(function () {
                 $('.subscribe-success-message').addClass('close');
             });
 
