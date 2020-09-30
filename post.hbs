@@ -50,11 +50,12 @@ into the {body} of the default.hbs template --}}
                                         <div class="bio">
                                             <h2>{{name}}</h2>
                                             <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                            
+                                            {{{t "<a href='{url}'>More posts</a> by {name}" url=url name=name}}}
                                         </div>
                                         {{else}}
                                         <h2>{{name}}</h2>
-                                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                                        <p>{{{t "Read <a href='{url}'>more posts</a> by this author" url=url}}}</p>
                                         {{/if}}
                                     </div>
                                 </div>
@@ -75,7 +76,7 @@ into the {body} of the default.hbs template --}}
                             <h4 class="author-name">{{authors}}</h4>
                             <div class="byline-meta-content">
                                 <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
                             </div>
                         </section>
 
@@ -135,7 +136,7 @@ into the {body} of the default.hbs template --}}
                 <article class="read-next-card">
                     <header class="read-next-card-header">
                         {{#../primary_tag}}
-                        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
+                        <h3><span>{{t "More in"}}</span> <a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
                     </header>
                     <div class="read-next-card-content">
@@ -152,8 +153,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
-                            →</a>
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t 'No posts') singular=(t '% post') plural=(t 'See all % posts')}} →</a>
                     </footer>
                 </article>
                 {{/if}}

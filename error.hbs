@@ -5,7 +5,7 @@ You'll notice that we *don't* use any JavaScript, or ghost_head / ghost_foot in 
 --}}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{@site.lang}}">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,20 +38,20 @@ You'll notice that we *don't* use any JavaScript, or ghost_head / ghost_foot in 
                 <section class="error-message">
                     <h1 class="error-code">{{statusCode}}</h1>
                     <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+                    <a class="error-link" href="{{@site.url}}">{{t "Go to the front page"}} →</a>
                 </section>
 
                 {{#if errorDetails}}
                 <section class="error-stack">
-                    <h3>Theme errors</h3>
+                    <h3>{{t "Theme errors"}}</h3>
                     <ul class="error-stack-list">
                         {{#foreach errorDetails}}
                             <li>
                                 <em class="error-stack-function">{{{rule}}}</em>
 
                                 {{#foreach failures}}
-                                    <p><span class="error-stack-file">Ref: {{ref}}</span></p>
-                                    <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                    <p><span class="error-stack-file">{{t "Ref"}}: {{ref}}</span></p>
+                                    <p><span class="error-stack-file">{{t "Message"}}: {{message}}</span></p>
                                 {{/foreach}}
                             </li>
                         {{/foreach}}
