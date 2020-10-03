@@ -3004,7 +3004,7 @@ Usage (In Ghost editor):
     }
 
     .post-full-content hr:after {
-        background: color(var(--darkmode) l(+8%));
+        background: color-mod(var(--darkmode) l(+8%));
         box-shadow: var(--darkmode) 0 0 0 5px;
     }
 
