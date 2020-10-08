@@ -42,9 +42,13 @@
 
     {{!-- The big email subscribe modal content --}}
     {{#if @labs.members}}
-    <div class="subscribe-success-message">
+    <div class="subscribe-notification subscribe-success-message">
         <a class="subscribe-close-button" href="javascript:;"></a>
         You've successfully subscribed to {{@site.title}}!
+    </div>
+    <div class="subscribe-notification subscribe-failure-message">
+        <a class="subscribe-close-button" href="javascript:;"></a>
+        Could not sign up! Invalid sign up link.
     </div>
 
     <div id="subscribe" class="subscribe-overlay">
@@ -102,14 +106,19 @@
 
         // Give the parameter a variable name
         var action = getParameterByName('action');
+        var success = getParameterByName('success');
 
         $(document).ready(function () {
-            if (action == 'subscribe') {
-                $('body').addClass("subscribe-success");
+            if (action == 'subscribe' && (success === null || success === 'true')) {
+                $('body').addClass('subscribe-success');
             }
 
-            $('.subscribe-success-message .subscribe-close-button').click(function () {
-                $('.subscribe-success-message').addClass('close');
+            if (action == 'subscribe' && success === 'false') {
+                $('body').addClass('subscribe-failure');
+            }
+
+            $('.subscribe-notification .subscribe-close-button').click(function () {
+                $('.subscribe-notification').addClass('close');
             });
 
             // Reset form on opening subscrion overlay
