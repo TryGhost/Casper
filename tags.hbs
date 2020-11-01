@@ -13,11 +13,11 @@
 </header>
 
 <main id="site-main" class="site-main outer">
-  <div class="inner posts">
+  <div class="inner posts" style="padding: 1.5em 0;">
     {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
       {{#foreach tags}}
-        <a href="{{url}}">
-          <h2>{{name}} <small>({{count.posts}})</small></h2>
+        <a href="{{url}}" style="display: inline-block; margin: .5em .9em .5em 0;">
+          <h2 style="margin: 0;">#{{name}} <small>({{count.posts}})</small></h2>
         </a>
       {{/foreach}}
     {{/get}}
