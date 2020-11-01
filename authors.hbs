@@ -1,0 +1,50 @@
+{{!< default}}
+
+<header class="site-archive-header">
+    {{> site-header}}
+    {{> header-background background=feature_image}}
+        <div class="inner site-header-content">
+            <h1 class="site-title">Authors</h1>
+            <h2 class="site-description">
+                Explore authors
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer">
+  <div class="inner posts">
+    <div class="post-feed">
+      {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+        {{#foreach authors}}
+          <article class="post-card">
+            <div class="post-card-content">
+              <div class="post-card-meta">
+                <ul class="author-list" style="margin-right: 16px;">
+                  <li class="author-list-item">
+                    <a href="{{url}}" class="static-avatar" style="width: 96px; height: 96px;">
+                      {{#if profile_image}}
+                        <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}">
+                      {{else}}
+                        <span class="author-profile-image">{{> "icons/avatar"}}</span>
+                      {{/if}}
+                    </a>
+                  </li>
+                </ul>
+                <div class="post-card-byline-content" style="font-size: inherit; text-transform: none;">
+                  <header>
+                    <h2 class="post-card-title" style="margin-bottom: 0;"><a href="{{url}}">{{name}}</a></h2>
+                  </header>
+                  <div class="post-card-byline-date" style="margin-bottom: .4em;">{{count.posts}} Posts</div>
+                  <section class="post-card-excerpt">
+                    <p>{{bio}}</p>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </article>
+        {{/foreach}}
+      {{/get}}
+    </div>
+  </div>
+</main>

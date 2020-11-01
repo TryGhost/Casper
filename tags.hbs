@@ -1,0 +1,25 @@
+{{!< default}}
+
+<header class="site-archive-header">
+    {{> site-header}}
+    {{> header-background background=feature_image}}
+        <div class="inner site-header-content">
+            <h1 class="site-title">Tags</h1>
+            <h2 class="site-description">
+                Explore tags
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer">
+  <div class="inner posts">
+    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+      {{#foreach tags}}
+        <a href="{{url}}">
+          <h2>{{name}} <small>({{count.posts}})</small></h2>
+        </a>
+      {{/foreach}}
+    {{/get}}
+  </div>
+</main>
