@@ -3962,10 +3962,10 @@ postcss-values-parser@^2.0.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss@8.1.5:
-  version "8.1.5"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.1.5.tgz#09ef688ee97fae9b0914bff01ffe5a3dba48bd68"
-  integrity sha512-sRcAWfjft1LGYx086un0I7XRnkhtKsNuau08mvrCC2ntuahZrLXe4iQ4PiAtQ+lhFWnTt+0gtA7omE4InCobMg==
+postcss@8.1.6:
+  version "8.1.6"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.1.6.tgz#b022ba2cfb8701da234d073ed3128c5a384c35ff"
+  integrity sha512-JuifSl4h8dJ70SiMXKjzCxhalE6p2TnMHuq9G8ftyXj2jg6SXzqCsEuxMj9RkmJoO5D+Z9YrWunNkxqpRT02qg==
   dependencies:
     colorette "^1.2.1"
     line-column "^1.0.2"
