@@ -20,7 +20,7 @@
         {{#if @site.secondary_navigation}}
             {{navigation type="secondary"}}
         {{else}}
-            <div class="social-links">
+            <div class="social-links">{{> "site-nav-search"}}
                 {{#if @site.facebook}}
                     <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
                 {{/if}}
