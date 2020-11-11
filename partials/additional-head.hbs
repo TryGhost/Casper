@@ -7,7 +7,7 @@
     cursor: pointer;
   }
 
-  #spinner-overlay {
+  #fullscreen-spinner-overlay {
     position: fixed;
     top: 0;
     z-index: 10000;
@@ -16,21 +16,21 @@
     display: none;
     background: rgba(0,0,0,0.6);
   }
-  .spinner-wrapper {
+  .fullscreen-spinner-wrapper {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;  
   }
-  .spinner {
+  .fullscreen-spinner {
     width: 40px;
     height: 40px;
     border: 4px #ddd solid;
     border-top: 4px #2e93e6 solid;
     border-radius: 50%;
-    animation: spinner-anime 0.8s infinite linear;
+    animation: fullscreen-spinner-anime 0.8s infinite linear;
   }
-  @keyframes spinner-anime {
+  @keyframes fullscreen-spinner-anime {
     100% { 
       transform: rotate(360deg); 
     }
