@@ -9,4 +9,57 @@
 <script src="https://cdn.jsdelivr.net/npm/featherlight@1/release/featherlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/toastr@2/toastr.min.js"></script>
 
+<script>
+  $(function () {
+    $(".site-nav-search-form-ajax").submit(function (event) {
+      event.preventDefault();
+      $("#fullscreen-spinner-overlay").fadeIn(300);
+
+      var form = $(this);
+      $.ajax({
+        url: form.attr("action"),
+        type: form.attr("method"),
+        data: form.serialize()
+      })
+      .done(function (results, textStatus, jqXHR) {
+        if (results.length == 0) {
+          toastr.info("Make sure that all words (case-sensitive) are spelled correctly.", "Search didn't match any posts", {
+            positionClass: "toast-top-center",
+            timeOut: 10000
+          });
+        } else {
+          let ul = $("<ul>");
+          $.each(results, function (index, result) {
+            let title = $("<p>").addClass("search-title").append($("<a>").attr("href", "{{@site.url}}/" + result.slug + "/").text(result.title));
+            let content = $("<p>").addClass("search-content")
+                .append($("<span>").addClass("search-updated-at").text(new Date(result.updatedAt).toLocaleDateString()))
+                .append($("<span>").addClass("search-summary").text(result.summary));
+            ul.append($("<li>").append(title).append(content));
+          });
+          $.featherlight($("<div>").addClass("search-results").append(ul));
+        }
+      })
+      .fail(function (jqXHR, textStatus, errorThrown) {
+        var message;
+          console.log(textStatus, errorThrown);
+        if (jqXHR.status != 0) {
+          message = jqXHR.status + " " + jqXHR.statusText;
+        } else {
+          message = "Unknown communication error";
+        }
+        if (errorThrown) {
+          message += ": " + errorThrown;
+        }
+        toastr.error(message, "Error occurred", {
+          positionClass: "toast-top-center",
+          timeOut: 7500
+        });
+      })
+      .always(function () {
+        $("#fullscreen-spinner-overlay").fadeOut(300);
+      });
+    });
+  });
+</script>
+
 {{> "additional-foot2"}}
