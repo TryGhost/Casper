@@ -17,7 +17,7 @@
     {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
       {{#foreach tags}}
         <a href="{{url}}" style="display: inline-block; margin: .5em .9em .5em 0;">
-          <h2 style="margin: 0;">#{{name}} <small>({{count.posts}})</small></h2>
+          <h2 style="margin: 0;">{{name}} <small>({{count.posts}})</small></h2>
         </a>
       {{/foreach}}
     {{/get}}
