@@ -74,7 +74,7 @@ into the {body} of the default.hbs template --}}
                         <section class="post-full-byline-meta">
                             <h4 class="author-name">{{authors}}</h4>
                             <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="ll"}}</time>
                                 <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
                             </div>
                         </section>
@@ -144,7 +144,7 @@ into the {body} of the default.hbs template --}}
                             <li>
                                 <h4><a href="{{url}}">{{title}}</a></h4>
                                 <div class="read-next-card-meta">
-                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
+                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="ll"}}</time> –
                                         {{reading_time}}</p>
                                 </div>
                             </li>
