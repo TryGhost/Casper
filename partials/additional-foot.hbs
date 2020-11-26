@@ -8,6 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/featherlight@1/release/featherlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/toastr@2/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mark.js@8/dist/jquery.mark.min.js"></script>
 
 <script>
   $(function () {
@@ -21,19 +22,19 @@
         type: form.attr("method"),
         data: form.serialize()
       })
-      .done(function (results, textStatus, jqXHR) {
-        if (results.length == 0) {
+      .done(function (data, textStatus, jqXHR) {
+        if (data.posts.length == 0) {
           toastr.info("Make sure that all words are spelled correctly.", "Search didn't match any posts", {
             positionClass: "toast-top-center",
             timeOut: 10000
           });
         } else {
           let ul = $("<ul>");
-          $.each(results, function (index, result) {
-            let title = $("<p>").addClass("search-title").append($("<a>").attr("href", "{{@site.url}}/" + result.slug + "/").text(result.title));
+          $.each(data.posts, function (index, post) {
+            let title = $("<p>").addClass("search-title").append($("<a>").attr("href", "{{@site.url}}/" + post.slug + "/").text(post.title).mark(data.keywords));
             let content = $("<p>").addClass("search-content")
-                .append($("<span>").addClass("search-updated-at").text(new Date(result.updatedAt).toLocaleDateString()))
-                .append($("<span>").addClass("search-summary").text(result.summary));
+                .append($("<span>").addClass("search-updated-at").text(new Date(post.updatedAt).toLocaleDateString()))
+                .append($("<span>").addClass("search-summary").text(post.summary).mark(data.keywords));
             ul.append($("<li>").append(title).append(content));
           });
           $.featherlight($("<div>").addClass("search-results").append(ul));
