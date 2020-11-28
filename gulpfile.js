@@ -1,95 +1,187 @@
-var gulp = require('gulp');
-var pump = require('pump');
+const {series, watch, src, dest, parallel} = require('gulp');
+const pump = require('pump');
+const path = require('path');
+const releaseUtils = require('@tryghost/release-utils');
+const inquirer = require('inquirer');
 
 // gulp plugins and utils
-var livereload = require('gulp-livereload');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var zip = require('gulp-zip');
-var uglify = require('gulp-uglify');
-var filter = require('gulp-filter');
-var beeper = require('beeper');
+const livereload = require('gulp-livereload');
+const postcss = require('gulp-postcss');
+const zip = require('gulp-zip');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const beeper = require('beeper');
+const fs = require('fs');
 
 // postcss plugins
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var easyimport = require('postcss-easy-import');
+const autoprefixer = require('autoprefixer');
+const colorFunction = require('postcss-color-mod-function');
+const cssnano = require('cssnano');
+const easyimport = require('postcss-easy-import');
 
-var nodemonServerInit = function () {
-    livereload.listen(1234);
-};
+const REPO = 'TryGhost/Casper';
+const REPO_READONLY = 'TryGhost/Casper';
+const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
-function handleError(done) {
+function serve(done) {
+    livereload.listen();
+    done();
+}
+
+const handleError = (done) => {
     return function (err) {
         if (err) {
             beeper();
         }
         return done(err);
     };
+};
+
+function hbs(done) {
+    pump([
+        src(['*.hbs', 'partials/**/*.hbs']),
+        livereload()
+    ], handleError(done));
 }
 
-gulp.task('build', ['css', 'js'], function (/* cb */) {
-    return nodemonServerInit();
-});
-
-gulp.task('generate', ['css', 'js']);
-
-gulp.task('css', function (done) {
-    var processors = [
-        easyimport,
-        customProperties,
-        colorFunction(),
-        autoprefixer({browsers: ['last 2 versions']}),
-        cssnano()
-    ];
-
+function css(done) {
     pump([
-        gulp.src('assets/css/*.css'),
-        sourcemaps.init(),
-        postcss(processors),
-        sourcemaps.write('.'),
-        gulp.dest('assets/built/'),
+        src('assets/css/*.css', {sourcemaps: true}),
+        postcss([
+            easyimport,
+            colorFunction(),
+            autoprefixer(),
+            cssnano()
+        ]),
+        dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
-});
+}
 
-gulp.task('js', function (done) {
-    var jsFilter = filter(['**/*.js'], {restore: true});
-
+function js(done) {
     pump([
-        gulp.src('assets/js/*.js'),
-        sourcemaps.init(),
-        jsFilter,
+        src([
+            // pull in lib files first so our own code can depend on it
+            'assets/js/lib/*.js',
+            'assets/js/*.js'
+        ], {sourcemaps: true}),
+        concat('casper.js'),
         uglify(),
-        jsFilter.restore,
-        sourcemaps.write('.'),
-        gulp.dest('assets/built/'),
+        dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
-});
+}
 
-gulp.task('watch', function () {
-    gulp.watch('assets/css/**', ['css']);
-});
-
-gulp.task('zip', ['css', 'js'], function (done) {
-    var targetDir = 'dist/';
-    var themeName = require('./package.json').name;
-    var filename = themeName + '.zip';
+function zipper(done) {
+    const filename = require('./package.json').name + '.zip';
 
     pump([
-        gulp.src([
+        src([
             '**',
             '!node_modules', '!node_modules/**',
-            '!dist', '!dist/**'
+            '!dist', '!dist/**',
+            '!yarn-error.log'
         ]),
         zip(filename),
-        gulp.dest(targetDir)
+        dest('dist/')
     ], handleError(done));
-});
+}
 
-gulp.task('default', ['build'], function () {
-    gulp.start('watch');
-});
+const cssWatcher = () => watch('assets/css/**', css);
+const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
+const watcher = parallel(cssWatcher, hbsWatcher);
+const build = series(css, js);
+
+exports.build = build;
+exports.zip = series(build, zipper);
+exports.default = series(build, serve, watcher);
+
+exports.release = () => {
+    // @NOTE: https://yarnpkg.com/lang/en/docs/cli/version/
+    // require(./package.json) can run into caching issues, this re-reads from file everytime on release
+    var packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+    const newVersion = packageJSON.version;
+
+    if (!newVersion || newVersion === '') {
+        console.log(`Invalid version: ${newVersion}`);
+        return;
+    }
+
+    console.log(`\nCreating release for ${newVersion}...`);
+
+    let config;
+    try {
+        config = require('./config');
+    } catch (err) {
+        config = null;
+    }
+
+    if (!config || !config.github || !config.github.token) {
+        console.log('Please copy config.example.json and configure Github token.');
+        return;
+    }
+
+    let compatibleWithGhost;
+
+    return inquirer.prompt([{
+        type: 'input',
+        name: 'compatibleWithGhost',
+        message: 'Which version of Ghost is it compatible with?',
+        default: '3.0.0'
+    }])
+    .then(result => {
+        compatibleWithGhost = result.compatibleWithGhost;
+        return Promise.resolve();
+    })
+    .then(() => releaseUtils.releases.get({
+        userAgent: 'Casper',
+        uri: `https://api.github.com/repos/${REPO_READONLY}/releases`
+    }))
+    .then((response) => {
+        if (!response || !response.length) {
+            console.log('No releases found. Skipping...');
+            return;
+        }
+
+        let previousVersion = response[0].tag_name || response[0].name;
+        console.log(`Previous version: ${previousVersion}`);
+        return Promise.resolve(previousVersion);
+    })
+    .then((previousVersion) => {
+        const changelog = new releaseUtils.Changelog({
+            changelogPath: CHANGELOG_PATH,
+            folder: path.join(process.cwd(), '.')
+        });
+
+        changelog
+            .write({
+                githubRepoPath: `https://github.com/${REPO}`,
+                lastVersion: previousVersion
+            })
+            .sort()
+            .clean();
+
+        return Promise.resolve();
+    })
+    .then(() => releaseUtils.releases.create({
+        draft: true,
+        preRelease: false,
+        tagName: newVersion,
+        releaseName: newVersion,
+        userAgent: 'Casper',
+        uri: `https://api.github.com/repos/${REPO}/releases`,
+        github: {
+            token: config.github.token
+        },
+        content: [`**Compatible with Ghost ≥ ${compatibleWithGhost}**\n\n`],
+        changelogPath: CHANGELOG_PATH
+    }))
+    .then((response) => {
+        console.log(`\nRelease draft generated: ${response.releaseUrl}\n`);
+        return Promise.resolve();
+    })
+    .catch((err) => {
+        console.error(err);
+        process.exit(1);
+    });
+};
