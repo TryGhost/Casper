@@ -3956,10 +3956,10 @@ postcss-values-parser@^2.0.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss@8.1.11:
-  version "8.1.11"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.1.11.tgz#e3bc521cc268107e7be768c76a2f479a08284914"
-  integrity sha512-KxaNGWQHUQLtgobmCKOsKoMX0x2nyQXAH2KYhL0xi4Ygl3y1ETq3exmsyCK84HHhEfvtNk1k3Pq32G3sVtYdTQ==
+postcss@8.1.13:
+  version "8.1.13"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.1.13.tgz#5d2aa2f96b3eaab5edc2ef488b4bd636c680f712"
+  integrity sha512-D++wck3XhQkICYfysZRx90JCDgaTTdq8YxLswB9cjBzfxwcVcQjn3LsjXon0PQ6TIOof2IGWLRHhSgXZuJct4w==
   dependencies:
     colorette "^1.2.1"
     nanoid "^3.1.20"
