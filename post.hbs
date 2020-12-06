@@ -19,9 +19,7 @@ into the {body} of the default.hbs template --}}
 
                 {{#if primary_tag}}
                 <section class="post-full-tags">
-                    {{#primary_tag}}
-                    <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
+                    {{tags separator="  "}}
                 </section>
                 {{/if}}
 
