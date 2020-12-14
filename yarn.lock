@@ -83,10 +83,10 @@
     chalk "4.1.0"
     sywac "1.3.0"
 
-"@tryghost/release-utils@0.6.8":
-  version "0.6.8"
-  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.6.8.tgz#0b2104fa5c348a3c04282460200ef0557cf6bb38"
-  integrity sha512-K4fUkxDXRq7RZE0w3v5HDKf7BCSFYZY1ICDwgvVnot210o1QnPp4jJKklsHKWwnQAi85hFByIwWPwU7DXHEIrA==
+"@tryghost/release-utils@0.6.9":
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.6.9.tgz#1b31239f1ba54d72686a0a7377d96218d646c6ac"
+  integrity sha512-VQJjuYS1i4mZLHeN/blTZqIgf1v5cn9qBEODFTMfA8ZLjn95/Dsc/owZbWcLaeuOL04BK5ZwGr5Y3vDavKnK+A==
   dependencies:
     bluebird "3.7.2"
     emoji-regex "9.2.0"
