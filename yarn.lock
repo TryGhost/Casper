@@ -486,12 +486,12 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beeper@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/beeper/-/beeper-2.0.0.tgz#ecda02439e3c0539d300c363303e4ffeb2daec70"
-  integrity sha512-+ShExQEewPvKdTUOtCAJmkUAgEyNF0QqgiAhPRE5xLvoFkIPt8xuHKaz1gMLzSMS73beHWs9gbRBngdH61nVWw==
+beeper@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/beeper/-/beeper-2.1.0.tgz#3151990e42de31387909fdcc2c12623eb6eefb16"
+  integrity sha512-85+CcymhlP0jM4fs4ZMiMRl58VthoN9NRdvi+knXiQpP2UggkSre+A9rOZ0c2g2Vh+pEF5ZAlT+k8dsJNoanAA==
   dependencies:
-    delay "^4.1.0"
+    yoctodelay "^1.1.0"
 
 binary-extensions@^1.0.0:
   version "1.13.1"
@@ -1278,11 +1278,6 @@ define-property@^2.0.2:
   dependencies:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
-
-delay@^4.1.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/delay/-/delay-4.4.0.tgz#71abc745f3ce043fe7f450491236541edec4ad0c"
-  integrity sha512-txgOrJu3OdtOfTiEOT2e76dJVfG/1dz2NZ4F0Pyt4UGZJryssMRp5vdM5wQoLwSOBNdrJv3F9PAhp/heqd7vrA==
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -5357,6 +5352,11 @@ yazl@^2.5.1:
   integrity sha512-phENi2PLiHnHb6QBVot+dJnaAZ0xosj7p3fWl+znIjBDlnMI2PsZCJZ306BPTFOaHf5qdDEI8x5qFrSOBN5vrw==
   dependencies:
     buffer-crc32 "~0.2.3"
+
+yoctodelay@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/yoctodelay/-/yoctodelay-1.1.0.tgz#4820ab055bb044a582e92d01701ada043f427132"
+  integrity sha512-iCPt7W3X6SCm5wEnMRCoq+c8XCzscKTT0oWq5TNsIb+PUVtNkt/5O3VGlXXlLBnjTKL+29QyTzqbcJNLaiaJyQ==
 
 zip-stream@^3.0.1:
   version "3.0.1"
