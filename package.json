@@ -46,7 +46,7 @@
     "bugs": "https://github.com/TryGhost/Casper/issues",
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "devDependencies": {
-        "@tryghost/release-utils": "0.6.9",
+        "@tryghost/release-utils": "0.6.10",
         "autoprefixer": "10.2.1",
         "beeper": "2.1.0",
         "cssnano": "4.1.10",
