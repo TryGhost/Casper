@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Golos Text';
+    src: url('GolosText-Medium.eot');
+    src: local('Golos Text Medium'), local('GolosText-Medium'),
+        url('GolosText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('GolosText-Medium.woff2') format('woff2'),
+        url('GolosText-Medium.woff') format('woff'),
+        url('GolosText-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('GolosText-DemiBold.eot');
+    src: local('Golos Text DemiBold'), local('GolosText-DemiBold'),
+        url('GolosText-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('GolosText-DemiBold.woff2') format('woff2'),
+        url('GolosText-DemiBold.woff') format('woff'),
+        url('GolosText-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('GolosText-Bold.eot');
+    src: local('Golos Text Bold'), local('GolosText-Bold'),
+        url('GolosText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('GolosText-Bold.woff2') format('woff2'),
+        url('GolosText-Bold.woff') format('woff'),
+        url('GolosText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('GolosText-Regular.eot');
+    src: local('Golos Text Regular'), local('GolosText-Regular'),
+        url('GolosText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('GolosText-Regular.woff2') format('woff2'),
+        url('GolosText-Regular.woff') format('woff'),
+        url('GolosText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

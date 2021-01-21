@@ -1,0 +1,130 @@
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
+
+/* 2. Layout - Page building blocks
+/* ---------------------------------------------------------- */
+
+.inner {
+    max-width: 1200px;
+}
+
+/* 3. Special Template Styles
+/* ---------------------------------------------------------- */
+
+/* 4. Site Header
+/* ---------------------------------------------------------- */
+
+.site-header-content {
+    align-items: left;
+}
+
+.site-title {
+    font-size: 5rem;
+    line-height: 1.16;
+}
+
+/* 4.1 Home header
+/* ---------------------------------------------------------- */
+
+.site-home-header .site-header-content {
+    padding: 3vw 0 2vw;
+}
+
+.site-home-header .site-title {
+    font-size: 4rem;
+    text-align: left;
+    max-width: 400px;
+}
+
+.site-home-header .site-description {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+/* 4.2 Archive header (tag and author post lists)
+/* ---------------------------------------------------------- */
+
+/* Special header styles for smaller screens */
+
+/* 5. Site Navigation
+/* ---------------------------------------------------------- */
+
+.site-nav-left {
+    /* flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin-right: 10px;
+    padding: 10px 0 80px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    -ms-overflow-scrolling: touch; */
+}
+
+.nav li a:hover {
+}
+
+.nav li a:before {
+}
+
+.nav li a:hover:before {
+}
+
+/* Special behaviors for home navigation */
+
+/* 6. Post Feed
+/* ---------------------------------------------------------- */
+
+/* Adjust some margins for smaller screens */
+
+/* 7. Single Post
+/* ---------------------------------------------------------- */
+
+/* Some grouped styles for smaller viewports */
+
+/* Tables */
+
+/* 7.1. Post Byline
+/* ---------------------------------------------------------- */
+
+/* 7.2. Members Subscribe Form
+/* ---------------------------------------------------------- */
+
+/* 7.3. Comments
+/* ---------------------------------------------------------- */
+
+/* 7.4. Related posts
+/* ---------------------------------------------------------- */
+
+/* 7.5. Koenig Styles
+/* ---------------------------------------------------------- */
+
+/* Preventing full-width image overlap with post image.  */
+
+/* keep existing <pre> styles for code cards with captions */
+
+/* 8. Author Template
+/* ---------------------------------------------------------- */
+
+/* 9. Error Template
+/* ---------------------------------------------------------- */
+
+/* 10. Subscribe Message and Overlay
+/* ---------------------------------------------------------- */
+
+/* 11. Site Footer
+/* ---------------------------------------------------------- */
+
+/* 12. Dark Mode
+/* ---------------------------------------------------------- */
+
+/* 13. Modal
+/* ---------------------------------------------------------- */
+
+/* 13. Subscription form
+/* ---------------------------------------------------------- */
