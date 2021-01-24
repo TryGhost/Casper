@@ -32,6 +32,8 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 @import "../fonts/stylesheet.css";
 @import "global.css";
+@import "addons.css";
+@import "./overrides.css";
 
 body {
     background: #fff;
@@ -3404,5 +3406,3 @@ Usage (In Ghost editor):
     margin: 0 !important;
     text-align: center;
 }
-
-@import "overrides.css";

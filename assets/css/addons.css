@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+}
+
+.content-box {
+    max-width: 720px;
+}
+
+.aside-box {
+    width: 380px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.aside-box .read-next-feed {
+    margin: 0;
+    padding: 44px 0 0;
+}
+
+.post-full-image img {
+    max-width: 720px !important;
+}
+
+@media (max-width: 1170px) {
+    .container {
+        display: block;
+        max-width: 100%;
+    }
+}

@@ -1,11 +1,16 @@
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 
+* {
+    outline: 1px solid red;
+    outline-offset: -1px;
+}
+
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
 
 .inner {
-    max-width: 1200px;
+    max-width: 1200px !important;
 }
 
 /* 3. Special Template Styles
@@ -15,30 +20,31 @@
 /* ---------------------------------------------------------- */
 
 .site-header-content {
-    align-items: left;
+    align-items: left !important;
 }
 
 .site-title {
-    font-size: 5rem;
-    line-height: 1.16;
+    font-size: 5rem !important;
+    line-height: 1.16 !important;
 }
 
 /* 4.1 Home header
 /* ---------------------------------------------------------- */
 
 .site-home-header .site-header-content {
-    padding: 3vw 0 2vw;
+    align-items: flex-start;
+    padding: 3vw 0 2vw !important;
 }
 
 .site-home-header .site-title {
-    font-size: 4rem;
-    text-align: left;
-    max-width: 400px;
+    font-size: 4rem !important;
+    text-align: left !important;
+    max-width: 400px !important;
 }
 
 .site-home-header .site-description {
-    font-size: 4rem;
-    font-weight: 600;
+    font-size: 4rem !important;
+    font-weight: 600 !important;
 }
 
 /* 4.2 Archive header (tag and author post lists)
@@ -64,6 +70,14 @@
     white-space: nowrap;
 
     -ms-overflow-scrolling: touch; */
+}
+
+.site-nav-logo img {
+    height: 35px !important;
+}
+
+.site-home-header .site-nav-logo {
+    display: inline-block !important;
 }
 
 .nav li a:hover {
