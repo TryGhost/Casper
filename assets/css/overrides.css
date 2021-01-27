@@ -32,7 +32,7 @@
 /* ---------------------------------------------------------- */
 
 .site-home-header .site-header-content {
-    align-items: flex-start;
+    align-items: flex-start !important;
     padding: 3vw 0 2vw !important;
 }
 
@@ -99,6 +99,11 @@
 /* 7. Single Post
 /* ---------------------------------------------------------- */
 
+/* .page-template .site-main,
+.post-template .site-main {
+    margin-top: 44px !important;
+} */
+
 /* Some grouped styles for smaller viewports */
 
 /* Tables */
@@ -117,6 +122,80 @@
 
 /* 7.5. Koenig Styles
 /* ---------------------------------------------------------- */
+
+.post-content ol {
+    list-style: none;
+    counter-reset: li;
+    padding: 0;
+}
+.post-content ol li {
+    padding: 0.5rem 0 0.5rem 4.4rem;
+    counter-increment: li;
+}
+
+.post-content ol li::before {
+    content: counter(li);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-left: -4.4rem;
+    background: #1d1d1d;
+    border-radius: 50%;
+    font-weight: 400;
+    color: #fff;
+    margin-right: 1.5rem;
+    text-align: right;
+    direction: rtl;
+}
+
+.post-full-content blockquote {
+    margin: 1.5em 0;
+}
+
+.post-full-content blockquote cite {
+    display: flex;
+    margin-top: 2.8rem;
+    font-size: 1.6rem;
+}
+
+.post-full-content .post-content blockquote {
+    position: relative;
+    border-width: 3px 0;
+    border-color: #000;
+    border-style: solid;
+    padding: 56px 0;
+    font-family: "Golos", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    font-size: 2.4rem;
+    color: #151515;
+}
+
+.post-full-content .post-content blockquote:before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 1px;
+    width: 48px;
+    height: 36px;
+    display: block;
+    overflow: hidden;
+    transform: translate(0%, -60%);
+}
+.post-full-content .post-content blockquote:after {
+    content: "";
+    position: absolute;
+    background: repeat-x 0/50% url("../images/quote.png");
+    width: 42px;
+    height: 36px;
+    top: 0;
+    left: 5px;
+    display: block;
+    overflow: hidden;
+    transform: translate(0%, -60%);
+}
 
 /* Preventing full-width image overlap with post image.  */
 

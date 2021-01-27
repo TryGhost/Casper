@@ -8,8 +8,8 @@
 
     <main id="site-main" class="site-main outer">
         <div class="inner">
-            <div class="container">
-                <article class="content-box post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+            <div class="single-post">
+                <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
                     {{#if feature_image}}
                     <figure class="post-full-image">
@@ -29,7 +29,7 @@
                         {{#if primary_tag}}
                         <section class="post-full-tags">
                             {{#primary_tag}}
-                            <a href="{{url}}">{{name}}</a>
+                            <a class="tag" href="{{url}}">{{name}}</a>
                             {{/primary_tag}}
                         </section>
                         {{/if}}
@@ -40,7 +40,7 @@
                         <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
                         {{/if}}
 
-                        <div class="post-full-byline">
+                        {{!-- <div class="post-full-byline"> --}}
 
                             <section class="post-full-byline-content">
 
@@ -96,93 +96,100 @@
                             </section>
 
 
-                        </div>
+                            {{!--
+                        </div> --}}
                     </header>
 
-                    <section class="post-full-content">
-                        <div class="post-content">
-                            {{content}}
-                        </div>
-                    </section>
-
-                    {{!-- Email subscribe form at the bottom of the page --}}
-                    {{#if @labs.members}}
-                    {{> subscribe-form}}
-                    {{/if}}
-
-                    {{!--
-                    <section class="post-full-comments">
-                        If you want to embed comments, this is a good place to do it!
-                    </section>
-                    --}}
-                    <section class="post-full-comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-                            (function () {
-                                var d = document, s = d.createElement('script');
-                                s.src = 'https://https-smmplanner-com.disqus.com/embed.js';
-                                s.setAttribute('data-timestamp', +new Date());
-                                (d.head || d.body).appendChild(s);
-                            })();
-                        </script>
-                        <noscript>Please enable JavaScript to view the <a
-                                href="https://disqus.com/?ref_noscript">comments
-                                powered by Disqus.</a></noscript>
-                    </section>
-
+                    <div class="post-full-byline">
+                        <section class="post-full-content">
+                            <div class="post-content">
+                                {{content}}
+                            </div>
+                        </section>
+                    </div>
                 </article>
                 {{!-- Links to Previous/Next posts --}}
                 <aside class="aside-box">
                     <div class="read-next-feed">
                         {{#if primary_tag}}
-                        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" include="tags,authors" as
+                        |related_posts|}}
                         {{#if related_posts}}
                         <article class="read-next-card">
                             <header class="read-next-card-header">
-                                {{!-- {{#../primary_tag}} --}}
-                                {{!-- <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3> --}}
-                                {{!-- {{/../primary_tag}} --}}
                                 <h3>Вам также может понравиться</h3>
                             </header>
                             <div class="read-next-card-content">
                                 <ul>
                                     {{#foreach related_posts}}
-                                    <li>
+                                    <li class="post-full-byline">
                                         <h4><a href="{{url}}">{{title}}</a></h4>
                                         <div class="read-next-card-meta">
-                                            <p><time datetime="{{date format=" YYYY-MM-DD"}}">{{date format="D MMM
-                                                    YYYY"}}</time> –
-                                                {{reading_time minute="1 МИН" minutes="% МИН"}}</p>
+
+                                            <div class="author-avatar">
+                                                {{#if primary_author.profile_image}}
+                                                <img class="author-profile-image" src="{{primary_author.profile_image}}"
+                                                    alt="{{primary_author.name}}" />
+                                                {{else}}
+                                                <span class="author-profile-image">{{> "icons/avatar"}}</span>
+                                                {{/if}}
+                                            </div>
+                                            <div>
+                                                {{#if primary_author.name}}
+                                                <span class="author-name">
+                                                    {{primary_author.name}}
+                                                </span>
+                                                {{/if}}
+                                                <p><time datetime="{{date format=" YYYY-MM-DD"}}">{{date
+                                                        format="DD.MM.YYYY"}}</time> &#8226
+                                                    {{reading_time minute="1 мин" minutes="% мин"}}</p>
+                                            </div>
                                         </div>
                                     </li>
                                     {{/foreach}}
                                 </ul>
                             </div>
-                            <footer class="read-next-card-footer">
-                                <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural
-                                    meta.pagination.total empty='No posts' singular='% post' plural='See all %
-                                    posts'}}
-                                    →</a>
+                            <footer class="read-next-card-footer ">
+                                <a class="btn btn-black btn-full-width"
+                                    href="{{#../primary_tag}}{{url}}{{/../primary_tag}}"><span
+                                        class="btn-title">Смотреть все</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg>
+                                </a>
                             </footer>
                         </article>
                         {{/if}}
                         {{/get}}
                         {{/if}}
 
-                        {{!-- If there's a next post, display it using the same markup included from -
-                        partials/post-card.hbs --}}
-                        {{#next_post}}
-                        {{> "post-card"}}
-                        {{/next_post}}
-
-                        {{!-- If there's a previous post, display it using the same markup included from -
-                        partials/post-card.hbs --}}
-                        {{#prev_post}}
-                        {{> "post-card"}}
-                        {{/prev_post}}
                     </div>
                 </aside>
             </div>
+        </div>
+        <div class="inner">
+            {{!-- Email subscribe form at the bottom of the page --}}
+            {{#if @labs.members}}
+            {{> subscribe-form}}
+            {{/if}}
+            {{!--
+            <section class="post-full-comments">
+                If you want to embed comments, this is a good place to do it!
+            </section>
+            --}}
+            <section class="post-full-comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    (function () {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://https-smmplanner-com.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                        powered by Disqus.</a></noscript>
+            </section>
         </div>
     </main>
 

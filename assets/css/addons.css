@@ -1,9 +1,15 @@
-.container {
-    display: flex;
-}
-
-.content-box {
-    max-width: 720px;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
 }
 
 .aside-box {
@@ -12,18 +18,223 @@
     flex-shrink: 0;
 }
 
-.aside-box .read-next-feed {
+.aside-box .author-avatar {
+    width: 35px;
+    height: 35px;
     margin: 0;
-    padding: 44px 0 0;
+    margin-right: 15px;
 }
 
-.post-full-image img {
-    max-width: 720px !important;
+.aside-box .author-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.aside-box .read-next-card {
+    background: transparent;
+    padding: 0;
+    margin: 0 0 40px 0;
+    flex: 0 1 380px;
+}
+
+.aside-box .read-next-card h1,
+h2 {
+    color: var(--darkgrey);
+}
+
+.aside-box .read-next-card h3,
+h4,
+h5,
+h6 {
+    color: var(--darkgrey);
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.aside-box .read-next-card .read-next-card-header {
+    padding-bottom: 2.8rem;
+    /* margin-bottom: 6.4rem; */
+}
+
+/* .aside-box .read-next-card-content li {
+    height: 180px;
+    border-top: 1px solid var(--lightgrey);
+} */
+
+.aside-box .post-full-byline {
+    margin: 35px 0 0;
+}
+
+.aside-box .read-next-card-content li:last-of-type {
+    padding-bottom: 5px;
+    border-top: 1px solid var(--lightgrey);
+}
+
+.aside-box .read-next-card-content li h4 {
+    margin-bottom: 15px;
+}
+
+.aside-box .read-next-card-content li a {
+    color: var(--darkgrey);
+}
+
+/* .aside-box .read-next-card-footer {
+    margin: 17px 0 5px;
+} */
+
+.aside-box .read-next-card-footer a {
+    height: 50px;
+    border: 0;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 11px;
+}
+
+.aside-box .read-next-feed {
+    margin: 0;
+    padding: 0;
+}
+
+.aside-box .read-next-card-meta {
+    display: flex;
+    align-items: center;
+}
+
+.aside-box .read-next-card-meta p {
+    color: var(--midgrey);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.btn {
+    border-radius: 11px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-black {
+    background: #000;
+    color: #fff;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.btn-icon {
+    fill: #fff;
+}
+
+.single-post {
+    display: flex;
+    margin-top: 52px;
+}
+
+.single-post .post-full {
+    max-width: 720px;
+}
+
+.single-post .post-full-image {
+    max-width: 720px;
+    margin: 8px 0 36px;
+}
+
+.single-post .post-full-image img {
+    max-width: 720px;
+}
+
+.single-post .post-full-header {
+    margin-top: 8px;
+    padding: 0;
+}
+
+.single-post .post-full-header .post-full-title {
+    color: #151515;
+    font-size: 3.5rem;
+    margin-bottom: 21px;
+}
+.single-post .post-full-header .post-full-custom-excerpt {
+    font-size: 1.6rem;
+    font-weight: 400;
+    max-width: 590px;
+}
+.single-post .post-full-byline-content {
+    padding-top: 40px;
+}
+.single-post .post-full-content {
+    font-size: 1.6rem;
+    padding: 0;
+}
+.single-post .post-full-content h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #151515;
+}
+.single-post .kg-gallery-container {
+    width: 100%;
+}
+.tag {
+    text-decoration: none;
+    color: #6c6c6c;
+    background: rgba(12, 12, 12, 0.05);
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 7px;
+    text-transform: uppercase;
+}
+
+.tag--medium {
+    padding: 8px;
+    font-size: 1.6rem;
 }
 
 @media (max-width: 1170px) {
-    .container {
+    .single-post {
         display: block;
         max-width: 100%;
     }
+    .single-post .post-full {
+        max-width: none;
+    }
+    .single-post .post-full-image {
+        max-width: none;
+        margin: 25px -6vw 50px;
+    }
+    .single-post .post-full-image img {
+        max-width: 1170px;
+    }
+    .aside-box {
+        margin-left: 0;
+        margin-top: 40px;
+        width: 100%;
+    }
+    .aside-box .read-next-card {
+        flex: 1 1;
+    }
+    .aside-box .read-next-card-content ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .aside-box .read-next-card-content li {
+        flex: 1 0;
+        min-width: 210px;
+        height: 138px;
+    }
+    .aside-box .read-next-card-content li:last-of-type {
+        padding-bottom: 20px;
+    }
 }
+
+/* @media (max-width: 1040px) {
+    .post-full-content .kg-width-full .kg-image {
+        width: 100vw;
+    }
+} */
