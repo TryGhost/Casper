@@ -19,8 +19,13 @@
 /* 4. Site Header
 /* ---------------------------------------------------------- */
 
+.site-header-background {
+    padding-bottom: 0 !important;
+}
+
 .site-header-content {
-    align-items: left !important;
+    align-items: flex-start !important;
+    min-height: 16.4rem !important;
 }
 
 .site-title {
@@ -32,7 +37,6 @@
 /* ---------------------------------------------------------- */
 
 .site-home-header .site-header-content {
-    align-items: flex-start !important;
     padding: 3vw 0 2vw !important;
 }
 
@@ -55,6 +59,15 @@
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
+.site-nav {
+    border-bottom: 1px solid gray !important;
+    height: 92px !important;
+}
+
+.site-nav-content {
+    margin-top: 9px;
+}
+
 .site-nav-left {
     /* flex: 1 0 auto;
     display: flex;
@@ -72,6 +85,14 @@
     -ms-overflow-scrolling: touch; */
 }
 
+.site-nav-left .nav li {
+    height: 73px;
+}
+
+.site-nav-right{
+    padding: 17px 0 0 0 !important;
+}
+
 .site-nav-logo img {
     height: 35px !important;
 }
@@ -80,13 +101,26 @@
     display: inline-block !important;
 }
 
+.nav li {
+    position: relative !important;
+    height: 73px !important;
+}
+
+.nav li a {
+    position: initial !important;
+    transition: opacity 0.25s ease-in-out !important;
+}
+
 .nav li a:hover {
+    font-weight: 800 !important;
+    padding: 12px 11px !important;
 }
 
 .nav li a:before {
-}
-
-.nav li a:hover:before {
+    bottom: 0 !important;
+    height: 3px !important;
+    opacity: 1 !important;
+    transition: all 0.25s ease-in-out !important;
 }
 
 /* Special behaviors for home navigation */

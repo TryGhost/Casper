@@ -137,6 +137,12 @@ h6 {
     margin-top: 52px;
 }
 
+.single-post figure,
+.single-post .kg-image {
+    width: 100%;
+    overflow-y: auto;
+}
+
 .single-post .post-full {
     max-width: 720px;
 }
@@ -180,6 +186,11 @@ h6 {
 .single-post .kg-gallery-container {
     width: 100%;
 }
+.single-post pre {
+    width: 720px;
+    overflow-y: auto;
+}
+
 .tag {
     text-decoration: none;
     color: #6c6c6c;
@@ -195,6 +206,28 @@ h6 {
     padding: 8px;
     font-size: 1.6rem;
 }
+/* here we apply tag styles for sub-nav  */
+.inner .site-header-subnav .nav {
+    justify-content: flex-start;
+    margin-top: 2.1rem;
+}
+.site-header-subnav .nav li {
+    margin: 0.4rem 0;
+    padding-left: 0.8rem;
+}
+.site-header-subnav .nav li a {
+    text-decoration: none;
+    color: #6c6c6c;
+    background: rgba(12, 12, 12, 0.05);
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 7px;
+    text-transform: uppercase;
+    padding: 8px;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
 
 @media (max-width: 1170px) {
     .single-post {
@@ -202,7 +235,13 @@ h6 {
         max-width: 100%;
     }
     .single-post .post-full {
-        max-width: none;
+        max-width: 100%;
+    }
+    .single-post .post-full-byline {
+        max-width: 100%;
+    }
+    .single-post .post-full-content {
+        max-width: 100%;
     }
     .single-post .post-full-image {
         max-width: none;
@@ -210,6 +249,11 @@ h6 {
     }
     .single-post .post-full-image img {
         max-width: 1170px;
+    }
+    .single-post pre {
+        width: 100%;
+        max-width: 100%;
+        overflow-y: auto;
     }
     .aside-box {
         margin-left: 0;

@@ -14,16 +14,19 @@
             </h1>
 
         </div>
-        {{#if @site.secondary_navigation}}
-        <div class="site-header-subnav">
-            {{navigation type="secondary"}}
-        </div>
-        {{/if}}
     </div>
+
     </header>
 
     {{!-- The main content area --}}
     <main id="site-main" class="site-main outer">
+        {{#if @site.secondary_navigation}}
+        <div class="inner">
+            <div class="site-header-subnav">
+                {{navigation type="secondary"}}
+            </div>
+        </div>
+        {{/if}}
         <div class="inner posts">
 
             <div class="post-feed">
@@ -82,7 +85,7 @@
                 var progressMax = lastDocumentHeight - lastWindowHeight;
 
                 // show/hide nav
-                if (lastScrollY >= trigger - 20) {
+                if (lastScrollY >= trigger - 20 - 103) {
                     nav.classList.add('fixed-nav-active');
                 } else {
                     nav.classList.remove('fixed-nav-active');
