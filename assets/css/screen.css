@@ -1256,6 +1256,10 @@ Usage (In Ghost editor):
     margin-top: 1.2em;
 }
 
+.post-full-content [id] {
+    scroll-margin-top: 110px;
+}
+
 .post-full-content h1,
 .post-full-content h2,
 .post-full-content h3,
