@@ -125,8 +125,24 @@
                                     <li class="post-full-byline">
                                         <h4><a href="{{url}}">{{title}}</a></h4>
                                         <div class="read-next-card-meta">
-
                                             <div class="author-avatar">
+                                                {{#if primary_author.profile_image}}
+                                                <img class="author-profile-image" src="{{primary_author.profile_image}}"
+                                                    alt="{{primary_author.name}}" />
+                                                {{else}}
+                                                <span class="author-profile-image">{{> "icons/avatar"}}</span>
+                                                {{/if}}
+                                            </div>
+                                            <div class="post-card-byline-content">
+                                                <span>{{#has author="count:>2"}}Multiple
+                                                    authors{{else}}{{authors}}{{/has}}</span>
+                                                <span class="post-card-byline-date"><time datetime="{{date format="
+                                                        YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time> <span
+                                                        class="bull">&bull;</span> {{reading_time minute="1 МИН"
+                                                    minutes="%
+                                                    МИН"}}</span>
+                                            </div>
+                                            {{!-- <div class="author-avatar">
                                                 {{#if primary_author.profile_image}}
                                                 <img class="author-profile-image" src="{{primary_author.profile_image}}"
                                                     alt="{{primary_author.name}}" />
@@ -143,18 +159,18 @@
                                                 <p><time datetime="{{date format=" YYYY-MM-DD"}}">{{date
                                                         format="DD.MM.YYYY"}}</time> &#8226
                                                     {{reading_time minute="1 мин" minutes="% мин"}}</p>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </li>
                                     {{/foreach}}
                                 </ul>
                             </div>
                             <footer class="read-next-card-footer ">
-                                <a class="btn btn-black btn-full-width"
+                                <a class="btn btn--black btn--full-width"
                                     href="{{#../primary_tag}}{{url}}{{/../primary_tag}}"><span
                                         class="btn-title">Смотреть все</span>
                                     <svg class="btn-icon" viewBox="0 0 24 24" width="24" height="24">
-                                        <use xlink:href="#arrow-left"></use>
+                                        <use xlink:href="#arrow-right"></use>
                                     </svg>
                                 </a>
                             </footer>
@@ -190,6 +206,7 @@
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
                         powered by Disqus.</a></noscript>
             </section>
+            {{> button-go-top}}
         </div>
     </main>
 

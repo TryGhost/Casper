@@ -2,8 +2,17 @@
 /* ---------------------------------------------------------- */
 
 * {
-    outline: 1px solid red;
-    outline-offset: -1px;
+    /* outline: 1px solid red;
+    outline-offset: -1px; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    word-break: break-word;
 }
 
 /* 2. Layout - Page building blocks
@@ -85,38 +94,43 @@
     -ms-overflow-scrolling: touch; */
 }
 
+.site-nav-left .site-nav-logo {
+    padding: 12px 5px;
+}
+.site-nav-left .site-nav-logo:hover {
+    transform: scale(1.03);
+    transition: scale 0.35s ease-in-out;
+}
+
 .site-nav-left .nav li {
     height: 73px;
 }
-
-.site-nav-right{
-    padding: 17px 0 0 0 !important;
-}
-
 .site-nav-logo img {
     height: 35px !important;
 }
-
+.site-nav-right {
+    padding: 17px 0 0 0 !important;
+}
 .site-home-header .site-nav-logo {
     display: inline-block !important;
 }
 
-.nav li {
+.site-nav-left .nav li {
     position: relative !important;
     height: 73px !important;
 }
 
-.nav li a {
+.site-nav-left .nav li a {
     position: initial !important;
     transition: opacity 0.25s ease-in-out !important;
 }
 
-.nav li a:hover {
+.site-nav-left .nav li a:hover {
     font-weight: 800 !important;
     padding: 12px 11px !important;
 }
 
-.nav li a:before {
+.site-nav-left .nav li a:before {
     bottom: 0 !important;
     height: 3px !important;
     opacity: 1 !important;
@@ -132,6 +146,10 @@
 
 /* 7. Single Post
 /* ---------------------------------------------------------- */
+
+.post-full-header .post-full-tags {
+    margin-bottom: 10px;
+}
 
 /* .page-template .site-main,
 .post-template .site-main {
@@ -151,8 +169,27 @@
 /* 7.3. Comments
 /* ---------------------------------------------------------- */
 
+.post-full-comments {
+    padding-right: 250px;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 1170px) {
+    .post-full-comments {
+        padding-right: unset;
+    }
+}
 /* 7.4. Related posts
 /* ---------------------------------------------------------- */
+
+.read-next-card a svg {
+    transition: all 0.2s ease-in-out;
+}
+
+.read-next-card-footer a:hover svg {
+    fill: var(--yellow);
+    stroke: var(--yellow);
+}
 
 /* 7.5. Koenig Styles
 /* ---------------------------------------------------------- */

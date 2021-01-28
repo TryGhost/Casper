@@ -12,6 +12,14 @@
     clip-path: inset(100%);
 }
 
+.arrow-right--left {
+    transform: rotate(180deg);
+}
+
+.arrow-right--up {
+    transform: rotate(-90deg);
+}
+
 .aside-box {
     width: 380px;
     margin-left: auto;
@@ -22,7 +30,7 @@
     width: 35px;
     height: 35px;
     margin: 0;
-    margin-right: 15px;
+    margin-right: 9px;
 }
 
 .aside-box .author-name {
@@ -119,19 +127,55 @@ h6 {
     justify-content: space-between;
 }
 
-.btn-black {
+.btn--black {
     background: #000;
     color: #fff;
 }
 
-.btn-full-width {
+.btn--full-width {
     width: 100%;
+}
+
+.btn--round {
+    border-radius: 50%;
+    justify-content: center;
+    outline: 0;
 }
 
 .btn-icon {
     fill: #fff;
+    stroke: #fff;
 }
 
+.btn-icon--black {
+    fill: #000;
+    stroke: #000;
+}
+.button-go-top {
+    position: absolute;
+    bottom: 110px;
+    right: 180px;
+    height: 77px;
+    width: 77px;
+    background: transparent;
+    border: 1px solid #d6d6d6;
+    fill: #b3b3b3;
+    stroke: #b3b3b3;
+}
+.button-go-top:hover {
+    border: 1px solid #000;
+    fill: #000;
+    stroke: #000;
+}
+.menu-open {
+    display: none;
+}
+.menu-open__label {
+    display: none;
+}
+.menu-open__icon {
+    stroke: #b3b3b3;
+}
 .single-post {
     display: flex;
     margin-top: 52px;
@@ -144,7 +188,9 @@ h6 {
 }
 
 .single-post .post-full {
-    max-width: 720px;
+    width: 720px;
+    min-width: 720px;
+    margin-right: 16px;
 }
 
 .single-post .post-full-image {
@@ -174,7 +220,10 @@ h6 {
 .single-post .post-full-byline-content {
     padding-top: 40px;
 }
-.single-post .post-full-content {
+.single-post .post-full-content,
+.single-post .post-full-content img,
+.single-post .post-full-content video {
+    max-width: 100%;
     font-size: 1.6rem;
     padding: 0;
 }
@@ -207,9 +256,13 @@ h6 {
     font-size: 1.6rem;
 }
 /* here we apply tag styles for sub-nav  */
+.inner .site-header-subnav  {
+    padding: 0 0 2rem;
+}
 .inner .site-header-subnav .nav {
     justify-content: flex-start;
     margin-top: 2.1rem;
+    padding: 0 0 2rem;
 }
 .site-header-subnav .nav li {
     margin: 0.4rem 0;
@@ -230,22 +283,92 @@ h6 {
 }
 
 @media (max-width: 1170px) {
+    .button-go-top {
+        bottom: 800px;
+        right: 22px;
+        background: black;
+        border: 0;
+        stroke: #d6d6d6;
+    }
+    .button-go-top:hover {
+        border: 1px solid #1a1a1a;
+        background: #1a1a1a;
+        fill: #fff;
+        stroke: #fff;
+    }
+    .menu-close__label {
+        display: block;
+        margin-bottom: 35px;
+    }
+    .menu-close__label:hover svg {
+        transform: scale(1.15) rotate(180deg);
+        transition: all .35s ease-in-out;
+    }
+    .menu-open {
+        display: block;
+        opacity: 0;
+    }
+    .menu-open__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 150;
+        padding: 10px 8px;
+    }
+    .menu-open__icon {
+        stroke: #b3b3b3;
+    }
+    .menu-close__label .menu-open__icon {
+        cursor: pointer;
+    }
+    .menu-open:checked ~ .menu-open__label > svg {
+        stroke: #fff;
+    }
+    .site-home-header .site-nav,
+    .site-home-header .site-nav-left-wrapper {
+        position: unset !important;
+    }
+    .site-home-header .site-nav-logo {
+        margin: 0 auto;
+    }
+    .site-home-header .site-nav-content {
+        display: none;
+        position: absolute;
+        width: 375px;
+        top: 0;
+        left: 0;
+        background: #000;
+        padding: 20px 78px;
+        z-index: 200;
+    }
+    .menu-open:checked ~ .site-nav-content {
+        display: block;
+    }
+    .site-home-header .site-nav-content .nav {
+        position: unset;
+        flex-direction: column;
+        width: 100%;
+    }
     .single-post {
         display: block;
         max-width: 100%;
     }
     .single-post .post-full {
+        width: unset;
+        min-width: unset;
         max-width: 100%;
+        margin-right: unset;
     }
     .single-post .post-full-byline {
         max-width: 100%;
     }
-    .single-post .post-full-content {
-        max-width: 100%;
+    .single-post .post-full-content img,
+    .single-post .post-full-content video {
+        max-width: 1040px;
     }
     .single-post .post-full-image {
         max-width: none;
-        margin: 25px -6vw 50px;
+        margin: 25px 0 50px;
     }
     .single-post .post-full-image img {
         max-width: 1170px;
@@ -276,9 +399,14 @@ h6 {
         padding-bottom: 20px;
     }
 }
-
-/* @media (max-width: 1040px) {
-    .post-full-content .kg-width-full .kg-image {
-        width: 100vw;
+@media (max-width: 900px) {
+    .site-header-content {
+        display: none !important;
     }
-} */
+}
+
+@media (max-width: 700px) {
+    .site-home-header .site-nav-right {
+        display: flex;
+    }
+}
