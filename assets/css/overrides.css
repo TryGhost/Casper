@@ -1,10 +1,6 @@
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 
-* {
-    /* outline: 1px solid red;
-    outline-offset: -1px; */
-}
 h1,
 h2,
 h3,
@@ -42,6 +38,7 @@ p {
     line-height: 1.16 !important;
 }
 
+
 /* 4.1 Home header
 /* ---------------------------------------------------------- */
 
@@ -65,6 +62,15 @@ p {
 
 /* Special header styles for smaller screens */
 
+@media (max-width: 900px) {
+    .site-header-content {
+        display: none !important;
+    }
+    .site-header-background:after {
+        height: 110px !important;
+    }
+}
+
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
@@ -72,28 +78,9 @@ p {
     border-bottom: 1px solid gray !important;
     height: 92px !important;
 }
-
 .site-nav-content {
     margin-top: 9px;
 }
-
-.site-nav-left {
-    /* flex: 1 0 auto;
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
-    padding: 10px 0 80px;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-    white-space: nowrap;
-
-    -ms-overflow-scrolling: touch; */
-}
-
 .site-nav-left .site-nav-logo {
     padding: 12px 5px;
 }
@@ -101,7 +88,6 @@ p {
     transform: scale(1.03);
     transition: scale 0.35s ease-in-out;
 }
-
 .site-nav-left .nav li {
     height: 73px;
 }
@@ -114,22 +100,18 @@ p {
 .site-home-header .site-nav-logo {
     display: inline-block !important;
 }
-
 .site-nav-left .nav li {
     position: relative !important;
     height: 73px !important;
 }
-
 .site-nav-left .nav li a {
     position: initial !important;
     transition: opacity 0.25s ease-in-out !important;
 }
-
 .site-nav-left .nav li a:hover {
     font-weight: 800 !important;
     padding: 12px 11px !important;
 }
-
 .site-nav-left .nav li a:before {
     bottom: 0 !important;
     height: 3px !important;
@@ -185,7 +167,6 @@ p {
 .read-next-card a svg {
     transition: all 0.2s ease-in-out;
 }
-
 .read-next-card-footer a:hover svg {
     fill: var(--yellow);
     stroke: var(--yellow);
@@ -220,17 +201,14 @@ p {
     text-align: right;
     direction: rtl;
 }
-
 .post-full-content blockquote {
     margin: 1.5em 0;
 }
-
 .post-full-content blockquote cite {
     display: flex;
     margin-top: 2.8rem;
     font-size: 1.6rem;
 }
-
 .post-full-content .post-content blockquote {
     position: relative;
     border-width: 3px 0;
@@ -242,7 +220,6 @@ p {
     font-size: 2.4rem;
     color: #151515;
 }
-
 .post-full-content .post-content blockquote:before {
     content: "";
     position: absolute;

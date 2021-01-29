@@ -23,14 +23,12 @@
         {{#if @site.secondary_navigation}}
         <div class="inner">
             <div class="site-header-subnav">
-                {{navigation type="secondary"}}
-
                 <input id="id-hashtag-toggle" class="hashtag-toggle visually-hidden" type="checkbox" />
-                <label class="hashtag-toggle__label " for="id-hashtag-toggle">
-                    <span class="tag hashtag-toggle__show-all">все</span>
-                    <span class="tag hashtag-toggle__hide">скрыть</span>
+                {{navigation type="secondary"}}
+                <label class="hashtag-toggle__label tag" for="id-hashtag-toggle">
+                    <span class="hashtag-toggle__show-all">все</span>
+                    <span class="hashtag-toggle__hide">скрыть</span>
                 </label>
-
             </div>
         </div>
         {{/if}}
