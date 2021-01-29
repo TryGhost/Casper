@@ -368,6 +368,8 @@ h6 {
     .menu-open:checked ~ .menu-open__label > svg {
         stroke: #fff;
     }
+    .site-header .site-nav,
+    .site-header .site-nav-left-wrapper,
     .fixed-nav-active .site-nav,
     .fixed-nav-active .site-nav-left-wrapper,
     .site-archive-header .site-nav,
@@ -376,6 +378,7 @@ h6 {
     .site-home-header .site-nav-left-wrapper {
         position: unset !important;
     }
+    .site-header .mobile-menu,
     .fixed-nav-active .mobile-menu,
     .site-archive-header .mobile-menu,
     .site-home-header .mobile-menu {
@@ -387,6 +390,7 @@ h6 {
         background: #000;
         z-index: 200;
     }
+    .site-header .mobile-menu li,
     .fixed-nav-active .mobile-menu li,
     .site-archive-header .mobile-menu li,
     .site-home-header .mobile-menu li {
@@ -395,6 +399,7 @@ h6 {
     .menu-open:checked ~ .mobile-menu {
         display: block;
     }
+    .site-header .mobile-menu .nav,
     .fixed-nav-active .mobile-menu .nav,
     .site-archive-header .mobile-menu .nav,
     .site-home-header .mobile-menu .nav {
@@ -566,7 +571,9 @@ h6 {
 }
 
 @media (max-width: 700px) {
+    .site-header .site-nav-right,
     .fixed-nav-active .site-nav-right,
+    .site-archive-header .site-nav-right,
     .site-home-header .site-nav-right {
         display: flex;
     }
