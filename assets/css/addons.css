@@ -22,7 +22,7 @@
 
 .aside-box {
     width: 380px;
-    margin-left: auto;
+    margin: 0 auto;
     flex-shrink: 0;
 }
 
@@ -64,13 +64,7 @@ h6 {
 
 .aside-box .read-next-card .read-next-card-header {
     padding-bottom: 2.8rem;
-    /* margin-bottom: 6.4rem; */
 }
-
-/* .aside-box .read-next-card-content li {
-    height: 180px;
-    border-top: 1px solid var(--lightgrey);
-} */
 
 .aside-box .post-full-byline {
     margin: 35px 0 0;
@@ -88,10 +82,6 @@ h6 {
 .aside-box .read-next-card-content li a {
     color: var(--darkgrey);
 }
-
-/* .aside-box .read-next-card-footer {
-    margin: 17px 0 5px;
-} */
 
 .aside-box .read-next-card-footer a {
     height: 50px;
@@ -152,7 +142,7 @@ h6 {
     stroke: #000;
 }
 .button-go-top {
-    position: absolute;
+    position: fixed;
     bottom: 110px;
     right: 180px;
     height: 77px;
@@ -161,6 +151,7 @@ h6 {
     border: 1px solid #d6d6d6;
     fill: #b3b3b3;
     stroke: #b3b3b3;
+    z-index: 101;
 }
 .button-go-top:hover {
     border: 1px solid #000;
@@ -185,9 +176,12 @@ h6 {
 .menu-close__label {
     display: none;
 }
+.mobile-menu__footer {
+    display: none;
+}
 .single-post {
     display: flex;
-    margin-top: 52px;
+    margin-top: 47px;
 }
 
 .single-post figure,
@@ -269,6 +263,8 @@ h6 {
     justify-content: flex-start;
     margin-top: 2.1rem;
     padding: 0 0 2rem;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
 }
 .site-header-subnav .nav li {
     margin: 0.4rem 0;
@@ -290,18 +286,8 @@ h6 {
 }
 
 @media (max-width: 1170px) {
-    .button-go-top {
-        bottom: 800px;
-        right: 22px;
-        background: black;
-        border: 0;
-        stroke: #d6d6d6;
-    }
-    .button-go-top:hover {
-        border: 1px solid #1a1a1a;
-        background: #1a1a1a;
-        fill: #fff;
-        stroke: #fff;
+    .site-nav-logo {
+        margin: 0 auto;
     }
     .menu-open {
         display: block;
@@ -317,13 +303,64 @@ h6 {
     .menu-open__icon {
         stroke: #b3b3b3;
     }
-    .menu-open:checked ~ .site-nav-content .menu-close__label {
-        display: block;
-        margin-bottom: 35px;
+    .mobile-menu {
+        flex-grow: 0 !important;
+        transition: all 0.35s ease-in-out;
     }
-    .menu-open:checked ~ .site-nav-content .menu-close__label:hover svg {
+    .site-footer-content .copyright {
+        max-width: 40%;
+    }
+    .site-footer-content .copyright,
+    .site-footer-content .copyright-warning {
+        max-width: 60%;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        white-space: normal;
+        padding: 0 5px;
+    }
+    .menu-open:checked ~ .mobile-menu .menu-close__label {
+        display: block;
+        margin: 35px 0;
+        padding: 0 50px;
+    }
+    .menu-open:checked ~ .mobile-menu .menu-close__label:hover svg {
         transform: scale(1.15) rotate(180deg);
         transition: all 0.35s ease-in-out;
+    }
+    .menu-open:checked ~ .mobile-menu .mobile-menu__footer {
+        border-top: 1px solid #fff;
+        padding: 30px 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-transform: none;
+    }
+    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-nav-logo {
+        display: block;
+        padding: 20px 50px !important;
+        margin-left: 0 !important;
+    }
+    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .outer {
+        padding: 0 10px;
+    }
+    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-footer {
+        margin-top: 80px;
+    }
+    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-footer,
+    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-footer-content {
+        max-width: 100%;
+    }
+    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-footer-content {
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 1.2rem;
+        color: #474747;
+    }
+    .mobile-menu__description {
+        font-size: 1.6rem;
+        color: #797979;
+        padding: 10px 50px;
+        white-space: normal;
     }
     .menu-close__label .menu-open__icon {
         cursor: pointer;
@@ -337,29 +374,35 @@ h6 {
     .site-home-header .site-nav-left-wrapper {
         position: unset !important;
     }
-    .site-archive-header .site-nav-logo,
-    .site-home-header .site-nav-logo {
-        margin: 0 auto;
-    }
-    .site-archive-header .site-nav-content,
-    .site-home-header .site-nav-content {
+    .site-archive-header .mobile-menu,
+    .site-home-header .mobile-menu {
         display: none;
         position: absolute;
         width: 375px;
         top: 0;
         left: 0;
         background: #000;
-        padding: 20px 78px;
         z-index: 200;
     }
-    .menu-open:checked ~ .site-nav-content {
+    .site-archive-header .mobile-menu li,
+    .site-home-header .mobile-menu li {
+        margin-right: auto;
+    }
+    .menu-open:checked ~ .mobile-menu {
         display: block;
     }
-    .site-archive-header .site-nav-content .nav,
-    .site-home-header .site-nav-content .nav {
+    .site-archive-header .mobile-menu .nav,
+    .site-home-header .mobile-menu .nav {
         position: unset;
         flex-direction: column;
         width: 100%;
+        padding: 20px 50px;
+    }
+    .site-nav-left .site-nav-logo {
+        margin: 0 auto;
+    }
+    .mobile-menu .nav-post-title {
+        display: none;
     }
     .single-post {
         display: block;
@@ -413,11 +456,24 @@ h6 {
 }
 
 @media (max-width: 900px) {
+    .button-go-top {
+        bottom: 150px;
+        right: 22px;
+        background: black;
+        border: 0;
+        stroke: #d6d6d6;
+    }
+    .button-go-top:hover {
+        border: 1px solid #1a1a1a;
+        background: #1a1a1a;
+        fill: #fff;
+        stroke: #fff;
+    }
     .hashtag-toggle {
         display: inline-block;
     }
     .hashtag-toggle__label {
-        display: flex;
+        display: flex !important;
         flex-shrink: 0;
         align-items: center;
         justify-content: center;
@@ -441,20 +497,66 @@ h6 {
         margin-top: -35px;
         z-index: 1100;
     }
-    .hashtag-toggle:checked ~ .hashtag-toggle__label .hashtag-toggle__show-all {
+    .hashtag-toggle:checked ~ .nav .hashtag-toggle__label .hashtag-toggle__show-all {
         display: inline-block;
     }
-    .hashtag-toggle:checked ~ .hashtag-toggle__label .hashtag-toggle__hide {
+    .hashtag-toggle:checked ~ .nav .hashtag-toggle__label .hashtag-toggle__hide {
         display: none;
     }
     .hashtag-toggle:checked ~ .nav {
         overflow: hidden;
         height: 40px;
         padding: 0;
-        margin-right: 130px;
     }
     .hashtag-toggle:checked ~ .nav li:nth-child(n + 9) {
         display: none;
+    }
+}
+
+/* here we try to copy of grid from ghost .post-card-large styles */
+
+@media (min-width: 795px) {
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) {
+        flex: 1 1 100%;
+        flex-direction: row;
+        padding-bottom: 40px;
+        min-height: 280px;
+        border-top: 0;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-image-link {
+        position: relative;
+        flex: 1 1 auto;
+        margin-bottom: 0;
+        min-height: 380px;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-content {
+        flex: 0 1 361px;
+        justify-content: center;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-content-link,
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-meta {
+        padding: 0 0 0 40px;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1):not(.no-image) .post-card-header {
+        margin-top: 0;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-title {
+        margin-top: 0;
+        font-size: 3.2rem;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-excerpt p {
+        margin-bottom: 1.5em;
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-content-link,
+    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-meta {
+        padding: 0 0 0 40px;
     }
 }
 

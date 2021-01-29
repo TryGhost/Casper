@@ -14,8 +14,8 @@ p {
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
 
-.inner {
-    max-width: 1200px !important;
+.post-template .inner {
+    max-width: 1286px!important
 }
 
 /* 3. Special Template Styles
@@ -60,6 +60,28 @@ p {
 /* 4.2 Archive header (tag and author post lists)
 /* ---------------------------------------------------------- */
 
+.site-archive-header .site-header-background {
+  background: #1d1d1d !important;
+}
+
+.site-archive-header .no-image .site-header-content {
+    border-bottom: 0 !important;
+}
+
+.site-archive-header .site-header-content h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 2.9rem;
+    color: #fff;
+}
+
+.site-archive-header .site-header-content h2 {
+  font-size: 1.6rem;
+  color: #797979;
+  margin-bottom: 4rem;
+  max-width: 51.6rem;
+}
+
 /* Special header styles for smaller screens */
 
 @media (max-width: 900px) {
@@ -76,10 +98,14 @@ p {
 
 .site-nav {
     border-bottom: 1px solid gray !important;
-    height: 92px !important;
+    height: 80px !important;
+    font-size: 1.6rem !important;
 }
 .site-nav-content {
-    margin-top: 9px;
+    margin-top: 7px;
+}
+.site-nav-left {
+    text-transform: none !important;
 }
 .site-nav-left .site-nav-logo {
     padding: 12px 5px;
@@ -87,9 +113,6 @@ p {
 .site-nav-left .site-nav-logo:hover {
     transform: scale(1.03);
     transition: scale 0.35s ease-in-out;
-}
-.site-nav-left .nav li {
-    height: 73px;
 }
 .site-nav-logo img {
     height: 35px !important;
@@ -102,7 +125,7 @@ p {
 }
 .site-nav-left .nav li {
     position: relative !important;
-    height: 73px !important;
+    height: 62px !important;
 }
 .site-nav-left .nav li a {
     position: initial !important;
@@ -133,10 +156,9 @@ p {
     margin-bottom: 10px;
 }
 
-/* .page-template .site-main,
 .post-template .site-main {
-    margin-top: 44px !important;
-} */
+    margin-top: 82px !important;
+}
 
 /* Some grouped styles for smaller viewports */
 
