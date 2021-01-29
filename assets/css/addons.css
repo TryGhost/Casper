@@ -368,12 +368,15 @@ h6 {
     .menu-open:checked ~ .menu-open__label > svg {
         stroke: #fff;
     }
+    .fixed-nav-active .site-nav,
+    .fixed-nav-active .site-nav-left-wrapper,
     .site-archive-header .site-nav,
     .site-archive-header .site-nav-left-wrapper,
     .site-home-header .site-nav,
     .site-home-header .site-nav-left-wrapper {
         position: unset !important;
     }
+    .fixed-nav-active .mobile-menu,
     .site-archive-header .mobile-menu,
     .site-home-header .mobile-menu {
         display: none;
@@ -384,6 +387,7 @@ h6 {
         background: #000;
         z-index: 200;
     }
+    .fixed-nav-active .mobile-menu li,
     .site-archive-header .mobile-menu li,
     .site-home-header .mobile-menu li {
         margin-right: auto;
@@ -391,6 +395,7 @@ h6 {
     .menu-open:checked ~ .mobile-menu {
         display: block;
     }
+    .fixed-nav-active .mobile-menu .nav,
     .site-archive-header .mobile-menu .nav,
     .site-home-header .mobile-menu .nav {
         position: unset;
@@ -561,6 +566,7 @@ h6 {
 }
 
 @media (max-width: 700px) {
+    .fixed-nav-active .site-nav-right,
     .site-home-header .site-nav-right {
         display: flex;
     }

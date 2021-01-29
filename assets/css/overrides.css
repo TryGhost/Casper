@@ -15,7 +15,7 @@ p {
 /* ---------------------------------------------------------- */
 
 .post-template .inner {
-    max-width: 1286px!important
+    max-width: 1286px !important;
 }
 
 /* 3. Special Template Styles
@@ -37,7 +37,6 @@ p {
     font-size: 5rem !important;
     line-height: 1.16 !important;
 }
-
 
 /* 4.1 Home header
 /* ---------------------------------------------------------- */
@@ -61,7 +60,7 @@ p {
 /* ---------------------------------------------------------- */
 
 .site-archive-header .site-header-background {
-  background: #1d1d1d !important;
+    background: #1d1d1d !important;
 }
 
 .site-archive-header .no-image .site-header-content {
@@ -76,10 +75,10 @@ p {
 }
 
 .site-archive-header .site-header-content h2 {
-  font-size: 1.6rem;
-  color: #797979;
-  margin-bottom: 4rem;
-  max-width: 51.6rem;
+    font-size: 1.6rem;
+    color: #797979;
+    margin-bottom: 4rem;
+    max-width: 51.6rem;
 }
 
 /* Special header styles for smaller screens */
@@ -96,6 +95,9 @@ p {
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
+.fixed-nav-active {
+    position: unset !important;
+}
 .site-nav {
     border-bottom: 1px solid gray !important;
     height: 80px !important;
