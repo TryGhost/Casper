@@ -13,11 +13,10 @@ const fs = require("fs");
 const webpack = require("webpack-stream");
 
 // postcss plugins
-const autoprefixer = require("autoprefixer");
-const colorFunction = require("postcss-color-function");
-const cssnano = require("cssnano");
-const customProperties = require("postcss-custom-properties");
-const easyimport = require("postcss-easy-import");
+const autoprefixer = require('autoprefixer');
+const colorFunction = require('postcss-color-mod-function');
+const cssnano = require('cssnano');
+const easyimport = require('postcss-easy-import');
 
 const REPO = "TryGhost/Casper";
 const REPO_READONLY = "TryGhost/Casper";
@@ -45,21 +44,17 @@ function hbs(done) {
 }
 
 function css(done) {
-    pump(
-        [
-            src("assets/css/*.css", { sourcemaps: true }),
-            postcss([
-                easyimport,
-                customProperties({ preserve: false }),
-                colorFunction(),
-                autoprefixer(),
-                cssnano(),
-            ]),
-            dest("assets/built/", { sourcemaps: "." }),
-            livereload(),
-        ],
-        handleError(done)
-    );
+    pump([
+        src('assets/css/*.css', {sourcemaps: true}),
+        postcss([
+            easyimport,
+            colorFunction(),
+            autoprefixer(),
+            cssnano()
+        ]),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
 }
 
 function js(done) {
@@ -97,22 +92,18 @@ function js(done) {
 }
 
 function zipper(done) {
-    const filename = require("./package.json").name + ".zip";
+    const filename = require('./package.json').name + '.zip';
 
-    pump(
-        [
-            src([
-                "**",
-                "!node_modules",
-                "!node_modules/**",
-                "!dist",
-                "!dist/**",
-            ]),
-            zip(filename),
-            dest("dist/"),
-        ],
-        handleError(done)
-    );
+    pump([
+        src([
+            '**',
+            '!node_modules', '!node_modules/**',
+            '!dist', '!dist/**',
+            '!yarn-error.log'
+        ]),
+        zip(filename),
+        dest('dist/')
+    ], handleError(done));
 }
 
 const cssWatcher = () => watch("assets/css/**", css);

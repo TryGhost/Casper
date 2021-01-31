@@ -1,18 +1,53 @@
 <nav class="site-nav">
     <div class="site-nav-left-wrapper">
         <div class="site-nav-left">
+            <input id="id-site-nav-open" class="menu-open visually-hidden" type="checkbox" />
+            <label class="menu-open__label" for="id-site-nav-open">
+                <svg class="menu-open__icon" viewBox="0 0 24 24" width="24" height="24">
+                    <use xlink:href="#burger"></use>
+                </svg>
+            </label>
             {{#if @site.logo}}
-            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+            <a class="site-nav-logo" href="https://smmplanner.com/home/"><img src="{{@site.logo}}"
+                    alt="{{@site.title}}" /></a>
             {{else}}
-            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+            <a class="site-nav-logo" href="https://smmplanner.com/home/">{{@site.title}}</a>
             {{/if}}
-            <div class="site-nav-content">
+            <div class="site-nav-content mobile-menu">
+                <label class="menu-close__label" for="id-site-nav-open">
+                    <svg class="menu-open__icon arrow-right--left" viewBox="0 0 24 24" width="24" height="24">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </label>
                 {{#if @site.navigation}}
                 {{navigation}}
                 {{/if}}
                 {{#is "post"}}
                 <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
                 {{/is}}
+                <div class="mobile-menu__footer">
+                    {{#if @site.logo}}
+                    <a class="site-nav-logo" href="https://smmplanner.com/home/"><img src="{{@site.logo}}"
+                            alt="{{@site.title}}" /></a>
+                    {{else}}
+                    <a class="site-nav-logo" href="https://smmplanner.com/home/">{{@site.title}}</a>
+                    {{/if}}
+                    <div class="mobile-menu__description">
+                        {{#if @site.description}}
+                        {{@site.description}}
+                        {{else}}
+                        {{@site.title}}
+                        {{/if}}
+                    </div>
+                    <footer class="site-footer outer">
+                        <div class="site-footer-content inner">
+                            <section class="copyright"> &copy; <a href="{{@site.url}}">{{@site.title}}</a> {{date
+                                format="YYYY"}}
+                            </section>
+                            <span class="copyright-warning">Копирование материалов сайта запрещено</span>
+                        </div>
+                    </footer>
+                </div>
             </div>
         </div>
     </div>

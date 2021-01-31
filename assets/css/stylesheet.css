@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "Golos Text";
+    src: url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Medium.eot"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Medium.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Medium.woff2")
+            format("woff2"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Medium.woff")
+            format("woff"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Medium.ttf")
+            format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text";
+    src: url("https://storage.googleapis.com/smp-statics/fonts/GolosText-DemiBold.eot"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-DemiBold.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-DemiBold.woff2")
+            format("woff2"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-DemiBold.woff")
+            format("woff"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-DemiBold.ttf")
+            format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text";
+    src: url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Bold.eot"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Bold.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Bold.woff2")
+            format("woff2"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Bold.woff")
+            format("woff"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Bold.ttf")
+            format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text";
+    font-family: "Golos Text";
+    src: url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Regular.eot"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Regular.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Regular.woff2")
+            format("woff2"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Regular.woff")
+            format("woff"),
+        url("https://storage.googleapis.com/smp-statics/fonts/GolosText-Regular.ttf")
+            format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
