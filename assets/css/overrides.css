@@ -48,7 +48,7 @@ p {
 .site-home-header .site-title {
     font-size: 4rem !important;
     text-align: left !important;
-    max-width: 400px !important;
+    max-width: 395px !important;
 }
 
 .site-home-header .site-description {
@@ -132,10 +132,6 @@ p {
 .site-nav-left .nav li a {
     position: initial !important;
     transition: opacity 0.25s ease-in-out !important;
-}
-.site-nav-left .nav li a:hover {
-    font-weight: 800 !important;
-    padding: 12px 11px !important;
 }
 .site-nav-left .nav li a:before {
     bottom: 0 !important;
@@ -239,19 +235,22 @@ p {
     border-color: #000;
     border-style: solid;
     padding: 56px 0;
-    font-family: "Golos", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-        "Helvetica Neue", sans-serif;
-    font-size: 2.4rem;
+    font-family: "Golos", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 2rem;
+    line-height: 2.5rem;
     color: #151515;
 }
 .post-full-content .post-content blockquote:before {
+    background: white;
     content: "";
     position: absolute;
     background-color: #fff;
     top: 0;
-    left: 1px;
+    left: 0;
     width: 48px;
     height: 36px;
+    width: 50px;
     display: block;
     overflow: hidden;
     transform: translate(0%, -60%);
