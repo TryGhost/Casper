@@ -113,8 +113,8 @@ p {
     padding: 12px 5px;
 }
 .site-nav-left .site-nav-logo:hover {
-    transform: scale(1.03);
-    transition: scale 0.35s ease-in-out;
+    transform: none !important;
+    transition: none !important;
 }
 .site-nav-logo img {
     height: 35px !important;
@@ -234,7 +234,7 @@ p {
     direction: rtl;
 }
 .post-full-content blockquote {
-    margin: 1.5em 0;
+    margin: 1.5em 0 !important;
 }
 .post-full-content blockquote cite {
     display: flex;
@@ -270,7 +270,7 @@ p {
 .post-full-content .post-content blockquote:after {
     content: "";
     position: absolute;
-    background: repeat-x 0/50% url("../images/quote.png");
+    background: repeat-x 0/51% url("../images/quote.png");
     width: 42px;
     height: 36px;
     top: 0;

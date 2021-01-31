@@ -85,7 +85,6 @@ h6 {
 .aside-box .read-next-card-footer a {
     height: 50px;
     border: 0;
-    color: #fff;
     font-size: 1.6rem;
     border-radius: 11px;
 }
@@ -121,6 +120,16 @@ h6 {
 .btn--black {
     background: #000;
     color: #fff;
+}
+
+.btn--black--outlined {
+    border: solid 1px #000 !important;
+    color: #000 !important;
+    transition: 0.2s ease-in-out !important;
+}
+.btn--black--outlined:hover {
+    border: solid 1px var(--yellow) !important;
+    color: var(--yellow) !important;
 }
 
 .btn--full-width {
