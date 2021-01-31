@@ -3,12 +3,13 @@ on:
   push:
     branches:
       - master
+      - main
 jobs:
   deploy_to_onlythepixel:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@master
-      - uses: TryGhost/action-deploy-theme@v1.2.1
+      - uses: actions/checkout@v2
+      - uses: TryGhost/action-deploy-theme@v1.4.1
         with:
           api-url: ${{ secrets.ONLYTHEPIXEL_GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.ONLYTHEPIXEL_GHOST_ADMIN_API_KEY }}
