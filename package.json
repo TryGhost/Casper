@@ -1,6 +1,6 @@
 {
-    "name": "casper",
-    "description": "A clean, minimal default theme for the Ghost publishing platform",
+    "name": "tidal-casper",
+    "description": "A clean, minimal customised version of the default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
     "version": "3.1.2",
     "engines": {
