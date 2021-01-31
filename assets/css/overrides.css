@@ -158,6 +158,10 @@ p {
     margin-top: 82px !important;
 }
 
+.single-post {
+    justify-content: center;
+}
+
 /* Some grouped styles for smaller viewports */
 
 /* Tables */
@@ -187,6 +191,9 @@ p {
 .read-next-card a svg {
     transition: all 0.2s ease-in-out;
 }
+.read-next-card-footer {
+    margin: 30px 0 5px !important;
+}
 .read-next-card-footer a:hover svg {
     fill: var(--yellow);
     stroke: var(--yellow);
@@ -194,7 +201,12 @@ p {
 
 /* 7.5. Koenig Styles
 /* ---------------------------------------------------------- */
-
+.post-card-byline-content {
+    text-transform: none !important;
+}
+.post-full-byline {
+    margin: 0 !important;
+}
 .post-content ol {
     list-style: none;
     counter-reset: li;
@@ -284,6 +296,11 @@ p {
 /* 11. Site Footer
 /* ---------------------------------------------------------- */
 
+.site-footer {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
 
@@ -292,3 +309,10 @@ p {
 
 /* 13. Subscription form
 /* ---------------------------------------------------------- */
+
+/*
+* etc
+*/
+.smp-link {
+    width: 100% !important;
+}

@@ -21,8 +21,7 @@
 }
 
 .aside-box {
-    width: 380px;
-    margin: 0 auto;
+    width: 280px;
     flex-shrink: 0;
 }
 
@@ -72,7 +71,7 @@ h6 {
 
 .aside-box .read-next-card-content li:last-of-type {
     padding-bottom: 5px;
-    border-top: 1px solid var(--lightgrey);
+    border-top: 1px solid #e4eaed;
 }
 
 .aside-box .read-next-card-content li h4 {
@@ -94,6 +93,8 @@ h6 {
 .aside-box .read-next-feed {
     margin: 0;
     padding: 0;
+    position: fixed;
+    width: 280px;
 }
 
 .aside-box .read-next-card-meta {
@@ -143,20 +144,21 @@ h6 {
 }
 .button-go-top {
     position: fixed;
-    bottom: 110px;
-    right: 180px;
+    bottom: 50px;
+    right: 60px;
     height: 77px;
     width: 77px;
-    background: transparent;
-    border: 1px solid #d6d6d6;
+    background: black;
+    border: solid 1px white;
     fill: #b3b3b3;
-    stroke: #b3b3b3;
+    stroke: #d6d6d6;
     z-index: 101;
 }
 .button-go-top:hover {
-    border: 1px solid #000;
-    fill: #000;
-    stroke: #000;
+    background: #1a1a1a;
+    border: solid 1px white;
+    fill: #fff;
+    stroke: #fff;
 }
 .hashtag-toggle {
     display: none;
@@ -193,7 +195,8 @@ h6 {
 .single-post .post-full {
     width: 720px;
     min-width: 720px;
-    margin-right: 16px;
+    margin-left: 20px;
+    margin-right: 50px;
 }
 
 .single-post .post-full-image {
@@ -347,10 +350,16 @@ h6 {
         margin-top: 80px;
     }
     .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-footer,
-    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-footer-content {
+    .menu-open:checked
+        ~ .mobile-menu
+        .mobile-menu__footer
+        .site-footer-content {
         max-width: 100%;
     }
-    .menu-open:checked ~ .mobile-menu .mobile-menu__footer .site-footer-content {
+    .menu-open:checked
+        ~ .mobile-menu
+        .mobile-menu__footer
+        .site-footer-content {
         display: flex;
         flex-wrap: nowrap;
         font-size: 1.2rem;
@@ -423,6 +432,7 @@ h6 {
         min-width: unset;
         max-width: 100%;
         margin-right: unset;
+        margin-left: unset;
     }
     .single-post .post-full-byline {
         max-width: 100%;
@@ -448,6 +458,10 @@ h6 {
         margin-top: 40px;
         width: 100%;
     }
+    .aside-box .read-next-feed {
+        position: relative;
+        width: 100%;
+    }
     .aside-box .read-next-card {
         flex: 1 1;
     }
@@ -459,26 +473,15 @@ h6 {
         flex: 1 0;
         min-width: 210px;
         height: 138px;
+        padding-right: 10px;
     }
     .aside-box .read-next-card-content li:last-of-type {
         padding-bottom: 20px;
+        padding-right: 0px;
     }
 }
 
 @media (max-width: 900px) {
-    .button-go-top {
-        bottom: 150px;
-        right: 22px;
-        background: black;
-        border: 0;
-        stroke: #d6d6d6;
-    }
-    .button-go-top:hover {
-        border: 1px solid #1a1a1a;
-        background: #1a1a1a;
-        fill: #fff;
-        stroke: #fff;
-    }
     .hashtag-toggle {
         display: inline-block;
     }
@@ -507,10 +510,16 @@ h6 {
         margin-top: -35px;
         z-index: 1100;
     }
-    .hashtag-toggle:checked ~ .nav .hashtag-toggle__label .hashtag-toggle__show-all {
+    .hashtag-toggle:checked
+        ~ .nav
+        .hashtag-toggle__label
+        .hashtag-toggle__show-all {
         display: inline-block;
     }
-    .hashtag-toggle:checked ~ .nav .hashtag-toggle__label .hashtag-toggle__hide {
+    .hashtag-toggle:checked
+        ~ .nav
+        .hashtag-toggle__label
+        .hashtag-toggle__hide {
         display: none;
     }
     .hashtag-toggle:checked ~ .nav {
@@ -526,46 +535,70 @@ h6 {
 /* here we try to copy of grid from ghost .post-card-large styles */
 
 @media (min-width: 795px) {
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) {
+    .button-go-top {
+        bottom: 70px;
+    }
+    .tag-template .post-card:not(.post-card-large):nth-child(6n + 1) {
         flex: 1 1 100%;
         flex-direction: row;
         padding-bottom: 40px;
         min-height: 280px;
         border-top: 0;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-image-link {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-image-link {
         position: relative;
         flex: 1 1 auto;
         margin-bottom: 0;
         min-height: 380px;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-image {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-image {
         position: absolute;
         width: 100%;
         height: 100%;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-content {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-content {
         flex: 0 1 361px;
         justify-content: center;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-content-link,
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-meta {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-content-link,
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-meta {
         padding: 0 0 0 40px;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1):not(.no-image) .post-card-header {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1):not(.no-image)
+        .post-card-header {
         margin-top: 0;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-title {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-title {
         margin-top: 0;
         font-size: 3.2rem;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-excerpt p {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-excerpt
+        p {
         margin-bottom: 1.5em;
         font-size: 1.8rem;
         line-height: 1.5em;
     }
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-content-link,
-    .tag-template .post-card:not(.post-card-large):nth-child(6n+1) .post-card-meta {
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-content-link,
+    .tag-template
+        .post-card:not(.post-card-large):nth-child(6n + 1)
+        .post-card-meta {
         padding: 0 0 0 40px;
     }
 }
