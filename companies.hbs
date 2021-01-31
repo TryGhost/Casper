@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset " built/cmpny.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+        <div class="navigation-wrap">
+            <a href="/" aria-current="page" class="logo-link w-nav-brand w--current" aria-label="home">
+                <img src="{{asset " img/logo.png"}}" alt="Logo" sizes="120px" class="logo-image" width="120">
+            </a>
+            {{> "smenu"}}
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0">
+            <nav role="navigation" class="navigation-items">
+                {{> "snav"}}
+            </nav>
+        </div>
+    </div>
+
+    <div class="banner">
+        {{#page}}
+        <div class="content-wrap">
+            <h1 class="title-jumbo cc-light cc-center">{{title}}</h1>
+            <div class="subtitle cc-bigger-light">{{content}}</div>
+            {{!-- <div class="subtitle cc-bigger-light">We
+                collaborate with ambitious founders that seek to lead product &amp;
+                customer-centric companies addressing global challenges. It is important
+                to us that the people we invest in are striving to change our world for
+                the better. <br></div> --}}
+        </div>
+        <div class="full-width-companies-wrap"></div>
+
+        <style type="text/css">
+            .full-width-companies-wrap {
+                background-image: url({{img_url feature_image size='xl'}});
+            }
+
+            @media(max-width: 1000px) {
+                .full-width-companies-wrap {
+                    background-image: url({{img_url feature_image size='l'}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size='l'}}) 1x,
+                        url({{img_url feature_image size='xl'}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size='l'}}) 1x,
+                        url({{img_url feature_image size='xl'}}) 2x);
+                }
+            }
+
+            @media(max-width: 600px) {
+                .full-width-companies-wrap {
+                    background-image: url({{img_url feature_image size='m'}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size='m'}}) 1x,
+                        url({{img_url feature_image size='l'}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size='m'}}) 1x,
+                        url({{img_url feature_image size='l'}}) 2x);
+                }
+            }
+        </style>
+        {{/page}}
+    </div>
+    <div class="portfolio">
+        <div class="content-wrap">
+            <h1 class="heading-3 cc-light">Current investments by&nbsp;Tidal</h1>
+            <div class="w-layout-grid portfolio-grid">
+                <div id="w-node-543393b118f2-edfddff1" class="portfolio-block"><img src="{{asset "
+                        img/cmpny/atlastrend-logo.png"}}" alt="" class="portfolio-logo" width="226">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                    </ul><a href="https://www.atlastrend.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">Atlastrend</h1>
+                        <p class="paragraph portfolio-desc">AtlasTrend
+                            is an active funds manager with thematic funds. Its technology is used
+                            to distribute investments across multiple platforms.</p>
+                    </a>
+                </div>
+                <div id="w-node-5ef44fb7cd8a-edfddff1" class="portfolio-block"><img src="{{asset "
+                        img/cmpny/predicthq-logo.png"}}" sizes="140px" alt="" class="portfolio-logo">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                        <li class="stage-pill">A</li>
+                        <li class="stage-pill">B</li>
+                    </ul>
+                    <div class="div-block-3"></div><a href="https://predicthq.com/" target="_blank"
+                        class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">Predict HQ</h1>
+                        <p class="paragraph portfolio-desc">Predict
+                            HQ&nbsp;is a data platform that intelligently aggregates global events
+                            to &nbsp;help organizations understand how events impact their business.</p>
+                    </a>
+                </div>
+                <div id="w-node-543393b118ec-edfddff1" class="portfolio-block"><img src="{{asset "
+                        img/cmpny/yello-logo.png"}}" sizes="180px" alt="" class="portfolio-logo" width="226">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                        <li class="stage-pill">A</li>
+                    </ul><a href="https://www.driveyello.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">DRIVE&nbsp;YELLO</h1>
+                        <p class="paragraph portfolio-desc">Yello is a last mile logistics platform managing its own and
+                            third-party driver marketplaces.</p>
+                    </a>
+                </div>
+                <div class="portfolio-block"><img src="{{asset " img/cmpny/shippit-logo.png"}}" sizes="180px" alt=""
+                        class="portfolio-logo" width="256">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                        <li class="stage-pill">A</li>
+                    </ul><a href="https://shippit.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">Shippit</h1>
+                        <p class="paragraph portfolio-desc">Shippit
+                            is a logistics orchestration platform enabling selection and management
+                            of carriers for delivery of goods by retailers of all sizes.</p>
+                    </a>
+                </div>
+                <div id="w-node-543393b118fe-edfddff1" class="portfolio-block"><img src="{{asset "
+                        img/cmpny/hone-logo.png"}}" alt="" class="portfolio-logo" width="226">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                    </ul><a href="https://www.honeag.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">HONE</h1>
+                        <p class="paragraph portfolio-desc">Hone
+                            is a machine learning platform that provides instant, in-field chemical
+                            analysis for soil and crop testing in the agriculture industry. </p>
+                    </a>
+                </div>
+                <div id="w-node-543393b11905-edfddff1" class="portfolio-block"><img src="{{asset "
+                        img/cmpny/bonjoro-logo.png"}}" alt="" class="portfolio-logo" width="226">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                    </ul><a href="https://www.bonjoro.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">BONJORO</h1>
+                        <p class="paragraph portfolio-desc">Bonjoro
+                            augments any inbound funnel to attract, acquire, and retain customers
+                            using video based engagement resulting in better LTV.</p>
+                    </a>
+                </div>
+                <div id="w-node-543393b118f8-edfddff1" class="portfolio-block"><img src="{{asset "
+                        img/cmpny/socialsuite-logo.png"}}" alt="" class="portfolio-logo" width="226">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                    </ul><a href="https://socialsuitehq.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">SocialSuite</h1>
+                        <p class="paragraph portfolio-desc">SocialSuite
+                            is an impact investing measurement and reporting platform for funds,
+                            philanthropic foundations and large corporations.</p>
+                    </a>
+                </div>
+                <div class="portfolio-block"><img src="{{asset " img/cmpny/frankie-logo.png"}}" sizes="180px" alt=""
+                        class="portfolio-logo" width="256">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SeeD</li>
+                    </ul><a href="https://frankiefinancial.com/" target="_blank"
+                        class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">Frankie</h1>
+                        <p class="paragraph portfolio-desc">Frankie
+                            connects global ID verification, eKYC, AML and fraud providers to
+                            enable data led decisions and provide a single unified view.</p>
+                    </a>
+                </div>
+                <div class="portfolio-block"><img src="{{asset " img/cmpny/sonder-logo.png"}}" sizes="163.671875px"
+                        alt="" class="portfolio-logo">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">A</li>
+                    </ul><a href="https://sondersafe.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">sonder</h1>
+                        <p class="paragraph portfolio-desc">Sonder
+                            is an on-demand support &amp; assistance service for students &amp;
+                            employees during mobility, working from home, or in self-isolation.</p>
+                    </a>
+                </div>
+                <div class="portfolio-block"><img src="{{asset " img/cmpny/sajari-logo.png"}}" sizes="140px" alt=""
+                        class="portfolio-logo">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">SEED</li>
+                    </ul><a href="https://sajari.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">SAJARI</h1>
+                        <p class="paragraph portfolio-desc">Sajari
+                            delivers smarter search experiences for sites, stores or apps. Its
+                            proprietary engine can produce real-time results while incorporating
+                            user query intent &amp; handle massive search volumes.</p>
+                    </a>
+                </div>
+                <div class="portfolio-block"><img src="{{asset " img/cmpny/securestack-logo.png"}}" alt=""
+                        class="portfolio-logo">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">PRE-SEED</li>
+                    </ul><a href="https://securestack.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">securestack</h1>
+                        <p class="paragraph portfolio-desc">SecureStack
+                            helps engineering and IT&nbsp;teams find, remediate &amp;&nbsp;monitor
+                            security vulnerabilities in their cloud applications no matter what
+                            infrastructure it resides on.</p>
+                    </a>
+                </div>
+                <div class="portfolio-block"><img src="{{asset " img/cmpny/upflowy-logo.png"}}" sizes="140px" alt=""
+                        class="portfolio-logo">
+                    <ul role="list" class="portfolio-stages w-list-unstyled">
+                        <li class="stage-pill">PRE-SEED</li>
+                    </ul><a href="https://upflowy.com/" target="_blank" class="portfolio-overlay w-inline-block">
+                        <h1 class="label portfolio-title">UPFLOWY</h1>
+                        <p class="paragraph portfolio-desc">Upflowy
+                            is a low-code platform that enables marketing teams to personalise
+                            their sign-up flows to maximise conversions using data-backed
+                            approaches. </p>
+                    </a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <h4 class="heading-4 cc-light">Past investments made by&nbsp;Tidal's General Partners</h4>
+            <div class="w-layout-grid past-investments-grid">
+                <a href="https://greencollar.com.au/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/greencollar-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://zerolatencyvr.com/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/zerolatency-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://www.instaclustr.com/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/instaclustr-logo.png"}}" alt=""
+                        class="past-investment-image cc-lighten"></a>
+                <a href="https://www.inferencesolutions.com/" target="_blank"
+                    class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/inference-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://www.societyone.com.au/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/societyone-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://www.wego.com/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/wego-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://cleverlylaundry.com/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/cleverlylaundry-logo.png"}}" alt=""
+                        class="past-investment-image cc-lighten"></a>
+                <a href="https://stackla.com/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/stackla-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://taimer.com/" target="_blank" class="past-investment-block w-inline-block">
+                    <img src="{{asset " img/prtnr/taimer-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://www.growsuper.com/" target="_blank" class="past-investment-block w-inline-block"><img
+                        src="{{asset " img/prtnr/grow-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://www.stotles.com/" target="_blank" class="past-investment-block w-inline-block"><img
+                        src="{{asset " img/prtnr/stotles-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://benojo.com/" target="_blank" class="past-investment-block w-inline-block"><img
+                        src="{{asset " img/prtnr/benojo-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://partpay.co.nz/" target="_blank" class="past-investment-block w-inline-block"><img
+                        src="{{asset " img/prtnr/partpay-logo.png"}}" alt="" class="past-investment-image"></a>
+                <a href="https://actio.com/" target="_blank" class="past-investment-block w-inline-block"><img
+                        src="{{asset " img/prtnr/actio-logo.png"}}" alt="https://actio.com"
+                        class="past-investment-image"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-wrap">
+            <div class="menu-block">
+                <div class="label cc-light">©2021 TIDAL VENTURES</div><a href="/contact" class="w-inline-block">
+                    <div class="label cc-light menu-footer">Contact</div>
+                </a>
+            </div>
+            <div class="social-block"><a href="https://twitter.com/tidalvc" target="_blank" class="w-inline-block"><img
+                        src="{{asset " img/twitter.svg"}}" alt="Twitter" class="twitter-icon"></a><a
+                    href="https://www.linkedin.com/company/tidal-ventures/" target="_blank" class="w-inline-block"><img
+                        src="{{asset " img/linkedIn.svg"}}" alt="LinkedIn" class="linkedin-icon"></a></div>
+        </div>
+    </div>
+
+    {{!-- The big email subscribe modal content --}}
+    {{!-- {{#if @labs.members}}
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to {{@site.title}}!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close-overlay" href="#"></a>
+        <a class="subscribe-close-button" href="#"></a>
+        <div class="subscribe-overlay-content">
+            {{#if @site.logo}}
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{/if}}
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/if}} --}}
+
+    {{!-- jQuery, required for fitvids --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+    {{ghost_foot}}
+
+    {{{block "sscripts"}}}
+
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/team.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+    
+</head>
+
+<body class="{{body_class}}">
+
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+        <div class="navigation-wrap">
+            <a href="/" aria-current="page"
+                class="logo-link w-nav-brand w--current" aria-label="home">
+                <img
+                    src="{{asset "img/logo.png"}}"
+                    alt="Logo" sizes="120px"
+                    class="logo-image" width="120">
+                    </a>
+            {{> "smenu"}}
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0">
+            <nav role="navigation" class="navigation-items" >
+                {{> "snav"}}
+            </nav>
+        </div>
+    </div>
+    <div class="banner">
+        {{#page}}
+        <div class="content-wrap">
+            <h1 class="title-jumbo cc-light cc-center">{{title}}</h1>
+            <div class="subtitle cc-bigger-light">{{content}}</div>
+            {{!-- <p class="subtitle cc-bigger-light">Tidal
+                brings together operator, product and investor experience across a
+                diverse team. We have worked with technology companies of all sizes. We
+                are entrepreneurs who have led large businesses within global
+                game-changers and are well equipped to get into the operational detail.
+                Our globally minded team has experience across in seven different
+                countries with offices in Australia and the United States.</p> --}}
+        </div>
+        <div class="full-width-team-wrap">
+            <div class="team-stats-wrap">
+                <div class="team-stats-columns w-row">
+                    <div class="team-stats-column w-col w-col-3">
+                        <div class="title-jumbo cc-light-accent">35<br></div>
+                        <div class="heading-jumbo-tiny cc-light-accent">Years Experience</div>
+                    </div>
+                    <div class="team-stats-column w-col w-col-3">
+                        <div class="title-jumbo cc-light-accent">30<br></div>
+                        <div class="heading-jumbo-tiny cc-light-accent">Past investments</div>
+                    </div>
+                    <div class="team-stats-column w-col w-col-3">
+                        <div class="title-jumbo cc-light-accent">3<br></div>
+                        <div class="heading-jumbo-tiny cc-light-accent">experienced partners</div>
+                    </div>
+                    <div class="team-stats-column w-col w-col-3">
+                        <div class="title-jumbo cc-light-accent">2<br></div>
+                        <div class="heading-jumbo-tiny cc-light-accent">office locations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style type="text/css">
+            .full-width-team-wrap {
+                background-image: url({{img_url feature_image size='xl'}});
+            }
+    
+            @media(max-width: 1000px) {
+                .full-width-team-wrap {
+                    background-image: url({{img_url feature_image size='l'}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size='l'}}) 1x,
+                        url({{img_url feature_image size='xl'}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size='l'}}) 1x,
+                        url({{img_url feature_image size='xl'}}) 2x);
+                }
+            }
+    
+            @media(max-width: 600px) {
+                .full-width-team-wrap {
+                    background-image: url({{img_url feature_image size='m'}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size='m'}}) 1x,
+                        url({{img_url feature_image size='l'}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size='m'}}) 1x,
+                        url({{img_url feature_image size='l'}}) 2x);
+                }
+            }
+        </style>
+        {{/page}}
+    </div>
+    <div class="team">
+        <div class="content-wrap">
+            <div class="w-layout-grid team-grid">
+                <div id="w-node-189aa567a735-1afddff3" class="team-card">
+                    <div class="team-member"><img
+                            src="{{asset "img/team/Grant.jpeg"}}" class="team-picture">
+                        <div class="multi-handle-block"><a href="https://twitter.com/GrantMcCarthy8" target="_blank"
+                                class="w-inline-block"><img
+                                    src="{{asset "img/twitter-std.svg"}}"
+                                    alt="Twitter" class="twitter-handle-icon"></a><a
+                                href="https://www.linkedin.com/in/grant-mccarthy-027405/" target="_blank"
+                                class="w-inline-block"><img
+                                    src="{{asset "img/linkedin-std.svg"}}"
+                                    alt="LinkedIn" class="linkedin-handle-icon"></a></div>
+                    </div>
+                    <div class="team-profile">
+                        <h4 class="heading-4 cc-name">Grant McCarthy</h4>
+                        <div class="label cc-role">Managing Partner</div>
+                        <p class="paragraph cc-bio">Grant
+                            followed his passion for digital media into his first role at Yahoo in
+                            1999 and stayed through to its investment in Alibaba. He has been
+                            investing at Seed for more than 15 years, in Asia and Australia. He is
+                            trusted by founders to see opportunities during product-market fit,
+                            think out-of-the-box on strategic partnerships, and drive readiness for
+                            institutional capital rounds.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-member"><img
+                            src="{{asset "img/team/Wendell.jpeg"}}"
+                             alt="" class="team-picture">
+                        <div class="multi-handle-block"><a href="https://twitter.com/wendo" target="_blank"
+                                class="w-inline-block"><img
+                                    src="{{asset "img/twitter-std.svg"}}"
+                                    alt="Twitter" class="twitter-handle-icon"></a><a
+                                href="https://www.linkedin.com/in/wendellk/" target="_blank" class="w-inline-block"><img
+                                    src="{{asset "img/linkedin-std.svg"}}"
+                                    alt="LinkedIn" class="linkedin-handle-icon"></a></div>
+                    </div>
+                    <div class="team-profile">
+                        <h4 class="heading-4 cc-name">Wendell Keuneman</h4>
+                        <div class="label cc-role">GENERAL Partner</div>
+                        <p class="paragraph cc-bio">Wendell
+                            has over 20 years of product management and software engineering
+                            experience that spans founding a telecoms apps company through to Head
+                            of Product for Confluence at Atlassian. His experience has proven
+                            invaluable to founders and plays a critical role in his ability to go
+                            deep into product strategy and accelerate paths to growth for portfolio
+                            companies.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-member"><img
+                            src="{{asset "img/team/Andrea.jpeg"}}"
+                            alt="" class="team-picture">
+                        <div class="multi-handle-block"><a href="https://twitter.com/dre_kowalski" target="_blank"
+                                class="w-inline-block"><img
+                                    src="{{asset "img/twitter-std.svg"}}"
+                                    alt="Twitter" class="twitter-handle-icon"></a><a
+                                href="https://www.linkedin.com/in/akowalski/" target="_blank"
+                                class="w-inline-block"><img
+                                    src="{{asset "img/linkedin-std.svg"}}"
+                                    alt="LinkedIn" class="linkedin-handle-icon"></a></div>
+                    </div>
+                    <div class="team-profile">
+                        <h4 class="heading-4 cc-name">Andrea Kowalski</h4>
+                        <div class="label cc-role">GENERAL Partner</div>
+                        <p class="paragraph cc-bio">Andrea
+                            has 14 years of experience in venture capital and tech-focused
+                            investment banking across Europe, Australia and the US. Having launched
+                            two funds in overseas markets herself she's played critical roles
+                            helping &nbsp;portfolio companies expand into the US, supporting initial
+                            set up and bus dev initiatives through to raising the first round of US
+                            capital.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-member"><img
+                            src="{{asset "img/team/Georgie.jpeg"}}"
+                            alt="" class="team-picture">
+                        <div class="multi-handle-block"><a href="https://twitter.com/georgie_turnr" target="_blank"
+                                class="w-inline-block"><img
+                                    src="{{asset "img/twitter-std.svg"}}"
+                                    alt="Twitter" class="twitter-handle-icon"></a><a
+                                href="https://www.linkedin.com/in/georgie-turner-b559242a/" target="_blank"
+                                class="w-inline-block"><img
+                                    src="{{asset "img/linkedin-std.svg"}}"
+                                    alt="LinkedIn" class="linkedin-handle-icon"></a></div>
+                    </div>
+                    <div class="team-profile">
+                        <h4 class="heading-4 cc-name">Georgie Turner</h4>
+                        <div class="label cc-role">principal</div>
+                        <p class="paragraph cc-bio">Georgie
+                            spent 6 years in venture capital and investment banking, and 3 years in
+                            enterprise cloud sales at Rackspace during its acceleration period in
+                            Australia. She works alongside founders on their sales &amp;
+                            go-to-market strategies bringing valuable insights to help optimise
+                            their business and prepare founders for next round fundraising.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-member"><img
+                            src="{{asset "img/team/Murray.jpeg"}}"
+                             alt="" class="team-picture">
+                        <div class="single-handle-block"><a href="https://www.linkedin.com/in/murray-bleach-b525011a/"
+                                target="_blank" class="w-inline-block"><img
+                                    src="{{asset "img/linkedin-std.svg"}}"
+                                    alt="LinkedIn" class="linkedin-handle-icon"></a></div>
+                    </div>
+                    <div class="team-profile">
+                        <h4 class="heading-4 cc-name">Murray Bleach</h4>
+                        <div class="label cc-role">Chair</div>
+                        <p class="paragraph cc-bio">Murray
+                            has over 30 years of investing, banking and fund management experience,
+                            which includes serving as director on a number of high profile boards
+                            and charitable organizations. His wealth of practical experience is
+                            shown in every investment and the values we impart on our portfolio.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-member"><img
+                            src="{{asset "img/team/Craig.jpeg"}}"
+                             alt="" class="team-picture">
+                        <div class="single-handle-block"><a href="https://www.linkedin.com/in/craig-holden-080165a0/"
+                                target="_blank" class="w-inline-block"><img
+                                    src="{{asset "img/linkedin-std.svg"}}"
+                                    alt="LinkedIn" class="linkedin-handle-icon"></a></div>
+                    </div>
+                    <div class="team-profile">
+                        <h4 class="heading-4 cc-name">Craig Holden</h4>
+                        <div class="label cc-role">director of operations</div>
+                        <p class="paragraph cc-bio">Craig
+                            has spent 25 years in a variety of senior finance roles in tech and
+                            investment firms. He is an experienced CFO that brings a rigour flare to
+                            how we manage and govern the fund, being quick to test &amp; deploy new
+                            software products that keep the fund’s operational backbone as
+                            efficient as possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quotes">
+        <div class="content-wrap cc-quote-wrap">
+            <div class="quote-columns w-row">
+                <div class="quote-column w-col w-col-6">
+                    <div class="quote-card">
+                        <div class="pull-quote-block">
+                            <blockquote class="pull-quote">We are constantly drawing on Grant &amp; Wendell's personal
+                                experience bringing products to market.</blockquote>
+                            <div class="label">DR&nbsp;Antony Martin, Hone</div>
+                        </div>
+                        <div class="founder-profile"><img
+                                src="{{asset "img/Antony.png"}}"
+                                alt="" class="founder-picture"></div>
+                    </div>
+                </div>
+                <div class="quote-column w-col w-col-6">
+                    <div class="quote-card">
+                        <div class="pull-quote-block">
+                            <blockquote class="pull-quote">Andrea
+                                leveraged her in-depth knowledge of a complex thematic with the
+                                relationships she built with the team to help position the company for
+                                its US Series B.</blockquote>
+                            <div class="label">Pete Lilley, Instaclustr</div>
+                        </div>
+                        <div class="founder-profile"><img
+                                src="{{asset "img/Pete.png"}}"
+                                alt="" class="founder-picture"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-wrap">
+            <div class="menu-block">
+                <div class="label cc-light">©2021 TIDAL VENTURES</div><a href="/contact"
+                    class="w-inline-block">
+                    <div class="label cc-light menu-footer">Contact</div>
+                </a>
+            </div>
+            <div class="social-block"><a href="https://twitter.com/tidalvc" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/twitter.svg"}}"
+                        alt="Twitter" class="twitter-icon"></a><a
+                    href="https://www.linkedin.com/company/tidal-ventures/" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/linkedIn.svg"}}"
+                        alt="LinkedIn" class="linkedin-icon"></a></div>
+        </div>
+    </div>
+
+    {{!-- The big email subscribe modal content --}}
+    {{!-- {{#if @labs.members}}
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to {{@site.title}}!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close-overlay" href="#"></a>
+        <a class="subscribe-close-button" href="#"></a>
+        <div class="subscribe-overlay-content">
+            {{#if @site.logo}}
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{/if}}
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/if}} --}}
+
+    {{!-- jQuery, required for fitvids --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
+    {{!-- <script src="{{asset " built/casper.js"}}"></script> --}}
+
+    {{!-- Scripts for Members subscription --}}
+    {{!--
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function () {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script> --}}
+
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the
+    closing body tag --}}
+    {{ghost_foot}}
+
+    {{{block "sscripts"}}}
+</body>
+
+</html>

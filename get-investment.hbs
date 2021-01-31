@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/gi.css"}}" />
+    <script src="https://kit.fontawesome.com/610222f2b5.js" crossorigin="anonymous"></script>
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+        <div class="navigation-wrap">
+            <a href="/" aria-current="page" class="logo-link w-nav-brand w--current" aria-label="home">
+                <img src="{{asset "img/logo.png"}}" alt="Logo" sizes="120px" class="logo-image" width="120">
+            </a>
+            {{> "smenu"}}
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0">
+            <nav role="navigation" class="navigation-items" >
+                {{> "snav"}}
+            </nav>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="content-wrap">
+            {{#page}}
+            <h1 class="title-jumbo cc-light cc-center">{{title}}</h1>
+            <div class="subtitle cc-bigger-light">{{content}}</div>
+            {{!-- <div class="subtitle cc-bigger-light">Australian founders need access to a venture fund that focuses purely
+                on the
+                Seed phase. <br>We exist to back the best founders with early capital and a support platform that
+                accelerates a
+                path to hyper-growth.<br></div> --}}
+            {{/page}}                
+        </div>
+    </div>
+    <div class="content-wrap">
+        <div class="about-tidal-columns w-row">
+            <div class="w-col w-col-3">
+                <h3 class="heading-3 no-padding">We Go Deep</h3>
+            </div>
+            <div class="w-col w-col-9">
+                <p class="paragraph">Our
+                    founders are trying to nail down product-market fit, hack together a
+                    scalable path to market and attract an A-Grade team. For this we bring
+                    real-world experience and playbooks to help you face the many challenge
+                    along your journey. <br><br>There is no one way we work with our
+                    founders, as every startup is different. Tidal's diverse team has the
+                    capability to truly help founders and teams navigate the challenges that
+                    come with building early stage companies. </p>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <h1 class="heading-4 cc-light">What does a Tidal Seed investment look like?</h1>
+        <div class="investment-principles w-container">
+            <div data-ix="fade-up-1" class="accordion js-accordion">
+                <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header"><img
+                            src="{{asset "img/gi/alarm.svg"}}"
+                            alt="" class="accordion_item-image">
+                        <h5 class="accordian-title">FounderS that hustle</h5>
+                    </div>
+                    <div data-ix="hide-on-load" class="accordion-body js-accordion-body">
+                        <div class="accordion-body__contents">Our
+                            founders have a unique insight or experience with the problem space
+                            they are trying to solve. They show outstanding technical competence
+                            across product and technology. We like to see a scrappy, data-driven
+                            approach to user acquisition and an ingrained culture of test, iterate
+                            and learn to get to the answer. Our founders understand that 'it takes a
+                            village' to build a business and they have the humility to draw on the
+                            strengths of those around them. They can inspire investors, customers
+                            and employees to unite around their vision and they show grit when they
+                            need to ride the hard times. They are decisive, when they need to make
+                            pragmatic decision and have a 'do what it takes' attitude to getting
+                            things done.</div>
+                    </div>
+                </div>
+                <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header"><img
+                            src="{{asset "img/gi/leaf.svg"}}"
+                            alt="" class="accordion_item-image">
+                        <h5 class="accordian-title">The seed phase</h5>
+                    </div>
+                    <div data-ix="hide-on-load" class="accordion-body js-accordion-body">
+                        <div class="accordion-body__contents">We
+                            invest during the Seed 'phase'. Usually this means there is an initial
+                            product in market and the business is generating revenue or user growth
+                            within its target customer segment. During this phase, the founder may
+                            seek capital to further develop their product, test a range of user
+                            acquisition methods or hire a gun growth expert. Our investment sizes
+                            are typically A$500k to $750k depending on the maturity of your product
+                            and we have the ability to lead or follow in your first Seed round.
+                            Because Seed is a phase, sometimes it might take longer than originally
+                            thought to hit those proof points for your Series A, in which case we
+                            may contribute another $500k-$750k as an extension round to help you
+                            reach those goals.</div>
+                    </div>
+                </div>
+                <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header"><img
+                            src="{{asset "img/gi/wind.svg"}}"
+                            alt="" class="accordion_item-image">
+                        <h5 class="accordian-title">Markets with tailwinds</h5>
+                    </div>
+                    <div data-ix="hide-on-load" class="accordion-body js-accordion-body">
+                        <div class="accordion-body__contents">Not
+                            all markets are created equal. Some are more ripe for disruption than
+                            others, depending on where the market is up to with its adoption of
+                            technology and what the tailwinds are that are changing the flows of
+                            value creation in that industry. We look for a really clear problem
+                            space that needs to be solved for, or a market expansion opportunity
+                            that no one has though of yet. We are industry-agnostic and some of the
+                            verticals we have invested behind that demonstrate strong tailwinds
+                            include logistics, e-commerce, agriculture, workflow productivity and
+                            finance.</div>
+                    </div>
+                </div>
+                <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header"><img
+                            src="{{asset "img/gi/rocket.svg"}}"
+                            alt="" class="accordion_item-image">
+                        <h5 class="accordian-title">COMPELLING Business Model</h5>
+                    </div>
+                    <div data-ix="hide-on-load" class="accordion-body js-accordion-body">
+                        <div class="accordion-body__contents">We
+                            look for B2B or B2B2C models, and business types include
+                            Software-as-a-Service, Marketplace/Network and consumption-based models
+                            like API businesses. We believe the best way to create shareholder value
+                            is to nail down a low-cost acquisition method during the Seed phase and
+                            our founders understand that there are ways to acquire customers and
+                            show real product value without having to hire sales staff.</div>
+                    </div>
+                </div>
+                <div class="accordion__item js-accordion-item">
+                    <div class="accordion-header js-accordion-header"><img
+                            src="{{asset "img/gi/magic-wand.svg"}}"
+                            alt="" class="accordion_item-image">
+                        <h5 class="accordian-title">Products that change the game</h5>
+                    </div>
+                    <div data-ix="hide-on-load" class="accordion-body js-accordion-body">
+                        <div class="accordion-body__contents">For
+                            a product to be truly disruptive, it needs to change the game. Maybe
+                            this means it has the ability to really increase revenue for the
+                            customer, or provide a significant competitive advantage. It could mean
+                            the product is mission-critical, and so sticky that the customer can't
+                            live without it. It almost always means that the product user is in love
+                            with the product and they can really tie their use of that product back
+                            to meaningful value creation for them personally, or for their
+                            business. At Tidal we want to back the products that aren't just
+                            incremental, they are changing the game entirely.</div>
+                    </div>
+                </div>
+            </div>
+        </div><a href="https://forms.gle/dqkCDpnyUL49UC6FA" target="_blank"
+            class="button w-button">SUBMIT&nbsp;PITCH</a>
+    </div>
+    <div class="footer">
+        <div class="footer-wrap">
+            <div class="menu-block">
+                <div class="label cc-light">©2021 TIDAL VENTURES</div><a href="/contact" class="w-inline-block">
+                    <div class="label cc-light menu-footer">Contact</div>
+                </a>
+            </div>
+            <div class="social-block"><a href="https://twitter.com/tidalvc" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/twitter.svg"}}" alt="Twitter" class="twitter-icon"></a><a
+                    href="https://www.linkedin.com/company/tidal-ventures/" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/linkedIn.svg"}}" alt="LinkedIn" class="linkedin-icon"></a></div>
+        </div>
+    </div>
+
+    {{!-- The big email subscribe modal content --}}
+    {{!-- {{#if @labs.members}}
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to {{@site.title}}!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close-overlay" href="#"></a>
+        <a class="subscribe-close-button" href="#"></a>
+        <div class="subscribe-overlay-content">
+            {{#if @site.logo}}
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{/if}}
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/if}} --}}
+
+    {{!-- jQuery, required for fitvids --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
+    {{!--
+    <script src="{{asset " built/casper.js"}}"></script> --}}
+
+    {{!-- Scripts for Members subscription --}}
+    {{!--
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function () {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script> --}}
+
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the
+    closing body tag --}}
+    {{ghost_foot}}
+    
+    <script>
+        var accordion = (function () {
+
+            var $accordion = $('.js-accordion');
+            var $accordion_header = $accordion.find('.js-accordion-header');
+            var $accordion_item = $('.js-accordion-item');
+
+            // default settings 
+            var settings = {
+                // animation speed
+                speed: 400,
+
+                // close all other accordion items if true
+                oneOpen: true,
+            };
+
+            return {
+                // pass configurable object literal
+                init: function ($settings) {
+                    $accordion_header.on('click', function () {
+                        accordion.toggle($(this));
+                    });
+
+                    $.extend(settings, $settings);
+
+                    // ensure only one accordion is active if oneOpen is true
+                    if (settings.oneOpen && $('.js-accordion-item.active').length > 1) {
+                        $('.js-accordion-item.active:not(:first)').removeClass('active');
+                    }
+
+                    // reveal the active accordion bodies
+                    $('.js-accordion-item.active').find('> .js-accordion-body').show();
+                },
+                toggle: function ($this) {
+
+                    if (settings.oneOpen && $this[0] != $this.closest('.js-accordion').find('> .js-accordion-item.active > .js-accordion-header')[0]) {
+                        $this.closest('.js-accordion')
+                            .find('> .js-accordion-item')
+                            .removeClass('active')
+                            .find('.js-accordion-body')
+                            .slideUp()
+                    }
+
+                    // show/hide the clicked accordion item
+                    $this.closest('.js-accordion-item').toggleClass('active');
+                    $this.next().stop().slideToggle(settings.speed);
+                }
+            }
+        })();
+
+        $(document).ready(function () {
+            accordion.init({ speed: 300, oneOpen: true });
+        });
+    </script>
+
+    {{{block "sscripts"}}}
+</body>
+
+</html>

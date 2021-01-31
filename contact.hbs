@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/static.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key={{> "gmapkey"}}&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+</head>
+
+<body class="{{body_class}}">
+
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+        <div class="navigation-wrap">
+            <a href="/" aria-current="page"
+                class="logo-link w-nav-brand w--current" aria-label="home">
+                <img
+                    src="{{asset "img/logo.png"}}"
+                    alt="Logo" sizes="120px"
+                    class="logo-image" width="120">
+                    
+                    </a>
+            {{> "smenu"}}
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0">
+            <nav role="navigation" class="navigation-items" >
+               {{> "snav"}}
+            </nav>
+        </div>
+    </div>
+    <div class="location">
+        <div class="map-gray" style="overflow: hidden;">
+            <div id="map"></div>
+        </div>
+        {{#page}}
+            {{content}}
+        {{/page}}
+        {{!-- <div class="map-legend">
+            <div class="map-info-block">
+                <div class="label cc-map">Sydney office</div>
+                <div class="paragraph-light">Level 19, 88 Phillip Street, <br>Sydney, NSW 2000 </div>
+            </div>
+            <div class="map-info-block">
+                <div class="label cc-map">New York office</div>
+                <div class="paragraph-light">6 St. John's Lane,<br>New York, NY 10013</div>
+            </div>
+        </div> --}}
+    </div>
+    <div class="footer">
+        <div class="footer-wrap">
+            <div class="menu-block">
+                <div class="label cc-light">©2021 TIDAL VENTURES</div><a href="/contact"
+                    class="w-inline-block">
+                    <div class="label cc-light menu-footer">Contact</div>
+                </a>
+            </div>
+            <div class="social-block"><a href="https://twitter.com/tidalvc" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/twitter.svg"}}"
+                        alt="Twitter" class="twitter-icon"></a><a
+                    href="https://www.linkedin.com/company/tidal-ventures/" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/linkedIn.svg"}}"
+                        alt="LinkedIn" class="linkedin-icon"></a></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru-33.8647532,151.2119745
+        const uluru = { lat: -33.8647532, lng: 151.2119745 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          title:"Sydney Office"
+        });
+      }
+    </script>
+    
+    {{ghost_foot}}
+
+    {{{block "sscripts"}}}
+</body>
+
+</html>

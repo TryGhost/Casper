@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/static.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+        <div class="navigation-wrap">
+            <a href="/" aria-current="page" class="logo-link w-nav-brand w--current" aria-label="home">
+                <img src="{{asset "img/logo.png"}}" alt="Logo" sizes="120px" class="logo-image" width="120">
+            </a>
+            {{> "smenu"}}
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0">
+            <nav role="navigation" class="navigation-items" >
+                {{> "snav"}}
+            </nav>
+        </div>
+    </div>
+    <div class="hero">
+        {{#page}}
+        <style type="text/css">
+            @media(max-width: 600px) {
+                .hero {
+                    background-attachment: unset;
+                }
+            }
+        </style> 
+        {{!-- <style type="text/css">
+            .hero {
+                background-image: url({{img_url feature_image size='xl'}});
+            }
+    
+            @media(max-width: 1000px) {
+                .hero {
+                    background-image: url({{img_url feature_image size='l'}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size='l'}}) 1x,
+                        url({{img_url feature_image size='xl'}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size='l'}}) 1x,
+                        url({{img_url feature_image size='xl'}}) 2x);
+                }
+            }
+    
+            @media(max-width: 600px) {
+                .hero {
+                    background-image: url({{img_url feature_image size='m'}});
+                    background-image: -webkit-image-set(url({{img_url feature_image size='m'}}) 1x,
+                        url({{img_url feature_image size='l'}}) 2x);
+                    background-image: image-set(url({{img_url feature_image size='m'}}) 1x,
+                        url({{img_url feature_image size='l'}}) 2x);
+                }
+            }
+        </style> --}}
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                {{content}}
+            </div>
+        </div>
+        {{/page}}
+    </div>
+    <div class="vision">
+        <div class="content-wrap">
+            <div class="vision-columns w-row">
+                <div class="column-6 w-col w-col-6">
+                    <div class="vision-extender-copy"><img
+                            src="{{asset "img/our-vision.jpeg"}}"
+                            alt="Lighthouse" 
+                            class="image" width="1450"></div>
+                </div>
+                <div class="column-7 w-col w-col-6">
+                    <div class="vision-content"><img
+                            src="{{asset "img/our-vision.jpeg"}}"
+                            alt="Lighthouse" 
+                            class="image-mini" width="1450">
+                        <h1 class="heading">Our Vision</h1>
+                        <div class="paragraph">We
+                            believe to transform the industries of today we need to fund inspiring
+                            founders that are building the products of tomorrow that generate a
+                            positive impact on our world. Brilliance doesn't have a stereotype. We
+                            strive to work with experienced founders from all walks of life. We
+                            support our founders, even before we invest. We are product builders
+                            with a growth mindset.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="focus">
+        <div class="content-wrap">
+            <h1 class="heading cc-light cc-center">Our Focus</h1>
+            <div class="focus-columns w-row">
+                <div class="focus-area-column w-col w-col-4">
+                    <div class="heading-jumbo-tiny cc-light">WE&nbsp;INVEST&nbsp;EARLY</div>
+                    <p class="paragraph cc-light cc-center">We
+                        are often the first institutional investor or co-lead with
+                        &nbsp;domestic &amp; overseas funds. Our conviction and capacity permits
+                        us to follow-on from seed to through all phases of growth.</p>
+                </div>
+                <div class="focus-area-column w-col w-col-4">
+                    <div class="heading-jumbo-tiny cc-light">WE LEAD &amp; CO-INVEST<br></div>
+                    <p class="paragraph cc-light cc-center">Institutional
+                        Seed remains under-served in Australia. We fill the void between Angel
+                        and Series A, investing $250k to $1.5m out of our Seed &nbsp;Fund
+                        (second vintage).</p>
+                </div>
+                <div class="focus-area-column w-col w-col-4">
+                    <div class="heading-jumbo-tiny cc-light">WE INVEST TO&nbsp;SUSTAIN<br></div>
+                    <p class="paragraph cc-light cc-center">We
+                        develop strong conviction on trends and themes that help us engage
+                        founders beyond advisory to assist operationally. We value sustainable
+                        advantage and sustainable outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="difference">
+        <div class="content-wrap">
+            <div class="about-tidal-columns w-row">
+                <div class="w-col w-col-3">
+                    <h3 class="heading-3 no-padding">The Tidal Difference</h3>
+                </div>
+                <div class="w-col w-col-9">
+                    <p class="paragraph">Tidal's
+                        team has vast experience starting, growing companies or operating
+                        billion dollar business units. We partner with founders to bring all our
+                        experience to bear across our portfolio to help each company achieve
+                        successful growth outcomes from early stage to growth at scale.</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="whatwelookfor w-row">
+                <div class="diff-reason-column w-col w-col-4">
+                    <img
+                        src="{{asset "img/experts.png"}}"
+                        alt="" class="image">
+                    <h3 class="heading-3 cc-center">Experts</h3>
+                    <div class="label cc-center">Expand Capability</div>
+                    <p class="paragraph cc-center">Tidal's
+                        Expert Network (#ten) spans multiple disciplines and geographies. We
+                        have a breadth and depth of experts by function &amp; capability who are
+                        eager to engage as mentors, consultants, board advisors &amp; interim
+                        execs.</p>
+                </div>
+                <div class="diff-reason-column w-col w-col-4"><img
+                        src="{{asset "img/product.png"}}"
+                        alt="" class="image">
+                    <h3 class="heading-3 cc-center">Product</h3>
+                    <div class="label cc-center">Led Growth</div>
+                    <p class="paragraph cc-center">Tidal
+                        has deep product expertise that we draw on to help founders build
+                        amazing products, amazing product teams, and establish clear market fit
+                        with growth acceleration strategies that maximise capital efficiency.</p>
+                </div>
+                <div class="diff-reason-column w-col w-col-4"><img
+                        src="{{asset "img/velocity.png"}}"
+                        alt="" class="image">
+                    <h3 class="heading-3 cc-center">Velocity</h3>
+                    <div class="label cc-center">Through To Next Round</div>
+                    <p class="paragraph cc-center">We
+                        help founders build sprints from one company stage to the next,
+                        designing a pathway to next institutional funding. We help identify key
+                        milestones, support the pitch and leverage our presence on the ground in
+                        the US.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial">
+        <div class="testimonial-columns w-row">
+            <div class="testimonial-column w-col w-col-6 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
+                <div class="testimonial-quote-block">
+                    <blockquote class="block-quote">Grant
+                        and the Tidal team have broken the mould. Over the past 2 years they
+                        have been instrumental to shaping our product direction.</blockquote>
+                    <div class="heading-jumbo-tiny">Rob Hango-Zada, Shippit</div>
+                </div>
+            </div>
+            <div class="testimonial-column w-col w-col-6 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
+                <div class="testimonial-picture-block"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cta">
+        <div class="content-wrap">
+            <h1 class="heading cc-center">Our Portfolio</h1>
+            <p class="paragraph cc-center">Our
+                portfolio of companies helps foster a healthy and growing Australian
+                startup ecosystem. We sweat the details alongside founders to develop
+                capabilities from inception through to sequencing stages of growth.</p><a
+                href="/companies" class="button w-button">LEARN&nbsp;MORE</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-wrap">
+            <div class="menu-block">
+                <div class="label cc-light">©2021 TIDAL VENTURES</div><a href="/contact"
+                    class="w-inline-block">
+                    <div class="label cc-light menu-footer">Contact</div>
+                </a>
+            </div>
+            <div class="social-block"><a href="https://twitter.com/tidalvc" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/twitter.svg"}}"
+                        alt="Twitter" class="twitter-icon"></a><a
+                    href="https://www.linkedin.com/company/tidal-ventures/" target="_blank" class="w-inline-block"><img
+                        src="{{asset "img/linkedIn.svg"}}"
+                        alt="LinkedIn" class="linkedin-icon"></a></div>
+        </div>
+    </div>
+
+    {{!-- The big email subscribe modal content --}}
+    {{!-- {{#if @labs.members}}
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to {{@site.title}}!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close-overlay" href="#"></a>
+        <a class="subscribe-close-button" href="#"></a>
+        <div class="subscribe-overlay-content">
+            {{#if @site.logo}}
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{/if}}
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/if}} --}}
+
+    {{!-- jQuery, required for fitvids --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the
+    closing body tag --}}
+    {{ghost_foot}}
+
+    {{{block "sscripts"}}}
+
+</body>
+
+</html>

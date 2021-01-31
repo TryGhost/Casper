@@ -1,0 +1,18 @@
+<div class="menu">
+    <nav role="navigation" class="navigation-items w-nav-menu">
+        {{> "snav"}}
+    </nav>
+    <div class="menu-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button"
+        tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+        <img src="{{asset " img/waves.svg"}}" alt="" class="menu-icon" width="22">
+    </div>
+</div>
+{{#contentFor "sscripts"}}
+<script>
+    $(document).ready(function () {
+        $('.menu-icon').click(function () {
+            $('.w-nav-overlay').slideToggle();
+        });
+    });
+</script>
+{{/contentFor}}
