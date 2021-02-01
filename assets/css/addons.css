@@ -330,6 +330,11 @@ h6 {
         white-space: normal;
         padding: 0 5px;
     }
+    .menu-open:checked ~ .mobile-menu .nav {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
     .menu-open:checked ~ .mobile-menu .menu-close__label {
         display: block;
         margin: 35px 0;
