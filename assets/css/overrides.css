@@ -96,7 +96,7 @@ p {
 /* ---------------------------------------------------------- */
 
 .fixed-nav-active {
-    position: unset !important;
+    position: initial !important;
 }
 .site-nav {
     border-bottom: 1px solid gray !important;
@@ -182,7 +182,7 @@ p {
 
 @media (max-width: 1170px) {
     .post-full-comments {
-        padding-right: unset;
+        padding-right: initial;
     }
 }
 /* 7.4. Related posts

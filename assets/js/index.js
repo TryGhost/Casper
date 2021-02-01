@@ -3,6 +3,7 @@ import "./lib/button-hashtag-toggle";
 import "./lib/gallery-card";
 import "./lib/infinite-scroll";
 import "./lib/jquery.fitvids";
+import "./lib/mobile-menu-hider";
 import "./lib/utils";
 import "./lib/preact";
 import "./lib/smp-search";

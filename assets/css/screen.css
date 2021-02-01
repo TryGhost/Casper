@@ -258,7 +258,7 @@ body {
     .site-archive-header .site-header-content {
         flex-direction: column;
         align-items: center;
-        min-height: unset;
+        min-height: initial;
     }
 
     .site-archive-header .site-title {
