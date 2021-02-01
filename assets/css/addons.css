@@ -395,6 +395,9 @@ h6 {
     .site-home-header .site-nav-left-wrapper {
         position: initial !important;
     }
+    .site-nav-left {
+        overflow-y: auto !important;
+    }
     .mobile-menu {
         display: block !important;
         position: absolute !important;
