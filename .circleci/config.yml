@@ -12,10 +12,11 @@ jobs:
       - run: npm install
       # Test that the theme builds
       - run: yarn test
+      # Store in a way we can reach later
       - persist_to_workspace:
-        root: dist
-        paths:
-          - "*.zip"
+          root: dist
+          paths:
+            - "*.zip"
 
 # Define the workflows to run
 workflows:
