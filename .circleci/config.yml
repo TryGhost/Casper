@@ -1,0 +1,21 @@
+version: 2
+  # Define the jobs available
+  jobs:
+    build:
+      docker:
+        - image: circleci/node:10.18
+      working_directory: ~/repo
+      steps:
+        # Fetch the code from Git
+        - checkout
+        # Try the standard install for a ghost theme
+        - run: npm install
+        # Test that the theme builds
+        - run: yarn test
+
+  # Define the workflows to run
+  workflows:
+    version: 2
+    build_and_deploy:
+      jobs:
+        - build
