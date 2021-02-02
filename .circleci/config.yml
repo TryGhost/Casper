@@ -12,6 +12,8 @@ jobs:
       - run: npm install
       # Test that the theme builds
       - run: yarn test
+      # Build the package
+      - run: yarn zip
       # Store in a way we can reach later
       - persist_to_workspace:
           root: dist
