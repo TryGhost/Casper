@@ -23,7 +23,6 @@
 <body class="{{body_class}}">
 
     <div class="site-wrapper">
-
         {{> "sprite-icons"}}
         {{> button-go-top}}
 
@@ -44,6 +43,13 @@
             </div>
         </footer>
 
+    </div>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-wrapper">
+        {{> "site-nav"}}
+        </div>
+        <a class="mobile-menu-close-overlay" href="#" />
     </div>
 
     {{!-- Search modal --}}
