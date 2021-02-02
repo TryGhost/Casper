@@ -22,7 +22,6 @@
 
     function initMobileMenuListeners() {
         function initMobileMenuButtons() {
-            console.log("buttons inited");
             const mobileMenuOpenButtons = document.querySelectorAll(
                 MOBILE_MENU_OPEN
             );
@@ -126,7 +125,6 @@
     }
 
     function handleDocumentReady(evt) {
-        console.log(evt.target.readyState);
         if (evt && evt.target && evt.target.readyState === "interactive") {
             initMobileMenuListeners();
         }
