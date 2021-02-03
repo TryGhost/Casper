@@ -20,36 +20,15 @@ into the {body} of the default.hbs template --}}
     </div>
 </header>
 
-{{#page}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
 
-  <div class="inner">
+    {{#page}}
+
+    <div class="inner">
 
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
-            <header class="post-full-header">
-                <h1 class="post-full-title">{{title}}</h1>
-            </header>
-
-            {{#if feature_image}}
-            <figure class="post-full-image">
-                {{!-- This is a responsive image, it loads different sizes depending on device
-                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(max-width: 800px) 400px,
-                            (max-width: 1170px) 1170px,
-                            2000px"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{title}}"
-                />
-            </figure>
-            {{/if}}
 
             <section class="post-full-content">
                 <div class="post-content">
@@ -60,6 +39,7 @@ into the {body} of the default.hbs template --}}
         </article>
 
     </div>
+    {{/page}}
 
 
     <div class="inner posts">
@@ -76,7 +56,6 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 
-{{/page}}
 
 {{> site-header}}
 
