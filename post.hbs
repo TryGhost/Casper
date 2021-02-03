@@ -50,11 +50,11 @@ into the {body} of the default.hbs template --}}
                                         <div class="bio">
                                             <h2>{{name}}</h2>
                                             <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                            <p><a href="{{url}}">Mehr Beiträge</a> von {{name}}.</p>
                                         </div>
                                         {{else}}
                                         <h2>{{name}}</h2>
-                                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                                        <p>Lese <a href="{{url}}">mehr Beiträge</a> von diesem Autor.</p>
                                         {{/if}}
                                     </div>
                                 </div>
@@ -124,11 +124,12 @@ into the {body} of the default.hbs template --}}
                 };
                 (function() {
                 var d = document, s = d.createElement('script');
-                s.src = 'https://www-matthias-schmid-de.disqus.com/embed.js';
+                s.src = 'https://speisekammer.disqus.com/embed.js';
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
                 })();
                 </script>
+                <noscript>Bitte aktiviere JavaScript um die <a href="https://disqus.com/?ref_noscript">Kommentare von Disqus zu sehen.</a></noscript>
             </section>
 
 
