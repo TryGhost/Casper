@@ -40,12 +40,29 @@ into the {body} of the default.hbs template --}}
 
         {{/page}}
 
-        {{#get "posts"  limit="3" as |posts|}}
-        {{#if posts}}
+         {{#get "posts" limit="all" filter="tag:usecase,featured:true" as |usecases|}}
+        {{#if usecases}}
+
+            <div class="post-feed">
+                <h1>Anwendungsbereiche</h1>
+                {{#foreach usecases visibility="all"}}
+
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+
+                {{/foreach}}
+            </div>
+
+        {{/if}}
+        {{/get}}
+
+
+        {{#get "posts" limit="3" filter="featured:true" as |latestposts|}}
+        {{#if latestposts}}
 
             <div class="post-feed">
                 <h1>Neues aus unserem Blog</h1>
-                {{#foreach posts visibility="all"}}
+                {{#foreach latestposts visibility="all"}}
 
                     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card"}}
