@@ -14,6 +14,14 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+    {{#if @site.accent_color}}
+        <style>
+            :root {
+                --brand: {{@site.accent_color}};
+            }
+        </style>
+    {{/if}}
+
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 

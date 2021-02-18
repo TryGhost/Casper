@@ -654,7 +654,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-header {
-    margin: 15px 0 0;
+    margin: 20px 0 0;
 }
 
 .post-feed .no-image .post-card-content-link {
@@ -667,8 +667,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-primary-tag {
     margin: 0 0 0.2em;
-    color: var(--blue);
-    font-size: 1.2rem;
+    color: var(--brand);
+    font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.2px;
     text-transform: uppercase;
@@ -953,6 +953,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     text-transform: uppercase;
 }
 
+.post-full-tags a {
+    color: var(--brand);
+}
+
 .post-full-meta-date {
     color: var(--midgrey);
     font-size: 1.2rem;
@@ -1017,7 +1021,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 170px 6vw;
+    padding: 0 170px 3vw;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
@@ -1090,9 +1094,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: var(--darkgrey);
+    color: var(--brand);
     word-break: break-word;
-    box-shadow: var(--darkgrey) 0 -1px 0 inset;
+    box-shadow: var(--brand) 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 }
 
@@ -1168,8 +1172,8 @@ Usage (In Ghost editor):
 
 .post-full-content blockquote {
     margin: 0 0 1.5em;
-    padding: 0 1.5em;
-    border-left: color-mod(var(--blue)) 3px solid;
+    padding: 0 1em;
+    border-left: var(--brand) 4px solid;
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
@@ -1693,17 +1697,22 @@ Usage (In Ghost editor):
 .subscribe-form {
     margin: 1.5em 0;
     padding: 6.5vw 7vw 8vw;
-    border: color-mod(var(--lightgrey) l(+10%)) 1px solid;
     text-align: center;
-    background: linear-gradient(color-mod(var(--whitegrey) l(+6%)), color-mod(var(--whitegrey) l(+4%)));
-    border-radius: 3px;
+    background-color: #f4f8fb;
+}
+
+.post-full .subscribe-form {
+    max-width: 700px;
+    margin: 0 auto 1.5em;
+    padding: 4vw 7vw 5vw;
+    border-top: 4px solid var(--brand);
 }
 
 .subscribe-form-title {
     margin: 0 0 3px 0;
     padding: 0;
     color: var(--darkgrey);
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     line-height: 1;
     font-weight: 600;
 }
@@ -1735,7 +1744,7 @@ Usage (In Ghost editor):
     width: 100%;
     border: color-mod(var(--lightgrey) l(+7%)) 1px solid;
     color: var(--midgrey);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1em;
     font-weight: normal;
     user-select: text;
@@ -1762,12 +1771,7 @@ Usage (In Ghost editor):
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color-mod(var(--blue) whiteness(+7%)),
-    color-mod(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color-mod(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color-mod(var(--blue) lightness(-4%) saturation(-10%))
-    );
+    background: color-mod(var(--darkgrey));
     border-radius: 5px;
 
     -webkit-font-smoothing: subpixel-antialiased;
