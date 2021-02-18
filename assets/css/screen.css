@@ -1761,11 +1761,6 @@ Usage (In Ghost editor):
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.subscribe-form button:active,
-.subscribe-form button:focus {
-    background: color-mod(var(--blue) lightness(-9%) saturation(-10%));
-}
-
 .subscribe-form .button-loader,
 .subscribe-form .message-success,
 .subscribe-form .message-error {
@@ -2787,11 +2782,6 @@ Usage (In Ghost editor):
     border-radius: 8px;
 
     -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.subscribe-overlay button:active,
-.subscribe-overlay button:focus {
-    background: color-mod(var(--blue) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-overlay .loading .button-loader {
