@@ -652,7 +652,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-primary-tag {
     margin: 0 0 0.2em;
     color: var(--brand);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
     text-transform: uppercase;
