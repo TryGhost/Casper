@@ -1157,7 +1157,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1em;
-    border-left: var(--brand) 4px solid;
+    border-left: var(--lightgrey) 4px solid;
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
