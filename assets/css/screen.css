@@ -2756,7 +2756,7 @@ Usage (In Ghost editor):
     width: 100%;
     border: none;
     color: var(--midgrey);
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1em;
     font-weight: normal;
     letter-spacing: 0.5px;
@@ -2783,12 +2783,7 @@ Usage (In Ghost editor):
     line-height: 38px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color-mod(var(--blue) whiteness(+7%)),
-    color-mod(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color-mod(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color-mod(var(--blue) lightness(-4%) saturation(-10%))
-    );
+    background: var(--brand);
     border-radius: 8px;
 
     -webkit-font-smoothing: subpixel-antialiased;
