@@ -676,7 +676,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt {
     max-width: 56em;
-    color: var(--midgrey);
+    color: color-mod(var(--midgrey) l(-8%));
     font-family: Georgia, serif;
 }
 
@@ -973,7 +973,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-custom-excerpt {
     margin: 20px 0 0;
-    color: var(--midgrey);
+    color: color-mod(var(--midgrey) l(-8%));
     font-family: Georgia, serif;
     font-size: 2.3rem;
     line-height: 1.4em;
