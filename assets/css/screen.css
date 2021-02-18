@@ -1689,7 +1689,7 @@ Usage (In Ghost editor):
     max-width: 700px;
     margin: 0 auto 1.5em;
     padding: 4vw 7vw 5vw;
-    border-top: 4px solid var(--brand);
+    border-top: 4px solid var(--darkgrey);
 }
 
 .subscribe-form-title {
