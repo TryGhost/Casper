@@ -1085,9 +1085,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
     text-decoration: none;
-    box-shadow: var(--blue) 0 -1px 0 inset;
 }
 
 .post-full-content strong,
