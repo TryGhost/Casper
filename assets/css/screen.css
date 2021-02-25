@@ -2861,229 +2861,229 @@ Usage (In Ghost editor):
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
-    html:not(.no-dark) body {
+    html.dark-mode body {
         color: rgba(255, 255, 255, 0.75);
         background: var(--darkmode);
     }
 
-    html:not(.no-dark) img {
+    html.dark-mode img {
         opacity: 0.9;
     }
 
-    html:not(.no-dark) .site-header-background:before {
+    html.dark-mode .site-header-background:before {
         background: rgba(0,0,0,0.6);
     }
 
-    html:not(.no-dark) .post-feed {
+    html.dark-mode .post-feed {
         background: var(--darkmode);
     }
 
-    html:not(.no-dark) .post-card,
-    html:not(.no-dark) .post-card:hover {
+    html.dark-mode .post-card,
+    html.dark-mode .post-card:hover {
         border-bottom-color: color-mod(var(--darkmode) l(+8%));
     }
 
-    html:not(.no-dark) .author-profile-image {
+    html.dark-mode .author-profile-image {
         background: var(--darkmode);
     }
 
-    html:not(.no-dark) .post-card-byline-content a {
+    html.dark-mode .post-card-byline-content a {
         color: rgba(255, 255, 255, 0.75);
     }
 
-    html:not(.no-dark) .post-card-byline-content a:hover {
+    html.dark-mode .post-card-byline-content a:hover {
         color: #fff;
     }
 
-    html:not(.no-dark) .post-card-image {
+    html.dark-mode .post-card-image {
         background: var(--darkmode);
     }
 
-    html:not(.no-dark) .post-card-title {
+    html.dark-mode .post-card-title {
         color: rgba(255, 255, 255, 0.85);
     }
 
-    html:not(.no-dark) .post-card-excerpt {
+    html.dark-mode .post-card-excerpt {
         color: color-mod(var(--midgrey) l(+10%));
     }
 
-    html:not(.no-dark) .author-avatar,
-    html:not(.no-dark) .static-avatar {
+    html.dark-mode .author-avatar,
+    html.dark-mode .static-avatar {
         border-color: color-mod(var(--darkgrey) l(+2%));
     }
 
-    html:not(.no-dark) .site-main,
-    html:not(.no-dark) .post-template .site-main,
-    html:not(.no-dark) .page-template .site-main {
+    html.dark-mode .site-main,
+    html.dark-mode .post-template .site-main,
+    html.dark-mode .page-template .site-main {
         background: var(--darkmode);
     }
 
-    html:not(.no-dark) .post-full-content {
+    html.dark-mode .post-full-content {
         background: var(--darkmode);
     }
 
-    html:not(.no-dark) .post-full-title {
+    html.dark-mode .post-full-title {
         color: rgba(255, 255, 255, 0.9);
     }
 
-    html:not(.no-dark) .post-full-custom-excerpt {
+    html.dark-mode .post-full-custom-excerpt {
         color: color-mod(var(--midgrey) l(+10%));
     }
 
-    html:not(.no-dark) .post-full-image {
+    html.dark-mode .post-full-image {
         background-color: color-mod(var(--darkmode) l(+8%));
     }
 
-    html:not(.no-dark) .post-full-byline {
+    html.dark-mode .post-full-byline {
         border-top-color: color-mod(var(--darkmode) l(+15%));
     }
 
-    html:not(.no-dark) .post-full-byline-meta h4 a {
+    html.dark-mode .post-full-byline-meta h4 a {
         color: rgba(255, 255, 255, 0.75);
     }
 
-    html:not(.no-dark) .post-full-byline-meta h4 a:hover {
+    html.dark-mode .post-full-byline-meta h4 a:hover {
         color: #fff;
     }
 
-    html:not(.no-dark) .author-list-item .author-card {
+    html.dark-mode .author-list-item .author-card {
         background: color-mod(var(--darkmode) l(+4%));
         box-shadow: 0 12px 26px rgba(0,0,0,0.4);
     }
 
-    html:not(.no-dark) .author-list-item .author-card:before {
+    html.dark-mode .author-list-item .author-card:before {
         border-top-color: color-mod(var(--darkmode) l(+4%));
     }
 
-    html:not(.no-dark) .no-image .author-social-link a {
+    html.dark-mode .no-image .author-social-link a {
         color: rgba(255, 255, 255, 0.75);
     }
 
-    html:not(.no-dark) .post-full-content h1,
-    html:not(.no-dark) .post-full-content h2,
-    html:not(.no-dark) .post-full-content h3,
-    html:not(.no-dark) .post-full-content h4,
-    html:not(.no-dark) .post-full-content h6 {
+    html.dark-mode .post-full-content h1,
+    html.dark-mode .post-full-content h2,
+    html.dark-mode .post-full-content h3,
+    html.dark-mode .post-full-content h4,
+    html.dark-mode .post-full-content h6 {
         color: rgba(255, 255, 255, 0.9);
     }
 
-    html:not(.no-dark) .post-full-content a {
+    html.dark-mode .post-full-content a {
         color: #fff;
         box-shadow: inset 0 -1px 0 #fff;
     }
 
-    html:not(.no-dark) .post-full-content strong {
+    html.dark-mode .post-full-content strong {
         color: #fff;
     }
 
-    html:not(.no-dark) .post-full-content em {
+    html.dark-mode .post-full-content em {
         color: #fff;
     }
 
-    html:not(.no-dark) .post-full-content code {
+    html.dark-mode .post-full-content code {
         color: #fff;
         background: #000;
     }
 
-    html:not(.no-dark) hr {
+    html.dark-mode hr {
         border-top-color: color-mod(var(--darkmode) l(+8%));
     }
 
-    html:not(.no-dark) .post-full-content hr:after {
+    html.dark-mode .post-full-content hr:after {
         background: color-mod(var(--darkmode) l(+8%));
         box-shadow: var(--darkmode) 0 0 0 5px;
     }
 
-    html:not(.no-dark) .post-full-content figcaption {
+    html.dark-mode .post-full-content figcaption {
         color: rgba(255, 255, 255, 0.6);
     }
 
-    html:not(.no-dark) .post-full-content table td:first-child {
+    html.dark-mode .post-full-content table td:first-child {
         background-image: linear-gradient(to right, var(--darkmode) 50%, color-mod(var(--darkmode) a(0%)) 100%);
     }
 
-    html:not(.no-dark) .post-full-content table td:last-child {
+    html.dark-mode .post-full-content table td:last-child {
         background-image: linear-gradient(to left, var(--darkmode) 50%, color-mod(var(--darkmode) a(0%)) 100%);
     }
 
-    html:not(.no-dark) .post-full-content table th {
+    html.dark-mode .post-full-content table th {
         color: rgba(255, 255, 255, 0.85);
         background-color: color-mod(var(--darkmode) l(+8%));
     }
 
-    html:not(.no-dark) .post-full-content table th,
-    html:not(.no-dark) .post-full-content table td {
+    html.dark-mode .post-full-content table th,
+    html.dark-mode .post-full-content table td {
         border: color-mod(var(--darkmode) l(+8%)) 1px solid;
     }
 
-    html:not(.no-dark) .post-full-content .kg-bookmark-container,
-    html:not(.no-dark) .post-full-content .kg-bookmark-container:hover {
+    html.dark-mode .post-full-content .kg-bookmark-container,
+    html.dark-mode .post-full-content .kg-bookmark-container:hover {
         color: rgba(255, 255, 255, 0.75);
         box-shadow: 0 0 1px rgba(255,255,255,0.9);
     }
 
-    html:not(.no-dark) .post-full-content input {
+    html.dark-mode .post-full-content input {
         color: color-mod(var(--midgrey) l(-30%));
     }
 
-    html:not(.no-dark) .kg-bookmark-title {
+    html.dark-mode .kg-bookmark-title {
         color: #fff;
     }
 
-    html:not(.no-dark) .kg-bookmark-description {
+    html.dark-mode .kg-bookmark-description {
         color: rgba(255, 255, 255, 0.75);
     }
 
-    html:not(.no-dark) .kg-bookmark-metadata {
+    html.dark-mode .kg-bookmark-metadata {
         color: rgba(255, 255, 255, 0.75);
     }
 
-    html:not(.no-dark) .site-archive-header .no-image {
+    html.dark-mode .site-archive-header .no-image {
         color: rgba(255, 255, 255, 0.9);
         background: var(--darkmode);
     }
 
-    html:not(.no-dark) .site-archive-header .no-image .site-header-content {
+    html.dark-mode .site-archive-header .no-image .site-header-content {
         border-bottom-color: color-mod(var(--darkmode) l(+15%));
     }
 
-    html:not(.no-dark) .site-header-content .author-profile-image {
+    html.dark-mode .site-header-content .author-profile-image {
         box-shadow: 0 0 0 6px hsla(0,0%,100%,0.04);
     }
 
-    html:not(.no-dark) .subscribe-form {
+    html.dark-mode .subscribe-form {
         border: none;
         background: linear-gradient(color-mod(var(--darkmode) l(-6%)), color-mod(var(--darkmode) l(-3%)));
     }
 
-    html:not(.no-dark) .subscribe-form-title {
+    html.dark-mode .subscribe-form-title {
         color: rgba(255, 255, 255, 0.9);
     }
 
-    html:not(.no-dark) .subscribe-form p {
+    html.dark-mode .subscribe-form p {
         color: rgba(255, 255, 255, 0.7);
     }
 
-    html:not(.no-dark) .subscribe-email {
+    html.dark-mode .subscribe-email {
         border-color: color-mod(var(--darkmode) l(+6%));
         color: rgba(255, 255, 255, 0.9);
         background: color-mod(var(--darkmode) l(+3%));
     }
 
-    html:not(.no-dark) .subscribe-email:focus {
+    html.dark-mode .subscribe-email:focus {
         border-color: color-mod(var(--darkmode) l(+25%));
     }
 
-    html:not(.no-dark) .subscribe-form button {
+    html.dark-mode .subscribe-form button {
         opacity: 0.9;
     }
 
-    html:not(.no-dark) .subscribe-form .invalid .message-error,
-    html:not(.no-dark) .subscribe-form .error .message-error {
+    html.dark-mode .subscribe-form .invalid .message-error,
+    html.dark-mode .subscribe-form .error .message-error {
         color: color-mod(var(--red) l(+5%) s(-5%));
     }
 
-    html:not(.no-dark) .subscribe-form .success .message-success {
+    html.dark-mode .subscribe-form .success .message-success {
         color: color-mod(var(--green) l(+5%) s(-5%));
     }
 }
