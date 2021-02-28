@@ -40,7 +40,7 @@ into the {body} of the default.hbs template --}}
 
         {{/page}}
 
-         {{#get "posts" limit="all" filter="tag:usecase,featured:true" as |usecases|}}
+         {{#get "posts" limit="all" filter="tags:[usecase]" as |usecases|}}
         {{#if usecases}}
 
             <div class="post-feed">
