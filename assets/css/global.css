@@ -14,7 +14,6 @@
     --lightgrey: #c5d2d9;
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
-    --brown: #a3821a;
     --darkmode: color-mod(var(--darkgrey) l(+2%));
 }
 
@@ -435,14 +434,16 @@ h6 {
     line-height: 1.15;
     font-weight: 600;
     text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
 }
 
 h1 {
     margin: 0 0 0.5em 0;
-    font-size: 5.5rem;
-    font-weight: 600;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     h1 {
         font-size: 2.2rem;
     }
@@ -450,11 +451,12 @@ h1 {
 
 h2 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
+    font-weight: 700;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     h2 {
-        font-size: 1.8rem;
+        font-size: 2.6rem;
     }
 }
 
@@ -463,7 +465,7 @@ h3 {
     font-size: 1.8rem;
     font-weight: 500;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     h3 {
         font-size: 1.7rem;
     }
@@ -472,17 +474,14 @@ h3 {
 h4 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.6rem;
-    font-weight: 500;
 }
 
 h5 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.4rem;
-    font-weight: 500;
 }
 
 h6 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.4rem;
-    font-weight: 500;
 }

@@ -293,8 +293,8 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     overflow: hidden;
-    height: 64px;
-    font-size: 1.3rem;
+    height: 68px;
+    font-size: 1.5rem;
 }
 
 .site-nav-left-wrapper {
@@ -313,8 +313,6 @@ body {
     margin-right: 10px;
     padding: 10px 0 80px;
     font-weight: 500;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
     white-space: nowrap;
 
     -ms-overflow-scrolling: touch;
@@ -326,9 +324,16 @@ body {
 
 /* Site Nav Hack Explanation (above):
 
-What's happening above is .site-nav-left is set to overflow-x and allow sideways scrolling, so that when there isn't enough space for all nav items (either due to lots of nav items, or a small viewport), you can still scroll side-to-side to reach them. Also, there is a small gradient on the left and right side covering the menu so that the menu goes offscreen smoothly.
+What's happening above is .site-nav-left is set to overflow-x and
+allow sideways scrolling, so that when there isn't enough space for
+all nav items (either due to lots of nav items, or a small viewport),
+you can still scroll side-to-side to reach them. Also, there is a
+small gradient on the left and right side covering the menu so that
+the menu goes offscreen smoothly.
 
-The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px of padding-bottom and a 40px fixed height parent (.site-nav) hides that entirely. Slightly hacky code. But nice clean end-result.
+The knock-on effect of this is ugly browser-scroll bars at the bottom,
+so 80px of padding-bottom and a 40px fixed height parent (.site-nav)
+hides that entirely. Slightly hacky code. But nice clean end-result.
 
 */
 
@@ -387,30 +392,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     padding: 12px 12px;
     color: #fff;
-    opacity: 0.8;
-    transition: opacity 0.35s ease-in-out;
+    opacity: 0.7;
 }
 
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
-}
-
-.nav li a:before {
-    content: "";
-    position: absolute;
-    right: 100%;
-    bottom: 8px;
-    left: 12px;
-    height: 1px;
-    background: #fff;
-    opacity: 0.25;
-    transition: all 0.35s ease-in-out;
-}
-
-.nav li a:hover:before {
-    right: 12px;
-    opacity: 0.5;
 }
 
 .nav-post-title-active .nav {
@@ -514,11 +501,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .subscribe-button {
     display: block;
     margin: 0 0 0 10px;
-    padding: 4px 10px;
+    padding: 5px 10px;
     border: #fff 1px solid;
     color: #fff;
+    font-size: 1.3rem;
     line-height: 1em;
-    border-radius: 10px;
+    border-radius: 5px;
     opacity: 0.8;
 }
 
@@ -608,7 +596,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 40px;
     padding: 0 20px 40px;
     min-height: 220px;
-    border-bottom: 1px solid color-mod(var(--lightgrey) l(+12%));
     background-size: cover;
 }
 
@@ -660,7 +647,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-title {
     margin: 0 0 0.4em;
-    line-height: 1.15em;
+    font-size: 2.4rem;
     transition: color 0.2s ease-in-out;
 }
 
@@ -677,7 +664,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-excerpt {
     max-width: 56em;
     color: color-mod(var(--midgrey) l(-8%));
-    font-family: Georgia, serif;
 }
 
 .post-card-excerpt p {
@@ -686,7 +672,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-meta {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding: 0;
 }
 
@@ -725,8 +711,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     overflow: hidden;
     margin: 0 0 0 -6px;
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border: #fff 2px solid;
     border-radius: 100%;
 }
@@ -765,13 +751,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex: 1 1 50%;
     display: flex;
     flex-direction: column;
-    margin: 2px 0 0 6px;
+    margin: 0 0 0 6px;
     color: color-mod(var(--midgrey) l(+10%));
-    font-size: 1.2rem;
-    line-height: 1.4em;
+    font-size: 1.3rem;
+    line-height: 1.2em;
     font-weight: 400;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
 }
 
 .post-card-byline-content span {
@@ -874,8 +858,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-excerpt p {
         margin-bottom: 1.5em;
-        font-size: 1.8rem;
-        line-height: 1.5em;
+        font-size: 1.7rem;
+        line-height: 1.55em;
     }
 }
 
@@ -933,6 +917,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: var(--midgrey);
     font-size: 1.3rem;
     line-height: 1.4em;
+    letter-spacing: 0.02em;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -973,11 +958,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-custom-excerpt {
     margin: 20px 0 0;
-    color: color-mod(var(--midgrey) l(-8%));
-    font-family: Georgia, serif;
-    font-size: 2.3rem;
+    font-size: 2rem;
     line-height: 1.4em;
-    font-weight: 300;
+    opacity: 0.6;
 }
 
 .date-divider {
@@ -1274,9 +1257,6 @@ Usage (In Ghost editor):
 
 .post-full-content h2 {
     margin: 0.5em 0 0.4em;
-    font-size: 3.2rem;
-    line-height: 1.25em;
-    font-weight: 600;
 }
 .post-full-content p + h2 {
     margin-top: 0.8em;
@@ -1284,8 +1264,6 @@ Usage (In Ghost editor):
 @media (max-width: 800px) {
     .post-full-content h2 {
         margin-bottom: 0.3em;
-        font-size: 2.8rem;
-        line-height: 1.25em;
     }
 }
 
@@ -1489,14 +1467,12 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: space-between;
     margin: 35px 0 0;
-    padding-top: 15px;
-    border-top: 1px solid color-mod(var(--lightgrey) l(+10%));
 }
 
 .post-full-byline-content {
     flex-grow: 1;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .post-full-byline-content .author-list {
@@ -1505,23 +1481,18 @@ Usage (In Ghost editor):
 }
 
 .post-full-byline-meta {
-    margin: 2px 0 0;
-    color: color-mod(var(--midgrey) l(+10%));
+    color: color-mod(var(--midgrey));
     font-size: 1.2rem;
     line-height: 1.2em;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;;
 }
 
 .post-full-byline-meta h4 {
     margin: 0 0 3px;
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    font-weight: 500;
+    font-size: 1.4rem;
 }
 
 .post-full-byline-meta h4 a {
-    color: color-mod(var(--darkgrey) l(+10%));
+    color: color-mod(var(--darkgrey));
 }
 
 .post-full-byline-meta h4 a:hover {
@@ -1530,7 +1501,7 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta .bull {
     display: inline-block;
-    margin: 0 4px;
+    margin: 0 2px;
     opacity: 0.6;
 }
 
@@ -1557,7 +1528,7 @@ Usage (In Ghost editor):
     font-size: 1.4rem;
     line-height: 1.5em;
     background: white;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
     opacity: 0;
     transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
@@ -2798,8 +2769,8 @@ Usage (In Ghost editor):
 
 .site-footer {
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 120px;
     color: #fff;
     background: color-mod(var(--darkgrey) l(-5%));
 }
