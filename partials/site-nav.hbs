@@ -28,17 +28,14 @@
                     <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                 {{/if}}
             </div>
-            {{#unless @labs.members}}
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            {{/unless}}
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
         {{/if}}
 
-        {{#if @labs.members}}
-            {{#unless @member}}
-                <a class="subscribe-button" href="#subscribe">Subscribe</a>
-            {{else}}
-                <a class="subscribe-button" href="#/portal/account">Account</a>
-            {{/unless}}
-        {{/if}}
+        {{#unless @member}}
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        {{else}}
+            <a class="subscribe-button" href="#/portal/account">Account</a>
+        {{/unless}}
+
     </div>
 </nav>

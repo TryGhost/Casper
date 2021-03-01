@@ -49,7 +49,6 @@
     </div>
 
     {{!-- The big email subscribe modal content --}}
-    {{#if @labs.members}}
     <div class="subscribe-notification subscribe-success-message">
         <a class="subscribe-close-button" href="javascript:;"></a>
         You've successfully subscribed to {{@site.title}}!
@@ -58,7 +57,6 @@
         <a class="subscribe-close-button" href="javascript:;"></a>
         Could not sign up! Invalid sign up link.
     </div>
-    {{/if}}
 
     {{!-- jQuery, required for fitvids --}}
     <script
