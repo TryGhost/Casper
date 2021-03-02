@@ -41,21 +41,11 @@
                     <a href="{{@site.url}}">Latest Posts</a>
                     {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
                     {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
+                    <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
                 </nav>
             </div>
         </footer>
 
-    </div>
-
-    {{!-- The big email subscribe modal content --}}
-    <div class="subscribe-notification subscribe-success-message">
-        <a class="subscribe-close-button" href="javascript:;"></a>
-        You've successfully subscribed to {{@site.title}}!
-    </div>
-    <div class="subscribe-notification subscribe-failure-message">
-        <a class="subscribe-close-button" href="javascript:;"></a>
-        Could not sign up! Invalid sign up link.
     </div>
 
     {{!-- jQuery, required for fitvids --}}

@@ -1,4 +1,4 @@
-<article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#has index="nth:6"}}post-card-large{{/has}}{{/is}}{{/unless}}">
+<article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#has index="0"}}post-card-large{{/has}}{{/is}}{{/unless}}">
 
     {{#if feature_image}}
     <a class="post-card-image-link" href="{{url}}">
@@ -9,10 +9,10 @@
                     {{img_url feature_image size="m"}} 600w,
                     {{img_url feature_image size="l"}} 1000w,
                     {{img_url feature_image size="xl"}} 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
+            sizes="(max-width: 1000px) 400px, 800px"
             src="{{img_url feature_image size="m"}}"
             alt="{{title}}"
+            loading="lazy"
         />
     </a>
     {{/if}}
@@ -31,11 +31,7 @@
             </header>
 
             <section class="post-card-excerpt">
-                {{#if feature_image}}
-                    <p>{{excerpt words="30"}}</p>
-                {{else}}
-                    <p>{{excerpt words="44"}}</p>
-                {{/if}}
+                <p>{{excerpt}}</p>
             </section>
 
         </a>
@@ -44,11 +40,6 @@
             <ul class="author-list">
                 {{#foreach authors}}
                 <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        {{name}}
-                    </div>
-            
                     {{#if profile_image}}
                     <a href="{{url}}" class="static-avatar">
                         <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />

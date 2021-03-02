@@ -20,34 +20,29 @@ production stylesheet in assets/built/screen.css
   7.5. Koenig Styles
 8.  Author Template
 9.  Error Template
-10. Subscribe Overlay
 11. Site Footer
 12. Dark Mode
 
 */
 
-
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 @import "global.css";
 
-body {
-    background: #fff;
-}
-
-.img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-position: center center;
-    background-size: cover;
-    border-radius: 100%;
-}
-
-.hidden {
-    visibility: hidden;
-    position: absolute;
-    text-indent: -9999px;
+:root {
+    /* Colours */
+    --brand: #15171A;
+    --blue: #3eb0ef;
+    --green: #a4d037;
+    --purple: #ad26b4;
+    --yellow: #fecd35;
+    --red: #f05230;
+    --darkgrey: #15171A;
+    --midgrey: #738a94;
+    --lightgrey: #c5d2d9;
+    --whitegrey: #e5eff5;
+    --pink: #fa3a57;
+    --darkmode: color-mod(var(--darkgrey) l(+2%));
 }
 
 
@@ -68,13 +63,13 @@ body {
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 5vw;
+    padding: 0 4vmin;
 }
 
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1040px;
+    max-width: 1200px;
     width: 100%;
 }
 
@@ -87,23 +82,6 @@ body {
 </div>
 
 */
-
-/* 3. Special Template Styles
-/* ---------------------------------------------------------- */
-
-@media (min-width: 900px) {
-    .home-template .post-feed,
-    .tag-template .post-feed,
-    .author-template .post-feed {
-        padding: 40px 0 5vw;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-    }
-
-    .home-template .site-nav {
-        position: relative;
-    }
-}
 
 
 /* 4. Site Header
@@ -236,7 +214,6 @@ body {
 
 .site-archive-header .no-image .site-header-content {
     padding: 5vw 0 10px;
-    border-bottom: 1px solid color-mod(var(--lightgrey) l(+12%));
 }
 
 
@@ -349,7 +326,6 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     line-height: 1.8rem;
     font-weight: bold;
     letter-spacing: -0.5px;
-    text-transform: none;
 }
 
 .site-nav-logo:hover {
@@ -413,7 +389,6 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     color: #fff;
     font-size: 1.7rem;
     font-weight: 400;
-    text-transform: none;
     opacity: 0;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateY(175%);
@@ -580,11 +555,22 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
 
 .post-feed {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -20px;
-    padding: 50px 0 0;
-    background: #fff;
+    display: grid;
+    grid-gap: 4vmin;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 4vmin 0;
+}
+
+@media (max-width: 1000px) {
+    .post-feed {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 700px) {
+    .post-feed {
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+    }
 }
 
 .post-card {
@@ -593,8 +579,6 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 0 40px;
-    padding: 0 20px 40px;
     min-height: 220px;
     background-size: cover;
 }
@@ -717,36 +701,6 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     border-radius: 100%;
 }
 
-.author-name-tooltip {
-    position: absolute;
-    bottom: 105%;
-    z-index: 999;
-    display: block;
-    padding: 2px 8px;
-    color: white;
-    font-size: 1.2rem;
-    letter-spacing: 0.2px;
-    white-space: nowrap;
-    background: var(--darkgrey);
-    border-radius: 3px;
-    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-    opacity: 0;
-    transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    transform: translateY(6px);
-    pointer-events: none;
-}
-
-.author-list-item:hover .author-name-tooltip {
-    opacity: 1.0;
-    transform: translateY(0px);
-}
-
-@media (max-width: 700px) {
-    .author-name-tooltip {
-        display: none;
-    }
-}
-
 .post-card-byline-content {
     flex: 1 1 50%;
     display: flex;
@@ -808,17 +762,14 @@ make sure this only happens on large viewports / desktop-ish devices.
 
  */
 
-@media (min-width: 795px) {
+@media (min-width: 1001px) {
     .post-card-large {
-        flex: 1 1 100%;
-        flex-direction: row;
-        padding-bottom: 40px;
+        grid-column: 1 / span 3;
+        display: grid;
+        grid-gap: 4vmin;
+        grid-template-columns: 1fr 1fr 1fr;
         min-height: 280px;
         border-top: 0;
-    }
-
-    .post-card-large:hover {
-        border-bottom-color: color-mod(var(--lightgrey) l(+10%));
     }
 
     .post-card-large:not(.no-image) .post-card-header {
@@ -827,7 +778,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-image-link {
         position: relative;
-        flex: 1 1 auto;
+        grid-column: 1 / span 2;
         margin-bottom: 0;
         min-height: 380px;
     }
@@ -839,21 +790,12 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-content {
-        flex: 0 1 361px;
         justify-content: center;
     }
 
     .post-card-large .post-card-title {
         margin-top: 0;
         font-size: 3.2rem;
-    }
-
-    .post-card-large .post-card-content-link {
-        padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-meta {
-        padding: 0 0 0 40px;
     }
 
     .post-card-large .post-card-excerpt p {
@@ -863,23 +805,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 }
 
-
-/* Adjust some margins for smaller screens */
-@media (max-width: 1170px) {
-    .post-card {
-        margin-bottom: 5vw;
-    }
-}
-
-@media (max-width: 650px) {
-    .post-feed {
-        padding-top: 5vw;
-    }
-
-    .post-card {
-        margin-bottom: 5vw;
-    }
-}
 
 @media (max-width: 500px) {
     .post-card-title {
@@ -980,7 +905,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image img {
-    max-width: 1040px;
+    max-width: 100%;
     width: 100%;
     height: auto;
 }
@@ -1816,15 +1741,17 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .read-next {
+    margin-bottom: -40px;
+    padding-bottom: 40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background: color-mod(var(--darkgrey) l(-5%));
 }
 
 .read-next-feed {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -25px;
-    padding: 60px 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4vmin;
+    padding: 4vmin 0 0 0;
 }
 
 .read-next .post-card {
@@ -1869,12 +1796,11 @@ Usage (In Ghost editor):
 
 .read-next-card {
     position: relative;
-    flex: 0 1 326px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 25px 50px;
-    padding: 25px;
+    margin: 0 0 50px;
+    padding: 4vmin;
     background: linear-gradient(color-mod(var(--darkgrey) l(+2%)), color-mod(var(--darkgrey) l(-5%)));
     border-radius: 3px;
 }
@@ -1991,31 +1917,19 @@ Usage (In Ghost editor):
     text-decoration: none;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1000px) {
+    .read-next-feed {
+        grid-template-columns: 1fr 1fr;
+    }
     .read-next-card {
-        flex: 1 1 261px;
-        margin-bottom: 5vw;
+        display: none;
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
     .read-next-feed {
-        flex-direction: column;
-        padding: 25px 0 0;
-    }
-
-    .read-next-card {
-        flex: 1 1 auto;
-        margin: 0 25px;
-        padding: 0;
-        background: none;
-    }
-
-    .read-next .post-card {
-        flex: 1 1 auto;
-        margin: 25px;
-        padding: 25px 0 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
     }
 }
 
@@ -2355,10 +2269,9 @@ Usage (In Ghost editor):
     display: flex;
     align-items: center;
     margin: 0 0 0 1px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 0.2px;
-    text-transform: uppercase;
     white-space: nowrap;
 }
 
@@ -2539,237 +2452,13 @@ Usage (In Ghost editor):
 }
 
 
-/* 10. Subscribe Message and Overlay
-/* ---------------------------------------------------------- */
-
-.subscribe-notification {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 9000;
-    padding: 20px 0;
-    color: #fff;
-    text-align: center;
-    background: var(--green);
-    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
-    transform: translateY(-175%);
-}
-
-.subscribe-notification.subscribe-failure-message {
-    background: var(--red);
-}
-
-.subscribe-success .subscribe-success-message {
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.subscribe-failure .subscribe-failure-message {
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.subscribe-notification.close {
-    visibility: hidden;
-    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(-175%);
-}
-
-.subscribe-notification .subscribe-close-button {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.subscribe-notification .subscribe-close-button:before,
-.subscribe-notification .subscribe-close-button:after {
-    top: 31px;
-    right: 20px;
-    width: 18px;
-    height: 2px;
-}
-
-.subscribe-close-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-}
-
-.subscribe-close-button {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    z-index: 2000;
-    display: block;
-    width: 40px;
-    height: 40px;
-}
-
-.subscribe-close-button:before {
-    content: "";
-    position: absolute;
-    top: 20px;
-    right: 4px;
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: #fff;
-    opacity: 0.8;
-    transform: rotate(45deg);
-}
-
-.subscribe-close-button:after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    right: 4px;
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: #fff;
-    opacity: 0.8;
-    transform: rotate(-45deg);
-}
-
-.subscribe-close-overlay:hover,
-.subscribe-close-button:hover {
-    cursor: default;
-}
-
-.subscribe-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(9,10,11,0.97);
-    opacity: 0;
-    transition: opacity 0.2s ease-in;
-    pointer-events: none;
-}
-
-.subscribe-overlay:target {
-    z-index: 2001;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.subscribe-overlay-content {
-    position: relative;
-    margin: 0 0 5vw 0;
-    padding: 4vw;
-    color: #fff;
-    text-align: center;
-}
-
-.subscribe-overlay .subscribe-form {
-    border: none;
-    color: #fff;
-    background: none;
-}
-
-.subscribe-overlay-logo {
-    position: fixed;
-    top: 23px;
-    left: 30px;
-    height: 30px;
-}
-
-.subscribe-overlay-title {
-    display: inline-block;
-    margin: 0 0 10px 0;
-    font-size: 5.2rem;
-    line-height: 1.15em;
-}
-
-.subscribe-overlay-description {
-    margin: 0 auto 50px;
-    max-width: 650px;
-    color: #fff;
-    font-family: Georgia, serif;
-    font-size: 2.4rem;
-    line-height: 1.3em;
-    font-weight: 300;
-    opacity: 0.8;
-}
-
-.subscribe-overlay form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 540px;
-}
-
-.subscribe-overlay .form-group {
-    flex-grow: 1;
-}
-
-.subscribe-overlay .subscribe-email {
-    display: block;
-    padding: 14px 20px;
-    width: 100%;
-    border: none;
-    color: var(--midgrey);
-    font-size: 1.8rem;
-    line-height: 1em;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-    user-select: text;
-    border-radius: 8px;
-    transition: border-color 0.15s linear;
-
-    -webkit-appearance: none;
-}
-
-.subscribe-email:focus {
-    outline: 0;
-    border-color: color-mod(var(--lightgrey) l(-2%));
-}
-
-.subscribe-overlay button {
-    display: inline-block;
-    margin: 0 0 0 15px;
-    padding: 0 25px;
-    height: 52px;
-    outline: none;
-    color: #fff;
-    font-size: 1.7rem;
-    line-height: 38px;
-    font-weight: 400;
-    text-align: center;
-    background: var(--brand);
-    border-radius: 8px;
-
-    -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.subscribe-overlay .loading .button-loader {
-    top: 5px;
-}
-
-@media (max-width: 500px) {
-    .subscribe-overlay button {
-        margin: 12px 0 0;
-    }
-}
-
-
 /* 11. Site Footer
 /* ---------------------------------------------------------- */
 
 .site-footer {
     position: relative;
-    padding-top: 30px;
+    margin: 40px 0 0 0;
+    padding-top: 40px;
     padding-bottom: 120px;
     color: #fff;
     background: color-mod(var(--darkgrey) l(-5%));
@@ -2834,7 +2523,6 @@ Usage (In Ghost editor):
 @media (prefers-color-scheme: dark) {
     html.dark-mode body {
         color: rgba(255, 255, 255, 0.75);
-        background: var(--darkmode);
     }
 
     html.dark-mode img {
@@ -2843,10 +2531,6 @@ Usage (In Ghost editor):
 
     html.dark-mode .site-header-background:before {
         background: rgba(0,0,0,0.6);
-    }
-
-    html.dark-mode .post-feed {
-        background: var(--darkmode);
     }
 
     html.dark-mode .post-card,
@@ -3012,10 +2696,6 @@ Usage (In Ghost editor):
     html.dark-mode .site-archive-header .no-image {
         color: rgba(255, 255, 255, 0.9);
         background: var(--darkmode);
-    }
-
-    html.dark-mode .site-archive-header .no-image .site-header-content {
-        border-bottom-color: color-mod(var(--darkmode) l(+15%));
     }
 
     html.dark-mode .site-header-content .author-profile-image {
