@@ -2144,16 +2144,11 @@ Usage (In Ghost editor):
     height: 22px;
 }
 
-.kg-bookmark-author {
+.kg-bookmark-metadata > span {
     line-height: 1.5em;
 }
 
-.kg-bookmark-author:after {
-    content: "•";
-    margin: 0 6px;
-}
-
-.kg-bookmark-publisher {
+.kg-bookmark-metadata > span:nth-of-type(2) {
     overflow: hidden;
     max-width: 240px;
     line-height: 1.5em;
@@ -2161,6 +2156,11 @@ Usage (In Ghost editor):
     white-space: nowrap;
     color: color-mod(var(--midgrey) l(-10%));
     font-weight: 400;
+}
+
+.kg-bookmark-metadata > span:nth-of-type(2)::before {
+    content: "•";
+    margin: 0 6px;
 }
 
 @media (max-width: 800px) {
