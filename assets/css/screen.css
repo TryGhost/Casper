@@ -2144,6 +2144,12 @@ Usage (In Ghost editor):
     height: 22px;
 }
 
+/* These classes will be deprecated. Keep them for GScan validation. */
+.kg-bookmark-author,
+.kg-bookmark-publisher {
+    display: inline;
+}
+
 .kg-bookmark-metadata > span {
     line-height: 1.5em;
 }
