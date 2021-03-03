@@ -104,14 +104,23 @@ production stylesheet in assets/built/screen.css
 
 .site-header-background {
     position: relative;
-    margin-top: 64px;
     padding-bottom: 12px;
     color: #fff;
-    background: var(--ghost-accent-color) no-repeat center center;
-    background-size: cover;
+    background: var(--ghost-accent-color);
 }
 
-.site-header-background:before {
+.site-header-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.site-header-cover:before {
     content: "";
     position: absolute;
     top: 0;
@@ -123,7 +132,7 @@ production stylesheet in assets/built/screen.css
     background: rgba(0,0,0,0.18);
 }
 
-.site-header-background:after {
+.site-header-cover:after {
     content: "";
     position: absolute;
     top: 0;
@@ -133,15 +142,11 @@ production stylesheet in assets/built/screen.css
     z-index: 10;
     display: block;
     height: 140px;
-    background: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0));
-}
-
-.site-header-background.no-image:before,
-.site-header-background.no-image:after {
-    display: none;
+    background: linear-gradient(rgba(0,0,0,0.95),rgba(0,0,0,0));
 }
 
 .site-header-content {
+    position: relative;
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -150,55 +155,46 @@ production stylesheet in assets/built/screen.css
     padding: 6vw 3vw;
     min-height: 200px;
     max-height: 340px;
+    text-align: center;
 }
 
 .site-title {
     z-index: 10;
-    margin: 0 0 0 -2px;
+    margin: 0 0 0.15em;
     padding: 0;
-    font-size: 5.0rem;
-    line-height: 1em;
-    font-weight: 600;
 }
 
 .site-logo {
     max-height: 55px;
 }
 
-.site-description {
-    z-index: 10;
-    margin: 0;
-    padding: 5px 0;
-    font-size: 2.1rem;
-    line-height: 1.4em;
-    font-weight: 400;
+.site-header-content p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.2em;
     opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .site-header-content p {
+        max-width: 80vmin;
+        font-size: 1.8rem;
+    }
 }
 
 /* 4.1 Home header
 /* ---------------------------------------------------------- */
 
 .site-home-header {
+    position: relative;
     z-index: 1000;
-}
-
-.site-home-header .site-header-background {
-    margin-top: 0;
+    overflow: hidden;
 }
 
 .site-home-header .site-header-content {
     padding: 5vw 3vw 6vw;
-}
-
-.site-home-header .site-title {
-    font-size: 5.5rem;
-    text-align: center;
-}
-
-.site-home-header .site-description {
-    font-size: 2.2rem;
-    font-weight: 300;
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
 }
 
 
@@ -231,39 +227,6 @@ production stylesheet in assets/built/screen.css
     padding: 5vw 0 10px;
 }
 
-
-/* Special header styles for smaller screens */
-
-@media (max-width: 900px) {
-    .site-header-content {
-        padding-bottom: 9vw;
-    }
-}
-
-@media (max-width: 500px) {
-    .site-home-header .site-title {
-        font-size: 4.2rem;
-    }
-
-    .site-home-header .site-description {
-        font-size: 1.8rem;
-    }
-
-    .site-archive-header .site-header-content {
-        flex-direction: column;
-        align-items: center;
-        min-height: unset;
-    }
-
-    .site-archive-header .site-title {
-        font-size: 4.2rem;
-        text-align: center;
-    }
-
-    .site-archive-header .no-image .site-header-content {
-        padding: 12vw 0 20px;
-    }
-}
 
 
 /* 5. Site Navigation
@@ -383,7 +346,7 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     display: block;
     padding: 12px 12px;
     color: #fff;
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
 .nav li a:hover {
@@ -491,18 +454,14 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
 .subscribe-button {
     display: block;
     margin: 0 0 0 10px;
-    padding: 5px 10px;
-    border: #fff 1px solid;
-    color: #fff;
-    font-size: 1.3rem;
+    padding: 8px 15px;
+    color: var(--color-darkgrey);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    font-size: 1.5rem;
     line-height: 1em;
-    border-radius: 5px;
-    opacity: 0.8;
-}
-
-.subscribe-button:hover {
-    text-decoration: none;
-    opacity: 1;
+    background: #fff;
+    border-radius: 30px;
 }
 
 .site-nav-right .nav + .subscribe-button {
@@ -564,10 +523,6 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
 
-.posts {
-    overflow-x: hidden;
-}
-
 .post-feed {
     position: relative;
     display: grid;
@@ -593,7 +548,6 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     flex: 1 1 301px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     min-height: 220px;
     background-size: cover;
 }
@@ -665,7 +619,7 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     color: color-mod(var(--color-midgrey) l(-8%));
 }
 
-.post-card:not(.post-card-large) .post-card-excerpt p {
+.post-card-excerpt p {
     margin-bottom: 1em;
     display: -webkit-box;
     overflow-y: hidden;
@@ -716,17 +670,17 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
     margin: 0 0 0 -6px;
     width: 36px;
     height: 36px;
-    border: #fff 2px solid;
     border-radius: 100%;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
 }
 
 .post-card-byline-content {
     flex: 1 1 50%;
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 6px;
+    margin: 0 0 0 8px;
     color: color-mod(var(--color-midgrey) l(+10%));
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.2em;
     font-weight: 400;
 }
@@ -736,17 +690,18 @@ hides that entirely. Slightly hacky code. But nice clean end-result.
 }
 
 .post-card-byline-content a {
-    color: color-mod(var(--color-darkgrey) l(+20%));
+    color: color-mod(var(--color-darkgrey) l(+15%));
     font-weight: 600;
 }
 
 .post-card-byline-date {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.5em;
 }
 
 .post-card-byline-date .bull {
     display: inline-block;
-    margin: 0 4px;
+    margin: 0 2px;
     opacity: 0.6;
 }
 
@@ -821,6 +776,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin-bottom: 1.5em;
         font-size: 1.7rem;
         line-height: 1.55em;
+        -webkit-line-clamp: 8;
     }
 }
 
@@ -947,13 +903,14 @@ headings, text, images and lists. We deal with cards lower down. */
 }
 
 /* [id] represents all headings h1-h6, reset all margins */
-.gh-content [id] {
+.gh-content > [id] {
     margin: 0;
+    color: var(--color-darkgrey);
 }
 
 /* Add back a top margin to all headings, unless a heading
 is the very first element in the post content */
-.gh-content [id]:not(:first-child) {
+.gh-content > [id]:not(:first-child) {
     margin: 2em 0 0;
 }
 
@@ -963,12 +920,12 @@ is the very first element in the post content */
 }
 
 /* A larger margin before/after HRs and blockquotes */
-.gh-content hr,
-.gh-content blockquote {
+.gh-content > hr,
+.gh-content > blockquote {
     margin-top: 6vmin;
 }
-.gh-content hr + *,
-.gh-content blockquote + * {
+.gh-content > hr + *,
+.gh-content > blockquote + * {
     margin-top: 6vmin !important;
 }
 
@@ -1357,21 +1314,13 @@ Ghost editor. */
 
 .article-byline-meta {
     color: color-mod(var(--color-midgrey));
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.2em;
 }
 
 .article-byline-meta h4 {
     margin: 0 0 3px;
-    font-size: 1.5rem;
-}
-
-.article-byline-meta h4 a {
-    color: color-mod(var(--color-darkgrey));
-}
-
-.article-byline-meta h4 a:hover {
-    color: var(--color-darkgrey);
+    font-size: 1.6rem;
 }
 
 .article-byline-meta .bull {
@@ -1384,8 +1333,8 @@ Ghost editor. */
     display: block;
     overflow: hidden;
     margin: 0 -4px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border: #fff 2px solid;
     border-radius: 100%;
     transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
@@ -1805,10 +1754,6 @@ html.dark-mode img {
     opacity: 0.9;
 }
 
-html.dark-mode .site-header-background:before {
-    background: rgba(0,0,0,0.6);
-}
-
 html.dark-mode .post-card,
 html.dark-mode .post-card:hover {
     border-bottom-color: color-mod(var(--color-darkmode) l(+8%));
@@ -1836,11 +1781,6 @@ html.dark-mode .post-card-title {
 
 html.dark-mode .post-card-excerpt {
     color: color-mod(var(--color-midgrey) l(+10%));
-}
-
-html.dark-mode .author-avatar,
-html.dark-mode .static-avatar {
-    border-color: color-mod(var(--color-darkgrey) l(+2%));
 }
 
 html.dark-mode .post-full-content {
