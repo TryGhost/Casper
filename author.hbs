@@ -6,7 +6,11 @@
 
 
 <header class="site-archive-header">
-    {{> site-header}}
+    <div class="outer site-nav-main">
+        <div class="inner">
+            {{> "site-nav"}}
+        </div>
+    </div>
     {{> header-background background=cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner">
             <div class="site-header-content author-header">

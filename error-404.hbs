@@ -8,7 +8,11 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 into the {body} of the default.hbs template --}}
 
 <header class="site-header">
-    {{> site-header}}
+    <div class="outer site-nav-main">
+        <div class="inner">
+            {{> "site-nav"}}
+        </div>
+    </div>
 </header>
 
 <main id="site-main" class="site-main outer error-content">
