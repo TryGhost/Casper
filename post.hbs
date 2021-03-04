@@ -114,22 +114,4 @@ into the {body} tag of the default.hbs template --}}
     </div>
 </aside>
 
-
 {{/post}}
-
-
-{{!-- Scripts - Extra functionality for the post template --}}
-<script>
-$(document).ready(function () {
-    // FitVids - Makes video embeds responsive
-    var $postContent = $(".gh-content");
-    $postContent.fitVids();
-
-    // StickyNavTitle - Shows post title in navbar when scrolling
-    Casper.stickyNavTitle({
-        navSelector: '.site-nav-main',
-        titleSelector: '.article-title',
-        activeClass: 'nav-post-title-active'
-    });
-});
-</script>

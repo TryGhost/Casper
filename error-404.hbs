@@ -19,13 +19,19 @@ Keep this template as lightweight as you can!
             <p class="error-description">{{message}}</p>
             <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
         </section>
-
-        {{#get "posts" limit="3" include="authors,tags"}}
-            <div class="post-feed">
-                {{#foreach posts}}
-                {{> "post-card"}}
-                {{/foreach}}
-            </div>
-        {{/get}}
     </div>
 </section>
+
+{{!-- Given that people landing on this page didn't find what they
+were looking for, let's give them some alternative stuff to read. --}}
+<aside class="read-more-wrap">
+    <div class="read-more inner">
+        {{#get "posts" include="authors" limit="3" as |more_posts|}}
+            {{#if more_posts}}
+                {{#foreach more_posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/if}}
+        {{/get}}
+    </div>
+</aside>

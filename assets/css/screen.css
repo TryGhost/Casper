@@ -49,7 +49,6 @@ production stylesheet in assets/built/screen.css
     --ghost-accent-color: {value};
 
     You can use this variale throughout your styles
-
      */
 
     /* Fonts */
@@ -332,8 +331,11 @@ production stylesheet in assets/built/screen.css
     padding: 5px 0;
 }
 
-.gh-social a {
+.gh-social {
     margin: 0 1.5vmin 0 0;
+}
+
+.gh-social a {
     opacity: 0.8
 }
 .gh-social a:hover {
@@ -967,6 +969,7 @@ is the very first element in the post content */
 /* A larger margin before/after HRs and blockquotes */
 .gh-content > hr,
 .gh-content > blockquote {
+    position: relative;
     margin-top: 6vmin;
 }
 .gh-content > hr + *,
@@ -997,19 +1000,20 @@ is the very first element in the post content */
     padding-left: 1.9em;
 }
 
-.gh-content blockquote {
+.gh-content > blockquote {
     position: relative;
     font-style: italic;
+    padding: 0;
 }
 
-.gh-content blockquote::before {
+.gh-content > blockquote::before {
     content: "";
     position: absolute;
     left: -1.5em;
     top: 0;
     bottom: 0;
     width: 0.3rem;
-    background: var(--color-primary);
+    background: var(--ghost-accent-color);
 }
 
 .gh-content :not(pre) code {
@@ -1470,6 +1474,10 @@ Ghost editor. */
     color: rgba(255, 255, 255, 0.6);
 }
 
+.read-more .post-card-byline-content a {
+    color: #fff;
+}
+
 
 @media (max-width: 1000px) {
     .read-more {
@@ -1492,153 +1500,91 @@ Ghost editor. */
 
 /* 8. Author Template
 /* ---------------------------------------------------------- */
-.author-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 10vw 0 10px;
+
+.author-template .posts {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-gap: 4vmin;
 }
 
-.site-archive-header .author-header {
-    align-items: center;
+.author-template .posts .post-feed {
+    grid-column: 2 / 4;
+    grid-template-columns: 1fr 1fr;
 }
 
-.site-archive-header .no-image .author-header {
-    padding-bottom: 20px;
+.author-profile {
+    padding: 4vmin 0;
 }
 
-.author-header-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 5px 0 0 30px;
-}
-
-.site-header-content .author-profile-image {
-    z-index: 10;
-    flex-shrink: 0;
-    margin: -4px 0 0;
-    width: 110px;
-    height: 110px;
-    box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
-}
-
-.author-header-content .author-bio {
-    z-index: 10;
-    flex-shrink: 0;
-    margin: 6px 0 0;
-    max-width: 46em;
-    font-size: 2.0rem;
-    line-height: 1.3em;
-    font-weight: 400;
-    opacity: 0.8;
-}
-
-.author-header-content .author-meta {
-    z-index: 10;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 1px;
+.author-profile-content {
+    height: auto;
+    position: sticky;
+    top: 4vmin;
     font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 0.2px;
+    line-height:  1.4em;
+}
+
+.author-profile-pic {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 0 0 2rem;
+}
+
+.author-profile h1 {
+    margin: 0 0 0.3em;
+    font-size: 2rem;
+}
+
+.author-profile p {
+    color: color-mod(var(--color-midgrey) l(-8%));
+}
+
+.author-profile-location {
+    margin: 0 0 1.5em;
+    font-weight: 700;
+}
+
+.author-profile-social-link {
+    display: block;
+    padding: 0 0 5px;
+    font-size: 1.3rem;
+    color: color-mod(var(--color-midgrey) l(-8%));
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
     white-space: nowrap;
 }
 
-.author-header-content .social-link:first-of-type {
-    padding-left: 4px;
-}
-
-.no-image .author-header-content .author-bio {
-    color: var(--color-midgrey);
-    opacity: 1.0;
-}
-
-.no-image .author-header-content .author-meta {
-    color: var(--color-midgrey);
-    opacity: 1.0;
-}
-
-.author-social-link a {
-    color: #fff;
-    font-weight: 600;
-}
-
-.no-image .author-social-link a {
+.author-profile-social-link:hover {
     color: var(--color-darkgrey);
 }
 
-.author-social-link a:hover {
-    opacity: 1;
-}
-
-.author-social-link {
-    display: inline-block;
-    margin: 0;
-    padding: 6px 0;
-}
-
-.author-location + .author-stats:before,
-.author-stats + .author-social-link:before,
-.author-social-link + .author-social-link:before {
-    content: "\2022";
-    display: inline-block;
-    margin: 0 12px;
-    color: #fff;
-    opacity: 0.6;
-}
-
-.no-image .author-location + .author-stats:before,
-.no-image .author-stats + .author-social-link:before,
-.no-image .author-social-link + .author-social-link:before {
-    color: var(--color-midgrey);
-}
-
-@media (max-width: 700px) {
-    .author-location,
-    .author-stats,
-    .author-stats + .author-social-link:first-of-type:before {
-        display: none;
+@media (max-width: 900px) {
+    .author-template .posts .post-feed {
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 500px) {
-    .author-header {
-        padding: 10px 0 0;
+@media (max-width: 650px) {
+    .author-template .posts {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
     }
-
-    .no-image .author-header {
-        padding-bottom: 10px;
+    .author-template .posts .post-feed {
+        grid-column: 1 / auto;
     }
-
-    .author-header-content {
+    .author-profile {
+        padding-right: 0;
+    }
+    .author-profile-content {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        margin: 16px 0 0 0;
-    }
-
-    .site-header-content .author-profile-image {
-        width: 96px;
-        height: 96px;
-    }
-
-    .author-header-content .author-bio {
-        font-size: 1.8rem;
-        line-height: 1.3em;
-        letter-spacing: 0;
         text-align: center;
-    }
-
-    .author-header-content .author-meta {
-        margin-top: 8px;
-    }
-
-    .author-location + .author-stats:before,
-    .author-stats + .author-social-link:before,
-    .author-social-link + .author-social-link:before {
-        display: inline;
-        margin: 0 6px;
     }
 }
 
@@ -1650,37 +1596,23 @@ Ghost editor. */
     padding: 14vw 4vw 6vw;
 }
 
-.site-nav-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.site-nav-center .site-nav-logo {
-    margin-right: 0;
-}
-
 .error-message {
     padding-bottom: 10vw;
-    border-bottom: 1px solid color-mod(var(--color-lightgrey) l(+10%));
     text-align: center;
 }
 
 .error-code {
     margin: 0;
-    color: var(--color-lightgrey);
+    color: var(--ghost-accent-color);
     font-size: 12vw;
     line-height: 1em;
     letter-spacing: -5px;
-    opacity: 0.75;
 }
 
 .error-description {
     margin: 0;
     color: var(--color-midgrey);
-    font-size: 3rem;
+    font-size: 3.2rem;
     line-height: 1.3em;
     font-weight: 400;
 }
@@ -1730,62 +1662,79 @@ Ghost editor. */
 .site-footer {
     position: relative;
     margin: 40px 0 0 0;
-    padding-top: 40px;
-    padding-bottom: 140px;
+    padding: 40px 4vmin 140px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
 
-.site-footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+.site-footer .inner {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: auto 1fr auto;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
 }
 
-.site-footer-content a {
+.site-footer .copyright a {
+    color: #fff;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+}
+
+.site-footer a {
     color: rgba(255,255,255,0.7);
 }
 
-.site-footer-content a:hover {
+.site-footer a:hover {
     color: rgba(255,255,255,1);
     text-decoration: none;
 }
 
-.site-footer-nav {
+.site-footer-nav ul {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer-nav li {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    line-height: 2em;
 }
 
 .site-footer-nav a {
     position: relative;
-    margin-left: 20px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
 }
 
-.site-footer-nav a:before {
+.site-footer-nav li:not(:first-child) a:before {
     content: "";
-    position: absolute;
-    top: 11px;
-    left: -11px;
     display: block;
     width: 2px;
     height: 2px;
+    margin: 0 10px 0 0;
     background: #fff;
     border-radius: 100%;
 }
 
-.site-footer-nav a:first-of-type:before {
-    display: none;
-}
-
-@media (max-width: 650px) {
-    .site-footer-content {
-        flex-direction: column;
+@media (max-width: 800px) {
+    .site-footer .inner {
+        max-width: 500px;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+        text-align: center;
     }
-
-    .site-footer-nav a:first-child {
-        margin-left: 0;
+    .site-footer .copyright,
+    .site-footer .copyright a {
+        color: #fff;
+        font-size: 1.5rem;
     }
 }
 
@@ -1816,10 +1765,6 @@ html.dark-mode img {
 html.dark-mode .post-card,
 html.dark-mode .post-card:hover {
     border-bottom-color: color-mod(var(--color-darkmode) l(+8%));
-}
-
-html.dark-mode .author-profile-image {
-    background: var(--color-darkmode);
 }
 
 html.dark-mode .post-card-byline-content a {
@@ -1958,10 +1903,6 @@ html.dark-mode .site-archive-header .no-image {
     background: var(--color-darkmode);
 }
 
-html.dark-mode .site-header-content .author-profile-image {
-    box-shadow: 0 0 0 6px hsla(0,0%,100%,0.04);
-}
-
 html.dark-mode .subscribe-form {
     border: none;
     background: linear-gradient(color-mod(var(--color-darkmode) l(-6%)), color-mod(var(--color-darkmode) l(-3%)));
@@ -1997,3 +1938,18 @@ html.dark-mode .subscribe-form .error .message-error {
 html.dark-mode .subscribe-form .success .message-success {
     color: color-mod(var(--color-green) l(+5%) s(-5%));
 }
+
+/*
+
+Hey! You reached the end.
+
+Hope you enjoyed this CSS file, if you have any suggestions
+for improvements that might be useful for everyone who uses
+this theme, you can find the open source repository for it
+here: https://github.com/tryghost/casper
+
+Or, if you've just scrolled all the way to the bottom of the
+file to add some of your own styles. Well, you've come to
+the right place. Onward!
+
+ */
