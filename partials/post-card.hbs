@@ -1,4 +1,7 @@
-<article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#has index="0"}}post-card-large{{/has}}{{/is}}{{/unless}}">
+{{!-- This is a partial file used to generate a post "card"
+which templates loop over to generate a list of posts. --}}
+
+<article class="post-card {{post_class}} {{#is "home"}}{{#has index="0"}}post-card-large{{/has}}{{/is}}">
 
     {{#if feature_image}}
     <a class="post-card-image-link" href="{{url}}">
@@ -20,7 +23,6 @@
     <div class="post-card-content">
 
         <a class="post-card-content-link" href="{{url}}">
-
             <header class="post-card-header">
                 {{#if primary_tag}}
                     {{#primary_tag}}
@@ -29,11 +31,9 @@
                 {{/if}}
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
-
             <section class="post-card-excerpt">
                 <p>{{excerpt}}</p>
             </section>
-
         </a>
 
         <footer class="post-card-meta">

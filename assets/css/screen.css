@@ -81,16 +81,6 @@ production stylesheet in assets/built/screen.css
     width: 100%;
 }
 
-/* Usage:
-
-<div class="outer">
-    <div class="inner">
-        Centered content
-    </div>
-</div>
-
-*/
-
 
 /* 4. Site Header
 /* ---------------------------------------------------------- */
@@ -189,36 +179,6 @@ production stylesheet in assets/built/screen.css
     font-weight: 400;
     color: #fff;
     background: var(--ghost-accent-color);
-}
-
-
-/* 4.2 Archive header (tag and author post lists)
-/* ---------------------------------------------------------- */
-
-.site-archive-header .site-header-content {
-    position: relative;
-    align-items: stretch;
-    padding: 12vw 0 20px;
-    min-height: 200px;
-    max-height: 600px;
-}
-
-.site-archive-header .no-image {
-    padding-top: 0;
-    padding-bottom: 0;
-    color: var(--color-darkgrey);
-    background: #fff;
-    opacity: 1.0;
-}
-
-.site-archive-header .no-image .site-description {
-    color: var(--color-midgrey);
-    opacity: 1.0;
-}
-
-
-.site-archive-header .no-image .site-header-content {
-    padding: 5vw 0 10px;
 }
 
 
@@ -1586,6 +1546,19 @@ Ghost editor. */
         align-items: center;
         text-align: center;
     }
+}
+
+
+/* 8. Tag Template
+/* ---------------------------------------------------------- */
+
+.tag-template .post-card-large .post-card-image-link {
+    grid-column: 2 / span 2;
+    order: 2;
+}
+
+.tag-template .post-card-large .post-card-content {
+    order: 1;
 }
 
 
