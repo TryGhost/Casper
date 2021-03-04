@@ -19,27 +19,64 @@
 
 </head>
 <body class="{{body_class}}">
+<div class="viewport">
 
+    <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
+        <nav class="gh-head-inner inner gh-container">
 
-    <div class="site-wrapper">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+                <a class="gh-burger" role="button">
+                    <div class="gh-burger-box">
+                        <div class="gh-burger-inner"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="gh-head-menu">
+                {{navigation}}
+            </div>
+            <div class="gh-head-actions">
+                <div class="gh-social">
+                    {{#if @site.twitter}}
+                        <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                </div>
 
+                {{#unless @member}}
+                    <a class="gh-head-button" href="#/portal">Subscribe</a>
+                {{else}}
+                    <a class="gh-head-button" href="#/portal/account">Account</a>
+                {{/unless}}
+            </div>
+        </nav>
+    </header>
+
+    <main>
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
+    </main>
 
-        {{!-- The global footer at the very bottom of the screen --}}
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-                <nav class="site-footer-nav">
-                    <a href="{{@site.url}}">Latest Posts</a>
-                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
-                </nav>
-            </div>
-        </footer>
+    {{!-- The global footer at the very bottom of the screen --}}
+    <footer class="site-footer outer">
+        <div class="site-footer-content inner">
+            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <nav class="site-footer-nav">
+                <a href="{{@site.url}}">Latest Posts</a>
+                {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
+                {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+            </nav>
+        </div>
+    </footer>
 
-    </div>
+</div>
+{{!-- /.viewport --}}
 
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
@@ -50,40 +87,12 @@
 </script>
 <script src="{{asset "built/casper.js"}}"></script>
 <script>
-    // Parse the URL parameter
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-
-    // Give the parameter a variable name
-    var action = getParameterByName('action');
-    var success = getParameterByName('success');
-
-    $(document).ready(function () {
-        if (action == 'subscribe' && (success === null || success === 'true')) {
-            $('body').addClass('subscribe-success');
-        }
-
-        if (action == 'subscribe' && success === 'false') {
-            $('body').addClass('subscribe-failure');
-        }
-
-        $('.subscribe-notification .subscribe-close-button').click(function () {
-            $('.subscribe-notification').addClass('close');
-        });
-
-        // Reset form on opening subscrion overlay
-        $('.subscribe-button').click(function() {
-            $('.subscribe-overlay form').removeClass();
-            $('.subscribe-email').val('');
-        });
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
     });
+});
 </script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}

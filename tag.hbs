@@ -1,30 +1,24 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
+
 {{#tag}}
-<header class="site-archive-header">
-    <div class="outer site-nav-main">
-        <div class="inner">
-            {{> "site-nav"}}
-        </div>
+<div class="outer">
+    <div class="inner site-header-content">
+        <h1 class="site-title">{{name}}</h1>
+        <h2 class="site-description">
+            {{#if description}}
+            {{description}}
+            {{else}}
+            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+            {{/if}}
+        </h2>
     </div>
-    <div class="outer site-header-background">
-        <div class="inner site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                {{description}}
-                {{else}}
-                A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
-        </div>
-    </div>
-</header>
+</div>
 {{/tag}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
+<section class="outer">
     <div class="inner posts">
         <div class="post-feed">
             {{#foreach posts}}
@@ -33,4 +27,4 @@
             {{/foreach}}
         </div>
     </div>
-</main>
+</section>

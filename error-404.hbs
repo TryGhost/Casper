@@ -1,3 +1,5 @@
+{{!< default}}
+
 {{!--
 
 There are two error files in this theme, one for 404s and one for all other errors.
@@ -10,19 +12,7 @@ Keep this template as lightweight as you can!
 
 --}}
 
-{{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
-
-<header class="site-header">
-    <div class="outer site-nav-main">
-        <div class="inner">
-            {{> "site-nav"}}
-        </div>
-    </div>
-</header>
-
-<main id="site-main" class="site-main outer error-content">
+<section class="outer error-content">
     <div class="inner">
         <section class="error-message">
             <h1 class="error-code">{{statusCode}}</h1>
@@ -38,4 +28,4 @@ into the {body} of the default.hbs template --}}
             </div>
         {{/get}}
     </div>
-</main>
+</section>
