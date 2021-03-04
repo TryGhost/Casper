@@ -111,8 +111,8 @@ exports.release = async () => {
 
     const githubToken = process.env.GST_TOKEN;
 
-    if (githubToken) {
-        console.log('Please configure your environment with a Github token located in GST_TOKEN');
+    if (!githubToken) {
+        console.log('Please configure your environment with a GitHub token located in GST_TOKEN');
         return;
     }
 
