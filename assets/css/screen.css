@@ -830,12 +830,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .article-title {
-    margin: 0;
     color: color-mod(var(--color-darkgrey) l(-5%));
 }
 
 .article-excerpt {
-    margin: 20px 0 10px;
+    margin: 0 0 1rem;
     font-size: 2rem;
     line-height: 1.4em;
     opacity: 0.6;

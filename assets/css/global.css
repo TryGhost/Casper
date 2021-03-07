@@ -310,11 +310,11 @@ textarea {
     resize: vertical;
 }
 
-p,
-ul,
-ol,
-dl,
-blockquote {
+::not(.gh-content) p,
+::not(.gh-content) ul,
+::not(.gh-content) ol,
+::not(.gh-content) dl,
+::not(.gh-content) blockquote {
     margin: 0 0 1.5em 0;
 }
 
