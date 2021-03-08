@@ -951,7 +951,7 @@ is the very first element in the post content */
     background: var(--ghost-accent-color);
 }
 
-.gh-content :not(pre) code {
+.gh-content ::not(pre) code {
     vertical-align: middle;
     padding: 0.15em 0.4em 0.15em;
     border: #e1eaef 1px solid;
@@ -963,10 +963,10 @@ is the very first element in the post content */
     border-radius: 0.25em;
 }
 
-.gh-content > pre {
+.gh-content pre {
     overflow-x: auto;
     overflow: scroll;
-    padding: 20px;
+    padding: 16px 20px;
     border: 1px solid color-mod(var(--color-darkgrey) l(-20%));
     color: var(--color-wash);
     font-size: 1.4rem;
@@ -1001,11 +1001,11 @@ make sure they look good, and are given a bit of extra spacing. */
 
 /* Add extra margin before/after any cards,
 except for when immediately preceeded by a heading */
-.gh-content :not(.kg-card):not([id]) + .kg-card {
+.gh-content ::not(.kg-card):not([id]) + .kg-card {
     margin-top: 6vmin;
     margin-bottom: 0;
 }
-.gh-content .kg-card + :not(.kg-card) {
+.gh-content .kg-card + ::not(.kg-card) {
     margin-top: 6vmin;
     margin-bottom: 0;
 }
