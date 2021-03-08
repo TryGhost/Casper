@@ -489,6 +489,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     z-index: 2000;
 }
 
+.home-template .gh-head.has-cover {
+    background: transparent;
+}
+
 .home-template.gh-head-open .gh-head {
     background: var(--ghost-accent-color);
 }
