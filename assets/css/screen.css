@@ -102,31 +102,6 @@ production stylesheet in assets/built/screen.css
     object-fit: cover;
 }
 
-.site-header-cover:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-    background: rgba(0,0,0,0.18);
-}
-
-.site-header-cover:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    z-index: 10;
-    display: block;
-    height: 140px;
-    background: linear-gradient(rgba(0,0,0,0.95),rgba(0,0,0,0));
-}
-
 .site-header-content {
     position: relative;
     z-index: 100;
