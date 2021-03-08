@@ -964,9 +964,14 @@ is the very first element in the post content */
 }
 
 .gh-content > pre {
+    overflow-x: auto;
     overflow: scroll;
-    padding: 16px 20px;
-    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    border: 1px solid color-mod(var(--color-darkgrey) l(-20%));
+    color: var(--color-wash);
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    background: var(--color-darkgrey);
     border-radius: 5px;
     box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
 }
