@@ -951,7 +951,7 @@ is the very first element in the post content */
     background: var(--ghost-accent-color);
 }
 
-.gh-content :not(pre) code {
+.gh-content :not(pre) > code {
     vertical-align: middle;
     padding: 0.15em 0.4em 0.15em;
     border: #e1eaef 1px solid;
