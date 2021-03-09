@@ -3009,11 +3009,6 @@ Usage (In Ghost editor):
         color: #fff;
     }
 
-    html:not(.no-dark) .post-full-content code {
-        color: #fff;
-        background: #000;
-    }
-
     html:not(.no-dark) hr {
         border-top-color: color-mod(var(--darkmode) l(+8%));
     }
