@@ -951,7 +951,7 @@ is the very first element in the post content */
     background: var(--ghost-accent-color);
 }
 
-.gh-content ::not(pre) code {
+.gh-content :not(pre) code {
     vertical-align: middle;
     padding: 0.15em 0.4em 0.15em;
     border: #e1eaef 1px solid;
@@ -1001,11 +1001,11 @@ make sure they look good, and are given a bit of extra spacing. */
 
 /* Add extra margin before/after any cards,
 except for when immediately preceeded by a heading */
-.gh-content ::not(.kg-card):not([id]) + .kg-card {
+.gh-content :not(.kg-card):not([id]) + .kg-card {
     margin-top: 6vmin;
     margin-bottom: 0;
 }
-.gh-content .kg-card + ::not(.kg-card) {
+.gh-content .kg-card + :not(.kg-card) {
     margin-top: 6vmin;
     margin-bottom: 0;
 }
@@ -1041,8 +1041,10 @@ except for when immediately preceeded by a heading */
 /* Galleries
 /* ---------------------------------------------------------- */
 
-/* When there are two galleries in a two, reduce margin
+/* When there galleries are mixed with images, reduce margin
 between them, so it looks like 1 big gallery */
+.kg-image-card + .kg-gallery-card,
+.kg-gallery-card + .kg-image-card,
 .kg-gallery-card + .kg-gallery-card {
     margin-top: 0.75em;
 }
