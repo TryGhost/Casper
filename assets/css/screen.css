@@ -1349,6 +1349,10 @@ Ghost editor. */
     opacity: 0.15;
 }
 
+.page-template .article-title {
+    margin-bottom: 0;
+}
+
 
 /* 7.3. Subscribe
 /* ---------------------------------------------------------- */
