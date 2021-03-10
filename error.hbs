@@ -1,7 +1,15 @@
 {{!--
-This error template is used for all 400/500 errors, except 404, which might occur on your site.
-It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
-You'll notice that we *don't* use any JavaScript, or ghost_head / ghost_foot in this file.
+
+There are two error files in this theme, one for 404s and one for all other errors.
+This file is the latter, and handle all 400/500 errors that might occur.
+
+Because 500 errors in particular usuall happen when a server is struggling, this
+template is as simple as possible. No template dependencies, no JS, no API calls.
+This is to prevent rendering the error-page itself compounding the issue causing
+the error in the first place.
+
+Keep this template as lightweight as you can!
+
 --}}
 
 <!DOCTYPE html>
@@ -32,7 +40,7 @@ You'll notice that we *don't* use any JavaScript, or ghost_head / ghost_foot in 
             </div>
         </header>
 
-        <main id="site-main" class="site-main outer error-content">
+        <main class="outer error-content">
             <div class="inner">
 
                 <section class="error-message">
