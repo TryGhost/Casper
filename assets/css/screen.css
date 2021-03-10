@@ -1486,6 +1486,7 @@ Ghost editor. */
 }
 
 .author-profile p {
+    margin: 0 0 1.5em;
     color: color-mod(var(--color-midgrey) l(-8%));
 }
 
