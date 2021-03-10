@@ -1358,7 +1358,7 @@ Ghost editor. */
     padding: 9vmin 4vmin 10vmin;
     color: #fff;
     text-align: center;
-    background: var(--ghost-accent-color);
+    background: var(--color-darkgrey);
 }
 
 .footer-cta h2 {
