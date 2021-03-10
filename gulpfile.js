@@ -155,7 +155,7 @@ exports.release = async () => {
         const newReleaseResponse = await releaseUtils.releases.create({
             draft: true,
             preRelease: false,
-            tagName: newVersion,
+            tagName: 'v' + newVersion,
             releaseName: newVersion,
             userAgent: 'Casper',
             uri: `https://api.github.com/repos/${REPO}/releases`,
