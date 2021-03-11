@@ -610,6 +610,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     overflow-y: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    word-break: break-word;
 }
 
 .post-card-meta {
