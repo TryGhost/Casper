@@ -411,12 +411,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .home-template #gh-head .gh-head-brand {
         justify-content: flex-end;
     }
-    #gh-head .gh-head-logo {
-        font-size: 2rem;
-    }
-    #gh-head .gh-head-logo img {
-        max-height: 40px;
-    }
     #gh-head .gh-head-menu {
         align-self: center;
         display: flex;
@@ -610,6 +604,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     overflow-y: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    word-break: break-word;
 }
 
 .post-card-meta {
@@ -922,6 +917,7 @@ is the very first element in the post content */
 .gh-content a {
     color: var(--ghost-accent-color);
     text-decoration: underline;
+    word-break: break-word;
 }
 
 .gh-content > blockquote,
