@@ -411,12 +411,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .home-template #gh-head .gh-head-brand {
         justify-content: flex-end;
     }
-    #gh-head .gh-head-logo {
-        font-size: 2rem;
-    }
-    #gh-head .gh-head-logo img {
-        max-height: 40px;
-    }
     #gh-head .gh-head-menu {
         align-self: center;
         display: flex;
