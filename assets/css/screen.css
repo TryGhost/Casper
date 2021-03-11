@@ -1040,6 +1040,19 @@ except for when immediately preceeded by a heading */
 }
 
 
+/* Highly specific styles for traditional Instagram embeds */
+iframe.instagram-media {
+    margin-top: 6vmin !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 0 !important;
+}
+
+iframe.instagram-media + script + :not([id]) {
+    margin-top: 6vmin;
+}
+
+
 /* Galleries
 /* ---------------------------------------------------------- */
 
