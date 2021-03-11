@@ -604,6 +604,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     overflow-y: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    word-break: break-word;
 }
 
 .post-card-meta {
@@ -910,6 +911,7 @@ is the very first element in the post content */
 .gh-content a {
     color: var(--ghost-accent-color);
     text-decoration: underline;
+    word-break: break-word;
 }
 
 .gh-content > blockquote,
