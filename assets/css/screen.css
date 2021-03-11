@@ -1017,7 +1017,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 0 170px 6vw;
+    padding: 0 100px 6vw;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.0rem;
