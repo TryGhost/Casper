@@ -817,6 +817,12 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 6vmin 0 0;
 }
 
+.gh-canvas .article-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (max-width: 600px) {
     .article-excerpt {
         font-size: 1.8rem;
