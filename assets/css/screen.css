@@ -1051,6 +1051,12 @@ between them, so it looks like 1 big gallery */
     margin-top: 0.75em;
 }
 
+.kg-image-card.kg-card-hascaption + .kg-gallery-card,
+.kg-gallery-card.kg-card-hascaption + .kg-image-card,
+.kg-gallery-card.kg-card-hascaption + .kg-gallery-card {
+    margin-top: 1.75em;
+}
+
 .kg-gallery-container {
     position: relative;
 }
