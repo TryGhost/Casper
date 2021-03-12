@@ -1386,9 +1386,16 @@ Ghost editor. */
     background: var(--color-darkgrey);
 }
 
+/* Increases the default h2 size by 15%, for small and large screens */
 .footer-cta h2 {
     margin: 0 0 30px;
-    transform: scale(1.15);
+    font-size: 3.2rem;
+}
+
+@media (max-width: 600px) {
+    .footer-cta h2 {
+        font-size: 2.65rem;
+    }
 }
 
 .footer-cta-button {
