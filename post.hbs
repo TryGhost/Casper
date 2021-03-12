@@ -24,7 +24,7 @@ into the {body} tag of the default.hbs template --}}
         {{/if}}
 
         <div class="article-byline">
-            <section class="article-byline-content">
+            <section class="article-byline-content{{#has author="count:>3"}} has-many-authors{{/has}}">
                 <ul class="author-list">
                     {{#foreach authors}}
                     <li class="author-list-item">

@@ -654,6 +654,14 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
 }
 
+.static-avatar.more {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 36px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.15);
+}
+
 .post-card-byline-content {
     flex: 1 1 50%;
     display: flex;
@@ -1302,9 +1310,18 @@ Ghost editor. */
     align-items: center;
 }
 
+.article-byline-content.has-many-authors {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .article-byline-content .author-list {
     justify-content: flex-start;
     padding: 0 12px 0 0;
+}
+
+.article-byline-content.has-many-authors .author-list {
+    margin-bottom: 1.2rem;
 }
 
 .article-byline-meta {
@@ -1353,6 +1370,12 @@ Ghost editor. */
 
 .page-template .article-title {
     margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .article-byline-content:not(.has-many-authors) .author-list {
+        flex-wrap: nowrap;
+    }
 }
 
 
