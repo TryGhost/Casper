@@ -899,7 +899,7 @@ is the very first element in the post content */
 
 /* Add a small margin between a heading and anything after it */
 .gh-content > [id] + * {
-    margin-top: 1.5rem !important;
+    margin-top: 2.5rem !important;
 }
 
 /* A larger margin before/after HRs and blockquotes */
