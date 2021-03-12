@@ -1413,6 +1413,11 @@ Ghost editor. */
     grid-gap: 4vmin;
 }
 
+.read-more .post-card-primary-tag {
+    color: #fff;
+    opacity: 0.6;
+}
+
 .read-more .post-card-title {
     color: #fff;
     opacity: 0.8;
