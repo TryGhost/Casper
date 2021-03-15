@@ -634,6 +634,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-wrap: wrap;
     margin: 0 0 0 4px;
     padding: 0;
+    max-width: 200px;
     list-style: none;
 }
 
