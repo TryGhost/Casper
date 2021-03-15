@@ -38,7 +38,7 @@ which templates loop over to generate a list of posts. --}}
 
         <footer class="post-card-meta">
             <ul class="author-list">
-                {{#foreach authors limit="3"}}
+                {{#foreach authors}}
                 <li class="author-list-item">
                     {{#if profile_image}}
                     <a href="{{url}}" class="static-avatar">
@@ -49,11 +49,6 @@ which templates loop over to generate a list of posts. --}}
                     {{/if}}
                 </li>
                 {{/foreach}}
-                {{#has author="count:>3"}}
-                    <li class="author-list-item">
-                        <a href="{{url}}" class="static-avatar more">···</a>
-                    </li>
-                {{/has}}
             </ul>
             <div class="post-card-byline-content">
                 <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
