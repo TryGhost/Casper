@@ -1,0 +1,18 @@
+pre[class*="language-"] {
+    padding: 3rem 10rem 3rem 5rem;
+    width: 60vw;
+    font-size: 0.7em;
+    margin-bottom: 45px;
+}
+
+div.note-block-green {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: green;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    font: inherit;
+    font-size: 1.7rem;
+    margin: 0 0 1.5em;
+}
