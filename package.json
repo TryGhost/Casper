@@ -17,6 +17,7 @@
         "zip": "gulp zip",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
+        "translation:scan": "yarn i18next",
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
@@ -57,6 +58,7 @@
         "gulp-postcss": "9.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
+        "i18next-scanner": "^3.0.0",
         "inquirer": "8.0.0",
         "postcss": "8.2.8",
         "postcss-color-mod-function": "3.0.3",
@@ -93,5 +95,11 @@
         "extends": [
             "@tryghost:theme"
         ]
+    },
+    "dev-dependencies": {
+        "i18next-scanner": "^3.0.0"
+    },
+    "dependencies": {
+        "i18next-parser": "^3.7.0"
     }
 }

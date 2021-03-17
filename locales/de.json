@@ -1,6 +1,12 @@
 {
-    "No posts": "Keine Beiträge",
-    "% post": "% Beitrag",
-    "% posts Posts": "% Beiträge",
-    "To homepage": "Zur Startseite"
+  "No posts": "Keine Beiträge",
+  "published": "veröffentlicht",
+  "target_app_url": "https://app.speisekammer-app.de",
+  "To the web app": "Zur Web App",
+  "To homepage": "Zur Homepage",
+  "Use Cases": "Anwendungsfälle",
+  "News from our blog": "Neues aus unserem Blog",
+  "Please activate JavaScript for": "Bitte Javascript aktivieren für",
+  "comments from Disqus": "die Kommentare von Disqus",
+  "A collection of": "A collection of"
 }

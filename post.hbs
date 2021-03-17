@@ -78,6 +78,7 @@ into the {body} tag of the default.hbs template --}}
 </article>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+{{#if false}}
 {{#unless @member}}
 <section class="footer-cta">
     <div class="inner">
@@ -91,6 +92,7 @@ into the {body} tag of the default.hbs template --}}
     </div>
 </section>
 {{/unless}}
+{{/if}}
 
 
             <section class="post-full-comments">
@@ -107,7 +109,7 @@ into the {body} tag of the default.hbs template --}}
                 (d.head || d.body).appendChild(s);
                 })();
                 </script>
-                <noscript>Bitte aktiviere JavaScript um die <a href="https://disqus.com/?ref_noscript">Kommentare von Disqus zu sehen.</a></noscript>
+                <noscript>{{t "Please activate JavaScript for"}} <a href="https://disqus.com/?ref_noscript">{{t "comments from Disqus"}}</a>.</noscript>
             </section>
 
 
