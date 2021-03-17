@@ -272,7 +272,8 @@ production stylesheet in assets/built/screen.css
 }
 
 .gh-social a {
-    opacity: 0.8
+    opacity: 0.8;
+    padding: 0 5px;
 }
 .gh-social a:hover {
     opacity: 1;
