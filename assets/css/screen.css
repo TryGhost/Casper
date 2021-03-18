@@ -966,8 +966,7 @@ is the very first element in the post content */
 }
 
 .gh-content pre {
-    overflow-x: auto;
-    overflow: scroll;
+    overflow: auto;
     padding: 16px 20px;
     border: 1px solid color-mod(var(--color-darkgrey) l(-20%));
     color: var(--color-wash);
