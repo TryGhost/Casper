@@ -96,10 +96,10 @@ exports.build = build;
 exports.zip = series(build, zipper);
 exports.default = series(build, serve, watcher);
 
-exports.release = () => {
+exports.release = async () => {
     // @NOTE: https://yarnpkg.com/lang/en/docs/cli/version/
     // require(./package.json) can run into caching issues, this re-reads from file everytime on release
-    var packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+    let packageJSON = JSON.parse(fs.readFileSync('./package.json'));
     const newVersion = packageJSON.version;
 
     if (!newVersion || newVersion === '') {
@@ -109,45 +109,36 @@ exports.release = () => {
 
     console.log(`\nCreating release for ${newVersion}...`);
 
-    let config;
-    try {
-        config = require('./config');
-    } catch (err) {
-        config = null;
-    }
+    const githubToken = process.env.GST_TOKEN;
 
-    if (!config || !config.github || !config.github.token) {
-        console.log('Please copy config.example.json and configure Github token.');
+    if (!githubToken) {
+        console.log('Please configure your environment with a GitHub token located in GST_TOKEN');
         return;
     }
 
-    let compatibleWithGhost;
+    try {
+        const result = await inquirer.prompt([{
+            type: 'input',
+            name: 'compatibleWithGhost',
+            message: 'Which version of Ghost is it compatible with?',
+            default: '4.0.0'
+        }]);
 
-    return inquirer.prompt([{
-        type: 'input',
-        name: 'compatibleWithGhost',
-        message: 'Which version of Ghost is it compatible with?',
-        default: '3.0.0'
-    }])
-    .then(result => {
-        compatibleWithGhost = result.compatibleWithGhost;
-        return Promise.resolve();
-    })
-    .then(() => releaseUtils.releases.get({
-        userAgent: 'Casper',
-        uri: `https://api.github.com/repos/${REPO_READONLY}/releases`
-    }))
-    .then((response) => {
-        if (!response || !response.length) {
+        const compatibleWithGhost = result.compatibleWithGhost;
+
+        const releasesResponse = await releaseUtils.releases.get({
+            userAgent: 'Casper',
+            uri: `https://api.github.com/repos/${REPO_READONLY}/releases`
+        });
+
+        if (!releasesResponse || !releasesResponse) {
             console.log('No releases found. Skipping...');
             return;
         }
 
-        let previousVersion = response[0].tag_name || response[0].name;
+        let previousVersion = releasesResponse[0].tag_name || releasesResponse[0].name;
         console.log(`Previous version: ${previousVersion}`);
-        return Promise.resolve(previousVersion);
-    })
-    .then((previousVersion) => {
+
         const changelog = new releaseUtils.Changelog({
             changelogPath: CHANGELOG_PATH,
             folder: path.join(process.cwd(), '.')
@@ -161,27 +152,22 @@ exports.release = () => {
             .sort()
             .clean();
 
-        return Promise.resolve();
-    })
-    .then(() => releaseUtils.releases.create({
-        draft: true,
-        preRelease: false,
-        tagName: newVersion,
-        releaseName: newVersion,
-        userAgent: 'Casper',
-        uri: `https://api.github.com/repos/${REPO}/releases`,
-        github: {
-            token: config.github.token
-        },
-        content: [`**Compatible with Ghost ≥ ${compatibleWithGhost}**\n\n`],
-        changelogPath: CHANGELOG_PATH
-    }))
-    .then((response) => {
-        console.log(`\nRelease draft generated: ${response.releaseUrl}\n`);
-        return Promise.resolve();
-    })
-    .catch((err) => {
+        const newReleaseResponse = await releaseUtils.releases.create({
+            draft: true,
+            preRelease: false,
+            tagName: 'v' + newVersion,
+            releaseName: newVersion,
+            userAgent: 'Casper',
+            uri: `https://api.github.com/repos/${REPO}/releases`,
+            github: {
+                token: githubToken
+            },
+            content: [`**Compatible with Ghost ≥ ${compatibleWithGhost}**\n\n`],
+            changelogPath: CHANGELOG_PATH
+        });
+        console.log(`\nRelease draft generated: ${newReleaseResponse.releaseUrl}\n`);
+    } catch (err) {
         console.error(err);
         process.exit(1);
-    });
+    }
 };

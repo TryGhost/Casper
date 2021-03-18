@@ -43,7 +43,7 @@
         }
 
         // append contents
-        var postElements = this.response.querySelectorAll('.post-card');
+        var postElements = this.response.querySelectorAll('article.post-card');
         postElements.forEach(function (item) {
             // document.importNode is important, without it the item's owner
             // document will be different which can break resizing of

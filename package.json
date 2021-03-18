@@ -1,11 +1,11 @@
 {
-    "name": "casper-cg",
+    "name": "casper",
     "description": "A clean, minimal default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
-    "version": "3.2.3",
+    "version": "4.0.0",
     "engines": {
-        "ghost": ">=3.0.0",
-        "ghost-api": "v3"
+        "ghost": ">=4.0.0",
+        "ghost-api": "v4"
     },
     "license": "MIT",
     "screenshots": {
@@ -50,15 +50,15 @@
         "autoprefixer": "10.2.5",
         "beeper": "2.1.0",
         "cssnano": "4.1.10",
-        "gscan": "3.6.1",
+        "gscan": "4.0.0",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.0",
         "gulp-uglify": "3.0.2",
-        "gulp-zip": "5.0.2",
+        "gulp-zip": "5.1.0",
         "inquirer": "8.0.0",
-        "postcss": "8.2.7",
+        "postcss": "8.2.8",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0"
@@ -88,5 +88,10 @@
                 "width": 2000
             }
         }
+    },
+    "renovate": {
+        "extends": [
+            "@tryghost:theme"
+        ]
     }
 }
