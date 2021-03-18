@@ -274,6 +274,11 @@ production stylesheet in assets/built/screen.css
 .gh-social a {
     opacity: 0.8
 }
+
+.gh-social a + a {
+    margin-left: 0.8rem;
+}
+
 .gh-social a:hover {
     opacity: 1;
 }
@@ -282,6 +287,11 @@ production stylesheet in assets/built/screen.css
     height: 22px;
     width: 22px;
     fill: #fff;
+}
+
+.gh-social-facebook svg {
+    height: 20px;
+    width: 20px;
 }
 
 a.gh-head-button {
