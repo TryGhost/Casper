@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - master
-      - 'renovate/*'
+      - develop
+      
 jobs:
   test:
     runs-on: ubuntu-latest
