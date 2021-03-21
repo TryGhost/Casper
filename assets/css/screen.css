@@ -274,6 +274,11 @@ production stylesheet in assets/built/screen.css
 .gh-social a {
     opacity: 0.8
 }
+
+.gh-social a + a {
+    margin-left: 0.8rem;
+}
+
 .gh-social a:hover {
     opacity: 1;
 }
@@ -282,6 +287,11 @@ production stylesheet in assets/built/screen.css
     height: 22px;
     width: 22px;
     fill: #fff;
+}
+
+.gh-social-facebook svg {
+    height: 20px;
+    width: 20px;
 }
 
 a.gh-head-button {
@@ -966,8 +976,7 @@ is the very first element in the post content */
 }
 
 .gh-content pre {
-    overflow-x: auto;
-    overflow: scroll;
+    overflow: auto;
     padding: 16px 20px;
     border: 1px solid color-mod(var(--color-darkgrey) l(-20%));
     color: var(--color-wash);
@@ -1807,11 +1816,12 @@ html.dark-mode .no-image .author-social-link a {
     color: rgba(255, 255, 255, 0.75);
 }
 
-html.dark-mode .post-full-content h1,
-html.dark-mode .post-full-content h2,
-html.dark-mode .post-full-content h3,
-html.dark-mode .post-full-content h4,
-html.dark-mode .post-full-content h6 {
+html.dark-mode .gh-content h1,
+html.dark-mode .gh-content h2,
+html.dark-mode .gh-content h3,
+html.dark-mode .gh-content h4,
+html.dark-mode .gh-content h5,
+html.dark-mode .gh-content h6 {
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -1842,7 +1852,7 @@ html.dark-mode .post-full-content hr:after {
     box-shadow: var(--color-darkmode) 0 0 0 5px;
 }
 
-html.dark-mode .post-full-content figcaption {
+html.dark-mode .gh-content figcaption {
     color: rgba(255, 255, 255, 0.6);
 }
 
