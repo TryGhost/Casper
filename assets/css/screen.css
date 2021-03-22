@@ -467,7 +467,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 9999999;
+        z-index: 3999999;
         overflow-y: scroll;
     }
     .gh-head-open #gh-head .gh-head-inner {
