@@ -1515,6 +1515,8 @@ Ghost editor. */
     height: 150px;
     object-fit: cover;
     margin: 0 0 2rem;
+    background: color-mod(var(--color-lightgrey) l(+10%));
+    border-radius: 50%;
 }
 
 .author-profile h1 {
