@@ -345,9 +345,12 @@ ol {
 }
 
 li {
-    margin: 0.5em 0;
     padding-left: 0.3em;
     line-height: 1.6em;
+}
+
+li + li {
+    margin-top: 0.5em;
 }
 
 dt {
