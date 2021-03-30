@@ -17,7 +17,7 @@
         </image>
         <lastBuildDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</lastBuildDate>
 
-        {{#get "posts" limit="50"}}
+        {{#get "posts" include="authors" limit="50"}}
         {{#foreach posts}}
         <item turbo="true">
             <title>
@@ -29,7 +29,7 @@
             </turbo:topic>
             <turbo:source>{{url absolute="true"}}</turbo:source>
             <author>
-              <![CDATA[ {{primary_author.name}} ]]>
+                <![CDATA[ {{primary_author.name}} ]]>
             </author>
             <pubDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</pubDate>
             <media:content url="{{feature_image}}" medium="image" />

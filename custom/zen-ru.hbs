@@ -12,7 +12,7 @@
       <![CDATA[ {{@site.title}} ]]>
     </title>
 
-    {{#get "posts" limit="20" order="published_at desc"}}
+    {{#get "posts" include="authors"  limit="20" order="published_at desc"}}
 
     {{#foreach posts}}
     <item>
