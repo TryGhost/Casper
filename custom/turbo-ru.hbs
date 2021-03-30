@@ -34,7 +34,7 @@
             <pubDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</pubDate>
             <media:content url="{{feature_image}}" medium="image" />
             <turbo:content>
-                <![CDATA[ {{content}} ]]>
+            <![CDATA[ <header><h1>{{title}}</h1><figure><img src="{{feature_image}}" /></figure><i>{{excerpt}}</i></header>{{content}} ]]>
             </turbo:content>
         </item>
         {{/foreach}}
