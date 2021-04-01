@@ -539,6 +539,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-direction: column;
     min-height: 220px;
     background-size: cover;
+    word-break: break-word;
 }
 
 .post-card-image-link {
@@ -787,6 +788,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .article {
     padding: 8vmin 0;
+    word-break: break-word;
 }
 
 .article-header {
