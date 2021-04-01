@@ -978,7 +978,6 @@ is the very first element in the post content */
 .gh-content pre {
     overflow: auto;
     padding: 16px 20px;
-    border: 1px solid color-mod(var(--color-darkgrey) l(-20%));
     color: var(--color-wash);
     font-size: 1.4rem;
     line-height: 1.5em;
@@ -1825,6 +1824,16 @@ html.dark-mode .gh-content h4,
 html.dark-mode .gh-content h5,
 html.dark-mode .gh-content h6 {
     color: rgba(255, 255, 255, 0.9);
+}
+
+html.dark-mode .gh-content pre {
+    background: color-mod(var(--color-darkgrey) l(-8%));
+}
+
+html.dark-mode .gh-content :not(pre) > code {
+    background: color-mod(var(--color-darkgrey) l(+6%));
+    border-color: color-mod(var(--color-darkmode) l(+8%));
+    color: var(--color-wash);
 }
 
 html.dark-mode .post-full-content a {
