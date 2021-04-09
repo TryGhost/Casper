@@ -58,6 +58,13 @@ production stylesheet in assets/built/screen.css
 
 }
 
+.image-div > img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit:scale-down;
+}
 
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
@@ -557,6 +564,14 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     object-fit: cover;
 }
 
+.post-card-image-tag {
+    width: 100%;
+    height: 200px;
+    background: var(--color-lightgrey) no-repeat center center;
+
+    object-fit: cover;
+}
+
 .post-card-content-link {
     position: relative;
     display: block;
@@ -607,9 +622,20 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-card-excerpt {
     max-width: 56em;
     color: color-mod(var(--color-midgrey) l(-8%));
+    
+    
 }
 
 .post-card-excerpt p {
+    margin-bottom: 1em;
+    display: -webkit-box;
+    overflow-y: auto;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+.post-card-excerpt-hidden p {
     margin-bottom: 1em;
     display: -webkit-box;
     overflow-y: hidden;
