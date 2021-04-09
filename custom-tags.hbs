@@ -20,12 +20,29 @@
     </style>
     <div class="inner inner-page-tags">                 
         <div class="post-feed">
-            {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-            {{#foreach tags}}
-                {{!-- The tag below includes the markup for each tag - partials/tag-card.hbs --}}
-                {{> "tag-card"}}
-            {{/foreach}}
-            {{/get}}
+            
+            <!-- Loop one START (tags with featured pictures ordered first) -->            
+                 {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                {{#foreach tags}}
+                    {{!-- The tag below includes the markup for each tag - partials/tag-card.hbs --}}
+                    {{#if feature_image}}
+                    {{> "tag-card"}}
+                    {{/if}}
+                {{/foreach}}
+                {{/get}}
+            <!-- Loop one END -->
+
+            <!-- Loop two START (tags without featured pictures ordered second) -->
+                {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                {{#foreach tags}}
+                    {{!-- The tag below includes the markup for each tag - partials/tag-card.hbs --}}
+                    {{#unless feature_image}}
+                    {{> "tag-card"}}
+                    {{/unless}}
+                {{/foreach}}
+                {{/get}}
+
+            <!-- Loop two END -->            
         </div>
     </div>
 </main>
