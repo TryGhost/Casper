@@ -22,7 +22,7 @@
         <div class="post-feed">
             
             <!-- Loop one START (tags with featured pictures ordered first) -->            
-                 {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                 {{#get 'tags' filter='slug:-[codelibrary]' limit='all' include='count.posts' order='count.posts desc'}}
                 {{#foreach tags}}
                     {{!-- The tag below includes the markup for each tag - partials/tag-card.hbs --}}
                     {{#if feature_image}}
