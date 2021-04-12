@@ -59,7 +59,21 @@
     </header>
 
     <section class="gh-content gh-canvas">
-        {{content}}
+        {{!-- {{content}} --}}
+        <div>                 
+            <div>
+                {{#get "tags" limit="all"}}
+                    {{#foreach tags visibility="internal"}}
+                        <h1>{{'name'}} Routines</h1>
+                        {{#get "posts" filter="tags:{{slug}}"}}
+                        {{#foreach posts}}
+                        {{> "code-card"}}
+                        {{/foreach}}
+                        {{/get}}
+                    {{/foreach}}
+                {{/get}}
+        </div>
+    </div>
     </section>
 
     {{!--
