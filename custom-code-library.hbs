@@ -64,7 +64,7 @@
             <div>
                 {{#get "tags" limit="all"}}
                     {{#foreach tags visibility="internal"}}
-                        <h1>{{'name'}} Routines</h1>
+                        <h1 class="code-library-header">{{ name }} Routines</h1>
                         {{#get "posts" filter="tags:{{slug}}"}}
                         {{#foreach posts}}
                         {{> "code-card"}}
@@ -75,7 +75,14 @@
         </div>
     </div>
     </section>
-
+    <script>
+        {
+            var headers = document.getElementsByClassName("code-library-header")
+            for (let h of headers) {
+                h.innerHTML = h.innerHTML.substring(1);
+            }
+        }
+    </script>
     {{!--
     <section class="article-comments gh-canvas">
         If you want to embed comments, this is a good place to paste your code!
