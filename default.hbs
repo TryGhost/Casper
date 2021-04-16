@@ -15,7 +15,9 @@
     <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
     <script>
         Handlebars.registerHelper("trimString", function(passedString) {
+        console.log("passed string: " + passedString);    
         var theString = passedString.substring(1,5);
+        console.log("theString: " + theString);
         return new Handlebars.SafeString(theString)
         });
     </script>
