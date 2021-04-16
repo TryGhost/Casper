@@ -15,11 +15,9 @@
     <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
     <script>
         Handlebars.registerHelper("trimString", function(passedString) {
-        console.log("passed string: " + passedString);    
-        var theString = passedString.substring(1,5);
-        console.log("theString: " + theString);
+        var theString = passedString.substring(1);
         return new Handlebars.SafeString(theString)
-        });
+ });
     </script>
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
