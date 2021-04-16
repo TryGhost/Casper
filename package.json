@@ -93,5 +93,8 @@
         "extends": [
             "@tryghost:theme"
         ]
+    },
+    "dependencies": {
+        "handlebars-helpers": "^0.10.0"
     }
 }
