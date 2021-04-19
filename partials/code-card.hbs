@@ -2,5 +2,39 @@
 <li>
 
 <p style="font-size: 20px;"><a style="text-decoration: underline;" href="{{url}}">
-<b style="color:#35373a;">{{title}}:</b></a>  <time class="order" {{date format="YYYY-MM-DD"}}/>({{date}}) {{excerpt}}</p>
+<b class="check-meta" style="color:#35373a;">{{#if meta_description}}{{meta_title}}{{else}}{{title}}{{/if}}:</b></a>  <time class="order" {{date format="YYYY-MM-DD"}}/>({{date}}) {{#unless meta_description}}{{excerpt}}{{/unless}}{{meta_description}}</p>
 </li>
+<!-- Scripts for reference if needed again. I ended up finding a workaround that works for nolongerset's purposes. Since the meta_description is not auto-filled,
+I can just set a condition by which meta_title is only printed if there is a meta_description, and since Mike plans on having both meta_description and meta_title and
+never one or the other, it will suffice. -->
+
+<!-- <script>
+        {
+            var meta = document.getElementsByClassName("check-meta")
+            var html = "{{{meta_title}}}";
+            var html_blank = "";
+            for (let m of meta) {
+                if (m.includes("No Longer Set")){
+                return html_blank
+                }
+                    return html;
+            }
+            
+        }
+</script>
+
+<script>
+Handlebars.registerHelper("check_meta_title", function(passedString) {
+     var html = "{{{meta_title}}}"
+     var html_blank = ""
+     
+  		if(passedString.includes("No Longer Set")){
+         	return html_blank;
+        }
+  		
+  		else{
+         	return html; 
+        }
+  	
+ });
+</script> -->
