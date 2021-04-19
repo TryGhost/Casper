@@ -65,7 +65,7 @@
                         <h1 class="code-library-header">{{ name }} Routines</h1>
                         <div>
                         <ul>
-                        {{#get "posts" filter="tags:{{slug}}" order="desc"}}                  
+                        {{#get "posts" filter="tags:{{slug}}" order="asc"}}                  
                         {{#foreach posts}}
                         {{> "code-card"}}
                         {{/foreach}}
