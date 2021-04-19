@@ -2,5 +2,26 @@
 <li>
 
 <p style="font-size: 20px;"><a style="text-decoration: underline;" href="{{url}}">
-<b style="color:#35373a;">{{title}}:</b></a>  <time class="order" {{date format="YYYY-MM-DD"}}/>({{date}}) {{excerpt}}</p>
+<b class="check-meta" style="color:#35373a;">{{#unless meta_title}}{{title}}{{/unless}}{{meta_title}}:</b></a>  <time class="order" {{date format="YYYY-MM-DD"}}/>({{date}}) {{#unless meta_description}}{{excerpt}}{{/unless}}{{meta_description}}</p>
 </li>
+
+
+<!-- Script in progress. Works in handlebarsjs.com/playground. If I cannot find out how to get 
+handlebars helpers working, I will just have to write something in javascript that gets any 
+elements by class name "check-meta" and checks for "No Longer Set." -->
+
+<!-- <script>
+Handlebars.registerHelper("check_meta_title", function(passedString) {
+     var html = "{{{meta_title}}}"
+     var html_blank = ""
+     
+  		if(passedString.includes("No Longer Set")){
+         	return html_blank;
+        }
+  		
+  		else{
+         	return html; 
+        }
+  	
+ });
+</script> -->
