@@ -509,12 +509,12 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beeper@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/beeper/-/beeper-2.1.0.tgz#3151990e42de31387909fdcc2c12623eb6eefb16"
-  integrity sha512-85+CcymhlP0jM4fs4ZMiMRl58VthoN9NRdvi+knXiQpP2UggkSre+A9rOZ0c2g2Vh+pEF5ZAlT+k8dsJNoanAA==
+beeper@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/beeper/-/beeper-3.0.0.tgz#d3f84c2224049cd69faee935bd74b1c331d89bdc"
+  integrity sha512-8d0BXEuBIiPfmKvATnSCN58sGKCB3vy+lwORdSvfC5uN6OMlPj9/aVMXsmvt5dIvjjyxiuKYfMVWpiAh/kJr5w==
   dependencies:
-    yoctodelay "^1.1.0"
+    yoctodelay "^1.2.0"
 
 binary-extensions@^1.0.0:
   version "1.13.1"
@@ -5392,10 +5392,10 @@ yazl@^2.5.1:
   dependencies:
     buffer-crc32 "~0.2.3"
 
-yoctodelay@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/yoctodelay/-/yoctodelay-1.1.0.tgz#4820ab055bb044a582e92d01701ada043f427132"
-  integrity sha512-iCPt7W3X6SCm5wEnMRCoq+c8XCzscKTT0oWq5TNsIb+PUVtNkt/5O3VGlXXlLBnjTKL+29QyTzqbcJNLaiaJyQ==
+yoctodelay@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/yoctodelay/-/yoctodelay-1.2.0.tgz#0d020c8bcec22989369db31e5d352acc6a13eda8"
+  integrity sha512-12y/P9MSig9/5BEhBgylss+fkHiCRZCvYR81eH35NW9uw801cvJt31EAV+WOLcwZRZbLiIQl/hxcdXXXFmGvXg==
 
 zip-stream@^3.0.1:
   version "3.0.1"
