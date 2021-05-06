@@ -218,7 +218,7 @@ production stylesheet in assets/built/screen.css
     font-weight: 500;
 }
 
-.gh-head-menu .nav {
+.gh-head .nav {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
@@ -227,18 +227,18 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
-.gh-head-menu .nav li {
+.gh-head .nav li {
     margin: 0 2.5vmin 0 0;
     padding: 0;
 }
 
-.gh-head-menu .nav a {
+.gh-head .nav a {
     display: inline-block;
     padding: 5px 0;
     opacity: 0.8
 }
 
-.gh-head-menu .nav a:hover {
+.gh-head .nav a:hover {
     opacity: 1;
 }
 
@@ -294,7 +294,9 @@ production stylesheet in assets/built/screen.css
     width: 20px;
 }
 
-a.gh-head-button {
+a.gh-head-button,
+.gh-head .nav a[href*="#/portal/signup"],
+.gh-head .nav a[href*="#/portal/account"] {
     display: block;
     padding: 8px 15px;
     color: var(--color-darkgrey);
@@ -304,8 +306,21 @@ a.gh-head-button {
     line-height: 1em;
     background: #fff;
     border-radius: 30px;
+    opacity: 1;
 }
 
+.logged-in .gh-head .nav a[href*="#/portal/signup"],
+.gh-head .nav a[href*="#/portal/account"] {
+    display: none;
+}
+
+.logged-in .gh-head .nav a[href*="#/portal/account"] {
+    display: block;
+}
+
+.gh-head-actions .nav li {
+    margin: 0 0.8vmin;
+}
 
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
