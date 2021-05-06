@@ -18,7 +18,7 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}{{#if @member}} logged-in{{/if}}">
+<body class="{{body_class}}">
 <div class="viewport">
 
     <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
@@ -51,13 +51,11 @@
                     {{/if}}
                 </div>
 
-                {{!-- {{#unless @member}}
+                {{#unless @member}}
                     <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
                 {{else}}
                     <a class="gh-head-button" href="#/portal/account">Account</a>
-                {{/unless}} --}}
-
-                {{navigation type="secondary"}}
+                {{/unless}}
             </div>
         </nav>
     </header>
