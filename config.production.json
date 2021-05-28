@@ -16,14 +16,14 @@
         }
     },
     "mail": {
-        "from": "Adrien Hanot <salty@detech.me>", 
+        "from": "Adrien Hanot <salty@xx.xx>", 
         "transport": "SMTP",
         "logger": true,
         "options": {
-            "host": "mail.detech.me",
+            "host": "mail.xx.xx",
             "auth": {
-                "user": "salty@detech.me",
-                "pass": "jeuxdusort"
+                "user": "salty@xx.xx",
+                "pass": "xx"
             }
         }
     },
