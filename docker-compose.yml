@@ -1,0 +1,83 @@
+
+# version: '3.6'
+
+# volumes:
+#   mysql-volume:
+#   ghost-volume:
+
+# services:
+#  mysql:
+#   image: mysql:5.7
+#   container_name: mysql
+#   volumes:
+#     - mysql-volume:/var/lib/mysql
+#   environment:
+#     MYSQL_ROOT_PASSWORD: test
+#     MYSQL_DATABASE: test
+#     MYSQL_USER: test
+#     MYSQL_PASSWORD: test
+
+#  ghost:
+#   image: ghost:latest
+#   container_name: ghost
+#   volumes:
+#     - ./casper:/var/lib/ghost/content/themes/casper
+#     - ./config.production.json:/var/lib/ghost/config.production.json:z
+#     - ghost-volume:/var/lib/ghost
+#   restart: always
+#   ports:
+#     - 80:2368
+#   environment:
+#     NODE_ENV: development
+#     database__client: mysql
+#     database__connection__host: mysql
+#     database__connection__user: test
+#     database__connection__password: test
+#     database__connection__database: test
+#   depends_on:
+#     - mysql
+#   command: ["node", "current/index.js"]
+
+
+version: '3.6'
+services:
+  ghost:
+    image: ghost:latest
+    container_name: ghost-dev
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+      - mail__transport=SMTP
+      - mail__options__host=mail.detech.me
+      - mail__options__port=25
+      - mail__options__auth__user=salty@42.fr
+      - mail__options__auth__pass=jeuxdusort
+      - url=https://detech.me
+
+    volumes:
+      - ghost_content:/var/lib/ghost/content 
+      - ./casper:/var/lib/ghost/content/themes/casper
+    ports:
+      - 2368:2368
+
+  node-tools-init:
+    image: node:12-buster-slim
+    container_name: ghost-tools-init
+    restart: on-failure
+    volumes:
+      - ./casper:/home/node/app/casper
+    working_dir: /home/node/app/casper
+    command: 'yarn install'
+
+
+  node-tools:
+    image: node:12-buster-slim
+    container_name: ghost-tools
+    restart: unless-stopped
+    volumes:
+      - ./casper:/home/node/app/casper
+    working_dir: /home/node/app/casper
+    command: 'yarn dev'
+
+volumes:
+  ghost_content:
