@@ -69,11 +69,11 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    {{!--
+    
     <section class="article-comments gh-canvas">
-        If you want to embed comments, this is a good place to paste your code!
+        {{>"comments"}}
     </section>
-    --}}
+    
 
 </article>
 
@@ -116,3 +116,4 @@ into the {body} tag of the default.hbs template --}}
 </aside>
 
 {{/post}}
+

@@ -1,0 +1,31 @@
+<h2><span id="cove-count"></span> Comments</h2>
+
+{{^if @member}}
+  <p>Sign in or become a {{@site.title}} member to join the conversation.<br>
+  Just enter your email below to get a log in link.</p>
+  <form data-members-form="signin" id="cove-login">
+    <input class="cove-input" data-members-email type="email" required="true" placeholder="your@email.com" />
+    <button type="submit" class="cove-button">
+      <span class="button-text">Send a log in link</span>
+      <span class="button-spinner" style="display:none"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" display="block"><circle cx="50" cy="50" fill="none" stroke="#fff" stroke-width="12" r="39" stroke-dasharray="183.7831702350029 63.261056745000964" transform="rotate(197.992 50 50)"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"/></circle></svg></span>
+    </button>
+    <span class="signin-success" style="display:none">Great! Please check your inbox (or spam folder) for a log in link.</span>
+    <span class="signin-error" style="display:none">Something didn't work. Please try again.</span>
+  </form>
+{{/if}}
+
+<div id="cove"></div>
+
+{{#if @member}}
+  <p>Signed in as {{@member.email}} · <a href="javascript:" data-members-signout>Sign out</a></p>
+{{/if}}
+
+<script>
+const Cove = {
+  publication: "380fa17c9fd85378881e08d635e12a87",
+  contentId: "{{id}}",
+  memberId: "{{@member.uuid}}",
+  memberEmail: "{{@member.email}}",
+  memberName: "{{@member.firstname}}"
+}
+</script>
