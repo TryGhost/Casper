@@ -58,6 +58,13 @@ production stylesheet in assets/built/screen.css
 
 }
 
+.image-div > img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit:scale-down;
+}
 
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
@@ -84,6 +91,35 @@ production stylesheet in assets/built/screen.css
     max-width: 1200px;
     width: 100%;
 }
+
+/* 3. Special Templates */
+/* ---------------------------------------------------------- */
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 400px;
+    height: 60px;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 
 
 /* 4. Site Header
@@ -522,28 +558,33 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     grid-gap: 4vmin;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 4vmin 0;
+    
 }
 
 @media (max-width: 1000px) {
     .post-feed {
         grid-template-columns: 1fr 1fr;
+        
     }
 }
 @media (max-width: 700px) {
     .post-feed {
         grid-template-columns: 1fr;
         grid-gap: 40px;
+        
     }
 }
 
 .post-card {
     position: relative;
-    flex: 1 1 301px;
+    flex: 1 1 31px;
     display: flex;
     flex-direction: column;
     min-height: 220px;
     background-size: cover;
     word-break: break-word;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(148, 148, 148, 0.233));
+    
 }
 
 .post-card-image-link {
@@ -551,9 +592,18 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: block;
     overflow: hidden;
     border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .post-card-image {
+    width: 100%;
+    height: 200px;
+    background: var(--color-lightgrey) no-repeat center center;
+    
+    object-fit: cover;
+}
+
+.post-card-image-tag {
     width: 100%;
     height: 200px;
     background: var(--color-lightgrey) no-repeat center center;
@@ -611,9 +661,20 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-card-excerpt {
     max-width: 56em;
     color: color-mod(var(--color-midgrey) l(-8%));
+    
+    
 }
 
 .post-card-excerpt p {
+    margin-bottom: 1em;
+    display: -webkit-box;
+    overflow-y: auto;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+.post-card-excerpt-hidden p {
     margin-bottom: 1em;
     display: -webkit-box;
     overflow-y: hidden;

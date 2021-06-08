@@ -1,12 +1,5 @@
 {{!< default}}
-
-{{!-- The tag above means: insert everything in this file
-into the {body} tag of the default.hbs template --}}
-
-
 {{#post}}
-{{!-- Everything inside the #post block pulls data from the post --}}
-
 <article class="article {{post_class}}">
 
     <header class="article-header gh-canvas">
@@ -64,16 +57,40 @@ into the {body} tag of the default.hbs template --}}
         </figure>
         {{/if}}
     </header>
-
-    <section class="gh-content gh-canvas">
-        {{content}}
-    </section>
-
+        {{!-- {{content}} --}}
+    <div class="inner inner-page-tags">
+        <div>
+                {{#get "tags" limit="all"}}
+                    {{#foreach tags visibility="internal"}}
+                        <h1 class="code-library-header">{{ name }} Routines</h1>
+                        <div>
+                        <ul>
+                        {{#get "posts" filter="tags:{{slug}}" order="asc"}}                  
+                        {{#foreach posts}}
+                        {{> "code-card"}}
+                        {{/foreach}}
+                        {{/get}}
+                        </ul>
+                        </div>
+                    {{/foreach}}
+                {{/get}}
+        </div>
+    </div>
     
+
+    <script>
+        {
+            var headers = document.getElementsByClassName("code-library-header")
+            for (let h of headers) {
+                h.innerHTML = h.innerHTML.substring(1);
+            }
+        }
+    </script>
+    {{!--
     <section class="article-comments gh-canvas">
-        {{>"comments"}}
+        If you want to embed comments, this is a good place to paste your code!
     </section>
-    
+    --}}
 
 </article>
 
@@ -81,8 +98,7 @@ into the {body} tag of the default.hbs template --}}
 {{#unless @member}}
 <section class="footer-cta">
     <div class="inner">
-        <h3>Never miss an article.</h3>
-        <p>Sign up to receive a Sunday morning email with links and recaps of the seven articles published that week. <br/> (I'll never sell your email.  Unsubscribe any time.)</p><br/>
+        <h2>Sign up for more like this.</h2>
         <a class="footer-cta-button" href="#/portal">
             <div>Enter your email</div>
             <span>Subscribe</span>
@@ -116,4 +132,3 @@ into the {body} tag of the default.hbs template --}}
 </aside>
 
 {{/post}}
-

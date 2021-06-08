@@ -26,3 +26,7 @@ dist/
 config.json
 changelog.md
 changelog.md.bk
+
+**/dist
+
+logs/

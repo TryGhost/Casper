@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
 <head>
-
+    
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
     <title>{{meta_title}}</title>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
@@ -42,6 +42,14 @@
                 {{navigation}}
             </div>
             <div class="gh-head-actions">
+                <div class="gh-social">
+                    <!-- Start of Site Search 360 Search Box -->
+                        <section role="search" data-ss360="true">
+                            <input type="search" id="searchBox" placeholder="Search…">
+                            <!--<button id="searchButton"></button>-->
+                        </section>
+                    <!-- End of Site Search 360 Search Box -->
+                </div>
                 <div class="gh-social">
                     {{#if @site.facebook}}
                         <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
@@ -99,7 +107,66 @@ $(document).ready(function () {
 </script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
+<script src="https://cdn.cove.chat/comments.js" async></script>
 {{ghost_foot}}
+<!-- Start of Site Search 360 script (put right before the closing </body> tag) -->
+<script type="text/javascript">
+window.ss360Config = {
+    style: {
+        themeColor: "#8D2428",
+        accentColor: "#363636",
+        suggestions: {
+            text: {
+                color: "#333333"
+            },
+            background: {
+                color: "#ffffff"
+            },
+            padding: "5px",
+            distanceFromTop: "0px",
+            border: {
+                color: "#dddddd",
+                radius: "0px"
+            }
+        },
+        searchBox: {
+            text: {
+                color: "#35373A",
+                size: "14px"
+            },
+            background: {
+                color: "#ffffff"
+            },
+            border: {
+                color: "#dddddd",
+                radius: "0px"
+            },
+            padding: "8px",
+            icon: {
+                image: "magnifier",
+                color: "#8D2428"
+            }
+        },
+        additionalCss: ""
+    },
+    searchBox: {
+        placeholder: "Search NoLongerSet"
+    },
+    tracking: {
+        providers: []
+    },
+    voiceSearch: {
+        enabled: true
+    },
+    siteId: "nolongerset.com",
+    showErrors: false
+};
 
+var e=document.createElement("script");
+e.async=!0;
+e.src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js";
+document.getElementsByTagName("body")[0].appendChild(e);
+</script>
+<!-- End of Site Search 360 script -->
 </body>
 </html>

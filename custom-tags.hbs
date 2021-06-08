@@ -1,0 +1,49 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{#post}}
+
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+    <style scoped>
+    .inner-page-tags {
+        margin-top: inherit;
+    }
+      
+    @media (min-width: 900px) {
+      .inner-page-tags {
+        {{!-- margin-top: -8vw; --}}
+      }
+    }
+    </style>
+    <div class="inner inner-page-tags">                 
+        <div class="post-feed">
+            
+            <!-- Loop one START (tags with featured pictures ordered first) -->            
+                 {{#get 'tags' filter='slug:-[codelibrary]' limit='all' include='count.posts' order='count.posts desc'}}
+                {{#foreach tags}}
+                    {{!-- The tag below includes the markup for each tag - partials/tag-card.hbs --}}
+                    {{#if feature_image}}
+                    {{> "tag-card"}}
+                    {{/if}}
+                {{/foreach}}
+                {{/get}}
+            <!-- Loop one END -->
+
+            <!-- Loop two START (tags without featured pictures ordered second) -->
+                {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                {{#foreach tags}}
+                    {{!-- The tag below includes the markup for each tag - partials/tag-card.hbs --}}
+                    {{#unless feature_image}}
+                    {{> "tag-card"}}
+                    {{/unless}}
+                {{/foreach}}
+                {{/get}}
+
+            <!-- Loop two END -->            
+        </div>
+    </div>
+</main>
+{{/post}}
