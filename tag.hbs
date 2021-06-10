@@ -7,7 +7,7 @@
         <div class="post-feed">
 
             {{#tag}}
-            <header class="post-card post-card-large">
+            <section class="post-card post-card-large">
                 {{#if feature_image}}
                 <div class="post-card-image-link">
                     {{!-- This is a responsive image, it loads different sizes depending on device
@@ -30,7 +30,7 @@
                             <div class="post-card-primary-tag">Tagged</div>
                             <h2 class="post-card-title">{{name}}</h2>
                         </header>
-                        <section class="post-card-excerpt">
+                        <div class="post-card-excerpt">
                             <p>
                                 {{#if description}}
                                 {{description}}
@@ -38,11 +38,11 @@
                                 A collection of {{plural ../pagination.total empty='zero posts' singular='% post' plural='% posts'}}
                                 {{/if}}
                             </p>
-                        </section>
+                        </div>
                     </div>
                 </div>{{!--/.post-card-content--}}
 
-            </header>
+            </section>
             {{/tag}}
 
             {{#foreach posts}}
