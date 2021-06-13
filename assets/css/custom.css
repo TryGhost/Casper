@@ -1,2 +1,32 @@
 /* import custom font */
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&display=swap');
+
+/* Anchor link styling */
+@media (max-width: 900px) {
+    .anchor-link {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .anchor-link {
+        opacity: 0;
+        text-decoration: none;
+        margin-left: -1.25em;
+    }
+
+    h1:hover .anchor-link,
+    h2:hover .anchor-link,
+    h3:hover .anchor-link,
+    h4:hover .anchor-link,
+    h5:hover .anchor-link,
+    h6:hover .anchor-link {
+        opacity: 1;
+        text-decoration: none;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
