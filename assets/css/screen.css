@@ -544,6 +544,15 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     min-height: 220px;
     background-size: cover;
     word-break: break-word;
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06),1px 3px 8px rgba(39,44,49,.03);
+    transition: all .5s ease;
+    border-radius: 5px;
+}
+
+.post-card:hover {
+    box-shadow: 0 0 1px rgba(39,44,49,.1),0 3px 16px rgba(39,44,49,.07);
+    transition: all .3s ease;
+    transform: translate3D(0,-1px,0);
 }
 
 .post-card-image-link {
@@ -571,9 +580,9 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     text-decoration: none;
 }
 
-.post-card-header {
+/* .post-card-header {
     margin: 20px 0 0;
-}
+} */
 
 .post-feed .no-image .post-card-content-link {
     padding: 0;
@@ -606,6 +615,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
 }
 
 .post-card-excerpt {
@@ -942,7 +953,7 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans-serif);
     font-weight: 400;
     font-size: 2.1rem;
     line-height: 1.6em;

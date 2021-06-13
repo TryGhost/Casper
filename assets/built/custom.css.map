@@ -1,0 +1,1 @@
+{"version":3,"sources":["custom.css"],"names":[],"mappings":"AACA,gGAAgG","file":"custom.css","sourcesContent":["/* import custom font */\r\n@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&display=swap');\r\n"]}

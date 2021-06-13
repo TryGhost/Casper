@@ -411,15 +411,16 @@ h5,
 h6 {
     margin-top: 0;
     line-height: 1.15;
-    font-weight: 600;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
+    font-family: 'Zilla Slab', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     letter-spacing: -0.01em;
 }
 
 h1 {
     margin: 0 0 0.5em 0;
     font-size: 4.8rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.015em;
 }
 @media (max-width: 600px) {
@@ -431,7 +432,7 @@ h1 {
 h2 {
     margin: 1.5em 0 0.5em 0;
     font-size: 2.8rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 @media (max-width: 600px) {
     h2 {
@@ -442,7 +443,7 @@ h2 {
 h3 {
     margin: 1.5em 0 0.5em 0;
     font-size: 2.4rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 @media (max-width: 600px) {
     h3 {
