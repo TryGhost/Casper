@@ -39,7 +39,27 @@ into the {body} of the default.hbs template --}}
 
                 <section class="gh-content gh-canvas">
 
-                    <!-- <h1 class="article-title">{{title}}</h1> //-->
+
+                    <div align="center">
+                    <form style="align:center; display: inline" action="https://app.speisekammer-app.de" method="get">
+                        <button style="margin-top:0em;
+                            border: none;
+                            color: black;
+                            font-weight: bold;
+                            padding: 12px 30px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 18px;
+                            background: #fbbd0c;
+                            border: 4px solid #fbbd0c;
+                            border-radius: 4px;
+                            font-family: Sans-Serif;"
+                        >{{t "Proceed to Web App"}}</button>
+                        </form>
+                    </div>
+
+                    <h1 class="article-title">{{title}}</h1>
 
                     {{content}}
 
