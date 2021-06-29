@@ -52,13 +52,18 @@
                         {{/if}}
                     </div>
                     {{#unless @member}}
-                        <a class="gh-head-button" href="#/portal">Subscribe</a>
+                        <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
                     {{else}}
                         <a class="gh-head-button" href="#/portal/account">Account</a>
                     {{/unless}}
                 {{/if}}
                 <a class="gh-head-button" href="{{t 'target_app_url'}}">{{t "To the web app"}}</a>
 
+                {{#unless @member}}
+                    <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
+                {{else}}
+                    <a class="gh-head-button" href="#/portal/account">Account</a>
+                {{/unless}}
             </div>
         </nav>
     </header>

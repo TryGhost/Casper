@@ -68,6 +68,10 @@ production stylesheet in assets/built/screen.css
     min-height: 100vh;
 }
 
+.viewport > main {
+    flex-grow: 1;
+}
+
 /* Full width page blocks */
 .outer {
     position: relative;
@@ -467,7 +471,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 9999999;
+        z-index: 3999999;
         overflow-y: scroll;
     }
     .gh-head-open #gh-head .gh-head-inner {
@@ -539,6 +543,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-direction: column;
     min-height: 220px;
     background-size: cover;
+    word-break: break-word;
 }
 
 .post-card-image-link {
@@ -787,6 +792,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .article {
     padding: 8vmin 0;
+    word-break: break-word;
 }
 
 .article-header {
@@ -831,6 +837,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
 @media (max-width: 600px) {
@@ -978,7 +985,6 @@ is the very first element in the post content */
 .gh-content pre {
     overflow: auto;
     padding: 16px 20px;
-    border: 1px solid color-mod(var(--color-darkgrey) l(-20%));
     color: var(--color-wash);
     font-size: 1.4rem;
     line-height: 1.5em;
@@ -1515,6 +1521,8 @@ Ghost editor. */
     height: 150px;
     object-fit: cover;
     margin: 0 0 2rem;
+    background: color-mod(var(--color-lightgrey) l(+10%));
+    border-radius: 50%;
 }
 
 .author-profile h1 {
@@ -1823,6 +1831,16 @@ html.dark-mode .gh-content h4,
 html.dark-mode .gh-content h5,
 html.dark-mode .gh-content h6 {
     color: rgba(255, 255, 255, 0.9);
+}
+
+html.dark-mode .gh-content pre {
+    background: color-mod(var(--color-darkgrey) l(-8%));
+}
+
+html.dark-mode .gh-content :not(pre) > code {
+    background: color-mod(var(--color-darkgrey) l(+6%));
+    border-color: color-mod(var(--color-darkmode) l(+8%));
+    color: var(--color-wash);
 }
 
 html.dark-mode .post-full-content a {
