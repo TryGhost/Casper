@@ -9,8 +9,17 @@ jobs:
         runs-on: ubuntu-18.04
         steps:
             - uses: actions/checkout@v2
+
+            # deploy theme to speisekammer.app
             - uses: TryGhost/action-deploy-theme@v1.4.1
               with:
                   api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
                   api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
                   theme-name: "casper-speisekammer"
+
+            # deploy theme to pantrychief.com
+            - uses: TryGhost/action-deploy-theme@v1.4.1
+              with:
+                  api-url: ${{ secrets.GHOST_ADMIN_API_URL_PANTRYCHIEF }}
+                  api-key: ${{ secrets.GHOST_ADMIN_API_KEY_PANTRYCHIEF }}
+                  theme-name: "casper-pantrychief"
