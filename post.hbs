@@ -78,7 +78,7 @@ into the {body} tag of the default.hbs template --}}
         };
         (function() {
         var d = document, s = d.createElement('script');
-        s.src = 'https://speisekammer.disqus.com/embed.js';
+        s.src = 'https://{{t "disqus-site-name"}}.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
         })();
