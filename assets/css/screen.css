@@ -1042,7 +1042,7 @@ except for when immediately preceeded by a heading */
 
 
 /* Captions */
-.kg-card figcaption {
+figcaption {
     padding: 1.5rem 1.5rem 0;
     text-align: center;
     color: rgba(0,0,0,0.5);
@@ -1050,8 +1050,11 @@ except for when immediately preceeded by a heading */
     font-size: 1.3rem;
     line-height: 1.4em;
 }
-.kg-card figcaption strong {
+figcaption strong {
     color: rgba(0,0,0,0.8);
+}
+figcaption a {
+    color: var(--ghost-accent-color);
 }
 
 
