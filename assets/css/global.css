@@ -17,7 +17,7 @@
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
     --brown: #a3821a;
-    --darkmode: color(var(--darkblue) l(+2%));
+    --darkmode: color(var(--indigo) l(+2%));
 }
 
 /* Reset
@@ -378,7 +378,7 @@ dt {
     float: left;
     margin: 0 20px 0 0;
     width: 120px;
-    color: var(--darkblue);
+    color: var(--indigo);
     font-weight: 500;
     text-align: right;
 }
