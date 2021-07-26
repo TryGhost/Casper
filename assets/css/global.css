@@ -3,7 +3,9 @@
 
 :root {
     /* Colours */
-    --orange: #ffbb4d;
+    --plum: #ffbb4d;
+    --plum: #4450E7;
+    --indigo: #090051;
     --green: #a4d037;
     --purple: #ad26b4;
     --yellow: #fecd35;
@@ -298,7 +300,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--orange) lightness(+30%));
+    background: color(var(--plum) lightness(+30%));
 }
 
 hr {
@@ -416,7 +418,7 @@ blockquote cite a {
 }
 
 a {
-    color: color(var(--orange) l(-5%));
+    color: color(var(--plum) l(-5%));
     text-decoration: none;
 }
 
