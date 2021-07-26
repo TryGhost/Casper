@@ -1104,7 +1104,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-content strong,
 .post-full-content em {
-    color: color(var(--darkblue) l(-5%));
+    color: var(--wine);
 }
 
 .post-full-content small {
