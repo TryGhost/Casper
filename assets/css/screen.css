@@ -1756,18 +1756,14 @@ Usage (In Ghost editor):
     padding: 0 20px;
     height: 43px;
     outline: none;
-    color: #fff;
+    color: var(--indigo);
     font-size: 1.5rem;
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--plum) whiteness(+7%)),
-    color(var(--plum) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--plum) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--plum) lightness(-4%) saturation(-10%))
-    );
+    background: var(--neptune);
     border-radius: 5px;
+    border: 1px solid #090051;
 
     -webkit-font-smoothing: subpixel-antialiased;
 }
