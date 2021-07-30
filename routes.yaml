@@ -1,0 +1,17 @@
+routes:  
+  /portfolio/:
+    controller: channel
+    filter: tag:portfolio
+    template: portfolio-list
+
+collections:
+  /blog/:
+    permalink: /blog/{slug}/
+    template: post-list
+
+  /:
+    permalink: /{slug}/
+    template: home
+
+taxonomies:
+  tag: /tag/{slug}/

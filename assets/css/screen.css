@@ -22,6 +22,9 @@ production stylesheet in assets/built/screen.css
 11. Site Footer
 12. Dark Mode
 
+13. Custom Hero
+14. Pagination
+
 */
 
 /* 1. Global - Set up the things
@@ -172,6 +175,7 @@ production stylesheet in assets/built/screen.css
     line-height: 1.3em;
     color: #fff;
     background: var(--ghost-accent-color);
+    z-index: 2000;
 }
 
 .gh-head a {
@@ -223,12 +227,18 @@ production stylesheet in assets/built/screen.css
 }
 
 .gh-head-menu .nav {
+    color: var(--color-wash);
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.gh-head-menu .nav .nav-current a{
+    color: #fff;
+    opacity: 1;
 }
 
 .gh-head-menu .nav li {
@@ -422,9 +432,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         justify-content: space-between;
         user-select: none;
     }
-    .home-template #gh-head .gh-head-brand {
+
+    /* Do not need, as am not hiding the branding on the home screen */
+    /* .home-template #gh-head .gh-head-brand {
         justify-content: flex-end;
-    }
+    } */
+
     #gh-head .gh-head-menu {
         align-self: center;
         display: flex;
@@ -489,6 +502,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
+/*
 .home-template .gh-head {
     position: absolute;
     top: 0;
@@ -497,7 +511,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     z-index: 2000;
 }
 
-.home-template .gh-head.has-cover {
+ .home-template .gh-head.has-cover {
     background: transparent;
 }
 
@@ -510,7 +524,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 .home-template .gh-head-menu {
     margin-left: -2.5vmin;
-}
+} */
 
 
 /* 6. Post Feed
@@ -614,7 +628,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-excerpt p {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     display: -webkit-box;
     overflow-y: hidden;
     -webkit-line-clamp: 3;
@@ -673,7 +687,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex: 1 1 50%;
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 8px;
+    /* margin: 0 0 0 8px; */
     color: color-mod(var(--color-midgrey) l(+10%));
     font-size: 1.4rem;
     line-height: 1.2em;
@@ -1670,7 +1684,7 @@ Ghost editor. */
 .site-footer {
     position: relative;
     margin: 40px 0 0 0;
-    padding: 40px 4vmin 140px;
+    padding: 20px 4vmin 20px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
@@ -1972,3 +1986,52 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+
+/* 13. Custom Hero
+/* ---------------------------------------------------------- */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content .hero-text {
+    z-index: 1;
+    padding: 18vmin 4vmin;
+    background: 
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0)      
+    );
+    width:100%;
+    color: #fff;
+    text-shadow: 0 1px 0 black;
+}
+
+.hero-content .hero-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter:brightness(0.9)
+}
+
+/* 14. Pagination
+/* ---------------------------------------------------------- */
+
+.pagination {
+    text-align: center;
+}
+
+.pagination .page-number {
+    padding: 0 4vmin;
+}

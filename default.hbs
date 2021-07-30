@@ -68,7 +68,10 @@
     {{!-- The global footer at the very bottom of the screen --}}
     <footer class="site-footer outer">
         <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="copyright">
+                <a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}.   
+                	{{{t "This work is licensed under a {ccalink}." ccalink="<a  target=\"_blank\" href=\"https://creativecommons.org/licenses/by/4.0\" rel=\"noopener\">Creative Commons Attribution 4.0 International License</a>"}}}
+            </section>
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>

@@ -14,6 +14,10 @@
  */
 
 (function (window, document) {
+    // custom switch to prevent infinite scroll when pagination controls are present
+    if (document.querySelector('.pagination').length){
+        return;
+    }
     // next link element
     var nextElement = document.querySelector('link[rel=next]');
     if (!nextElement) {
