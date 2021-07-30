@@ -35,6 +35,7 @@ production stylesheet in assets/built/screen.css
 /* Import CSS reset and base styles */
 @import "global.css";
 @import "basictable.css"; 
+@import "prism.css"; 
 
 :root {
 
@@ -845,7 +846,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .gh-canvas .article-image {
-    grid-column: wide-start / wide-end;
+    grid-column: main-start / main-end;
     width: 100%;
     margin: 6vmin 0 0;
 }
