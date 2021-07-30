@@ -1,7 +1,7 @@
 {{!-- This is a partial file used to generate a post "card"
 which templates loop over to generate a list of posts. --}}
 
-<article class="post-card {{post_class}} {{#is "home"}}{{#if feature_image}}{{#has index="0"}}post-card-large{{/has}}{{/if}}{{/is}}">
+<article class="post-card {{post_class}} {{#is "blog"}}{{#has index="0"}}post-card-large{{/has}}{{/is}}">
 
     {{#if feature_image}}
     <a class="post-card-image-link" href="{{url}}">
