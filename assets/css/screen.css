@@ -26,6 +26,7 @@ production stylesheet in assets/built/screen.css
 14. Pagination
 15. Video
 
+
 */
 
 /* 1. Global - Set up the things
@@ -33,6 +34,7 @@ production stylesheet in assets/built/screen.css
 
 /* Import CSS reset and base styles */
 @import "global.css";
+@import "basictable.css"; 
 
 :root {
 
@@ -843,8 +845,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .gh-canvas .article-image {
-    /* grid-column: wide-start / wide-end; */
-    grid-column: main-start/main-end !important;
+    grid-column: wide-start / wide-end;
     width: 100%;
     margin: 6vmin 0 0;
 }
@@ -879,7 +880,7 @@ use it for applying any other styles. */
             [wide-start]
             minmax(auto, 240px)
                 [main-start]
-                    min(720px, calc(100% - 8vw))
+                    min(900px, calc(100% - 8vw))
                 [main-end]
             minmax(auto, 240px)
             [wide-end]
@@ -2043,4 +2044,65 @@ the right place. Onward!
 
 video {
     width:100%;
+}
+
+
+
+/* Tables */
+.article table {  
+    overflow-x: auto;
+    margin: 0.5em 0 2.5em;
+    max-width: 100%;
+    width: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-family: var(--font-sans-serif);    
+    vertical-align: top;
+}
+
+.article table {
+    -webkit-overflow-scrolling: touch;
+    /* background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background-attachment: scroll, scroll;
+    background-size: 10px 100%, 10px 100%;
+    background-repeat: no-repeat; */
+}
+
+.article table td:first-child {
+   /*  background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-size: 20px 100%;
+    background-repeat: no-repeat; */
+}
+
+.article table td:last-child {
+   /*  background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-position: 100% 0;
+    background-size: 20px 100%;
+    background-repeat: no-repeat; */
+}
+
+.article table thead {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    white-space: nowrap;
+}
+
+.article table th {
+    color: var(--color-darkgrey);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: left;
+    text-transform: uppercase;
+    background-color: color-mod(var(--color-wash) l(+4%));
+
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.article table th,
+.article table td {
+    padding: 6px 12px;
+    border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
 }
