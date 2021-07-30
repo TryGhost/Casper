@@ -15,7 +15,7 @@
 
 (function (window, document) {
     // custom switch to prevent infinite scroll when pagination controls are present
-    if (document.querySelector('.pagination').length){
+    if (document.getElementsByClassName('pagination').length){
         return;
     }
     // next link element
