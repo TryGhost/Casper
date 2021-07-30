@@ -24,6 +24,7 @@ production stylesheet in assets/built/screen.css
 
 13. Custom Hero
 14. Pagination
+15. Video
 
 */
 
@@ -2035,4 +2036,11 @@ the right place. Onward!
 
 .pagination .page-number {
     padding: 0 4vmin;
+}
+
+/* 15. Video
+/* ---------------------------------------------------------- */
+
+video {
+    width:100%;
 }
