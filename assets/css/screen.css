@@ -842,7 +842,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .gh-canvas .article-image {
-    grid-column: wide-start / wide-end;
+    /* grid-column: wide-start / wide-end; */
+    grid-column: main-start/main-end !important;
     width: 100%;
     margin: 6vmin 0 0;
 }
