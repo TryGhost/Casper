@@ -1,0 +1,21 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The main content area --}}
+
+<div class="hero-content">
+     <div class="hero-text">
+        <h1>Hi, I'm Niko</h1>
+        <p>{{@site.description}}</p>
+    </div>
+    <img class="hero-background"
+                srcset="{{img_url @site.cover_image size="s"}} 300w,
+                        {{img_url @site.cover_image size="m"}} 600w,
+                        {{img_url @site.cover_image size="l"}} 1000w,
+                        {{img_url @site.cover_image size="xl"}} 2000w"
+                sizes="100vw"
+                src="{{img_url @site.cover_image size="xl"}}"
+                alt=""
+            />   
+</div>
