@@ -1,4 +1,3 @@
 User-agent: *
 Sitemap: https://www.nikouusitalo.com/sitemap.xml
 Disallow: /ghost/
-Disallow: /p/
