@@ -19,6 +19,7 @@
     --pink: #fa3a57;
     --brown: #a3821a;
     --darkmode: color(var(--indigo) l(+2%));
+    --lightyellow: #FFF799;
 }
 
 /* Reset

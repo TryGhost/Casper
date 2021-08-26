@@ -2345,6 +2345,153 @@ Usage (In Ghost editor):
     }
 }
 
+
+/* 7.7. ebook promo
+/* ---------------------------------------------------------- */
+.ebook-promo {
+    margin: 1.3em 0;
+    padding: 4vw 4vw 0;
+    border: color(var(--lightyellow) l(+10%)) 1px solid;
+    background: var(--lightyellow);
+    border-radius: 3px;
+    display: flex
+}
+
+.ebook-promo-packshot{
+    max-width: 380px;
+    margin: auto;
+}
+
+.ebook-promo-text-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.ebook-promo-title {
+    margin: 0 0 3px 0;
+    padding: 0;
+    color: var(--plum);
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.ebook-promo-description {
+    margin-bottom: 0.2em 0 1em;
+    color: var(--midgrey);
+    font-size: 2.1rem;
+    line-height: 1.55em;
+}
+
+.ebook-promo .form-group {
+    align-self: stretch;
+    display: flex;
+}
+
+
+.ebook-promo button {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px 20px;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 39px;
+    font-weight: 400;
+    text-align: center;
+    background: #4450e7;
+    -webkit-font-smoothing: subpixel-antialiased;
+    max-width: 200px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.ebook-promo button:active,
+.ebook-promo button:focus {
+    background: color(var(--plum) lightness(-9%) saturation(-10%));
+}
+
+.ebook-promo .button-loader,
+.ebook-promo .message-success,
+.ebook-promo .message-error {
+    display: none;
+}
+
+.ebook-promo .loading .button-content {
+    visibility: hidden;
+}
+
+.ebook-promo .loading .button-loader {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: inline-block;
+    margin-left: -19px;
+    transform: scale(0.7);
+}
+
+.ebook-promo .button-loader svg path,
+.ebook-promo .button-loader svg rect {
+    fill: #fff;
+}
+
+.ebook-promo .success .message-success,
+.ebook-promo .invalid .message-error,
+.ebook-promo .error .message-error {
+    margin: 1em auto 0;
+    max-width: 400px;
+    color: var(--red);
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.ebook-promo .success .message-success {
+    display: block;
+    color: color(var(--green) l(-5%));
+}
+
+.ebook-promo .invalid .message-error,
+.ebook-promo .error .message-error {
+    display: block;
+}
+
+
+@media (max-width: 800px) {
+    .ebook-promo {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .ebook-promo-title {
+        font-size: 2.4rem;
+    }
+
+    .ebook-promo-text-left {
+        margin: 20px 0;
+    }
+
+    .ebook-promo-description {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .ebook-promo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ebook-promo button {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
+
+
 /* 8. Author Template
 /* ---------------------------------------------------------- */
 .author-header {
