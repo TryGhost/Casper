@@ -70,9 +70,6 @@ into the {body} tag of the default.hbs template --}}
 
     <section class="gh-content gh-canvas">
         {{content}}
-        <div class="inner">
-                {{> "nextprevday"}}
-        </div>
     </section>
 
     
@@ -96,13 +93,18 @@ into the {body} tag of the default.hbs template --}}
         </a>
         {{!-- ^ This looks like a form element, but it's just a link to Portal,
         making the form validation and submission much simpler. --}}
-    </div>
-</section>
+    </div>   
 {{/unless}}
-
+</section>
 
 {{!-- Read more links, just above the footer --}}
 <aside class="read-more-wrap">
+    <section class="read-more-day inner">
+        {{> "nextprevday-header"}}
+    </section>
+    <section class="read-more-day inner" style="margin-bottom:50px;">
+    {{> "nextprevday"}}
+    </section>
     <div class="read-more inner">
 
         {{!-- The {#get} helper below fetches some of the latest posts here
@@ -110,7 +112,7 @@ into the {body} tag of the default.hbs template --}}
 
         This query gets the latest 3 posts on the site, but adds a filter to
         exclude the post we're currently on from being included. --}}
-
+        
         {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
             {{#if more_posts}}
                 {{#foreach more_posts}}

@@ -95,6 +95,17 @@ production stylesheet in assets/built/screen.css
 /* 3. Special Templates */
 /* ---------------------------------------------------------- */
 
+#block_container {
+    flex-basis: 45%;
+    margin-top:20px;
+    display:grid;
+}
+
+.daybody {
+
+    display: flex;
+
+}
 .accordion {
     background-color: #eee;
     color: #444;
@@ -587,6 +598,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     
 }
 
+
 .post-card-image-link {
     position: relative;
     display: block;
@@ -783,6 +795,17 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .single-author-name {
     display: inline-block;
 }
+
+/* Custom borders for nextprevday-card.hbs 
+   FB 9778: NLS Implement Next/Previous Article Link */
+
+.post-card-corners {
+    border-radius: 25px;
+    border: 2px solid #d0d0d1;
+    padding: 20px;
+    width: 100%;
+    height: 200px;
+  }
 
 /* Special Styling for home page grid (below):
 
@@ -1516,6 +1539,13 @@ Ghost editor. */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4vmin;
+}
+
+.read-more-day {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16vmin;
+    
 }
 
 .read-more .post-card-title {
