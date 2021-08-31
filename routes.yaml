@@ -1,7 +1,7 @@
 routes:  
   /portfolio/:
     controller: channel
-    filter: tag:Favourite-Post
+    filter: tag:Favourite-Posts
     template: portfolio-list
 
 collections:
