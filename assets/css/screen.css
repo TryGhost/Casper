@@ -808,6 +808,14 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     height: 200px;
   }
 
+.post-card-corners h2 {
+     font-size: calc(8px + .8vw);
+}
+
+.post-card-corners p, time {
+    font-size: calc(8px + .5vw);
+}
+
 /* Special Styling for home page grid (below):
 
 The first post in the list is styled to be bigger than the others and take over
