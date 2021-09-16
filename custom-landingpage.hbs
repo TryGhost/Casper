@@ -21,68 +21,38 @@
 <body class="{{body_class}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
-        <nav class="gh-head-inner inner gh-container">
 
-            <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
-                </a>
-            </div>
-            <div class="gh-head-menu">
-                {{navigation}}
-            </div>
-            <div class="gh-head-actions">
-                {{#if false}}
-                    <div class="gh-social">
-                        {{#if @site.facebook}}
-                            <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                        {{/if}}
-                        {{#if @site.twitter}}
-                            <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                        {{/if}}
-                    </div>
-                    {{#unless @member}}
-                        <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
-                    {{else}}
-                        <a class="gh-head-button" href="#/portal/account">Account</a>
-                    {{/unless}}
-                {{/if}}
-                <a class="gh-head-button" href="{{t 'target_app_url'}}">{{t "To the web app"}}</a>
-
-            </div>
-        </nav>
-    </header>
 
        
+{{#post}}
 
 
 
 <div class="site-header-content">
-    {{#if @site.cover_image}}
-    {{!-- This is a responsive image, it loads different sizes depending on device
-    https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-    <img class="site-header-cover" srcset="{{img_url @site.cover_image size=" s"}} 300w, {{img_url @site.cover_image
-        size="m" }} 600w, {{img_url @site.cover_image size="l" }} 1000w, {{img_url @site.cover_image size="xl" }} 2000w"
-        sizes="100vw" src="{{img_url @site.cover_image size=" xl"}}" alt="" />
-    {{/if}}
-    <h1 class="site-title">
-        {{#if @site.logo}}
-        <img class="site-logo" src="{{img_url @site.logo size=" m"}}" alt="{{@site.title}}" />
-        {{else}}
-        {{@site.title}}
+
+
+      {{#if feature_image}}
+            {{!-- This is a responsive image, it loads different sizes depending on device
+            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+            <img
+            class="site-header-cover"
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(min-width: 1400px) 1400px, 92vw"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            />
+        
         {{/if}}
+
+
+    <h1 class="site-title">
+        <img class="site-logo" src="{{img_url @site.logo size=" m"}}" alt="{{@site.title}}" />
+      
     </h1>
-    <p>{{@site.description}}</p>
+    <p>{{feature_image_caption}}</p>
     </div>
 
     {{!-- The main content area --}}
@@ -91,7 +61,9 @@
 
         <div class="inner">
 
-            {{#page}}
+
+
+       
 
             <article class="article">
 
@@ -105,13 +77,13 @@
 
             </article>
 
-            {{/page}}
 
         </div>
 
 
     </main>
 
+            {{/post}}
 
 
     {{!-- The global footer at the very bottom of the screen --}}
@@ -121,11 +93,7 @@
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
-            <div><a href="{{t 'switch_to_other_language_landingpage_url'}}" target="_blank" rel="noopener">{{t "switch language"}}</a></div>
 
-            {{#if false}}
-                <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
-            {{/if}}
         </div>
     </footer>
 
