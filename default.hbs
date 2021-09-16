@@ -101,6 +101,14 @@ $(document).ready(function () {
 
     // Basictable - Makes tables more responsible
     new basictable("article table", {forceResponsive: false});
+
+    // Lightbox 
+    $('.kg-gallery-card').each( function() {
+        $(this).find('img').simpleLightbox({
+        sourceAttr: 'src',
+        captions: false
+        });
+    });
 });
 </script>
 
