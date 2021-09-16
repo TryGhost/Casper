@@ -36,6 +36,7 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 @import "basictable.css"; 
 @import "prism.css"; 
+@import "simple-lightbox.css"; 
 
 :root {
 
