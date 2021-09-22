@@ -41,21 +41,11 @@
             <div class="gh-head-menu">
                 {{navigation}}
             </div>
+            <div class="gh-head-menu gh-head-menu--secondary">
+                {{navigation type="secondary"}}
+            </div>
             <div class="gh-head-actions">
-                <div class="gh-social">
-                    {{#if @site.facebook}}
-                        <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                    {{/if}}
-                    {{#if @site.twitter}}
-                        <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                    {{/if}}
-                </div>
-
-                {{#unless @member}}
-                    <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
-                {{else}}
-                    <a class="gh-head-button" href="#/portal/account">Account</a>
-                {{/unless}}
+                <a class="gh-social js-toggle-mode">{{> "icons/moon"}}</a>
             </div>
         </nav>
     </header>

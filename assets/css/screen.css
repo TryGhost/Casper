@@ -182,7 +182,7 @@ production stylesheet in assets/built/screen.css
 .gh-head-inner {
     display: grid;
     grid-gap: 2.5vmin;
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: auto auto 1fr auto;
     grid-auto-flow: row dense;
 }
 
@@ -246,6 +246,13 @@ production stylesheet in assets/built/screen.css
     opacity: 1;
 }
 
+.gh-head-menu--secondary {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    text-align: right;
+}
 
 /* Secondary Navigation
 /* ---------------------------------------------------------- */
