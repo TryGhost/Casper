@@ -13,6 +13,89 @@
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+    <style>
+        .font-alt .post-card-title,
+        .font-alt .article-title {
+            font-family: var(--font-serif);
+        }
+
+        .font-alt .gh-content > blockquote,
+        .font-alt .gh-content > dl,
+        .font-alt .gh-content > ol,
+        .font-alt .gh-content > p,
+        .font-alt .gh-content > ul {
+            font-family: var(--font-sans);
+        }
+
+        .cover-no-image .gh-head.has-cover {
+            background: var(--ghost-accent-color);
+        }
+
+        .cover-no-image .site-header-cover {
+            display: none;
+        }
+
+        .cover-none .gh-head.has-cover {
+            background: var(--ghost-accent-color);
+        }
+
+        .cover-none .gh-head {
+            position: relative;
+        }
+
+        .cover-none .gh-head-logo {
+            display: block;
+        }
+
+        .cover-none .gh-head-menu {
+            margin-left: 0;
+        }
+
+        .cover-none .site-header-content {
+            display: none;
+        }
+
+        .cover-none .site-content {
+            padding-top: 4vmin;
+        }
+
+        .image-full .article-image {
+            grid-column: full-start / full-end;
+        }
+
+        .image-small .article-image {
+            grid-column: main-start / main-end;
+        }
+
+        .cta-alt .footer-cta {
+            padding: 2vmin 4vmin 12vmin;
+            background: transparent;
+        }
+
+        .cta-alt .footer-cta h2 {
+            color: var(--color-darkgrey);
+        }
+
+        .cta-alt .footer-cta-button {
+            border: 1px solid var(--color-lightgrey);
+        }
+
+        .footer-cta h2:last-of-type {
+            display: none;
+        }
+
+        .cta-custom-text .footer-cta h2:first-of-type {
+            display: none;
+        }
+
+        .cta-custom-text .footer-cta h2:last-of-type {
+            display: block;
+            max-width: 720px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
