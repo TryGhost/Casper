@@ -2,9 +2,9 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{^match @custom.cover "none"}}
+{{^match @custom.cover "No cover"}}
     <div class="site-header-content">
-        {{#match @custom.cover "image"}}
+        {{#match @custom.cover "With cover image"}}
             {{#if @site.cover_image}}
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}

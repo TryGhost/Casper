@@ -87,6 +87,28 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "custom": {
+            "typography": {
+                "type": "select",
+                "options": ["Sans Serif heading", "Serif heading"],
+                "default": "Sans Serif heading"
+            },
+            "cover": {
+                "type": "select",
+                "options": ["With cover image", "With accent color", "No cover"],
+                "default": "With cover image"
+            },
+            "image_width": {
+                "type": "select",
+                "options": ["Wide", "Full", "Small"],
+                "default": "Wide"
+            },
+            "cta_style": {
+                "type": "select",
+                "options": ["Default", "Minimal"],
+                "default": "Default"
+            }
         }
     },
     "renovate": {

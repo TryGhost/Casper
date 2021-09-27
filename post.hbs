@@ -8,7 +8,7 @@ into the {body} tag of the default.hbs template --}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
 <main id="site-main" class="site-main">
-    <article class="article {{post_class}} {{#match @custom.image_width "full"}}image-full{{else match @custom.image_width "small"}}image-small{{/match}}">
+    <article class="article {{post_class}} {{#match @custom.image_width "Full"}}image-full{{else match @custom.image_width "Small"}}image-small{{/match}}">
 
         <header class="article-header gh-canvas">
 
@@ -84,7 +84,7 @@ into the {body} tag of the default.hbs template --}}
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#unless @member}}
-<section class="footer-cta {{#match @custom.cta_style "minimal"}}cta-alt{{/match}}">
+<section class="footer-cta {{#match @custom.cta_style "Minimal"}}cta-alt{{/match}}">
     <div class="inner">
         <h2>Sign up for more like this.</h2>
         <h2>Sign up now to get access to the library of members-only issues.</h2>
