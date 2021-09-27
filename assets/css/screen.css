@@ -422,7 +422,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         justify-content: space-between;
         user-select: none;
     }
-    .home-template #gh-head .gh-head-brand {
+    .home-template #gh-head.has-cover .gh-head-brand {
         justify-content: flex-end;
     }
     #gh-head .gh-head-menu {
@@ -489,7 +489,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
-.home-template .gh-head {
+.home-template .gh-head.has-cover {
     position: absolute;
     top: 0;
     right: 0;
@@ -505,10 +505,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     background: var(--ghost-accent-color);
 }
 
-.home-template .gh-head-logo {
+.home-template .gh-head.has-cover .gh-head-logo {
     display: none;
 }
-.home-template .gh-head-menu {
+.home-template .gh-head.has-cover .gh-head-menu {
     margin-left: -2.5vmin;
 }
 
