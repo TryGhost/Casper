@@ -1428,10 +1428,19 @@ Ghost editor. */
     background: var(--color-darkgrey);
 }
 
+.footer-cta.cta-alt {
+    padding: 2vmin 4vmin 12vmin;
+    background: transparent;
+}
+
 /* Increases the default h2 size by 15%, for small and large screens */
 .footer-cta h2 {
     margin: 0 0 30px;
     font-size: 3.2rem;
+}
+
+.footer-cta.cta-alt h2 {
+    color: var(--color-darkgrey);
 }
 
 @media (max-width: 600px) {
@@ -1452,6 +1461,10 @@ Ghost editor. */
     color: var(--color-midgrey);
     background: #fff;
     border-radius: 8px;
+}
+
+.footer-cta.cta-alt .footer-cta-button {
+    border: 1px solid var(--color-lightgrey);
 }
 
 .footer-cta-button span {
