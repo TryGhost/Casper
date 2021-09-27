@@ -86,8 +86,7 @@ into the {body} tag of the default.hbs template --}}
 {{#unless @member}}
 <section class="footer-cta {{#match @custom.minimal_cta}}cta-alt{{/match}}">
     <div class="inner">
-        <h2>Sign up for more like this.</h2>
-        <h2>Sign up now to get access to the library of members-only issues.</h2>
+        <h2>{{text @custom.cta_text}}</h2>
         <a class="footer-cta-button" href="#/portal">
             <div>Enter your email</div>
             <span>Subscribe</span>

@@ -107,6 +107,10 @@
             "minimal_cta": {
                 "type": "boolean",
                 "default": false
+            },
+            "cta_text": {
+                "type": "text",
+                "default": "Sign up for more like this."
             }
         }
     },
