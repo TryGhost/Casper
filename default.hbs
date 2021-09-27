@@ -1,3 +1,20 @@
+{{#define @custom.typography type="select"}}
+    {{option value="Sans Serif heading" default="true"}}
+    {{option value="Serif heading"}}
+{{/define}}
+{{#define @custom.cover type="select"}}
+    {{option value="With cover image" default="true"}}
+    {{option value="With accent color"}}
+    {{option value="No cover"}}
+{{/define}}
+{{#define @custom.image_width type="select"}}
+    {{option value="Wide" default="true"}}
+    {{option value="Full"}}
+    {{option value="Small"}}
+{{/define}}
+{{define @custom.minimal_cta type="boolean" value="false"}}
+{{define @custom.cta_text type="text" value="Sign up for more like this."}}
+
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
 <head>
