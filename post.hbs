@@ -84,7 +84,7 @@ into the {body} tag of the default.hbs template --}}
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#unless @member}}
-<section class="footer-cta {{#match @custom.cta_style "Minimal"}}cta-alt{{/match}}">
+<section class="footer-cta {{#match @custom.minimal_cta}}cta-alt{{/match}}">
     <div class="inner">
         <h2>Sign up for more like this.</h2>
         <h2>Sign up now to get access to the library of members-only issues.</h2>

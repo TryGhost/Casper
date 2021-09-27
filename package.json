@@ -104,10 +104,9 @@
                 "options": ["Wide", "Full", "Small"],
                 "default": "Wide"
             },
-            "cta_style": {
-                "type": "select",
-                "options": ["Default", "Minimal"],
-                "default": "Default"
+            "minimal_cta": {
+                "type": "boolean",
+                "default": false
             }
         }
     },
