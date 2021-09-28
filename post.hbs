@@ -97,26 +97,27 @@ into the {body} tag of the default.hbs template --}}
 </section>
 {{/unless}}
 
+{{#if @custom.show_recent}}
+    {{!-- Read more links, just above the footer --}}
+    <aside class="read-more-wrap">
+        <div class="read-more inner">
 
-{{!-- Read more links, just above the footer --}}
-<aside class="read-more-wrap">
-    <div class="read-more inner">
+            {{!-- The {#get} helper below fetches some of the latest posts here
+            so that people have something else to read when they finish this one.
 
-        {{!-- The {#get} helper below fetches some of the latest posts here
-        so that people have something else to read when they finish this one.
+            This query gets the latest 3 posts on the site, but adds a filter to
+            exclude the post we're currently on from being included. --}}
 
-        This query gets the latest 3 posts on the site, but adds a filter to
-        exclude the post we're currently on from being included. --}}
+            {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+                {{#if more_posts}}
+                    {{#foreach more_posts}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                {{/if}}
+            {{/get}}
 
-        {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
-            {{#if more_posts}}
-                {{#foreach more_posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
-            {{/if}}
-        {{/get}}
-
-    </div>
-</aside>
+        </div>
+    </aside>
+{{/if}}
 
 {{/post}}

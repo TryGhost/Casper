@@ -118,6 +118,10 @@
             },
             "cta_image": {
                 "type": "image"
+            },
+            "show_recent": {
+                "type": "boolean",
+                "default": true
             }
         }
     },
