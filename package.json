@@ -122,6 +122,10 @@
             "show_recent": {
                 "type": "boolean",
                 "default": true
+            },
+            "dark_mode": {
+                "type": "boolean",
+                "default": false
             }
         }
     },

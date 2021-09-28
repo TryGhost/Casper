@@ -16,7 +16,7 @@
 {{define @custom.cta_text type="text" value="Sign up for more like this."}}
 
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" {{#if @custom.dark_mode}}dark-mode{{/if}}>
 <head>
 
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
