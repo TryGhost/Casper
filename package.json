@@ -115,6 +115,9 @@
             "cta_background": {
                 "type": "color",
                 "default": "#15171a"
+            },
+            "cta_image": {
+                "type": "image"
             }
         }
     },

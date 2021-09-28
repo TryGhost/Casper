@@ -1426,6 +1426,8 @@ Ghost editor. */
     color: #fff;
     text-align: center;
     background: var(--cta-background, var(--color-darkgrey));
+    background-size: cover;
+    background-position: center;
 }
 
 .footer-cta.cta-alt {

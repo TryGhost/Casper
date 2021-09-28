@@ -84,7 +84,7 @@ into the {body} tag of the default.hbs template --}}
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#unless @member}}
-<section class="footer-cta {{#match @custom.minimal_cta}}cta-alt{{/match}}">
+<section class="footer-cta {{#match @custom.minimal_cta}}cta-alt{{/match}}" {{{#if @custom.cta_image}}style="background-image: url({{img_url @custom.cta_image}});"{{/if}}>
     <div class="inner">
         <h2>{{text @custom.cta_text}}</h2>
         <a class="footer-cta-button" href="#/portal">
