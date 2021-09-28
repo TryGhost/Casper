@@ -30,6 +30,7 @@
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+    {{!-- These styles are only used for testing the settings with body class --}}
     <style>
         .font-alt .post-card-title,
         .font-alt .article-title {
@@ -110,6 +111,12 @@
             max-width: 720px;
             margin-right: auto;
             margin-left: auto;
+        }
+    </style>
+
+    <style>
+        :root {
+            --cta-background: {{@custom.cta_background}};
         }
     </style>
 

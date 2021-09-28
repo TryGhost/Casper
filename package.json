@@ -111,6 +111,10 @@
             "cta_text": {
                 "type": "text",
                 "default": "Sign up for more like this."
+            },
+            "cta_background": {
+                "type": "color",
+                "default": "#15171a"
             }
         }
     },
