@@ -77,7 +77,7 @@ production stylesheet in assets/built/screen.css
     min-height: 100vh;
 }
 
-.site-content {
+.viewport > main {
     flex-grow: 1;
 }
 
