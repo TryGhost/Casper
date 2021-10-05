@@ -841,6 +841,14 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 6vmin 0 0;
 }
 
+.image-full .article-image {
+    grid-column: full-start / full-end;
+}
+
+.image-small .article-image {
+    grid-column: main-start / main-end;
+}
+
 .gh-canvas .article-image img {
     display: block;
     margin-left: auto;
