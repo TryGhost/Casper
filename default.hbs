@@ -18,7 +18,7 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}">
+<body class="{{body_class}} {{#match @custom.typography "=" "Serif heading / sans-serif body"}}font-alt{{/match}}">
 <div class="viewport">
 
     <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">

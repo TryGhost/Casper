@@ -602,6 +602,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-top: 0;
 }
 
+.font-alt .post-card-title {
+    font-family: var(--font-serif);
+}
+
 .post-card-content {
     flex-grow: 1;
     display: flex;
@@ -820,6 +824,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: color-mod(var(--color-darkgrey) l(-5%));
 }
 
+.font-alt .article-title {
+    font-family: var(--font-serif);
+}
+
 .article-excerpt {
     margin: 0 0 1rem;
     font-size: 2rem;
@@ -946,6 +954,14 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2.1rem;
     line-height: 1.6em;
+}
+
+.font-alt .gh-content > blockquote,
+.font-alt .gh-content > ol,
+.font-alt .gh-content > ul,
+.font-alt .gh-content > dl,
+.font-alt .gh-content > p {
+    font-family: var(--font-sans);
 }
 
 .gh-content > ul,

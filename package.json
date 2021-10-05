@@ -87,6 +87,23 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "custom": {
+            "typography": {
+                "type": "select",
+                "options": ["Sans-serif heading / serif body", "Serif heading / sans-serif body"],
+                "default": "Sans-serif heading / serif body"
+            },
+            "cover_style": {
+                "type": "select",
+                "options": ["With cover image", "With accent color", "No cover"],
+                "default": "With cover image"
+            },
+            "post_image_width": {
+                "type": "select",
+                "options": ["Wide", "Full", "Small"],
+                "default": "Wide"
+            }
         }
     },
     "renovate": {
