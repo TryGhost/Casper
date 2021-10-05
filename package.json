@@ -103,6 +103,11 @@
                 "type": "select",
                 "options": ["Wide", "Full", "Small"],
                 "default": "Wide"
+            },
+            "cta_style": {
+                "type": "select",
+                "options": ["With background", "Minimal"],
+                "default": "With background"
             }
         }
     },
