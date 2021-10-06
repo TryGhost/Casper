@@ -102,13 +102,23 @@ $(document).ready(function () {
     // Basictable - Makes tables more responsible
     new basictable("article table", {forceResponsive: false});
 
-    // Lightbox 
+    // Lightbox for a gallery
     $('.kg-gallery-card').each( function() {
         $(this).find('img').simpleLightbox({
         sourceAttr: 'src',
         captions: false
         });
     });
+
+    // Lightbox for single image
+    $('.kg-image-card').each( function() {
+        $(this).find('img').simpleLightbox({
+        sourceAttr: 'src',
+        captions: false
+        });
+    });
+
+    
 });
 </script>
 

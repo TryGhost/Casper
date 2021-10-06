@@ -2081,6 +2081,10 @@ video {
 /* 16. Lightbox
 /* ---------------------------------------------------------- */
 
+.kg-image-card img {
+    cursor: pointer; 
+}
+
 .kg-gallery-container img {
     cursor: pointer; 
 }
