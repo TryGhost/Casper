@@ -97,7 +97,8 @@
             "cover_style": {
                 "type": "select",
                 "options": ["With cover image", "With accent color", "No cover"],
-                "default": "With cover image"
+                "default": "With cover image",
+                "group": "homepage"
             },
             "dark_mode": {
                 "type": "select",
@@ -107,12 +108,14 @@
             "post_image_width": {
                 "type": "select",
                 "options": ["Wide", "Full", "Small"],
-                "default": "Wide"
+                "default": "Wide",
+                "group": "post"
             },
             "cta_style": {
                 "type": "select",
                 "options": ["With background", "Minimal"],
-                "default": "With background"
+                "default": "With background",
+                "group": "post"
             }
         }
     },
