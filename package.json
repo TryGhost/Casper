@@ -99,6 +99,11 @@
                 "options": ["With cover image", "With accent color", "No cover"],
                 "default": "With cover image"
             },
+            "dark_mode": {
+                "type": "select",
+                "options": ["Yes", "No"],
+                "default": "No"
+            },
             "post_image_width": {
                 "type": "select",
                 "options": ["Wide", "Full", "Small"],

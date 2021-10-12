@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" {{#match @custom.dark_mode "=" "Yes"}}class="dark-mode"{{/match}}">
 <head>
 
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
