@@ -110,10 +110,9 @@
                 "default": "Wide",
                 "group": "post"
             },
-            "cta_style": {
-                "type": "select",
-                "options": ["With background", "Minimal"],
-                "default": "With background",
+            "remove_cta_background": {
+                "type": "boolean",
+                "default": false,
                 "group": "post"
             }
         }
