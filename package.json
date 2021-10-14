@@ -91,13 +91,13 @@
         "custom": {
             "typography": {
                 "type": "select",
-                "options": ["Sans-serif heading / serif body", "Serif heading / sans-serif body"],
-                "default": "Sans-serif heading / serif body"
+                "options": ["Modern sans-serif", "Elegant serif"],
+                "default": "Modern sans-serif"
             },
             "cover_style": {
                 "type": "select",
-                "options": ["With cover image", "With accent color", "No cover"],
-                "default": "With cover image",
+                "options": ["Background image", "Accent color", "No cover"],
+                "default": "Background image",
                 "group": "homepage"
             },
             "dark_mode": {
