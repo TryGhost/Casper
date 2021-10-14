@@ -101,9 +101,8 @@
                 "group": "homepage"
             },
             "dark_mode": {
-                "type": "select",
-                "options": ["Yes", "No"],
-                "default": "No"
+                "type": "boolean",
+                "default": false
             },
             "post_image_width": {
                 "type": "select",
