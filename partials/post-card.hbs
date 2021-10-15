@@ -42,7 +42,7 @@ which templates loop over to generate a list of posts. --}}
                 <li class="author-list-item">
                     {{#if profile_image}}
                     <a href="{{url}}" class="static-avatar">
-                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" loading="lazy" />
                     </a>
                     {{else}}
                     <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
