@@ -128,6 +128,11 @@
                 "type": "boolean",
                 "default": false,
                 "group": "post"
+            },
+            "remove_recent_posts": {
+                "type": "boolean",
+                "default": false,
+                "group": "post"
             }
         }
     },

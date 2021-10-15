@@ -1422,6 +1422,7 @@ Ghost editor. */
 
 .footer-cta {
     position: relative;
+    margin-bottom: -40px;
     padding: 9vmin 4vmin 10vmin;
     color: #fff;
     text-align: center;
@@ -1485,7 +1486,7 @@ Ghost editor. */
 .read-more-wrap {
     width: 100%;
     padding: 4vmin;
-    margin: 0 auto -40px;
+    margin: 40px auto -40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
