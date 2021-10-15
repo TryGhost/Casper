@@ -4,7 +4,7 @@ into the {body} of the default.hbs template --}}
 
 {{#match @custom.cover_style "!=" "No cover"}}
     <div class="site-header-content">
-        {{#match @custom.cover_style "=" "Background image"}}
+        {{#match @custom.cover_style "Background image"}}
             {{#if @site.cover_image}}
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
