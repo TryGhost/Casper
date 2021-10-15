@@ -1426,11 +1426,13 @@ Ghost editor. */
     color: #fff;
     text-align: center;
     background: var(--cta-bg, var(--color-darkgrey));
+    background-size: cover;
+    background-position: center;
 }
 
 .footer-cta.cta-alt {
     padding: 2vmin 4vmin 12vmin;
-    background: transparent;
+    background: none !important;
 }
 
 /* Increases the default h2 size by 15%, for small and large screens */

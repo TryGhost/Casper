@@ -84,7 +84,7 @@ into the {body} tag of the default.hbs template --}}
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#unless @member}}
-<section class="footer-cta {{#if @custom.remove_cta_background}}cta-alt{{/if}}">
+<section class="footer-cta {{#if @custom.remove_cta_background}}cta-alt{{/if}}" {{#if @custom.cta_background_image}}style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url({{@custom.cta_background_image}});"{{/if}}>
     <div class="inner">
         <h2>{{#if @custom.cta_text}}{{@custom.cta_text}}{{else}}Sign up for more like this.{{/if}}</h2>
         <a class="footer-cta-button" href="#/portal">

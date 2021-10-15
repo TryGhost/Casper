@@ -120,6 +120,10 @@
                 "default": "#15171a",
                 "group": "post"
             },
+            "cta_background_image": {
+                "type": "image",
+                "group": "post"
+            },
             "remove_cta_background": {
                 "type": "boolean",
                 "default": false,
