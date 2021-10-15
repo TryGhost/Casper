@@ -110,6 +110,11 @@
                 "default": "Wide",
                 "group": "post"
             },
+            "cta_text": {
+                "type": "text",
+                "default": "Sign up for more like this.",
+                "group": "post"
+            },
             "remove_cta_background": {
                 "type": "boolean",
                 "default": false,
