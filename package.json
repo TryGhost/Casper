@@ -115,6 +115,11 @@
                 "default": "Sign up for more like this.",
                 "group": "post"
             },
+            "cta_background_color": {
+                "type": "color",
+                "default": "#15171a",
+                "group": "post"
+            },
             "remove_cta_background": {
                 "type": "boolean",
                 "default": false,
