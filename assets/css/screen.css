@@ -1438,7 +1438,8 @@ Ghost editor. */
 
 /* Increases the default h2 size by 15%, for small and large screens */
 .footer-cta h2 {
-    margin: 0 0 30px;
+    margin: 0 auto 30px;
+    max-width: 720px;
     font-size: 3.2rem;
 }
 
