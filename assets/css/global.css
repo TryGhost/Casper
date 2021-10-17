@@ -169,8 +169,21 @@ svg:not(:root) {
 mark {
     background-color: #fdffb6;
 }
+kbd {
+  display: inline-block;
+  margin: 0, 0.1rem;
+  padding: 0.1em 0.6em;
+  overflow-wrap: break-word;
+  color: #232629;
+  background-color: #e3e6e8;
+  border: 1px solid #9fa6ad;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px hsl(210deg 8% 5% / 15%),
+    inset 0 1px 0 0 hsl(0deg 0% 100%);
+  font-family: monospace;
+  line-height: 1.5;
+}
 code,
-kbd,
 pre,
 samp {
     font-family: monospace, monospace;
