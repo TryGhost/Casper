@@ -115,9 +115,9 @@
                 "default": "Sign up for more like this.",
                 "group": "post"
             },
-            "remove_cta_background": {
+            "cta_background": {
                 "type": "boolean",
-                "default": false,
+                "default": true,
                 "group": "post"
             }
         }
