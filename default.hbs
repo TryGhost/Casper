@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" {{#if @custom.dark_mode}}class="dark-mode"{{/if}}>
+<html lang="{{@site.locale}}" {{#match @custom.theme "Dark"}}class="dark-mode"{{/match}}>
 <head>
 
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
@@ -8,6 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        :root {
+            {{#match @custom.theme "Light"}}
+            --bg-color: #fff;
+            {{else match @custom.theme "Mid Light"}}
+            --bg-color: #e9e9e9;
+            {{else match @custom.theme "Sepia"}}
+            --bg-color: #fbf3e2;
+            {{else match @custom.theme "Dark"}}
+            --bg-color: #151719;
+            {{/match}}
+        }
+    </style>
 
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}

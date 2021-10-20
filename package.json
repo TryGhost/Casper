@@ -100,9 +100,10 @@
                 "default": "Background image",
                 "group": "homepage"
             },
-            "dark_mode": {
-                "type": "boolean",
-                "default": false
+            "theme": {
+                "type": "select",
+                "options": ["Light", "Mid Light", "Sepia", "Dark"],
+                "default": "Light"
             },
             "post_image_width": {
                 "type": "select",
