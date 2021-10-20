@@ -20,6 +20,9 @@
             {{else match @custom.theme "Dark"}}
             --bg-color: #151719;
             {{/match}}
+            {{#if @custom.button_color}}
+            --button-bg-color: {{@custom.button_color}};
+            {{/if}}
         }
     </style>
 

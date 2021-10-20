@@ -105,6 +105,10 @@
                 "options": ["Light", "Mid Light", "Sepia", "Dark"],
                 "default": "Light"
             },
+            "button_color": {
+                "type": "color",
+                "default": "#ffffff"
+            },
             "post_image_width": {
                 "type": "select",
                 "options": ["Wide", "Full", "Small"],
