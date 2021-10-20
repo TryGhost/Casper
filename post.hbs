@@ -101,6 +101,7 @@ into the {body} tag of the default.hbs template --}}
 
 
 {{!-- Read more links, just above the footer --}}
+{{#if @custom.recent_posts}}
 <aside class="read-more-wrap">
     <div class="read-more inner">
 
@@ -120,5 +121,6 @@ into the {body} tag of the default.hbs template --}}
 
     </div>
 </aside>
+{{/if}}
 
 {{/post}}

@@ -120,6 +120,11 @@
                 "type": "text",
                 "default": "Sign up for more like this.",
                 "group": "post"
+            },
+            "recent_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
             }
         }
     },
