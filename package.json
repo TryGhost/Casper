@@ -111,11 +111,11 @@
                 "options": ["Light", "Dark", "Auto"],
                 "default": "Light"
             },
-            "button_background_color": {
+            "header_button_background_color": {
                 "type": "color",
                 "default": "#ffffff"
             },
-            "button_text_color": {
+            "header_button_text_color": {
                 "type": "select",
                 "options": ["Light", "Dark"],
                 "default": "Dark"
