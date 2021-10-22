@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" {{#match @custom.theme "Dark"}}class="dark-mode"{{/match}}>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{/match}}{{#match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
 <head>
 
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
@@ -11,15 +11,6 @@
 
     <style>
         :root {
-            {{#match @custom.theme "Light"}}
-            --bg-color: #fff;
-            {{else match @custom.theme "Mid Light"}}
-            --bg-color: #e9e9e9;
-            {{else match @custom.theme "Sepia"}}
-            --bg-color: #fbf3e2;
-            {{else match @custom.theme "Dark"}}
-            --bg-color: #151719;
-            {{/match}}
             {{#if @custom.button_color}}
             --button-bg-color: {{@custom.button_color}};
             {{/if}}

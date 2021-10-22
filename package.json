@@ -100,9 +100,9 @@
                 "default": "Background image",
                 "group": "homepage"
             },
-            "theme": {
+            "color_scheme": {
                 "type": "select",
-                "options": ["Light", "Mid Light", "Sepia", "Dark"],
+                "options": ["Light", "Dark", "Auto"],
                 "default": "Light"
             },
             "button_color": {
