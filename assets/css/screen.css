@@ -161,6 +161,10 @@ production stylesheet in assets/built/screen.css
     background: var(--ghost-accent-color);
 }
 
+.site-header-content.large {
+    padding-top: 28vmin;
+    padding-bottom: 28vmin;
+}
 
 
 /* 5. Site Navigation

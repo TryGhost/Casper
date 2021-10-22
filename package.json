@@ -94,10 +94,10 @@
                 "options": ["Modern sans-serif", "Elegant serif"],
                 "default": "Modern sans-serif"
             },
-            "cover_style": {
+            "header_size": {
                 "type": "select",
-                "options": ["Background image", "Accent color", "No cover"],
-                "default": "Background image",
+                "options": ["Small", "Medium", "Large"],
+                "default": "Medium",
                 "group": "homepage"
             },
             "color_scheme": {
