@@ -1864,6 +1864,10 @@ html.dark-mode .post-card-image {
     background: var(--color-darkmode);
 }
 
+html.dark-mode .post-card-primary-tag {
+    color: color-mod(var(--color-midgrey) l(+10%));
+}
+
 html.dark-mode .post-card-title {
     color: rgba(255, 255, 255, 0.85);
 }
@@ -2060,6 +2064,10 @@ html.dark-mode .subscribe-form .success .message-success {
 
     html.auto-color .post-card-image {
         background: var(--color-darkmode);
+    }
+
+    html.auto-color .post-card-primary-tag {
+        color: color-mod(var(--color-midgrey) l(+10%));
     }
 
     html.auto-color .post-card-title {
