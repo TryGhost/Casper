@@ -29,7 +29,7 @@
 <body class="{{body_class}} {{#match @custom.typography "Elegant serif"}}font-alt{{/match}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head {{#match @custom.header_size "!=" "Small"}}{{#if @site.cover_image}}has-cover{{/if}}{{/match}}">
+    <header id="gh-head" class="gh-head{{#match @custom.header_size "!=" "Small"}} has-cover{{/match}}">
         <nav class="gh-head-inner inner gh-container">
 
             <div class="gh-head-brand">
