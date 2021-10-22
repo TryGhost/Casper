@@ -11,9 +11,10 @@
 
     <style>
         :root {
-            {{#if @custom.button_color}}
-            --button-bg-color: {{@custom.button_color}};
+            {{#if @custom.button_background_color}}
+            --button-bg-color: {{@custom.button_background_color}};
             {{/if}}
+            --button-text-color: {{#if @custom.light_button_text_color}}#fff{{else}}var(--color-darkgrey){{/if}};
         }
     </style>
 

@@ -105,9 +105,13 @@
                 "options": ["Light", "Dark", "Auto"],
                 "default": "Light"
             },
-            "button_color": {
+            "button_background_color": {
                 "type": "color",
                 "default": "#ffffff"
+            },
+            "light_button_text_color": {
+                "type": "boolean",
+                "default": false
             },
             "post_image_width": {
                 "type": "select",

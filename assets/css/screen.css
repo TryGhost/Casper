@@ -309,7 +309,7 @@ production stylesheet in assets/built/screen.css
 a.gh-head-button {
     display: block;
     padding: 8px 15px;
-    color: var(--color-darkgrey);
+    color: var(--button-text-color, var(--color-darkgrey));
     font-weight: 500;
     letter-spacing: -0.015em;
     font-size: 1.5rem;
@@ -1489,7 +1489,7 @@ Ghost editor. */
     align-items: center;
     margin-left: 8px;
     padding: 10px 15px;
-    color: var(--color-darkgrey);
+    color: var(--button-text-color, var(--color-darkgrey));
     font-weight: 500;
     background: var(--button-bg-color, #fff);
     border-radius: 8px;
