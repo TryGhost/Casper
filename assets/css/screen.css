@@ -530,7 +530,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-feed.list {
     row-gap: 6vmin;
-    max-width: 920px;
+    max-width: 940px;
     margin: 2vmin auto 0;
 }
 
@@ -799,6 +799,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-feed.list .post-card-large .post-card-content {
         justify-content: flex-start;
+        margin-top: -6px;
     }
 
     .post-card-large .post-card-title {
