@@ -760,6 +760,10 @@ make sure this only happens on large viewports / desktop-ish devices.
         min-height: auto;
     }
 
+    .post-feed.list .post-card-large.no-image {
+        grid-template-columns: 1fr;
+    }
+
     .post-card-large:not(.no-image) .post-card-header {
         margin-top: 0;
     }
