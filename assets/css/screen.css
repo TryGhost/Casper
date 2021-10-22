@@ -125,10 +125,6 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
-.font-alt .site-title {
-    font-family: var(--font-serif);
-}
-
 .site-logo {
     max-height: 55px;
 }
