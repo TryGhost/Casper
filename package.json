@@ -100,6 +100,12 @@
                 "default": "Medium",
                 "group": "homepage"
             },
+            "feed_layout": {
+                "type": "select",
+                "options": ["Dynamic grid", "Simple grid", "List"],
+                "default": "Dynamic grid",
+                "group": "homepage"
+            },
             "color_scheme": {
                 "type": "select",
                 "options": ["Light", "Dark", "Auto"],
