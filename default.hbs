@@ -14,7 +14,7 @@
             {{#if @custom.button_background_color}}
             --button-bg-color: {{@custom.button_background_color}};
             {{/if}}
-            --button-text-color: {{#if @custom.light_button_text_color}}#fff{{else}}var(--color-darkgrey){{/if}};
+            --button-text-color: {{#match @custom.button_text_color "Light"}}#fff{{else}}var(--color-darkgrey){{/match}};
         }
     </style>
 

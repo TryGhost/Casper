@@ -115,9 +115,10 @@
                 "type": "color",
                 "default": "#ffffff"
             },
-            "light_button_text_color": {
-                "type": "boolean",
-                "default": false
+            "button_text_color": {
+                "type": "select",
+                "options": ["Light", "Dark"],
+                "default": "Dark"
             },
             "post_image_width": {
                 "type": "select",
