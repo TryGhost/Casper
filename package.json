@@ -116,7 +116,7 @@
                 "options": ["Light", "Dark", "Auto"],
                 "default": "Light"
             },
-            "header_button_background_color": {
+            "header_button_background": {
                 "type": "color",
                 "default": "#ffffff"
             },

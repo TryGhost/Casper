@@ -625,6 +625,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-card-excerpt {
     max-width: 56em;
     color: color-mod(var(--color-midgrey) l(-8%));
+    font-family: var(--font-serif);
+}
+
+.has-sans-body .post-card-excerpt {
+    font-family: var(--font-sans-serif);
 }
 
 .post-card-excerpt p {
