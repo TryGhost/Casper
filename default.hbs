@@ -27,7 +27,7 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}} {{#match @custom.typography "Elegant serif"}}font-alt{{/match}}">
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}">
 <div class="viewport">
 
     <header id="gh-head" class="gh-head{{#match @custom.header_size "!=" "Small"}} has-cover{{/match}}">

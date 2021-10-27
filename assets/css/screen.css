@@ -612,7 +612,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-top: 0;
 }
 
-.font-alt .post-card-title {
+.has-serif-title .post-card-title {
     font-family: var(--font-serif);
 }
 
@@ -863,7 +863,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: color-mod(var(--color-darkgrey) l(-5%));
 }
 
-.font-alt .article-title {
+.has-serif-title .article-title {
     font-family: var(--font-serif);
 }
 
@@ -963,6 +963,10 @@ headings, text, images and lists. We deal with cards lower down. */
     color: var(--color-darkgrey);
 }
 
+.has-serif-title .gh-content > [id] {
+    font-family: var(--font-serif);
+}
+
 /* Add back a top margin to all headings, unless a heading
 is the very first element in the post content */
 .gh-content > [id]:not(:first-child) {
@@ -1003,11 +1007,11 @@ is the very first element in the post content */
     line-height: 1.6em;
 }
 
-.font-alt .gh-content > blockquote,
-.font-alt .gh-content > ol,
-.font-alt .gh-content > ul,
-.font-alt .gh-content > dl,
-.font-alt .gh-content > p {
+.has-sans-body .gh-content > blockquote,
+.has-sans-body .gh-content > ol,
+.has-sans-body .gh-content > ul,
+.has-sans-body .gh-content > dl,
+.has-sans-body .gh-content > p {
     font-family: var(--font-sans);
 }
 
