@@ -137,7 +137,7 @@
                 "default": "Sign up for more like this.",
                 "group": "post"
             },
-            "recent_posts": {
+            "show_recent_posts": {
                 "type": "boolean",
                 "default": true,
                 "group": "post"
