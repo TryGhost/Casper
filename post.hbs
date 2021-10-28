@@ -43,7 +43,7 @@ into the {body} tag of the default.hbs template --}}
                         <h4 class="author-name">{{authors}}</h4>
                         <div class="byline-meta-content">
                             <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                            <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                            <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
                         </div>
                     </div>
                 </section>
@@ -86,10 +86,10 @@ into the {body} tag of the default.hbs template --}}
 {{#unless @member}}
 <section class="footer-cta">
     <div class="inner">
-        <h2>Sign up for more like this.</h2>
+        <h2>{{t "Sign up for more like this."}}</h2>
         <a class="footer-cta-button" href="#/portal">
-            <div>Enter your email</div>
-            <span>Subscribe</span>
+            <div>{{t "Enter your email"}}</div>
+            <span>{{t "Subscribe"}}</span>
         </a>
         {{!-- ^ This looks like a form element, but it's just a link to Portal,
         making the form validation and submission much simpler. --}}

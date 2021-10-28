@@ -27,7 +27,7 @@
                 <div class="post-card-content">
                     <div class="post-card-content-link">
                         <header class="post-card-header">
-                            <div class="post-card-primary-tag">Tagged</div>
+                            <div class="post-card-primary-tag">{{t "Tagged"}}</div>
                             <h2 class="post-card-title">{{name}}</h2>
                         </header>
                         <div class="post-card-excerpt">
@@ -35,7 +35,7 @@
                                 {{#if description}}
                                 {{description}}
                                 {{else}}
-                                A collection of {{plural ../pagination.total empty='zero posts' singular='% post' plural='% posts'}}
+                                {{t "A collection of"}} {{plural ../pagination.total empty=(t 'No posts') singular=(t '% post') plural=(t '% posts')}}
                                 {{/if}}
                             </p>
                         </div>
