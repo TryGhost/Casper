@@ -1873,10 +1873,6 @@ html.dark-mode .post-card-image {
     background: var(--color-darkmode);
 }
 
-html.dark-mode .post-card-primary-tag {
-    color: color-mod(var(--color-midgrey) l(+10%));
-}
-
 html.dark-mode .post-card-title {
     color: rgba(255, 255, 255, 0.85);
 }
@@ -1936,20 +1932,20 @@ html.dark-mode .gh-content :not(pre) > code {
     color: var(--color-wash);
 }
 
-html.dark-mode .post-full-content a {
+html.dark-mode .gh-content a {
     color: #fff;
     box-shadow: inset 0 -1px 0 #fff;
 }
 
-html.dark-mode .post-full-content strong {
+html.dark-mode .gh-content strong {
     color: #fff;
 }
 
-html.dark-mode .post-full-content em {
+html.dark-mode .gh-content em {
     color: #fff;
 }
 
-html.dark-mode .post-full-content code {
+html.dark-mode .gh-content code {
     color: #fff;
     background: #000;
 }
@@ -1958,40 +1954,40 @@ html.dark-mode hr {
     border-top-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .post-full-content hr:after {
+html.dark-mode .gh-content hr:after {
     background: color-mod(var(--color-darkmode) l(+8%));
     box-shadow: var(--color-darkmode) 0 0 0 5px;
 }
 
-html.dark-mode .gh-content figcaption {
+html.dark-mode figcaption {
     color: rgba(255, 255, 255, 0.6);
 }
 
-html.dark-mode .post-full-content table td:first-child {
+html.dark-mode .gh-content table td:first-child {
     background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .post-full-content table td:last-child {
+html.dark-mode .gh-content table td:last-child {
     background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .post-full-content table th {
+html.dark-mode .gh-content table th {
     color: rgba(255, 255, 255, 0.85);
     background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .post-full-content table th,
-html.dark-mode .post-full-content table td {
+html.dark-mode .gh-content table th,
+html.dark-mode .gh-content table td {
     border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
 }
 
-html.dark-mode .post-full-content .kg-bookmark-container,
-html.dark-mode .post-full-content .kg-bookmark-container:hover {
+html.dark-mode .gh-content .kg-bookmark-container,
+html.dark-mode .gh-content .kg-bookmark-container:hover {
     color: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 1px rgba(255,255,255,0.9);
 }
 
-html.dark-mode .post-full-content input {
+html.dark-mode .gh-content input {
     color: color-mod(var(--color-midgrey) l(-30%));
 }
 
@@ -2010,42 +2006,6 @@ html.dark-mode .kg-bookmark-metadata {
 html.dark-mode .site-archive-header .no-image {
     color: rgba(255, 255, 255, 0.9);
     background: var(--color-darkmode);
-}
-
-html.dark-mode .subscribe-form {
-    border: none;
-    background: linear-gradient(color-mod(var(--color-darkmode) l(-6%)), color-mod(var(--color-darkmode) l(-3%)));
-}
-
-html.dark-mode .subscribe-form-title {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-html.dark-mode .subscribe-form p {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-html.dark-mode .subscribe-email {
-    border-color: color-mod(var(--color-darkmode) l(+6%));
-    color: rgba(255, 255, 255, 0.9);
-    background: color-mod(var(--color-darkmode) l(+3%));
-}
-
-html.dark-mode .subscribe-email:focus {
-    border-color: color-mod(var(--color-darkmode) l(+25%));
-}
-
-html.dark-mode .subscribe-form button {
-    opacity: 0.9;
-}
-
-html.dark-mode .subscribe-form .invalid .message-error,
-html.dark-mode .subscribe-form .error .message-error {
-    color: color-mod(var(--color-red) l(+5%) s(-5%));
-}
-
-html.dark-mode .subscribe-form .success .message-success {
-    color: color-mod(var(--color-green) l(+5%) s(-5%));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -2073,10 +2033,6 @@ html.dark-mode .subscribe-form .success .message-success {
 
     html.auto-color .post-card-image {
         background: var(--color-darkmode);
-    }
-
-    html.auto-color .post-card-primary-tag {
-        color: color-mod(var(--color-midgrey) l(+10%));
     }
 
     html.auto-color .post-card-title {
@@ -2138,20 +2094,20 @@ html.dark-mode .subscribe-form .success .message-success {
         color: var(--color-wash);
     }
 
-    html.auto-color .post-full-content a {
+    html.auto-color .gh-content a {
         color: #fff;
         box-shadow: inset 0 -1px 0 #fff;
     }
 
-    html.auto-color .post-full-content strong {
+    html.auto-color .gh-content strong {
         color: #fff;
     }
 
-    html.auto-color .post-full-content em {
+    html.auto-color .gh-content em {
         color: #fff;
     }
 
-    html.auto-color .post-full-content code {
+    html.auto-color .gh-content code {
         color: #fff;
         background: #000;
     }
@@ -2160,40 +2116,40 @@ html.dark-mode .subscribe-form .success .message-success {
         border-top-color: color-mod(var(--color-darkmode) l(+8%));
     }
 
-    html.auto-color .post-full-content hr:after {
+    html.auto-color .gh-content hr:after {
         background: color-mod(var(--color-darkmode) l(+8%));
         box-shadow: var(--color-darkmode) 0 0 0 5px;
     }
 
-    html.auto-color .gh-content figcaption {
+    html.auto-color figcaption {
         color: rgba(255, 255, 255, 0.6);
     }
 
-    html.auto-color .post-full-content table td:first-child {
+    html.auto-color .gh-content table td:first-child {
         background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
     }
 
-    html.auto-color .post-full-content table td:last-child {
+    html.auto-color .gh-content table td:last-child {
         background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
     }
 
-    html.auto-color .post-full-content table th {
+    html.auto-color .gh-content table th {
         color: rgba(255, 255, 255, 0.85);
         background-color: color-mod(var(--color-darkmode) l(+8%));
     }
 
-    html.auto-color .post-full-content table th,
-    html.auto-color .post-full-content table td {
+    html.auto-color .gh-content table th,
+    html.auto-color .gh-content table td {
         border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
     }
 
-    html.auto-color .post-full-content .kg-bookmark-container,
-    html.auto-color .post-full-content .kg-bookmark-container:hover {
+    html.auto-color .gh-content .kg-bookmark-container,
+    html.auto-color .gh-content .kg-bookmark-container:hover {
         color: rgba(255, 255, 255, 0.75);
         box-shadow: 0 0 1px rgba(255,255,255,0.9);
     }
 
-    html.auto-color .post-full-content input {
+    html.auto-color .gh-content input {
         color: color-mod(var(--color-midgrey) l(-30%));
     }
 
@@ -2212,42 +2168,6 @@ html.dark-mode .subscribe-form .success .message-success {
     html.auto-color .site-archive-header .no-image {
         color: rgba(255, 255, 255, 0.9);
         background: var(--color-darkmode);
-    }
-
-    html.auto-color .subscribe-form {
-        border: none;
-        background: linear-gradient(color-mod(var(--color-darkmode) l(-6%)), color-mod(var(--color-darkmode) l(-3%)));
-    }
-
-    html.auto-color .subscribe-form-title {
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    html.auto-color .subscribe-form p {
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    html.auto-color .subscribe-email {
-        border-color: color-mod(var(--color-darkmode) l(+6%));
-        color: rgba(255, 255, 255, 0.9);
-        background: color-mod(var(--color-darkmode) l(+3%));
-    }
-
-    html.auto-color .subscribe-email:focus {
-        border-color: color-mod(var(--color-darkmode) l(+25%));
-    }
-
-    html.auto-color .subscribe-form button {
-        opacity: 0.9;
-    }
-
-    html.auto-color .subscribe-form .invalid .message-error,
-    html.auto-color .subscribe-form .error .message-error {
-        color: color-mod(var(--color-red) l(+5%) s(-5%));
-    }
-
-    html.auto-color .subscribe-form .success .message-success {
-        color: color-mod(var(--color-green) l(+5%) s(-5%));
     }
 }
 
