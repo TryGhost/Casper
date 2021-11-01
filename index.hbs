@@ -2,8 +2,8 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{#match @custom.header_size "!=" "Small"}}
-    <div class="site-header-content{{#match @custom.header_size "Large"}} large{{/match}}">
+{{#match @custom.publication_cover_style "!=" "None"}}
+    <div class="site-header-content{{#match @custom.publication_cover_style "Large"}} large{{/match}}">
         {{#if @site.cover_image}}
             {{!-- This is a responsive image, it loads different sizes depending on device
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}

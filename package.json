@@ -99,9 +99,9 @@
                 "options": ["Modern sans-serif", "Elegant serif"],
                 "default": "Elegant serif"
             },
-            "header_size": {
+            "publication_cover_style": {
                 "type": "select",
-                "options": ["Small", "Medium", "Large"],
+                "options": ["None", "Medium", "Large"],
                 "default": "Medium",
                 "group": "homepage"
             },
@@ -131,13 +131,13 @@
                 "default": "Wide",
                 "group": "post"
             },
-            "cta_style": {
+            "email_signup_for_logged_out_visitors": {
                 "type": "select",
-                "options": ["Background color", "Minimal", "No CTA"],
-                "default": "Background color",
+                "options": ["Footer", "Bottom of post", "None"],
+                "default": "Footer",
                 "group": "post"
             },
-            "cta_text": {
+            "email_signup_text": {
                 "type": "text",
                 "default": "Sign up for more like this.",
                 "group": "post"

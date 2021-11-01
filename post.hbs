@@ -83,11 +83,11 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#match @custom.cta_style "!=" "No CTA"}}
+{{#match @custom.email_signup_for_logged_out_visitors "!=" "None"}}
 {{#unless @member}}{{#if access}}
-    <section class="footer-cta {{#match @custom.cta_style "Minimal"}}cta-alt{{/match}}">
+    <section class="footer-cta {{#match @custom.email_signup_for_logged_out_visitors "Bottom of post"}}cta-alt{{/match}}">
         <div class="inner">
-            {{#if @custom.cta_text}}<h2>{{@custom.cta_text}}</h2>{{/if}}
+            {{#if @custom.email_signup_text}}<h2>{{@custom.email_signup_text}}</h2>{{/if}}
             <a class="footer-cta-button" href="#/portal">
                 <div class="footer-cta-input">Enter your email</div>
                 <span>Subscribe</span>
