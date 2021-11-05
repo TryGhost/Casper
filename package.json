@@ -87,6 +87,66 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "custom": {
+            "title_font": {
+                "type": "select",
+                "options": ["Modern sans-serif", "Elegant serif"],
+                "default": "Modern sans-serif"
+            },
+            "body_font": {
+                "type": "select",
+                "options": ["Modern sans-serif", "Elegant serif"],
+                "default": "Elegant serif"
+            },
+            "publication_cover_style": {
+                "type": "select",
+                "options": ["None", "Medium", "Large"],
+                "default": "Medium",
+                "group": "homepage"
+            },
+            "feed_layout": {
+                "type": "select",
+                "options": ["Dynamic grid", "Simple grid", "List"],
+                "default": "Dynamic grid",
+                "group": "homepage"
+            },
+            "color_scheme": {
+                "type": "select",
+                "options": ["Light", "Dark", "Auto"],
+                "default": "Light"
+            },
+            "header_button_background": {
+                "type": "color",
+                "default": "#ffffff"
+            },
+            "header_button_text_color": {
+                "type": "select",
+                "options": ["Light", "Dark"],
+                "default": "Dark"
+            },
+            "post_image_width": {
+                "type": "select",
+                "options": ["Wide", "Full", "Small"],
+                "default": "Wide",
+                "group": "post"
+            },
+            "email_signup_for_logged_out_visitors": {
+                "type": "select",
+                "options": ["Footer", "Bottom of post", "None"],
+                "default": "Footer",
+                "group": "post"
+            },
+            "email_signup_text": {
+                "type": "text",
+                "default": "Sign up for more like this.",
+                "group": "post"
+            },
+            "show_recent_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            }
         }
     },
     "renovate": {

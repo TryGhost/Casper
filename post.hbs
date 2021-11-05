@@ -8,7 +8,7 @@ into the {body} tag of the default.hbs template --}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
 <main id="site-main" class="site-main">
-    <article class="article {{post_class}}">
+    <article class="article {{post_class}} {{#match @custom.post_image_width "Full"}}image-full{{else match @custom.post_image_width "=" "Small"}}image-small{{/match}}">
 
         <header class="article-header gh-canvas">
 
@@ -83,22 +83,25 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#unless @member}}
-<section class="footer-cta">
-    <div class="inner">
-        <h2>Sign up for more like this.</h2>
-        <a class="footer-cta-button" href="#/portal">
-            <div>Enter your email</div>
-            <span>Subscribe</span>
-        </a>
-        {{!-- ^ This looks like a form element, but it's just a link to Portal,
-        making the form validation and submission much simpler. --}}
-    </div>
-</section>
-{{/unless}}
+{{#match @custom.email_signup_for_logged_out_visitors "!=" "None"}}
+{{#unless @member}}{{#if access}}
+    <section class="footer-cta {{#match @custom.email_signup_for_logged_out_visitors "Bottom of post"}}cta-alt{{/match}}">
+        <div class="inner">
+            {{#if @custom.email_signup_text}}<h2>{{@custom.email_signup_text}}</h2>{{/if}}
+            <a class="footer-cta-button" href="#/portal">
+                <div class="footer-cta-input">Enter your email</div>
+                <span>Subscribe</span>
+            </a>
+            {{!-- ^ This looks like a form element, but it's just a link to Portal,
+            making the form validation and submission much simpler. --}}
+        </div>
+    </section>
+{{/if}}{{/unless}}
+{{/match}}
 
 
 {{!-- Read more links, just above the footer --}}
+{{#if @custom.show_recent_posts}}
 <aside class="read-more-wrap">
     <div class="read-more inner">
 
@@ -118,5 +121,6 @@ into the {body} tag of the default.hbs template --}}
 
     </div>
 </aside>
+{{/if}}
 
 {{/post}}

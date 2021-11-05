@@ -161,6 +161,10 @@ production stylesheet in assets/built/screen.css
     background: var(--ghost-accent-color);
 }
 
+.site-header-content.large {
+    padding-top: 28vmin;
+    padding-bottom: 28vmin;
+}
 
 
 /* 5. Site Navigation
@@ -301,12 +305,12 @@ production stylesheet in assets/built/screen.css
 a.gh-head-button {
     display: block;
     padding: 8px 15px;
-    color: var(--color-darkgrey);
+    color: var(--button-text-color, var(--color-darkgrey));
     font-weight: 500;
     letter-spacing: -0.015em;
     font-size: 1.5rem;
     line-height: 1em;
-    background: #fff;
+    background: var(--button-bg-color, #fff);
     border-radius: 30px;
 }
 
@@ -422,7 +426,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         justify-content: space-between;
         user-select: none;
     }
-    .home-template #gh-head .gh-head-brand {
+    .home-template #gh-head.has-cover .gh-head-brand {
         justify-content: flex-end;
     }
     #gh-head .gh-head-menu {
@@ -489,7 +493,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
-.home-template .gh-head {
+.home-template .gh-head.has-cover {
     position: absolute;
     top: 0;
     right: 0;
@@ -505,10 +509,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     background: var(--ghost-accent-color);
 }
 
-.home-template .gh-head-logo {
+.home-template .gh-head.has-cover .gh-head-logo {
     display: none;
 }
-.home-template .gh-head-menu {
+.home-template .gh-head.has-cover .gh-head-menu {
     margin-left: -2.5vmin;
 }
 
@@ -522,6 +526,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     grid-gap: 4vmin;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 4vmin 0;
+}
+
+.post-feed.list {
+    row-gap: 6vmin;
+    max-width: 940px;
+    margin: 2vmin auto 0;
 }
 
 @media (max-width: 1000px) {
@@ -602,6 +612,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-top: 0;
 }
 
+.has-serif-title .post-card-title {
+    font-family: var(--font-serif);
+}
+
 .post-card-content {
     flex-grow: 1;
     display: flex;
@@ -611,6 +625,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-card-excerpt {
     max-width: 56em;
     color: color-mod(var(--color-midgrey) l(-8%));
+    font-family: var(--font-serif);
+}
+
+.has-sans-body .post-card-excerpt {
+    font-family: var(--font-sans-serif);
 }
 
 .post-card-excerpt p {
@@ -741,6 +760,15 @@ make sure this only happens on large viewports / desktop-ish devices.
         border-top: 0;
     }
 
+    .post-feed.list .post-card-large {
+        grid-template-columns: 3fr 5fr;
+        min-height: auto;
+    }
+
+    .post-feed.list .post-card-large.no-image {
+        grid-template-columns: 1fr;
+    }
+
     .post-card-large:not(.no-image) .post-card-header {
         margin-top: 0;
     }
@@ -750,6 +778,18 @@ make sure this only happens on large viewports / desktop-ish devices.
         grid-column: 1 / span 2;
         margin-bottom: 0;
         min-height: 380px;
+    }
+
+    .post-feed.list .post-card-large .post-card-image-link {
+        grid-column: 1 / span 1;
+        height: max-content;
+        min-height: auto;
+    }
+
+    .post-feed.list .post-card-large .post-card-image-link::after {
+        content: "";
+        display: block;
+        padding-bottom: 60%;
     }
 
     .post-card-large .post-card-image {
@@ -762,13 +802,21 @@ make sure this only happens on large viewports / desktop-ish devices.
         justify-content: center;
     }
 
+    .post-feed.list .post-card-large .post-card-content {
+        justify-content: flex-start;
+        margin-top: -6px;
+    }
+
     .post-card-large .post-card-title {
         margin-top: 0;
         font-size: 3.2rem;
     }
 
+    .post-feed.list .post-card-large .post-card-title {
+        font-size: 2.4rem;
+    }
+
     .post-card-large .post-card-excerpt p {
-        margin-bottom: 1.5em;
         font-size: 1.7rem;
         line-height: 1.55em;
         -webkit-line-clamp: 8;
@@ -820,6 +868,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: color-mod(var(--color-darkgrey) l(-5%));
 }
 
+.has-serif-title .article-title {
+    font-family: var(--font-serif);
+}
+
 .article-excerpt {
     margin: 0 0 1rem;
     font-size: 2rem;
@@ -831,6 +883,14 @@ make sure this only happens on large viewports / desktop-ish devices.
     grid-column: wide-start / wide-end;
     width: 100%;
     margin: 6vmin 0 0;
+}
+
+.image-full .article-image {
+    grid-column: full-start / full-end;
+}
+
+.image-small .article-image {
+    grid-column: main-start / main-end;
 }
 
 .gh-canvas .article-image img {
@@ -908,6 +968,10 @@ headings, text, images and lists. We deal with cards lower down. */
     color: var(--color-darkgrey);
 }
 
+.has-serif-title .gh-content > [id] {
+    font-family: var(--font-serif);
+}
+
 /* Add back a top margin to all headings, unless a heading
 is the very first element in the post content */
 .gh-content > [id]:not(:first-child) {
@@ -946,6 +1010,14 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2.1rem;
     line-height: 1.6em;
+}
+
+.has-sans-body .gh-content > blockquote,
+.has-sans-body .gh-content > ol,
+.has-sans-body .gh-content > ul,
+.has-sans-body .gh-content > dl,
+.has-sans-body .gh-content > p {
+    font-family: var(--font-sans);
 }
 
 .gh-content > ul,
@@ -1398,16 +1470,26 @@ Ghost editor. */
 
 .footer-cta {
     position: relative;
+    margin-bottom: -40px;
     padding: 9vmin 4vmin 10vmin;
     color: #fff;
     text-align: center;
     background: var(--color-darkgrey);
 }
 
+.footer-cta.cta-alt {
+    padding: 2vmin 4vmin 12vmin;
+    background: transparent;
+}
+
 /* Increases the default h2 size by 15%, for small and large screens */
 .footer-cta h2 {
     margin: 0 0 30px;
     font-size: 3.2rem;
+}
+
+.footer-cta.cta-alt h2 {
+    color: var(--color-darkgrey);
 }
 
 @media (max-width: 600px) {
@@ -1430,9 +1512,13 @@ Ghost editor. */
     border-radius: 8px;
 }
 
+.footer-cta.cta-alt .footer-cta-button {
+    border: 1px solid var(--color-lightgrey);
+}
+
 .footer-cta-button span {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 15px;
     color: #fff;
     font-weight: 500;
     background: var(--ghost-accent-color);
@@ -1446,7 +1532,7 @@ Ghost editor. */
 .read-more-wrap {
     width: 100%;
     padding: 4vmin;
-    margin: 0 auto -40px;
+    margin: 40px auto -40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
@@ -1846,20 +1932,20 @@ html.dark-mode .gh-content :not(pre) > code {
     color: var(--color-wash);
 }
 
-html.dark-mode .post-full-content a {
+html.dark-mode .gh-content a {
     color: #fff;
     box-shadow: inset 0 -1px 0 #fff;
 }
 
-html.dark-mode .post-full-content strong {
+html.dark-mode .gh-content strong {
     color: #fff;
 }
 
-html.dark-mode .post-full-content em {
+html.dark-mode .gh-content em {
     color: #fff;
 }
 
-html.dark-mode .post-full-content code {
+html.dark-mode .gh-content code {
     color: #fff;
     background: #000;
 }
@@ -1868,40 +1954,40 @@ html.dark-mode hr {
     border-top-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .post-full-content hr:after {
+html.dark-mode .gh-content hr:after {
     background: color-mod(var(--color-darkmode) l(+8%));
     box-shadow: var(--color-darkmode) 0 0 0 5px;
 }
 
-html.dark-mode .gh-content figcaption {
+html.dark-mode figcaption {
     color: rgba(255, 255, 255, 0.6);
 }
 
-html.dark-mode .post-full-content table td:first-child {
+html.dark-mode .gh-content table td:first-child {
     background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .post-full-content table td:last-child {
+html.dark-mode .gh-content table td:last-child {
     background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .post-full-content table th {
+html.dark-mode .gh-content table th {
     color: rgba(255, 255, 255, 0.85);
     background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .post-full-content table th,
-html.dark-mode .post-full-content table td {
+html.dark-mode .gh-content table th,
+html.dark-mode .gh-content table td {
     border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
 }
 
-html.dark-mode .post-full-content .kg-bookmark-container,
-html.dark-mode .post-full-content .kg-bookmark-container:hover {
+html.dark-mode .gh-content .kg-bookmark-container,
+html.dark-mode .gh-content .kg-bookmark-container:hover {
     color: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 1px rgba(255,255,255,0.9);
 }
 
-html.dark-mode .post-full-content input {
+html.dark-mode .gh-content input {
     color: color-mod(var(--color-midgrey) l(-30%));
 }
 
@@ -1922,40 +2008,167 @@ html.dark-mode .site-archive-header .no-image {
     background: var(--color-darkmode);
 }
 
-html.dark-mode .subscribe-form {
-    border: none;
-    background: linear-gradient(color-mod(var(--color-darkmode) l(-6%)), color-mod(var(--color-darkmode) l(-3%)));
-}
+@media (prefers-color-scheme: dark) {
+    html.auto-color body {
+        color: rgba(255, 255, 255, 0.75);
+        background: var(--color-darkmode);
+    }
 
-html.dark-mode .subscribe-form-title {
-    color: rgba(255, 255, 255, 0.9);
-}
+    html.auto-color img {
+        opacity: 0.9;
+    }
 
-html.dark-mode .subscribe-form p {
-    color: rgba(255, 255, 255, 0.7);
-}
+    html.auto-color .post-card,
+    html.auto-color .post-card:hover {
+        border-bottom-color: color-mod(var(--color-darkmode) l(+8%));
+    }
 
-html.dark-mode .subscribe-email {
-    border-color: color-mod(var(--color-darkmode) l(+6%));
-    color: rgba(255, 255, 255, 0.9);
-    background: color-mod(var(--color-darkmode) l(+3%));
-}
+    html.auto-color .post-card-byline-content a {
+        color: rgba(255, 255, 255, 0.75);
+    }
 
-html.dark-mode .subscribe-email:focus {
-    border-color: color-mod(var(--color-darkmode) l(+25%));
-}
+    html.auto-color .post-card-byline-content a:hover {
+        color: #fff;
+    }
 
-html.dark-mode .subscribe-form button {
-    opacity: 0.9;
-}
+    html.auto-color .post-card-image {
+        background: var(--color-darkmode);
+    }
 
-html.dark-mode .subscribe-form .invalid .message-error,
-html.dark-mode .subscribe-form .error .message-error {
-    color: color-mod(var(--color-red) l(+5%) s(-5%));
-}
+    html.auto-color .post-card-title {
+        color: rgba(255, 255, 255, 0.85);
+    }
 
-html.dark-mode .subscribe-form .success .message-success {
-    color: color-mod(var(--color-green) l(+5%) s(-5%));
+    html.auto-color .post-card-excerpt {
+        color: color-mod(var(--color-midgrey) l(+10%));
+    }
+
+    html.auto-color .post-full-content {
+        background: var(--color-darkmode);
+    }
+
+    html.auto-color .article-title {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    html.auto-color .article-excerpt {
+        color: color-mod(var(--color-midgrey) l(+10%));
+    }
+
+    html.auto-color .post-full-image {
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+
+    html.auto-color .article-byline {
+        border-top-color: color-mod(var(--color-darkmode) l(+15%));
+    }
+
+    html.auto-color .article-byline-meta h4 a {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    html.auto-color .article-byline-meta h4 a:hover {
+        color: #fff;
+    }
+
+    html.auto-color .no-image .author-social-link a {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    html.auto-color .gh-content h1,
+    html.auto-color .gh-content h2,
+    html.auto-color .gh-content h3,
+    html.auto-color .gh-content h4,
+    html.auto-color .gh-content h5,
+    html.auto-color .gh-content h6 {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    html.auto-color .gh-content pre {
+        background: color-mod(var(--color-darkgrey) l(-8%));
+    }
+
+    html.auto-color .gh-content :not(pre) > code {
+        background: color-mod(var(--color-darkgrey) l(+6%));
+        border-color: color-mod(var(--color-darkmode) l(+8%));
+        color: var(--color-wash);
+    }
+
+    html.auto-color .gh-content a {
+        color: #fff;
+        box-shadow: inset 0 -1px 0 #fff;
+    }
+
+    html.auto-color .gh-content strong {
+        color: #fff;
+    }
+
+    html.auto-color .gh-content em {
+        color: #fff;
+    }
+
+    html.auto-color .gh-content code {
+        color: #fff;
+        background: #000;
+    }
+
+    html.auto-color hr {
+        border-top-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+
+    html.auto-color .gh-content hr:after {
+        background: color-mod(var(--color-darkmode) l(+8%));
+        box-shadow: var(--color-darkmode) 0 0 0 5px;
+    }
+
+    html.auto-color figcaption {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    html.auto-color .gh-content table td:first-child {
+        background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
+    }
+
+    html.auto-color .gh-content table td:last-child {
+        background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
+    }
+
+    html.auto-color .gh-content table th {
+        color: rgba(255, 255, 255, 0.85);
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+
+    html.auto-color .gh-content table th,
+    html.auto-color .gh-content table td {
+        border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
+    }
+
+    html.auto-color .gh-content .kg-bookmark-container,
+    html.auto-color .gh-content .kg-bookmark-container:hover {
+        color: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 0 1px rgba(255,255,255,0.9);
+    }
+
+    html.auto-color .gh-content input {
+        color: color-mod(var(--color-midgrey) l(-30%));
+    }
+
+    html.auto-color .kg-bookmark-title {
+        color: #fff;
+    }
+
+    html.auto-color .kg-bookmark-description {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    html.auto-color .kg-bookmark-metadata {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    html.auto-color .site-archive-header .no-image {
+        color: rgba(255, 255, 255, 0.9);
+        background: var(--color-darkmode);
+    }
 }
 
 /*
