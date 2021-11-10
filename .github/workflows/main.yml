@@ -23,3 +23,7 @@ jobs:
         with:
           files: /
           dest: Casper.zip
+      - uses: actions/upload-artifact@v1
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/Casper.zip
