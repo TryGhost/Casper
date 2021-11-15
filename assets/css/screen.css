@@ -1913,12 +1913,7 @@ html.dark-mode .no-image .author-social-link a {
     color: rgba(255, 255, 255, 0.75);
 }
 
-html.dark-mode .gh-content h1,
-html.dark-mode .gh-content h2,
-html.dark-mode .gh-content h3,
-html.dark-mode .gh-content h4,
-html.dark-mode .gh-content h5,
-html.dark-mode .gh-content h6 {
+html.dark-mode .gh-content > [id] {
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -2075,12 +2070,7 @@ html.dark-mode .site-archive-header .no-image {
         color: rgba(255, 255, 255, 0.75);
     }
 
-    html.auto-color .gh-content h1,
-    html.auto-color .gh-content h2,
-    html.auto-color .gh-content h3,
-    html.auto-color .gh-content h4,
-    html.auto-color .gh-content h5,
-    html.auto-color .gh-content h6 {
+    html.auto-color .gh-content > [id] {
         color: rgba(255, 255, 255, 0.9);
     }
 
