@@ -995,7 +995,7 @@ is the very first element in the post content */
 }
 
 /* Now the content typography styles */
-.gh-content a:not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card) {
+.gh-content a:not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container) {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
@@ -1773,7 +1773,7 @@ html.dark-mode .gh-content :not(pre) > code {
     color: var(--color-wash);
 }
 
-html.dark-mode .gh-content a:not(.kg-btn):not(.kg-nft-card) {
+html.dark-mode .gh-content a:not(.kg-btn):not(.kg-nft-card-container) {
     color: #fff;
 }
 
@@ -1911,7 +1911,7 @@ html.dark-mode .site-archive-header .no-image {
         color: var(--color-wash);
     }
 
-    html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card) {
+    html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card-container) {
         color: #fff;
     }
 
