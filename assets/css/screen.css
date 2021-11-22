@@ -1006,7 +1006,8 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p,
-.kg-callout-text {
+.kg-callout-text,
+.kg-toggle-content > p {
     font-family: var(--font-serif);
     font-weight: 400;
     font-size: 2.1rem;
@@ -1018,7 +1019,8 @@ is the very first element in the post content */
 .has-sans-body .gh-content > ul,
 .has-sans-body .gh-content > dl,
 .has-sans-body .gh-content > p,
-.has-sans-body .kg-callout-text {
+.has-sans-body .kg-callout-text,
+.has-sans-body .kg-toggle-content > p {
     font-family: var(--font-sans);
 }
 
