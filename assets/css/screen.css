@@ -1007,6 +1007,8 @@ is the very first element in the post content */
 .gh-content > dl,
 .gh-content > p,
 .kg-callout-text,
+.kg-toggle-content > ol,
+.kg-toggle-content > ul,
 .kg-toggle-content > p {
     font-family: var(--font-serif);
     font-weight: 400;
