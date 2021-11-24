@@ -88,7 +88,7 @@ into the {body} tag of the default.hbs template --}}
     <section class="footer-cta {{#match @custom.email_signup_for_logged_out_visitors "Bottom of post"}}cta-alt{{/match}}">
         <div class="inner">
             {{#if @custom.email_signup_text}}<h2>{{@custom.email_signup_text}}</h2>{{/if}}
-            <a class="footer-cta-button" href="#/portal">
+            <a class="footer-cta-button" href="#/portal" data-portal>
                 <div class="footer-cta-input">Enter your email</div>
                 <span>Subscribe</span>
             </a>
