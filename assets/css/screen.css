@@ -1120,6 +1120,10 @@ except for when immediately preceeded by a heading */
     margin: auto;
 }
 
+.kg-toggle-content > * + * {
+    margin-top: min(2.4rem, 4vmin);
+}
+
 
 /* Captions */
 figcaption {
