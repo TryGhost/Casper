@@ -1074,11 +1074,15 @@ is the very first element in the post content */
 }
 
 @media (max-width: 650px) {
-    .gh-content blockquote,
-    .gh-content ol,
-    .gh-content ul,
-    .gh-content dl,
-    .gh-content p {
+    .gh-content > blockquote,
+    .gh-content > ol,
+    .gh-content > ul,
+    .gh-content > dl,
+    .gh-content > p,
+    .kg-callout-text,
+    .kg-toggle-content > ol,
+    .kg-toggle-content > ul,
+    .kg-toggle-content > p {
         font-size: 1.7rem;
     }
 
