@@ -2209,7 +2209,7 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-gscan@^4.11.1:
+gscan@4.11.1:
   version "4.11.1"
   resolved "https://registry.yarnpkg.com/gscan/-/gscan-4.11.1.tgz#119450c1aa51ac1a8abb607d8c074f84e36129e7"
   integrity sha512-anWiynkSEh1FW8SmNIuaWuLrPZ/mVm9ylf3dF60vsnCUQVmtCJFOZhvEbINMAk8j2VEqq2zR8cEfz2VWjN004g==
