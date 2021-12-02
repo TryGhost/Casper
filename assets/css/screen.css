@@ -1716,11 +1716,14 @@ Usage (In Ghost editor):
 
 .subscribe-form form {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto;
     max-width: 460px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 20px
+
 }
 
 .subscribe-form .form-group {
@@ -1749,7 +1752,7 @@ Usage (In Ghost editor):
     border-color: color(var(--lightgrey) l(-2%));
 }
 
-.subscribe-form button {
+input .hs-button {
     position: relative;
     display: inline-block;
     margin: 0 0 0 10px;
@@ -1762,6 +1765,90 @@ Usage (In Ghost editor):
     font-weight: 400;
     text-align: center;
     background: var(--neptune);
+    border-radius: 5px;
+    border: 1px solid #090051;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.oa-sub-form label {
+    display: none;
+}
+
+.oa-sub-form input[type="submit"] {
+    display: inline-block;
+    width: auto;
+    padding: 9px 15px;
+    margin: 0px;
+    text-decoration: none;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #090051;
+    border-radius: 4px;
+    box-shadow: 0 2px 0 0 #090051;
+    color: #090051;
+    font-size: 15px;
+    line-height: 180%;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background-color: #89f4ea;
+}
+
+.oa-sub-form input[type="submit"]:hover {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 0 #090051;
+}
+
+.oa-sub-form input, .hbspt-form textarea {
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 13px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5E5E5E;
+    border-radius: 4px;
+    background-color: #FFF;
+    box-shadow: 0 2px 0 0 #5E5E5E;
+    color: #090051;
+    line-height: 144%%;
+}
+
+.oa-sub-form .hs-error-msgs label {
+    display: inline-block;
+}
+
+.oa-sub-form form .hs_email {
+    flex-grow: 1;
+
+}
+
+.oa-sub-form ul {
+    margin:  0;
+}
+
+.subscribe-form button {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 0 20px;
+    height: 43px;
+    outline: none;
+    color: var(--indigo);
+    font-size: 1.5rem;
+    line-height: 39px;
+    font-weight: 400;
+    text-align: center;
+    background: red;
     border-radius: 5px;
     border: 1px solid #090051;
 
@@ -2350,9 +2437,9 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 .ebook-promo {
     margin: 1.3em 0;
-    padding: 4vw 4vw 0;
+    padding: 2vw 4vw 0;
     border: color(var(--lightyellow) l(+10%)) 1px solid;
-    background: var(--lightyellow);
+    background: var(--lightpink);
     border-radius: 3px;
     display: flex
 }
@@ -2392,19 +2479,26 @@ Usage (In Ghost editor):
 
 
 .ebook-promo button {
-    position: relative;
-    margin: 20px 0;
-    padding: 20px 20px;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 39px;
-    font-weight: 400;
-    text-align: center;
-    background: #4450e7;
-    -webkit-font-smoothing: subpixel-antialiased;
-    max-width: 200px;
+    display: inline-block;
+    width: auto;
+    padding: 9px 15px;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1 px solid #090051;
+    border-radius: 4 px;
+    box-shadow: 0 2px 0 0 #090051;
+    color: #090051;
+    font-size: 15px;
+    line-height: 180%;
+    font-weight: 500;
+    transition: all .2s ease;
+    background-color: #89f4ea;
+}
 
-    -webkit-font-smoothing: subpixel-antialiased;
+.ebook-promo button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 0 #090051;
 }
 
 .ebook-promo button:active,
@@ -2869,7 +2963,6 @@ Usage (In Ghost editor):
 .subscribe-overlay form {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 0 auto;
     max-width: 540px;
 }
