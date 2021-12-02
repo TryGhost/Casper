@@ -53,24 +53,11 @@
                 <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
             {{/if}}
             <div class="subscribe-form">
-                <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered straight to your inbox</p>
-                <form data-members-form="subscribe">
-                    <div class="form-group">
-                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
-                            autocomplete="false" />
-                        <button class="button primary" type="submit">
-                            <span class="button-content">Subscribe</span>
-                            <span class="button-loader">{{> "icons/loader"}}</span>
-                        </button>
-                    </div>
-                    <div class="message-success">
-                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
-                    </div>
-                    <div class="message-error">
-                        Please enter a valid email address!
-                    </div>
-                </form>
+                <h1 class="subscribe-overlay-title">Subscribe to the Operational Analytics Newsletter</h1>
+                <p class="subscribe-overlay-description">Get the best data & ops content (not just our post!) delivered straight to your inbox</p>
+                
+                <div class='oa-sub-form'></div>
+
             </div>
         </div>
     </div>
@@ -117,6 +104,20 @@
             });
         });
     </script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+     <script>
+      hbspt.forms.create({
+        region: "na1",
+        portalId: "7819703",
+        formId: "e7bd134b-a709-48ee-ab81-710f64fac015",
+        target: '.oa-sub-form'
+    });
+    </script>
+   
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
