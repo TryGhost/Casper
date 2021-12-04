@@ -995,10 +995,14 @@ is the very first element in the post content */
 }
 
 /* Now the content typography styles */
-.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container) {
+.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a) {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
+}
+
+.gh-content .kg-callout-card-accent a {
+    text-decoration: underline;
 }
 
 .gh-content > blockquote,
@@ -1006,14 +1010,25 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p,
-.kg-callout-text,
-.kg-toggle-content > ol,
-.kg-toggle-content > ul,
-.kg-toggle-content > p {
+.gh-content .kg-toggle-content > ol,
+.gh-content .kg-toggle-content > ul,
+.gh-content .kg-toggle-content > p {
     font-family: var(--font-serif);
     font-weight: 400;
     font-size: 2.1rem;
     line-height: 1.6em;
+}
+
+.gh-content .kg-callout-text {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 1.6em;
+}
+
+.gh-content .kg-callout-emoji {
+    font-size: 2.2rem;
+    line-height: 1.5em;
 }
 
 .has-sans-body .gh-content > blockquote,
