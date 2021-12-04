@@ -1009,17 +1009,17 @@ is the very first element in the post content */
 .gh-content > ol,
 .gh-content > ul,
 .gh-content > dl,
-.gh-content > p,
-.gh-content .kg-toggle-content > ol,
-.gh-content .kg-toggle-content > ul,
-.gh-content .kg-toggle-content > p {
+.gh-content > p {
     font-family: var(--font-serif);
     font-weight: 400;
     font-size: 2.1rem;
     line-height: 1.6em;
 }
 
-.gh-content .kg-callout-text {
+.gh-content .kg-callout-text,
+.gh-content .kg-toggle-content > ol,
+.gh-content .kg-toggle-content > ul,
+.gh-content .kg-toggle-content > p {
     font-family: var(--font-serif);
     font-weight: 400;
     font-size: 2.0rem;
@@ -1029,6 +1029,10 @@ is the very first element in the post content */
 .gh-content .kg-callout-emoji {
     font-size: 2.2rem;
     line-height: 1.5em;
+}
+
+.gh-content .kg-toggle-heading-text {
+    font-size: 2.2rem;
 }
 
 .has-sans-body .gh-content > blockquote,
