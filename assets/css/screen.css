@@ -995,10 +995,14 @@ is the very first element in the post content */
 }
 
 /* Now the content typography styles */
-.gh-content a:not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card) {
+.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a) {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
+}
+
+.gh-content .kg-callout-card-accent a {
+    text-decoration: underline;
 }
 
 .gh-content > blockquote,
@@ -1012,11 +1016,34 @@ is the very first element in the post content */
     line-height: 1.6em;
 }
 
+.gh-content .kg-callout-text,
+.gh-content .kg-toggle-content > ol,
+.gh-content .kg-toggle-content > ul,
+.gh-content .kg-toggle-content > p {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 1.6em;
+}
+
+.gh-content .kg-callout-emoji {
+    font-size: 2.2rem;
+    line-height: 1.5em;
+}
+
+.gh-content .kg-toggle-heading-text {
+    font-size: 2.2rem;
+}
+
 .has-sans-body .gh-content > blockquote,
 .has-sans-body .gh-content > ol,
 .has-sans-body .gh-content > ul,
 .has-sans-body .gh-content > dl,
-.has-sans-body .gh-content > p {
+.has-sans-body .gh-content > p,
+.has-sans-body .kg-callout-text,
+.has-sans-body .kg-toggle-content > ol,
+.has-sans-body .kg-toggle-content > ul,
+.has-sans-body .kg-toggle-content > p {
     font-family: var(--font-sans);
 }
 
@@ -1066,11 +1093,15 @@ is the very first element in the post content */
 }
 
 @media (max-width: 650px) {
-    .gh-content blockquote,
-    .gh-content ol,
-    .gh-content ul,
-    .gh-content dl,
-    .gh-content p {
+    .gh-content > blockquote,
+    .gh-content > ol,
+    .gh-content > ul,
+    .gh-content > dl,
+    .gh-content > p,
+    .kg-callout-text,
+    .kg-toggle-content > ol,
+    .kg-toggle-content > ul,
+    .kg-toggle-content > p {
         font-size: 1.7rem;
     }
 
@@ -1110,6 +1141,14 @@ except for when immediately preceeded by a heading */
 /* This keeps small iamges centered */
 .kg-image-card img {
     margin: auto;
+}
+
+.has-serif-title .kg-toggle-heading-text {
+    font-family: var(--font-serif);
+}
+
+.kg-toggle-content > * + * {
+    margin-top: min(2.4rem, 4vmin);
 }
 
 
@@ -1771,7 +1810,7 @@ html.dark-mode .gh-content :not(pre) > code {
     color: var(--color-wash);
 }
 
-html.dark-mode .gh-content a:not(.kg-btn):not(.kg-nft-card) {
+html.dark-mode .gh-content a:not(.kg-btn):not(.kg-nft-card-container) {
     color: #fff;
 }
 
@@ -1909,7 +1948,7 @@ html.dark-mode .site-archive-header .no-image {
         color: var(--color-wash);
     }
 
-    html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card) {
+    html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card-container) {
         color: #fff;
     }
 
