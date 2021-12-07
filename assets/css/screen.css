@@ -1005,7 +1005,7 @@ is the very first element in the post content */
     text-decoration: underline;
 }
 
-.gh-content > blockquote,
+.gh-content > blockquote:not([class]),
 .gh-content > ol,
 .gh-content > ul,
 .gh-content > dl,
@@ -1053,13 +1053,13 @@ is the very first element in the post content */
     padding-left: 1.9em;
 }
 
-.gh-content > blockquote {
+.gh-content > blockquote:not([class]) {
     position: relative;
     font-style: italic;
     padding: 0;
 }
 
-.gh-content > blockquote::before {
+.gh-content > blockquote:not([class])::before {
     content: "";
     position: absolute;
     left: -1.5em;
@@ -1093,7 +1093,7 @@ is the very first element in the post content */
 }
 
 @media (max-width: 650px) {
-    .gh-content > blockquote,
+    .gh-content > blockquote:not([class]),
     .gh-content > ol,
     .gh-content > ul,
     .gh-content > dl,
@@ -1149,6 +1149,15 @@ except for when immediately preceeded by a heading */
 
 .kg-toggle-content > * + * {
     margin-top: min(2.4rem, 4vmin);
+}
+
+.kg-blockquote-alt {
+    font-family: var(--font-serif);
+    color: var(--color-midgrey);
+}
+
+.has-sans-body .kg-blockquote-alt {
+    font-family: var(--font-sans);
 }
 
 
