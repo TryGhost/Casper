@@ -124,3 +124,58 @@ into the {body} tag of the default.hbs template --}}
 {{/if}}
 
 {{/post}}
+
+<script>
+    function nextUntil(elem, selector) {
+        const siblings = [];
+        siblings.push(elem);
+
+        elem = elem.nextElementSibling;
+
+        while (elem) {
+            if (elem.matches(selector)) break;
+            siblings.push(elem);
+            elem = elem.nextElementSibling;
+        }
+
+        return siblings;
+    }
+
+    function chunkArrayInGroups(arr, size) {
+        if (arr.length < 3) return [arr];
+
+        var myArray = [];
+
+        for (var i = 0; i < arr.length; i += size) {
+            myArray.push(arr.slice(i, i + size));
+        }
+
+        if (myArray[myArray.length - 1].length === 1) {
+            const popped = myArray[myArray.length - 2].pop();
+            myArray[myArray.length - 1].unshift(popped);
+        }
+
+        return myArray;
+    }
+
+    document.querySelectorAll('.kg-card.kg-product-card').forEach(function (card) {
+        if (card.previousSibling && !card.previousSibling.classList.contains('kg-product-card')) {
+            let anchor = card.previousSibling;
+
+            chunkArrayInGroups(nextUntil(card, ':not(.kg-card.kg-product-card)'), 3).forEach(function (group) {
+                const row = document.createElement('div');
+                row.setAttribute('class', 'kg-card kg-products-row');
+
+                if (group.length === 3) {
+                    row.setAttribute('class', row.getAttribute('class') + ' kg-width-wide');
+                }
+
+                group.forEach(function (groupCard) {
+                    row.appendChild(groupCard);
+                });
+
+                anchor = anchor.parentNode.insertBefore(row, anchor.nextSibling);
+            });
+        }
+    });
+</script>
