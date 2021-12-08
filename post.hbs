@@ -3,6 +3,17 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
+<style>
+    .kg-products-row {
+        display: flex;
+        gap: 24px;
+    }
+
+    .kg-products-row + .kg-products-row {
+        margin-top: 24px;
+    }
+</style>
+
 
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
