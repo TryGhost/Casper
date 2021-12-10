@@ -1876,14 +1876,6 @@ html.dark-mode .site-archive-header .no-image {
     background: var(--color-darkmode);
 }
 
-html.dark-mode .kg-product-card-rating-active.kg-product-card-rating-star svg {
-    fill: #ebeef0;
-}
-
-html.dark-mode .kg-product-card-rating-star svg {
-    fill: #394047;
-}
-
 @media (prefers-color-scheme: dark) {
     html.auto-color body {
         color: rgba(255, 255, 255, 0.75);
@@ -2020,14 +2012,6 @@ html.dark-mode .kg-product-card-rating-star svg {
     html.auto-color .site-archive-header .no-image {
         color: rgba(255, 255, 255, 0.9);
         background: var(--color-darkmode);
-    }
-
-    html.auto-color .kg-product-card-rating-active.kg-product-card-rating-star svg {
-        fill: #ebeef0;
-    }
-
-    html.auto-color .kg-product-card-rating-star svg {
-        fill: #394047;
     }
 }
 
