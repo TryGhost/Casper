@@ -995,7 +995,7 @@ is the very first element in the post content */
 }
 
 /* Now the content typography styles */
-.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a):not(a.kg-product-card-btn-accent) {
+.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a):not(a.kg-product-card-btn-accent):not(.kg-file-card) {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
