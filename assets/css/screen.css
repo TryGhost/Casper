@@ -995,14 +995,10 @@ is the very first element in the post content */
 }
 
 /* Now the content typography styles */
-.gh-content a:not(.gh-post-upgrade-cta a):not(.kg-bookmark-container):not(.kg-btn):not(.kg-nft-card-container):not(.kg-callout-card-accent a):not(a.kg-product-card-btn-accent):not(.kg-file-card) {
+.gh-content a {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
-}
-
-.gh-content .kg-callout-card-accent a {
-    text-decoration: underline;
 }
 
 .gh-content > blockquote:not([class]),
@@ -1016,23 +1012,30 @@ is the very first element in the post content */
     line-height: 1.6em;
 }
 
-.gh-content .kg-callout-text,
-.gh-content .kg-toggle-content > ol,
-.gh-content .kg-toggle-content > ul,
-.gh-content .kg-toggle-content > p {
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-toggle-card .kg-toggle-content > p {
     font-family: var(--font-serif);
     font-weight: 400;
-    font-size: 2.0rem;
+    font-size: 1.9rem;
     line-height: 1.6em;
 }
 
-.gh-content .kg-callout-emoji {
-    font-size: 2.2rem;
-    line-height: 1.5em;
+.gh-content .kg-product-card .kg-product-card-description > p,
+.gh-content .kg-product-card .kg-product-card-description > ol,
+.gh-content .kg-product-card .kg-product-card-description > ul {
+    font-size: 1.7rem;
+    line-height: 1.6em;
 }
 
-.gh-content .kg-toggle-heading-text {
-    font-size: 2.2rem;
+.gh-content .kg-callout-card .kg-callout-emoji {
+    font-size: 2.1rem;
+    line-height: 1.7em;
+}
+
+.gh-content .kg-toggle-card .kg-toggle-heading-text {
+    font-size: 2.0rem;
 }
 
 .has-sans-body .gh-content > blockquote,
@@ -1040,16 +1043,20 @@ is the very first element in the post content */
 .has-sans-body .gh-content > ul,
 .has-sans-body .gh-content > dl,
 .has-sans-body .gh-content > p,
-.has-sans-body .kg-callout-text,
-.has-sans-body .kg-toggle-content > ol,
-.has-sans-body .kg-toggle-content > ul,
-.has-sans-body .kg-toggle-content > p {
+.has-sans-body .gh-content .kg-callout-card .kg-callout-text,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
     font-family: var(--font-sans);
 }
 
 .gh-content > ul,
 .gh-content > ol,
-.gh-content > dl {
+.gh-content > dl,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-product-card .kg-product-card-description > ol,
+.gh-content .kg-product-card .kg-product-card-description > ul {
     padding-left: 1.9em;
 }
 
@@ -1098,14 +1105,20 @@ is the very first element in the post content */
     .gh-content > ul,
     .gh-content > dl,
     .gh-content > p,
-    .kg-callout-text,
-    .kg-toggle-content > ol,
-    .kg-toggle-content > ul,
-    .kg-toggle-content > p {
+    .gh-content .kg-callout-card .kg-callout-text,
+    .gh-content .kg-toggle-card .kg-toggle-content > ol,
+    .gh-content .kg-toggle-card .kg-toggle-content > ul,
+    .gh-content .kg-toggle-card .kg-toggle-content > p {
         font-size: 1.7rem;
     }
 
-    .gh-content blockquote::before {
+    .gh-content .kg-product-card .kg-product-card-description > p,
+    .gh-content .kg-product-card .kg-product-card-description > ol,
+    .gh-content .kg-product-card .kg-product-card-description > ul {
+        font-size: 1.5rem;
+    }
+
+    .gh-content blockquote:not([class])::before {
         left: -4vmin;
     }
 }
@@ -1143,12 +1156,12 @@ except for when immediately preceeded by a heading */
     margin: auto;
 }
 
-.has-serif-title .kg-toggle-heading-text {
+.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
     font-family: var(--font-serif);
 }
 
-.kg-toggle-content > * + * {
-    margin-top: min(2.4rem, 4vmin);
+.gh-content .kg-callout-card-accent a {
+    text-decoration: underline;
 }
 
 .kg-blockquote-alt {
