@@ -1025,8 +1025,6 @@ is the very first element in the post content */
 .gh-content .kg-product-card .kg-product-card-description > p,
 .gh-content .kg-product-card .kg-product-card-description > ol,
 .gh-content .kg-product-card .kg-product-card-description > ul {
-    font-family: var(--font-sans);
-    font-weight: 400;
     font-size: 1.7rem;
     line-height: 1.6em;
 }
@@ -1110,11 +1108,14 @@ is the very first element in the post content */
     .gh-content .kg-callout-card .kg-callout-text,
     .gh-content .kg-toggle-card .kg-toggle-content > ol,
     .gh-content .kg-toggle-card .kg-toggle-content > ul,
-    .gh-content .kg-toggle-card .kg-toggle-content > p,
+    .gh-content .kg-toggle-card .kg-toggle-content > p {
+        font-size: 1.7rem;
+    }
+
     .gh-content .kg-product-card .kg-product-card-description > p,
     .gh-content .kg-product-card .kg-product-card-description > ol,
     .gh-content .kg-product-card .kg-product-card-description > ul {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     .gh-content blockquote:not([class])::before {
