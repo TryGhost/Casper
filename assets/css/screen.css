@@ -556,6 +556,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     word-break: break-word;
 }
 
+@media (max-width: 700px) {
+    .post-card {
+        min-height: auto;
+    }
+}
+
 .post-card-image-link {
     position: relative;
     display: block;
@@ -750,6 +756,30 @@ make sure this only happens on large viewports / desktop-ish devices.
 
  */
 
+@media (min-width: 701px) {
+    .post-feed.list .post-card-large {
+        grid-column: 1 / span 3;
+        display: grid;
+        grid-gap: 4vmin;
+        grid-template-columns: 3fr 5fr;
+        min-height: auto;
+        border-top: 0;
+    }
+
+    .post-feed.list .post-card-large.no-image {
+        grid-template-columns: 1fr;
+    }
+
+    .post-feed.list .post-card-large:not(.no-image) .post-card-header {
+        margin-top: 0;
+    }
+
+    .post-feed.list .post-card-large .post-card-content {
+        justify-content: flex-start;
+        margin-top: -6px;
+    }
+}
+
 @media (min-width: 1001px) {
     .post-card-large {
         grid-column: 1 / span 3;
@@ -758,15 +788,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         grid-template-columns: 1fr 1fr 1fr;
         min-height: 280px;
         border-top: 0;
-    }
-
-    .post-feed.list .post-card-large {
-        grid-template-columns: 3fr 5fr;
-        min-height: auto;
-    }
-
-    .post-feed.list .post-card-large.no-image {
-        grid-template-columns: 1fr;
     }
 
     .post-card-large:not(.no-image) .post-card-header {
@@ -800,11 +821,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-content {
         justify-content: center;
-    }
-
-    .post-feed.list .post-card-large .post-card-content {
-        justify-content: flex-start;
-        margin-top: -6px;
     }
 
     .post-card-large .post-card-title {
