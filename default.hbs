@@ -111,7 +111,9 @@ $(document).ready(function () {
     });
 
     // Lightbox for single image
-    $('.kg-image-card').each( function() {
+    // queries for single image if the direct child of the card isn't a link
+    // this is used to stop lightbox from appearing on link images
+    $('.kg-image-card > :not(a)').each( function() {
         $(this).find('img').simpleLightbox({
         sourceAttr: 'src',
         captions: false
