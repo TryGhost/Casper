@@ -103,20 +103,24 @@ $(document).ready(function () {
     new basictable("article table", {forceResponsive: false});
 
     // Lightbox for a gallery
-    $('.kg-gallery-card').each( function() {
+    $('.kg-gallery-card').each(function() {
         $(this).find('img').simpleLightbox({
-        sourceAttr: 'src',
-        captions: false
+            sourceAttr: 'src',
+            captions: false
         });
     });
 
     // Lightbox for single image
     // queries for single image if the direct child of the card isn't a link
     // this is used to stop lightbox from appearing on link images
-    $('.kg-image-card > :not(a)').each( function() {
+    $('.kg-image-card').each(function() {
+        if ($(this).find('a').length) {
+            return;
+        }
+
         $(this).find('img').simpleLightbox({
-        sourceAttr: 'src',
-        captions: false
+            sourceAttr: 'src',
+            captions: false
         });
     });
 
