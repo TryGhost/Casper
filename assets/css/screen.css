@@ -26,6 +26,7 @@ production stylesheet in assets/built/screen.css
 14. Pagination
 15. Video
 16. Lightbox
+17. Ads
 
 
 */
@@ -2087,4 +2088,12 @@ video {
 
 .kg-gallery-container img {
     cursor: pointer; 
+}
+
+/* 17. Ads
+/* ---------------------------------------------------------- */
+
+.ad-padding {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
