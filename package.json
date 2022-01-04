@@ -3,16 +3,16 @@
     "description": "The theme for designingoverload.com, forked from Casper",
     "demo": "https://designingoverload.com",
     "version": "0.2.0",
-    ...
+    
     "author": {
         "name": "Alan Cruickshank",
         "email": "seegithub@ifyoureally.care",
         "url": "https://designingoverload.com"
     },
-    ...
+    
     "repository": {
         "type": "git",
         "url": "https://github.com/alanmcruickshank/OverloadCasper.git"
     },
-    ...
+   
 }
