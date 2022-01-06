@@ -2104,3 +2104,11 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+
+.gse-searchbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 400px;
+}
