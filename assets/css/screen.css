@@ -2107,8 +2107,8 @@ the right place. Onward!
 
 .gse-searchbox {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     margin: 0 auto;
     max-width: 250px;
 }
