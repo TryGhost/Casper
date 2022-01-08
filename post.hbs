@@ -20,8 +20,7 @@ into the {body} tag of the default.hbs template --}}
                 <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
             </section>
             {{/if}}
-            {{#if primary_tag }}
-             {{unless 'book'}}
+            {{#if primary_tag.book }}
              {{#unless @member}}
                     <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
                 {{else}}
