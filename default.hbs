@@ -66,13 +66,16 @@
                 {{else}}
                     <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                 {{/unless}}
-                {{/has}}
+
+                {{unless}}
                 {{#unless @member}}
                     <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
                 {{else}}
                     <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                 {{/unless}}
+                {{/has}}
                 {{/tag}}
+
             </div>
         </nav>
     </header>
