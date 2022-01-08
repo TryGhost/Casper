@@ -59,7 +59,8 @@
                         <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                     {{/if}}
                 </div>
-                {{#has tag="Leadership"}}
+                {{tag}}
+                {{#has tag="book"}}
                 {{#unless @member}}
                     <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Book Portal</a>
                 {{else}}
@@ -71,6 +72,7 @@
                 {{else}}
                     <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                 {{/unless}}
+                {{/tag}}
             </div>
         </nav>
     </header>
