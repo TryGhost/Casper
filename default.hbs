@@ -59,6 +59,13 @@
                         <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                     {{/if}}
                 </div>
+
+                {{#has tag="book" slug="book"}}
+                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Book Portal</a>
+                {{else}}
+                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                {{//has}}
+
             </div>
         </nav>
     </header>
