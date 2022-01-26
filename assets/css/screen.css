@@ -48,7 +48,7 @@ production stylesheet in assets/built/screen.css
 
     --ghost-accent-color: {value};
 
-    You can use this variale throughout your styles
+    You can use this variable throughout your styles
      */
 
     /* Fonts */
@@ -1789,6 +1789,10 @@ html.dark-mode img {
     opacity: 0.9;
 }
 
+html.dark-mode kbd {
+    background: color-mod(var(--color-darkmode) l(+5%));
+}
+
 html.dark-mode .post-card,
 html.dark-mode .post-card:hover {
     border-bottom-color: color-mod(var(--color-darkmode) l(+8%));
@@ -1938,6 +1942,10 @@ html.dark-mode .kg-header-card h3.kg-header-card-subheader {
 
     html.auto-color img {
         opacity: 0.9;
+    }
+
+    html.auto-color kbd {
+        background: color-mod(var(--color-darkmode) l(+5%));
     }
 
     html.auto-color .post-card,

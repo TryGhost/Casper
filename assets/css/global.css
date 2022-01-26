@@ -176,6 +176,20 @@ samp {
     font-family: monospace, monospace;
     font-size: 1em;
 }
+kbd {
+    padding: 3px 5px;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    background: #f6f8fa;
+    border: 1px solid rgba(124, 139, 154, 0.25);
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 rgba(124, 139, 154, 0.25);
+}
+@media (max-width: 600px) {
+    kbd {
+        font-size: 1.3rem;
+    }
+}
 button,
 input,
 optgroup,
