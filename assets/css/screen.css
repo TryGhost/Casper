@@ -303,7 +303,7 @@ production stylesheet in assets/built/screen.css
 }
 
 a.gh-head-button {
-    display: block;
+    display: inline-flex;
     padding: 15px 15px;
     color: var(--button-text-color, var(--color-darkgrey));
     font-weight: 500;
