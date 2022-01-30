@@ -311,7 +311,7 @@ a.gh-head-button {
     font-size: 1.5rem;
     line-height: 1em;
     background: var(--button-bg-color, #fff);
-    border-radius: 30px;
+    border-radius: 50px;
 }
 
 
