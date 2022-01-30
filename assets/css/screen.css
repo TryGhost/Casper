@@ -304,14 +304,14 @@ production stylesheet in assets/built/screen.css
 
 a.gh-head-button {
     display: block;
-    padding: 8px 8px;
+    padding: 15px 15px;
     color: var(--button-text-color, var(--color-darkgrey));
     font-weight: 500;
     letter-spacing: -0.015em;
     font-size: 1.5rem;
     line-height: 1em;
     background: var(--button-bg-color, #fff);
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 
