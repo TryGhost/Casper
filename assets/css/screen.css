@@ -304,7 +304,7 @@ production stylesheet in assets/built/screen.css
 
 a.gh-head-button {
     display: inline-flex;
-    padding: 10px 10px;
+    padding: 8px 8px;
     align-items: left;
     justify-content: space-between;
     color: var(--button-text-color, var(--color-darkgrey));
@@ -313,7 +313,7 @@ a.gh-head-button {
     font-size: 1.5rem;
     line-height: 1em;
     background: var(--button-bg-color, #fff);
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 
