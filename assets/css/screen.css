@@ -944,11 +944,11 @@ is the very first element in the post content */
 .gh-content > hr,
 .gh-content > blockquote {
     position: relative;
-    margin-top: 6vmin;
+    margin-top: 4vmin;
 }
 .gh-content > hr + *,
 .gh-content > blockquote + * {
-    margin-top: 6vmin !important;
+    margin-top: 4vmin !important;
 }
 
 /* Now the content typography styles */
@@ -1018,11 +1018,11 @@ make sure they look good, and are given a bit of extra spacing. */
 /* Add extra margin before/after any cards,
 except for when immediately preceeded by a heading */
 .gh-content :not(.kg-card):not([id]) + .kg-card {
-    margin-top: 6vmin;
+    margin-top: 5vmin;
     margin-bottom: 0;
 }
 .gh-content .kg-card + :not(.kg-card) {
-    margin-top: 6vmin;
+    margin-top: 5vmin;
     margin-bottom: 0;
 }
 
@@ -1059,14 +1059,14 @@ figcaption a {
 
 /* Highly specific styles for traditional Instagram embeds */
 iframe.instagram-media {
-    margin-top: 6vmin !important;
+    margin-top: 5vmin !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: 0 !important;
 }
 
 iframe.instagram-media + script + :not([id]) {
-    margin-top: 6vmin;
+    margin-top: 5vmin;
 }
 
 
