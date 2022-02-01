@@ -851,7 +851,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .gh-canvas .article-image {
     grid-column: main-start / main-end;
     width: 100%;
-    margin: 6vmin 0 0;
+    margin: 3vmin 0 0;
 }
 
 .gh-canvas .article-image img {
@@ -1329,7 +1329,7 @@ Ghost editor. */
 .article-byline {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0 0;
+    margin: 15px 0 0;
 }
 
 .article-byline-content {
