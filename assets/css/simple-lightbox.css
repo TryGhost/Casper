@@ -46,7 +46,7 @@ body.hidden-scroll {
     height: 44px;
     width: 44px;
     line-height: 44px;
-    font-family: Arial, Baskerville, monospace;
+    font-family: 'Inter', Arial, Baskerville, monospace;
     color: #000;
     font-size: 3rem; }
   .sl-wrapper .sl-counter {
@@ -70,7 +70,7 @@ body.hidden-scroll {
       text-align: center;
       display: block;
       z-index: 10060;
-      font-family: Arial, Baskerville, monospace;
+      font-family: 'Inter', Arial, Baskerville, monospace;
       color: #000; }
       .sl-wrapper .sl-navigation button.sl-next {
         right: 5px;

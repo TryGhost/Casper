@@ -932,7 +932,7 @@ headings, text, images and lists. We deal with cards lower down. */
 /* Add back a top margin to all headings, unless a heading
 is the very first element in the post content */
 .gh-content > [id]:not(:first-child) {
-    margin: 2em 0 0;
+    margin: 1em 0 0;
 }
 
 /* Add a small margin between a heading and anything after it */
