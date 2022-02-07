@@ -1409,6 +1409,10 @@ Ghost editor. */
     font-size: 3.2rem;
 }
 
+.footer-cta div {    
+    font-size: 1.5rem;
+}
+
 @media (max-width: 600px) {
     .footer-cta h2 {
         font-size: 2.65rem;
