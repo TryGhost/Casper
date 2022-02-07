@@ -1410,6 +1410,8 @@ Ghost editor. */
 }
 
 .footer-cta div {    
+    padding-top: 10px;
+    padding-bottom: 15px;
     font-size: 1.5rem;
 }
 
