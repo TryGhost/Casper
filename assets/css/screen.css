@@ -1397,7 +1397,7 @@ Ghost editor. */
 
 .footer-cta {
     position: relative;
-    padding: 9vmin 4vmin 10vmin;
+    padding: 5vmin 2vmin 6vmin;
     color: #fff;
     text-align: center;
     background: var(--color-darkgrey);
