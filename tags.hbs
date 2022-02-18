@@ -33,10 +33,10 @@ into the {body} tag of the default.hbs template --}}
 
           <section class="gh-content gh-canvas">
 
-              <h1 class="post-full-title">{{title}}</h1>
+              <h1 class="article-title">{{title}}</h1>
               <br />
               <br />
-              {{#get "tags" limit="all"}}{{tags separator="  "}}{{/get}}
+              {{#get "tags" limit="all"}}{{tags separator=" | "}}{{/get}}
 
           </section>
 
