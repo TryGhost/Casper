@@ -388,12 +388,6 @@ blockquote {
     border-left: #daf2fd;
 }
 
-blockquote p {
-    margin: 0.8em 0;
-    font-size: 1.2em;
-    font-weight: 300;
-}
-
 blockquote small {
     display: inline-block;
     margin: 0.8em 0 0.8em 1.5em;
