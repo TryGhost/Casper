@@ -13,3 +13,4 @@ jobs:
         with:
           api-url: ${{ secrets.ITS_YOUR_SHOE_GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.ITS_YOUR_SHOE_GHOST_ADMIN_API_KEY }}
+          theme-name: "casper-by-oren"
