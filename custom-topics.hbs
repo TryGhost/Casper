@@ -1,0 +1,84 @@
+{{!< default}}
+{{#post}}
+<article class="article-header gh-canvas">
+    <header class="article-header gh-canvas">
+            <h1>{{title}}</h1>
+    {{!-- Place to store curated links --}}
+            
+    </header>
+</article>
+    
+        {{!-- {{content}} --}}
+    <div class="inner inner-page-tags">
+        <div>
+                {{#get 'tags' filter='slug:-[codelibrary]' limit='all'}}
+                    {{#foreach tags}}
+                        <h3 id={{ name }}>{{ name }}</h3>
+                        <div>
+                        <ul>
+                        {{#get "posts" filter="tags:{{slug}}" order="asc"}}                  
+                        {{#foreach posts}}
+                        {{> "code-card"}}
+                        {{/foreach}}
+                        {{/get}}
+                        </ul>
+                        </div>
+                    {{/foreach}}
+                {{/get}}
+        </div>
+    </div>
+    
+
+    <script>
+        {
+            var headers = document.getElementsByClassName("code-library-header")
+            for (let h of headers) {
+                h.innerHTML = h.innerHTML.substring(1);
+            }
+        }
+    </script>
+    {{!--
+    <section class="article-comments gh-canvas">
+        If you want to embed comments, this is a good place to paste your code!
+    </section>
+    --}}
+
+
+{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+{{#unless @member}}
+<section class="footer-cta">
+    <div class="inner">
+        <h2>Sign up for more like this.</h2>
+        <a class="footer-cta-button" href="#/portal">
+            <div>Enter your email</div>
+            <span>Subscribe</span>
+        </a>
+        {{!-- ^ This looks like a form element, but it's just a link to Portal,
+        making the form validation and submission much simpler. --}}
+    </div>
+</section>
+{{/unless}}
+
+
+{{!-- Read more links, just above the footer --}}
+<aside class="read-more-wrap">
+    <div class="read-more inner">
+
+        {{!-- The {#get} helper below fetches some of the latest posts here
+        so that people have something else to read when they finish this one.
+
+        This query gets the latest 3 posts on the site, but adds a filter to
+        exclude the post we're currently on from being included. --}}
+
+        {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+            {{#if more_posts}}
+                {{#foreach more_posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/if}}
+        {{/get}}
+
+    </div>
+</aside>
+
+{{/post}}
