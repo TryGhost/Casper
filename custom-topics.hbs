@@ -14,18 +14,18 @@
         {{!-- {{content}} --}}
     <div class="inner inner-page-tags">
         <div>
-                {{#get 'tags' filter='slug:-[codelibrary]' limit='all'}}
+                {{#get 'tags' filter='slug:-[topics]' limit='all'}}
                     {{#foreach tags}}
-                        <h3>{{ name }}</h3>
-                        <div>
-                        <ul>
-                        {{#get "posts" filter="primary_tag:{{slug}}" order="asc"}}                  
-                        {{#foreach posts}}
-                        {{> "code-card"}}
-                        {{/foreach}}
-                        {{/get}}
-                        </ul>
-                        </div>
+                            <h3 id="{{slug}}">{{ name }}</h3>
+                            <div>
+                            <ul>
+                            {{#get "posts" filter="primary_tag:{{slug}}" order="asc"}}                  
+                            {{#foreach posts}}
+                            {{> "code-card"}}
+                            {{/foreach}}
+                            {{/get}}
+                            </ul>
+                            </div>
                     {{/foreach}}
                 {{/get}}
         </div>
