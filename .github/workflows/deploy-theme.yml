@@ -1,0 +1,31 @@
+name: Deploy Theme
+on:
+    push:
+        branches:
+            - master
+            - main
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Use Node.js
+              uses: actions/setup-node@v1.4.4
+              with:
+                  node-version: '14.x'
+            - run: npm install -g yarn
+
+            # deploy theme to speisekammer.app
+            - uses: TryGhost/action-deploy-theme@v1.4.1
+              with:
+                  api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+                  api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+                  theme-name: "casper-speisekammer"
+
+            # deploy theme to pantrychief.com
+            - uses: TryGhost/action-deploy-theme@v1.4.1
+              with:
+                  api-url: ${{ secrets.GHOST_ADMIN_API_URL_PANTRYCHIEF }}
+                  api-key: ${{ secrets.GHOST_ADMIN_API_KEY_PANTRYCHIEF }}
+                  theme-name: "casper-pantrychief"

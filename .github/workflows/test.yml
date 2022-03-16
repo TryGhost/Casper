@@ -1,0 +1,21 @@
+name: Test
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1.4.4
+        with:
+          node-version: '14.x'
+      - run: npm install -g yarn
+      - run: yarn
+      - run: yarn test:ci
