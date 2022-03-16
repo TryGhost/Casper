@@ -16,6 +16,9 @@ jobs:
                   node-version: '14.x'
             - run: npm install -g yarn
 
+            - run: gulp build
+            - run: gulp zip
+
             # deploy theme to speisekammer.app
             - uses: TryGhost/action-deploy-theme@v1.4.1
               with:
