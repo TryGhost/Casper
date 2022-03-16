@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout theme
-            - uses: actions/checkout@v2
+              uses: actions/checkout@v2
 
             - name: Use Node.js 14.x
               uses: actions/setup-node@v1.4.4
@@ -17,24 +17,23 @@ jobs:
                   node-version: '14.x'
 
             - name: Install yarn
-            - run: npm install -g yarn
+              run: npm install -g yarn
 
             - name: Install node dependencies
-            - run: yarn
+              run: yarn
 
             - name: Build theme
-            - run: gulp build
-            - run: gulp zip
+              run: gulp build && gulp zip
 
             - name: deploy theme to speisekammer.app
-            - uses: TryGhost/action-deploy-theme@v1.4.1
+              uses: TryGhost/action-deploy-theme@v1.4.1
               with:
                   api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
                   api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
                   theme-name: "casper-speisekammer"
 
             - name: deploy theme to pantrychief.com
-            - uses: TryGhost/action-deploy-theme@v1.4.1
+              uses: TryGhost/action-deploy-theme@v1.4.1
               with:
                   api-url: ${{ secrets.GHOST_ADMIN_API_URL_PANTRYCHIEF }}
                   api-key: ${{ secrets.GHOST_ADMIN_API_KEY_PANTRYCHIEF }}
