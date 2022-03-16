@@ -1,24 +1,15 @@
-{{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
-
-<div class="site-header-content">
+{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template
+    --}} <div class="site-header-content">
     {{#if @site.cover_image}}
     {{!-- This is a responsive image, it loads different sizes depending on device
     https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-        <img class="site-header-cover"
-            srcset="{{img_url @site.cover_image size="s"}} 300w,
-                    {{img_url @site.cover_image size="m"}} 600w,
-                    {{img_url @site.cover_image size="l"}} 1000w,
-                    {{img_url @site.cover_image size="xl"}} 2000w"
-            sizes="100vw"
-            src="{{img_url @site.cover_image size="xl"}}"
-            alt=""
-        />
+    <img class="site-header-cover" srcset="{{img_url @site.cover_image size=" s"}} 300w, {{img_url @site.cover_image
+        size="m" }} 600w, {{img_url @site.cover_image size="l" }} 1000w, {{img_url @site.cover_image size="xl" }} 2000w"
+        sizes="100vw" src="{{img_url @site.cover_image size=" xl"}}" alt="" />
     {{/if}}
     <h1 class="site-title">
         {{#if @site.logo}}
-            <img class="site-logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
+        <img class="site-logo" src="{{img_url @site.logo size=" m"}}" alt="{{@site.title}}" />
         {{else}}
         {{@site.title}}
         {{/if}}
@@ -35,29 +26,47 @@ into the {body} of the default.hbs template --}}
 
             {{#page}}
 
-                <article class="article">
+            <article class="article">
 
                 <section class="gh-content gh-canvas">
 
 
-                    <div align="center">
-                    <form style="align:center; display: inline" action="{{t 'target_app_url'}}" method="get">
-                        <button style="margin-top:0em;
-                            border: none;
-                            color: black;
-                            font-weight: bold;
-                            padding: 12px 30px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            font-size: 18px;
-                            background: #fbbd0c;
-                            border: 4px solid #fbbd0c;
-                            border-radius: 4px;
-                            font-family: Sans-Serif;"
-                        >{{t "Proceed to Web App"}}</button>
-                        </form>
-                    </div>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="vertical-align: top; width: 33%">
+                                <div style="text-align: center">
+                                    <a
+                                        href='https://play.google.com/store/apps/details?id=app.speisekammer&campaignId=landingPage'><img
+                                            alt='Jetzt bei Google Play'
+                                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png'
+                                            style="width: 100%;max-width: 200px" /></a>
+                                </div>
+                            </td>
+
+                            <td style="vertical-align: top; width: 33%">
+                                <div style="text-align: center">
+                                    <a href='https://apps.apple.com/us/app/speisekammer-vorrat-verwalten/id1575424944'><img
+                                            alt='Vorbestellen im App Store'
+                                            src='https://speisekammer.app/content/images/2021/10/AppStore-Button-DE-Download--646-x-250-px-.png'
+                                            style="width: 100%;max-width: 200px" /></a>
+                                </div>
+                            </td>
+
+
+                            <td style="vertical-align: top; width: 33%">
+                                <div style="text-align: center">
+                                    <a href="https://app.speisekammer.app">
+                                        <img src="https://speisekammer.app/content/images/2021/10/WebApp-Button--646-x-250-px---1-.png"
+                                            alt='Zur Web-App' style="width: 100%;max-width: 200px" /></a>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </table>
+
+
+
+
 
                     <h1 class="article-title">{{title}}</h1>
 
@@ -67,7 +76,7 @@ into the {body} of the default.hbs template --}}
 
             </article>
 
-         {{/page}}
+            {{/page}}
 
 
             {{#get "posts" limit="all" filter="tags:[usecase]" as |usecases|}}
@@ -110,8 +119,9 @@ into the {body} of the default.hbs template --}}
 
 
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
+    {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in
+    default.hbs --}}
+    {{#contentFor "scripts"}}
     <script>
 
         // NOTE: Scroll performance is poor in Safari
