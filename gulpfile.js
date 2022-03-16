@@ -72,6 +72,17 @@ function js(done) {
     ], handleError(done));
 }
 
+function jsbundled(done) {
+    pump([
+        src([
+            // pull in lib files first so our own code can depend on it
+            'assets/js/bundled/*.js',
+        ]),
+        dest('assets/built/'),
+        livereload()
+    ], handleError(done));
+}
+
 function zipper(done) {
     const filename = require('./package.json').name + '.zip';
 
@@ -92,7 +103,7 @@ function zipper(done) {
 const cssWatcher = () => watch('assets/css/**', css);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const watcher = parallel(cssWatcher, hbsWatcher);
-const build = series(css, js);
+const build = series(css, js, jsbundled);
 
 exports.build = build;
 exports.zip = series(build, zipper);
