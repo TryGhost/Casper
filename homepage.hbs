@@ -87,7 +87,7 @@ into the {body} of the default.hbs template --}}
             {{/get}}
 
 
-            {{#get "posts" limit="3" filter="featured:true" as |latestposts|}}
+            {{#get "posts" limit="4" as |latestposts|}}
             {{#if latestposts}}
             <h2>{{t "News from our blog"}}</h2>
 
