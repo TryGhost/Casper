@@ -26,5 +26,6 @@ dist/
 config.json
 changelog.md
 changelog.md.bk
-assets/built/*
-assets/js/bundled/
+
+assets/built
+assets/js/bundled
