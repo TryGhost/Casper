@@ -967,6 +967,7 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
+    margin-top: 2vmin;
 }
 
 .gh-content > ul,
