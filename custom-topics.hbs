@@ -13,13 +13,13 @@
     
         {{!-- {{content}} --}}
     <div class="inner inner-page-tags">
-        <div>
                 {{#get 'tags' filter='slug:-[topics]' limit='all'}}
                     {{#foreach tags}}
-                            <h3 id="{{slug}}">{{ name }}</h3>
+                            <h3 class='anchorjs-link' id="{{slug}}">{{ name }} <a href='#{{slug}}'><img width="20px" height="20px" src='/assets/icons/link.png' /></a></h3>
                             <div>
-                            <ul>
-                            {{#get "posts" filter="primary_tag:{{slug}}" order="asc"}}                  
+                            
+                            {{#get "posts" filter="primary_tag:{{slug}}" order="asc"}}  
+                            <ul>                
                             {{#foreach posts}}
                             {{> "code-card"}}
                             {{/foreach}}
@@ -28,7 +28,6 @@
                             </div>
                     {{/foreach}}
                 {{/get}}
-        </div>
     </div>
     
 

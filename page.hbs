@@ -36,6 +36,22 @@ into the {body} tag of the default.hbs template --}}
 
         {{content}}
 
+        <script>
+            {
+                let tags = ['h2', 'h3', 'h4', 'h5', 'h6']
+                
+                for (const tag of tags){
+
+                    var headers = document.getElementsByTagName(tag)
+                    for (let h of headers){
+                        h.className = 'anchorjs-link'
+                        h.innerHTML += '<a href=#'+h.id+'><img class=anchorjs-link src=/assets/icons/link.png /></a>'
+                    }
+                
+                }
+            }
+        </script>
+
     </section>
 
 </article>

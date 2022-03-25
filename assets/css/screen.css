@@ -133,6 +133,28 @@ production stylesheet in assets/built/screen.css
     transition: max-height 0.2s ease-out;
   }
 
+.anchorjs-link a {
+    opacity:0;
+    text-decoration:none;
+}
+
+.anchorjs-link img {
+    width: 30px;
+    height: 30px;
+}
+
+.anchorjs-link:hover a{
+    padding-left: 10px;
+    opacity: 100;
+}
+
+.anchorjs-link {
+    max-width: 100%;
+    max-height: 100%;
+    display:inline-flex;
+    align-items: center;
+}
+
 
 /* 4. Site Header
 /* ---------------------------------------------------------- */
@@ -1005,6 +1027,16 @@ headings, text, images and lists. We deal with cards lower down. */
 is the very first element in the post content */
 .gh-content > [id]:not(:first-child) {
     margin: 2em 0 0;
+}
+
+.gh-content > [id]:not(:first-child) a{
+    opacity:0;
+    text-decoration:none;
+}
+
+.gh-content > [id]:not(:first-child):hover a{
+    padding-left: 10px;
+    opacity: 100;
 }
 
 /* Add a small margin between a heading and anything after it */
