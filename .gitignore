@@ -26,3 +26,5 @@ dist/
 config.json
 changelog.md
 changelog.md.bk
+assets/built/screen.css-old.css
+assets/built/screen.css.map-old
