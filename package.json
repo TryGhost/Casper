@@ -2,7 +2,7 @@
     "name": "casper",
     "description": "A clean, minimal default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
-    "version": "4.7.2",
+    "version": "4.7.3",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
@@ -50,7 +50,7 @@
         "autoprefixer": "10.2.5",
         "beeper": "2.1.0",
         "cssnano": "4.1.10",
-        "gscan": "4.11.1",
+        "gscan": "4.22.0",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
