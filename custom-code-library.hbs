@@ -62,7 +62,7 @@
         <div>
                 {{#get "tags" limit="all"}}
                     {{#foreach tags visibility="internal"}}
-                        <h2 class="code-library-header">{{ name }} Routines</h1>
+                        <h2 class="code-library-header" "anchorjs-link" id="{{slug}}">{{ name }} Routines<a href='#{{slug}}'><img width="10px" height="10px" src='/assets/icons/link.png' /></a></h2>
                         <div>
                         <ul>
                         {{#get "posts" filter="tags:{{slug}}" order="asc"}}                  
@@ -84,18 +84,6 @@
             for (let h of headers) {
                 h.innerHTML = h.innerHTML.substring(1);
             }
-
-            let tags = ['h2', 'h3', 'h4', 'h5', 'h6']
-                
-                for (const tag of tags){
-
-                    var headers2 = document.getElementsByTagName(tag)
-                    for (let h of headers2){
-                        h.className = 'anchorjs-link'
-                        h.innerHTML += '<a href=#'+h.id+'><img class=anchorjs-link src=/assets/icons/link.png /></a>'
-                    }
-                
-                }
         }
     </script>
     {{!--
