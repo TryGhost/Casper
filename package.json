@@ -4,8 +4,7 @@
     "demo": "https://demo.ghost.io",
     "version": "4.7.3",
     "engines": {
-        "ghost": ">=4.0.0",
-        "ghost-api": "v4"
+        "ghost": ">=4.0.0"
     },
     "license": "MIT",
     "screenshots": {
