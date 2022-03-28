@@ -62,7 +62,7 @@
         <div>
                 {{#get "tags" limit="all"}}
                     {{#foreach tags visibility="internal"}}
-                        <h1 class="code-library-header">{{ name }} Routines</h1>
+                        <h2 class="code-library-header">{{ name }} Routines</h1>
                         <div>
                         <ul>
                         {{#get "posts" filter="tags:{{slug}}" order="asc"}}                  
