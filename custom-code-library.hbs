@@ -62,7 +62,7 @@
         <div>
                 {{#get "tags" limit="all"}}
                     {{#foreach tags visibility="internal"}}
-                        <h2 class="code-library-header" "anchorjs-link" id="{{slug}}">{{ name }} Routines<a href='#{{slug}}'><img width="10px" height="10px" src='/assets/icons/link.png' /></a></h2>
+                        <h2 class="anchorjs-link" id="{{slug}}">{{ name }} Routines<a href='#{{slug}}'><img width="15px" height="15px" src='/assets/icons/link.png' /></a></h2>
                         <div>
                         <ul>
                         {{#get "posts" filter="tags:{{slug}}" order="asc"}}                  
@@ -80,7 +80,7 @@
 
     <script>
         {
-            var headers = document.getElementsByClassName("code-library-header")
+            var headers = document.getElementsByClassName("anchorjs-link")
             for (let h of headers) {
                 h.innerHTML = h.innerHTML.substring(1);
             }
