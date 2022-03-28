@@ -84,6 +84,18 @@
             for (let h of headers) {
                 h.innerHTML = h.innerHTML.substring(1);
             }
+
+            let tags = ['h2', 'h3', 'h4', 'h5', 'h6']
+                
+                for (const tag of tags){
+
+                    var headers2 = document.getElementsByTagName(tag)
+                    for (let h of headers2){
+                        h.className = 'anchorjs-link'
+                        h.innerHTML += '<a href=#'+h.id+'><img class=anchorjs-link src=/assets/icons/link.png /></a>'
+                    }
+                
+                }
         }
     </script>
     {{!--
