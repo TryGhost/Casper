@@ -2,37 +2,38 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<header class="site-home-header">
+<header class="site-header">
+    {{> "site-header"}}
+</header>
+
+<div class="site-hero">
     {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-        <div class="inner">
-            {{> "site-nav"}}
-            <div class="site-header-content">
-                <h1 class="site-title">
-                    {{#if @site.logo}}
-                        <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </h1>
-                <h2 class="site-description">{{@site.description}}</h2>
+    <div class="site-header-content">
+        <h1 class="site-title">Blog</h1>
+    </div>
+</div>
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main site-main-home outer">
+    <div class="inner-home">
+        <div class="tag-bar">
+            <a href="https://lightit.io/blog/">All</a>
+            <a href="https://lightit.io/blog/tag/tech-guides/">Tech guides</a>
+            <a href="https://lightit.io/blog/tag/experience/">Experience</a>
+            <a href="https://lightit.io/blog/tag/digital-product/">Digital product</a>
+            <a href="https://lightit.io/blog/tag/healthcare/">Healthcare</a>
+            <a href="https://lightit.io/blog/tag/design/">Design</a>
+        </div>
+        <div class="inner posts">
+            <div class="post-feed">
+                {{#foreach posts}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
             </div>
         </div>
     </div>
-</header>
-
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner posts">
-        <div class="post-feed">
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-            {{/foreach}}
-        </div>
-    </div>
 </main>
-
-{{> site-header}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

@@ -4,11 +4,7 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
 <header class="site-header">
-    <div class="outer site-nav-main">
-        <div class="inner">
-            {{> "site-nav"}}
-        </div>
-    </div>
+    {{> "site-header"}}
 </header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}

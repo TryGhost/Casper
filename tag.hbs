@@ -2,8 +2,12 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{#tag}}
-<header class="site-archive-header">
+
+<header class="site-header">
     {{> site-header}}
+</header>
+
+<div class="site-archive-header">
     {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner site-header-content">
             <h1 class="site-title">{{name}}</h1>
@@ -16,7 +20,7 @@
             </h2>
         </div>
     </div>
-</header>
+</div>
 {{/tag}}
 
 {{!-- The main content area --}}

@@ -58,11 +58,17 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
 }
 
 .site-main {
     z-index: 100;
     flex-grow: 1;
+}
+
+.site-main-home {
+    position: absolute;
+    top: -150px;
 }
 
 /* Full width page blocks */
@@ -71,11 +77,30 @@ body {
     padding: 0 5vw;
 }
 
+@media screen and (max-width: 870px) {
+    .outer {
+        padding: 0;    
+    }
+}
+
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
     max-width: 1040px;
     width: 100%;
+}
+
+.site-nav-main .inner {
+    max-width: 1200px;
+}
+
+.inner-home {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 6px 0 8px -4px rgb(0 0 0 / 10%), -6px 0 8px -4px rgb(0 0 0 / 10%);
 }
 
 /* Usage:
@@ -99,20 +124,25 @@ body {
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
-
-    .home-template .site-nav {
-        position: relative;
-    }
 }
 
 
 /* 4. Site Header
 /* ---------------------------------------------------------- */
 
+.site-header {
+    margin-bottom: 76px;
+}
+
+@media screen and (max-width: 768px) {
+    .site-header {
+        margin-bottom: 58px;
+    } 
+}
+
 .site-header-background {
     position: relative;
-    margin-top: 64px;
-    padding-bottom: 12px;
+    padding-bottom: 120px;
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
@@ -163,7 +193,8 @@ body {
     z-index: 10;
     margin: 0 0 0 -2px;
     padding: 0;
-    font-size: 5.0rem;
+    font-size: 3rem;
+    font-family: 'Raleway', sans-serif;
     line-height: 1em;
     font-weight: 600;
 }
@@ -205,6 +236,25 @@ body {
 .site-home-header .site-description {
     font-size: 2.2rem;
     font-weight: 300;
+}
+
+.tag-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 30px;
+    margin: 0 auto;
+    background: #EFF4FF;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.tag-bar a {
+    font-weight: 600;
+    color: #1F2D3D;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0 20px;
 }
 
 
@@ -267,299 +317,203 @@ body {
 
 .site-nav-main {
     position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+    background: #773DBD;
     z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
+    width: 100%;
 }
 
 .site-nav {
     position: relative;
-    z-index: 100;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    overflow-y: hidden;
-    height: 64px;
-    font-size: 1.3rem;
+    z-index: 100;
 }
 
 .site-nav-left {
-    flex: 1 0 auto;
     display: flex;
-    align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
-    padding: 10px 0 80px;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-    white-space: nowrap;
-
-    -ms-overflow-scrolling: touch;
-}
-
-@media (max-width: 700px) {
-    .site-header-background:not(.responsive-header-img) .site-nav:after,
-    .site-nav-main .site-nav:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        z-index: 1000;
-        width: 40px;
-        height: 100%;
-    }
-
-    .site-header-background:not(.responsive-header-img) .site-nav:after,
-    .site-nav-main .site-nav:after {
-        right: 0;
-        background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
-    }
-
-    .nav li:last-of-type {
-        padding-right: 20px;
-    }
-}
-
-/* Site Nav Hack Explanation (above):
-
-What's happening above is .site-nav-left is set to overflow-x and allow sideways scrolling, so that when there isn't enough space for all nav items (either due to lots of nav items, or a small viewport), you can still scroll side-to-side to reach them. Also, there is a small gradient on the left and right side covering the menu so that the menu goes offscreen smoothly.
-
-The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px of padding-bottom and a 40px fixed height parent (.site-nav) hides that entirely. Slightly hacky code. But nice clean end-result.
-
-*/
-
-.site-nav-logo {
-    position: relative;
-    z-index: 100;
-    flex-shrink: 0;
-    display: inline-block;
-    margin-right: 32px;
-    padding: 12px 0;
-    color: #fff;
-    font-size: 1.7rem;
-    line-height: 1.8rem;
-    font-weight: bold;
-    letter-spacing: -0.5px;
-    text-transform: none;
-}
-
-.site-nav-logo:hover {
-    text-decoration: none;
-}
-
-.site-nav-logo img {
-    display: block;
-    width: auto;
-    height: 21px;
-}
-
-.site-home-header .site-nav-logo {
-    display: none;
-}
-
-.site-nav-content {
-    position: relative;
-    align-self: flex-start;
-}
-
-.nav {
-    position: absolute;
-    z-index: 1000;
-    display: flex;
-    margin: 0 0 0 -12px;
-    padding: 0;
-    list-style: none;
-    transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.nav li {
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
-.nav li a {
-    position: relative;
-    display: block;
-    padding: 12px 12px;
-    color: #fff;
-    opacity: 0.8;
-    transition: opacity 0.35s ease-in-out;
-}
-
-.nav li a:hover {
-    text-decoration: none;
-    opacity: 1;
-}
-
-.nav li a:before {
-    content: "";
-    position: absolute;
-    right: 100%;
-    bottom: 8px;
-    left: 12px;
-    height: 1px;
-    background: #fff;
-    opacity: 0.25;
-    transition: all 0.35s ease-in-out;
-}
-
-.nav li a:hover:before {
-    right: 12px;
-    opacity: 0.5;
-}
-
-.nav-post-title-active .nav {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-175%);
-}
-
-.nav-post-title {
-    visibility: hidden;
-    position: absolute;
-    top: 9px;
-    color: #fff;
-    font-size: 1.7rem;
-    font-weight: 400;
-    text-transform: none;
-    opacity: 0;
-    transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(175%);
-}
-
-.nav-post-title.dash {
-    left: -25px;
-}
-
-.nav-post-title.dash:before {
-    content: "– ";
-    opacity: 0.5;
-}
-
-.nav-post-title-active .nav-post-title {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
+    padding: 10px;
 }
 
 .site-nav-right {
-    flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 10px 0;
-    height: 64px;
-}
-
-.social-links {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-}
-
-.social-links a:last-of-type {
-    padding-right: 20px;
-}
-
-
-.social-link {
-    display: inline-block;
-    margin: 0;
+    font-family: 'Open Sans', sans-serif;
     padding: 10px;
-    opacity: 0.8;
 }
 
-.social-link:hover {
-    opacity: 1.0;
-}
-
-.social-link svg {
-    height: 1.8rem;
-    fill: #fff;
-}
-
-.social-link-fb svg {
-    height: 1.6rem;
-}
-
-.social-link-wb svg {
-    height: 1.6rem;
-}
-
-.social-link-wb svg path {
-    stroke: #fff;
-}
-
-.social-link-rss svg {
-    height: 1.9rem;
-}
-
-.subscribe-button {
-    display: block;
-    padding: 4px 10px;
-    border: #fff 1px solid;
+.site-nav-right a {
+    font-weight: bold;
     color: #fff;
-    font-size: 1.2rem;
-    line-height: 1em;
-    border-radius: 10px;
-    opacity: 0.8;
-}
-
-.subscribe-button:hover {
+    margin-left: 3.5rem;
     text-decoration: none;
+    padding: 8px 0;
+}
+
+.site-nav-right a:hover {
+    opacity: 0.75;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-box {
+    display: none;
+    position: absolute;
+    width: 22rem;
+    z-index: 1;
+}
+
+.dropdown-content {
+    background: #4E5865;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 0.75rem;
+    padding: 8px 0;
+    margin-left: 25px;
+    margin-top: 12px;
+}
+
+.dropdown-content a {
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 1.25rem;
+    display: block;
+    padding: 12px 16px;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    color: #fff;
+    background: #646E79;
     opacity: 1;
 }
 
-.rss-button {
-    opacity: 0.8;
+.dropdown:hover .dropdown-box {
+    display: block;
 }
 
-.rss-button:hover {
-    opacity: 1;
+.site-nav-right .btn {
+    color: #202E3D;
+    background: #D8E3F5;
+    margin-left: 3.5rem;
+    padding: 1.125rem 2rem;
+    border-radius: 1.25rem;
 }
 
-.rss-button svg {
-    margin-bottom: 1px;
-    height: 2.1rem;
-    fill: #fff;
+.site-nav-right .btn:hover {
+    background: #E8EEF9;
 }
 
-/* Special behaviors for home navigation */
-
-.home-template .site-nav-main {
-    z-index: 100;
+.site-nav-logo {
+    height: 56px;
 }
 
-.home-template .site-nav-main .site-nav {
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+@media screen and (max-width: 768px) {
+    .site-nav-logo {
+        height: 38px;
+    } 
 }
 
-.home-template .site-nav-main .fixed-nav-active {
-    opacity: 1;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
-}
-
-@media (max-width: 700px) {
-    .site-home-header .site-nav {
-        margin-left: -5vw;
-    }
-
-    .site-nav-main {
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .site-nav-left {
-        margin-right: 0;
-        padding-left: 5vw;
-    }
-
+@media screen and (max-width: 870px) {
     .site-nav-right {
+        display: none;
+    }
+}
+
+.site-nav-right-mobile {
+    display: block;
+    position: relative;
+    padding: 10px;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    padding: 72px 0;
+    margin-top: 58px;
+    width: 100%;
+    height: 100vh;
+    background: #374351;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: #fff;
+    text-align: center;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+.mobile-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.mobile-dropdown {
+    margin: 0 auto;
+}
+
+.mobile-menu button {
+    display: block;
+    background: none;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+.mobile-dropdown-content {
+    overflow: hidden;
+}
+
+.mobile-dropdown-content a {
+    font-size: 16px;
+}
+
+.inactive {
+    display: none;
+}
+
+.close-svg {
+    display: none;
+}
+
+.active {
+    display: block
+}
+
+.rotate-0 {
+    transform: rotate(-90deg);
+}
+
+.max-h-0 {
+    max-height: 0px;
+}
+
+.site-nav-right-mobile button {
+    background: none;
+}
+
+.hamburger-menu {
+    width: 24px;
+    height: 38px;
+    background: none;
+    padding: 0;
+}
+
+.hamburger-menu svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (min-width: 870px) {
+    .site-nav-right-mobile {
+        display: none;
+    }
+
+    .mobile-menu {
         display: none;
     }
 }
@@ -570,6 +524,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .posts {
     overflow-x: hidden;
+    padding: 0 20px;
 }
 
 .post-feed {
@@ -895,7 +850,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-template .site-main,
 .page-template .site-main {
-    margin-top: 64px;
     padding-bottom: 4vw;
     background: #fff;
 }
@@ -931,16 +885,17 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .post-full-header {
         padding-right: 5vw;
         padding-left: 5vw;
+        margin-top: 58px;
     }
 }
 
 @media (max-width: 500px) {
     .post-full-header {
-        padding: 20px 0 35px;
+        padding: 30px 0 35px;
     }
 }
 
@@ -975,7 +930,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image img {
-    max-width: 1040px;
     width: 100%;
     height: auto;
 }
@@ -2448,18 +2402,6 @@ Usage (In Ghost editor):
 
 .error-content {
     padding: 14vw 4vw 6vw;
-}
-
-.site-nav-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.site-nav-center .site-nav-logo {
-    margin-right: 0;
 }
 
 .error-message {

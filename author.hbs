@@ -4,9 +4,11 @@
 {{#author}}
 {{!-- Everything inside the #author tags pulls data from the author --}}
 
-
-<header class="site-archive-header">
+<header class="site-header">
     {{> site-header}}
+</header>
+
+<div class="site-archive-header">
     {{> header-background background=cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner">
             <div class="site-header-content author-header">
@@ -39,7 +41,7 @@
             </div>
         </div>
     </div>
-</header>
+</div>
 {{/author}}
 
 {{!-- The main content area --}}
