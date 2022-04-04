@@ -1,21 +1,59 @@
 {{!< default}} {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template
-    --}} <div class="site-header-content">
-    {{#if @site.cover_image}}
-    {{!-- This is a responsive image, it loads different sizes depending on device
-    https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-    <img class="site-header-cover" srcset="{{img_url @site.cover_image size=" s"}} 300w, {{img_url @site.cover_image
-        size="m" }} 600w, {{img_url @site.cover_image size="l" }} 1000w, {{img_url @site.cover_image size="xl" }} 2000w"
-        sizes="100vw" src="{{img_url @site.cover_image size=" xl"}}" alt="" />
-    {{/if}}
-    <h1 class="site-title">
-        {{#if @site.logo}}
-        <img class="site-logo" src="{{img_url @site.logo size=" m"}}" alt="{{@site.title}}" />
-        {{else}}
-        {{@site.title}}
-        {{/if}}
+    --}}
+
+<div class="site-header-content-responsive">
+    <h1 style="display:flex;justify-content:center;">
+        <img style="width:100%;max-width:700px;"
+             src="{{img_url @site.logo size=" m"}}"
+             alt="Speisekammer App"/>
     </h1>
-    <p>{{@site.description}}</p>
+
+    <div class="site-header-content-responsive-rows">
+
+        <div class="site-header-column">
+            <div>
+                <ul style="color:#FFFFFF;font-weight:600;text-align:center;list-style: none">
+                    <li>Behalte den Überblick über deine Lebensmittel</li>
+                    <li>Erhalte Hinweise vor Ablauf des MHD</li>
+                    <li>Kaufe gezielter ein und wirf weniger weg</li>
+                    <li>Besser für deinen Geldbeutel und die Umwelt!</li>
+                </ul>
+            </div>
+
+            <div style="display:flex;flex-direction:row;margin:1em;justify-content: space-evenly;">
+                <div style="width:30%;">
+                    <a
+                            href='https://play.google.com/store/apps/details?id=app.speisekammer&campaignId=landingPage'><img
+                            alt='Jetzt bei Google Play'
+                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png'
+                            style="width: 100%;max-width: 200px"/></a>
+                </div>
+
+                <div style="width:30%;">
+
+                    <a href='https://apps.apple.com/us/app/speisekammer-vorrat-verwalten/id1575424944'><img
+                            alt='Vorbestellen im App Store'
+                            src='https://speisekammer.app/content/images/2021/10/AppStore-Button-DE-Download--646-x-250-px-.png'
+                            style="width: 100%;max-width: 200px"/></a>
+                </div>
+                <div style="width:30%">
+                    <a href="https://app.speisekammer.app">
+                        <img src="https://speisekammer.app/content/images/2021/10/WebApp-Button--646-x-250-px---1-.png"
+                             alt='Zur Web-App' style="width: 100%;max-width: 200px"/></a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="site-header-column">
+            <img src="https://speisekammer.app/content/images/2022/04/iOS-Android-Mockup-Startseite-1.png"
+                 alt="Mockups von iPhone und Android mit Speisekammer App"
+                 style="width:100%;max-width:500px;height:auto;"/>
+        </div>
     </div>
+
+</div>
 
 
     {{!-- The main content area --}}
@@ -29,44 +67,6 @@
             <article class="article">
 
                 <section class="gh-content gh-canvas">
-
-
-                    <table style="width: 100%">
-                        <tr>
-                            <td style="vertical-align: top; width: 33%">
-                                <div style="text-align: center">
-                                    <a
-                                        href='https://play.google.com/store/apps/details?id=app.speisekammer&campaignId=landingPage'><img
-                                            alt='Jetzt bei Google Play'
-                                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png'
-                                            style="width: 100%;max-width: 200px" /></a>
-                                </div>
-                            </td>
-
-                            <td style="vertical-align: top; width: 33%">
-                                <div style="text-align: center">
-                                    <a href='https://apps.apple.com/us/app/speisekammer-vorrat-verwalten/id1575424944'><img
-                                            alt='Vorbestellen im App Store'
-                                            src='https://speisekammer.app/content/images/2021/10/AppStore-Button-DE-Download--646-x-250-px-.png'
-                                            style="width: 100%;max-width: 200px" /></a>
-                                </div>
-                            </td>
-
-
-                            <td style="vertical-align: top; width: 33%">
-                                <div style="text-align: center">
-                                    <a href="https://app.speisekammer.app">
-                                        <img src="https://speisekammer.app/content/images/2021/10/WebApp-Button--646-x-250-px---1-.png"
-                                            alt='Zur Web-App' style="width: 100%;max-width: 200px" /></a>
-                                </div>
-                            </td>
-
-                        </tr>
-                    </table>
-
-
-
-
 
                     <h1 class="article-title">{{title}}</h1>
 
