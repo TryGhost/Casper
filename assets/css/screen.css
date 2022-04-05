@@ -2084,3 +2084,26 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+
+.user-page-responsive-pair {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.user-page-responsive-elem {
+    width: 45%;
+}
+
+@media (max-width: 700px) {
+    .user-page-responsive-pair {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        align-self: center;
+    }
+    .user-page-responsive-elem {
+        width: 100%;
+    }
+}
