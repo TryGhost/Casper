@@ -147,6 +147,9 @@ production stylesheet in assets/built/screen.css
 
 /** Custom responsive header */
 
+
+/* medium screen, two columns, badges in row */
+
 .site-header-column {
     display: flex;
     flex-direction: column;
@@ -174,23 +177,27 @@ production stylesheet in assets/built/screen.css
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
+    font-size: 2vw;
 }
 
-@media (max-width: 450px) {
-    .site-header-content-responsive-rows {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        font-size: 12pt;
-    }
+.badges-line {
+    display:flex;
+    flex-direction:column;
+    margin:1em;
+    justify-content: space-evenly;
+}
+
+.badge {
+    width:100%;
 }
 
 @media (max-width: 750px) {
+    /* small screen, one column, badges still in row */
     .site-header-content-responsive-rows {
         display: flex;
         flex-direction: column;
         width: 100%;
-        font-size: 16pt;
+        font-size: 3.5vw;
     }
 
     .site-header-column {
@@ -200,22 +207,52 @@ production stylesheet in assets/built/screen.css
         align-self: center;
         align-items: center;
     }
-}
 
-@media (min-width: 1000px) {
-    .site-header-content-responsive-rows {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        font-size: 16pt;
+    .badges-line {
+        display:flex;
+        flex-direction:row;
+        margin:1em;
+        justify-content: space-evenly;
+    }
+
+    .badge {
+        width:30%;
     }
 }
-@media (min-width: 1200px) {
+
+@media (max-width: 400px) {
+    /* mobile, one column, badges stacked */
+    .badges-line {
+        display:flex;
+        flex-direction:column;
+        margin:1em;
+        justify-content: space-evenly;
+    }
+    .badge {
+        width:100%;
+    }
+
+}
+
+
+@media (min-width: 1000px) {
+    /* large screen, two columns, badges in line again */
     .site-header-content-responsive-rows {
         display: flex;
         flex-direction: row;
         width: 100%;
-        font-size: 20pt;
+        font-size: 2vw;
+    }
+
+    .badges-line {
+        display:flex;
+        flex-direction:row;
+        margin:1em;
+        justify-content: space-evenly;
+    }
+
+    .badge {
+        width:30%;
     }
 }
 
