@@ -181,6 +181,7 @@ production stylesheet in assets/built/screen.css
         display: flex;
         flex-direction: column;
         width: 100%;
+        font-size: 16pt;
     }
 
     .site-header-column {
@@ -190,16 +191,6 @@ production stylesheet in assets/built/screen.css
         align-self: center;
         align-items: center;
     }
-}
-
-@media (min-width: 1200px) {
-    .site-header-content-responsive-rows {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        font-size: 80px;
-    }
-
 }
 
 @media (min-width: 1000px) {
