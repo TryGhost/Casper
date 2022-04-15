@@ -291,6 +291,11 @@ body {
     border-bottom: 1px solid color(var(--lightgrey) l(+12%));
 }
 
+.back-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .back-to-all-posts {
     text-decoration: none;
     color: #4E5865;
