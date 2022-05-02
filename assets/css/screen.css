@@ -129,7 +129,7 @@ production stylesheet in assets/built/screen.css
     max-height: 55px;
 }
 
-.site-header-content p {
+.site-description {
     z-index: 10;
     max-width: 600px;
     margin: 0 auto;
@@ -138,7 +138,7 @@ production stylesheet in assets/built/screen.css
 }
 
 @media (max-width: 600px) {
-    .site-header-content p {
+    .site-description {
         max-width: 80vmin;
         font-size: 1.8rem;
     }
