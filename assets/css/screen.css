@@ -37,6 +37,7 @@ production stylesheet in assets/built/screen.css
     --color-darkgrey: #15171A;
     --color-midgrey: #738a94;
     --color-lightgrey: #c5d2d9;
+    --color-secondary-text: #979797;
     --color-wash: #e5eff5;
     --color-darkmode: #151719;
 
@@ -510,9 +511,9 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-feed {
     position: relative;
     display: grid;
-    grid-gap: 4vmin;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 4vmin 0;
+    gap: 64px 48px;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 64px 0;
 }
 
 .post-feed.list {
@@ -535,6 +536,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-card {
     position: relative;
+    grid-column: span 2;
     flex: 1 1 301px;
     display: flex;
     flex-direction: column;
@@ -552,15 +554,21 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-card-image-link {
     position: relative;
     display: block;
-    overflow: hidden;
-    border-radius: 3px;
+    margin-bottom: 32px;
+}
+
+.post-card-image-link::after {
+    content: "";
+    display: block;
+    padding-bottom: 55%;
 }
 
 .post-card-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
     background: var(--color-lightgrey) no-repeat center center;
-
     object-fit: cover;
 }
 
@@ -574,10 +582,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     text-decoration: none;
 }
 
-.post-card-header {
-    margin: 20px 0 0;
-}
-
 .post-feed .no-image .post-card-content-link {
     padding: 0;
 }
@@ -587,17 +591,17 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-primary-tag {
-    margin: 0 0 0.2em;
-    color: var(--ghost-accent-color);
-    font-size: 1.2rem;
+    margin: 0 0 10px;
+    color: var(--color-secondary-text);
+    font-size: 1.4rem;
     font-weight: 500;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
+    line-height: 1;
 }
 
 .post-card-title {
-    margin: 0 0 0.4em;
-    font-size: 2.4rem;
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 800;
     transition: color 0.2s ease-in-out;
 }
 
@@ -616,28 +620,31 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-excerpt {
+    display: -webkit-box;
+    overflow-y: hidden;
+    margin-top: 12px;
     max-width: 56em;
-    color: color-mod(var(--color-midgrey) l(-8%));
-    font-family: var(--font-serif);
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
 }
 
 .has-sans-body .post-card-excerpt {
     font-family: var(--font-sans-serif);
 }
 
-.post-card-excerpt p {
-    margin-bottom: 1em;
-    display: -webkit-box;
-    overflow-y: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    word-break: break-word;
-}
-
 .post-card-meta {
     display: flex;
     align-items: center;
+    margin-top: 12px;
     padding: 0;
+    font-size: 1.3rem;
+    color: var(--color-secondary-text);
+}
+
+.post-card-meta .sep {
+    margin: 0 4px;
 }
 
 .author-profile-image,
@@ -769,10 +776,10 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (min-width: 1001px) {
     .post-card-large {
-        grid-column: 1 / span 3;
+        grid-column: span 6;
         display: grid;
         grid-gap: 4vmin;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(20, 1fr);
         min-height: 280px;
         border-top: 0;
     }
@@ -783,9 +790,33 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-image-link {
         position: relative;
-        grid-column: 1 / span 2;
+        grid-column: span 13;
         margin-bottom: 0;
         min-height: 380px;
+    }
+
+    .post-card-large .post-card-content {
+        grid-column: span 7;
+    }
+
+    .post-card-large .post-card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .post-card-large .post-card-primary-tag {
+        margin-bottom: 14px;
+    }
+
+    .post-card-large .post-card-title {
+        margin-top: 0;
+        font-size: 4rem;
+        line-height: 1.05;
+    }
+
+    .post-card-large .post-card-excerpt {
+        margin-top: 16px;
     }
 
     .post-feed.list .post-card-large .post-card-image-link {
@@ -800,29 +831,17 @@ make sure this only happens on large viewports / desktop-ish devices.
         padding-bottom: 60%;
     }
 
-    .post-card-large .post-card-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    .post-card-large .post-card-content {
-        justify-content: center;
-    }
-
-    .post-card-large .post-card-title {
-        margin-top: 0;
-        font-size: 3.2rem;
-    }
-
     .post-feed.list .post-card-large .post-card-title {
         font-size: 2.4rem;
     }
 
-    .post-card-large .post-card-excerpt p {
-        font-size: 1.7rem;
-        line-height: 1.55em;
-        -webkit-line-clamp: 8;
+    .post-card:nth-child(2),
+    .post-card:nth-child(3) {
+        grid-column: span 3;
+    }
+
+    .post-card:is(:nth-child(2), :nth-child(3)) .post-card-title {
+        font-size: 3rem;
     }
 }
 
