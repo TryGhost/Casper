@@ -78,40 +78,6 @@
 
             {{/page}}
 
-
-            {{#get "posts" limit="all" filter="tags:[usecase]" as |usecases|}}
-            {{#if usecases}}
-            <h2>{{t "Use Cases"}}</h2>
-
-            <div class="post-feed">
-                {{#foreach usecases visibility="all"}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-                {{/foreach}}
-            </div>
-
-            {{/if}}
-            {{/get}}
-
-
-            {{#get "posts" limit="4" as |latestposts|}}
-            {{#if latestposts}}
-            <h2>{{t "News from our blog"}}</h2>
-
-            <div class="post-feed">
-                {{#foreach latestposts visibility="all"}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-                {{/foreach}}
-            </div>
-
-            {{/if}}
-            {{/get}}
-
         </div>
 
 
@@ -158,7 +124,6 @@
 
             function update() {
                 var trigger = feed.getBoundingClientRect().top + window.scrollY;
-                var progressMax = lastDocumentHeight - lastWindowHeight;
 
                 // show/hide nav
                 if (lastScrollY >= trigger - 20) {
