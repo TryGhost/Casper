@@ -814,7 +814,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         grid-column: span 6;
         display: grid;
         grid-gap: 4vmin;
-        grid-template-columns: repeat(20, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         min-height: 280px;
         border-top: 0;
     }
@@ -825,13 +825,13 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-image-link {
         position: relative;
-        grid-column: span 13;
+        grid-column: span 2;
         margin-bottom: 0;
         min-height: 380px;
     }
 
     .post-card-large .post-card-content {
-        grid-column: span 7;
+        grid-column: span 1;
     }
 
     .post-card-large .post-card-image {
@@ -870,12 +870,19 @@ make sure this only happens on large viewports / desktop-ish devices.
         font-size: 2.4rem;
     }
 
-    .post-card:nth-child(2),
-    .post-card:nth-child(3) {
+    .post-card-full {
+        grid-column: span 6;
+    }
+
+    .post-card-full .post-card-title {
+        font-size: 6.4rem;
+    }
+
+    .post-card.dynamic {
         grid-column: span 3;
     }
 
-    .post-card:is(:nth-child(2), :nth-child(3)) .post-card-title {
+    .post-card.dynamic .post-card-title {
         font-size: 3rem;
     }
 }
