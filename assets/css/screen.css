@@ -110,22 +110,40 @@ production stylesheet in assets/built/screen.css
     z-index: 100;
     display: flex;
     align-items: flex-end;
-    height: 600px;
-    min-height: 200px;
-    padding-top: 104px;
+    padding-top: 64px;
     padding-bottom: 64px;
+    color: var(--color-darkgrey);
+}
+
+.site-header-content.vertical {
+    align-items: center;
+}
+
+.has-cover-image .site-header-content {
+    min-height: 600px;
+    padding-top: 104px;
     color: #fff;
+}
+
+body:not(.has-cover-image) .site-header-content:not(.vertical) {
+    padding-top: 104px;
+    padding-bottom: 24px;
 }
 
 .site-header-inner {
     position: relative;
     display: flex;
     align-items: center;
+    gap: 24px;
+}
+
+.site-header-content.vertical .site-header-inner {
+    flex-direction: column;
+    text-align: center;
 }
 
 .site-icon {
     flex-shrink: 0;
-    margin-right: 24px;
     width: 120px;
     height: 120px;
 }
@@ -162,18 +180,24 @@ production stylesheet in assets/built/screen.css
     padding-bottom: 32px;
     font-size: 1.6rem;
     line-height: 1.3em;
+}
+
+.has-cover-image .gh-head {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
     color: #fff;
-    background: var(--ghost-accent-color);
 }
 
 .gh-head a {
-    color: inherit;
     text-decoration: none;
 }
 
 .gh-head-inner {
     display: grid;
-    grid-gap: 2.5vmin;
+    grid-gap: 32px;
     grid-template-columns: auto auto 1fr;
     grid-auto-flow: row dense;
 }
@@ -194,10 +218,13 @@ production stylesheet in assets/built/screen.css
 .gh-head-logo {
     display: block;
     padding: 10px 0;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1.2em;
+    font-weight: 800;
+    font-size: 2.6rem;
     letter-spacing: -0.02em;
+}
+
+.home-template .gh-head-logo {
+    display: none;
 }
 
 .gh-head-logo img {
@@ -212,6 +239,10 @@ production stylesheet in assets/built/screen.css
     display: flex;
     align-items: center;
     font-weight: 500;
+}
+
+.home-template .gh-head-menu {
+    margin-left: -32px;
 }
 
 .gh-head-menu .nav {
@@ -230,7 +261,11 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-menu .nav a {
     display: inline-block;
-    padding: 5px 0;
+    line-height: 1.5;
+}
+
+.has-cover-image .gh-head-menu .nav a {
+    color: #fff;
 }
 
 .gh-head-menu .nav a:hover {
@@ -294,12 +329,17 @@ a.gh-head-button {
     align-items: center;
     padding: 8px 16px;
     height: 40px;
-    color: var(--button-text-color, var(--color-darkgrey));
     font-weight: 600;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.01em;
     font-size: 1.5rem;
-    background: var(--button-bg-color, #fff);
     border-radius: 6px;
+    color: #fff;
+    background: var(--ghost-accent-color);
+}
+
+.has-cover-image a.gh-head-button {
+    color: var(--color-darkgrey);
+    background: #fff;
 }
 
 
@@ -481,27 +521,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
-.home-template .gh-head.has-cover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2000;
-}
-
-.home-template .gh-head.has-cover {
-    background: transparent;
-}
-
 .home-template.gh-head-open .gh-head {
     background: var(--ghost-accent-color);
-}
-
-.home-template .gh-head.has-cover .gh-head-logo {
-    display: none;
-}
-.home-template .gh-head.has-cover .gh-head-menu {
-    margin-left: -2.5vmin;
 }
 
 
@@ -806,7 +827,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-primary-tag {
-        margin-bottom: 14px;
+        margin-bottom: 12px;
     }
 
     .post-card-large .post-card-title {

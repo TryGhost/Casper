@@ -27,10 +27,10 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}">
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @site.cover_image}} has-cover-image{{/if}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head outer{{#match @custom.publication_cover_style "!=" "None"}} has-cover{{/match}}">
+    <header id="gh-head" class="gh-head outer">
         <nav class="gh-head-inner inner">
 
             <div class="gh-head-brand">
