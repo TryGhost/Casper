@@ -2,8 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{#match @custom.publication_cover_style "!=" "None"}}
-<div class="site-header-content outer{{#match @custom.publication_cover_style "Large"}} large{{/match}}">
+<div class="site-header-content outer{{#match @custom.identity "Vertical"}} vertical{{/match}}">
 
     {{#if @site.cover_image}}
         {{!-- This is a responsive image, it loads different sizes depending on device
@@ -15,22 +14,25 @@ into the {body} of the default.hbs template --}}
                     {{img_url @site.cover_image size="xl"}} 2000w"
             sizes="100vw"
             src="{{img_url @site.cover_image size="xl"}}"
-            alt=""
+            alt="{{@site.title}}"
         />
     {{/if}}
 
-    <section class="site-header-inner inner">
-        {{#if @site.icon}}
-            <img class="site-icon" src="{{@site.icon}}" alt="{{@site.title}}">
-        {{/if}}
-        <div class="site-header-wrapper">
-            <h1 class="site-title">{{@site.title}}</h1>
-            <p class="site-description">{{@site.description}}</p>
-        </div>
-    </section>
+    {{#match @custom.identity "!=" "None"}}
+        <section class="site-header-inner inner">
+            {{#if @site.icon}}
+                <img class="site-icon" src="{{@site.icon}}" alt="{{@site.title}}">
+            {{/if}}
+            <div class="site-header-wrapper">
+                {{#match @custom.identity "Horizontal"}}
+                    <h1 class="site-title">{{@site.title}}</h1>
+                {{/match}}
+                <p class="site-description">{{@site.description}}</p>
+            </div>
+        </section>
+    {{/match}}
 
 </div>
-{{/match}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">

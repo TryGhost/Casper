@@ -105,14 +105,14 @@
                 ],
                 "default": "Elegant serif"
             },
-            "publication_cover_style": {
+            "identity": {
                 "type": "select",
                 "options": [
-                    "None",
-                    "Medium",
-                    "Large"
+                    "Horizontal",
+                    "Vertical",
+                    "None"
                 ],
-                "default": "Medium",
+                "default": "Horizontal",
                 "group": "homepage"
             },
             "feed_layout": {
