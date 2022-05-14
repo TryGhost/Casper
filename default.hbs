@@ -27,7 +27,7 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @site.cover_image}} has-cover-image{{/if}}">
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @site.cover_image}} has-cover-image{{/if}}{{#is "home"}}{{#match @custom.identity "!=" "None"}}{{#if @custom.include_logo_in_identity}} no-logo{{/if}}{{/match}}{{/is}}">
 <div class="viewport">
 
     <header id="gh-head" class="gh-head outer">
