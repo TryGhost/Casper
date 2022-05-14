@@ -20,8 +20,10 @@ into the {body} of the default.hbs template --}}
 
     {{#match @custom.identity "!=" "None"}}
         <section class="site-header-inner inner">
-            {{#if @site.icon}}
-                <img class="site-icon" src="{{@site.icon}}" alt="{{@site.title}}">
+            {{#if @custom.include_logo_in_identity}}
+            {{#if @site.logo}}
+                <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+            {{/if}}
             {{/if}}
             <div class="site-header-wrapper">
                 {{#match @custom.identity "Horizontal"}}

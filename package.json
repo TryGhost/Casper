@@ -115,6 +115,11 @@
                 "default": "Horizontal",
                 "group": "homepage"
             },
+            "include_logo_in_identity": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
             "feed_layout": {
                 "type": "select",
                 "options": [
@@ -133,18 +138,6 @@
                     "Auto"
                 ],
                 "default": "Light"
-            },
-            "header_button_background": {
-                "type": "color",
-                "default": "#ffffff"
-            },
-            "header_button_text_color": {
-                "type": "select",
-                "options": [
-                    "Light",
-                    "Dark"
-                ],
-                "default": "Dark"
             },
             "post_image_width": {
                 "type": "select",
