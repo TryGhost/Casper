@@ -262,7 +262,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 24px;
+    gap: 32px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -282,10 +282,6 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     color: #fff;
 }
 
-.gh-head-menu .nav a:hover {
-    opacity: 1;
-}
-
 
 /* Secondary Navigation
 /* ---------------------------------------------------------- */
@@ -298,47 +294,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     text-align: right;
 }
 
-.gh-head-actions-list {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.gh-head-actions-list a:not([class]) {
-    display: inline-block;
-    margin: 0 0 0 1.5vmin;
-    padding: 5px 0;
-}
-
-.gh-social {
-    margin: 0 1.5vmin 0 0;
-}
-
-.gh-social a {
-    opacity: 0.8
-}
-
-.gh-social a + a {
-    margin-left: 0.8rem;
-}
-
-.gh-social a:hover {
-    opacity: 1;
-}
-
-.gh-social svg {
-    height: 22px;
-    width: 22px;
-    fill: #fff;
-}
-
-.gh-social-facebook svg {
-    height: 20px;
-    width: 20px;
-}
-
-a.gh-head-button {
+.gh-head-button {
     display: inline-flex;
     align-items: center;
     padding: 8px 16px;
@@ -351,7 +307,7 @@ a.gh-head-button {
     background: var(--ghost-accent-color);
 }
 
-.has-cover-image a.gh-head-button {
+.has-cover-image .gh-head-button {
     color: var(--color-darkgrey);
     background: #fff;
 }
@@ -562,6 +518,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         grid-template-columns: 1fr 1fr;
     }
 }
+
 @media (max-width: 700px) {
     .post-feed {
         grid-template-columns: 1fr;
@@ -572,18 +529,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-card {
     position: relative;
     grid-column: span 2;
-    flex: 1 1 301px;
     display: flex;
     flex-direction: column;
-    min-height: 220px;
     background-size: cover;
     word-break: break-word;
-}
-
-@media (max-width: 700px) {
-    .post-card {
-        min-height: auto;
-    }
 }
 
 .post-card-image-link {
@@ -629,7 +578,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0 0 10px;
     color: var(--color-secondary-text);
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1;
 }
 
@@ -682,8 +631,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0 4px;
 }
 
-.author-profile-image,
-.avatar-wrapper {
+.author-profile-image {
     display: block;
     width: 100%;
     height: 100%;
@@ -691,11 +639,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     border-radius: 100%;
 
     object-fit: cover;
-}
-
-.post-card-meta .profile-image-wrapper,
-.post-card-meta .avatar-wrapper {
-    position: relative;
 }
 
 .author-list {
@@ -713,69 +656,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     padding: 0;
 }
 
-.static-avatar {
-    display: block;
-    overflow: hidden;
-    margin: 0 0 0 -6px;
-    width: 36px;
-    height: 36px;
-    border-radius: 100%;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
-}
-
-.post-card-byline-content {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 0 8px;
-    color: color-mod(var(--color-midgrey) l(+10%));
-    font-size: 1.4rem;
-    line-height: 1.2em;
-    font-weight: 400;
-}
-
-.post-card-byline-content span {
-    margin: 0;
-}
-
-.post-card-byline-content a {
-    color: color-mod(var(--color-darkgrey) l(+15%));
-    font-weight: 600;
-}
-
-.post-card-byline-date {
-    font-size: 1.3rem;
-    line-height: 1.5em;
-}
-
-.post-card-byline-date .bull {
-    display: inline-block;
-    margin: 0 2px;
-    opacity: 0.6;
-}
-
-.single-author-byline {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
-    color: color-mod(var(--color-midgrey) l(-10%));
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    font-weight: 500;
-}
-
-.single-author {
-    display: flex;
-    align-items: center;
-}
-
-.single-author .static-avatar {
-    margin-left: -2px;
-}
-
-.single-author-name {
-    display: inline-block;
-}
 
 /* Special Styling for home page grid (below):
 
@@ -791,7 +671,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         display: grid;
         grid-gap: 4vmin;
         grid-template-columns: 3fr 5fr;
-        min-height: auto;
         border-top: 0;
     }
 
@@ -815,7 +694,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         display: grid;
         grid-gap: 4vmin;
         grid-template-columns: repeat(3, 1fr);
-        min-height: 280px;
         border-top: 0;
     }
 
@@ -827,7 +705,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         position: relative;
         grid-column: span 2;
         margin-bottom: 0;
-        min-height: 380px;
     }
 
     .post-card-large .post-card-content {
@@ -857,7 +734,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-feed.list .post-card-large .post-card-image-link {
         grid-column: 1 / span 1;
         height: max-content;
-        min-height: auto;
     }
 
     .post-feed.list .post-card-large .post-card-image-link::after {
@@ -1560,94 +1436,41 @@ iframe.instagram-media + script + :not([id]) {
 /* 8. Author Template
 /* ---------------------------------------------------------- */
 
-.author-template .posts {
-    position: relative;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr;
-    grid-gap: 4vmin;
-}
-
-.author-template .posts .post-feed {
-    grid-column: 2 / 4;
-    grid-template-columns: 1fr 1fr;
-}
-
-.author-profile {
-    padding: 4vmin 0;
-}
-
-.author-profile-content {
-    height: auto;
-    position: sticky;
-    top: 4vmin;
-    font-size: 1.4rem;
-    line-height:  1.4em;
-}
-
 .author-profile-pic {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     margin: 0 0 2rem;
     background: color-mod(var(--color-lightgrey) l(+10%));
     border-radius: 50%;
 }
 
-.author-profile h1 {
-    margin: 0 0 0.3em;
-    font-size: 2rem;
-}
-
-.author-profile p {
-    margin: 0 0 1.5em;
-    color: color-mod(var(--color-midgrey) l(-8%));
+.author-profile-footer {
+    margin-top: 16px;
 }
 
 .author-profile-location {
-    margin: 0 0 1.5em;
     font-weight: 700;
 }
 
+.author-profile-meta {
+    display: flex;
+    gap: 10px;
+}
+
 .author-profile-social-link {
-    display: block;
-    padding: 0 0 5px;
     font-size: 1.3rem;
-    color: color-mod(var(--color-midgrey) l(-8%));
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 100%;
-    white-space: nowrap;
+    color: var(--color-secondary-text);
 }
 
 .author-profile-social-link:hover {
     color: var(--color-darkgrey);
 }
 
-@media (max-width: 900px) {
-    .author-template .posts .post-feed {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 650px) {
-    .author-template .posts {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-    }
-    .author-template .posts .post-feed {
-        grid-column: 1 / auto;
-    }
-    .author-profile {
-        padding-right: 0;
-    }
-    .author-profile-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.author-profile-social-link svg {
+    width: 16px;
+    height: 16px;
 }
 
 
