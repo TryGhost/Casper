@@ -2,7 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="site-header-content outer{{#match @custom.identity "Vertical"}} vertical{{/match}}">
+<div class="site-header-content outer{{#match @custom.about_section "Vertical"}} vertical{{/match}}">
 
     {{#if @site.cover_image}}
         {{!-- This is a responsive image, it loads different sizes depending on device
@@ -18,18 +18,26 @@ into the {body} of the default.hbs template --}}
         />
     {{/if}}
 
-    {{#match @custom.identity "!=" "None"}}
+    {{#match @custom.about_section "!=" "None"}}
         <section class="site-header-inner inner">
-            {{#if @custom.include_logo_in_identity}}
-            {{#if @site.logo}}
-                <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
-            {{/if}}
+            {{#if @custom.include_logo_in_about_section}}
+                {{#if @site.logo}}
+                    <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+                {{/if}}
             {{/if}}
             <div class="site-header-wrapper">
-                {{#match @custom.identity "Horizontal"}}
+                {{#match @custom.about_section "Horizontal"}}
                     <h1 class="site-title">{{@site.title}}</h1>
+                {{else}}
+                    {{#if @custom.include_logo_in_about_section}}
+                        {{#unless @site.logo}}
+                            <h1 class="site-title">{{@site.title}}</h1>
+                        {{/unless}}
+                    {{/if}}
                 {{/match}}
-                <p class="site-description">{{@site.description}}</p>
+                {{#if @site.description}}
+                    <p class="site-description">{{@site.description}}</p>
+                {{/if}}
             </div>
         </section>
     {{/match}}
@@ -38,16 +46,14 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-    <div class="inner posts">
+<div class="inner posts">
 
-        <div class="post-feed{{#match @custom.feed_layout "List"}} list{{/match}}">
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
-        </div>
-
+    <div class="post-feed{{#match @custom.feed_layout "List"}} list{{/match}}">
+        {{#foreach posts}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+        {{/foreach}}
     </div>
+
+</div>
 </main>

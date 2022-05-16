@@ -105,7 +105,7 @@
                 ],
                 "default": "Elegant serif"
             },
-            "identity": {
+            "about_section": {
                 "type": "select",
                 "options": [
                     "Horizontal",
@@ -115,7 +115,7 @@
                 "default": "Horizontal",
                 "group": "homepage"
             },
-            "include_logo_in_identity": {
+            "include_logo_in_about_section": {
                 "type": "boolean",
                 "default": true,
                 "group": "homepage"
@@ -139,6 +139,11 @@
                 "default": "Dynamic grid",
                 "group": "homepage"
             },
+            "keep_card_thumbnail_ratio": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
+            },
             "color_scheme": {
                 "type": "select",
                 "options": [
@@ -156,16 +161,6 @@
                     "Small"
                 ],
                 "default": "Wide",
-                "group": "post"
-            },
-            "email_signup_for_logged_out_visitors": {
-                "type": "select",
-                "options": [
-                    "Footer",
-                    "Bottom of post",
-                    "None"
-                ],
-                "default": "Footer",
                 "group": "post"
             },
             "email_signup_text": {
