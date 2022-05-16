@@ -8,48 +8,51 @@ into the {body} tag of the default.hbs template --}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
 <main id="site-main" class="site-main">
-    <article class="article {{post_class}} {{#match @custom.post_image_width "Full"}}image-full{{else match @custom.post_image_width "=" "Small"}}image-small{{/match}}">
+<article class="article {{post_class}} {{#match @custom.post_image_width "Full"}}image-full{{else match @custom.post_image_width "=" "Small"}}image-small{{/match}}">
 
-        <header class="article-header gh-canvas">
+    <header class="article-header gh-canvas">
 
-            {{#if primary_tag}}
-            <section class="article-tag">
+        {{#if primary_tag}}
+            <section class="article-tag post-card-primary-tag">
                 <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
             </section>
-            {{/if}}
+        {{/if}}
 
-            <h1 class="article-title">{{title}}</h1>
+        <h1 class="article-title">{{title}}</h1>
 
-            {{#if custom_excerpt}}
+        {{#if custom_excerpt}}
             <p class="article-excerpt">{{custom_excerpt}}</p>
-            {{/if}}
+        {{/if}}
 
-            <div class="article-byline">
-                <section class="article-byline-content">
-                    <ul class="author-list">
-                        {{#foreach authors}}
-                        <li class="author-list-item">
-                            {{#if profile_image}}
-                            <a href="{{url}}" class="author-avatar">
-                                <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                            </a>
-                            {{else}}
-                            <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                            {{/if}}
-                        </li>
-                        {{/foreach}}
-                    </ul>
-                    <div class="article-byline-meta">
-                        <h4 class="author-name">{{authors}}</h4>
-                        <div class="byline-meta-content">
-                            <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                            <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
-                        </div>
-                    </div>
-                </section>
+        <div class="article-byline">
+        <section class="article-byline-content">
+
+            <ul class="author-list">
+                {{#foreach authors}}
+                <li class="author-list-item">
+                    {{#if profile_image}}
+                    <a href="{{url}}" class="author-avatar">
+                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    </a>
+                    {{else}}
+                    <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                    {{/if}}
+                </li>
+                {{/foreach}}
+            </ul>
+
+            <div class="article-byline-meta">
+                <h4 class="author-name">{{authors}}</h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                </div>
             </div>
 
-            {{#if feature_image}}
+        </section>
+        </div>
+
+        {{#if feature_image}}
             <figure class="article-image">
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
@@ -66,28 +69,29 @@ into the {body} tag of the default.hbs template --}}
                     <figcaption>{{feature_image_caption}}</figcaption>
                 {{/if}}
             </figure>
-            {{/if}}
-        </header>
+        {{/if}}
 
-        <section class="gh-content gh-canvas">
-            {{content}}
-        </section>
+    </header>
 
-        {{!--
-        <section class="article-comments gh-canvas">
-            If you want to embed comments, this is a good place to paste your code!
-        </section>
-        --}}
+    <section class="gh-content gh-canvas">
+        {{content}}
+    </section>
 
-    </article>
+    {{!--
+    <section class="article-comments gh-canvas">
+        If you want to embed comments, this is a good place to paste your code!
+    </section>
+    --}}
+
+</article>
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#match @custom.email_signup_for_logged_out_visitors "!=" "None"}}
 {{#unless @member}}{{#if access}}
-    <section class="footer-cta {{#match @custom.email_signup_for_logged_out_visitors "Bottom of post"}}cta-alt{{/match}}">
+    <section class="footer-cta outer">
         <div class="inner">
-            {{#if @custom.email_signup_text}}<h2>{{@custom.email_signup_text}}</h2>{{/if}}
+            {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
             <a class="footer-cta-button" href="#/portal" data-portal>
                 <div class="footer-cta-input">Enter your email</div>
                 <span>Subscribe</span>
@@ -110,7 +114,7 @@ into the {body} tag of the default.hbs template --}}
     {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
 
         {{#if more_posts}}
-            <aside class="read-more-wrap">
+            <aside class="read-more-wrap outer">
                 <div class="read-more inner">
                     {{#foreach more_posts}}
                         {{> "post-card"}}
