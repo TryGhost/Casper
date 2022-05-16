@@ -179,6 +179,10 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     padding-bottom: 32px;
 }
 
+.site-header-content.vertical .site-title + .site-description {
+    margin-top: 16px;
+}
+
 @media (max-width: 600px) {
     .site-description {
         max-width: 80vmin;
@@ -225,8 +229,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     display: flex;
     align-items: center;
     height: 40px;
-    max-width: 200px;
-    text-align: center;
+    max-width: 400px;
     word-break: break-all;
 }
 
@@ -235,6 +238,10 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     font-weight: 800;
     font-size: 2.6rem;
     letter-spacing: -0.02em;
+}
+
+.has-cover-image .gh-head-logo {
+    color: #fff;
 }
 
 .no-logo .gh-head-logo {
@@ -548,6 +555,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     padding-bottom: 55%;
 }
 
+.post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image-link::after {
+    display: none;
+}
+
 .post-card-image {
     position: absolute;
     inset: 0;
@@ -555,6 +566,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     height: 100%;
     background: var(--color-lightgrey) no-repeat center center;
     object-fit: cover;
+}
+
+.post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
+    position: static;
 }
 
 .post-card-content-link {
@@ -608,7 +623,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: -webkit-box;
     overflow-y: hidden;
     margin-top: 12px;
-    max-width: 56em;
+    max-width: 720px;
     line-height: 1.5;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -617,6 +632,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .has-sans-body .post-card-excerpt {
     font-family: var(--font-sans);
+}
+
+.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic) .post-card-excerpt {
+    display: none;
 }
 
 .post-card-meta {
@@ -724,8 +743,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-title {
         margin-top: 0;
-        font-size: 4rem;
-        line-height: 1.05;
+        font-size: 4.4rem;
+        line-height: 1;
     }
 
     .post-card-large .post-card-excerpt {
@@ -751,8 +770,22 @@ make sure this only happens on large viewports / desktop-ish devices.
         grid-column: span 6;
     }
 
+    .post-card-full .post-card-image-link {
+        margin-bottom: 40px;
+    }
+
+    .post-card-full .post-card-primary-tag {
+        margin-bottom: 14px;
+    }
+
     .post-card-full .post-card-title {
         font-size: 6.4rem;
+        line-height: 0.95;
+    }
+
+    .post-card-full .post-card-excerpt {
+        margin-top: 20px;
+        font-size: 1.8rem;
     }
 
     .post-card.dynamic {

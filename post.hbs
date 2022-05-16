@@ -87,7 +87,6 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#match @custom.email_signup_for_logged_out_visitors "!=" "None"}}
 {{#unless @member}}{{#if access}}
     <section class="footer-cta outer">
         <div class="inner">
@@ -101,7 +100,6 @@ into the {body} tag of the default.hbs template --}}
         </div>
     </section>
 {{/if}}{{/unless}}
-{{/match}}
 
 
 {{!-- Read more links, just above the footer --}}
