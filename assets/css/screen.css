@@ -75,7 +75,7 @@ production stylesheet in assets/built/screen.css
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 4vmin;
+    padding: 0 24px;
 }
 
 /* Centered content container blocks */
@@ -183,10 +183,24 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     margin-top: 16px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
+    .site-header-content {
+        padding-bottom: 36px;
+        min-height: 280px;
+    }
+    .site-header-inner {
+        gap: 16px;
+    }
+    .site-logo {
+        width: 80px;
+        height: 80px;
+    }
+    .site-title {
+        font-size: 3.2rem;
+    }
     .site-description {
-        max-width: 80vmin;
-        font-size: 1.8rem;
+        margin-top: 6px;
+        font-size: 1.6rem;
     }
 }
 
@@ -339,6 +353,10 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     height: 33px;
 }
 
+.has-cover-image .gh-burger-box {
+    color: #fff;
+}
+
 .gh-burger-inner {
     width: 100%;
     height: 100%;
@@ -410,12 +428,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 /* ---------------------------------------------------------- */
 /* IDs needed to ensure sufficient specificity */
 
-@media (max-width: 900px) {
+@media (max-width: 991px) {
     .gh-burger {
         display: inline-block;
     }
     #gh-head {
-        transition: all 0.4s ease-out;
         overflow: hidden;
     }
     #gh-head .gh-head-inner {
@@ -432,7 +449,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         justify-content: space-between;
         user-select: none;
     }
-    .home-template #gh-head.has-cover .gh-head-brand {
+    .no-logo .gh-head-brand {
         justify-content: flex-end;
     }
     #gh-head .gh-head-menu {
@@ -624,6 +641,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     overflow-y: hidden;
     margin-top: 12px;
     max-width: 720px;
+    font-size: 1.6rem;
     line-height: 1.5;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -794,17 +812,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card.dynamic .post-card-title {
         font-size: 3rem;
-    }
-}
-
-
-@media (max-width: 500px) {
-    .post-card-title {
-        font-size: 1.9rem;
-    }
-
-    .post-card-excerpt {
-        font-size: 1.6rem;
     }
 }
 
