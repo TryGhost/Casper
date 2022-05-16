@@ -1,7 +1,7 @@
 {{!-- This is a partial file used to generate a post "card"
 which templates loop over to generate a list of posts. --}}
 
-<article class="post-card {{post_class}}{{^is "paged"}}{{#has index="0"}}{{#match @custom.first_post_layout "Large card"}} post-card-large{{/match}}{{#match @custom.first_post_layout "Full-width card"}} post-card-full{{/match}}{{/has}}{{/is}}{{#match @custom.feed_layout "Dynamic grid"}}{{#match @custom.first_post_layout "None"}}{{#has index="0,1"}} dynamic{{/has}}{{else}}{{#has index="1,2"}} dynamic{{/has}}{{/match}}{{/match}}">
+<article class="post-card {{post_class}}{{#is "home"}}{{^is "paged"}}{{#has index="0"}}{{#match @custom.first_post_layout "Large card"}} post-card-large{{/match}}{{#match @custom.first_post_layout "Full-width card"}} post-card-full{{/match}}{{/has}}{{/is}}{{/is}}{{#match @custom.feed_layout "Dynamic grid"}}{{#match @custom.first_post_layout "None"}}{{#has index="0,1"}} dynamic{{/has}}{{else}}{{#has index="1,2"}} dynamic{{/has}}{{/match}}{{/match}}">
 
     {{#if feature_image}}
     <a class="post-card-image-link" href="{{url}}">
@@ -24,11 +24,9 @@ which templates loop over to generate a list of posts. --}}
 
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
-                {{#if primary_tag}}
-                    {{#primary_tag}}
+                {{#primary_tag}}
                     <div class="post-card-primary-tag">{{name}}</div>
-                    {{/primary_tag}}
-                {{/if}}
+                {{/primary_tag}}
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
             {{#if excerpt}}
