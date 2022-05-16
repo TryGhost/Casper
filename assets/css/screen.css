@@ -36,8 +36,9 @@ production stylesheet in assets/built/screen.css
     --color-red: #f05230;
     --color-darkgrey: #15171A;
     --color-midgrey: #738a94;
-    --color-lightgrey: #c5d2d9;
+    --color-lightgrey: #f1f1f1;
     --color-secondary-text: #979797;
+    --color-border: #e1e1e1;
     --color-wash: #e5eff5;
     --color-darkmode: #151719;
 
@@ -51,7 +52,7 @@ production stylesheet in assets/built/screen.css
      */
 
     /* Fonts */
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
 
@@ -615,7 +616,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .has-sans-body .post-card-excerpt {
-    font-family: var(--font-sans-serif);
+    font-family: var(--font-sans);
 }
 
 .post-card-meta {
@@ -784,28 +785,28 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .article-header {
-    padding: 0 0 6vmin 0;
+    padding: 0 0 64px 0;
+}
+
+.article .article-header > * {
+    grid-column: wide-start / wide-end;
 }
 
 .article-tag {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 0 0.5rem;
-    color: var(--color-midgrey);
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 1.6rem;
 }
 
 .article-tag a {
-    color: var(--ghost-accent-color);
+    color: var(--color-secondary-text);
 }
 
 .article-title {
-    color: color-mod(var(--color-darkgrey) l(-5%));
+    margin-bottom: 16px;
+    font-size: 6.4rem;
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--color-darkgrey);
 }
 
 .has-serif-title .article-title {
@@ -813,10 +814,10 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .article-excerpt {
-    margin: 0 0 1rem;
+    max-width: 720px;
     font-size: 2rem;
-    line-height: 1.4em;
-    opacity: 0.6;
+    line-height: 1.5;
+    color: var(--color-darkgrey);
 }
 
 .gh-canvas .article-image {
@@ -1131,7 +1132,6 @@ figcaption {
     padding: 1.5rem 1.5rem 0;
     text-align: center;
     color: rgba(0,0,0,0.5);
-    font-weight: 600;
     font-size: 1.3rem;
     line-height: 1.4em;
 }
@@ -1139,7 +1139,7 @@ figcaption strong {
     color: rgba(0,0,0,0.8);
 }
 figcaption a {
-    color: var(--ghost-accent-color);
+    text-decoration: underline;
 }
 
 
@@ -1209,7 +1209,7 @@ iframe.instagram-media + script + :not([id]) {
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: var(--font-sans-serif);
+    font-family: var(--font-sans);
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
@@ -1259,7 +1259,7 @@ iframe.instagram-media + script + :not([id]) {
 .article-byline {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0 0;
+    margin: 32px 0 0;
 }
 
 .article-byline-content {
@@ -1270,51 +1270,34 @@ iframe.instagram-media + script + :not([id]) {
 
 .article-byline-content .author-list {
     justify-content: flex-start;
-    padding: 0 12px 0 0;
+    padding: 0 14px 0 0;
 }
 
 .article-byline-meta {
-    color: color-mod(var(--color-midgrey));
+    color: var(--color-secondary-text);
     font-size: 1.4rem;
     line-height: 1.2em;
 }
 
-.article-byline-meta h4 {
-    margin: 0 0 3px;
-    font-size: 1.6rem;
+.article-byline-meta .author-name {
+    margin: 0 0 6px;
+    font-size: 1.7rem;
+    font-weight: 700;
 }
 
 .article-byline-meta .bull {
     display: inline-block;
     margin: 0 2px;
-    opacity: 0.6;
 }
 
 .author-avatar {
     display: block;
     overflow: hidden;
     margin: 0 -4px;
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     border: #fff 2px solid;
-    border-radius: 100%;
-    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
-}
-
-.basic-info .avatar-wrapper {
-    position: relative;
-    margin: 0;
-    width: 60px;
-    height: 60px;
-    border: none;
-    background: rgba(229, 239, 245, 0.1);
-}
-
-.basic-info .avatar-wrapper svg {
-    margin: 0;
-    width: 60px;
-    height: 60px;
-    opacity: 0.15;
+    border-radius: 50%;
 }
 
 .page-template .article-title {
@@ -1327,32 +1310,13 @@ iframe.instagram-media + script + :not([id]) {
 
 .footer-cta {
     position: relative;
-    margin-bottom: -40px;
-    padding: 9vmin 4vmin 10vmin;
-    color: #fff;
     text-align: center;
-    background: var(--color-darkgrey);
 }
 
-.footer-cta.cta-alt {
-    padding: 2vmin 4vmin 12vmin;
-    background: transparent;
-}
-
-/* Increases the default h2 size by 15%, for small and large screens */
-.footer-cta h2 {
-    margin: 0 0 30px;
-    font-size: 3.2rem;
-}
-
-.footer-cta.cta-alt h2 {
-    color: var(--color-darkgrey);
-}
-
-@media (max-width: 600px) {
-    .footer-cta h2 {
-        font-size: 2.65rem;
-    }
+.footer-cta-title {
+    margin: 0 0 32px;
+    font-size: 3.8rem;
+    font-weight: 800;
 }
 
 .footer-cta-button {
@@ -1363,23 +1327,27 @@ iframe.instagram-media + script + :not([id]) {
     width: 100%;
     max-width: 500px;
     padding: 5px 5px 5px 15px;
-    font-size: 1.8rem;
-    color: var(--color-midgrey);
+    font-size: 1.7rem;
+    color: var(--color-secondary-text);
     background: #fff;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
+    transition: border-color 0.2s;
 }
 
-.footer-cta.cta-alt .footer-cta-button {
-    border: 1px solid var(--color-lightgrey);
+.footer-cta-button:hover {
+    border-color: color-mod(var(--color-border) l(-12%));
 }
 
 .footer-cta-button span {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 9px 15px;
     color: #fff;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
     background: var(--ghost-accent-color);
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 
@@ -1387,47 +1355,29 @@ iframe.instagram-media + script + :not([id]) {
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
-    width: 100%;
-    padding: 4vmin;
-    margin: 40px auto -40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: color-mod(var(--color-darkgrey) l(-5%));
+    margin-top: 120px;
 }
 
 .read-more {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 4vmin;
 }
 
-.read-more .post-card-title {
-    color: #fff;
-    opacity: 0.8;
-}
-
-.read-more .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.read-more .post-card-byline-content a {
-    color: #fff;
-}
-
-
 @media (max-width: 1000px) {
     .read-more {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
     }
-    .read-more article:nth-child(3) {
+    .read-more .post-card:nth-child(3) {
         display: none;
     }
 }
 
 @media (max-width: 700px) {
     .read-more {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
-    .read-more article:nth-child(2) {
+    .read-more .post-card:nth-child(2) {
         display: none;
     }
 }
@@ -1559,8 +1509,9 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer {
     position: relative;
-    margin: 40px 0 0 0;
-    padding: 40px 4vmin 140px;
+    margin: 120px 0 0 0;
+    padding-top: 48px;
+    padding-bottom: 140px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
