@@ -9,15 +9,6 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        :root {
-            {{#if @custom.header_button_background}}
-            --button-bg-color: {{@custom.header_button_background}};
-            {{/if}}
-            --button-text-color: {{#match @custom.header_button_text_color "Light"}}#fff{{else}}var(--color-darkgrey){{/match}};
-        }
-    </style>
-
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
@@ -27,7 +18,7 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#is "home"}}{{#if @site.cover_image}} has-cover-image{{/if}}{{#match @custom.about_section "!=" "None"}}{{#if @custom.include_logo_in_about_section}} no-logo{{/if}}{{/match}}{{/is}}">
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @site.cover_image}} has-cover-image{{/if}}{{#is "home"}}{{#match @custom.about_section "!=" "None"}}{{#if @custom.include_logo_in_about_section}} no-logo{{/if}}{{/match}}{{/is}}">
 <div class="viewport">
 
     <header id="gh-head" class="gh-head outer">
