@@ -166,6 +166,10 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     font-weight: 800;
 }
 
+.site-header-content.vertical .site-title {
+    font-size: 10rem;
+}
+
 .site-description {
     z-index: 10;
     margin-top: 8px;
@@ -175,12 +179,12 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
 }
 
 .site-header-content.vertical .site-description {
-    margin-top: 0;
+    margin: 0 auto;
     padding-bottom: 32px;
 }
 
 .site-header-content.vertical .site-title + .site-description {
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 @media (max-width: 767px) {
@@ -209,8 +213,8 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 24px;
+    padding-bottom: 24px;
     font-size: 1.6rem;
     line-height: 1.3em;
 }
@@ -263,7 +267,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
 }
 
 .gh-head-logo img {
-    max-height: 40px;
+    max-height: 26px;
 }
 
 
@@ -842,7 +846,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .article-title {
-    margin-bottom: 16px;
+    margin-bottom: 0;
     font-size: 6.4rem;
     font-weight: 800;
     line-height: 1.05;
@@ -854,6 +858,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .article-excerpt {
+    margin-top: 16px;
     max-width: 720px;
     font-size: 2rem;
     line-height: 1.5;
