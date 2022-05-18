@@ -134,7 +134,8 @@
                 "type": "select",
                 "options": [
                     "Dynamic grid",
-                    "Simple grid"
+                    "Simple grid",
+                    "List"
                 ],
                 "default": "Dynamic grid",
                 "group": "homepage"

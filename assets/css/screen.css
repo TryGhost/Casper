@@ -166,6 +166,10 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     font-weight: 800;
 }
 
+.has-serif-title .site-title {
+    font-family: var(--font-serif);
+}
+
 .site-header-content.vertical .site-title {
     font-size: 10rem;
 }
@@ -536,12 +540,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     padding: 64px 0;
 }
 
-.post-feed.list {
-    row-gap: 6vmin;
-    max-width: 940px;
-    margin: 2vmin auto 0;
-}
-
 @media (max-width: 1000px) {
     .post-feed {
         grid-template-columns: 1fr 1fr;
@@ -705,30 +703,7 @@ The first post in the list is styled to be bigger than the others and take over
 the full width of the grid to give it more emphasis. Wrapped in a media query to
 make sure this only happens on large viewports / desktop-ish devices.
 
- */
-
-@media (min-width: 701px) {
-    .post-feed.list .post-card-large {
-        grid-column: 1 / span 3;
-        display: grid;
-        grid-gap: 4vmin;
-        grid-template-columns: 3fr 5fr;
-        border-top: 0;
-    }
-
-    .post-feed.list .post-card-large.no-image {
-        grid-template-columns: 1fr;
-    }
-
-    .post-feed.list .post-card-large:not(.no-image) .post-card-header {
-        margin-top: 0;
-    }
-
-    .post-feed.list .post-card-large .post-card-content {
-        justify-content: flex-start;
-        margin-top: -6px;
-    }
-}
+*/
 
 @media (min-width: 1001px) {
     .post-card-large {
@@ -773,21 +748,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin-top: 16px;
     }
 
-    .post-feed.list .post-card-large .post-card-image-link {
-        grid-column: 1 / span 1;
-        height: max-content;
-    }
-
-    .post-feed.list .post-card-large .post-card-image-link::after {
-        content: "";
-        display: block;
-        padding-bottom: 60%;
-    }
-
-    .post-feed.list .post-card-large .post-card-title {
-        font-size: 2.4rem;
-    }
-
     .post-card-full {
         grid-column: span 6;
     }
@@ -808,6 +768,14 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-full .post-card-excerpt {
         margin-top: 20px;
         font-size: 1.8rem;
+    }
+
+    .post-card-large + .post-card-large:nth-child(even) {
+        margin: 32px 0;
+    }
+
+    .post-card-large + .post-card-large:nth-child(even) .post-card-content {
+        order: -1;
     }
 
     .post-card.dynamic {
