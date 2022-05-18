@@ -105,14 +105,19 @@
                 ],
                 "default": "Elegant serif"
             },
+            "show_publication_cover": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
             "about_section": {
                 "type": "select",
                 "options": [
-                    "Horizontal",
                     "Vertical",
+                    "Horizontal",
                     "None"
                 ],
-                "default": "Horizontal",
+                "default": "Vertical",
                 "group": "homepage"
             },
             "include_logo_in_about_section": {

@@ -18,14 +18,14 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @site.cover_image}} has-cover-image{{/if}}{{#is "home"}}{{#match @custom.about_section "!=" "None"}}{{#if @custom.include_logo_in_about_section}} no-logo{{/if}}{{/match}}{{/is}}">
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover-image{{/if}}{{#is "home"}}{{#match @custom.about_section "!=" "None"}}{{#if @custom.include_logo_in_about_section}} no-logo{{/if}}{{/match}}{{/is}}">
 <div class="viewport">
 
     <header id="gh-head" class="gh-head outer">
         <nav class="gh-head-inner inner">
 
             <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
+                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
                     {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}" />
                     {{else}}
