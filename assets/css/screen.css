@@ -75,7 +75,7 @@ production stylesheet in assets/built/screen.css
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 24px;
+    padding: 0 4vmin;
 }
 
 /* Centered content container blocks */
@@ -112,7 +112,7 @@ production stylesheet in assets/built/screen.css
     display: flex;
     align-items: flex-end;
     padding-top: 64px;
-    padding-bottom: 64px;
+    padding-bottom: 6.4vmin;
     color: var(--color-darkgrey);
 }
 
@@ -125,6 +125,7 @@ production stylesheet in assets/built/screen.css
 .has-cover-image .site-header-content {
     min-height: 600px;
     padding-top: 104px;
+    background-color: var(--ghost-accent-color);
     color: #fff;
 }
 
@@ -171,7 +172,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
 }
 
 .site-header-content.vertical .site-title {
-    font-size: 10rem;
+    font-size: 6.4rem;
 }
 
 .site-description {
@@ -221,14 +222,21 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     padding-bottom: 24px;
     font-size: 1.6rem;
     line-height: 1.3em;
+    background-color: #fff;
 }
 
-.has-cover-image .gh-head {
+.has-cover-image:not(.home-template) .gh-head {
+    background-color: var(--ghost-accent-color);
+    color: #fff;
+}
+
+.home-template.has-cover-image .gh-head {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     z-index: 2000;
+    background-color: transparent;
     color: #fff;
 }
 
@@ -238,7 +246,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
 
 .gh-head-inner {
     display: grid;
-    grid-gap: 32px;
+    grid-gap: 40px;
     grid-template-columns: auto auto 1fr;
     grid-auto-flow: row dense;
 }
@@ -260,6 +268,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
     font-weight: 800;
     font-size: 2.6rem;
     letter-spacing: -0.02em;
+    color: inherit;
 }
 
 .has-cover-image .gh-head-logo {
@@ -306,10 +315,7 @@ body:not(.has-cover-image) .site-header-content:not(.vertical) {
 .gh-head-menu .nav a {
     display: inline-block;
     line-height: 1.5;
-}
-
-.has-cover-image .gh-head-menu .nav a {
-    color: #fff;
+    color: inherit;
 }
 
 
@@ -457,7 +463,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         justify-content: space-between;
         user-select: none;
     }
-    .no-logo .gh-head-brand {
+    .no-logo #gh-head .gh-head-brand {
         justify-content: flex-end;
     }
     #gh-head .gh-head-menu {
@@ -537,7 +543,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: grid;
     gap: 64px 48px;
     grid-template-columns: repeat(6, 1fr);
-    padding: 64px 0;
+    padding: 6.4vmin 0;
 }
 
 @media (max-width: 1000px) {
@@ -614,6 +620,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     color: var(--color-secondary-text);
     font-size: 1.4rem;
     font-weight: 600;
+    letter-spacing: -0.005em;
     line-height: 1;
 }
 
@@ -621,7 +628,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0;
     font-size: 2.6rem;
     font-weight: 800;
-    transition: color 0.2s ease-in-out;
 }
 
 .no-image .post-card-title {
@@ -728,6 +734,10 @@ make sure this only happens on large viewports / desktop-ish devices.
         grid-column: span 1;
     }
 
+    .post-card-large.no-image .post-card-content {
+        grid-column: span 2;
+    }
+
     .post-card-large .post-card-image {
         position: absolute;
         width: 100%;
@@ -800,10 +810,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     padding: 0 0 64px 0;
 }
 
-.article .article-header > * {
-    grid-column: wide-start / wide-end;
-}
-
 .article-tag {
     margin-bottom: 16px;
     font-size: 1.6rem;
@@ -815,9 +821,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .article-title {
     margin-bottom: 0;
-    font-size: 6.4rem;
+    font-size: 5.2rem;
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1;
     color: var(--color-darkgrey);
 }
 
@@ -829,7 +835,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin-top: 16px;
     max-width: 720px;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.45;
     color: var(--color-darkgrey);
 }
 
@@ -912,7 +918,7 @@ headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
 .gh-content > * + * {
-    margin-top: 4vmin;
+    margin-top: 3.2vmin;
     margin-bottom: 0;
 }
 
@@ -941,11 +947,11 @@ is the very first element in the post content */
 .gh-content > hr,
 .gh-content > blockquote {
     position: relative;
-    margin-top: 6vmin;
+    margin-top: 4.8vmin;
 }
 .gh-content > hr + *,
 .gh-content > blockquote + * {
-    margin-top: 6vmin !important;
+    margin-top: 4.8vmin !important;
 }
 
 /* Now the content typography styles */
@@ -962,7 +968,7 @@ is the very first element in the post content */
 .gh-content > p {
     font-family: var(--font-serif);
     font-weight: 400;
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 1.6em;
 }
 
@@ -1604,17 +1610,6 @@ iframe.instagram-media + script + :not([id]) {
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
 
-/* If you prefer a dark color scheme, you can enable dark mode
-by adding the following code to the Head section of "Code Injection"
-settings inside: Ghost Admin > Settings > Advanced
-
-<script>document.documentElement.classList.add('dark-mode');</script>
-
-Or you can just edit default.hbs and add the .dark-mode class directly
-to the html tag on the very first line of the file.
-
- */
-
 html.dark-mode body {
     color: rgba(255, 255, 255, 0.75);
     background: var(--color-darkmode);
@@ -1628,16 +1623,16 @@ html.dark-mode kbd {
     background: color-mod(var(--color-darkmode) l(+5%));
 }
 
-html.dark-mode .post-card,
-html.dark-mode .post-card:hover {
-    border-bottom-color: color-mod(var(--color-darkmode) l(+8%));
+html.dark-mode figcaption a {
+    color: #fff;
 }
 
-html.dark-mode .post-card-byline-content a {
-    color: rgba(255, 255, 255, 0.75);
+html.dark-mode .gh-head {
+    background: var(--color-darkmode);
+    color: #fff;
 }
 
-html.dark-mode .post-card-byline-content a:hover {
+html.dark-mode .site-header-content {
     color: #fff;
 }
 
@@ -1646,23 +1641,19 @@ html.dark-mode .post-card-image {
 }
 
 html.dark-mode .post-card-title {
-    color: rgba(255, 255, 255, 0.85);
+    color: #fff;
 }
 
 html.dark-mode .post-card-excerpt {
-    color: color-mod(var(--color-midgrey) l(+10%));
-}
-
-html.dark-mode .post-full-content {
-    background: var(--color-darkmode);
+    color: var(--color-secondary-text);
 }
 
 html.dark-mode .article-title {
-    color: rgba(255, 255, 255, 0.9);
+    color: #fff;
 }
 
 html.dark-mode .article-excerpt {
-    color: color-mod(var(--color-midgrey) l(+10%));
+    color: var(--color-secondary-text);
 }
 
 html.dark-mode .post-full-image {
@@ -1673,11 +1664,7 @@ html.dark-mode .article-byline {
     border-top-color: color-mod(var(--color-darkmode) l(+15%));
 }
 
-html.dark-mode .article-byline-meta h4 a {
-    color: rgba(255, 255, 255, 0.75);
-}
-
-html.dark-mode .article-byline-meta h4 a:hover {
+html.dark-mode .article-byline-meta .author-name a {
     color: #fff;
 }
 
@@ -1766,6 +1753,10 @@ html.dark-mode .kg-header-card.kg-style-light {
 
 html.dark-mode .kg-header-card h2.kg-header-card-header,
 html.dark-mode .kg-header-card h3.kg-header-card-subheader {
+    color: #fff;
+}
+
+html.dark-mode .footer-cta-title {
     color: #fff;
 }
 
