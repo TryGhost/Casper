@@ -110,17 +110,17 @@
                 "default": true,
                 "group": "homepage"
             },
-            "about_section": {
+            "header_style": {
                 "type": "select",
                 "options": [
-                    "Vertical",
-                    "Horizontal",
-                    "None"
+                    "Center aligned",
+                    "Left aligned",
+                    "Hidden"
                 ],
-                "default": "Vertical",
+                "default": "Center aligned",
                 "group": "homepage"
             },
-            "include_logo_in_about_section": {
+            "site_logo_in_main_navigation": {
                 "type": "boolean",
                 "default": true,
                 "group": "homepage"

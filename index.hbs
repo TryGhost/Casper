@@ -2,7 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="site-header-content outer{{#match @custom.about_section "Vertical"}} vertical{{/match}}">
+<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}}{{/match}} no-content{{/unless}}">
 
     {{#if @custom.show_publication_cover}}
         {{#if @site.cover_image}}
@@ -20,34 +20,19 @@ into the {body} of the default.hbs template --}}
         {{/if}}
     {{/if}}
 
-    {{#match @custom.about_section "!=" "None"}}
-        <section class="site-header-inner inner">
-            {{#if @custom.include_logo_in_about_section}}
+    {{#match @custom.header_style "!=" "Hidden"}}
+        <div class="site-header-inner inner">
+            {{#if @custom.site_logo_in_main_navigation}}
                 {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+                {{else}}
+                    <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
             {{/if}}
-            <div class="site-header-wrapper">
-                {{#match @custom.about_section "Horizontal"}}
-                    {{#if @site.logo}}
-                        <h1 class="site-title">{{@site.title}}</h1>
-                    {{else}}
-                        {{#if @custom.include_logo_in_about_section}}
-                            <h1 class="site-title">{{@site.title}}</h1>
-                        {{/if}}
-                    {{/if}}
-                {{else}}
-                    {{#if @custom.include_logo_in_about_section}}
-                        {{#unless @site.logo}}
-                            <h1 class="site-title">{{@site.title}}</h1>
-                        {{/unless}}
-                    {{/if}}
-                {{/match}}
-                {{#if @site.description}}
-                    <p class="site-description">{{@site.description}}</p>
-                {{/if}}
-            </div>
-        </section>
+            {{#if @site.description}}
+                <p class="site-description">{{@site.description}}</p>
+            {{/if}}
+        </div>
     {{/match}}
 
 </div>
