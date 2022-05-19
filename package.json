@@ -125,29 +125,14 @@
                 "default": false,
                 "group": "homepage"
             },
-            "first_post_layout": {
-                "type": "select",
-                "options": [
-                    "Large card",
-                    "Full-width card",
-                    "None"
-                ],
-                "default": "Large card",
-                "group": "homepage"
-            },
             "feed_layout": {
                 "type": "select",
                 "options": [
-                    "Dynamic grid",
-                    "Simple grid",
+                    "Classic",
+                    "Grid",
                     "List"
                 ],
-                "default": "Dynamic grid",
-                "group": "homepage"
-            },
-            "keep_card_thumbnail_ratio": {
-                "type": "boolean",
-                "default": false,
+                "default": "Classic",
                 "group": "homepage"
             },
             "color_scheme": {
