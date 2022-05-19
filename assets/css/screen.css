@@ -113,6 +113,7 @@ production stylesheet in assets/built/screen.css
     align-items: center;
     padding-top: 6.4vmin;
     padding-bottom: 6.4vmin;
+    text-align: center;
     color: var(--color-darkgrey);
 }
 
@@ -128,8 +129,8 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 }
 
 .site-header-content.left-aligned {
-    padding-top: 10vmin;
     padding-bottom: 0;
+    text-align: left;
 }
 
 .has-cover-image .site-header-content.left-aligned {
@@ -143,10 +144,6 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 
 .site-header-inner {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
 }
 
 .site-header-content.left-aligned .site-header-inner {
@@ -155,22 +152,21 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 
 .site-logo {
     flex-shrink: 0;
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
+    margin: 0 auto 24px;
+    max-height: 120px;
 }
 
-.site-header-content.vertical .site-logo {
-    width: auto;
-    height: auto;
-    max-height: 120px;
+.site-header-content.left-aligned .site-logo {
+    margin-right: auto;
+    margin-left: 0;
+    max-height: 80px;
 }
 
 .site-title {
     z-index: 10;
     margin: 0;
     padding: 0;
-    font-size: 4.8rem;
+    font-size: 5rem;
     font-weight: 800;
 }
 
@@ -178,15 +174,46 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
     font-family: var(--font-serif);
 }
 
-.site-header-content.vertical .site-title {
-    font-size: 6.4rem;
+.has-cover-image .site-title {
+    font-size: 6rem;
+}
+
+.site-header-content.left-aligned .site-title {
+    font-size: 4rem;
+}
+
+.has-cover-image .site-header-content.left-aligned .site-title {
+    font-size: 4.6rem;
 }
 
 .site-description {
+    display: inline-block;
     z-index: 10;
     max-width: 560px;
-    font-size: 2rem;
-    line-height: 1.3;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.site-title + .site-description {
+    margin-top: 8px;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--color-secondary-text);
+}
+
+.has-cover-image .site-description {
+    font-size: 3.2rem;
+    letter-spacing: -0.005em;
+    color: #fff;
+}
+
+.has-cover-image :is(.site-logo, .site-title) + .site-description {
+    font-size: 2.4rem;
+}
+
+.has-cover-image .site-header-content.left-aligned :is(.site-logo, .site-title) + .site-description {
+    font-size: 2.2rem;
 }
 
 @media (max-width: 767px) {
@@ -633,6 +660,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .has-serif-title .post-card-title {
     font-family: var(--font-serif);
+    letter-spacing: -0.005em;
 }
 
 .post-card-content {
@@ -1335,6 +1363,10 @@ iframe.instagram-media + script + :not([id]) {
     font-weight: 800;
 }
 
+.has-serif-title .footer-cta-title {
+    font-family: var(--font-serif);
+}
+
 .footer-cta-button {
     position: relative;
     display: inline-flex;
@@ -1635,6 +1667,10 @@ html.dark-mode .site-header-content {
 
 html.dark-mode .post-card-image {
     background: var(--color-darkmode);
+}
+
+html.dark-mode :is(.post-card-primary-tag, .post-card-meta, .article-tag a, .byline-meta-content) {
+    color: color-mod(var(--color-secondary-text) l(-22%));
 }
 
 html.dark-mode .post-card-title {
