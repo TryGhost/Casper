@@ -139,8 +139,7 @@
                 "type": "select",
                 "options": [
                     "Light",
-                    "Dark",
-                    "Auto"
+                    "Dark"
                 ],
                 "default": "Light"
             },
