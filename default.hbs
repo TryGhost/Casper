@@ -25,15 +25,13 @@
         <nav class="gh-head-inner inner">
 
             <div class="gh-head-brand">
-                {{#if @custom.site_logo_in_main_navigation}}
-                    <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
-                        {{#if @site.logo}}
-                            <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                        {{else}}
-                            {{@site.title}}
-                        {{/if}}
-                    </a>
-                {{/if}}
+                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
                 <a class="gh-burger" role="button">
                     <div class="gh-burger-box">
                         <div class="gh-burger-inner"></div>

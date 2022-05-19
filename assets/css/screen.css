@@ -657,7 +657,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     font-family: var(--font-sans);
 }
 
-.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic) .post-card-excerpt {
+.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
     display: none;
 }
 
