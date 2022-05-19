@@ -291,7 +291,7 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 }
 
 .no-logo .gh-head-menu {
-    margin-left: -32px;
+    margin-left: -40px;
 }
 
 .gh-head-menu .nav {

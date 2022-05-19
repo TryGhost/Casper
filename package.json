@@ -122,7 +122,7 @@
             },
             "site_logo_in_main_navigation": {
                 "type": "boolean",
-                "default": true,
+                "default": false,
                 "group": "homepage"
             },
             "first_post_layout": {
