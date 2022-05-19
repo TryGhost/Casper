@@ -2,7 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}}{{/match}} no-content{{/unless}}">
+<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
 
     {{#if @custom.show_publication_cover}}
         {{#if @site.cover_image}}
@@ -22,13 +22,13 @@ into the {body} of the default.hbs template --}}
 
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
-            {{#if @custom.site_logo_in_main_navigation}}
+            {{#unless @custom.site_logo_in_main_navigation}}
                 {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
-            {{/if}}
+            {{/unless}}
             {{#if @site.description}}
                 <p class="site-description">{{@site.description}}</p>
             {{/if}}
