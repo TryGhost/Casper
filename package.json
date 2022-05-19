@@ -144,12 +144,13 @@
                 ],
                 "default": "Light"
             },
-            "post_image_width": {
+            "post_image_style": {
                 "type": "select",
                 "options": [
                     "Wide",
                     "Full",
-                    "Small"
+                    "Small",
+                    "Hidden"
                 ],
                 "default": "Wide",
                 "group": "post"
