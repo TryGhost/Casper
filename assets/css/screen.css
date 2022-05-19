@@ -139,7 +139,7 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 }
 
 .site-header-content.no-content {
-    display: none;
+    padding-top: 0;
 }
 
 .site-header-inner {
@@ -159,7 +159,7 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 .site-header-content.left-aligned .site-logo {
     margin-right: auto;
     margin-left: 0;
-    max-height: 80px;
+    max-height: 96px;
 }
 
 .site-title {
@@ -179,7 +179,7 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 }
 
 .site-header-content.left-aligned .site-title {
-    font-size: 4rem;
+    font-size: 4.4rem;
 }
 
 .has-cover-image .site-header-content.left-aligned .site-title {
