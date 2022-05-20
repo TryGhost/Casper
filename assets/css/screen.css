@@ -839,8 +839,16 @@ make sure this only happens on large viewports / desktop-ish devices.
     word-break: break-word;
 }
 
+.page-template .article {
+    padding-top: max(12vmin, 64px);
+}
+
 .article-header {
-    padding: 0 0 max(4.8vmin, 40px) 0;
+    padding: 0 0 max(6.4vmin, 40px) 0;
+}
+
+.page-template .article-header {
+    padding-bottom: max(3.2vmin, 28px);
 }
 
 .article-tag {
@@ -875,7 +883,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .gh-canvas .article-image {
     grid-column: wide-start / wide-end;
     width: 100%;
-    margin: max(4.8vmin, 40px) 0 0;
+    margin: max(6.4vmin, 40px) 0 0;
 }
 
 .image-full .article-image {
