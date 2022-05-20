@@ -8,10 +8,13 @@ into the {body} tag of the default.hbs template --}}
 {{!-- Everything inside the #post block pulls data from the page --}}
 
 <main id="site-main" class="site-main">
-    <article class="article {{post_class}}">
+<article class="article {{post_class}}">
 
-        <header class="article-header gh-canvas">
-            {{#if feature_image}}
+    <header class="article-header gh-canvas">
+
+        <h1 class="article-title">{{title}}</h1>
+
+        {{#if feature_image}}
             <figure class="article-image">
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
@@ -28,18 +31,15 @@ into the {body} tag of the default.hbs template --}}
                     <figcaption>{{feature_image_caption}}</figcaption>
                 {{/if}}
             </figure>
-            {{/if}}
-        </header>
+        {{/if}}
 
-        <section class="gh-content gh-canvas">
+    </header>
 
-            <h1 class="article-title">{{title}}</h1>
+    <section class="gh-content gh-canvas">
+        {{content}}
+    </section>
 
-            {{content}}
-
-        </section>
-
-    </article>
+</article>
 </main>
 
 {{/post}}
