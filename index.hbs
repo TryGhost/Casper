@@ -22,7 +22,7 @@ into the {body} of the default.hbs template --}}
 
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
-            {{#unless @custom.site_logo_in_main_navigation}}
+            {{#unless @custom.show_logo_in_navigation}}
                 {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
