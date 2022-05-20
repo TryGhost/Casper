@@ -228,15 +228,19 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
         gap: 16px;
     }
     .site-logo {
-        width: 80px;
-        height: 80px;
+        max-width: 60%;
     }
     .site-title {
         font-size: 3.4rem !important;
     }
     .site-description {
-        margin-top: 4px !important;
         font-size: 1.9rem !important;
+    }
+    .site-logo + .site-description {
+        margin-top: 12px !important;
+    }
+    .site-title + .site-description {
+        margin-top: 4px !important;
     }
 }
 
@@ -690,7 +694,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
-    display: none;
+    -webkit-line-clamp: 2;
 }
 
 .post-card-meta {
@@ -831,12 +835,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ---------------------------------------------------------- */
 
 .article {
-    padding: max(8vmin, 40px) 0;
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
     word-break: break-word;
 }
 
 .article-header {
-    padding: 0 0 max(6.4vmin, 40px) 0;
+    padding: 0 0 max(4.8vmin, 40px) 0;
 }
 
 .article-tag {
@@ -861,7 +865,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .article-excerpt {
-    margin-top: 16px;
+    margin-top: 20px;
     max-width: 720px;
     font-size: 2rem;
     line-height: 1.45;
@@ -871,7 +875,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .gh-canvas .article-image {
     grid-column: wide-start / wide-end;
     width: 100%;
-    margin: max(6vmin, 40px) 0 0;
+    margin: max(4.8vmin, 40px) 0 0;
 }
 
 .image-full .article-image {
@@ -891,6 +895,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 767px) {
     .article-excerpt {
+        margin-top: 14px;
         font-size: 1.7rem;
     }
 }
@@ -947,7 +952,7 @@ headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
 .gh-content > * + * {
-    margin-top: 3.2vmin;
+    margin-top: max(3.2vmin, 24px);
     margin-bottom: 0;
 }
 
@@ -976,11 +981,11 @@ is the very first element in the post content */
 .gh-content > hr,
 .gh-content > blockquote {
     position: relative;
-    margin-top: 4.8vmin;
+    margin-top: max(4.8vmin, 32px);
 }
 .gh-content > hr + *,
 .gh-content > blockquote + * {
-    margin-top: 4.8vmin !important;
+    margin-top: max(4.8vmin, 32px) !important;
 }
 
 /* Now the content typography styles */
@@ -1307,7 +1312,7 @@ iframe.instagram-media + script + :not([id]) {
 .article-byline {
     display: flex;
     justify-content: space-between;
-    margin: min(32px, 5.6vmin) 0 0;
+    margin: min(24px, 5.6vmin) 0 0;
 }
 
 .article-byline-content {
@@ -1346,10 +1351,20 @@ iframe.instagram-media + script + :not([id]) {
     height: min(56px, 13.6vmin);
     border: #fff 2px solid;
     border-radius: 50%;
+    background-color: var(--color-border);
 }
 
 .page-template .article-title {
     margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .article-byline-content .author-list {
+        padding-right: 12px;
+    }
+    .article-byline-meta .author-name {
+        margin-bottom: 4px;
+    }
 }
 
 
@@ -1362,7 +1377,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .footer-cta-title {
-    margin: 0 0 min(32px, 6.4vmin);
+    margin: 0 0 min(24px, 6.4vmin);
     font-size: clamp(2.6rem, 5vw, 3.8rem);
     font-weight: 800;
 }
@@ -1407,7 +1422,7 @@ iframe.instagram-media + script + :not([id]) {
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
-    margin-top: max(12vmin, 64px);
+    margin-top: max(12vmin, 72px);
 }
 
 .read-more {
@@ -1493,7 +1508,7 @@ iframe.instagram-media + script + :not([id]) {
 /* ---------------------------------------------------------- */
 
 .error-content {
-    padding: 14vw 4vw 6vw;
+    padding: 14vw 4vw 2vw;
 }
 
 .error-message {
@@ -1503,7 +1518,6 @@ iframe.instagram-media + script + :not([id]) {
 
 .error-code {
     margin: 0;
-    color: var(--ghost-accent-color);
     font-size: 12vw;
     line-height: 1em;
     letter-spacing: -5px;
@@ -1511,9 +1525,10 @@ iframe.instagram-media + script + :not([id]) {
 
 .error-description {
     margin: 0;
-    color: var(--color-midgrey);
+    color: var(--color-secondary-text);
     font-size: 3.2rem;
     line-height: 1.3em;
+    letter-spacing: -0.005em;
     font-weight: 400;
 }
 
@@ -1561,7 +1576,7 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer {
     position: relative;
-    margin: 12vmin 0 0 0;
+    margin: max(12vmin, 64px) 0 0 0;
     padding-top: 48px;
     padding-bottom: 140px;
     color: #fff;
