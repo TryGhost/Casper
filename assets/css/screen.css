@@ -581,6 +581,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     padding: max(4.8vmin, 36px) 0 0;
 }
 
+:is(.tag-template, .author-template) .post-feed {
+    margin-top: 4vmin;
+}
+
 @media (max-width: 991px) {
     .post-feed {
         grid-template-columns: 1fr 1fr;
@@ -698,6 +702,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
     -webkit-line-clamp: 2;
+}
+
+:is(.tag-template, .author-template) .post-card-excerpt {
+    margin-top: 6px;
 }
 
 .post-card-meta {
