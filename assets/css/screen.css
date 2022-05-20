@@ -75,7 +75,7 @@ production stylesheet in assets/built/screen.css
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 4vmin;
+    padding: 0 max(4vmin, 20px);
 }
 
 /* Centered content container blocks */
@@ -118,14 +118,14 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-cover-image .site-header-content {
-    min-height: 600px;
+    min-height: 560px;
     padding-top: 10vmin;
     background-color: var(--ghost-accent-color);
     color: #fff;
 }
 
 body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
-    padding-bottom: 3.2vmin;
+    padding-bottom: max(3.2vmin, 24px);
 }
 
 .site-header-content.left-aligned {
@@ -197,7 +197,7 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 
 .site-title + .site-description {
     margin-top: 8px;
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: 400;
     color: var(--color-secondary-text);
 }
@@ -217,9 +217,9 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 }
 
 @media (max-width: 767px) {
-    .site-header-content {
+    .has-cover-image .site-header-content {
         padding-bottom: 36px;
-        min-height: 280px;
+        min-height: 240px;
     }
     .site-header-inner {
         gap: 16px;
@@ -229,11 +229,11 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
         height: 80px;
     }
     .site-title {
-        font-size: 3.2rem;
+        font-size: 3.4rem !important;
     }
     .site-description {
-        margin-top: 6px;
-        font-size: 1.6rem;
+        margin-top: 4px !important;
+        font-size: 1.9rem !important;
     }
 }
 
@@ -242,8 +242,8 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: min(24px, 3.6vmin);
+    padding-bottom: min(24px, 3.6vmin);
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
@@ -295,6 +295,10 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
     color: inherit;
 }
 
+.gh-head-logo.no-image {
+    margin-top: -2px;
+}
+
 .has-cover-image .gh-head-logo {
     color: #fff;
 }
@@ -314,6 +318,7 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 .gh-head-menu {
     display: flex;
     align-items: center;
+    margin-top: 1px;
     font-weight: 500;
 }
 
@@ -338,7 +343,7 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 
 .gh-head-menu .nav a {
     display: inline-block;
-    line-height: 1.5;
+    line-height: 1.7;
     color: inherit;
 }
 
@@ -501,16 +506,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         font-size: 3.6rem;
         line-height: 1.1em;
     }
-    #gh-head .gh-head-menu .nav li {
-        margin: 5px 0;
-    }
-    #gh-head .gh-head-menu .nav a {
-        padding: 8px 0;
-    }
     #gh-head .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 16px;
+        font-weight: 500;
     }
     #gh-head .gh-head-actions {
         padding: 20px 0;
@@ -554,7 +555,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
-.home-template.gh-head-open .gh-head {
+.has-cover-image.gh-head-open .gh-head {
     background: var(--ghost-accent-color);
 }
 
@@ -565,18 +566,18 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-feed {
     position: relative;
     display: grid;
-    gap: 64px 48px;
+    gap: 4.8vmin 4vmin;
     grid-template-columns: repeat(6, 1fr);
-    padding: 6.4vmin 0;
+    padding: max(4.8vmin, 36px) 0 0;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 991px) {
     .post-feed {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 767px) {
     .post-feed {
         grid-template-columns: 1fr;
         grid-gap: 40px;
@@ -827,12 +828,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ---------------------------------------------------------- */
 
 .article {
-    padding: 8vmin 0;
+    padding: max(8vmin, 40px) 0;
     word-break: break-word;
 }
 
 .article-header {
-    padding: 0 0 64px 0;
+    padding: 0 0 max(6.4vmin, 40px) 0;
 }
 
 .article-tag {
@@ -846,7 +847,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .article-title {
     margin-bottom: 0;
-    font-size: 5.2rem;
+    font-size: clamp(3.2rem, 5vw, 5.2rem);
     font-weight: 800;
     line-height: 1;
     color: var(--color-darkgrey);
@@ -867,7 +868,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .gh-canvas .article-image {
     grid-column: wide-start / wide-end;
     width: 100%;
-    margin: 6vmin 0 0;
+    margin: max(6vmin, 40px) 0 0;
 }
 
 .image-full .article-image {
@@ -885,9 +886,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .article-excerpt {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 }
 
@@ -904,7 +905,7 @@ use it for applying any other styles. */
     display: grid;
     grid-template-columns:
         [full-start]
-        minmax(4vmin, auto)
+        minmax(max(4vmin, 20px), auto)
             [wide-start]
             minmax(auto, 240px)
                 [main-start]
@@ -912,7 +913,7 @@ use it for applying any other styles. */
                 [main-end]
             minmax(auto, 240px)
             [wide-end]
-        minmax(4vmin, auto)
+        minmax(max(4vmin, 20px), auto)
         [full-end]
     ;
 }
@@ -1094,17 +1095,17 @@ is the very first element in the post content */
     .gh-content .kg-toggle-card .kg-toggle-content > ol,
     .gh-content .kg-toggle-card .kg-toggle-content > ul,
     .gh-content .kg-toggle-card .kg-toggle-content > p {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     .gh-content .kg-product-card .kg-product-card-description > p,
     .gh-content .kg-product-card .kg-product-card-description > ol,
     .gh-content .kg-product-card .kg-product-card-description > ul {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .gh-content blockquote:not([class])::before {
-        left: -4vmin;
+        left: min(-4vmin, -20px);
     }
 }
 
@@ -1303,7 +1304,7 @@ iframe.instagram-media + script + :not([id]) {
 .article-byline {
     display: flex;
     justify-content: space-between;
-    margin: 32px 0 0;
+    margin: min(32px, 5.6vmin) 0 0;
 }
 
 .article-byline-content {
@@ -1338,8 +1339,8 @@ iframe.instagram-media + script + :not([id]) {
     display: block;
     overflow: hidden;
     margin: 0 -4px;
-    width: 56px;
-    height: 56px;
+    width: min(56px, 13.6vmin);
+    height: min(56px, 13.6vmin);
     border: #fff 2px solid;
     border-radius: 50%;
 }
@@ -1358,8 +1359,8 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .footer-cta-title {
-    margin: 0 0 32px;
-    font-size: 3.8rem;
+    margin: 0 0 min(32px, 6.4vmin);
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
     font-weight: 800;
 }
 
@@ -1403,7 +1404,7 @@ iframe.instagram-media + script + :not([id]) {
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
-    margin-top: 120px;
+    margin-top: max(12vmin, 64px);
 }
 
 .read-more {
@@ -1557,7 +1558,7 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer {
     position: relative;
-    margin: 120px 0 0 0;
+    margin: 12vmin 0 0 0;
     padding-top: 48px;
     padding-bottom: 140px;
     color: #fff;
@@ -1621,7 +1622,7 @@ iframe.instagram-media + script + :not([id]) {
     border-radius: 100%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .site-footer .inner {
         max-width: 500px;
         grid-template-columns: 1fr;
@@ -1632,6 +1633,9 @@ iframe.instagram-media + script + :not([id]) {
     .site-footer .copyright a {
         color: #fff;
         font-size: 1.5rem;
+    }
+    .site-footer .copyright {
+        margin-bottom: 16px;
     }
 }
 
