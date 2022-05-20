@@ -120,7 +120,7 @@
                 "default": "Center aligned",
                 "group": "homepage"
             },
-            "site_logo_in_main_navigation": {
+            "show_logo_in_navigation": {
                 "type": "boolean",
                 "default": false,
                 "group": "homepage"
