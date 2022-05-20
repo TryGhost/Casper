@@ -198,11 +198,14 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
     margin-top: 8px;
     font-size: 2.1rem;
     font-weight: 400;
-    color: var(--color-secondary-text);
 }
 
 .site-logo + .site-description {
     margin-top: 20px;
+}
+
+.site-title + .site-description {
+    color: var(--color-secondary-text);
 }
 
 .has-cover-image .site-description {
@@ -1688,6 +1691,10 @@ html.dark-mode figcaption a {
 
 html.dark-mode .gh-head {
     background: var(--color-darkmode);
+    color: #fff;
+}
+
+html.dark-mode .gh-burger-box {
     color: #fff;
 }
 
