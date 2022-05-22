@@ -4,7 +4,7 @@
     @include crisp-rendering();
   
     display: inline-block;
-    background-image: url('https://www.nikouusitalo.com/assets/other/post/living-dex/pokesprite.png');
+    background-image: url('/assets/other/post/living-dex/pokesprite.png');
     background-repeat: no-repeat;
   }
 
@@ -2298,7 +2298,7 @@
 
   /* Via https://github.com/msikma/pokesprite-spritesheet */
 .pokesprite { display: inline-block }
-.pokesprite.ball { width: 32px; height: 32px; background: url('https://www.nikouusitalo.com/assets/other/post/living-dex/pokesprite-inventory.png'); image-rendering: pixelated; image-rendering: -moz-crisp-edges; vertical-align: middle; }
+.pokesprite.ball { width: 32px; height: 32px; background: url('/assets/other/post/living-dex/pokesprite-inventory.png'); image-rendering: pixelated; image-rendering: -moz-crisp-edges; vertical-align: middle; }
 .pokesprite.ball.beast { background-position: -850px -0px }
 .pokesprite.ball.cherish { background-position: -884px -0px }
 .pokesprite.ball.dive { background-position: -918px -0px }
