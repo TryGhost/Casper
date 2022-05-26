@@ -986,7 +986,7 @@ use it for applying any other styles. */
             [wide-start]
             minmax(auto, 240px)
                 [main-start]
-                    min(720px, calc(100% - 8vw))
+                    min(720px, calc(100% - max(8vmin, 40px)))
                 [main-end]
             minmax(auto, 240px)
             [wide-end]
@@ -1323,10 +1323,9 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 /* Tables */
-.post-full-content table {
+.gh-content table {
     display: inline-block;
     overflow-x: auto;
-    margin: 0.5em 0 2.5em;
     max-width: 100%;
     width: auto;
     border-spacing: 0;
@@ -1337,7 +1336,7 @@ iframe.instagram-media + script + :not([id]) {
     vertical-align: top;
 }
 
-.post-full-content table {
+.gh-content table {
     -webkit-overflow-scrolling: touch;
     background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
     background-attachment: scroll, scroll;
@@ -1345,20 +1344,20 @@ iframe.instagram-media + script + :not([id]) {
     background-repeat: no-repeat;
 }
 
-.post-full-content table td:first-child {
+.gh-content table td:first-child {
     background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.post-full-content table td:last-child {
+.gh-content table td:last-child {
     background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-position: 100% 0;
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.post-full-content table th {
+.gh-content table th {
     color: var(--color-darkgrey);
     font-size: 1.2rem;
     font-weight: 700;
@@ -1368,8 +1367,8 @@ iframe.instagram-media + script + :not([id]) {
     background-color: color-mod(var(--color-wash) l(+4%));
 }
 
-.post-full-content table th,
-.post-full-content table td {
+.gh-content table th,
+.gh-content table td {
     padding: 6px 12px;
     border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
 }
