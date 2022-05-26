@@ -624,6 +624,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-card-image-link {
     position: relative;
+    overflow: hidden;
     display: block;
     margin-bottom: 32px;
 }
@@ -632,6 +633,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     content: "";
     display: block;
     padding-bottom: 55%;
+}
+
+.post-card:not(.post-access-public) .post-card-image-link::after {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
 }
 
 .post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image-link::after {
@@ -649,6 +656,19 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
     position: static;
+}
+
+.post-card-access {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
 }
 
 .post-card-content-link {
@@ -701,6 +721,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .has-serif-title .post-card-title {
     font-family: var(--font-serif);
     letter-spacing: -0.005em;
+}
+
+.post-card-title svg {
+    margin-top: -3px;
+    margin-left: -1px;
 }
 
 .post-card-content {
