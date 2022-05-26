@@ -1490,6 +1490,10 @@ iframe.instagram-media + script + :not([id]) {
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
+    margin-top: 2.4vmin;
+}
+
+.footer-cta + .read-more-wrap {
     margin-top: max(12vmin, 72px);
 }
 

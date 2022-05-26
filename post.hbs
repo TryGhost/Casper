@@ -96,7 +96,9 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#unless @member}}{{#if access}}
+{{#if @site.members_enabled}}
+{{#unless @member}}
+{{#if access}}
     <section class="footer-cta outer">
         <div class="inner">
             {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
@@ -108,7 +110,9 @@ into the {body} tag of the default.hbs template --}}
             making the form validation and submission much simpler. --}}
         </div>
     </section>
-{{/if}}{{/unless}}
+{{/if}}
+{{/unless}}
+{{/if}}
 
 
 {{!-- Read more links, just above the footer --}}
