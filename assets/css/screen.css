@@ -1522,6 +1522,10 @@ iframe.instagram-media + script + :not([id]) {
     grid-gap: 4vmin;
 }
 
+.read-more .post-card-tags {
+    display: none;
+}
+
 @media (max-width: 1000px) {
     .read-more {
         grid-template-columns: repeat(4, 1fr);
