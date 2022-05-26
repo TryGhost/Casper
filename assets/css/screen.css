@@ -361,10 +361,27 @@ body:not(.has-cover-image) .site-header-content:not(.left-aligned) {
 /* Secondary Navigation
 /* ---------------------------------------------------------- */
 
+.gh-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.gh-social-link {
+    line-height: 0;
+    color: #fff;
+}
+
+.gh-social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
 .gh-head-actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 24px;
     list-style: none;
     text-align: right;
 }
@@ -524,12 +541,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         font-weight: 500;
     }
     #gh-head .gh-head-actions {
-        padding: 20px 0;
+        flex-direction: column-reverse;
         justify-content: center;
+        padding: 20px 0 32px;
         text-align: left;
-    }
-    #gh-head .gh-head-actions a {
-        margin: 0 10px;
     }
     /* Hide collapsed content */
     #gh-head .gh-head-actions,
