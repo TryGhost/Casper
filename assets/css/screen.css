@@ -357,6 +357,10 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     color: inherit;
 }
 
+.gh-head-menu .nav a:hover {
+    opacity: 0.9;
+}
+
 
 /* Secondary Navigation
 /* ---------------------------------------------------------- */
@@ -370,6 +374,10 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 .gh-social-link {
     line-height: 0;
     color: #fff;
+}
+
+.gh-social-link:hover {
+    opacity: 0.9;
 }
 
 .gh-social-link svg {
@@ -719,6 +727,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0;
     font-size: 2.6rem;
     font-weight: 800;
+}
+
+.post-card-content-link:hover .post-card-title {
+    opacity: 0.9;
 }
 
 .no-image .post-card-title {
