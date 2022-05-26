@@ -12,11 +12,16 @@ into the {body} tag of the default.hbs template --}}
 
     <header class="article-header gh-canvas">
 
-        {{#if primary_tag}}
-            <section class="article-tag post-card-primary-tag">
-                <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-            </section>
-        {{/if}}
+        <div class="article-tag post-card-tags">
+            {{#primary_tag}}
+                <span class="post-card-primary-tag">
+                    <a href="{{url}}">{{name}}</a>
+                </span>
+            {{/primary_tag}}
+            {{#if featured}}
+                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+            {{/if}}
+        </div>
 
         <h1 class="article-title">{{title}}</h1>
 

@@ -654,13 +654,23 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-top: 0;
 }
 
-.post-card-primary-tag {
+.post-card-tags {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin: 0 0 10px;
     color: var(--color-secondary-text);
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: -0.005em;
     line-height: 1;
+}
+
+.post-card-featured {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--ghost-accent-color);
 }
 
 .post-card-title {
@@ -788,7 +798,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         height: 100%;
     }
 
-    .post-card-large .post-card-primary-tag {
+    .post-card-large .post-card-tags {
         margin-bottom: 12px;
     }
 
@@ -810,7 +820,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin-bottom: 40px;
     }
 
-    .post-card-full .post-card-primary-tag {
+    .post-card-full .post-card-tags {
         margin-bottom: 14px;
     }
 
@@ -1714,8 +1724,12 @@ html.dark-mode .post-card-image {
     background: var(--color-darkmode);
 }
 
-html.dark-mode :is(.post-card-primary-tag, .post-card-meta, .article-tag a, .byline-meta-content) {
+html.dark-mode :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content) {
     color: color-mod(var(--color-secondary-text) l(-22%));
+}
+
+html.dark-mode .post-card-featured {
+    color: #fff;
 }
 
 html.dark-mode .post-card-title {

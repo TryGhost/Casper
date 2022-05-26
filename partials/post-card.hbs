@@ -24,9 +24,14 @@ which templates loop over to generate a list of posts. --}}
 
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
-                {{#primary_tag}}
-                    <div class="post-card-primary-tag">{{name}}</div>
-                {{/primary_tag}}
+                <div class="post-card-tags">
+                    {{#primary_tag}}
+                        <span class="post-card-primary-tag">{{name}}</span>
+                    {{/primary_tag}}
+                    {{#if featured}}
+                        <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+                    {{/if}}
+                </div>
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
             {{#if excerpt}}
