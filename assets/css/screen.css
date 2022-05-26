@@ -702,10 +702,17 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-featured {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 3px;
+    padding-left: 18px;
     color: var(--ghost-accent-color);
+}
+
+.post-card-featured svg {
+    position: absolute;
+    left: 0;
 }
 
 .post-card-title {
