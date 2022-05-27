@@ -1423,6 +1423,7 @@ iframe.instagram-media + script + :not([id]) {
     margin: 0 0 6px;
     font-size: 1.7rem;
     font-weight: 700;
+    letter-spacing: 0;
 }
 
 .article-byline-meta .bull {
@@ -1818,6 +1819,19 @@ html.dark-mode .post-full-image {
     background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
+html.dark-mode .author-avatar {
+    border-color: var(--color-darkmode);
+    background-color: color-mod(var(--color-darkmode) l(+8%));
+}
+
+html.dark-mode .author-profile-image {
+    opacity: 1;
+}
+
+html.dark-mode .author-profile-image path {
+    fill: var(--color-darkmode);
+}
+
 html.dark-mode .article-byline-meta .author-name a {
     color: #fff;
 }
@@ -1975,6 +1989,19 @@ html.dark-mode .footer-cta-title {
     
     html.auto-color .post-full-image {
         background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+
+    html.auto-color .author-avatar {
+        border-color: var(--color-darkmode);
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+    
+    html.auto-color .author-profile-image {
+        opacity: 1;
+    }
+    
+    html.auto-color .author-profile-image path {
+        fill: var(--color-darkmode);
     }
     
     html.auto-color .article-byline-meta .author-name a {
