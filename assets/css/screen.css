@@ -1818,10 +1818,6 @@ html.dark-mode .post-full-image {
     background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .article-byline {
-    border-top-color: color-mod(var(--color-darkmode) l(+15%));
-}
-
 html.dark-mode .article-byline-meta .author-name a {
     color: #fff;
 }
@@ -1916,6 +1912,166 @@ html.dark-mode .kg-header-card h3.kg-header-card-subheader {
 
 html.dark-mode .footer-cta-title {
     color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    html.auto-color body {
+        color: rgba(255, 255, 255, 0.75);
+        background: var(--color-darkmode);
+    }
+    
+    html.auto-color img {
+        opacity: 0.9;
+    }
+    
+    html.auto-color kbd {
+        background: color-mod(var(--color-darkmode) l(+5%));
+    }
+    
+    html.auto-color figcaption a {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-head {
+        background: var(--color-darkmode);
+        color: #fff;
+    }
+    
+    html.auto-color .gh-burger-box {
+        color: #fff;
+    }
+    
+    html.auto-color .site-header-content {
+        color: #fff;
+    }
+    
+    html.auto-color .post-card-image {
+        background: var(--color-darkmode);
+    }
+    
+    html.auto-color :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content) {
+        color: color-mod(var(--color-secondary-text) l(-22%));
+    }
+    
+    html.auto-color .post-card-featured {
+        color: #fff;
+    }
+    
+    html.auto-color .post-card-title {
+        color: #fff;
+    }
+    
+    html.auto-color .post-card-excerpt {
+        color: var(--color-secondary-text);
+    }
+    
+    html.auto-color .article-title {
+        color: #fff;
+    }
+    
+    html.auto-color .article-excerpt {
+        color: var(--color-secondary-text);
+    }
+    
+    html.auto-color .post-full-image {
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+    
+    html.auto-color .article-byline-meta .author-name a {
+        color: #fff;
+    }
+    
+    html.auto-color .no-image .author-social-link a {
+        color: rgba(255, 255, 255, 0.75);
+    }
+    
+    html.auto-color .gh-content > [id] {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    html.auto-color .gh-content pre {
+        background: color-mod(var(--color-darkgrey) l(-8%));
+    }
+    
+    html.auto-color .gh-content :not(pre) > code {
+        background: color-mod(var(--color-darkgrey) l(+6%));
+        border-color: color-mod(var(--color-darkmode) l(+8%));
+        color: var(--color-wash);
+    }
+    
+    html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button) {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-content strong {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-content em {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-content code {
+        color: #fff;
+        background: #000;
+    }
+    
+    html.auto-color hr {
+        border-top-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+    
+    html.auto-color .gh-content hr:after {
+        background: color-mod(var(--color-darkmode) l(+8%));
+        box-shadow: var(--color-darkmode) 0 0 0 5px;
+    }
+    
+    html.auto-color figcaption {
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    html.auto-color .gh-content table td:first-child {
+        background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
+    }
+    
+    html.auto-color .gh-content table td:last-child {
+        background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
+    }
+    
+    html.auto-color .gh-content table th {
+        color: rgba(255, 255, 255, 0.85);
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+    
+    html.auto-color .gh-content table th,
+    html.auto-color .gh-content table td {
+        border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
+    }
+    
+    html.auto-color .gh-content input {
+        color: color-mod(var(--color-midgrey) l(-30%));
+    }
+    
+    html.auto-color .site-archive-header .no-image {
+        color: rgba(255, 255, 255, 0.9);
+        background: var(--color-darkmode);
+    }
+    
+    html.auto-color .kg-header-card.kg-style-dark {
+        background: color-mod(var(--color-darkgrey) l(-5%));
+    }
+    
+    html.auto-color .kg-header-card.kg-style-light {
+        background: color-mod(var(--color-darkgrey) l(+5%));
+    }
+    
+    html.auto-color .kg-header-card h2.kg-header-card-header,
+    html.auto-color .kg-header-card h3.kg-header-card-subheader {
+        color: #fff;
+    }
+    
+    html.auto-color .footer-cta-title {
+        color: #fff;
+    }
 }
 
 /*
