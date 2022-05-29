@@ -43,12 +43,15 @@
             </div>
             <div class="gh-head-actions">
                 <div class="gh-social">
-                    {{#if @site.facebook}}
+                    {{!-- {{#if @site.facebook}}
                         <a class="gh-social-link gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                    {{/if}}
+                    {{/if}} --}}
                     {{#if @site.twitter}}
                         <a class="gh-social-link gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                     {{/if}}
+                    <a class="gh-social-link gh-social-linkedin" href="https://www.linkedin.com/in/ckenst" title="LinkedIn" target="_blank" rel="noopener">{{> "icons/linkedin"}}</a>
+                    <a class="gh-social-link gh-social-github" href="https://github.com/ckenst" title="GitHub" target="_blank" rel="noopener">{{> "icons/github"}}</a>
+                    <a class="gh-social-link gh-social-rss" href="/rss" title="RSS">{{> "icons/rss"}}</a>
                 </div>
                 {{#if @site.members_enabled}}
                     {{#unless @member}}
