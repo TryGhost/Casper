@@ -59,9 +59,13 @@
                 {{/if}}
             </div>
         </nav>
+
+        {{> "search"}}
+
     </header>
 
     <div class="site-content">
+        <section id="results"></section>
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
     </div>
@@ -73,7 +77,7 @@
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by XXX</a></div>
         </div>
     </footer>
 
@@ -83,24 +87,96 @@
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script
-    src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous">
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
 </script>
 <script src="{{asset "built/casper.js"}}"></script>
 <script>
-$(document).ready(function () {
-    // Mobile Menu Trigger
-    $('.gh-burger').click(function () {
-        $('body').toggleClass('gh-head-open');
+    $(document).ready(function () {
+        // Mobile Menu Trigger
+        $('.gh-burger').click(function () {
+            $('body').toggleClass('gh-head-open');
+        });
+        // FitVids - Makes video embeds responsive
+        $(".gh-content").fitVids();
     });
-    // FitVids - Makes video embeds responsive
-    $(".gh-content").fitVids();
-});
 </script>
+{{#is "post"}}
+  <script>
+    const progressBar = document.querySelector('.reading-progress');
 
+    function updateProgress() {
+      const height = document.body.clientHeight;
+      const position = window.scrollY;
+      const progress = position / height * 115;
+      progressBar.setAttribute('value', progress);
+      requestAnimationFrame(updateProgress);
+    }
+
+    requestAnimationFrame(updateProgress);
+  </script>
+{{/is}}
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
+<script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
+<script>
+    // $("#search-field").ghostHunter({
+    //   results: "#results"
+    // });
 
+    $(document).ready(function() {
+        "use strict";
+
+        let body = $('body'),
+                site_search = $('#site-search'),
+                search_results = $('#search-results'),
+                search_field = $('#search-field'),
+                search_close_button = $('#site-search .close')
+        ;
+        // Check for click events on the navbar burger icon
+        $(".navbar-burger").click(function() {
+            $(this).siblings('.nav').slideToggle();
+            $(this).toggleClass("is-active");
+        });
+
+        search_close_button.on('click', function() {
+            site_search.fadeOut(250);
+            body.removeClass('is-search-on');
+            search_field.val('');
+        });
+
+        $('.search-form-toggle').on('click', function(e) {
+            e.preventDefault();
+            search_results.hide();
+            site_search.fadeIn(250);
+            search_field.focus();
+            body.addClass('is-search-on');
+        });
+
+        search_field.keyup(function(e) {
+            if (e.keyCode === 27) {
+                search_close_button.trigger('click');
+            }
+        });
+
+        search_field.ghostHunter({
+            results: "#search-results",
+            result_template: "<a id='gh-\{{ref}}' class='gh-search-item' href='\{{link}}'><span class='post-title'>\{{title}}</span><small class='post-meta-date text-muted'>\{{pubDate}}</small></a>",
+            info_template: '<div class="result-count is-size-5">{{t "Number of posts found: {count}" count="\{{amount}}" }} </div>',
+            onKeyUp: true,
+            before: function() {
+                search_results.fadeIn();
+            },
+            onComplete: function() {
+                if (search_results.find('a').length) {
+                    search_results.addClass('has-result');
+                } else {
+                    search_results.removeClass('has-result');
+                }
+            },
+        });
+    });
+</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 {{!< default}}
-
+<progress class="reading-progress" value="0" max="100" aria-label="Reading progress"></progress>
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
@@ -51,7 +51,7 @@ into the {body} tag of the default.hbs template --}}
                 <div class="byline-meta-content">
                     <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
                     {{#if reading_time}}
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time minute="Only a minute" minutes="Takes % minutes"}}</span>
                     {{/if}}
                 </div>
             </div>
