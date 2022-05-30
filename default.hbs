@@ -17,6 +17,74 @@
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
+    <style>
+        #search-toggle {
+            cursor: pointer;
+            width: 24px;
+
+        }
+        #search-toggle svg {
+            fill: #fff;
+        }
+        #site-search {
+            position: fixed;
+            top: 10%;
+            right: 10%;
+            bottom: 10%;
+            left: 10%;
+            padding: 15px;
+            background: rgba(239,239,239, 0.9);
+            z-index: 4999999;
+            display: none;
+            border: 1px solid #dedede;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+        }
+        #site-search input {
+            padding: 16px;
+            color: #333;
+            font-size: 24px;
+        }
+        #site-search button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            height: 32px;
+            width: 32px;
+            margin: 15px;
+            background: transparent;
+        }
+        #site-search button svg {
+            width: 32px;
+            fill: #777;
+        }
+        #site-search button svg:hover {
+            width: 32px;
+            fill: #aaa;
+        }
+        #site-search * {
+            display: block;
+            width: 100%;
+        }
+        #site-search .result-count {
+            padding: 5px 15px;
+            color: #555;
+        }
+        #site-search .gh-search-item {
+            font-size: 24px;
+            padding: 10px 15px;
+        }
+        #site-search .gh-search-item:hover {
+            text-decoration: underline;
+        }
+        #site-search .close {
+            width: 32px;
+            position: absolute;
+            top: -24px;
+            right: -18px;
+            fill: #ff2d1f;
+            cursor: pointer;
+        }
+        </style>
 </head>
 <body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}{{#is "home"}}{{#unless @custom.show_logo_in_navigation}} no-logo{{/unless}}{{/is}}">
 <div class="viewport">
@@ -57,11 +125,9 @@
                         <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                     {{/unless}}
                 {{/if}}
+                <span id="search-toggle">{{> "svg/search-icon"}}</span>
             </div>
         </nav>
-
-        {{> "search"}}
-
     </header>
 
     <div class="site-content">
@@ -82,6 +148,7 @@
     </footer>
 
 </div>
+{{> "search"}}
 {{!-- /.viewport --}}
 
 
@@ -132,12 +199,13 @@
                 site_search = $('#site-search'),
                 search_results = $('#search-results'),
                 search_field = $('#search-field'),
-                search_close_button = $('#site-search .close')
+                search_close_button = $('#site-search .close'),
+                search_toggle = $('#search-toggle')
         ;
-        // Check for click events on the navbar burger icon
-        $(".navbar-burger").click(function() {
-            $(this).siblings('.nav').slideToggle();
-            $(this).toggleClass("is-active");
+
+        search_toggle.on('click', function () {
+            site_search.toggle();
+            search_field.focus();
         });
 
         search_close_button.on('click', function() {
@@ -146,23 +214,15 @@
             search_field.val('');
         });
 
-        $('.search-form-toggle').on('click', function(e) {
-            e.preventDefault();
-            search_results.hide();
-            site_search.fadeIn(250);
-            search_field.focus();
-            body.addClass('is-search-on');
-        });
-
         search_field.keyup(function(e) {
-            if (e.keyCode === 27) {
-                search_close_button.trigger('click');
+            if (e.key === 'Escape') {
+                search_toggle.trigger('click');
             }
         });
 
         search_field.ghostHunter({
             results: "#search-results",
-            result_template: "<a id='gh-\{{ref}}' class='gh-search-item' href='\{{link}}'><span class='post-title'>\{{title}}</span><small class='post-meta-date text-muted'>\{{pubDate}}</small></a>",
+            result_template: "<a id='gh-\{{ref}}' class='gh-search-item' href='\{{link}}'><span class='post-title'>\{{title}}</span></a>",
             info_template: '<div class="result-count is-size-5">{{t "Number of posts found: {count}" count="\{{amount}}" }} </div>',
             onKeyUp: true,
             before: function() {
