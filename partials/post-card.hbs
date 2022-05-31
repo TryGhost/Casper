@@ -21,7 +21,12 @@ which templates loop over to generate a list of posts. --}}
 
         {{^has visibility="public"}}
             <div class="post-card-access">
-                {{> "icons/lock"}} Members-only
+                {{> "icons/lock"}}
+                {{#has visibility="members"}}
+                    Members only
+                {{else}}
+                    Paid-members only
+                {{/has}}
             </div>
         {{/has}}
 
