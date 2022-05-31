@@ -84,11 +84,11 @@
             fill: #ff2d1f;
             cursor: pointer;
         }
-        </style>
+    </style>
 </head>
 <body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}{{#is "home"}}{{#unless @custom.show_logo_in_navigation}} no-logo{{/unless}}{{/is}}">
 <div class="viewport">
-
+    <?php echo 'AAA'; ?>
     <header id="gh-head" class="gh-head outer">
         <nav class="gh-head-inner inner">
 
@@ -150,7 +150,10 @@
 </div>
 {{> "search"}}
 {{!-- /.viewport --}}
-
+<input type="number" id="serving" value="4" data-ppl="4" min="1">
+<p><span class="ingredient" data-qty="4">4</span> pieces of something</p>
+<p><span class="ingredient" data-qty="200">200</span> g of butter</p>
+<p><span class="ingredient" data-qty="500">500</span> ml of milk</p>
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script
@@ -169,21 +172,7 @@
         $(".gh-content").fitVids();
     });
 </script>
-{{#is "post"}}
-  <script>
-    const progressBar = document.querySelector('.reading-progress');
 
-    function updateProgress() {
-      const height = document.body.clientHeight;
-      const position = window.scrollY;
-      const progress = position / height * 115;
-      progressBar.setAttribute('value', progress);
-      requestAnimationFrame(updateProgress);
-    }
-
-    requestAnimationFrame(updateProgress);
-  </script>
-{{/is}}
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
 <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
@@ -196,12 +185,11 @@
         "use strict";
 
         let body = $('body'),
-                site_search = $('#site-search'),
-                search_results = $('#search-results'),
-                search_field = $('#search-field'),
-                search_close_button = $('#site-search .close'),
-                search_toggle = $('#search-toggle')
-        ;
+            site_search = $('#site-search'),
+            search_results = $('#search-results'),
+            search_field = $('#search-field'),
+            search_close_button = $('#site-search .close'),
+            search_toggle = $('#search-toggle');
 
         search_toggle.on('click', function () {
             site_search.toggle();
@@ -235,6 +223,24 @@
                     search_results.removeClass('has-result');
                 }
             },
+        });
+
+        /*$("#serving").on("input", function() {
+            const people = + $(this).val();
+            const base = + $(this).data("ppl");
+            $(".ingredient").text(function() {
+                return people ? ($(this).data("qty") * ( people / base)).toFixed(0) : 0
+            });
+        });*/
+
+        $("#serving").on("input", function() {
+            let serving = $(this);
+            const people = + serving.val();
+            const base = + serving.data("ppl");
+
+            $(".ingredient").text(function() {
+                return people ? ($(this).data("qty") * ( people / base)).toFixed(0) : 0
+            });
         });
     });
 </script>
