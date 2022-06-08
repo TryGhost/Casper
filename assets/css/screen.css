@@ -373,7 +373,7 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 
 .gh-social-link {
     line-height: 0;
-    color: #fff;
+    color: inherit;
 }
 
 .gh-social-link:hover {
