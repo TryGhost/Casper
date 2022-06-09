@@ -1,0 +1,52 @@
+<nav class="gh-navbar inner">
+    <div class="gh-navbar__brand">
+        <a class="gh-navbar__logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+                <img src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{else}}
+                {{@site.title}}
+            {{/if}}
+        </a>
+    </div>
+
+    <div class="gh-navbar__menu">
+        {{navigation}}
+    </div>
+
+    <div class="gh-navbar__menu">
+        <ul class="nav nav--lang">
+            <li class="nav-lang">
+                <a href="javascript:void()" class="nav-lang-link">Language</a>
+                <ul class="nav-dropdown" aria-label="submenu">
+                    <li><a href="/">English</a></li>
+                    <li><a href="/tag/spanish">Español</a></li>
+                    <li><a href="/tag/french">Français</a></li>
+                    <li><a href="/tag/italian">Italiano</a></li>
+                    <li><a href="/tag/polish">Polski</a></li>
+                    <li><a href="/tag/portuguese">Português</a></li>
+                    <li><a href="/tag/turkish">Türkçe</a></li>
+                    <li><a href="/tag/russian">русский</a></li>
+                    <li><a href="/tag/greek">Ελληνικά</a></li>
+                    <li><a href="/tag/hebrew">עברית</a></li>
+                    <li><a href="/tag/farsi">فارسی</a></li>
+                    <li><a href="/tag/chinese">中文</a></li>
+                    <li><a href="/tag/japanese">日本語</a></li>
+                </ul>
+            </li>
+        </ul>
+        {{navigation type="secondary"}}
+        <ul class="nav">
+            <li>
+                <a class="nav-theme-button js-toggle-mode">{{> "icons/moon"}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="gh-navbar__menu-mobile">
+        <a class="gh-burger" role="button">
+            <div class="gh-burger-box">
+                <div class="gh-burger-inner"></div>
+            </div>
+        </a>
+    </div>
+</nav>
