@@ -643,19 +643,19 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     padding-bottom: 55%;
 }
 
-.post-card:is(.post-access-members, .post-access-paid) .post-card-image-link::after {
+.post-card[class*="post-access-"] .post-card-image-link::after {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
 }
 
-.post-card.keep-ratio:is(.post-access-members, .post-access-paid) .post-card-image-link::after {
+.post-card.keep-ratio[class*="post-access-"] .post-card-image-link::after {
     position: absolute;
     inset: 0;
     padding-bottom: 0;
 }
 
-.post-card.keep-ratio.post-access-public:not(.post-card-large):not(.post-card-full) .post-card-image-link::after {
-    display: none;
+.post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image-link::after {
+    padding-bottom: 0;
 }
 
 .post-card-image {
