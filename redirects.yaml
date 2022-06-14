@@ -1,4 +1,6 @@
 301:
-  ^\/blog\/([a-z0-9-]+)\/$: /$1
-  /^([0-9]{4})/([0-9]{2})/(.*): /$1
-  /^([0-9]{4})/([0-9]{2})/(.*): /$3
+  \/([0-9]{4})\/([0-9]{2})\/(.*): /$3
+  /category/test-automation/: /tag/test-automation
+  /category/testing/: /tag/testing
+  /category/tutorials/: /tag/tutorials
+  /category/greatest-hits/: /tag/greatest-hits
