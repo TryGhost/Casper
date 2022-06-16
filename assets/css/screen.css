@@ -1812,6 +1812,10 @@ html.dark-mode .post-card-excerpt {
     color: var(--color-secondary-text);
 }
 
+html.dark-mode .author-profile-location {
+    color: #fff;
+}
+
 html.dark-mode .article-title {
     color: #fff;
 }
@@ -1983,7 +1987,11 @@ html.dark-mode .footer-cta-title {
     html.auto-color .post-card-excerpt {
         color: var(--color-secondary-text);
     }
-    
+
+    html.auto-color .author-profile-location {
+        color: #fff;
+    }
+
     html.auto-color .article-title {
         color: #fff;
     }
