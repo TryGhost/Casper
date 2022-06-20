@@ -11,6 +11,14 @@ into the {body} of the default.hbs template --}}
 {{#post}}
 
 <main id="site-main" class="site-main outer">
+    <div class="back-container">
+        <a href="https://lightit.io/blog/" class="back-to-all-posts">
+            <svg width="26" height="13" viewBox="0 0 26 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.65789 11.6579L1.5 6.5M1.5 6.5L6.65789 1.3421M1.5 6.5L24.7105 6.5" stroke="#4E5865" stroke-width="2.57895" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            &nbsp;Back to all posts
+        </a>
+    </div>
     <div class="inner">
 
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
