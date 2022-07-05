@@ -1562,7 +1562,9 @@ iframe.instagram-media + script + :not([id]) {
 .comments h2 {
     width: 100%;
     max-width: 720px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-lightgrey);
 }
 
 .comments #ghost-comments-root {
