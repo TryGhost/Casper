@@ -1567,7 +1567,6 @@ iframe.instagram-media + script + :not([id]) {
     font-size: 3.4rem;
     margin-bottom: 16px;
     padding-bottom: 16px;
-    border-bottom: 1px solid var(--color-lightgrey);
 }
 
 .comments #ghost-comments-root {
