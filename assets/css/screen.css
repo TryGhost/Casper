@@ -15,6 +15,7 @@ production stylesheet in assets/built/screen.css
   7.2. Members Subscribe Form
   7.4. Related Posts
   7.5. Koenig Styles
+  7.6  Comments
 8.  Author Template
 9.  Error Template
 11. Site Footer
@@ -1548,6 +1549,25 @@ iframe.instagram-media + script + :not([id]) {
     .read-more .post-card:nth-child(2) {
         display: none;
     }
+}
+
+/* 7.6. Comments
+/* ---------------------------------------------------------- */
+.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comments h2 {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+
+.comments #ghost-comments-root {
+    width: 100%;
+    max-width: 720px;
 }
 
 
