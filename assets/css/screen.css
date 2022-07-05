@@ -1557,11 +1557,14 @@ iframe.instagram-media + script + :not([id]) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 60px 0 44px;
 }
 
 .comments h2 {
     width: 100%;
     max-width: 720px;
+    font-weight: 800;
+    font-size: 3.4rem;
     margin-bottom: 16px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--color-lightgrey);
