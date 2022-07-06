@@ -1019,11 +1019,11 @@ make sure they look good, and are given a bit of extra spacing. */
 /* Add extra margin before/after any cards,
 except for when immediately preceeded by a heading */
 .gh-content :not(.kg-card):not([id]) + .kg-card {
-    margin-top: 4.5vmin;
+    margin-top: 2vmin;
     margin-bottom: 0;
 }
 .gh-content .kg-card + :not(.kg-card) {
-    margin-top: 4.5vmin;
+    margin-top: 2vmin;
     margin-bottom: 0;
 }
 
