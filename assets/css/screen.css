@@ -1081,6 +1081,18 @@ is the very first element in the post content */
     margin-top: max(4.8vmin, 32px) !important;
 }
 
+/* Within a blockquote, no margin is needed at the top or bottom
+but do include space between multiple paragraphs */
+.gh-content > blockquote p:first-child {
+    margin-top: 0;
+}
+.gh-content > blockquote p {
+    margin: 1.5rem;
+}
+.gh-content > blockquote p:last-child {
+    margin-bottom: 0;
+}
+
 /* Now the content typography styles */
 .gh-content a {
     color: var(--ghost-accent-color);
