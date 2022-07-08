@@ -69,9 +69,7 @@ into the {body} tag of the default.hbs template --}}
     </header>
 
     <section class="gh-content gh-canvas">
-        {{#if @member.paid}}
-            
-        {{else}}
+        {{^if @member.paid}}
             <div class="adsense">
                 <!-- Post Ad - Top -->     
                 <ins class="adsbygoogle"
@@ -85,13 +83,11 @@ into the {body} tag of the default.hbs template --}}
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
                 <!-- End Post Ad - Top -->
-            </div>
+            </div>            
         {{/if}}
         
         {{content}}
-        {{#if @member.paid}}
-            
-        {{else}}
+        {{^if @member.paid}}
             <div class="adsense">
                 <!-- Post Ad - Bottom -->
                 <ins class="adsbygoogle"
@@ -105,10 +101,8 @@ into the {body} tag of the default.hbs template --}}
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
                 <!-- End Post Ad - Bottom -->        
-            </div>
-        {{/if}}
-
-        
+            </div>            
+        {{/if}}        
     </section>
 
     {{!--
