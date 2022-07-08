@@ -159,22 +159,15 @@ $(document).ready(function () {
             background-repeat: no-repeat;
         `);
         console.log("How did I do this? Check out www.nikouusitalo.com/how-i-added-an-animation-to-the-browser-devtools-console/")
-    });    
+    });  
+
+    (function() {
+        Array.from(document.querySelectorAll("a")).filter(a => {
+            return a.hostname && a.hostname !== location.hostname
+        }).forEach(a => a.setAttribute('target', '_blank'))
+    })();  
 });
 </script>
-
-    {{#if @member.paid}}
-            
-    {{else}}
-        <script>
-        (function() {
-            Array.from(document.querySelectorAll("a")).filter(a => {
-                return a.hostname && a.hostname !== location.hostname
-            }).forEach(a => a.setAttribute('target', '_blank'))
-        })();
-        </script>
-    {{/if}}
-
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
 
