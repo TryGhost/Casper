@@ -17,15 +17,25 @@
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
-    {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
-    it should always be the last tag before the closing head tag --}}
     {{#if @member.paid}}
-        <script>console.log("paid member")</script>
-    {{else if @member}}
-        <script>console.log("unpaid member")</script>
+            
     {{else}}
-        <script>console.log("non member")</script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156524575-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156524575-1');
+        </script>
+
+        <!-- Google AdSense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9097562495524795" crossorigin="anonymous"></script>
     {{/if}}
+
+    {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
+    it should always be the last tag before the closing head tag --}}    
     {{ghost_head}}
 
 </head>
@@ -152,6 +162,18 @@ $(document).ready(function () {
     });    
 });
 </script>
+
+    {{#if @member.paid}}
+            
+    {{else}}
+        <script>
+        (function() {
+            Array.from(document.querySelectorAll("a")).filter(a => {
+                return a.hostname && a.hostname !== location.hostname
+            }).forEach(a => a.setAttribute('target', '_blank'))
+        })();
+        </script>
+    {{/if}}
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
