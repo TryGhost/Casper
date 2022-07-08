@@ -52,4 +52,8 @@ into the {body} of the default.hbs template --}}
 <script type="text/javascript">
     amplitude.getInstance().logEvent('Viewed Homepage');
 </script>
+{{else}}
+<script type="text/javascript">
+    amplitude.getInstance().logEvent('Viewed Homepage');
+</script>
 {{/if}}

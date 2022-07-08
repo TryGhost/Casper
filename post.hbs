@@ -145,4 +145,23 @@ into the {body} tag of the default.hbs template --}}
         $('.gh-wordcount').html(wordCount);
     });
 </script>
+{{else}}
+<script type="text/javascript">
+    var karma = new amplitude.Identify().add('karma', 1);
+    amplitude.getInstance().identify(karma);
+    amplitude.getInstance().logEvent('Viewed Post');
+    $(function () {
+        var txt = $(".gh-content")[0].textContent,
+            words = txt.replace(/[^\w ]/g, "").split(/\s+/).length + " words, ";
+        function numberWithCommas(x) {
+            x = x.toString();
+            var pattern = /(-?\d+)(\d{3})/;
+            while (pattern.test(x))
+                x = x.replace(pattern, "$1,$2");
+            return x;
+        }
+        var wordCount = numberWithCommas(words);
+        $('.gh-wordcount').html(wordCount);
+    });
+</script>
 {{/if}}
