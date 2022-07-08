@@ -50,10 +50,10 @@ into the {body} of the default.hbs template --}}
 
 {{#if @member}}
 <script type="text/javascript">
-    amplitude.getInstance().logEvent('Viewed Homepage');
+    amplitude.getInstance().logEvent('Viewed Homepage as Member');
 </script>
 {{else}}
 <script type="text/javascript">
-    amplitude.getInstance().logEvent('Viewed Homepage');
+    amplitude.getInstance().logEvent('Viewed Homepage as Guest');
 </script>
 {{/if}}

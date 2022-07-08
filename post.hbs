@@ -130,7 +130,7 @@ into the {body} tag of the default.hbs template --}}
 <script type="text/javascript">
     var karma = new amplitude.Identify().add('karma', 1);
     amplitude.getInstance().identify(karma);
-    amplitude.getInstance().logEvent('Viewed Post');
+    amplitude.getInstance().logEvent('Viewed Post as Member');
     $(function () {
         var txt = $(".gh-content")[0].textContent,
             words = txt.replace(/[^\w ]/g, "").split(/\s+/).length + " words, ";
