@@ -47,3 +47,9 @@ into the {body} of the default.hbs template --}}
 
     </div>
 </main>
+
+{{#if @member}}
+<script type="text/javascript">
+    amplitude.getInstance().logEvent('Viewed Homepage');
+</script>
+{{/if}}
