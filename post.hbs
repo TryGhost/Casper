@@ -129,10 +129,8 @@ into the {body} tag of the default.hbs template --}}
 {{#if @member}}
 <script type="text/javascript">
     var karma = new amplitude.Identify().add('karma', 1);
-    var revenue = new amplitude.Revenue();
     amplitude.getInstance().identify(karma);
     amplitude.getInstance().logEvent('Viewed Post as Member');
-    amplitude.getInstance().Revenue(revenue);
     $(function () {
         var txt = $(".gh-content")[0].textContent,
             words = txt.replace(/[^\w ]/g, "").split(/\s+/).length + " words, ";
@@ -150,10 +148,10 @@ into the {body} tag of the default.hbs template --}}
 {{else}}
 <script type="text/javascript">
     var karma = new amplitude.Identify().add('karma', 1);
-    var revenue = new amplitude.Revenue();
     amplitude.getInstance().identify(karma);
     amplitude.getInstance().logEvent('Viewed Post');
-    amplitude.getInstance().Revenue(revenue);
+    var revenue = new amplitude.Revenue().setProductId('qc book').setPrice(1);
+    amplitude.logRevenueV2(revenue);
     $(function () {
         var txt = $(".gh-content")[0].textContent,
             words = txt.replace(/[^\w ]/g, "").split(/\s+/).length + " words, ";

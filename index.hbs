@@ -51,9 +51,13 @@ into the {body} of the default.hbs template --}}
 {{#if @member}}
 <script type="text/javascript">
     amplitude.getInstance().logEvent('Viewed Homepage as Member');
+
 </script>
 {{else}}
 <script type="text/javascript">
+    var revenue = new amplitude.Revenue().setProductId('qc book').setPrice(1);
+    amplitude.logRevenueV2(revenue);
     amplitude.getInstance().logEvent('Viewed Homepage as Guest');
+
 </script>
 {{/if}}
