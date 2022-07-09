@@ -129,6 +129,7 @@ into the {body} tag of the default.hbs template --}}
 {{#if @member}}
 <script type="text/javascript">
     var karma = new amplitude.Identify().add('karma', 1);
+    var revenue = new amplitude.Revenue();
     amplitude.getInstance().identify(karma);
     amplitude.getInstance().logEvent('Viewed Post as Member');
     $(function () {
@@ -148,6 +149,7 @@ into the {body} tag of the default.hbs template --}}
 {{else}}
 <script type="text/javascript">
     var karma = new amplitude.Identify().add('karma', 1);
+    var revenue = new amplitude.Revenue();
     amplitude.getInstance().identify(karma);
     amplitude.getInstance().logEvent('Viewed Post');
     $(function () {

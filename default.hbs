@@ -26,6 +26,7 @@
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
+     {{!-- Amplitude script --}}
     {{#if @member}}
     <script type="text/javascript">
     (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
@@ -83,7 +84,8 @@
   amplitude.getInstance().init("9211138d41077450ad4e9d6cb645cbaf");
 </script>
    {{/if}}
-
+  
+  {{!-- Segment script --}}
    <script>
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="LKovd2tj4xBMvIXWKGBhGZSEA3VqCASX";;analytics.SNIPPET_VERSION="4.15.3";
   analytics.load("LKovd2tj4xBMvIXWKGBhGZSEA3VqCASX");
