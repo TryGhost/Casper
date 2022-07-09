@@ -150,7 +150,7 @@ into the {body} tag of the default.hbs template --}}
     var karma = new amplitude.Identify().add('karma', 1);
     amplitude.getInstance().identify(karma);
     amplitude.getInstance().logEvent('Viewed Post');
-    var revenue = new amplitude.Revenue().setProductId('qc book').setPrice(1);
+    var revenue = new amplitude.Revenue().setProductId('qc book $1').setPrice(1);
     amplitude.logRevenueV2(revenue);
     $(function () {
         var txt = $(".gh-content")[0].textContent,
