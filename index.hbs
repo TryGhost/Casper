@@ -55,7 +55,7 @@ into the {body} of the default.hbs template --}}
 </script>
 {{else}}
 <script type="text/javascript">
-    var revenue = new amplitude.Revenue().setProductId('qc book').setPrice(1);
+    var revenue = new amplitude.Revenue().setProductId('qc book $1').setPrice(1);
     amplitude.logRevenueV2(revenue);
     amplitude.getInstance().logEvent('Viewed Homepage as Guest');
 
