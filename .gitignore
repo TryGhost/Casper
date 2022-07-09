@@ -28,3 +28,14 @@ changelog.md
 changelog.md.bk
 assets/built/screen.css-old.css
 assets/built/screen.css.map-old
+assets/built/global.css
+assets/built/global.css.map
+assets/built/screen.css
+assets/built/screen.css.map
+assets/css/global.css
+assets/css/screen.css
+author.hbs
+default.hbs
+error-404.hbs
+author.hbs
+default.hbs

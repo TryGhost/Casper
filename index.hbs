@@ -70,6 +70,7 @@ into the {body} of the default.hbs template --}}
 {{else}}
 <script type="text/javascript">
     amplitude.getInstance().logEvent('Viewed Homepage as Guest');
-
+    var money = new amplitude.Revenue().setProductId('quality coach book').setPrice(1);
+    amplitude.getInstance().logRevenueV2(money);
 </script>
 {{/if}}
