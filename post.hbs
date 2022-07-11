@@ -86,10 +86,17 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    <div class="comments">
-        <h2>Member discussion</h2>
-        {{comments}}
-    </div>
+    {{#if @site.comments_enabled}}
+        {{#if access}}
+            <div class="comments">
+                <div class="comments-head">
+                    <h2>Member discussion</h2>
+                    <div class="comment-count">{{#comment_count}}(# comments){{/comment_count}}</div>
+                </div>
+                {{comments color_scheme="light" avatar_saturation="80"}}
+            </div>
+        {{/if}}
+    {{/if}}
 
     {{!--
     <section class="article-comments gh-canvas">
@@ -101,7 +108,7 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#if @site.members_enabled}}
+{{!-- {{#if @site.members_enabled}}
 {{#unless @member}}
 {{#if access}}
     <section class="footer-cta outer">
@@ -111,13 +118,11 @@ into the {body} tag of the default.hbs template --}}
                 <div class="footer-cta-input">Enter your email</div>
                 <span>Subscribe</span>
             </a>
-            {{!-- ^ This looks like a form element, but it's just a link to Portal,
-            making the form validation and submission much simpler. --}}
         </div>
     </section>
 {{/if}}
 {{/unless}}
-{{/if}}
+{{/if}} --}}
 
 
 {{!-- Read more links, just above the footer --}}

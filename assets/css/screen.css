@@ -1560,13 +1560,29 @@ iframe.instagram-media + script + :not([id]) {
     margin: 60px 0 44px;
 }
 
+
+.comments-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--color-lightgrey);
+    width: 100%;
+    max-width: 720px;
+}
+
 .comments h2 {
     width: 100%;
     max-width: 720px;
     font-weight: 800;
     font-size: 3.4rem;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
+}
+
+.comments .comment-count {
+    color: var(--color-midgrey);
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .comments #ghost-comments-root {
