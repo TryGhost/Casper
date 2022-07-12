@@ -2107,6 +2107,11 @@ video {
 /* ---------------------------------------------------------- */
 
 .gh-content .kg-image-card img {
-    border: solid 1px #000;
+    border: solid 1px #35373a;
+    border-radius: 3px; 
+}
+
+.gh-content .kg-gallery-card img {
+    border: solid 1px #35373a;
     border-radius: 3px; 
 }
