@@ -413,6 +413,35 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     background: #fff;
 }
 
+/* Search
+/* ---------------------------------------------------------- */
+
+.gh-search {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.gh-search:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+    .gh-search {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
+    }
+}
+
 
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
