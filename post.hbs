@@ -93,7 +93,7 @@ into the {body} tag of the default.hbs template --}}
                     <h2>Member discussion</h2>
                     <div class="comment-count">{{#comment_count}}(# comments){{/comment_count}}</div>
                 </div>
-                {{comments color_scheme="light" avatar_saturation="80"}}
+                {{comments}}
             </div>
         {{/if}}
     {{/if}}
@@ -108,7 +108,7 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{!-- {{#if @site.members_enabled}}
+{{#if @site.members_enabled}}
 {{#unless @member}}
 {{#if access}}
     <section class="footer-cta outer">
@@ -122,7 +122,7 @@ into the {body} tag of the default.hbs template --}}
     </section>
 {{/if}}
 {{/unless}}
-{{/if}} --}}
+{{/if}}
 
 
 {{!-- Read more links, just above the footer --}}
