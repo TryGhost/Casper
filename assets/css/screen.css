@@ -2025,8 +2025,6 @@ video {
     width:100%;
 }
 
-
-
 /* Tables */
 .article table {  
     overflow-x: auto;
@@ -2103,4 +2101,12 @@ video {
 .adsense {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+/* 18. Image
+/* ---------------------------------------------------------- */
+
+.gh-content .kg-image-card img {
+    border: solid 1px #000;
+    border-radius: 3px; 
 }
