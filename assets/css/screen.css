@@ -8,8 +8,6 @@ production stylesheet in assets/built/screen.css
 2.  Layout
 3.  Special Templates
 4.  Site Header
-  4.1 Home header
-  4.2 Archive header
 5.  Site Navigation
 6.  Post Feed
 7.  Single Post
@@ -48,7 +46,9 @@ production stylesheet in assets/built/screen.css
     --color-red: #f05230;
     --color-darkgrey: #15171A;
     --color-midgrey: #738a94;
-    --color-lightgrey: #c5d2d9;
+    --color-lightgrey: #f1f1f1;
+    --color-secondary-text: #979797;
+    --color-border: #e1e1e1;
     --color-wash: #e5eff5;
     --color-darkmode: #151719;
 
@@ -58,11 +58,12 @@ production stylesheet in assets/built/screen.css
 
     --ghost-accent-color: {value};
 
-    You can use this variale throughout your styles
+    You can use this variable throughout your styles
      */
 
     /* Fonts */
     --font-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    /* --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; */
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
 
@@ -85,7 +86,7 @@ production stylesheet in assets/built/screen.css
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 4vmin;
+    padding: 0 max(4vmin, 20px);
 }
 
 /* Centered content container blocks */
@@ -120,79 +121,179 @@ production stylesheet in assets/built/screen.css
     position: relative;
     z-index: 100;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 6vw 3vw;
-    min-height: 200px;
-    max-height: 340px;
+    padding-top: 6.4vmin;
+    padding-bottom: 6.4vmin;
     text-align: center;
+    color: var(--color-darkgrey);
+}
+
+.has-cover .site-header-content {
+    min-height: 560px;
+    background-color: var(--ghost-accent-color);
+    color: #fff;
+}
+
+body:not(.has-cover) .site-header-content:not(.left-aligned) {
+    padding-bottom: max(4.8vmin, 24px);
+}
+
+.site-header-content.left-aligned {
+    padding-bottom: 0;
+    text-align: left;
+}
+
+.has-cover .site-header-content.left-aligned {
+    align-items: flex-end;
+    padding-bottom: 6.4vmin;
+}
+
+.site-header-content.no-content {
+    padding-top: 0;
+}
+
+.site-header-inner {
+    position: relative;
+}
+
+.site-header-content.left-aligned .site-header-inner {
+    align-items: flex-start;
+}
+
+.site-logo {
+    flex-shrink: 0;
+    margin: 0 auto;
+    max-height: 120px;
+}
+
+.site-header-content.left-aligned .site-logo {
+    margin-right: auto;
+    margin-left: 0;
+    max-height: 96px;
 }
 
 .site-title {
     z-index: 10;
-    margin: 0 0 0.15em;
+    margin: 0;
     padding: 0;
+    font-size: 5rem;
+    font-weight: 800;
 }
 
-.site-logo {
-    max-height: 55px;
+.has-serif-title .site-title {
+    font-family: var(--font-serif);
 }
 
-.site-header-content p {
+.has-cover .site-title {
+    font-size: 6rem;
+}
+
+.site-header-content.left-aligned .site-title {
+    font-size: 4.4rem;
+}
+
+.has-cover .site-header-content.left-aligned .site-title {
+    font-size: 4.6rem;
+}
+
+.site-description {
+    display: inline-block;
     z-index: 10;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.2em;
-    opacity: 0.8;
+    max-width: 560px;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
-@media (max-width: 600px) {
-    .site-header-content p {
-        max-width: 80vmin;
-        font-size: 1.8rem;
+:is(.site-logo, .site-title) + .site-description {
+    margin-top: 8px;
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+
+.site-logo + .site-description {
+    margin-top: 20px;
+}
+
+.site-title + .site-description {
+    color: var(--color-secondary-text);
+}
+
+.has-cover .site-description {
+    font-size: 3.2rem;
+    letter-spacing: -0.005em;
+    color: #fff;
+}
+
+.has-cover :is(.site-logo, .site-title) + .site-description {
+    font-size: 2.4rem;
+}
+
+.has-cover .site-header-content.left-aligned :is(.site-logo, .site-title) + .site-description {
+    font-size: 2.2rem;
+}
+
+@media (max-width: 767px) {
+    .has-cover .site-header-content {
+        padding-bottom: 36px;
+        min-height: 240px;
+    }
+    .site-header-inner {
+        gap: 16px;
+    }
+    .site-logo {
+        max-width: 60%;
+    }
+    .site-title {
+        font-size: 3.4rem !important;
+    }
+    .site-description {
+        font-size: 1.9rem !important;
+    }
+    .site-logo + .site-description {
+        margin-top: 12px !important;
+    }
+    .site-title + .site-description {
+        margin-top: 4px !important;
     }
 }
-
-/* 4.1 Home header
-/* ---------------------------------------------------------- */
-
-.site-home-header {
-    position: relative;
-    z-index: 1000;
-    overflow: hidden;
-}
-
-.site-header-content {
-    padding: 18vmin 4vmin;
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: #fff;
-    background: var(--ghost-accent-color);
-}
-
 
 
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    padding: 1vmin 4vmin;
+    padding-top: min(24px, 3.6vmin);
+    padding-bottom: min(24px, 3.6vmin);
     font-size: 1.6rem;
     line-height: 1.3em;
+    background-color: #fff;
+}
+
+.has-cover:not(.home-template) .gh-head {
+    background-color: var(--ghost-accent-color);
+    color: #fff;
+}
+
+.home-template.has-cover .gh-head {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: transparent;
     color: #fff;
     background: var(--ghost-accent-color);
     z-index: 2000;
 }
 
 .gh-head a {
-    color: inherit;
     text-decoration: none;
 }
 
 .gh-head-inner {
     display: grid;
-    grid-gap: 2.5vmin;
+    grid-gap: 40px;
     grid-template-columns: auto auto 1fr;
     grid-auto-flow: row dense;
 }
@@ -205,18 +306,28 @@ production stylesheet in assets/built/screen.css
     display: flex;
     align-items: center;
     height: 40px;
-    max-width: 200px;
-    text-align: center;
+    max-width: 400px;
     word-break: break-all;
 }
 
 .gh-head-logo {
     display: block;
-    padding: 10px 0;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1.2em;
+    font-weight: 800;
+    font-size: 2.6rem;
     letter-spacing: -0.02em;
+    color: inherit;
+}
+
+.gh-head-logo.no-image {
+    margin-top: -2px;
+}
+
+.has-cover .gh-head-logo {
+    color: #fff;
+}
+
+.no-logo .gh-head-logo {
+    display: none;
 }
 
 .gh-head-logo img {
@@ -230,7 +341,12 @@ production stylesheet in assets/built/screen.css
 .gh-head-menu {
     display: flex;
     align-items: center;
+    margin-top: 1px;
     font-weight: 500;
+}
+
+.no-logo .gh-head-menu {
+    margin-left: -40px;
 }
 
 .gh-head-menu .nav {
@@ -238,6 +354,7 @@ production stylesheet in assets/built/screen.css
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
+    gap: 32px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -249,82 +366,99 @@ production stylesheet in assets/built/screen.css
 }
 
 .gh-head-menu .nav li {
-    margin: 0 2.5vmin 0 0;
+    margin: 0;
     padding: 0;
 }
 
 .gh-head-menu .nav a {
     display: inline-block;
-    padding: 5px 0;
-    opacity: 0.8
+    line-height: 1.7;
+    color: inherit;
 }
 
 .gh-head-menu .nav a:hover {
-    opacity: 1;
+    opacity: 0.9;
 }
 
 
 /* Secondary Navigation
 /* ---------------------------------------------------------- */
 
+.gh-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.gh-social-link {
+    line-height: 0;
+    color: inherit;
+}
+
+.gh-social-link:hover {
+    opacity: 0.9;
+}
+
+.gh-social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
 .gh-head-actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 24px;
     list-style: none;
     text-align: right;
 }
 
-.gh-head-actions-list {
+.gh-head-button {
     display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     align-items: center;
-}
-
-.gh-head-actions-list a:not([class]) {
-    display: inline-block;
-    margin: 0 0 0 1.5vmin;
-    padding: 5px 0;
-}
-
-.gh-social {
-    margin: 0 1.5vmin 0 0;
-}
-
-.gh-social a {
-    opacity: 0.8
-}
-
-.gh-social a + a {
-    margin-left: 0.8rem;
-}
-
-.gh-social a:hover {
-    opacity: 1;
-}
-
-.gh-social svg {
-    height: 22px;
-    width: 22px;
-    fill: #fff;
-}
-
-.gh-social-facebook svg {
-    height: 20px;
-    width: 20px;
-}
-
-a.gh-head-button {
-    display: block;
-    padding: 8px 15px;
-    color: var(--color-darkgrey);
-    font-weight: 500;
-    letter-spacing: -0.015em;
+    padding: 8px 16px;
+    height: 40px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
     font-size: 1.5rem;
-    line-height: 1em;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--ghost-accent-color);
+}
+
+.has-cover .gh-head-button {
+    color: var(--color-darkgrey);
     background: #fff;
-    border-radius: 30px;
+}
+
+
+/* Search
+/* ---------------------------------------------------------- */
+
+.gh-search {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.gh-search:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+    .gh-search {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
+    }
 }
 
 
@@ -344,6 +478,10 @@ a.gh-head-button {
     justify-content: center;
     width: 33px;
     height: 33px;
+}
+
+.has-cover .gh-burger-box {
+    color: #fff;
 }
 
 .gh-burger-inner {
@@ -417,12 +555,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 /* ---------------------------------------------------------- */
 /* IDs needed to ensure sufficient specificity */
 
-@media (max-width: 900px) {
+@media (max-width: 991px) {
     .gh-burger {
         display: inline-block;
     }
     #gh-head {
-        transition: all 0.4s ease-out;
         overflow: hidden;
     }
     #gh-head .gh-head-inner {
@@ -456,24 +593,18 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         font-size: 3.6rem;
         line-height: 1.1em;
     }
-    #gh-head .gh-head-menu .nav li {
-        margin: 5px 0;
-    }
-    #gh-head .gh-head-menu .nav a {
-        padding: 8px 0;
-    }
     #gh-head .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 16px;
+        font-weight: 500;
     }
     #gh-head .gh-head-actions {
-        padding: 20px 0;
+        flex-direction: column-reverse;
         justify-content: center;
+        padding: 20px 0 32px;
         text-align: left;
-    }
-    #gh-head .gh-head-actions a {
-        margin: 0 10px;
     }
     /* Hide collapsed content */
     #gh-head .gh-head-actions,
@@ -533,6 +664,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-left: -2.5vmin;
 } */
 
+.has-cover.gh-head-open .gh-head {
+    background: var(--ghost-accent-color);
+}
+
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
@@ -540,17 +675,22 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-feed {
     position: relative;
     display: grid;
-    grid-gap: 4vmin;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 4vmin 0;
+    gap: 4.8vmin 4vmin;
+    grid-template-columns: repeat(6, 1fr);
+    padding: max(4.8vmin, 36px) 0 0;
 }
 
-@media (max-width: 1000px) {
+:is(.tag-template, .author-template) .post-feed {
+    margin-top: 4vmin;
+}
+
+@media (max-width: 991px) {
     .post-feed {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (max-width: 700px) {
+
+@media (max-width: 767px) {
     .post-feed {
         grid-template-columns: 1fr;
         grid-gap: 40px;
@@ -559,27 +699,65 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-card {
     position: relative;
-    flex: 1 1 301px;
+    grid-column: span 2;
     display: flex;
     flex-direction: column;
-    min-height: 220px;
     background-size: cover;
     word-break: break-word;
 }
 
 .post-card-image-link {
     position: relative;
-    display: block;
     overflow: hidden;
-    border-radius: 3px;
+    display: block;
+    margin-bottom: 32px;
+}
+
+.post-card-image-link::after {
+    content: "";
+    display: block;
+    padding-bottom: 55%;
+}
+
+.post-card[class*="post-access-"] .post-card-image-link::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+.post-card.keep-ratio[class*="post-access-"] .post-card-image-link::after {
+    position: absolute;
+    inset: 0;
+    padding-bottom: 0;
+}
+
+.post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image-link::after {
+    padding-bottom: 0;
 }
 
 .post-card-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
     background: var(--color-lightgrey) no-repeat center center;
-
     object-fit: cover;
+}
+
+.post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
+    position: static;
+}
+
+.post-card-access {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
 }
 
 .post-card-content-link {
@@ -592,10 +770,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     text-decoration: none;
 }
 
-.post-card-header {
-    margin: 20px 0 0;
-}
-
 .post-feed .no-image .post-card-content-link {
     padding: 0;
 }
@@ -604,23 +778,54 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-top: 0;
 }
 
-.post-card-primary-tag {
-    margin: 0 0 0.2em;
+.post-card-tags {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 10px;
+    color: var(--color-secondary-text);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    line-height: 1;
+}
+
+.post-card-featured {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-left: 18px;
     color: var(--ghost-accent-color);
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
+}
+
+.post-card-featured svg {
+    position: absolute;
+    left: 0;
 }
 
 .post-card-title {
-    margin: 0 0 0.4em;
-    font-size: 2.4rem;
-    transition: color 0.2s ease-in-out;
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 800;
+}
+
+.post-card-content-link:hover .post-card-title {
+    opacity: 0.9;
 }
 
 .no-image .post-card-title {
     margin-top: 0;
+}
+
+.has-serif-title .post-card-title {
+    font-family: var(--font-serif);
+    letter-spacing: -0.005em;
+}
+
+.post-card-title svg {
+    margin-top: -3px;
+    margin-left: -1px;
 }
 
 .post-card-content {
@@ -638,19 +843,41 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-bottom: 0.5em;
     display: -webkit-box;
     overflow-y: hidden;
+    margin-top: 12px;
+    max-width: 720px;
+    font-size: 1.6rem;
+    line-height: 1.5;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-word;
 }
 
+.has-sans-body .post-card-excerpt {
+    font-family: var(--font-sans);
+}
+
+.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
+    -webkit-line-clamp: 2;
+}
+
+:is(.tag-template, .author-template) .post-card-excerpt {
+    margin-top: 6px;
+}
+
 .post-card-meta {
     display: flex;
     align-items: center;
+    margin-top: 12px;
     padding: 0;
+    font-size: 1.3rem;
+    color: var(--color-secondary-text);
 }
 
-.author-profile-image,
-.avatar-wrapper {
+.post-card-meta .sep {
+    margin: 0 4px;
+}
+
+.author-profile-image {
     display: block;
     width: 100%;
     height: 100%;
@@ -658,11 +885,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     border-radius: 100%;
 
     object-fit: cover;
-}
-
-.post-card-meta .profile-image-wrapper,
-.post-card-meta .avatar-wrapper {
-    position: relative;
 }
 
 .author-list {
@@ -679,7 +901,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0;
     padding: 0;
 }
-
+/* 
 .static-avatar {
     display: block;
     overflow: hidden;
@@ -694,7 +916,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex: 1 1 50%;
     display: flex;
     flex-direction: column;
-    /* margin: 0 0 0 8px; */
     color: color-mod(var(--color-midgrey) l(+10%));
     font-size: 1.4rem;
     line-height: 1.2em;
@@ -742,7 +963,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .single-author-name {
     display: inline-block;
-}
+} */
 
 /* Special Styling for home page grid (below):
 
@@ -750,15 +971,14 @@ The first post in the list is styled to be bigger than the others and take over
 the full width of the grid to give it more emphasis. Wrapped in a media query to
 make sure this only happens on large viewports / desktop-ish devices.
 
- */
+*/
 
 @media (min-width: 1001px) {
     .post-card-large {
-        grid-column: 1 / span 3;
+        grid-column: span 6;
         display: grid;
         grid-gap: 4vmin;
-        grid-template-columns: 1fr 1fr 1fr;
-        min-height: 280px;
+        grid-template-columns: repeat(3, 1fr);
         border-top: 0;
     }
 
@@ -768,9 +988,16 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-image-link {
         position: relative;
-        grid-column: 1 / span 2;
+        grid-column: span 2;
         margin-bottom: 0;
-        min-height: 380px;
+    }
+
+    .post-card-large .post-card-content {
+        grid-column: span 1;
+    }
+
+    .post-card-large.no-image .post-card-content {
+        grid-column: span 2;
     }
 
     .post-card-large .post-card-image {
@@ -779,31 +1006,56 @@ make sure this only happens on large viewports / desktop-ish devices.
         height: 100%;
     }
 
-    .post-card-large .post-card-content {
-        justify-content: center;
+    .post-card-large .post-card-tags {
+        margin-bottom: 12px;
     }
 
     .post-card-large .post-card-title {
         margin-top: 0;
-        font-size: 3.2rem;
+        font-size: 4.4rem;
+        line-height: 1;
     }
 
-    .post-card-large .post-card-excerpt p {
-        margin-bottom: 1.5em;
-        font-size: 1.7rem;
-        line-height: 1.55em;
-        -webkit-line-clamp: 8;
-    }
-}
-
-
-@media (max-width: 500px) {
-    .post-card-title {
-        font-size: 1.9rem;
+    .post-card-large .post-card-excerpt {
+        margin-top: 16px;
     }
 
-    .post-card-excerpt {
-        font-size: 1.6rem;
+    .post-card-full {
+        grid-column: span 6;
+    }
+
+    .post-card-full .post-card-image-link {
+        margin-bottom: 40px;
+    }
+
+    .post-card-full .post-card-tags {
+        margin-bottom: 14px;
+    }
+
+    .post-card-full .post-card-title {
+        font-size: 6.4rem;
+        line-height: 0.95;
+    }
+
+    .post-card-full .post-card-excerpt {
+        margin-top: 20px;
+        font-size: 1.8rem;
+    }
+
+    .post-card-large + .post-card-large:nth-child(even) {
+        margin: 32px 0;
+    }
+
+    .post-card-large + .post-card-large:nth-child(even) .post-card-content {
+        order: -1;
+    }
+
+    .post-card.dynamic {
+        grid-column: span 3;
+    }
+
+    .post-card.dynamic .post-card-title {
+        font-size: 3rem;
     }
 }
 
@@ -812,46 +1064,63 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ---------------------------------------------------------- */
 
 .article {
-    padding: 8vmin 0;
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
     word-break: break-word;
 }
 
+.page-template .article {
+    padding-top: max(12vmin, 64px);
+}
+
 .article-header {
-    padding: 0 0 6vmin 0;
+    padding: 0 0 max(6.4vmin, 40px) 0;
+}
+
+.page-template .article-header {
+    padding-bottom: max(3.2vmin, 28px);
 }
 
 .article-tag {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 0 0.5rem;
-    color: var(--color-midgrey);
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 1.6rem;
 }
 
 .article-tag a {
-    color: var(--ghost-accent-color);
+    color: var(--color-secondary-text);
 }
 
 .article-title {
-    color: color-mod(var(--color-darkgrey) l(-5%));
+    margin-bottom: 0;
+    font-size: clamp(3.2rem, 5vw, 5.2rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-darkgrey);
+}
+
+.has-serif-title .article-title {
+    font-family: var(--font-serif);
 }
 
 .article-excerpt {
-    margin: 0 0 1rem;
+    margin-top: 20px;
+    max-width: 720px;
     font-size: 2rem;
-    line-height: 1.4em;
-    opacity: 0.6;
+    line-height: 1.45;
+    color: var(--color-darkgrey);
 }
 
 .gh-canvas .article-image {
     grid-column: main-start / main-end;
     width: 100%;
-    margin: 3vmin 0 0;
+    margin: max(6.4vmin, 40px) 0 0;
+}
+
+.image-full .article-image {
+    grid-column: full-start / full-end;
+}
+
+.image-small .article-image {
+    grid-column: main-start / main-end;
 }
 
 .gh-canvas .article-image img {
@@ -861,9 +1130,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .article-excerpt {
-        font-size: 1.8rem;
+        margin-top: 14px;
+        font-size: 1.7rem;
     }
 }
 
@@ -880,15 +1150,16 @@ use it for applying any other styles. */
     display: grid;
     grid-template-columns:
         [full-start]
-        minmax(4vmin, auto)
+        minmax(max(4vmin, 20px), auto)
             [wide-start]
             minmax(auto, 240px)
                 [main-start]
-                    min(800px, calc(100% - 8vw))
+                    /* min(800px, calc(100% - 8vw)) */
+                    min(720px, calc(100% - max(8vmin, 40px)))
                 [main-end]
             minmax(auto, 240px)
             [wide-end]
-        minmax(4vmin, auto)
+        minmax(max(4vmin, 20px), auto)
         [full-end]
     ;
 }
@@ -919,7 +1190,7 @@ headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
 .gh-content > * + * {
-    margin-top: 4vmin;
+    margin-top: max(3.2vmin, 24px);
     margin-bottom: 0;
 }
 
@@ -927,6 +1198,10 @@ headings, text, images and lists. We deal with cards lower down. */
 .gh-content > [id] {
     margin: 0;
     color: var(--color-darkgrey);
+}
+
+.has-serif-title .gh-content > [id] {
+    font-family: var(--font-serif);
 }
 
 /* Add back a top margin to all headings, unless a heading
@@ -944,11 +1219,11 @@ is the very first element in the post content */
 .gh-content > hr,
 .gh-content > blockquote {
     position: relative;
-    margin-top: 4vmin;
+    margin-top: max(4.8vmin, 32px);
 }
 .gh-content > hr + *,
 .gh-content > blockquote + * {
-    margin-top: 4vmin !important;
+    margin-top: max(4.8vmin, 32px) !important;
 }
 
 /* Now the content typography styles */
@@ -958,7 +1233,7 @@ is the very first element in the post content */
     word-break: break-word;
 }
 
-.gh-content > blockquote,
+.gh-content > blockquote:not([class]),
 .gh-content > ol,
 .gh-content > ul,
 .gh-content > dl,
@@ -970,19 +1245,61 @@ is the very first element in the post content */
     margin-top: 2vmin;
 }
 
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.6em;
+}
+
+.gh-content .kg-product-card .kg-product-card-description > p,
+.gh-content .kg-product-card .kg-product-card-description > ol,
+.gh-content .kg-product-card .kg-product-card-description > ul {
+    font-size: 1.7rem;
+    line-height: 1.6em;
+}
+
+.gh-content .kg-callout-card .kg-callout-emoji {
+    font-size: 2.1rem;
+    line-height: 1.4em;
+}
+
+.gh-content .kg-toggle-card .kg-toggle-heading-text {
+    font-size: 2.0rem;
+}
+
+.has-sans-body .gh-content > blockquote,
+.has-sans-body .gh-content > ol,
+.has-sans-body .gh-content > ul,
+.has-sans-body .gh-content > dl,
+.has-sans-body .gh-content > p,
+.has-sans-body .gh-content .kg-callout-card .kg-callout-text,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-family: var(--font-sans);
+}
+
 .gh-content > ul,
 .gh-content > ol,
-.gh-content > dl {
+.gh-content > dl,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-product-card .kg-product-card-description > ol,
+.gh-content .kg-product-card .kg-product-card-description > ul {
     padding-left: 1.9em;
 }
 
-.gh-content > blockquote {
+.gh-content > blockquote:not([class]) {
     position: relative;
     font-style: italic;
     padding: 0;
 }
 
-.gh-content > blockquote::before {
+.gh-content > blockquote:not([class])::before {
     content: "";
     position: absolute;
     left: -1.5em;
@@ -994,16 +1311,26 @@ is the very first element in the post content */
 
 
 @media (max-width: 650px) {
-    .gh-content blockquote,
-    .gh-content ol,
-    .gh-content ul,
-    .gh-content dl,
-    .gh-content p {
-        font-size: 1.7rem;
+    .gh-content > blockquote:not([class]),
+    .gh-content > ol,
+    .gh-content > ul,
+    .gh-content > dl,
+    .gh-content > p,
+    .gh-content .kg-callout-card .kg-callout-text,
+    .gh-content .kg-toggle-card .kg-toggle-content > ol,
+    .gh-content .kg-toggle-card .kg-toggle-content > ul,
+    .gh-content .kg-toggle-card .kg-toggle-content > p {
+        font-size: 1.8rem;
     }
 
-    .gh-content blockquote::before {
-        left: -4vmin;
+    .gh-content .kg-product-card .kg-product-card-description > p,
+    .gh-content .kg-product-card .kg-product-card-description > ol,
+    .gh-content .kg-product-card .kg-product-card-description > ul {
+        font-size: 1.6rem;
+    }
+
+    .gh-content blockquote:not([class])::before {
+        left: min(-4vmin, -20px);
     }
 }
 
@@ -1040,13 +1367,41 @@ except for when immediately preceeded by a heading */
     margin: auto;
 }
 
+.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
+    font-family: var(--font-serif);
+}
+
+.gh-content .kg-callout-card-accent a {
+    text-decoration: underline;
+}
+
+.kg-blockquote-alt {
+    font-family: var(--font-serif);
+    color: var(--color-midgrey);
+}
+
+.has-sans-body .kg-blockquote-alt {
+    font-family: var(--font-sans);
+}
+
+.kg-card.kg-header-card.kg-style-dark {
+    background: var(--color-darkgrey);
+}
+
+.kg-header-card.kg-style-light h2.kg-header-card-header {
+    color: color-mod(var(--color-darkgrey) l(-5%));
+}
+
+.has-serif-title .kg-header-card h2.kg-header-card-header {
+    font-family: var(--font-serif);
+}
+
 
 /* Captions */
 figcaption {
     padding: 1.5rem 1.5rem 0;
     text-align: center;
     color: rgba(0,0,0,0.5);
-    font-weight: 600;
     font-size: 1.3rem;
     line-height: 1.4em;
 }
@@ -1054,7 +1409,7 @@ figcaption strong {
     color: rgba(0,0,0,0.8);
 }
 figcaption a {
-    color: var(--ghost-accent-color);
+    text-decoration: underline;
 }
 
 
@@ -1068,162 +1423,6 @@ iframe.instagram-media {
 
 iframe.instagram-media + script + :not([id]) {
     margin-top: 5vmin;
-}
-
-
-/* Galleries
-/* ---------------------------------------------------------- */
-
-/* When there galleries are mixed with images, reduce margin
-between them, so it looks like 1 big gallery */
-.kg-image-card + .kg-gallery-card,
-.kg-gallery-card + .kg-image-card,
-.kg-gallery-card + .kg-gallery-card {
-    margin-top: 0.75em;
-}
-
-.kg-image-card.kg-card-hascaption + .kg-gallery-card,
-.kg-gallery-card.kg-card-hascaption + .kg-image-card,
-.kg-gallery-card.kg-card-hascaption + .kg-gallery-card {
-    margin-top: 1.75em;
-}
-
-.kg-gallery-container {
-    position: relative;
-}
-
-.kg-gallery-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.kg-gallery-image img {
-    display: block;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.kg-gallery-row:not(:first-of-type) {
-    margin: 0.75em 0 0 0;
-}
-
-.kg-gallery-image:not(:first-of-type) {
-    margin: 0 0 0 0.75em;
-}
-
-
-/* Bookmark Cards
-/* ---------------------------------------------------------- */
-
-/* These are styled links with structured data, similar to a
-Twitter card. These styles roughly match what you see in the
-Ghost editor. */
-
-.kg-bookmark-card,
-.kg-bookmark-publisher {
-    position: relative;
-    width: 100%;
-}
-
-.kg-bookmark-container,
-.kg-bookmark-container:hover {
-    display: flex;
-    color: currentColor;
-    font-family: var(--font-sans-serif);
-    text-decoration: none !important;
-    background: rgba(255,255,255,0.6);
-    border-radius: 5px;
-    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-}
-
-.kg-bookmark-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 100%;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 20px;
-}
-
-.kg-bookmark-title {
-    font-size: 1.5rem;
-    line-height: 1.4em;
-    font-weight: 600;
-    color: #15171A;
-}
-
-.kg-bookmark-description {
-    display: -webkit-box;
-    font-size: 1.4rem;
-    line-height: 1.5em;
-    margin-top: 3px;
-    color: #626d79;
-    font-weight: 400;
-    max-height: 44px;
-    overflow-y: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-
-.kg-bookmark-metadata {
-    display: flex;
-    align-items: center;
-    margin-top: 22px;
-    width: 100%;
-    color: #394047;
-    font-size: 1.4rem;
-    font-weight: 500;
-}
-
-.kg-bookmark-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 6px;
-}
-
-.kg-bookmark-author,
-.kg-bookmark-publisher {
-    display: inline;
-}
-
-.kg-bookmark-publisher {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 240px;
-    white-space: nowrap;
-    display: block;
-    line-height: 1.65em;
-}
-
-.kg-bookmark-metadata > span:nth-of-type(2) {
-    color: #626d79;
-    font-weight: 400;
-}
-
-.kg-bookmark-metadata > span:nth-of-type(2):before {
-    content: "•";
-    color: #394047;
-    margin: 0 6px;
-}
-
-.kg-bookmark-thumbnail {
-    position: relative;
-    flex-grow: 1;
-    min-width: 33%;
-}
-
-.kg-bookmark-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 0 4px 4px 0;
 }
 
 
@@ -1272,21 +1471,20 @@ Ghost editor. */
 }
 
 /* Tables */
-.post-full-content table {
+.gh-content table {
     display: inline-block;
     overflow-x: auto;
-    margin: 0.5em 0 2.5em;
     max-width: 100%;
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: var(--font-sans-serif);
+    font-family: var(--font-sans);
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
 }
 
-.post-full-content table {
+.gh-content table {
     -webkit-overflow-scrolling: touch;
     background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
     background-attachment: scroll, scroll;
@@ -1294,20 +1492,20 @@ Ghost editor. */
     background-repeat: no-repeat;
 }
 
-.post-full-content table td:first-child {
+.gh-content table td:first-child {
     background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.post-full-content table td:last-child {
+.gh-content table td:last-child {
     background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-position: 100% 0;
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.post-full-content table th {
+.gh-content table th {
     color: var(--color-darkgrey);
     font-size: 1.2rem;
     font-weight: 700;
@@ -1317,8 +1515,8 @@ Ghost editor. */
     background-color: color-mod(var(--color-wash) l(+4%));
 }
 
-.post-full-content table th,
-.post-full-content table td {
+.gh-content table th,
+.gh-content table td {
     padding: 6px 12px;
     border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
 }
@@ -1330,7 +1528,7 @@ Ghost editor. */
 .article-byline {
     display: flex;
     justify-content: space-between;
-    margin: 15px 0 0;
+    margin: min(24px, 5.6vmin) 0 0;
 }
 
 .article-byline-content {
@@ -1341,55 +1539,49 @@ Ghost editor. */
 
 .article-byline-content .author-list {
     justify-content: flex-start;
-    padding: 0 12px 0 0;
+    padding: 0 14px 0 0;
 }
 
 .article-byline-meta {
-    color: color-mod(var(--color-midgrey));
+    color: var(--color-secondary-text);
     font-size: 1.4rem;
     line-height: 1.2em;
 }
 
-.article-byline-meta h4 {
-    margin: 0 0 3px;
-    font-size: 1.6rem;
+.article-byline-meta .author-name {
+    margin: 0 0 6px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0;
 }
 
 .article-byline-meta .bull {
     display: inline-block;
     margin: 0 2px;
-    opacity: 0.6;
 }
 
 .author-avatar {
     display: block;
     overflow: hidden;
     margin: 0 -4px;
-    width: 50px;
-    height: 50px;
+    width: min(56px, 13.6vmin);
+    height: min(56px, 13.6vmin);
     border: #fff 2px solid;
-    border-radius: 100%;
-    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
-}
-
-.basic-info .avatar-wrapper {
-    position: relative;
-    margin: 0;
-    width: 60px;
-    height: 60px;
-    border: none;
-    background: rgba(229, 239, 245, 0.1);
-}
-
-.basic-info .avatar-wrapper svg {
-    margin: 0;
-    width: 60px;
-    height: 60px;
-    opacity: 0.15;
+    border-radius: 50%;
+    background-color: var(--color-border);
 }
 
 .page-template .article-title {
     margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .article-byline-content .author-list {
+        padding-right: 12px;
+    }
+    .article-byline-meta .author-name {
+        margin-bottom: 4px;
+    }
 }
 
 
@@ -1398,16 +1590,13 @@ Ghost editor. */
 
 .footer-cta {
     position: relative;
-    padding: 5vmin 2vmin 6vmin;
-    color: #fff;
     text-align: center;
-    background: var(--color-darkgrey);
 }
 
-/* Increases the default h2 size by 15%, for small and large screens */
-.footer-cta h2 {
-    margin: 0 0 30px;
-    font-size: 3.2rem;
+.footer-cta-title {
+    margin: 0 0 min(24px, 6.4vmin);
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    font-weight: 800;
 }
 
 .footer-cta div {    
@@ -1430,19 +1619,27 @@ Ghost editor. */
     width: 100%;
     max-width: 500px;
     padding: 5px 5px 5px 15px;
-    font-size: 1.8rem;
-    color: var(--color-midgrey);
+    font-size: 1.7rem;
+    color: var(--color-secondary-text);
     background: #fff;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+.footer-cta-button:hover {
+    border-color: color-mod(var(--color-border) l(-12%));
 }
 
 .footer-cta-button span {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 9px 15px;
     color: #fff;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
     background: var(--ghost-accent-color);
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 
@@ -1450,47 +1647,37 @@ Ghost editor. */
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
-    width: 100%;
-    padding: 4vmin;
-    margin: 0 auto -40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: color-mod(var(--color-darkgrey) l(-5%));
+    margin-top: 2.4vmin;
+}
+
+.footer-cta + .read-more-wrap {
+    margin-top: max(12vmin, 72px);
 }
 
 .read-more {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 4vmin;
 }
 
-.read-more .post-card-title {
-    color: #fff;
-    opacity: 0.8;
+.read-more .post-card-tags {
+    display: none;
 }
-
-.read-more .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.read-more .post-card-byline-content a {
-    color: #fff;
-}
-
 
 @media (max-width: 1000px) {
     .read-more {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
     }
-    .read-more article:nth-child(3) {
+    .read-more .post-card:nth-child(3) {
         display: none;
     }
 }
 
 @media (max-width: 700px) {
     .read-more {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
-    .read-more article:nth-child(2) {
+    .read-more .post-card:nth-child(2) {
         display: none;
     }
 }
@@ -1499,94 +1686,41 @@ Ghost editor. */
 /* 8. Author Template
 /* ---------------------------------------------------------- */
 
-.author-template .posts {
-    position: relative;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr;
-    grid-gap: 4vmin;
-}
-
-.author-template .posts .post-feed {
-    grid-column: 2 / 4;
-    grid-template-columns: 1fr 1fr;
-}
-
-.author-profile {
-    padding: 4vmin 0;
-}
-
-.author-profile-content {
-    height: auto;
-    position: sticky;
-    top: 4vmin;
-    font-size: 1.4rem;
-    line-height:  1.4em;
-}
-
 .author-profile-pic {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     margin: 0 0 2rem;
     background: color-mod(var(--color-lightgrey) l(+10%));
     border-radius: 50%;
 }
 
-.author-profile h1 {
-    margin: 0 0 0.3em;
-    font-size: 2rem;
-}
-
-.author-profile p {
-    margin: 0 0 1.5em;
-    color: color-mod(var(--color-midgrey) l(-8%));
+.author-profile-footer {
+    margin-top: 16px;
 }
 
 .author-profile-location {
-    margin: 0 0 1.5em;
     font-weight: 700;
 }
 
+.author-profile-meta {
+    display: flex;
+    gap: 10px;
+}
+
 .author-profile-social-link {
-    display: block;
-    padding: 0 0 5px;
     font-size: 1.3rem;
-    color: color-mod(var(--color-midgrey) l(-8%));
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 100%;
-    white-space: nowrap;
+    color: var(--color-secondary-text);
 }
 
 .author-profile-social-link:hover {
     color: var(--color-darkgrey);
 }
 
-@media (max-width: 900px) {
-    .author-template .posts .post-feed {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 650px) {
-    .author-template .posts {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-    }
-    .author-template .posts .post-feed {
-        grid-column: 1 / auto;
-    }
-    .author-profile {
-        padding-right: 0;
-    }
-    .author-profile-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.author-profile-social-link svg {
+    width: 16px;
+    height: 16px;
 }
 
 
@@ -1607,7 +1741,7 @@ Ghost editor. */
 /* ---------------------------------------------------------- */
 
 .error-content {
-    padding: 14vw 4vw 6vw;
+    padding: 14vw 4vw 2vw;
 }
 
 .error-message {
@@ -1617,7 +1751,6 @@ Ghost editor. */
 
 .error-code {
     margin: 0;
-    color: var(--ghost-accent-color);
     font-size: 12vw;
     line-height: 1em;
     letter-spacing: -5px;
@@ -1625,9 +1758,10 @@ Ghost editor. */
 
 .error-description {
     margin: 0;
-    color: var(--color-midgrey);
+    color: var(--color-secondary-text);
     font-size: 3.2rem;
     line-height: 1.3em;
+    letter-spacing: -0.005em;
     font-weight: 400;
 }
 
@@ -1675,8 +1809,9 @@ Ghost editor. */
 
 .site-footer {
     position: relative;
-    margin: 40px 0 0 0;
-    padding: 20px 4vmin 20px;
+    margin: max(12vmin, 64px) 0 0 0;
+    padding-top: 48px;
+    padding-bottom: 140px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
@@ -1738,7 +1873,7 @@ Ghost editor. */
     border-radius: 100%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .site-footer .inner {
         max-width: 500px;
         grid-template-columns: 1fr;
@@ -1750,22 +1885,14 @@ Ghost editor. */
         color: #fff;
         font-size: 1.5rem;
     }
+    .site-footer .copyright {
+        margin-bottom: 16px;
+    }
 }
 
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
-
-/* If you prefer a dark color scheme, you can enable dark mode
-by adding the following code to the Head section of "Code Injection"
-settings inside: Ghost Admin > Settings > Advanced
-
-<script>document.documentElement.classList.add('dark-mode');</script>
-
-Or you can just edit default.hbs and add the .dark-mode class directly
-to the html tag on the very first line of the file.
-
- */
 
 html.dark-mode body {
     color: rgba(255, 255, 255, 0.75);
@@ -1776,16 +1903,24 @@ html.dark-mode img {
     opacity: 0.9;
 }
 
-html.dark-mode .post-card,
-html.dark-mode .post-card:hover {
-    border-bottom-color: color-mod(var(--color-darkmode) l(+8%));
+html.dark-mode kbd {
+    background: color-mod(var(--color-darkmode) l(+5%));
 }
 
-html.dark-mode .post-card-byline-content a {
-    color: rgba(255, 255, 255, 0.75);
+html.dark-mode figcaption a {
+    color: #fff;
 }
 
-html.dark-mode .post-card-byline-content a:hover {
+html.dark-mode .gh-head {
+    background: var(--color-darkmode);
+    color: #fff;
+}
+
+html.dark-mode .gh-burger-box {
+    color: #fff;
+}
+
+html.dark-mode .site-header-content {
     color: #fff;
 }
 
@@ -1793,39 +1928,48 @@ html.dark-mode .post-card-image {
     background: var(--color-darkmode);
 }
 
+html.dark-mode :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content) {
+    color: color-mod(var(--color-secondary-text) l(-22%));
+}
+
+html.dark-mode .post-card-featured {
+    color: #fff;
+}
+
 html.dark-mode .post-card-title {
-    color: rgba(255, 255, 255, 0.85);
+    color: #fff;
 }
 
 html.dark-mode .post-card-excerpt {
-    color: color-mod(var(--color-midgrey) l(+10%));
-}
-
-html.dark-mode .post-full-content {
-    background: var(--color-darkmode);
+    color: var(--color-secondary-text);
 }
 
 html.dark-mode .article-title {
-    color: rgba(255, 255, 255, 0.9);
+    color: #fff;
 }
 
 html.dark-mode .article-excerpt {
-    color: color-mod(var(--color-midgrey) l(+10%));
+    color: var(--color-secondary-text);
 }
 
 html.dark-mode .post-full-image {
     background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .article-byline {
-    border-top-color: color-mod(var(--color-darkmode) l(+15%));
+html.dark-mode .author-avatar {
+    border-color: var(--color-darkmode);
+    background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .article-byline-meta h4 a {
-    color: rgba(255, 255, 255, 0.75);
+html.dark-mode .author-profile-image {
+    opacity: 1;
 }
 
-html.dark-mode .article-byline-meta h4 a:hover {
+html.dark-mode .author-profile-image path {
+    fill: var(--color-darkmode);
+}
+
+html.dark-mode .article-byline-meta .author-name a {
     color: #fff;
 }
 
@@ -1833,29 +1977,33 @@ html.dark-mode .no-image .author-social-link a {
     color: rgba(255, 255, 255, 0.75);
 }
 
-html.dark-mode .gh-content h1,
-html.dark-mode .gh-content h2,
-html.dark-mode .gh-content h3,
-html.dark-mode .gh-content h4,
-html.dark-mode .gh-content h5,
-html.dark-mode .gh-content h6 {
+html.dark-mode .gh-content > [id] {
     color: rgba(255, 255, 255, 0.9);
 }
 
-html.dark-mode .post-full-content a {
-    color: #fff;
-    box-shadow: inset 0 -1px 0 #fff;
+html.dark-mode .gh-content pre {
+    background: color-mod(var(--color-darkgrey) l(-8%));
 }
 
-html.dark-mode .post-full-content strong {
+html.dark-mode .gh-content :not(pre) > code {
+    background: color-mod(var(--color-darkgrey) l(+6%));
+    border-color: color-mod(var(--color-darkmode) l(+8%));
+    color: var(--color-wash);
+}
+
+html.dark-mode .gh-content a:not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button) {
     color: #fff;
 }
 
-html.dark-mode .post-full-content em {
+html.dark-mode .gh-content strong {
     color: #fff;
 }
 
-html.dark-mode .post-full-content code {
+html.dark-mode .gh-content em {
+    color: #fff;
+}
+
+html.dark-mode .gh-content code {
     color: #fff;
     background: #000;
 }
@@ -1864,53 +2012,35 @@ html.dark-mode hr {
     border-top-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .post-full-content hr:after {
+html.dark-mode .gh-content hr:after {
     background: color-mod(var(--color-darkmode) l(+8%));
     box-shadow: var(--color-darkmode) 0 0 0 5px;
 }
 
-html.dark-mode .gh-content figcaption {
+html.dark-mode figcaption {
     color: rgba(255, 255, 255, 0.6);
 }
 
-html.dark-mode .post-full-content table td:first-child {
+html.dark-mode .gh-content table td:first-child {
     background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .post-full-content table td:last-child {
+html.dark-mode .gh-content table td:last-child {
     background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .post-full-content table th {
+html.dark-mode .gh-content table th {
     color: rgba(255, 255, 255, 0.85);
     background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .post-full-content table th,
-html.dark-mode .post-full-content table td {
+html.dark-mode .gh-content table th,
+html.dark-mode .gh-content table td {
     border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
 }
 
-html.dark-mode .post-full-content .kg-bookmark-container,
-html.dark-mode .post-full-content .kg-bookmark-container:hover {
-    color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 0 1px rgba(255,255,255,0.9);
-}
-
-html.dark-mode .post-full-content input {
+html.dark-mode .gh-content input {
     color: color-mod(var(--color-midgrey) l(-30%));
-}
-
-html.dark-mode .kg-bookmark-title {
-    color: #fff;
-}
-
-html.dark-mode .kg-bookmark-description {
-    color: rgba(255, 255, 255, 0.75);
-}
-
-html.dark-mode .kg-bookmark-metadata {
-    color: rgba(255, 255, 255, 0.75);
 }
 
 html.dark-mode .site-archive-header .no-image {
@@ -1918,40 +2048,194 @@ html.dark-mode .site-archive-header .no-image {
     background: var(--color-darkmode);
 }
 
-html.dark-mode .subscribe-form {
-    border: none;
-    background: linear-gradient(color-mod(var(--color-darkmode) l(-6%)), color-mod(var(--color-darkmode) l(-3%)));
+html.dark-mode .kg-header-card.kg-style-dark {
+    background: color-mod(var(--color-darkgrey) l(-5%));
 }
 
-html.dark-mode .subscribe-form-title {
-    color: rgba(255, 255, 255, 0.9);
+html.dark-mode .kg-header-card.kg-style-light {
+    background: color-mod(var(--color-darkgrey) l(+5%));
 }
 
-html.dark-mode .subscribe-form p {
-    color: rgba(255, 255, 255, 0.7);
+html.dark-mode .kg-header-card h2.kg-header-card-header,
+html.dark-mode .kg-header-card h3.kg-header-card-subheader {
+    color: #fff;
 }
 
-html.dark-mode .subscribe-email {
-    border-color: color-mod(var(--color-darkmode) l(+6%));
-    color: rgba(255, 255, 255, 0.9);
-    background: color-mod(var(--color-darkmode) l(+3%));
+html.dark-mode .footer-cta-title {
+    color: #fff;
 }
 
-html.dark-mode .subscribe-email:focus {
-    border-color: color-mod(var(--color-darkmode) l(+25%));
-}
+@media (prefers-color-scheme: dark) {
+    html.auto-color body {
+        color: rgba(255, 255, 255, 0.75);
+        background: var(--color-darkmode);
+    }
+    
+    html.auto-color img {
+        opacity: 0.9;
+    }
+    
+    html.auto-color kbd {
+        background: color-mod(var(--color-darkmode) l(+5%));
+    }
+    
+    html.auto-color figcaption a {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-head {
+        background: var(--color-darkmode);
+        color: #fff;
+    }
+    
+    html.auto-color .gh-burger-box {
+        color: #fff;
+    }
+    
+    html.auto-color .site-header-content {
+        color: #fff;
+    }
+    
+    html.auto-color .post-card-image {
+        background: var(--color-darkmode);
+    }
+    
+    html.auto-color :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content) {
+        color: color-mod(var(--color-secondary-text) l(-22%));
+    }
+    
+    html.auto-color .post-card-featured {
+        color: #fff;
+    }
+    
+    html.auto-color .post-card-title {
+        color: #fff;
+    }
+    
+    html.auto-color .post-card-excerpt {
+        color: var(--color-secondary-text);
+    }
+    
+    html.auto-color .article-title {
+        color: #fff;
+    }
+    
+    html.auto-color .article-excerpt {
+        color: var(--color-secondary-text);
+    }
+    
+    html.auto-color .post-full-image {
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
 
-html.dark-mode .subscribe-form button {
-    opacity: 0.9;
-}
-
-html.dark-mode .subscribe-form .invalid .message-error,
-html.dark-mode .subscribe-form .error .message-error {
-    color: color-mod(var(--color-red) l(+5%) s(-5%));
-}
-
-html.dark-mode .subscribe-form .success .message-success {
-    color: color-mod(var(--color-green) l(+5%) s(-5%));
+    html.auto-color .author-avatar {
+        border-color: var(--color-darkmode);
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+    
+    html.auto-color .author-profile-image {
+        opacity: 1;
+    }
+    
+    html.auto-color .author-profile-image path {
+        fill: var(--color-darkmode);
+    }
+    
+    html.auto-color .article-byline-meta .author-name a {
+        color: #fff;
+    }
+    
+    html.auto-color .no-image .author-social-link a {
+        color: rgba(255, 255, 255, 0.75);
+    }
+    
+    html.auto-color .gh-content > [id] {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    html.auto-color .gh-content pre {
+        background: color-mod(var(--color-darkgrey) l(-8%));
+    }
+    
+    html.auto-color .gh-content :not(pre) > code {
+        background: color-mod(var(--color-darkgrey) l(+6%));
+        border-color: color-mod(var(--color-darkmode) l(+8%));
+        color: var(--color-wash);
+    }
+    
+    html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button) {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-content strong {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-content em {
+        color: #fff;
+    }
+    
+    html.auto-color .gh-content code {
+        color: #fff;
+        background: #000;
+    }
+    
+    html.auto-color hr {
+        border-top-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+    
+    html.auto-color .gh-content hr:after {
+        background: color-mod(var(--color-darkmode) l(+8%));
+        box-shadow: var(--color-darkmode) 0 0 0 5px;
+    }
+    
+    html.auto-color figcaption {
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    html.auto-color .gh-content table td:first-child {
+        background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
+    }
+    
+    html.auto-color .gh-content table td:last-child {
+        background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
+    }
+    
+    html.auto-color .gh-content table th {
+        color: rgba(255, 255, 255, 0.85);
+        background-color: color-mod(var(--color-darkmode) l(+8%));
+    }
+    
+    html.auto-color .gh-content table th,
+    html.auto-color .gh-content table td {
+        border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
+    }
+    
+    html.auto-color .gh-content input {
+        color: color-mod(var(--color-midgrey) l(-30%));
+    }
+    
+    html.auto-color .site-archive-header .no-image {
+        color: rgba(255, 255, 255, 0.9);
+        background: var(--color-darkmode);
+    }
+    
+    html.auto-color .kg-header-card.kg-style-dark {
+        background: color-mod(var(--color-darkgrey) l(-5%));
+    }
+    
+    html.auto-color .kg-header-card.kg-style-light {
+        background: color-mod(var(--color-darkgrey) l(+5%));
+    }
+    
+    html.auto-color .kg-header-card h2.kg-header-card-header,
+    html.auto-color .kg-header-card h3.kg-header-card-subheader {
+        color: #fff;
+    }
+    
+    html.auto-color .footer-cta-title {
+        color: #fff;
+    }
 }
 
 /*

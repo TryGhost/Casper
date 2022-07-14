@@ -2,10 +2,9 @@
     "name": "casper",
     "description": "A clean, minimal default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
-    "version": "4.1.0",
+    "version": "5.2.0",
     "engines": {
-        "ghost": ">=4.0.0",
-        "ghost-api": "v4"
+        "ghost": ">=5.0.0"
     },
     "license": "MIT",
     "screenshots": {
@@ -50,7 +49,7 @@
         "autoprefixer": "10.2.5",
         "beeper": "2.1.0",
         "cssnano": "4.1.10",
-        "gscan": "4.0.0",
+        "gscan": "4.22.0",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
@@ -86,6 +85,85 @@
             },
             "xl": {
                 "width": 2000
+            }
+        },
+        "card_assets": true,
+        "custom": {
+            "title_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Modern sans-serif"
+            },
+            "body_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Elegant serif"
+            },
+            "show_publication_cover": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "header_style": {
+                "type": "select",
+                "options": [
+                    "Center aligned",
+                    "Left aligned",
+                    "Hidden"
+                ],
+                "default": "Center aligned",
+                "group": "homepage"
+            },
+            "show_logo_in_navigation": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
+            },
+            "feed_layout": {
+                "type": "select",
+                "options": [
+                    "Classic",
+                    "Grid",
+                    "List"
+                ],
+                "default": "Classic",
+                "group": "homepage"
+            },
+            "color_scheme": {
+                "type": "select",
+                "options": [
+                    "Light",
+                    "Dark",
+                    "Auto"
+                ],
+                "default": "Light"
+            },
+            "post_image_style": {
+                "type": "select",
+                "options": [
+                    "Wide",
+                    "Full",
+                    "Small",
+                    "Hidden"
+                ],
+                "default": "Wide",
+                "group": "post"
+            },
+            "email_signup_text": {
+                "type": "text",
+                "default": "Sign up for more like this.",
+                "group": "post"
+            },
+            "show_recent_posts_footer": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
             }
         }
     },
