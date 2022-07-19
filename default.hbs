@@ -32,16 +32,20 @@
                         {{@site.title}}
                     {{/if}}
                 </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
-                </a>
+                <div class="gh-head-brand-wrapper">
+                    <button class="gh-search" data-ghost-search>{{> "icons/search"}}</button>
+                    <a class="gh-burger" role="button">
+                        <div class="gh-burger-box">
+                            <div class="gh-burger-inner"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="gh-head-menu">
                 {{navigation}}
             </div>
             <div class="gh-head-actions">
+                <button class="gh-search" data-ghost-search>{{> "icons/search"}}</button>
                 <div class="gh-social">
                     {{#if @site.facebook}}
                         <a class="gh-social-link gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
