@@ -2,6 +2,29 @@
 
 A custom implementation of the Casper theme for use on my personal blog [jector.io](https://jector.io/)
 
+# Custom changes
+
+> All changes can be found by searching for content enclosed within `CUSTOM.CHANGE` and `CUSTOM.CHANGE.END` comments
+
+1. Add custom icons under `/partials/icons/`
+   - `box.hbs`
+   - `telegram.hbs`
+   - `arrow-right-c-f.hbs`
+   - `arrow-right.hbs`
+   - `collection.hbs`
+   - `github.hbs`
+   - `images.hbs`
+   - `notes.hbs`
+   - `comments.hbs`
+2. Remove footer subscribe promotion box from /post.hbs
+3. Add special social links to header (Telegram & Github)
+4. Change top subscribe button to `Releases` using `collection.hbs`
+5. Change `screens.css`
+   - Round off featured image borders
+   - ...
+6. Add subscribe button in footer
+7. Change footer right message to `Powered by No Coffee`
+
 <!--
 The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
 
