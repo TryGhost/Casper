@@ -1,5 +1,8 @@
-# Casper
+# Casper-C
 
+A custom implementation of the Casper theme for use on my personal blog [jector.io](https://jector.io/)
+
+<!--
 The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
 
 &nbsp;
@@ -63,6 +66,7 @@ Casper uses inline SVG icons, included via Handlebars partials. You can find all
 
 You can add your own SVG icons in the same manner.
 
+-->
 
 # Copyright & License
 
