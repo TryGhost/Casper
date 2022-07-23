@@ -63,13 +63,9 @@
                     <a class="gh-social-link" href="https://github.com/nitrojector" title="GitHub" target="_blank" rel="noopener">{{> "icons/github"}}</a>
                     {{!-- CUSTOM.CHANGE.END --}}
                 </div>
-                {{#if @site.members_enabled}}
-                    {{#unless @member}}
-                        <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
-                    {{else}}
-                        <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
-                    {{/unless}}
-                {{/if}}
+                    {{!-- CUSTOM.CHANGE: Changed subscribe button to release --}}
+                    <a class="gh-head-button" href="/releases" rel="noopener">{{> "icons/collection"}}&nbsp;Releases</a>
+                    {{!-- CUSTOM.CHANGE.END --}}
             </div>
         </nav>
     </header>
@@ -86,7 +82,16 @@
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+            {{!-- <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div> --}}
+            {{!-- CUSTOM.CHANGE: Changed footer --}}
+            <div><a>Powered by No Coffee</a></div>
+            <br>
+            {{#unless @member}}
+                <a href="#/portal/signup" style="text-align: center;" data-portal="signup">Subscribe {{> "icons/arrow-right-c-f"}}</a>
+            {{else}}
+                <a href="#/portal/account" style="text-align: center;" data-portal="account">My Account {{> "icons/arrow-right-c-f"}}</a>
+            {{/unless}}
+            {{!-- CUSTOM.CHANGE.END --}}
         </div>
     </footer>
 
