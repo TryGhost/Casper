@@ -54,7 +54,7 @@
         "gulp-concat": "^2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "8.0.0",
-        "gulp-uglify": "3.0.2",
+        "gulp-terser": "2.0.1",
         "gulp-zip": "5.0.1",
         "postcss-color-function": "4.1.0",
         "postcss-custom-properties": "9.0.2",
