@@ -1595,8 +1595,6 @@ iframe.instagram-media + script + :not([id]) {
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: 32px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--color-lightgrey);
     width: 100%;
     max-width: 720px;
 }
