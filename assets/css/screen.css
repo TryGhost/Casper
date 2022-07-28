@@ -1636,6 +1636,13 @@ iframe.instagram-media + script + :not([id]) {
     height: 16px;
 }
 
+@media (min-width: 1001px) {
+    .author-template .post-card-large .post-card-content {
+        grid-column: span 2;
+        max-width: 640px;
+    }
+}
+
 
 /* 8. Tag Template
 /* ---------------------------------------------------------- */
@@ -1649,6 +1656,12 @@ iframe.instagram-media + script + :not([id]) {
     order: 1;
 }
 
+@media (min-width: 1001px) {
+    .tag-template .post-card-large .post-card-content {
+        grid-column: span 2;
+        max-width: 640px;
+    }
+}
 
 /* 9. Error Template
 /* ---------------------------------------------------------- */
