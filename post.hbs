@@ -85,13 +85,9 @@ into the {body} tag of the default.hbs template --}}
     <section class="gh-content gh-canvas">
         {{content}}
 
-        {{#if @site.comments_enabled}}
-            {{#if access}}
-                <div class="comments">
-                    {{comments}}
-                </div>
-            {{/if}}
-        {{/if}}
+        <div class="comments">
+            {{comments}}
+        </div>
     </section>
 
     {{!--
