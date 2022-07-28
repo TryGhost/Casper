@@ -1861,6 +1861,10 @@ html.dark-mode .author-profile-location {
     color: #fff;
 }
 
+html.dark-mode .author-profile-social-link:hover {
+    color: #fff;
+}
+
 html.dark-mode .article-title {
     color: #fff;
 }
@@ -2034,6 +2038,10 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color .author-profile-location {
+        color: #fff;
+    }
+
+    html.auto-color .author-profile-social-link:hover {
         color: #fff;
     }
 
