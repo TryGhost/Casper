@@ -19,7 +19,7 @@ into the {body} tag of the default.hbs template --}}
                 </span>
             {{/primary_tag}}
             {{#if featured}}
-                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+                <span class="post-card-featured">{{> "icons/fire"}} {{t 'Featured'}}</span>
             {{/if}}
         </div>
 
@@ -103,8 +103,8 @@ into the {body} tag of the default.hbs template --}}
         <div class="inner">
             {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
             <a class="footer-cta-button" href="#/portal" data-portal>
-                <div class="footer-cta-input">Enter your email</div>
-                <span>Subscribe</span>
+                <div class="footer-cta-input">{{t 'Enter_your_email'}}</div>
+                <span>{{t 'Subscribe'}}</span>
             </a>
             {{!-- ^ This looks like a form element, but it's just a link to Portal,
             making the form validation and submission much simpler. --}}
