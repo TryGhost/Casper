@@ -225,7 +225,6 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 
 @media (max-width: 767px) {
     .has-cover .site-header-content {
-        padding-bottom: 36px;
         min-height: 240px;
     }
     .site-header-inner {
@@ -322,6 +321,11 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
     max-height: 26px;
 }
 
+.gh-head-brand-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 
 /* Primary Navigation
 /* ---------------------------------------------------------- */
@@ -369,7 +373,7 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 .gh-social {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .gh-social-link {
@@ -439,6 +443,47 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
         top: 16px;
         left: 16px;
         z-index: 10;
+    }
+}
+
+
+/* Search
+/* ---------------------------------------------------------- */
+
+.gh-search {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.gh-search:hover {
+    opacity: 0.9;
+}
+
+.gh-head-brand .gh-search {
+    margin-right: 8px;
+}
+
+.gh-head-actions .gh-search {
+    margin-right: -10px;
+}
+
+@media (max-width: 991px) {
+    .gh-head-actions .gh-search {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .gh-head-brand .gh-search {
+        display: none;
     }
 }
 
@@ -1673,6 +1718,13 @@ iframe.instagram-media + script + :not([id]) {
     height: 16px;
 }
 
+@media (min-width: 1001px) {
+    .author-template .post-card-large .post-card-content {
+        grid-column: span 2;
+        max-width: 640px;
+    }
+}
+
 
 /* 8. Tag Template
 /* ---------------------------------------------------------- */
@@ -1686,6 +1738,12 @@ iframe.instagram-media + script + :not([id]) {
     order: 1;
 }
 
+@media (min-width: 1001px) {
+    .tag-template .post-card-large .post-card-content {
+        grid-column: span 2;
+        max-width: 640px;
+    }
+}
 
 /* 9. Error Template
 /* ---------------------------------------------------------- */
@@ -1894,6 +1952,14 @@ html.dark-mode .post-card-excerpt {
     color: var(--color-secondary-text);
 }
 
+html.dark-mode .author-profile-location {
+    color: #fff;
+}
+
+html.dark-mode .author-profile-social-link:hover {
+    color: #fff;
+}
+
 html.dark-mode .article-title {
     color: #fff;
 }
@@ -2064,6 +2130,14 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .post-card-excerpt {
         color: var(--color-secondary-text);
+    }
+
+    html.auto-color .author-profile-location {
+        color: #fff;
+    }
+
+    html.auto-color .author-profile-social-link:hover {
+        color: #fff;
     }
 
     html.auto-color .article-title {
