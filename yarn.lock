@@ -178,10 +178,10 @@
     moment "^2.29.1"
     prettyjson "^1.2.5"
 
-"@tryghost/release-utils@0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.8.0.tgz#2e017e0ed8326252becd9085f97d1dce61984bd6"
-  integrity sha512-3KbxucGpT5N3km5pYBUAJSEhXkOWkb6ABJ7PU0UtOqfmgQRprenAxf1rcSuQK0K/85ezXamVFNkfjZcy3355Fw==
+"@tryghost/release-utils@0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@tryghost/release-utils/-/release-utils-0.8.1.tgz#6565e48d903b6b727bd6c8326a345a3a2fce71f1"
+  integrity sha512-smSspchAfNW7KL8ERIR1F4CUS2/eB0Ajt6X4Wbx0b4bJ4crJeFAn3wFHM9c20AhNdRacQ3W2PtPO/Sq9jcx1Hg==
   dependencies:
     "@tryghost/errors" "^1.2.1"
     bluebird "^3.7.2"
