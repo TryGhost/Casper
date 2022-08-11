@@ -873,7 +873,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     gap: 6px;
 }
 
-.post-card-meta > * + *:not(:empty)::before {
+.post-card-meta > * + *:not(script)::before {
     width: 2px;
     height: 2px;
     content: "";

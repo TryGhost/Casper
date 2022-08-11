@@ -69,7 +69,7 @@ which templates loop over to generate a list of posts. --}}
                 <span class="post-card-meta-length">{{reading_time}}</span>
             {{/if}}
             {{#if @site.comments_enabled}}
-                <span class="post-card-meta-comments">{{comment_count}}</span>
+                {{comment_count}}
             {{/if}}
         </footer>
 
