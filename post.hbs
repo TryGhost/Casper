@@ -86,11 +86,11 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    {{!--
-    <section class="article-comments gh-canvas">
-        If you want to embed comments, this is a good place to paste your code!
-    </section>
-    --}}
+    {{#if comments}}
+        <section class="article-comments gh-canvas">
+            {{comments}}
+        </section>
+    {{/if}}
 
 </article>
 </main>
@@ -98,6 +98,7 @@ into the {body} tag of the default.hbs template --}}
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#if @site.members_enabled}}
 {{#unless @member}}
+{{#unless @site.comments_enabled}}
 {{#if access}}
     <section class="footer-cta outer">
         <div class="inner">
@@ -106,11 +107,10 @@ into the {body} tag of the default.hbs template --}}
                 <div class="footer-cta-input">Enter your email</div>
                 <span>Subscribe</span>
             </a>
-            {{!-- ^ This looks like a form element, but it's just a link to Portal,
-            making the form validation and submission much simpler. --}}
         </div>
     </section>
 {{/if}}
+{{/unless}}
 {{/unless}}
 {{/if}}
 
