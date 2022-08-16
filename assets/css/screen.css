@@ -438,11 +438,14 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 }
 
 @media (max-width: 991px) {
-    .gh-search {
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        z-index: 10;
+    .gh-head-actions .gh-search {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .gh-head-brand .gh-search {
+        display: none;
     }
 }
 
