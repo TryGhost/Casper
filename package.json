@@ -2,10 +2,9 @@
     "name": "casper-speisekammer",
     "description": "A clean, minimal default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
-    "version": "4.1.0",
+    "version": "5.3.1",
     "engines": {
-        "ghost": ">=4.0.0",
-        "ghost-api": "v4"
+        "ghost": ">=5.0.0"
     },
     "license": "MIT",
     "screenshots": {
@@ -47,23 +46,23 @@
     "bugs": "https://github.com/TryGhost/Casper/issues",
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "devDependencies": {
-        "@tryghost/release-utils": "0.6.12",
-        "autoprefixer": "10.2.5",
+        "@tryghost/release-utils": "0.8.1",
+        "autoprefixer": "10.4.7",
         "beeper": "2.1.0",
-        "cssnano": "4.1.10",
-        "gscan": "4.0.0",
+        "cssnano": "5.1.12",
+        "gscan": "4.34.0",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
-        "gulp-postcss": "9.0.0",
+        "gulp-postcss": "9.0.1",
         "gulp-uglify": "3.0.2",
         "gulp-uglify-es": "^3.0.0",
         "gulp-zip": "5.1.0",
-        "i18next-parser": "^3.7.0",
-        "inquirer": "8.0.0",
+        "inquirer": "8.2.4",
         "postcss": "8.2.13",
+        "i18next-parser": "^3.7.0",
         "postcss-color-mod-function": "3.0.3",
-        "postcss-easy-import": "3.0.0",
+        "postcss-easy-import": "4.0.0",
         "pump": "3.0.0"
     },
     "browserslist": [
@@ -89,6 +88,85 @@
             },
             "xl": {
                 "width": 2000
+            }
+        },
+        "card_assets": true,
+        "custom": {
+            "title_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Modern sans-serif"
+            },
+            "body_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Elegant serif"
+            },
+            "show_publication_cover": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "header_style": {
+                "type": "select",
+                "options": [
+                    "Center aligned",
+                    "Left aligned",
+                    "Hidden"
+                ],
+                "default": "Center aligned",
+                "group": "homepage"
+            },
+            "show_logo_in_navigation": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
+            },
+            "feed_layout": {
+                "type": "select",
+                "options": [
+                    "Classic",
+                    "Grid",
+                    "List"
+                ],
+                "default": "Classic",
+                "group": "homepage"
+            },
+            "color_scheme": {
+                "type": "select",
+                "options": [
+                    "Light",
+                    "Dark",
+                    "Auto"
+                ],
+                "default": "Light"
+            },
+            "post_image_style": {
+                "type": "select",
+                "options": [
+                    "Wide",
+                    "Full",
+                    "Small",
+                    "Hidden"
+                ],
+                "default": "Wide",
+                "group": "post"
+            },
+            "email_signup_text": {
+                "type": "text",
+                "default": "Sign up for more like this.",
+                "group": "post"
+            },
+            "show_recent_posts_footer": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
             }
         }
     },

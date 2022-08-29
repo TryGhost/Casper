@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
 <head>
 
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
@@ -18,54 +18,57 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}">
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}{{#is "home"}}{{#unless @custom.show_logo_in_navigation}} no-logo{{/unless}}{{/is}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
-        <nav class="gh-head-inner inner gh-container">
+    <header id="gh-head" class="gh-head outer">
+        <nav class="gh-head-inner inner">
 
             <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
+                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
                     {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}" />
                     {{else}}
                         {{@site.title}}
                     {{/if}}
                 </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
-                </a>
+                <div class="gh-head-brand-wrapper">
+                    <button class="gh-search" data-ghost-search>{{> "icons/search"}}</button>
+                    <a class="gh-burger" role="button">
+                        <div class="gh-burger-box">
+                            <div class="gh-burger-inner"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="gh-head-menu">
                 {{navigation}}
             </div>
             <div class="gh-head-actions">
-                {{#if false}}
-                    <div class="gh-social">
-                        {{#if @site.facebook}}
-                            <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                        {{/if}}
-                        {{#if @site.twitter}}
-                            <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                        {{/if}}
-                    </div>
+                <button class="gh-search" data-ghost-search>{{> "icons/search"}}</button>
+                <div class="gh-social">
+                    {{#if @site.facebook}}
+                        <a class="gh-social-link gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if @site.twitter}}
+                        <a class="gh-social-link gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                </div>
+                {{#if @site.members_enabled}}
                     {{#unless @member}}
-                        <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
+                        <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
                     {{else}}
-                        <a class="gh-head-button" href="#/portal/account">Account</a>
+                        <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                     {{/unless}}
                 {{/if}}
-
             </div>
         </nav>
     </header>
 
-    <main>
+    <div class="site-content">
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
-    </main>
+    </div>
 
     {{!-- The global footer at the very bottom of the screen --}}
     <footer class="site-footer outer">

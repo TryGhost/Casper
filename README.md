@@ -4,7 +4,7 @@ The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the la
 
 &nbsp;
 
-![screenshot-desktop](https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png)
+![screenshot-desktop](https://user-images.githubusercontent.com/1418797/183329195-8e8f2ee5-a473-4694-a813-a2575491209e.png)
 
 &nbsp;
 
@@ -66,4 +66,4 @@ You can add your own SVG icons in the same manner.
 
 # Copyright & License
 
-Copyright (c) 2013-2021 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2022 Ghost Foundation - Released under the [MIT license](LICENSE).
