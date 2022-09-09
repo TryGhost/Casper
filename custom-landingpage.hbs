@@ -17,6 +17,88 @@
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .card2 {
+            color: black;
+            float: left;
+            width: calc(50% - 20px);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .card2 p {
+            font-size: 20px;
+        }
+        .card2 h3 {
+            text-align: center;
+        }
+        .card2 img {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        .card3 {
+            color: black;
+            float: left;
+            width: calc(33% - 20px);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .card3 p {
+            font-size: 18px;
+        }
+        .card3 h3 {
+            text-align: center;
+        }
+        .card3 img {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .card4 {
+            color: black;
+            float: left;
+            width: calc(25% - 20px);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .card4 p {
+            font-size: 16px;
+        }
+        .card4 h3 {
+            text-align: center;
+        }
+        .card4 img {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .cardContainer:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+            .card2 {
+                width: 100%;
+            }
+            .card3 {
+                width: 100%;
+            }
+            .card4 {
+                width: 100%;
+            }
+        }
+    </style>
+
 </head>
 <body class="{{body_class}}">
 <div class="viewport">
