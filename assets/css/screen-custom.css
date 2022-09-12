@@ -168,6 +168,10 @@ html.dark-mode .article-tag a {
     box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.nav .nav-lang .nav-dropdown li:hover {
+    background: #f8f9f9;
+}
+
 .nav .nav-lang .nav-dropdown a {
     display: block;
     color: inherit;
