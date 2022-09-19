@@ -66,8 +66,10 @@ which templates loop over to generate a list of posts. --}}
         <footer class="post-card-meta">
             <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
             {{#if reading_time}}
-                <span class="sep">—</span>
                 <span class="post-card-meta-length">{{reading_time}}</span>
+            {{/if}}
+            {{#if @site.comments_enabled}}
+                {{comment_count}}
             {{/if}}
         </footer>
 
