@@ -15,6 +15,7 @@ production stylesheet in assets/built/screen.css
   7.2. Members Subscribe Form
   7.4. Related Posts
   7.5. Koenig Styles
+  7.6  Comments
 8.  Author Template
 9.  Error Template
 11. Site Footer
@@ -414,6 +415,38 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 .has-cover .gh-head-button {
     color: var(--color-darkgrey);
     background: #fff;
+}
+
+/* Search
+/* ---------------------------------------------------------- */
+
+.gh-search {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.gh-search:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+    .gh-head-actions .gh-search {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .gh-head-brand .gh-search {
+        display: none;
+    }
 }
 
 
@@ -830,10 +863,25 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-card-meta {
     display: flex;
     align-items: center;
+    gap: 6px;
     margin-top: 12px;
     padding: 0;
     font-size: 1.3rem;
     color: var(--color-secondary-text);
+}
+
+.post-card-meta > * {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.post-card-meta > * + *:not(script)::before {
+    width: 2px;
+    height: 2px;
+    content: "";
+    background-color: var(--color-secondary-text);
+    border-radius: 50%;
 }
 
 .post-card-meta .sep {
@@ -1595,6 +1643,43 @@ iframe.instagram-media + script + :not([id]) {
     }
 }
 
+/* 7.6. Comments
+/* ---------------------------------------------------------- */
+.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0 44px;
+}
+
+
+.comments-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 720px;
+}
+
+.comments h2 {
+    width: 100%;
+    max-width: 720px;
+    font-weight: 800;
+    font-size: 3.4rem;
+}
+
+.comments .comment-count {
+    color: var(--color-midgrey);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.comments #ghost-comments-root {
+    width: 100%;
+    max-width: 720px;
+}
+
 
 /* 8. Author Template
 /* ---------------------------------------------------------- */
@@ -2004,48 +2089,48 @@ html.dark-mode .footer-cta-title {
         color: rgba(255, 255, 255, 0.75);
         background: var(--color-darkmode);
     }
-    
+
     html.auto-color img {
         opacity: 0.9;
     }
-    
+
     html.auto-color kbd {
         background: color-mod(var(--color-darkmode) l(+5%));
     }
-    
+
     html.auto-color figcaption a {
         color: #fff;
     }
-    
+
     html.auto-color .gh-head {
         background: var(--color-darkmode);
         color: #fff;
     }
-    
+
     html.auto-color .gh-burger-box {
         color: #fff;
     }
-    
+
     html.auto-color .site-header-content {
         color: #fff;
     }
-    
+
     html.auto-color .post-card-image {
         background: var(--color-darkmode);
     }
-    
+
     html.auto-color :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content) {
         color: color-mod(var(--color-secondary-text) l(-22%));
     }
-    
+
     html.auto-color .post-card-featured {
         color: #fff;
     }
-    
+
     html.auto-color .post-card-title {
         color: #fff;
     }
-    
+
     html.auto-color .post-card-excerpt {
         color: var(--color-secondary-text);
     }
@@ -2061,11 +2146,11 @@ html.dark-mode .footer-cta-title {
     html.auto-color .article-title {
         color: #fff;
     }
-    
+
     html.auto-color .article-excerpt {
         color: var(--color-secondary-text);
     }
-    
+
     html.auto-color .post-full-image {
         background-color: color-mod(var(--color-darkmode) l(+8%));
     }
@@ -2074,107 +2159,107 @@ html.dark-mode .footer-cta-title {
         border-color: var(--color-darkmode);
         background-color: color-mod(var(--color-darkmode) l(+8%));
     }
-    
+
     html.auto-color .author-profile-image {
         opacity: 1;
     }
-    
+
     html.auto-color .author-profile-image path {
         fill: var(--color-darkmode);
     }
-    
+
     html.auto-color .article-byline-meta .author-name a {
         color: #fff;
     }
-    
+
     html.auto-color .no-image .author-social-link a {
         color: rgba(255, 255, 255, 0.75);
     }
-    
+
     html.auto-color .gh-content > [id] {
         color: rgba(255, 255, 255, 0.9);
     }
-    
+
     html.auto-color .gh-content pre {
         background: color-mod(var(--color-darkgrey) l(-8%));
     }
-    
+
     html.auto-color .gh-content :not(pre) > code {
         background: color-mod(var(--color-darkgrey) l(+6%));
         border-color: color-mod(var(--color-darkmode) l(+8%));
         color: var(--color-wash);
     }
-    
+
     html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button) {
         color: #fff;
     }
-    
+
     html.auto-color .gh-content strong {
         color: #fff;
     }
-    
+
     html.auto-color .gh-content em {
         color: #fff;
     }
-    
+
     html.auto-color .gh-content code {
         color: #fff;
         background: #000;
     }
-    
+
     html.auto-color hr {
         border-top-color: color-mod(var(--color-darkmode) l(+8%));
     }
-    
+
     html.auto-color .gh-content hr:after {
         background: color-mod(var(--color-darkmode) l(+8%));
         box-shadow: var(--color-darkmode) 0 0 0 5px;
     }
-    
+
     html.auto-color figcaption {
         color: rgba(255, 255, 255, 0.6);
     }
-    
+
     html.auto-color .gh-content table td:first-child {
         background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
     }
-    
+
     html.auto-color .gh-content table td:last-child {
         background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
     }
-    
+
     html.auto-color .gh-content table th {
         color: rgba(255, 255, 255, 0.85);
         background-color: color-mod(var(--color-darkmode) l(+8%));
     }
-    
+
     html.auto-color .gh-content table th,
     html.auto-color .gh-content table td {
         border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
     }
-    
+
     html.auto-color .gh-content input {
         color: color-mod(var(--color-midgrey) l(-30%));
     }
-    
+
     html.auto-color .site-archive-header .no-image {
         color: rgba(255, 255, 255, 0.9);
         background: var(--color-darkmode);
     }
-    
+
     html.auto-color .kg-header-card.kg-style-dark {
         background: color-mod(var(--color-darkgrey) l(-5%));
     }
-    
+
     html.auto-color .kg-header-card.kg-style-light {
         background: color-mod(var(--color-darkgrey) l(+5%));
     }
-    
+
     html.auto-color .kg-header-card h2.kg-header-card-header,
     html.auto-color .kg-header-card h3.kg-header-card-subheader {
         color: #fff;
     }
-    
+
     html.auto-color .footer-cta-title {
         color: #fff;
     }
