@@ -2352,6 +2352,19 @@ the right place. Onward!
     width:100%;
 }
 
+.badge-button {
+    margin: auto;
+    max-width: 200px;
+    width: 100%;
+}
+
+.badges-line-landing {
+    display:flex;
+    flex-direction:row;
+    margin:1em;
+    justify-content: space-evenly;
+}
+
 @media (max-width: 750px) {
     /* small screen, one column, badges still in row */
     .site-header-content-responsive-rows {
@@ -2384,6 +2397,12 @@ the right place. Onward!
 @media (max-width: 400px) {
     /* mobile, one column, badges stacked */
     .badges-line {
+        display:flex;
+        flex-direction:column;
+        margin:1em;
+        justify-content: space-evenly;
+    }
+    .badges-line-landing {
         display:flex;
         flex-direction:column;
         margin:1em;
