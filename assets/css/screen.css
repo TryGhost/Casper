@@ -1440,7 +1440,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 /* Tables */
-.gh-content table {
+.gh-content table:not(.gist table) {
     display: inline-block;
     overflow-x: auto;
     max-width: 100%;
@@ -1451,9 +1451,6 @@ iframe.instagram-media + script + :not([id]) {
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
-}
-
-.gh-content table {
     -webkit-overflow-scrolling: touch;
     background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
     background-attachment: scroll, scroll;
@@ -1461,20 +1458,20 @@ iframe.instagram-media + script + :not([id]) {
     background-repeat: no-repeat;
 }
 
-.gh-content table td:first-child {
+.gh-content table:not(.gist table) td:first-child {
     background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.gh-content table td:last-child {
+.gh-content table:not(.gist table) td:last-child {
     background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-position: 100% 0;
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.gh-content table th {
+.gh-content table:not(.gist table) th {
     color: var(--color-darkgrey);
     font-size: 1.2rem;
     font-weight: 700;
@@ -1484,8 +1481,8 @@ iframe.instagram-media + script + :not([id]) {
     background-color: color-mod(var(--color-wash) l(+4%));
 }
 
-.gh-content table th,
-.gh-content table td {
+.gh-content table:not(.gist table) th,
+.gh-content table:not(.gist table) td {
     padding: 6px 12px;
     border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
 }
@@ -2010,7 +2007,7 @@ html.dark-mode .gh-content :not(pre) > code {
     color: var(--color-wash);
 }
 
-html.dark-mode .gh-content a:not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button) {
+:where(html.dark-mode) .gh-content a {
     color: #fff;
 }
 
@@ -2040,21 +2037,21 @@ html.dark-mode figcaption {
     color: rgba(255, 255, 255, 0.6);
 }
 
-html.dark-mode .gh-content table td:first-child {
+html.dark-mode .gh-content table:not(.gist table) td:first-child {
     background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .gh-content table td:last-child {
+html.dark-mode .gh-content table:not(.gist table) td:last-child {
     background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
 
-html.dark-mode .gh-content table th {
+html.dark-mode .gh-content table:not(.gist table) th {
     color: rgba(255, 255, 255, 0.85);
     background-color: color-mod(var(--color-darkmode) l(+8%));
 }
 
-html.dark-mode .gh-content table th,
-html.dark-mode .gh-content table td {
+html.dark-mode .gh-content table:not(.gist table) th,
+html.dark-mode .gh-content table:not(.gist table) td {
     border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
 }
 
@@ -2190,7 +2187,7 @@ html.dark-mode .footer-cta-title {
         color: var(--color-wash);
     }
 
-    html.auto-color .gh-content a:not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button) {
+    :where(html.auto-color) .gh-content a {
         color: #fff;
     }
 
@@ -2220,21 +2217,21 @@ html.dark-mode .footer-cta-title {
         color: rgba(255, 255, 255, 0.6);
     }
 
-    html.auto-color .gh-content table td:first-child {
+    html.auto-color .gh-content table:not(.gist table) td:first-child {
         background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
     }
 
-    html.auto-color .gh-content table td:last-child {
+    html.auto-color .gh-content table:not(.gist table) td:last-child {
         background-image: linear-gradient(to left, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
     }
 
-    html.auto-color .gh-content table th {
+    html.auto-color .gh-content table:not(.gist table) th {
         color: rgba(255, 255, 255, 0.85);
         background-color: color-mod(var(--color-darkmode) l(+8%));
     }
 
-    html.auto-color .gh-content table th,
-    html.auto-color .gh-content table td {
+    html.auto-color .gh-content table:not(.gist table) th,
+    html.auto-color .gh-content table:not(.gist table) td {
         border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
     }
 
