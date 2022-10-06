@@ -2435,3 +2435,8 @@ the right place. Onward!
         width:30%;
     }
 }
+
+/** reviews */
+
+.review{opacity: 0.8;}.m-0 {margin: 0px }.mt-2 {margin-top: 0.5rem }.ml-2 {margin-left: 0.5rem }.flex {display: flex }.grid {display: grid }.h-\[35px\] {height: 35px }.w-\[35px\] {width: 35px }.grid-cols-3 {grid-template-columns: repeat(3, minmax(0, 1fr)) }.gap-3 {gap: 1.8rem }.rounded-sm {border-radius: 0.125rem }.rounded-full {border-radius: 9999px }.p-3 {padding: 1.5rem }.text-xs {font-size: 0.75rem;line-height: 1rem }.shadow {--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) }.review::before {color: black;content: "“";display: block;font-family: serif;font-size: 3rem;font-weight: 600;height: 2rem;line-height: 1;margin-top: -8px;}p.work{font-weight: 200;font-size: 1.3rem;}h4.name{font-size: 1.6rem;font-weight: 400;}
+@media (max-width: 600px){.reviews-wrapper{grid-template-columns: repeat(1, minmax(0, 1fr))}}
