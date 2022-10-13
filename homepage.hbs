@@ -17,6 +17,23 @@
 
     {{/page}}
 
+    {{#get "posts" limit="4" as |latestposts|}}
+        {{#if latestposts}}
+            <h2>{{t "News from our blog"}}</h2>
+            <div class="cardContainer">
+                {{#foreach latestposts visibility="all"}}
+
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                   <div class="card4">
+
+                    {{> "post-card"}}
+                   </div>
+
+                {{/foreach}}
+            </div>
+        {{/if}}
+    {{/get}}
+
 
     {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in
     default.hbs --}}
