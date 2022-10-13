@@ -2303,47 +2303,7 @@ the right place. Onward!
 
 
 
-/** Custom responsive header */
-
-
 /* medium screen, two columns, badges in row */
-
-.site-header-column {
-    display: flex;
-    flex-direction: column;
-    width: 48%;
-    justify-content: space-evenly;
-    align-items: center;
-    align-self: center;
-}
-
-.site-header-content-responsive {
-    background-color: #333333;
-    width: 100%;
-    position: relative;
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-    padding: calc(20px + 6vw) 3vw;
-    height: 100%;
-    text-align: center;
-}
-
-
-.site-header-content-responsive-rows {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-    font-size: 2vw;
-}
-
-.badges-line {
-    display:flex;
-    flex-direction:column;
-    margin:1em;
-    justify-content: space-evenly;
-}
 
 .badge {
     width:100%;
@@ -2362,43 +2322,8 @@ the right place. Onward!
     justify-content: space-evenly;
 }
 
-@media (max-width: 750px) {
-    /* small screen, one column, badges still in row */
-    .site-header-content-responsive-rows {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        font-size: 3.5vw;
-    }
-
-    .site-header-column {
-        width: 100%;
-        justify-content: center;
-        /* max-width: 500px; */
-        align-self: center;
-        align-items: center;
-    }
-
-    .badges-line {
-        display:flex;
-        flex-direction:row;
-        margin:1em;
-        justify-content: space-evenly;
-    }
-
-    .badge {
-        width:30%;
-    }
-}
-
 @media (max-width: 400px) {
     /* mobile, one column, badges stacked */
-    .badges-line {
-        display:flex;
-        flex-direction:column;
-        margin:1em;
-        justify-content: space-evenly;
-    }
     .badges-line-landing {
         display:flex;
         flex-direction:column;
@@ -2408,32 +2333,98 @@ the right place. Onward!
     .badge {
         width:100%;
     }
-
 }
 
-
-@media (min-width: 1000px) {
-    /* large screen, two columns, badges in line again */
-    .site-header-content-responsive-rows {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        font-size: 2vw;
-    }
-
-    .badges-line {
-        display:flex;
-        flex-direction:row;
-        margin:1em;
-        justify-content: space-evenly;
-    }
-
-    .badge {
-        width:30%;
-    }
-}
 
 /** reviews */
 
 .review{opacity: 0.8;}.m-0 {margin: 0px }.mt-2 {margin-top: 0.5rem }.ml-2 {margin-left: 0.5rem }.flex {display: flex }.grid {display: grid }.h-\[35px\] {height: 35px }.w-\[35px\] {width: 35px }.grid-cols-3 {grid-template-columns: repeat(3, minmax(0, 1fr)) }.gap-3 {gap: 1.8rem }.rounded-sm {border-radius: 0.125rem }.rounded-full {border-radius: 9999px }.p-3 {padding: 1.5rem }.text-xs {font-size: 0.75rem;line-height: 1rem }.shadow {--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) }.review::before {color: black;content: "“";display: block;font-family: serif;font-size: 3rem;font-weight: 600;height: 2rem;line-height: 1;margin-top: -8px;}p.work{font-weight: 200;font-size: 1.3rem;}h4.name{font-size: 1.6rem;font-weight: 400;}
 @media (max-width: 600px){.reviews-wrapper{grid-template-columns: repeat(1, minmax(0, 1fr))}}
+
+
+/** card layout with 2, 3 or 4 columns */
+
+ * {
+     box-sizing: border-box;
+ }
+.card2 {
+    color: black;
+    float: left;
+    width: calc(50% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.card2 p {
+    font-size: 20px;
+}
+.card2 h3 {
+    text-align: center;
+}
+.card2 img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.card3 {
+    color: black;
+    float: left;
+    width: calc(33% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.card3 p {
+    font-size: 18px;
+}
+.card3 h3 {
+    text-align: center;
+}
+.card3 img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.card4 {
+    color: black;
+    float: left;
+    width: calc(25% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.card4 p {
+    font-size: 16px;
+}
+.card4 h3 {
+    text-align: center;
+}
+.card4 img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.cardContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    .card2 {
+        width: 100%;
+    }
+    .card3 {
+        width: 100%;
+    }
+    .card4 {
+        width: 100%;
+    }
+}
+
+.site-header-content {
+    padding: 5px;
+}
+
