@@ -920,8 +920,9 @@ The first post in the list is styled to be bigger than the others and take over
 the full width of the grid to give it more emphasis. Wrapped in a media query to
 make sure this only happens on large viewports / desktop-ish devices.
 
+DEACTIVATED
 */
-
+/*
 @media (min-width: 1001px) {
     .post-card-large {
         grid-column: span 6;
@@ -1007,7 +1008,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         font-size: 3rem;
     }
 }
-
+*/
 
 /* 7. Single Post
 /* ---------------------------------------------------------- */
