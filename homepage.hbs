@@ -5,7 +5,7 @@
     {{!-- The main content area --}}
 
     {{#page}}
-        <article class="article" style="padding-top: 0px">
+        <article class="article" style="padding-top: 0">
 
             <section class="gh-content gh-canvas">
 
@@ -21,13 +21,16 @@
     {{#get "posts" limit="4" as |latestposts|}}
         {{#if latestposts}}
             <h2>{{t "News from our blog"}}</h2>
-            {{#foreach latestposts visibility="all"}}
+            <div class="post-feed">
 
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{#foreach latestposts visibility="all"}}
 
-                {{> "post-card"}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
 
-            {{/foreach}}
+                    {{> "post-card"}}
+
+                {{/foreach}}
+            </div>
         {{/if}}
     {{/get}}
     </div>
