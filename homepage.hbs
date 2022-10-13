@@ -5,7 +5,7 @@
     {{!-- The main content area --}}
 
     {{#page}}
-        <article class="article" style="padding-top: 0">
+        <article class="article" style="padding-top: 0; padding-bottom: 0;">
 
             <section class="gh-content gh-canvas">
 
@@ -18,7 +18,7 @@
     {{/page}}
 
     <div class="site-main outer">
-    {{#get "posts" limit="4" as |latestposts|}}
+    {{#get "posts" limit="3" as |latestposts|}}
         {{#if latestposts}}
             <h2>{{t "News from our blog"}}</h2>
             <div class="post-feed">
