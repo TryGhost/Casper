@@ -41,11 +41,54 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
 
+    <h1 style="margin-top: 100px;">Most popular posts</h1>
+    
     <div class="post-feed">
-        {{#foreach posts}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "post-card"}}
-        {{/foreach}}
+    {{#get "posts" order="sentiment desc" limit="5" as |more_posts|}}
+        {{#if more_posts}}
+            {{#foreach more_posts}}
+                {{> "post-card"}}
+            {{/foreach}}
+        {{/if}}
+    {{/get}}
+    </div>
+
+    <hr>
+
+    <h1>Combined ordering</h1>
+
+    <div class="post-feed">
+    {{#get "posts" order="sentiment desc, published_at desc" limit="5" as |more_posts|}}
+        {{#if more_posts}}
+            {{#foreach more_posts}}
+                {{> "post-card"}}
+            {{/foreach}}
+        {{/if}}
+    {{/get}}
+    </div>
+
+    <hr>
+    <h1>With includes (optional):</h1>
+
+    <div class="post-feed">
+    {{#get "posts" include="sentiment" order="sentiment desc" limit="5" as |more_posts|}}
+        {{#if more_posts}}
+            {{#foreach more_posts}}
+                {{> "post-card"}}
+            {{/foreach}}
+        {{/if}}
+    {{/get}}
+    </div>
+
+    <hr>
+
+    <h1>Normal posts:</h1>
+
+    <div class="post-feed">
+    {{#foreach posts}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> "post-card"}}
+    {{/foreach}}
     </div>
 
 </div>
