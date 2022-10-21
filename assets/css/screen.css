@@ -2429,3 +2429,18 @@ the right place. Onward!
     padding: 5px;
 }
 
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 1rem;
+    margin: 1rem;
+}
+
+@media (max-width: 700px) {
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+        margin: 1rem;
+    }
+}
