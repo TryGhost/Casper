@@ -1,0 +1,24 @@
+{{!< default}}
+
+<section class="post-content">
+    <div class="post-tag-grid">
+        {{#get 'tags' limit='9' include='count.posts' order='count.posts desc'}}
+        {{#foreach tags}}
+        <div class="post-tag-grid-item">
+            <a href='{{ url }}'>
+                {{#if feature_image}}
+                <img class="post-card-image"
+                     src="{{img_url feature_image size="phone"}}"
+                     alt="{{title}}" />
+                {{/if}}
+                <h2>{{ name }}</h2> 
+                <p>{{description}}</p>
+                <p>
+                    <small>{{ count.posts }} posts.</small>
+                </p>
+            </a>
+        </div>
+        {{/foreach}}
+        {{/get}}
+    </div>
+</section>
