@@ -6,7 +6,7 @@ const slider = document.querySelector(".slider");
 let curSlide = 0;
 const maxSlide = slides.length;
 const goToSlide = (slide) => {
-  slides.forEach((slide, i) => {
+  slides.forEach((s, i) => {
     s.style.transform = `translateX(${100 * (i - slide)}%)`;
   });
 };
