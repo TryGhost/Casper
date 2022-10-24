@@ -2449,10 +2449,8 @@ the right place. Onward!
  .slider {
   max-width: 70vw;
   height: 80vh;
-  margin: 0 auto;
+  margin-inline: auto;
   position: relative;
-
-  
   overflow: hidden;
 }
 
