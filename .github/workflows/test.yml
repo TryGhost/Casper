@@ -19,3 +19,5 @@ jobs:
       - run: npm install -g yarn
       - run: yarn
       - run: yarn test:ci
+      - name: Build theme
+        run: gulp build && gulp zip
