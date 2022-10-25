@@ -63,7 +63,11 @@ into the {body} tag of the default.hbs template --}}
             <div class="post-tags-box-label">Tags</div>
             {{#foreach tags}}
                 <a href="{{url}}">
-                    <span class="post-tag-title">{{name}}</span>
+                    {{#if accent_color}}
+                    <span class="post-tag-title" style="color:{{accent_color}};">{{name}}</span>
+                    {{else}}
+                    <span class="post-tag-title" style="color:var(--ghost-accent-color);">{{name}}</span>
+                    {{/if}}
                 </a>
             {{/foreach}}
         </div>

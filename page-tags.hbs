@@ -1,24 +1,80 @@
 {{!< default}}
 
-<section class="post-content">
+<section class="post-content post-tag-content">
     <div class="post-tag-grid">
-        {{#get 'tags' limit='9' include='count.posts' order='count.posts desc'}}
+        {{#get 'tags' limit='15' include='count.posts' order='count.posts desc'}}
         {{#foreach tags}}
         <div class="post-tag-grid-item">
             <a href='{{ url }}'>
-                {{#if feature_image}}
-                <img class="post-card-image"
-                     src="{{img_url feature_image size="phone"}}"
-                     alt="{{title}}" />
-                {{/if}}
-                <h2>{{ name }}</h2> 
-                <p>{{description}}</p>
-                <p>
-                    <small>{{ count.posts }} posts.</small>
-                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="post-tag-grid-item-svg">
+                    {{#if accent_color}}
+                    <rect x="0" y="0" style="fill: {{accent_color}}" class="post-tag-grid-item-svg-first"></rect>
+                    {{else}}
+                    <rect x="0" y="0" class="post-tag-grid-item-svg-first"></rect>
+                    {{/if}}
+                    <foreignObject class="post-tag-grid-item-svg-first-obj">
+                        <div class="post-tag-grid-item-svg-first-obj-text">{{ count.posts }}</div>
+                    </foreignObject>
+                    <rect class="post-tag-grid-item-svg-second"></rect>
+                    <foreignObject class="post-tag-grid-item-svg-second-obj">
+                        <div class="post-tag-grid-item-svg-second-obj-inner">
+                            {{#if accent_color}}
+                            <h2 style="color:{{accent_color}};">{{ name }}</h2>
+                            {{else}}
+                            <h2>{{ name }}</h2>
+                            {{/if}}
+
+                            {{#if description}}
+                            <p class="post-tag-grid-item-svg-second-obj-description">{{description}}</p>
+                            {{/if}}
+                        </div>
+                    </foreignObject>
+                </svg>
             </a>
         </div>
         {{/foreach}}
         {{/get}}
     </div>
 </section>
+
+
+{{!-- <section class="post-content post-tag-content">
+    <div class="post-tag-grid">
+        {{#get 'tags' limit='15' include='count.posts' order='count.posts desc'}}
+        {{#foreach tags}}
+        <div class="post-tag-grid-item">
+            <a href='{{ url }}'>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 260px;" class="post-tag-grid-item-svg">
+                    {{#if accent_color}}
+                    <rect x="0" y="0" height="150" width="80" style="fill: {{accent_color}}" class="post-tag-grid-item-svg-first"></rect>
+                    {{else}}
+                    <rect x="0" y="0" height="150" width="80" style="fill: var(--ghost-accent-color)" class="post-tag-grid-item-svg-first"></rect>
+                    {{/if}}
+                    <foreignObject x="0" y="55" height="28" width="80" class="post-tag-grid-item-svg-first">
+                        <div style="color: white;font-size: 28px;height: 28px;">{{ count.posts }}</div>
+                    </foreignObject>
+                    <rect x="80" y="0" height="150" width="180" style=" fill: black" class="post-tag-grid-item-svg-second"></rect>
+                    {{#if accent_color}}
+                    <foreignObject x="80" y="0" height="150" width="180" style="color:{{accent_color}};" class="post-tag-grid-item-svg-second">
+                    {{else}}
+                    <foreignObject x="80" y="0" height="150" width="180" style="color:white;" class="post-tag-grid-item-svg-second">
+                    {{/if}}
+
+                    {{#if description}}
+                        <div>
+                            <h2>{{ name }}</h2>
+                            <p style="color:white;">{{description}}</p>
+                        </div>
+                    {{else}}
+                        <div style="margin-top: 30%;">
+                            <h2>{{ name }}</h2>
+                        </div>
+                    {{/if}}
+                    </foreignObject>
+                </svg>
+            </a>
+        </div>
+        {{/foreach}}
+        {{/get}}
+    </div>
+</section> --}}
