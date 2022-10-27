@@ -715,3 +715,7 @@ a.social-share-link svg {
     height: 32px;
     width: 32px;
 }
+
+.post-card-title-custom{
+    text-transform: uppercase;
+}
