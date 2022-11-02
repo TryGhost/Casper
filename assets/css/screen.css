@@ -430,6 +430,10 @@ production stylesheet in assets/built/screen.css
     font-weight: 500;
 }
 
+.is-head-left-logo.no-logo .gh-head-menu {
+    margin-left: -40px;
+}
+
 .gh-head-menu .nav {
     display: inline-flex;
     align-items: center;
@@ -483,7 +487,7 @@ production stylesheet in assets/built/screen.css
     display: none;
     width: 200px;
     padding: 12px 0;
-    margin-top: 20px;
+    margin-top: 24px;
     text-align: left;
     background-color: #fff;
     border-radius: 5px;
@@ -709,7 +713,7 @@ production stylesheet in assets/built/screen.css
     }
 
     #gh-head .nav {
-        gap: 20px;
+        gap: 16px;
         align-items: center;
         line-height: 1.4;
     }
@@ -776,7 +780,7 @@ production stylesheet in assets/built/screen.css
         gap: 12px;
         align-items: center;
         padding: max(4vmin, 20px) 0;
-        background-color: var(--color-white);
+        background-color: #fff;
     }
 
     .gh-head-open #gh-head .gh-head-button {
@@ -785,6 +789,60 @@ production stylesheet in assets/built/screen.css
         transition-delay: 0.2s;
         transform: translateY(0);
     }
+}
+
+
+/* Animations
+/* ---------------------------------------------------------- */
+
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(0.7, 0.7, 0.7);
+    }
+
+    40% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.animate__bounceIn {
+    animation-name: bounceIn;
+    animation-duration: 0.3s;
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale3d(0.7, 0.7, 0.7);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.animate__zoomOut {
+    animation-name: zoomOut;
+    animation-duration: 0.3s;
 }
 
 

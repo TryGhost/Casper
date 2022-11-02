@@ -38,7 +38,7 @@
 
         if (submenuItems.length >= 10) {
             document.body.classList.add('is-dropdown-mega');
-            wrapper.style.gridTemplateRows = 'repeat' + Math.ceil(submenuItems.length / 2) + ', 1fr)';
+            wrapper.style.gridTemplateRows = 'repeat(' + Math.ceil(submenuItems.length / 2) + ', 1fr)';
         } else {
             document.body.classList.remove('is-dropdown-mega');
         }
@@ -58,6 +58,13 @@
                 wrapper.classList.add('animate__animated', 'animate__zoomOut');
             }
         });
+
+        window.addEventListener('click', function (e) {
+            if (!toggle.contains(e.target) && window.getComputedStyle(wrapper).display != 'none') {
+                wrapper.classList.add('animate__animated', 'animate__zoomOut');
+            }
+        });
+
 
         wrapper.addEventListener('animationend', function (e) {
             wrapper.classList.remove('animate__animated', 'animate__bounceIn', 'animate__zoomOut');
