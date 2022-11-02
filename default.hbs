@@ -18,10 +18,10 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}{{#is "home"}}{{#unless @custom.show_logo_in_navigation}} no-logo{{/unless}}{{/is}}">
+<body class="{{body_class}} is-head-{{#match @custom.header_layout "Logo on the left"}}left-logo{{else match @custom.header_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}{{#is "home"}}{{#unless @custom.show_logo_in_navigation}} no-logo{{/unless}}{{/is}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head outer">
+    {{!-- <header id="gh-head" class="gh-head outer">
         <nav class="gh-head-inner inner">
 
             <div class="gh-head-brand">
@@ -63,6 +63,46 @@
                 {{/if}}
             </div>
         </nav>
+    </header> --}}
+
+    <header id="gh-head" class="gh-head outer">
+        <div class="gh-head-inner inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+                <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                {{navigation}}
+                {{#unless @site.members_enabled}}
+                    {{#match @custom.header_style "Stacked"}}
+                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    {{/match}}
+                {{/unless}}
+            </nav>
+
+            <div class="gh-head-actions">
+                {{#unless @site.members_enabled}}
+                    {{^match @custom.header_style "Stacked"}}
+                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    {{/match}}
+                {{else}}
+                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    {{#unless @member}}
+                        <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                    {{else}}
+                        <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
+                    {{/unless}}
+                {{/unless}}
+            </div>
+        </div>
     </header>
 
     <div class="site-content">

@@ -89,6 +89,11 @@
         },
         "card_assets": true,
         "custom": {
+            "header_layout": {
+                "type": "select",
+                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "default": "Logo on the left"
+            },
             "title_font": {
                 "type": "select",
                 "options": [
