@@ -96,7 +96,11 @@
                 {{else}}
                     <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     {{#unless @member}}
-                        <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                        {{#unless @site.members_invite_only}}
+                            <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                        {{else}}
+                            <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Login</a>
+                        {{/unless}}
                     {{else}}
                         <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                     {{/unless}}
