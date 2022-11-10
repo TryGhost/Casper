@@ -8,10 +8,12 @@
     const logo = document.querySelector('.gh-head-logo');
     const navHTML = nav.innerHTML;
 
-    const items = nav.querySelectorAll('li');
-    items.forEach(function (item, index) {
-        item.style.transitionDelay = 0.03 * (index + 1) + 's';
-    });
+    if (mediaQuery.matches) {
+        const items = nav.querySelectorAll('li');
+        items.forEach(function (item, index) {
+            item.style.transitionDelay = 0.03 * (index + 1) + 's';
+        });
+    }
 
     const makeDropdown = function () {
         if (mediaQuery.matches) return;
@@ -51,25 +53,12 @@
         nav.appendChild(toggle);
 
         toggle.addEventListener('click', function () {
-            if (window.getComputedStyle(wrapper).display == 'none') {
-                wrapper.style.display = submenuItems.length < 10 ? 'block' : 'grid';
-                wrapper.classList.add('animate__animated', 'animate__bounceIn');
-            } else {
-                wrapper.classList.add('animate__animated', 'animate__zoomOut');
-            }
+            document.body.classList.toggle('is-dropdown-open');
         });
 
         window.addEventListener('click', function (e) {
-            if (!toggle.contains(e.target) && window.getComputedStyle(wrapper).display != 'none') {
-                wrapper.classList.add('animate__animated', 'animate__zoomOut');
-            }
-        });
-
-
-        wrapper.addEventListener('animationend', function (e) {
-            wrapper.classList.remove('animate__animated', 'animate__bounceIn', 'animate__zoomOut');
-            if (e.animationName == 'zoomOut') {
-                wrapper.style.display = 'none';
+            if (!toggle.contains(e.target) && document.body.classList.contains('is-dropdown-open')) {
+                document.body.classList.remove('is-dropdown-open');
             }
         });
     }

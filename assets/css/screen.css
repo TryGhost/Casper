@@ -112,8 +112,8 @@ production stylesheet in assets/built/screen.css
     z-index: 100;
     display: flex;
     align-items: center;
-    padding-top: calc(6.4vmin + 44px);
-    padding-bottom: 6.4vmin;
+    padding-top: calc(16vmin + 44px);
+    padding-bottom: 16vmin;
     text-align: center;
     color: var(--color-darkgrey);
 }
@@ -185,10 +185,10 @@ production stylesheet in assets/built/screen.css
 .site-description {
     display: inline-block;
     z-index: 10;
-    max-width: 640px;
-    font-size: 3.2rem;
-    font-weight: 600;
-    line-height: 1.4;
+    max-width: 960px;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 :is(.site-logo, .site-title) + .site-description {
@@ -220,13 +220,13 @@ production stylesheet in assets/built/screen.css
 
 @media (min-width: 992px) {
     .is-head-stacked.has-cover .site-header-content {
-        padding-top: calc(6.4vmin + 68px);
+        padding-top: calc(16vmin + 120px);
     }
 }
 
 @media (max-width: 991px) {
     .site-header-content {
-        padding-top: calc(6.4vmin + 32px);
+        padding-top: calc(16vmin + 32px);
     }
 }
 
@@ -244,7 +244,7 @@ production stylesheet in assets/built/screen.css
         font-size: 3.4rem !important;
     }
     .site-description {
-        font-size: 1.9rem !important;
+        font-size: 2.8rem !important;
     }
     .site-logo + .site-description {
         margin-top: 12px !important;
@@ -298,6 +298,14 @@ production stylesheet in assets/built/screen.css
 
 .is-head-left-logo .gh-head-inner {
     grid-template-columns: auto 1fr auto;
+}
+
+.is-head-left-logo.home-template .gh-head-logo {
+    display: none;
+}
+
+.is-head-left-logo.home-template .gh-head-menu {
+    margin-left: -40px;
 }
 
 @media (min-width: 992px) {
@@ -411,10 +419,6 @@ production stylesheet in assets/built/screen.css
     color: #fff;
 }
 
-.no-logo .gh-head-logo {
-    display: none;
-}
-
 .gh-head-logo img {
     max-height: 40px;
 }
@@ -428,10 +432,6 @@ production stylesheet in assets/built/screen.css
     align-items: center;
     margin-top: 1px;
     font-weight: 500;
-}
-
-.is-head-left-logo.no-logo .gh-head-menu {
-    margin-left: -40px;
 }
 
 .gh-head-menu .nav {
@@ -484,15 +484,17 @@ production stylesheet in assets/built/screen.css
     top: 100%;
     right: -16px;
     z-index: 90;
-    display: none;
     width: 200px;
     padding: 12px 0;
     margin-top: 24px;
+    opacity: 0;
+    visibility: hidden;
     text-align: left;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 7px 20px -5px rgba(0, 0, 0, 0.15);
-    transform: translateZ(0);
+    transform: translate3d(0, 6px, 0);
+    transition: opacity 0.3s, transform 0.2s;
 }
 
 .is-head-middle-logo .gh-dropdown {
@@ -506,6 +508,12 @@ production stylesheet in assets/built/screen.css
     column-gap: 40px;
     width: auto;
     padding: 20px 32px;
+}
+
+.is-dropdown-open .gh-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .gh-head-menu .gh-dropdown li a {
@@ -789,60 +797,6 @@ production stylesheet in assets/built/screen.css
         transition-delay: 0.2s;
         transform: translateY(0);
     }
-}
-
-
-/* Animations
-/* ---------------------------------------------------------- */
-
-@keyframes bounceIn {
-    from,
-    20%,
-    40%,
-    60%,
-    80%,
-    to {
-        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-
-    0% {
-        opacity: 0;
-        transform: scale3d(0.7, 0.7, 0.7);
-    }
-
-    40% {
-        transform: scale3d(1.1, 1.1, 1.1);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale3d(1, 1, 1);
-    }
-}
-
-.animate__bounceIn {
-    animation-name: bounceIn;
-    animation-duration: 0.3s;
-}
-
-@keyframes zoomOut {
-    from {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-        transform: scale3d(0.7, 0.7, 0.7);
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.animate__zoomOut {
-    animation-name: zoomOut;
-    animation-duration: 0.3s;
 }
 
 
@@ -1137,7 +1091,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-large .post-card-title {
         margin-top: 0;
         font-size: 4.4rem;
-        line-height: 1;
+        line-height: 1.05;
     }
 
     .post-card-large .post-card-excerpt {
