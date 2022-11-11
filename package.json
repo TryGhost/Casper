@@ -89,6 +89,11 @@
         },
         "card_assets": true,
         "custom": {
+            "navigation_layout": {
+                "type": "select",
+                "options": ["Logo on cover", "Logo in the middle", "Stacked"],
+                "default": "Logo on cover"
+            },
             "title_font": {
                 "type": "select",
                 "options": [
@@ -118,11 +123,6 @@
                     "Hidden"
                 ],
                 "default": "Center aligned",
-                "group": "homepage"
-            },
-            "show_logo_in_navigation": {
-                "type": "boolean",
-                "default": false,
                 "group": "homepage"
             },
             "feed_layout": {
