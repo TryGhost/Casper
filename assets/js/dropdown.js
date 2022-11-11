@@ -28,7 +28,10 @@
             }
         }
 
-        if (!submenuItems.length) return;
+        if (!submenuItems.length) {
+            document.body.classList.add('is-dropdown-loaded');
+            return;
+        }
 
         const toggle = document.createElement('button');
         toggle.setAttribute('class', 'nav-more-toggle');
@@ -51,6 +54,8 @@
 
         toggle.appendChild(wrapper);
         nav.appendChild(toggle);
+
+        document.body.classList.add('is-dropdown-loaded');
 
         toggle.addEventListener('click', function () {
             document.body.classList.toggle('is-dropdown-open');
