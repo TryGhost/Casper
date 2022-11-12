@@ -38,7 +38,7 @@
             <nav class="gh-head-menu">
                 {{navigation}}
                 {{#unless @site.members_enabled}}
-                    {{#match @custom.header_style "Stacked"}}
+                    {{#match @custom.navigation_layout "Stacked"}}
                         <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     {{/match}}
                 {{/unless}}
@@ -46,7 +46,7 @@
 
             <div class="gh-head-actions">
                 {{#unless @site.members_enabled}}
-                    {{^match @custom.header_style "Stacked"}}
+                    {{^match @custom.navigation_layout "Stacked"}}
                         <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     {{/match}}
                 {{else}}
