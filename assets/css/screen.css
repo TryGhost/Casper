@@ -430,6 +430,7 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-menu {
     display: flex;
+    gap: 32px;
     align-items: center;
     margin-top: 1px;
     font-weight: 500;
@@ -627,6 +628,13 @@ production stylesheet in assets/built/screen.css
     }
 }
 
+/* Non-Search Actions
+/* ---------------------------------------------------------- */
+
+.gh-nonsearch-actions {
+    display: flex;
+    gap: 24px;
+}
 
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
