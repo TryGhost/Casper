@@ -2,7 +2,7 @@
     "name": "casper-aytac",
     "description": "A clean, minimal default theme for the Ghost publishing platform with little modifications by Aytac",
     "demo": "https://aytac.kirmizi.online",
-    "version": "5.3.2",
+    "version": "5.4.1",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -89,6 +89,15 @@
         },
         "card_assets": true,
         "custom": {
+            "navigation_layout": {
+                "type": "select",
+                "options": [
+                    "Logo on cover",
+                    "Logo in the middle",
+                    "Stacked"
+                ],
+                "default": "Logo on cover"
+            },
             "title_font": {
                 "type": "select",
                 "options": [
@@ -118,11 +127,6 @@
                     "Hidden"
                 ],
                 "default": "Center aligned",
-                "group": "homepage"
-            },
-            "show_logo_in_navigation": {
-                "type": "boolean",
-                "default": false,
                 "group": "homepage"
             },
             "feed_layout": {
