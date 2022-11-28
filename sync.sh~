@@ -1,0 +1,2 @@
+#!/bin/sh
+ssh ojweb@freddielx 'cd ojghost/content/themes/oj-ghost-theme && git pull && cd ~/ojghost && ghost restart'

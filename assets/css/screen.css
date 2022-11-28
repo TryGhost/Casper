@@ -28,7 +28,7 @@ production stylesheet in assets/built/screen.css
 
 /* Import CSS reset and base styles */
 @import "global.css";
-
+@import "karla.css";
 :root {
 
     /* Colours */
@@ -53,7 +53,7 @@ production stylesheet in assets/built/screen.css
      */
 
     /* Fonts */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-sans: 'Karla', sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
 
@@ -118,6 +118,24 @@ production stylesheet in assets/built/screen.css
     color: var(--color-darkgrey);
 }
 
+.site-header-content:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    background:
+        radial-gradient(
+        closest-side,
+        rgba(0,9,36,0) 40%,
+        rgba(30,0,59,.3) 60%,
+        rgb(10 0 21 / 95%) 90%
+    );
+}
+
 .has-cover .site-header-content {
     min-height: 560px;
     background-color: var(--ghost-accent-color);
@@ -141,6 +159,7 @@ production stylesheet in assets/built/screen.css
 
 .site-header-inner {
     position: relative;
+    z-index: 3;
 }
 
 .site-header-content.left-aligned .site-header-inner {
@@ -156,7 +175,9 @@ production stylesheet in assets/built/screen.css
 .site-header-content.left-aligned .site-logo {
     margin-right: auto;
     margin-left: 0;
-    max-height: 96px;
+    max-height: 130px;
+    /* need max-width to position logo properly with safari */
+    max-width: 180px;
 }
 
 .site-title {
@@ -218,7 +239,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-cover .site-header-content.left-aligned :is(.site-logo, .site-title) + .site-description {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
 }
 
 @media (min-width: 992px) {
@@ -421,6 +442,7 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-logo img {
     max-height: 40px;
+    height: 8rem;
 }
 
 
@@ -1128,7 +1150,11 @@ make sure this only happens on large viewports / desktop-ish devices.
         font-size: 4.4rem;
         line-height: 1.05;
     }
-
+    @media (min-width: 1001px) {
+       .post-card-large .post-card-title {
+    		font-size: 3.5rem;
+       }
+    }
     .post-card-large .post-card-excerpt {
         margin-top: 16px;
     }
@@ -1334,6 +1360,15 @@ use it for applying any other styles. */
 /* Content refers to styling all page and post content that is
 created within the Ghost editor. The main content handles
 headings, text, images and lists. We deal with cards lower down. */
+
+/* automatic hyphenation */
+.gh-content p,
+.post-card-excerpt,
+.post-full-content {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
 
 /* Default vertical spacing */
 .gh-content > * + * {
