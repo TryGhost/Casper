@@ -136,6 +136,7 @@ production stylesheet in assets/built/screen.css
 
 .site-header-content.no-content {
     padding-top: 0;
+    padding-bottom: 2vmin;
 }
 
 .site-header-inner {
