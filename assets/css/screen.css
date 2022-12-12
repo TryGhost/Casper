@@ -273,7 +273,7 @@ production stylesheet in assets/built/screen.css
     color: #fff;
 }
 
-.home-template.has-cover .gh-head {
+:is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head {
     position: absolute;
     top: 0;
     right: 0;
@@ -1142,6 +1142,41 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card.dynamic .post-card-title {
         font-size: 3rem;
+    }
+}
+
+/* Pagination
+/* ---------------------------------------------------------- */
+
+.pagination {
+    display: none;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-top: 8vmin;
+}
+
+html.no-infinite-scroll .pagination {
+    display: grid;
+}
+
+.pagination a {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.pagination .page-number {
+    grid-column-start: 2;
+    color: var(--color-secondary-text);
+}
+
+.pagination .older-posts {
+    grid-column-start: 3;
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .pagination .page-number {
+        display: none;
     }
 }
 
