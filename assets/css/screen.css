@@ -313,7 +313,7 @@ production stylesheet in assets/built/screen.css
 
 @media (min-width: 992px) {
     .is-head-left-logo .gh-head-menu {
-        margin-right: 32px;
+        margin-right: 64px;
         margin-left: 16px;
     }
 }
@@ -566,6 +566,17 @@ production stylesheet in assets/built/screen.css
     text-align: right;
 }
 
+.gh-head-members {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.gh-head-link {
+    font-weight: 500;
+    color: inherit;
+}
+
 .gh-head-button {
     display: inline-flex;
     justify-content: center;
@@ -614,13 +625,13 @@ production stylesheet in assets/built/screen.css
     margin-right: -4px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     .gh-head-actions .gh-search {
         display: none;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .gh-head-brand .gh-search {
         display: none;
     }
@@ -682,7 +693,7 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 /* IDs needed to ensure sufficient specificity */
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     #gh-head {
         height: 64px;
     }
