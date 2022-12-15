@@ -1,5 +1,5 @@
 (function () {
-    const mediaQuery = window.matchMedia('(max-width: 991px)');
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
 
     const menu = document.querySelector('.gh-head-menu');
     const nav = menu.querySelector('.nav');
