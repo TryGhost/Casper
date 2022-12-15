@@ -1,0 +1,11 @@
+{{!< default}}
+
+<section class="post-content post-tag-content">
+    <div class="post-tag-grid">
+        {{#get 'tags' limit='15' include='count.posts' order='count.posts desc'}}
+        {{#foreach tags}}
+        {{> "tag-card"}}
+        {{/foreach}}
+        {{/get}}
+    </div>
+</section>

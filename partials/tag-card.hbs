@@ -1,0 +1,28 @@
+<div class="post-tag-grid-item">
+    <a href='{{ url }}'>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="post-tag-grid-item-svg">
+            {{#if accent_color}}
+            <rect x="0" y="0" style="fill: {{accent_color}}" class="post-tag-grid-item-svg-first"></rect>
+            {{else}}
+            <rect x="0" y="0" class="post-tag-grid-item-svg-first"></rect>
+            {{/if}}
+            <foreignObject class="post-tag-grid-item-svg-first-obj">
+                <div class="post-tag-grid-item-svg-first-obj-text">{{ count.posts }}</div>
+            </foreignObject>
+            <rect class="post-tag-grid-item-svg-second"></rect>
+            <foreignObject class="post-tag-grid-item-svg-second-obj">
+                <div class="post-tag-grid-item-svg-second-obj-inner">
+                    {{#if accent_color}}
+                    <h2 style="color:{{accent_color}};">{{ name }}</h2>
+                    {{else}}
+                    <h2>{{ name }}</h2>
+                    {{/if}}
+
+                    {{#if description}}
+                    <p class="post-tag-grid-item-svg-second-obj-description">{{description}}</p>
+                    {{/if}}
+                </div>
+            </foreignObject>
+        </svg>
+    </a>
+</div>

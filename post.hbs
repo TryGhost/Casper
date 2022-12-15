@@ -58,6 +58,20 @@ into the {body} tag of the default.hbs template --}}
 
         </section>
         </div>
+        {{#if tags}}
+        <div class="post-tags">
+            <div class="post-tags-box-label">Tags</div>
+            {{#foreach tags}}
+                <a href="{{url}}">
+                    {{#if accent_color}}
+                    <span class="post-tag-title" style="color:{{accent_color}};">{{name}}</span>
+                    {{else}}
+                    <span class="post-tag-title" style="color:var(--ghost-accent-color);">{{name}}</span>
+                    {{/if}}
+                </a>
+            {{/foreach}}
+        </div>
+        {{/if}}
 
         {{#match @custom.post_image_style "!=" "Hidden"}}
         {{#if feature_image}}
@@ -84,6 +98,17 @@ into the {body} tag of the default.hbs template --}}
 
     <section class="gh-content gh-canvas">
         {{content}}
+    </section>
+
+    <section class="article-share gh-canvas">
+        <h2 class="text-[2.8rem] font-bold tracking-tight dark:text-[rgba(255,255,255,0.85)]"><span class="hidden sm:inline">Share </span><span class="capitalize sm:normal-case">this</span></h2>
+        <ul>
+            <li><a href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter" class="social-share-link">{{> "icons/share-twitter"}}</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook" class="social-share-link">{{> "icons/share-facebook"}}</a></li>
+            <li><a href="http://www.reddit.com/submit?url={{url absolute="true"}}&amp;title={{encode title}}" onclick="window.open(this.href, 'reddit-share', 'width=490,height=530');return false;" title="Reddit" class="social-share-link">{{> "icons/share-reddit"}}</a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}&amp;title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=490,height=530');return false;" title="LinkedIn" class="social-share-link">{{> "icons/share-linkedin"}}</a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;description={{encode title}}" onclick="window.open(this.href, 'pinterest-share', 'width=490,height=530');return false;" title="Pinterest" class="social-share-link">{{> "icons/share-pinterest"}}</a></li>
+        </ul>
     </section>
 
     {{#if comments}}
