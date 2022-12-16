@@ -1,7 +1,8 @@
 (function () {
     const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-    const menu = document.querySelector('.gh-head-menu');
+    const head = document.querySelector('.gh-head');
+    const menu = head.querySelector('.gh-head-menu');
     const nav = menu.querySelector('.nav');
     if (!nav) return;
 
@@ -68,7 +69,7 @@
         });
     }
 
-    imagesLoaded(logo, function () {
+    imagesLoaded(head, function () {
         makeDropdown();
     });
 
