@@ -596,6 +596,14 @@ production stylesheet in assets/built/screen.css
     background: #fff;
 }
 
+@media (max-width: 767px) {
+    .gh-head-members {
+        flex-direction: column-reverse;
+        gap: 16px;
+        width: 100%;
+    }
+}
+
 
 /* Search
 /* ---------------------------------------------------------- */
@@ -755,6 +763,11 @@ production stylesheet in assets/built/screen.css
         transform: translateY(-4px);
     }
 
+    #gh-head :is(.gh-head-button, .gh-head-link) {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
     #gh-head .gh-head-button {
         width: 100%;
         font-size: 1.8rem;
@@ -805,15 +818,19 @@ production stylesheet in assets/built/screen.css
         flex-direction: column;
         gap: 12px;
         align-items: center;
-        padding: max(4vmin, 20px) 0;
+        padding: max(4vmin, 20px) 0 max(4vmin, 28px);
         background-color: #fff;
     }
 
-    .gh-head-open #gh-head .gh-head-button {
+    .gh-head-open #gh-head :is(.gh-head-button, .gh-head-link) {
         opacity: 1;
         transition: transform 0.4s, opacity 0.4s;
         transition-delay: 0.2s;
         transform: translateY(0);
+    }
+
+    .gh-head-open #gh-head .gh-head-link {
+        transition-delay: 0.4s;
     }
 }
 
