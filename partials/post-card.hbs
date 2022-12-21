@@ -20,7 +20,7 @@ which templates loop over to generate a list of posts. --}}
         />
 
         {{#unless access}}
-        {{^has visibility="public"}}
+        {{#has visibility="public"}}
             <div class="post-card-access">
                 {{> "icons/lock"}}
                 {{#has visibility="members"}}
@@ -49,7 +49,7 @@ which templates loop over to generate a list of posts. --}}
                 </div>
                 <h2 class="post-card-title">
                     {{#unless access}}
-                    {{^has visibility="public"}}
+                    {{#has visibility="public"}}
                         {{#unless feature_image}}
                             {{> "icons/lock"}}
                         {{/unless}}
