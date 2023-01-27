@@ -9,17 +9,17 @@
         {{#author}}
         <section class="post-card post-card-large">
 
-            {{#if feature_image}}
+            {{#if cover_image}}
             <div class="post-card-image-link">
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img class="post-card-image"
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
+                    srcset="{{img_url cover_image size="s"}} 300w,
+                            {{img_url cover_image size="m"}} 600w,
+                            {{img_url cover_image size="l"}} 1000w,
+                            {{img_url cover_image size="xl"}} 2000w"
                     sizes="(max-width: 1000px) 400px, 800px"
-                    src="{{img_url feature_image size="m"}}"
+                    src="{{img_url cover_image size="m"}}"
                     alt="{{title}}"
                 />
             </div>
