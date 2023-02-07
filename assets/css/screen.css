@@ -88,6 +88,8 @@ body {
     margin: 0 auto;
     max-width: 1040px;
     width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 
 .site-nav-main .inner {
@@ -294,6 +296,8 @@ body {
 .back-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .back-to-all-posts {
