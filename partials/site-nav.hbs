@@ -150,7 +150,7 @@ document.querySelector('.service-btn').addEventListener('click', e => {
     e.preventDefault()
     document.querySelector('.service-icon').classList.toggle('rotate-0')
 
-    const dropdown = e.target.nextElementSibling;
+    const dropdown = e.currentTarget.nextElementSibling;
     dropdown.classList.toggle('max-h-0')
 });
 
@@ -159,7 +159,7 @@ document.querySelector('.about-us-btn').addEventListener('click', e => {
     e.preventDefault()
     document.querySelector('.about-us-icon').classList.toggle('rotate-0')
 
-    const dropdown = e.target.nextElementSibling;
+    const dropdown = e.currentTarget.nextElementSibling;
     dropdown.classList.toggle('max-h-0')
 });
 </script>
