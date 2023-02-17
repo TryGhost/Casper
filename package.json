@@ -1,8 +1,8 @@
 {
-    "name": "casper",
-    "description": "A clean, minimal default theme for the Ghost publishing platform",
+    "name": "casper PEM edition",
+    "description": "Modified version of Ghost's Casper theme.",
     "demo": "https://demo.ghost.io",
-    "version": "5.4.5",
+    "version": "5.4.5.1",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -96,7 +96,7 @@
                     "Logo in the middle",
                     "Stacked"
                 ],
-                "default": "Logo on cover"
+                "default": "Stacked"
             },
             "title_font": {
                 "type": "select",
@@ -116,7 +116,7 @@
             },
             "show_publication_cover": {
                 "type": "boolean",
-                "default": true,
+                "default": false,
                 "group": "homepage"
             },
             "header_style": {
@@ -126,7 +126,7 @@
                     "Left aligned",
                     "Hidden"
                 ],
-                "default": "Center aligned",
+                "default": "Hidden",
                 "group": "homepage"
             },
             "feed_layout": {
@@ -136,7 +136,7 @@
                     "Grid",
                     "List"
                 ],
-                "default": "Classic",
+                "default": "Grid",
                 "group": "homepage"
             },
             "color_scheme": {
@@ -156,7 +156,7 @@
                     "Small",
                     "Hidden"
                 ],
-                "default": "Wide",
+                "default": "Small",
                 "group": "post"
             },
             "email_signup_text": {
@@ -166,7 +166,7 @@
             },
             "show_recent_posts_footer": {
                 "type": "boolean",
-                "default": true,
+                "default": false,
                 "group": "post"
             }
         }
