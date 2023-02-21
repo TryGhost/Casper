@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@master
       - uses: TryGhost/action-deploy-theme@v1.4.1
