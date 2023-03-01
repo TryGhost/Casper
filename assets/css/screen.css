@@ -2259,7 +2259,7 @@ html.dark-mode .gh-content table:not(.gist table) td {
     border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
 }
 
-html.dark-mode .gh-content input {
+html.dark-mode .gh-content :is(input, textarea) {
     color: color-mod(var(--color-midgrey) l(-30%));
 }
 
@@ -2450,7 +2450,7 @@ html.dark-mode .footer-cta-title {
         border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
     }
 
-    html.auto-color .gh-content input {
+    html.auto-color .gh-content :is(input, textarea) {
         color: color-mod(var(--color-midgrey) l(-30%));
     }
 
