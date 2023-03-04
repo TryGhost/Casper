@@ -2,7 +2,7 @@
     "name": "casper-pem",
     "description": "Modified version of Ghost's Casper theme for Practical Engineering Management.",
     "demo": "https://demo.ghost.io",
-    "version": "5.4.5-pem1",
+    "version": "5.4.5-pem2",
     "engines": {
         "ghost": ">=5.0.0"
     },

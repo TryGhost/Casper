@@ -51,7 +51,7 @@ into the {body} of the default.hbs template --}}
     <hr>
     <h1 class="">Latest</h1>
     <div class="post-feed">
-        {{#get "posts" filter="featured:false"}}
+        {{#get "posts" limit="all" filter="featured:false"}}
             {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
@@ -59,7 +59,7 @@ into the {body} of the default.hbs template --}}
         {{/get}}
     </div>
 
-    {{pagination}}
+    {{!-- {{pagination}} --}}
 
 </div>
 </main>
