@@ -6,20 +6,19 @@ production stylesheet in assets/built/screen.css
 
 1.  Global Styles
 2.  Layout
-3.  Special Templates
-4.  Site Header
-5.  Site Navigation
-6.  Post Feed
-7.  Single Post
-  7.1. Post Byline
-  7.2. Members Subscribe Form
-  7.4. Related Posts
-  7.5. Koenig Styles
-  7.6  Comments
-8.  Author Template
+3.  Site Header
+4.  Site Navigation
+5.  Post Feed
+6.  Single Post
+  6.1. Post Byline
+  6.2. Subscribe
+  6.3. Read More
+  6.4. Comments
+7.  Author Template
+8.  Tag Template
 9.  Error Template
-11. Site Footer
-12. Dark Mode
+10.  Site Footer
+11. Dark Mode
 
 */
 
@@ -87,7 +86,7 @@ production stylesheet in assets/built/screen.css
 }
 
 
-/* 4. Site Header
+/* 3. Site Header
 /* ---------------------------------------------------------- */
 
 .site-header {
@@ -258,7 +257,7 @@ production stylesheet in assets/built/screen.css
 }
 
 
-/* 5. Site Navigation
+/* 4. Site Navigation
 /* ---------------------------------------------------------- */
 
 .gh-head {
@@ -266,6 +265,7 @@ production stylesheet in assets/built/screen.css
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
+    z-index: 150;
 }
 
 .has-cover:not(.home-template) .gh-head {
@@ -834,7 +834,7 @@ production stylesheet in assets/built/screen.css
 }
 
 
-/* 6. Post Feed
+/* 5. Post Feed
 /* ---------------------------------------------------------- */
 
 .post-feed {
@@ -1208,7 +1208,7 @@ html.no-infinite-scroll .pagination {
 }
 
 
-/* 7. Single Post
+/* 6. Single Post
 /* ---------------------------------------------------------- */
 
 .article {
@@ -1687,7 +1687,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 
-/* 7.1. Post Byline
+/* 6.1. Post Byline
 /* ---------------------------------------------------------- */
 
 .article-byline {
@@ -1750,7 +1750,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 
-/* 7.3. Subscribe
+/* 6.2. Subscribe
 /* ---------------------------------------------------------- */
 
 .footer-cta {
@@ -1800,7 +1800,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 
-/* 7.4. Read more
+/* 6.3. Read more
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
@@ -1839,7 +1839,7 @@ iframe.instagram-media + script + :not([id]) {
     }
 }
 
-/* 7.6. Comments
+/* 6.4. Comments
 /* ---------------------------------------------------------- */
 .comments {
     display: flex;
@@ -1877,7 +1877,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 
-/* 8. Author Template
+/* 7. Author Template
 /* ---------------------------------------------------------- */
 
 .author-profile-pic {
@@ -2011,7 +2011,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 
-/* 11. Site Footer
+/* 10. Site Footer
 /* ---------------------------------------------------------- */
 
 .site-footer {
@@ -2098,7 +2098,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 
-/* 12. Dark Mode
+/* 11. Dark Mode
 /* ---------------------------------------------------------- */
 
 html.dark-mode body {
@@ -2123,8 +2123,9 @@ html.dark-mode .gh-head {
     color: #fff;
 }
 
-html.dark-mode .gh-burger-box {
-    color: #fff;
+html.dark-mode .gh-burger::before,
+html.dark-mode .gh-burger::after {
+    background-color: #fff;
 }
 
 html.dark-mode .site-header-content {
@@ -2258,7 +2259,7 @@ html.dark-mode .gh-content table:not(.gist table) td {
     border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
 }
 
-html.dark-mode .gh-content input {
+html.dark-mode .gh-content :is(input, textarea) {
     color: color-mod(var(--color-midgrey) l(-30%));
 }
 
@@ -2284,6 +2285,12 @@ html.dark-mode .footer-cta-title {
     color: #fff;
 }
 
+@media (max-width: 767px) {
+    html.dark-mode .gh-head-open #gh-head .gh-head-actions {
+        background-color: var(--color-darkmode);
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     html.auto-color body {
         color: rgba(255, 255, 255, 0.75);
@@ -2307,8 +2314,9 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 
-    html.auto-color .gh-burger-box {
-        color: #fff;
+    html.auto-color .gh-burger::before,
+    html.auto-color .gh-burger::after {
+        background-color: #fff;
     }
 
     html.auto-color .site-header-content {
@@ -2442,7 +2450,7 @@ html.dark-mode .footer-cta-title {
         border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
     }
 
-    html.auto-color .gh-content input {
+    html.auto-color .gh-content :is(input, textarea) {
         color: color-mod(var(--color-midgrey) l(-30%));
     }
 
@@ -2466,6 +2474,12 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .footer-cta-title {
         color: #fff;
+    }
+
+    @media (max-width: 767px) {
+        html.auto-color .gh-head-open #gh-head .gh-head-actions {
+            background-color: var(--color-darkmode);
+        }
     }
 }
 
