@@ -2286,7 +2286,7 @@ html.dark-mode .footer-cta-title {
 }
 
 @media (max-width: 767px) {
-    html.dark-mode .gh-head-open #gh-head .gh-head-actions {
+    html.dark-mode #gh-head .gh-head-actions {
         background-color: var(--color-darkmode);
     }
 }
