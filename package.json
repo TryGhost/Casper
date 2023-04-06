@@ -2,7 +2,7 @@
     "name": "casper-pem",
     "description": "Modified version of Ghost's Casper theme for Practical Engineering Management.",
     "demo": "https://demo.ghost.io",
-    "version": "5.4.5-pem2",
+    "version": "5.4.8-pem2",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -49,7 +49,7 @@
         "autoprefixer": "10.4.7",
         "beeper": "2.1.0",
         "cssnano": "5.1.12",
-        "gscan": "4.34.0",
+        "gscan": "4.36.1",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
