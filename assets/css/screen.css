@@ -2285,12 +2285,6 @@ html.dark-mode .footer-cta-title {
     color: #fff;
 }
 
-@media (max-width: 767px) {
-    html.dark-mode .gh-head-open #gh-head .gh-head-actions {
-        background-color: var(--color-darkmode);
-    }
-}
-
 @media (prefers-color-scheme: dark) {
     html.auto-color body {
         color: rgba(255, 255, 255, 0.75);
@@ -2474,12 +2468,6 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .footer-cta-title {
         color: #fff;
-    }
-
-    @media (max-width: 767px) {
-        html.auto-color .gh-head-open #gh-head .gh-head-actions {
-            background-color: var(--color-darkmode);
-        }
     }
 }
 
