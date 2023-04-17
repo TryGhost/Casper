@@ -31,9 +31,12 @@ production stylesheet in assets/built/screen.css
 :root {
 
     /* Colours */
-    --color-green: #a4d037;
-    --color-yellow: #fecd35;
-    --color-red: #f05230;
+    --color-purple: #190644;
+    --color-purple-heart: #4E1EC4;
+    --color-pink: #ea2f5d;
+    --color-green: #2feabc;
+    --color-yellow: #f1ce18;
+    --color-red: #ee1724;
     --color-darkgrey: #15171A;
     --color-midgrey: #738a94;
     --color-lightgrey: #f1f1f1;
@@ -52,7 +55,7 @@ production stylesheet in assets/built/screen.css
      */
 
     /* Fonts */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-sans: 'Lexend Deca', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
 
