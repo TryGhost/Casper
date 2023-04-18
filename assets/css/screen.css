@@ -2031,7 +2031,7 @@ iframe.instagram-media + script + :not([id]) {
     grid-gap: 40px;
     grid-template-columns: auto 1fr auto;
     color: rgba(255,255,255,0.7);
-    font-size: 1.3rem;
+    font-size: 1.6rem;
 }
 
 .site-footer .copyright a {
