@@ -63,6 +63,7 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 .viewport {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
