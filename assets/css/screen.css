@@ -2472,6 +2472,29 @@ html.dark-mode .footer-cta-title {
     }
 }
 
+@media (prefers-reduced-motion) {
+    .gh-dropdown {
+        transition: none;
+    }
+
+    .gh-burger::before,
+    .gh-burger::after {
+        transition: none;
+    }
+
+    .gh-head-open #gh-head .nav li {
+        transition: none;
+    }
+
+    .gh-head-open #gh-head :is(.gh-head-button, .gh-head-link) {
+        transition: none;
+    }
+
+    .footer-cta-button {
+        transition: none;
+    }
+}
+
 /*
 
 Hey! You reached the end.
