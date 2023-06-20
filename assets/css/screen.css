@@ -2119,8 +2119,7 @@ html.dark-mode figcaption a {
     color: #fff;
 }
 
-html.dark-mode .gh-head,
-html.dark-mode .has-cover:not(.home-template) .gh-head {
+html.dark-mode body:not(.has-cover) .gh-head {
     background: var(--color-darkmode);
     color: #fff;
 }
@@ -2288,8 +2287,8 @@ html.dark-mode .footer-cta-title {
 }
 
 @media (max-width: 767px) {
-    html.dark-mode .gh-head-open #gh-head,
-    html.dark-mode .gh-head-open #gh-head .gh-head-actions {
+    html.dark-mode .gh-head-open:not(.has-cover) #gh-head,
+    html.dark-mode .gh-head-open:not(.has-cover) #gh-head .gh-head-actions {
         background: var(--color-darkmode);
     }
 }
@@ -2312,8 +2311,7 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 
-    html.auto-color .gh-head,
-    html.auto-color .has-cover:not(.home-template) .gh-head {
+    html.auto-color body:not(.has-cover) .gh-head {
         background: var(--color-darkmode);
         color: #fff;
     }
@@ -2481,8 +2479,8 @@ html.dark-mode .footer-cta-title {
     }
 
     @media (max-width: 767px) {
-        html.auto-color .gh-head-open #gh-head,
-        html.auto-color .gh-head-open #gh-head .gh-head-actions {
+        html.auto-color .gh-head-open:not(.has-cover) #gh-head,
+        html.auto-color .gh-head-open:not(.has-cover) #gh-head .gh-head-actions {
             background: var(--color-darkmode);
         }
     }
