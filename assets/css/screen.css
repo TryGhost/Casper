@@ -1295,7 +1295,8 @@ html.no-infinite-scroll .pagination {
 is laid out on top of. Canvas just defines the grid, we don't
 use it for applying any other styles. */
 
-.gh-canvas {
+.gh-canvas,
+.kg-width-full.kg-content-wide {
     --gap: max(4vmin, 20px);
     --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
     --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
