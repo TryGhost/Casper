@@ -88,10 +88,6 @@ video {
 body {
     line-height: 1;
 }
-ol,
-ul {
-    list-style: none;
-}
 blockquote,
 q {
     quotes: none;
@@ -344,14 +340,6 @@ ul ul,
 ul ol,
 ol ul {
     margin: 0.5em 0 1em;
-}
-
-ul {
-    list-style: disc;
-}
-
-ol {
-    list-style: decimal;
 }
 
 ul,

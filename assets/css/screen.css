@@ -1479,6 +1479,18 @@ is the very first element in the post content */
     box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
 }
 
+.gh-content .kg-nested-list-item {
+    list-style-type: none;
+}
+
+.gh-content ol ol li {
+    list-style-type: lower-alpha;
+}
+
+.gh-content ol ol ol li {
+    list-style-type: lower-roman;
+}
+
 @media (max-width: 650px) {
     .gh-content > blockquote:not([class]),
     .gh-content > ol,
