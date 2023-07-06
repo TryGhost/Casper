@@ -1025,6 +1025,11 @@ production stylesheet in assets/built/screen.css
     margin-top: 6px;
 }
 
+:is(.tag-template, .author-template) .post-card-large .post-card-excerpt {
+    display: block;
+    overflow-y: auto;
+}
+
 .post-card-meta {
     display: flex;
     align-items: center;
