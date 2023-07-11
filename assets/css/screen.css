@@ -1348,7 +1348,7 @@ headings, text, images and lists. We deal with cards lower down. */
 }
 
 /* Remove space between full-width cards */
-.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.with-caption + .kg-width-full) {
+.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.kg-card-hascaption + .kg-width-full) {
     margin-top: 0;
 }
 
