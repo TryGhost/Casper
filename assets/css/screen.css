@@ -1347,6 +1347,11 @@ headings, text, images and lists. We deal with cards lower down. */
     margin-bottom: 0;
 }
 
+/* Remove space between full-width cards */
+.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.with-caption + .kg-width-full) {
+    margin-top: 0;
+}
+
 /* [id] represents all headings h1-h6, reset all margins */
 .gh-content > [id] {
     margin: 0;
