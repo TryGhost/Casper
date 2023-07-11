@@ -1218,16 +1218,15 @@ html.no-infinite-scroll .pagination {
 /* ---------------------------------------------------------- */
 
 .article {
-    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
     word-break: break-word;
 }
 
-.page-template .article {
-    padding-top: max(12vmin, 64px);
+.post-template .article {
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
 }
 
 .article-header {
-    padding: 0 0 max(6.4vmin, 40px) 0;
+    padding: max(12vmin, 64px) 0 max(6.4vmin, 40px) 0;
 }
 
 .page-template .article-header {
@@ -1395,6 +1394,10 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
+}
+
+.header-hidden .gh-content > *:first-child:not(.kg-width-full) {
+    padding-top: max(12vmin, 64px);
 }
 
 .gh-content .kg-callout-card .kg-callout-text,
