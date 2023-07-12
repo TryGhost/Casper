@@ -1400,6 +1400,10 @@ is the very first element in the post content */
     padding-top: max(12vmin, 64px);
 }
 
+.gh-content > *:last-child:not(.kg-width-full) {
+    margin-bottom: max(12vmin,64px);
+}
+
 .gh-content .kg-callout-card .kg-callout-text,
 .gh-content .kg-toggle-card .kg-toggle-content > ol,
 .gh-content .kg-toggle-card .kg-toggle-content > ul,
@@ -2038,6 +2042,11 @@ iframe.instagram-media + script + :not([id]) {
     padding-bottom: 140px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
+}
+
+.page-template .site-footer,
+.post-template .site-footer {
+    margin-top: 0;
 }
 
 .site-footer .inner {
