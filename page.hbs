@@ -10,7 +10,7 @@ into the {body} tag of the default.hbs template --}}
 <main id="site-main" class="site-main">
 <article class="article {{post_class}}">
 
-    {{#if show_title_and_feature_image}}
+    {{#match @page.show_title_and_feature_image}}
         <header class="article-header gh-canvas">
 
             <h1 class="article-title">{{title}}</h1>
@@ -35,7 +35,7 @@ into the {body} tag of the default.hbs template --}}
             {{/if}}
 
         </header>
-    {{/if}}
+    {{/match}}
 
     <section class="gh-content gh-canvas">
         {{content}}
