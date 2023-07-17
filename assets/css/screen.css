@@ -1218,20 +1218,15 @@ html.no-infinite-scroll .pagination {
 /* ---------------------------------------------------------- */
 
 .article {
-    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
     word-break: break-word;
 }
 
-.page-template .article {
-    padding-top: max(12vmin, 64px);
-}
-
-.article-header {
-    padding: 0 0 max(6.4vmin, 40px) 0;
+.post-template .article {
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
 }
 
 .page-template .article-header {
-    padding-bottom: max(3.2vmin, 28px);
+    padding: max(12vmin, 64px) 0 max(3.2vmin, 28px);
 }
 
 .article-tag {
@@ -1400,6 +1395,14 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
+}
+
+.page-template .gh-content:only-child > *:first-child:not(.kg-width-full) {
+    padding-top: max(12vmin, 64px);
+}
+
+.page-template .gh-content > *:last-child:not(.kg-width-full) {
+    margin-bottom: max(12vmin, 64px);
 }
 
 .gh-content .kg-callout-card .kg-callout-text,
@@ -2040,6 +2043,10 @@ iframe.instagram-media + script + :not([id]) {
     padding-bottom: 140px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
+}
+
+.page-template .site-footer {
+    margin-top: 0;
 }
 
 .site-footer .inner {
