@@ -86,6 +86,20 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
+    <section>
+        Previous Post
+        {{#prev_post}}
+        <a href="{{url}}">{{title}}</a>
+        {{/prev_post}}
+    </section>
+    
+    <section>
+        Next Post
+        {{#next_post}}
+        <a href="{{url}}">{{title}}</a>
+        {{/next_post}}
+    </section>
+
     {{#if comments}}
         <section class="article-comments gh-canvas">
             {{comments}}
