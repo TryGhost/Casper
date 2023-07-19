@@ -1225,6 +1225,10 @@ html.no-infinite-scroll .pagination {
     padding: max(8vmin, 40px) 0 max(8vmin, 64px);
 }
 
+.post-template .article-header {
+    padding: 0 0 max(6.4vmin, 40px);
+}
+
 .page-template .article-header {
     padding: max(12vmin, 64px) 0 max(3.2vmin, 28px);
 }
