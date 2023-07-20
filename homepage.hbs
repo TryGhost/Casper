@@ -34,16 +34,33 @@
     <main id="site-main" class="site-main outer">
         <div class="inner posts">
 
-            <div class="post-feed">
-                {{#collection "podcasts"}}
+               <div class="post-feed">
+                <h3>Featured</h3>
+                {{#collection "featured" limit="3"}}
                 {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
                 {{/foreach}}
                 {{/collection}}
             </div>
 
-            {{pagination}}
+            <div class="post-feed">
+                <h3>From the Podcast</h3>
+                {{#collection "podcast" limit="3"}}
+                {{#foreach posts}}
+                {{> "post-card"}}
+                {{/foreach}}
+                {{/collection}}
+            </div>
+
+            <div class="post-feed">
+                <h3>Latest</h3>
+                {{#collection "latest" limit="3"}}
+                {{#foreach posts}}
+                {{> "post-card"}}
+                {{/foreach}}
+                {{/collection}}
+            </div>
+
 
         </div>
     </main>
