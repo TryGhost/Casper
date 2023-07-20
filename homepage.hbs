@@ -34,29 +34,29 @@
     <main id="site-main" class="site-main outer">
         <div class="inner posts">
 
-               <div class="post-feed">
-                <h3>Featured</h3>
+            <div class="post-feed">
                 {{#collection "featured" limit="3"}}
+                <h3 class="post-card-large">Featured</h3>
                 {{#foreach posts}}
-                {{> "post-card"}}
+                {{> "collection-card"}}
                 {{/foreach}}
                 {{/collection}}
             </div>
 
             <div class="post-feed">
-                <h3>From the Podcast</h3>
                 {{#collection "podcast" limit="3"}}
+                <h3  class="post-card-large">From the Podcast</h3>
                 {{#foreach posts}}
-                {{> "post-card"}}
+                {{> "collection-card"}}
                 {{/foreach}}
                 {{/collection}}
             </div>
 
             <div class="post-feed">
-                <h3>Latest</h3>
                 {{#collection "latest" limit="3"}}
+                <h3 class="post-card-large">Latest</h3>
                 {{#foreach posts}}
-                {{> "post-card"}}
+                {{> "collection-card"}}
                 {{/foreach}}
                 {{/collection}}
             </div>
