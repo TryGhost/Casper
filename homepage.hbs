@@ -35,7 +35,7 @@
         <div class="inner posts">
 
             <div class="post-feed">
-                {{#collection "featured" limit="3"}}
+                {{#collection "featured" limit="3" order="published_at desc"}}
                 <h3 class="post-card-large">Featured</h3>
                 {{#foreach posts}}
                 {{> "collection-card"}}
@@ -44,8 +44,8 @@
             </div>
 
             <div class="post-feed">
-                {{#collection "podcast" limit="3"}}
-                <h3  class="post-card-large">From the Podcast</h3>
+                {{#collection "podcast" limit="3" order="published_at desc"}}
+                <h3 class="post-card-large">From the Podcast</h3>
                 {{#foreach posts}}
                 {{> "collection-card"}}
                 {{/foreach}}
@@ -53,7 +53,7 @@
             </div>
 
             <div class="post-feed">
-                {{#collection "latest" limit="3"}}
+                {{#collection "latest" limit="3" order="published_at desc"}}
                 <h3 class="post-card-large">Latest</h3>
                 {{#foreach posts}}
                 {{> "collection-card"}}
