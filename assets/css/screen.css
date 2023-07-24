@@ -1402,7 +1402,7 @@ is the very first element in the post content */
 }
 
 .page-template .gh-content:only-child > *:first-child:not(.kg-width-full) {
-    padding-top: max(12vmin, 64px);
+    margin-top: max(12vmin, 64px);
 }
 
 .page-template .gh-content > *:last-child:not(.kg-width-full) {
