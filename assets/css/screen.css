@@ -1025,6 +1025,11 @@ production stylesheet in assets/built/screen.css
     margin-top: 6px;
 }
 
+:is(.tag-template, .author-template) .post-card-large .post-card-excerpt {
+    display: block;
+    overflow-y: auto;
+}
+
 .post-card-meta {
     display: flex;
     align-items: center;
@@ -1213,20 +1218,19 @@ html.no-infinite-scroll .pagination {
 /* ---------------------------------------------------------- */
 
 .article {
-    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
     word-break: break-word;
 }
 
-.page-template .article {
-    padding-top: max(12vmin, 64px);
+.post-template .article {
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
 }
 
-.article-header {
-    padding: 0 0 max(6.4vmin, 40px) 0;
+.post-template .article-header {
+    padding: 0 0 max(6.4vmin, 40px);
 }
 
 .page-template .article-header {
-    padding-bottom: max(3.2vmin, 28px);
+    padding: max(12vmin, 64px) 0 max(3.2vmin, 28px);
 }
 
 .article-tag {
@@ -1295,28 +1299,28 @@ html.no-infinite-scroll .pagination {
 is laid out on top of. Canvas just defines the grid, we don't
 use it for applying any other styles. */
 
-.gh-canvas {
+.gh-canvas,
+.kg-width-full.kg-content-wide {
+    --gap: max(4vmin, 20px);
+    --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
+    --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
+    --full: minmax(var(--gap), 1fr);
+
     display: grid;
     grid-template-columns:
-        [full-start]
-        minmax(max(4vmin, 20px), auto)
-            [wide-start]
-            minmax(auto, 240px)
-                [main-start]
-                    min(720px, calc(100% - max(8vmin, 40px)))
-                [main-end]
-            minmax(auto, 240px)
-            [wide-end]
-        minmax(max(4vmin, 20px), auto)
-        [full-end]
-    ;
+        [full-start] var(--full)
+        [wide-start] var(--wide)
+        [main-start] var(--main) [main-end]
+        var(--wide) [wide-end]
+        var(--full) [full-end];
 }
 
 .gh-canvas > * {
     grid-column: main-start / main-end;
 }
 
-.kg-width-wide {
+.kg-width-wide,
+.kg-content-wide > div {
     grid-column: wide-start / wide-end;
 }
 
@@ -1340,6 +1344,11 @@ headings, text, images and lists. We deal with cards lower down. */
 .gh-content > * + * {
     margin-top: max(3.2vmin, 24px);
     margin-bottom: 0;
+}
+
+/* Remove space between full-width cards */
+.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.kg-card-hascaption + .kg-width-full) {
+    margin-top: 0;
 }
 
 /* [id] represents all headings h1-h6, reset all margins */
@@ -1390,6 +1399,14 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
+}
+
+.page-template .gh-content:only-child > *:first-child:not(.kg-width-full) {
+    margin-top: max(12vmin, 64px);
+}
+
+.page-template .gh-content > *:last-child:not(.kg-width-full) {
+    margin-bottom: max(12vmin, 64px);
 }
 
 .gh-content .kg-callout-card .kg-callout-text,
@@ -1479,6 +1496,14 @@ is the very first element in the post content */
     box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
 }
 
+.gh-content ol ol li {
+    list-style-type: lower-alpha;
+}
+
+.gh-content ol ol ol li {
+    list-style-type: lower-roman;
+}
+
 @media (max-width: 650px) {
     .gh-content > blockquote:not([class]),
     .gh-content > ol,
@@ -1516,11 +1541,9 @@ make sure they look good, and are given a bit of extra spacing. */
 except for when immediately preceeded by a heading */
 .gh-content :not(.kg-card):not([id]) + .kg-card {
     margin-top: 6vmin;
-    margin-bottom: 0;
 }
 .gh-content .kg-card + :not(.kg-card) {
     margin-top: 6vmin;
-    margin-bottom: 0;
 }
 
 /* This keeps small embeds centered */
@@ -2024,6 +2047,10 @@ iframe.instagram-media + script + :not([id]) {
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
 
+.page-template .site-footer {
+    margin-top: 0;
+}
+
 .site-footer .inner {
     display: grid;
     grid-gap: 40px;
@@ -2119,7 +2146,7 @@ html.dark-mode figcaption a {
     color: #fff;
 }
 
-html.dark-mode .gh-head {
+html.dark-mode body:not(.has-cover) .gh-head {
     background: var(--color-darkmode);
     color: #fff;
 }
@@ -2286,6 +2313,13 @@ html.dark-mode .footer-cta-title {
     color: #fff;
 }
 
+@media (max-width: 767px) {
+    html.dark-mode .gh-head-open:not(.has-cover) #gh-head,
+    html.dark-mode .gh-head-open:not(.has-cover) #gh-head .gh-head-actions {
+        background: var(--color-darkmode);
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     html.auto-color body {
         color: rgba(255, 255, 255, 0.75);
@@ -2304,7 +2338,7 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 
-    html.auto-color .gh-head {
+    html.auto-color body:not(.has-cover) .gh-head {
         background: var(--color-darkmode);
         color: #fff;
     }
@@ -2469,6 +2503,13 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .footer-cta-title {
         color: #fff;
+    }
+
+    @media (max-width: 767px) {
+        html.auto-color .gh-head-open:not(.has-cover) #gh-head,
+        html.auto-color .gh-head-open:not(.has-cover) #gh-head .gh-head-actions {
+            background: var(--color-darkmode);
+        }
     }
 }
 
