@@ -86,19 +86,6 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    <section>
-        Previous Post
-        {{#prev_post}}
-        <a href="{{url}}">{{title}}</a>
-        {{/prev_post}}
-    </section>
-    
-    <section>
-        Next Post
-        {{#next_post}}
-        <a href="{{url}}">{{title}}</a>
-        {{/next_post}}
-    </section>
 
     {{#if comments}}
         <section class="article-comments gh-canvas">
@@ -128,6 +115,19 @@ into the {body} tag of the default.hbs template --}}
 {{/unless}}
 {{/if}}
 
+ <aside class="read-more-wrap outer">
+    <div class="read-more inner">
+        <h2>Previous Post:</h2>
+        {{#prev_post}}
+        {{> "post-card"}}
+        {{/prev_post}}
+        <h2>Next Post:</h2>
+        {{#next_post}}
+        {{> "post-card"}}
+        {{/next_post}}
+
+    </div>
+</aside>
 
 {{!-- Read more links, just above the footer --}}
 {{#if @custom.show_recent_posts_footer}}
@@ -140,6 +140,7 @@ into the {body} tag of the default.hbs template --}}
 
         {{#if more_posts}}
             <aside class="read-more-wrap outer">
+                <h2>3 Recent Posts:</h2>
                 <div class="read-more inner">
                     {{#foreach more_posts}}
                         {{> "post-card"}}
