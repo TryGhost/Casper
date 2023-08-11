@@ -907,6 +907,13 @@ production stylesheet in assets/built/screen.css
     height: 100%;
     background: var(--color-lightgrey) no-repeat center center;
     object-fit: cover;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+}
+
+.post-card-image:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
