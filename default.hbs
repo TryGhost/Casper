@@ -91,6 +91,9 @@
 </div>
 {{!-- /.viewport --}}
 
+{{#is "post, page"}}
+    {{> "lightbox"}}
+{{/is}}
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script
