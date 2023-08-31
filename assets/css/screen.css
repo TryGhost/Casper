@@ -1402,6 +1402,10 @@ is the very first element in the post content */
     line-height: 1.6em;
 }
 
+.gh-content > p img {
+  margin: 0 auto;
+}
+
 .page-template .gh-content:only-child > *:first-child:not(.kg-width-full) {
     margin-top: max(12vmin, 64px);
 }
