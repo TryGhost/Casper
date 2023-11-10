@@ -3038,16 +3038,19 @@ the right place. Onward!
 
  /* custom styling */
 
- #ghost-portal-root{ display: none ;}
-
-
  #gh-head {
     position: sticky;
     top: 0;
     background: var(--ghost-accent-color);
  }
 
- #gh-head nav a,.gh-search {
+ #gh-head nav {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+ }
+
+ #gh-head nav a,.gh-search,.nav-more-toggle {
     color: #fff;
     font-weight: 700;
  }
@@ -3069,6 +3072,10 @@ the right place. Onward!
 .post-card-image { aspect-ratio: 3/2;}
 
 .site-footer ,.gh-dropdown{ background: var(--ghost-accent-color);}
+
+.fluid-width-video-wrapper{
+    padding-top: 382.2px !important;
+  }  
 
 .fluid-width-video-wrapper iframe,.fluid-width-video-wrapper iframe[name="fitvid0"]{
     width: 100% !important;

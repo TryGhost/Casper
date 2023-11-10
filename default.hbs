@@ -107,6 +107,13 @@ $(document).ready(function () {
     // FitVids - Makes video embeds responsive
     $(".gh-content").fitVids();
 });
+
+const removeTriggerBtn = ()=>{
+     const portalIframe = document.querySelector("#ghost-portal-root iframe");
+     portalIframe.contentWindow.document.querySelector(".gh-portal-triggerbtn-wrapper").style.display = "none"
+}
+
+document.onload = setTimeout(removeTriggerBtn,270)
 </script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
