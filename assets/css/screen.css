@@ -122,7 +122,7 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        padding: 40px 0 5vw;
+        padding: 40px 0 0;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
@@ -1770,31 +1770,50 @@ Usage (In Ghost editor):
 }
 
 .subscribe-form button {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 0 0 10px;
-    padding: 0 20px;
-    height: 43px;
-    outline: none;
-    color: #fff;
-    font-size: 1.5rem;
-    line-height: 39px;
-    font-weight: 400;
-    text-align: center;
-    background: linear-gradient(
-        color(var(--purple) whiteness(+7%)),
-        color(var(--purple) lightness(-7%) saturation(-10%)) 60%,
-        color(var(--purple) lightness(-7%) saturation(-10%)) 90%,
-        color(var(--purple) lightness(-4%) saturation(-10%))
-    );
-    border-radius: 5px;
+    padding: 10px 18px;
+    height: 40px;
+    color: #FCFCFC;
+    font-weight: bold;
+    background: #7445FC;
+    border-radius: 30px;
 
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.subscribe-form button:active,
-.subscribe-form button:focus {
-    background: color(var(--purple) lightness(-9%) saturation(-10%));
+.subscribe-form button:hover {
+    opacity: 0.9;
+    background: #7445FC;
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 10px;
+    padding: 10px 18px;
+    height: 40px;
+    color: #FCFCFC;
+    font-weight: bold;
+    background: #7445FC;
+    border-radius: 30px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.primary-button:hover {
+    opacity: 0.9;
+    background: #7445FC;
 }
 
 .subscribe-form .button-loader,
