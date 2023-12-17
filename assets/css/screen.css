@@ -2187,7 +2187,7 @@ html.dark-mode .post-card-title {
 }
 
 html.dark-mode .post-card-excerpt {
-    color: var(--color-secondary-text);
+    color: color-mod(var(--color-secondary-text) l(70%));
 }
 
 html.dark-mode .pagination a {
