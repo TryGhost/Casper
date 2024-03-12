@@ -56,7 +56,7 @@
         "gulp-postcss": "9.0.1",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
-        "inquirer": "8.2.4",
+        "inquirer": "8.2.6",
         "postcss": "8.2.13",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "4.0.0",
