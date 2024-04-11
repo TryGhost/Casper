@@ -2179,7 +2179,7 @@ html.dark-mode .post-card-image {
 }
 
 html.dark-mode :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content, .pagination .page-number) {
-    color: color-mod(var(--color-secondary-text) l(-22%));
+    color: color-mod(var(--color-secondary-text) l(-9%));
 }
 
 html.dark-mode .post-card-featured {
@@ -2191,7 +2191,7 @@ html.dark-mode .post-card-title {
 }
 
 html.dark-mode .post-card-excerpt {
-    color: var(--color-secondary-text);
+    color: color-mod(var(--color-secondary-text) l(70%));
 }
 
 html.dark-mode .pagination a {
