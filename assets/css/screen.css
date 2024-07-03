@@ -2323,6 +2323,11 @@ html.dark-mode .kg-header-card h3.kg-header-card-subheader {
     color: #fff;
 }
 
+html.dark-mode .kg-bookmark-card a.kg-bookmark-container,
+html.dark-mode .kg-bookmark-card a.kg-bookmark-container:hover {
+    background: var(--color-darkmode) !important;
+}
+
 html.dark-mode .footer-cta-title {
     color: #fff;
 }
@@ -2517,6 +2522,11 @@ html.dark-mode .footer-cta-title {
     html.auto-color .kg-header-card h2.kg-header-card-header,
     html.auto-color .kg-header-card h3.kg-header-card-subheader {
         color: #fff;
+    }
+
+    html.auto-color .kg-bookmark-card a.kg-bookmark-container,
+    html.auto-color .kg-bookmark-card a.kg-bookmark-container:hover {
+        background: var(--color-darkmode) !important;
     }
 
     html.auto-color .footer-cta-title {
