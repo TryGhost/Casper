@@ -2326,6 +2326,7 @@ html.dark-mode .kg-header-card h3.kg-header-card-subheader {
 html.dark-mode .kg-bookmark-card a.kg-bookmark-container,
 html.dark-mode .kg-bookmark-card a.kg-bookmark-container:hover {
     background: var(--color-darkmode) !important;
+    color: #fff !important;
 }
 
 html.dark-mode .footer-cta-title {
@@ -2527,6 +2528,7 @@ html.dark-mode .footer-cta-title {
     html.auto-color .kg-bookmark-card a.kg-bookmark-container,
     html.auto-color .kg-bookmark-card a.kg-bookmark-container:hover {
         background: var(--color-darkmode) !important;
+        color: #fff !important;
     }
 
     html.auto-color .footer-cta-title {
