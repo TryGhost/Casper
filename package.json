@@ -1,6 +1,6 @@
 {
-    "name": "casper",
-    "description": "A clean, minimal default theme for the Ghost publishing platform",
+    "name": "basilica",
+    "description": "Dungeon Church's custom version of Casper theme",
     "demo": "https://demo.ghost.io",
     "version": "5.7.4",
     "engines": {
@@ -22,9 +22,9 @@
         "postship": "git fetch && gulp release"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org/"
+        "name": "Dungeon Church",
+        "email": "dm@dungeon.church",
+        "url": "https://www.dungeon.church/"
     },
     "gpm": {
         "type": "theme",
@@ -40,10 +40,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/oakbrad/ghost-basilica-theme.git"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "bugs": "https://github.com/oakbrad/ghost-basilica-theme/issues",
+    "contributors": "https://github.com/oakbrad/ghost-basilica-theme/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
         "autoprefixer": "10.4.7",
