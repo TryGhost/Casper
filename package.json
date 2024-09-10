@@ -168,7 +168,12 @@
                 "type": "boolean",
                 "default": true,
                 "group": "post"
-            }
+            },
+            "show_email_signup_cta": {
+                "type": "boolean",
+                "default": false,
+                "group": "post"
+            },
         }
     },
     "renovate": {
