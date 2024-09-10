@@ -1,0 +1,31 @@
+{{{html}}}
+<aside class="gh-post-upgrade-cta">
+  <div
+    class="gh-post-upgrade-cta-content"
+    style="background-color: {{accentColor}}"
+  >
+    {{#has visibility="paid"}}
+      <h2>Dieser Beitrag ist nur für Schömsala-Mitarbeitende</h2>
+    {{/has}}
+    {{#has visibility="members"}}
+      <h2>Dieser Beitrag ist nur für Schömsala-Mitarbeitende</h2>
+    {{/has}}
+    {{#has visibility="tiers"}}
+      <h2>Dieser Beitrag ist nur für {{tiers}}</h2>
+    {{/has}}
+    {{#if @member}}
+      <a
+        class="gh-btn"
+        data-portal="account/plans"
+        style="color:{{accentColor}}"
+      >Upgrade your account</a>
+    {{else}}
+      <p>Du hast einen Account?</p>
+      <a
+        class="gh-btn"
+        data-portal="signin"
+        style="color:{{accentColor}}"
+      >Anmelden</a>
+    {{/if}}
+  </div>
+</aside>
