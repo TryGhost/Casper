@@ -19,7 +19,7 @@ into the {body} tag of the default.hbs template --}}
                 </span>
             {{/primary_tag}}
             {{#if featured}}
-                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+                <span class="post-card-featured">{{> "icons/target"}} Im Fokus</span>
             {{/if}}
         </div>
 
@@ -36,11 +36,11 @@ into the {body} tag of the default.hbs template --}}
                 {{#foreach authors}}
                 <li class="author-list-item">
                     {{#if profile_image}}
-                    <a href="{{url}}" class="author-avatar" aria-label="Read more of {{name}}">
+                    <a href="{{url}}" class="author-avatar" aria-label="Mehr Beiträge von {{name}}">
                         <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
                     </a>
                     {{else}}
-                    <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Read more of {{name}}">{{> "icons/avatar"}}</a>
+                    <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Mehr Beiträge von {{name}}">{{> "icons/avatar"}}</a>
                     {{/if}}
                 </li>
                 {{/foreach}}
@@ -84,11 +84,13 @@ into the {body} tag of the default.hbs template --}}
 
     <section class="gh-content gh-canvas">
         {{content}}
+        <hr />
     </section>
 
     {{#if comments}}
         <section class="article-comments gh-canvas">
             {{comments}}
+            <hr />
         </section>
     {{/if}}
 
@@ -96,6 +98,7 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+{{#if @custom.show_email_signup_cta}}
 {{#if @site.members_enabled}}
 {{#unless @member}}
 {{#unless @site.comments_enabled}}
@@ -104,8 +107,8 @@ into the {body} tag of the default.hbs template --}}
         <div class="inner">
             {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
             <a class="footer-cta-button" href="#/portal" data-portal>
-                <div class="footer-cta-input">Enter your email</div>
-                <span>Subscribe</span>
+                <div class="footer-cta-input">Deine E-Mail-Adresse</div>
+                <span>Abonnieren!</span>
             </a>
         </div>
     </section>
@@ -113,7 +116,7 @@ into the {body} tag of the default.hbs template --}}
 {{/unless}}
 {{/unless}}
 {{/if}}
-
+{{/if}}
 
 {{!-- Read more links, just above the footer --}}
 {{#if @custom.show_recent_posts_footer}}
@@ -122,7 +125,7 @@ into the {body} tag of the default.hbs template --}}
 
     This query gets the latest 3 posts on the site, but adds a filter to
     exclude the post we're currently on from being included. --}}
-    {{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
+    {{#get "posts" filter="id:-{{id}}+visibility:public" limit="3" as |more_posts|}}
 
         {{#if more_posts}}
             <aside class="read-more-wrap outer">
