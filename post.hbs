@@ -118,7 +118,7 @@ into the {body} of the default.hbs template --}}
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.members}}
+            {{#if @site.members_enabled}}
                 {{> subscribe-form}}
             {{/if}}
         </article>
