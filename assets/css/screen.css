@@ -2257,14 +2257,6 @@ html.dark-mode .gh-content :not(pre) > code {
     color: #fff;
 }
 
-html.dark-mode .gh-content strong {
-    color: #fff;
-}
-
-html.dark-mode .gh-content em {
-    color: #fff;
-}
-
 html.dark-mode .gh-content code {
     color: #fff;
     background: #000;
@@ -2456,14 +2448,6 @@ html.dark-mode .footer-cta-title {
     }
 
     :where(html.auto-color) .gh-content a {
-        color: #fff;
-    }
-
-    html.auto-color .gh-content strong {
-        color: #fff;
-    }
-
-    html.auto-color .gh-content em {
         color: #fff;
     }
 
