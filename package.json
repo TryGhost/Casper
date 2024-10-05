@@ -169,21 +169,22 @@
                 "default": true,
                 "group": "post"
             },
-	    "show_reading_time": {
-		"type": "boolean",    
-		"default": false,
-		"group": "post"
-	    },
-	    "show_author": {
-		"type": "boolean",
-		"default": true,
-		"group": "post"
-	    }
+            "show_reading_time": {
+                "type": "boolean",
+                "default": false,
+                "group": "post"
+            },
+            "show_author": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            }
         }
     },
     "renovate": {
         "extends": [
             "@tryghost:theme"
         ]
-    }
+    },
+    "dependencies": {}
 }
