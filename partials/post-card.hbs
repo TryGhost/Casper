@@ -64,9 +64,14 @@ which templates loop over to generate a list of posts. --}}
         </a>
 
         <footer class="post-card-meta">
+		{{#if @custom.show_author}}
+                    <span class="gh-card-author">By {{#foreach authors}}{{#if @first}}{{name}}{{else}}, {{name}}{{/if}}{{/foreach}}</span>
+                {{/if}}
             <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-            {{#if reading_time}}
-                <span class="post-card-meta-length">{{reading_time}}</span>
+	    {{#if @custom.show_reading_time}}
+		    {{#if reading_time}}
+			<span class="post-card-meta-length">{{reading_time}}</span>
+		    {{/if}}
             {{/if}}
             {{#if @site.comments_enabled}}
                 {{comment_count}}

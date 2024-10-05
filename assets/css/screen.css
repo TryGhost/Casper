@@ -271,7 +271,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-cover:not(.home-template) .gh-head {
-    background-color: var(--ghost-accent-color);
+    background-color: black;
     color: #fff;
 }
 
@@ -443,7 +443,9 @@ production stylesheet in assets/built/screen.css
     gap: 32px;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 8px 10px 8px 10px;
+    border-radius: 24px;
+    background-color: var(--ghost-accent-color);
 }
 
 .gh-head-menu .nav li {
