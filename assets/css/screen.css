@@ -169,7 +169,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-serif-title .site-title {
-    font-family: var(--gh-font-heading, --font-serif);
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .has-cover .site-title {
@@ -987,7 +987,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-serif-title .post-card-title {
-    font-family: var(--gh-font-heading, --font-serif);
+    font-family: var(--gh-font-heading, var(--font-serif));
     letter-spacing: -0.005em;
 }
 
@@ -1015,7 +1015,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-sans-body .post-card-excerpt {
-    font-family: var(--gh-font-body, --font-sans);
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 .post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
@@ -1252,7 +1252,7 @@ html.no-infinite-scroll .pagination {
 }
 
 .has-serif-title .article-title {
-    font-family: var(--gh-font-heading, --font-serif);
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .article-excerpt {
@@ -1359,7 +1359,7 @@ headings, text, images and lists. We deal with cards lower down. */
 }
 
 .has-serif-title .gh-content > [id] {
-    font-family: var(--gh-font-heading, --font-serif);
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 /* Add back a top margin to all headings, unless a heading
@@ -1396,7 +1396,7 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p {
-    font-family: var(--gh-font-body, --font-serif);
+    font-family: var(--gh-font-body, var(--font-serif));
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
@@ -1449,7 +1449,7 @@ is the very first element in the post content */
 .has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
 .has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
 .has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
-    font-family: var(--gh-font-body, --font-sans);
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 .gh-content > ul,
@@ -1570,7 +1570,7 @@ except for when immediately preceeded by a heading */
 }
 
 .has-serif-title .kg-toggle-card .kg-toggle-heading-text {
-    font-family: var(--gh-font-heading, --font-serif);
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .gh-content .kg-callout-card-accent a {
@@ -1583,7 +1583,7 @@ except for when immediately preceeded by a heading */
 }
 
 .has-sans-body .kg-blockquote-alt {
-    font-family: var(--gh-font-body, --font-sans);
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 .kg-card.kg-header-card.kg-style-dark {
@@ -1595,7 +1595,7 @@ except for when immediately preceeded by a heading */
 }
 
 .has-serif-title .kg-header-card h2.kg-header-card-header {
-    font-family: var(--gh-font-heading, --font-serif);
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 
@@ -1799,7 +1799,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .has-serif-title .footer-cta-title {
-    font-family: var(--gh-font-heading, --font-serif);
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .footer-cta-button {
