@@ -193,6 +193,14 @@ production stylesheet in assets/built/screen.css
     line-height: 1.1;
 }
 
+.site-description:first-child {
+    font-family: var(--gh-font-heading, var(--font-sans));
+}
+
+.has-serif-title .site-description:first-child {
+    font-family: var(--gh-font-heading, var(--font-serif));
+}
+
 :is(.site-logo, .site-title) + .site-description {
     max-width: 640px;
     margin-top: 16px;
