@@ -414,6 +414,7 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-logo {
     display: block;
+    font-family: var(--gh-font-heading, var(--font-sans));
     font-weight: 800;
     font-size: 2.6rem;
     letter-spacing: -0.02em;
