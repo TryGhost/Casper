@@ -1080,7 +1080,6 @@ production stylesheet in assets/built/screen.css
 
 .author-list {
     display: flex;
-    flex-wrap: wrap;
     margin: 0 0 0 4px;
     padding: 0;
     list-style: none;
@@ -1784,6 +1783,12 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 @media (max-width: 767px) {
+    .article-byline-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
     .article-byline-content .author-list {
         padding-right: 12px;
     }
