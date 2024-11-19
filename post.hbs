@@ -4,6 +4,10 @@
 into the {body} tag of the default.hbs template --}}
 
 
+{{!-- for dynamic progress bar --}}
+<progress class="reading-progress" value="0" max="100" aria-label="Reading progress"></progress>
+
+
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
@@ -83,6 +87,7 @@ into the {body} tag of the default.hbs template --}}
     </header>
 
     <section class="gh-content gh-canvas">
+        <aside class="gh-sidebar"><div class="gh-toc"></div></aside> {{! The TOC will be inserted here }}
         {{content}}
     </section>
 
