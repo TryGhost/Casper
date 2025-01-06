@@ -24,9 +24,9 @@ which templates loop over to generate a list of posts. --}}
             <div class="post-card-access">
                 {{> "icons/lock"}}
                 {{#has visibility="members"}}
-                    Members only
+                    {{t "Members only"}}
                 {{else}}
-                    Paid-members only
+                    {{t "Paid-members only"}}
                 {{/has}}
             </div>
         {{/has}}
@@ -44,7 +44,7 @@ which templates loop over to generate a list of posts. --}}
                         <span class="post-card-primary-tag">{{name}}</span>
                     {{/primary_tag}}
                     {{#if featured}}
-                        <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+                        <span class="post-card-featured">{{> "icons/fire"}} {{t "Featured"}}</span>
                     {{/if}}
                 </div>
                 <h2 class="post-card-title">
