@@ -272,7 +272,7 @@ html {
 }
 body {
     color: var(--color-darkgrey);
-    font-family: var(--font-sans);
+    font-family: var(--gh-font-body, var(--font-sans));
     font-size: 1.6rem;
     line-height: 1.6em;
     font-weight: 400;
@@ -407,6 +407,7 @@ h5,
 h6 {
     margin-top: 0;
     line-height: 1.15;
+    font-family: var(--gh-font-heading, var(--font-sans));
     font-weight: 600;
     text-rendering: optimizeLegibility;
     letter-spacing: -0.01em;
