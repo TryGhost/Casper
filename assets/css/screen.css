@@ -1948,7 +1948,7 @@ iframe.instagram-media + script + :not([id]) {
 
 .author-profile-meta {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .author-profile-social-link {
