@@ -987,10 +987,10 @@
     json-stringify-safe "^5.0.1"
     lodash "^4.17.21"
 
-"@tryghost/mongo-knex@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@tryghost/mongo-knex/-/mongo-knex-0.9.0.tgz#34463ceaa23b8e5e4c7ff859d9d5cc8f300ceade"
-  integrity sha512-1dksBf+nVyfVRssFC3/Tn1KqMhKfLhsjCnxnLv8vW5ZxSw39U6Kyp97u4BWithx31M/g3Q8nfCVg8hIgYVyt7w==
+"@tryghost/mongo-knex@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@tryghost/mongo-knex/-/mongo-knex-0.9.1.tgz#b429952cc01d7ffa2489b37db4008f8a323e40d5"
+  integrity sha512-WqnuGs9TUMxc9/lSyuJ7kB57jDIFSd+Dty5rgjKf6Ts6u5k73FRvOqJL83U0aPCb67r1GC1SKgf40ErISFHHvA==
   dependencies:
     debug "^4.3.3"
     lodash "^4.17.21"
@@ -1002,21 +1002,21 @@
   dependencies:
     lodash "^4.17.11"
 
-"@tryghost/nql-lang@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@tryghost/nql-lang/-/nql-lang-0.6.1.tgz#830847d71f0b04107f7d20e3ebc91530fa11df16"
-  integrity sha512-0fYuzWuHXYN0qk3EnqBPv7IQykn6IaFFp1XcY3CtB3nfYZqsJzVGylQFNpxx6dhRLN8ZxdycZ00HkRChd0tvjQ==
+"@tryghost/nql-lang@^0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@tryghost/nql-lang/-/nql-lang-0.6.3.tgz#3fe9015d5ebcfdf50be409bf1b0f6cc22cfb47a1"
+  integrity sha512-NnSdAjN3TIcm8g1/QW/EKLeGKAYIQR6CQZULMt1mbV+lVWnNjrgZNZchg4a90CdC5e0owOps+rz+2dmpDEC/Iw==
   dependencies:
     date-fns "^2.28.0"
 
-"@tryghost/nql@^0.12.0":
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/@tryghost/nql/-/nql-0.12.3.tgz#260f0aed0c3bee85b046fcd8ee24dd567b5ed451"
-  integrity sha512-bG0U+RMLixLTFkLM4DaL9uDhPCoTlxyMzZOIibZnBHmxi1lMM5cgUEGV38IwD92laIfS2t5BvAONKGhsGoVVVg==
+"@tryghost/nql@^0.12.5":
+  version "0.12.7"
+  resolved "https://registry.yarnpkg.com/@tryghost/nql/-/nql-0.12.7.tgz#4ef56984809cb39416b9b21b9cd7ae976720f5e3"
+  integrity sha512-O58X36ug6KZ8n0/a/mkhb0My3vDO/xbH3HlK+U0t6houwQN7xUEOsZxBq7E0w/h4dXXwQCFeW5mIfuRD3FHWIg==
   dependencies:
-    "@tryghost/mongo-knex" "^0.9.0"
+    "@tryghost/mongo-knex" "^0.9.1"
     "@tryghost/mongo-utils" "^0.6.2"
-    "@tryghost/nql-lang" "^0.6.1"
+    "@tryghost/nql-lang" "^0.6.3"
     mingo "^2.2.2"
 
 "@tryghost/pretty-cli@^1.2.38":
@@ -3006,17 +3006,17 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-gscan@4.43.1:
-  version "4.43.1"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-4.43.1.tgz#82e7ad14be753143313b8487f7846e1c85762468"
-  integrity sha512-++xxksUOrIljzNYoSzEMsKUDSnXVQJmaFcaWtenEP0xzKnga+i1UR1q3UF3Wf1jD+R/8poCBDcfmu13h+HA54Q==
+gscan@4.48.0:
+  version "4.48.0"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-4.48.0.tgz#7dacd14c2911420636395799d611c2f9e42d751b"
+  integrity sha512-lqWwUwuuD9tZJiwelzw0PnzrcT/J0Nwwpg5Y8fBGrIe4kw7SOKgNZR3zbj/t5Wgg8Df/xY/zG4MeQr9PJpmdiQ==
   dependencies:
     "@sentry/node" "^7.73.0"
     "@tryghost/config" "^0.2.18"
     "@tryghost/debug" "^0.1.26"
     "@tryghost/errors" "^1.2.26"
     "@tryghost/logging" "^2.4.7"
-    "@tryghost/nql" "^0.12.0"
+    "@tryghost/nql" "^0.12.5"
     "@tryghost/pretty-cli" "^1.2.38"
     "@tryghost/server" "^0.1.37"
     "@tryghost/zip" "^1.1.42"
