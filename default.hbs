@@ -24,11 +24,11 @@
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
-    
+
 
 </head>
 <body class="{{body_class}}">
-    
+
     {{!-- Google Tag Manager (noscript) --}}
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6DTFTH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -53,43 +53,6 @@
         </footer>
 
     </div>
-
-    {{!-- The big email subscribe modal content --}}
-    {{#if @site.members_enabled}}
-    <div class="subscribe-success-message">
-        <a class="subscribe-close" href="javascript:;"></a>
-        You've successfully subscribed to {{@site.title}}!
-    </div>
-
-    <div id="subscribe" class="subscribe-overlay">
-        <a class="subscribe-close" href="#"></a>
-        <div class="subscribe-overlay-content">
-            {{#if @site.logo}}
-                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
-            {{/if}}
-            <div class="subscribe-form">
-                <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered straight to your inbox</p>
-                <form data-members-form="subscribe">
-                    <div class="form-group">
-                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
-                            autocomplete="false" />
-                        <button class="button primary" type="submit">
-                            <span class="button-content">Subscribe</span>
-                            <span class="button-loader">{{> "icons/loader"}}</span>
-                        </button>
-                    </div>
-                    <div class="message-success">
-                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
-                    </div>
-                    <div class="message-error">
-                        Please enter a valid email address!
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    {{/if}}
 
     {{!-- jQuery, required for fitvids --}}
     <script
