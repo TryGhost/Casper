@@ -151,7 +151,6 @@ body {
 }
 
 .site-header-background:before {
-    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -183,13 +182,18 @@ body {
 .site-header-content {
     z-index: 100;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 6vw 3vw;
     min-height: 200px;
     max-height: 340px;
 }
+
+.site-header-content a{
+    margin-left: 8px;
+    z-index: 100;
+}
+
 
 .site-title {
     z-index: 10;
