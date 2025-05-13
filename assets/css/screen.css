@@ -2878,6 +2878,7 @@ Usage (In Ghost editor):
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: flex-end;
     gap: 5px;
 }
 
@@ -2885,8 +2886,6 @@ Usage (In Ghost editor):
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
 }
 
 .post-share-label {
