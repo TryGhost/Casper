@@ -2896,6 +2896,10 @@ Usage (In Ghost editor):
     letter-spacing: 0.2px;
 }
 
+.kg-toggle-heading-text {
+    min-width: unset !important;
+}
+
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
 /*@media (prefers-color-scheme: dark) {
