@@ -2859,6 +2859,42 @@ Usage (In Ghost editor):
     }
 }
 
+.post-full-byline-inner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post-share-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.post-share-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.post-share-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.post-share-label {
+    color: #92a3ab;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    letter-spacing: 0.2px;
+}
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */

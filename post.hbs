@@ -79,13 +79,47 @@ into the {body} of the default.hbs template --}}
                             {{/foreach}}
                         </ul>
 
-                        <section class="post-full-byline-meta">
-                            <h4 class="author-name">{{authors}}</h4>
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
-                            </div>
-                        </section>
+                        <div class='post-full-byline-inner-wrapper'>
+                            <section class="post-full-byline-meta">
+                                <h4 class="author-name">{{authors}}</h4>
+                                <div class="byline-meta-content">
+                                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                    <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="post-share-wrapper">
+                                    <span class='post-share-label'>Share this post</span>
+
+                                    <div class="post-share-links">
+                                        <a href="https://www.linkedin.com/feed/?linkOrigin=LI_BADGE&shareActive=true&shareUrl={{url absolute="true"}}" 
+                                           class="post-share-link" 
+                                           target="_blank">    
+                                            <div class="post-share-icon">{{> "icons/linkedin"}}</div>
+                                        </a>
+
+                                        <a href="https://x.com/intent/post?text={{url absolute="true"}}" 
+                                           class="post-share-link" 
+                                           target="_blank">    
+                                            <div class="post-share-icon">{{> "icons/twitter"}}</div>
+                                        </a>
+
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" 
+                                           class="post-share-link" 
+                                           target="_blank">    
+                                            <div class="post-share-icon">{{> "icons/facebook"}}</div>
+                                        </a>
+
+                                        <a href="#" 
+                                           class="post-share-link copy-link" 
+                                           data-url="{{url absolute="true"}}">    
+                                            <div class="post-share-icon">{{> "icons/copy"}}</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
 
                     </section>
 
@@ -209,6 +243,12 @@ into the {body} of the default.hbs template --}}
             hoverTimeout = setTimeout(function () {
                 $this.children('.author-card').removeClass('hovered');
             }, 800);
+        });
+
+        $('.copy-link').click(function(e) {
+            e.preventDefault();
+            const url = $(this).data('url');
+            navigator.clipboard.writeText(url);
         });
     });
 </script>
