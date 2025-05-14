@@ -10,7 +10,6 @@ into the {body} of the default.hbs template --}}
     {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="site-header-content">
         <h1 class="site-title">Digital Health Blog</h1>
-        <a href="#/search" >{{> "icons/magnifying-glass"}}</a>
     </div>
 </div>
 
@@ -24,6 +23,7 @@ into the {body} of the default.hbs template --}}
             <a href="https://lightit.io/blog/tag/ai/">AI</a>
             <a href="https://lightit.io/blog/tag/experience/">Experience</a>
             <a href="https://lightit.io/blog/tag/design/">UX/UI Design</a>
+            <a href="#/search" >{{> "icons/magnifying-glass"}}</a>
         </div>
         <div class="inner posts">
             <div class="post-feed">
@@ -38,6 +38,18 @@ into the {body} of the default.hbs template --}}
                     See More
                 </button>
             </div>
+
+            {{!-- Pagination button to avoid SEO error reported by Screaming Frog --}}
+            <div class="inactive" >
+                {{#if pagination.prev}}
+                    <a href="{{page_url pagination.prev}}" class="pagination-link-prev" />
+                {{/if}}
+
+                {{#if pagination.next}}
+                    <a href="{{page_url pagination.next}}" class="pagination-link-next" />
+                {{/if}}
+            </div>
+            
         </div>
 
         {{!-- Email subscribe form at the bottom of the page --}}
