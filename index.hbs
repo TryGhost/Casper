@@ -42,11 +42,11 @@ into the {body} of the default.hbs template --}}
             {{!-- Pagination button to avoid SEO error reported by Screaming Frog --}}
             <div class="inactive" >
                 {{#if pagination.prev}}
-                    <a href="{{page_url pagination.prev}}" class="pagination-link-prev"></a>
+                    <a href="{{page_url pagination.prev}}" class="pagination-link-prev" />
                 {{/if}}
 
                 {{#if pagination.next}}
-                    <a href="{{page_url pagination.next}}" class="pagination-link-next"></a>
+                    <a href="{{page_url pagination.next}}" class="pagination-link-next" />
                 {{/if}}
             </div>
             
