@@ -168,8 +168,8 @@ production stylesheet in assets/built/screen.css
     font-weight: 800;
 }
 
-.has-serif-title .site-title {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .site-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .has-cover .site-title {
@@ -191,6 +191,14 @@ production stylesheet in assets/built/screen.css
     font-size: 6rem;
     font-weight: 700;
     line-height: 1.1;
+}
+
+.site-description:first-child {
+    font-family: var(--gh-font-heading, var(--font-sans));
+}
+
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .site-description:first-child {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 :is(.site-logo, .site-title) + .site-description {
@@ -406,6 +414,7 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-logo {
     display: block;
+    font-family: var(--gh-font-heading, var(--font-sans));
     font-weight: 800;
     font-size: 2.6rem;
     letter-spacing: -0.02em;
@@ -986,8 +995,8 @@ production stylesheet in assets/built/screen.css
     margin-top: 0;
 }
 
-.has-serif-title .post-card-title {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .post-card-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
     letter-spacing: -0.005em;
 }
 
@@ -1014,8 +1023,8 @@ production stylesheet in assets/built/screen.css
     word-break: break-word;
 }
 
-.has-sans-body .post-card-excerpt {
-    font-family: var(--font-sans);
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .post-card-excerpt {
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 .post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
@@ -1071,7 +1080,6 @@ production stylesheet in assets/built/screen.css
 
 .author-list {
     display: flex;
-    flex-wrap: wrap;
     margin: 0 0 0 4px;
     padding: 0;
     list-style: none;
@@ -1251,8 +1259,8 @@ html.no-infinite-scroll .pagination {
     color: var(--color-darkgrey);
 }
 
-.has-serif-title .article-title {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .article-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .article-excerpt {
@@ -1358,8 +1366,8 @@ headings, text, images and lists. We deal with cards lower down. */
     color: var(--color-darkgrey);
 }
 
-.has-serif-title .gh-content > [id] {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .gh-content > [id] {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 /* Add back a top margin to all headings, unless a heading
@@ -1396,7 +1404,7 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p {
-    font-family: var(--font-serif);
+    font-family: var(--gh-font-body, var(--font-serif));
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
@@ -1440,16 +1448,16 @@ is the very first element in the post content */
     font-size: 2.0rem;
 }
 
-.has-sans-body .gh-content > blockquote,
-.has-sans-body .gh-content > ol,
-.has-sans-body .gh-content > ul,
-.has-sans-body .gh-content > dl,
-.has-sans-body .gh-content > p,
-.has-sans-body .gh-content .kg-callout-card .kg-callout-text,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
-    font-family: var(--font-sans);
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > blockquote,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > ol,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > ul,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > dl,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > p,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-callout-card .kg-callout-text,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-card .kg-toggle-content > ol,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-card .kg-toggle-content > ul,
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 .gh-content > ul,
@@ -1569,8 +1577,8 @@ except for when immediately preceeded by a heading */
     cursor: pointer;
 }
 
-.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .kg-toggle-card .kg-toggle-heading-text {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .gh-content .kg-callout-card-accent a {
@@ -1582,8 +1590,8 @@ except for when immediately preceeded by a heading */
     color: var(--color-midgrey);
 }
 
-.has-sans-body .kg-blockquote-alt {
-    font-family: var(--font-sans);
+.has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .kg-blockquote-alt {
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 .kg-card.kg-header-card.kg-style-dark {
@@ -1594,8 +1602,8 @@ except for when immediately preceeded by a heading */
     color: color-mod(var(--color-darkgrey) l(-5%));
 }
 
-.has-serif-title .kg-header-card h2.kg-header-card-header {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .kg-header-card h2.kg-header-card-header {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 
@@ -1775,6 +1783,12 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 @media (max-width: 767px) {
+    .article-byline-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
     .article-byline-content .author-list {
         padding-right: 12px;
     }
@@ -1798,8 +1812,8 @@ iframe.instagram-media + script + :not([id]) {
     font-weight: 800;
 }
 
-.has-serif-title .footer-cta-title {
-    font-family: var(--font-serif);
+.has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .footer-cta-title {
+    font-family: var(--gh-font-heading, var(--font-serif));
 }
 
 .footer-cta-button {
@@ -1934,7 +1948,7 @@ iframe.instagram-media + script + :not([id]) {
 
 .author-profile-meta {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .author-profile-social-link {
@@ -2257,14 +2271,6 @@ html.dark-mode .gh-content :not(pre) > code {
     color: #fff;
 }
 
-html.dark-mode .gh-content strong {
-    color: #fff;
-}
-
-html.dark-mode .gh-content em {
-    color: #fff;
-}
-
 html.dark-mode .gh-content code {
     color: #fff;
     background: #000;
@@ -2456,14 +2462,6 @@ html.dark-mode .footer-cta-title {
     }
 
     :where(html.auto-color) .gh-content a {
-        color: #fff;
-    }
-
-    html.auto-color .gh-content strong {
-        color: #fff;
-    }
-
-    html.auto-color .gh-content em {
         color: #fff;
     }
 
