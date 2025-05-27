@@ -58,47 +58,73 @@ The Sheet
     width: 100%;
   }
 
+  /* Main timeline container */
   .tl-timeline {
     background-color: var(--color-darkmode);
+    color: #fff;
+    font-family: var(--font-sans);
   }
 
+  /* Slider background - the main content area */
+  .tl-slider-container-mask {
+    background: linear-gradient(to bottom right, #3f3f3f, var(--color-darkmode));
+  }
+
+  /* Individual slides */
   .tl-slide .tl-slide-content {
-    background-color: var(--color-lightgrey);
+    background-color: rgba(21, 23, 26, 0.9);
     border: 1px solid var(--color-border);
     border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
 
+  /* Slide text content */
+  .tl-text-content-container {
+    background-color: rgba(21, 23, 26, 0.8);
+    border-left: 4px solid var(--ghost-accent-color);
+    padding-left: 8px;
+    color: #fff;
+  }
+
+  /* Headings in timeline */
   .tl-headline-title,
   .tl-headline-title span,
   .tl-slide-title,
   .tl-text-content-container h2,
   .tl-text-content-container p {
-    color: var(--color);
+    color: #fff;
     font-family: var(--font-sans);
   }
 
-  .tl-text-content-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-left: 4px solid var(--ghost-accent-color);
-    padding-left: 8px;
-  }
-
+  /* Timeline navigation */
   .tl-timeaxis-background,
   .tl-timegroup-message {
-    background-color: var(--color-lightgrey);
+    background-color: rgba(21, 23, 26, 0.8);
+    color: #fff;
   }
 
+  /* Hide menu bar */
   .tl-menubar {
     display: none !important;
   }
 
-  /* Normalize the tick lines */
+  /* Timeline markers */
+  .tl-timemarker .tl-timemarker-content-container {
+    background-color: var(--ghost-accent-color);
+    color: #fff;
+  }
+
+  .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
+    background-color: #fff;
+    color: var(--color-darkmode);
+  }
+
+  /* Timeline axis ticks */
   .tl-timeaxis .tl-timeaxis-tick:before {
     content: "";
     display: block;
     height: 6px; /* same height for all */
-    background: var(--color-darkmode, #888); /* same color for all */
+    background: var(--color-midgrey, #888); /* same color for all */
     width: 1px;
     margin: 0 auto;
   }
@@ -112,13 +138,41 @@ The Sheet
     font-weight: normal !important;
   }
 
-  /* default slide background - dark mode */
-  .tl-slider-container-mask {
-    background: linear-gradient(to bottom right, #3f3f3f, var(--color-darkmode));
+  /* Media content */
+  .tl-media-content-container {
+    border-radius: 4px;
+    overflow: hidden;
   }
 
+  .tl-caption, .tl-credit {
+    color: #ddd;
+    font-family: var(--font-sans);
+  }
 
-  
+  /* Navigation arrows */
+  .tl-slidenav-next, .tl-slidenav-previous {
+    color: #fff;
+  }
+
+  .tl-slidenav-icon:before {
+    color: var(--ghost-accent-color);
+  }
+
+  /* Timeline navigation */
+  .tl-timenav {
+    background-color: rgba(21, 23, 26, 0.9);
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Timeline time spans */
+  .tl-timemarker .tl-timemarker-timespan {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .tl-timemarker.tl-timemarker-active .tl-timemarker-timespan {
+    background-color: var(--ghost-accent-color);
+    opacity: 0.3;
+  }
 </style>
 
 <script>
