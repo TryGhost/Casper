@@ -1,0 +1,123 @@
+<!-- 
+USING THIS TEMPLATE:
+
+Apply it to a post in Ghost via Templates
+Go to Code Injection, and inject the URL of the Google Sheet:
+
+<meta name="custom:sheet_url" content="https://docs.google.com/spreadsheets/d/e/XXXXX/pubhtml">
+
+In order for this to work, the Sheet must be "Published" not just "Shared"
+
+The Sheet
+-->
+{{!< default}}
+
+<article class="timeline-container">
+  <div id="timeline-embed"></div>
+</article>
+
+<link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background-color);
+    font-family: var(--font-serif);
+    color: var(--color);
+    overflow: hidden;
+  }
+
+  .gh-main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .site-footer,
+  .content-title,
+  .post-full-footer,
+  .post-content {
+    display: none !important;
+  }
+
+  .timeline-container {
+    flex: 1;
+    height: calc(100vh - 72px); /* Adjust header height if needed */
+    width: 100%;
+  }
+
+  #timeline-embed {
+    height: 100%;
+    width: 100%;
+  }
+
+  .tl-timeline {
+    background-color: var(--background-color);
+  }
+
+  .tl-slide-background {
+    background-color: var(--lightgrey);
+  }
+
+  .tl-slide .tl-slide-content {
+    background-color: var(--background-color);
+    border: 1px solid var(--lightgrey);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: var(--color);
+  }
+
+  .tl-headline-title,
+  .tl-headline-title span,
+  .tl-slide-title,
+  .tl-text-content-container h2,
+  .tl-text-content-container p {
+    color: var(--color);
+    font-family: var(--font-serif);
+  }
+
+  .tl-text-content-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-left: 4px solid var(--brand-color);
+  }
+
+  .tl-timeaxis-background,
+  .tl-timegroup-message {
+    background-color: var(--background-color);
+  }
+
+  .tl-timeaxis-tick {
+    border-color: var(--brand-color);
+  }
+
+  .tl-timeaxis .tl-timeaxis-major {
+    color: var(--brand-color);
+    font-family: var(--font-serif);
+  }
+
+  .tl-timeaxis .tl-timeaxis-minor {
+    color: var(--midgrey);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const metaTag = document.querySelector('meta[name="custom:sheet_url"]');
+    const sheetUrl = metaTag ? metaTag.content : null;
+
+    if (sheetUrl) {
+      window.timeline = new TL.Timeline('timeline-embed', sheetUrl, {
+        timenav_position: "bottom",
+        initial_zoom: 2,
+        start_at_slide: 0,
+        hash_bookmark: false,
+        lang: "https://gist.githubusercontent.com/oakbrad/c043f67f58cce2ad76fab32043b39685/raw/2e953090a59c6431abd82039995e5bd4bbf192ac/locale-session.json",
+      });
+    } else {
+      document.getElementById("timeline-embed").innerHTML = "Missing timeline URL.";
+    }
+  });
+</script>

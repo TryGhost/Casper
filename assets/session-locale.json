@@ -1,0 +1,64 @@
+{
+    "lang": "en",
+    "date": {
+        "month_abbr": [
+            "Jan.",
+            "Feb.",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "Aug.",
+            "Sept.",
+            "Oct.",
+            "Nov.",
+            "Dec."
+        ],
+        "day_abbr": [
+            "Sun.",
+            "Mon.",
+            "Tues.",
+            "Wed.",
+            "Thurs.",
+            "Fri.",
+            "Sat."
+        ],
+        "day": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ],
+        "month": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ]
+    },
+    "api": {
+        "wikipedia": "en"
+    },
+    "messages": {
+        "comment": "There is no need to repeat message keys because the fallback is English and this file only exists to control date formatting."
+    },
+  "dateformats": {
+    "year": "'Session' yyyy",
+    "full_short": "'Session' yyyy",
+    "month": "'Session' yyyy",
+    "month_short": "'Session' yyyy",
+    "full": "'Session' yyyy"
+  }
+}
