@@ -59,6 +59,8 @@
     "full_short": "'Session' yyyy",
     "month": "'Session' yyyy",
     "month_short": "'Session' yyyy",
-    "full": "'Session' yyyy"
+    "full": "'Session' yyyy",
+    "full_long": "'Session' yyyy",
+    "era_year": " " 
   }
 }

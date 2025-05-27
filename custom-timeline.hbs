@@ -25,7 +25,7 @@ The Sheet
     padding: 0;
     height: 100%;
     background-color: var(--background-color);
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     color: var(--color);
     overflow: hidden;
   }
@@ -43,9 +43,13 @@ The Sheet
     display: none !important;
   }
 
+  .tl-attribution {
+    display: none !important;
+  }
+
   .timeline-container {
     flex: 1;
-    height: calc(100vh - 72px); /* Adjust header height if needed */
+    height: calc(100vh - 88px); /* Adjust header height if needed */
     width: 100%;
   }
 
@@ -55,19 +59,14 @@ The Sheet
   }
 
   .tl-timeline {
-    background-color: var(--background-color);
-  }
-
-  .tl-slide-background {
-    background-color: var(--lightgrey);
+    background-color: var(--color-darkmode);
   }
 
   .tl-slide .tl-slide-content {
-    background-color: var(--background-color);
-    border: 1px solid var(--lightgrey);
+    background-color: var(--color-lightgrey);
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    color: var(--color);
   }
 
   .tl-headline-title,
@@ -76,31 +75,50 @@ The Sheet
   .tl-text-content-container h2,
   .tl-text-content-container p {
     color: var(--color);
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
   }
 
   .tl-text-content-container {
     background-color: rgba(255, 255, 255, 0.9);
-    border-left: 4px solid var(--brand-color);
+    border-left: 4px solid var(--ghost-accent-color);
+    padding-left: 8px;
   }
 
   .tl-timeaxis-background,
   .tl-timegroup-message {
-    background-color: var(--background-color);
+    background-color: var(--color-lightgrey);
   }
 
-  .tl-timeaxis-tick {
-    border-color: var(--brand-color);
+  .tl-menubar {
+    display: none !important;
   }
 
-  .tl-timeaxis .tl-timeaxis-major {
-    color: var(--brand-color);
-    font-family: var(--font-serif);
+  /* Normalize the tick lines */
+  .tl-timeaxis .tl-timeaxis-tick:before {
+    content: "";
+    display: block;
+    height: 6px; /* same height for all */
+    background: var(--color-darkmode, #888); /* same color for all */
+    width: 1px;
+    margin: 0 auto;
   }
 
-  .tl-timeaxis .tl-timeaxis-minor {
-    color: var(--midgrey);
+  .tl-timeaxis .tl-timeaxis-tick {
+    font-family: var(--font-sans, sans-serif) !important;
+    color: #f0f0f0 !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-transform: none !important;
+    font-weight: normal !important;
   }
+
+  /* default slide background - dark mode */
+  .tl-slider-container-mask {
+    background: linear-gradient(to bottom right, #3f3f3f, var(--color-darkmode));
+  }
+
+
+  
 </style>
 
 <script>
@@ -111,10 +129,13 @@ The Sheet
     if (sheetUrl) {
       window.timeline = new TL.Timeline('timeline-embed', sheetUrl, {
         timenav_position: "bottom",
-        initial_zoom: 2,
+        initial_zoom: 4,
+        scale_factor: 2,
+        zoom_sequence: [1,2,3],
         start_at_slide: 0,
+        use_bc: false,
         hash_bookmark: false,
-        lang: "https://gist.githubusercontent.com/oakbrad/c043f67f58cce2ad76fab32043b39685/raw/2e953090a59c6431abd82039995e5bd4bbf192ac/locale-session.json",
+        lang: "https://gist.githubusercontent.com/oakbrad/c043f67f58cce2ad76fab32043b39685/raw/31f417a0b40ec54129f4f97db3b8c7cff020e8c9/locale-session.json",
       });
     } else {
       document.getElementById("timeline-embed").innerHTML = "Missing timeline URL.";
