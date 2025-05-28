@@ -16,8 +16,8 @@ The Sheet
   <div id="timeline-embed"></div>
 </article>
 
-<link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+<link rel="stylesheet" href="/assets/timelinejs/css/timeline.css">
+<script src="/assets/timelinejs/js/timeline.js"></script>
 
 <style>
   html, body {
@@ -273,7 +273,7 @@ The Sheet
         start_at_slide: 0,
         use_bc: false,
         hash_bookmark: false,
-        lang: "https://gist.githubusercontent.com/oakbrad/c043f67f58cce2ad76fab32043b39685/raw/31f417a0b40ec54129f4f97db3b8c7cff020e8c9/locale-session.json",
+        lang: "/assets/timelinejs/timeline-locale.json",
       });
     } else {
       document.getElementById("timeline-embed").innerHTML = "Missing timeline URL.";
@@ -282,26 +282,25 @@ The Sheet
 
 
 /* NUKE ALL NEGATIVE "BCE" DATES AND TICKS */
-  function nukeBCETicks() {
+  function removeBCETicks() {
     document.querySelectorAll('.tl-timeaxis-tick').forEach(tick => {
-      const label = tick.querySelector('.tl-timeaxis-tick-text');
-      if (label && label.textContent.includes('BCE')) {
+      const left = parseFloat(tick.style.left);
+      if (left < 0) {
         tick.remove();
       }
     });
   }
-  // Wait until TimelineJS has rendered axis ticks
-  const timelineReadyCheck = setInterval(() => {
+
+  const waitForTimeline = setInterval(() => {
     const ticksReady = document.querySelectorAll('.tl-timeaxis-tick');
     if (ticksReady.length > 0) {
-      clearInterval(timelineReadyCheck);
-      nukeBCETicks();
-      // Observe for re-renders like zooming/panning
+      clearInterval(waitForTimeline);
+      removeBCETicks();
+
       const axis = document.querySelector('.tl-timeaxis-content-container');
-      const observer = new MutationObserver(nukeBCETicks);
+      const observer = new MutationObserver(removeBCETicks);
       observer.observe(axis, { childList: true, subtree: true });
     }
   }, 200);
-</script>
 
 </script>
