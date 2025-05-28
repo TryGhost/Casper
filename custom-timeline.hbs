@@ -271,6 +271,51 @@ The Sheet
     background-color: rgba(255, 255, 255, 0.2);
   }
 
+  /* Fix for mobile timeline issues */
+  @media only screen and (max-width: 768px) {
+    /* Ensure background images stay behind content */
+    .tl-slide .tl-slide-background {
+      z-index: -1 !important; /* Force it behind all content */
+    }
+    
+    /* Fix navigation arrows visibility */
+    .tl-slidenav-next, .tl-slidenav-previous {
+      z-index: 30 !important; /* Ensure arrows are above everything */
+      background-color: rgba(0, 0, 0, 0.3); /* Add slight background for visibility */
+      border-radius: 50%;
+      padding: 5px;
+    }
+    
+    /* Ensure timeline container has enough height */
+    .timeline-container {
+      height: calc(100vh - 88px - 40px) !important; /* Add extra space for the timeline nav */
+    }
+    
+    /* Ensure the timeline navigation at bottom is fully visible */
+    .tl-timenav {
+      height: auto !important;
+      min-height: 80px !important; /* Ensure enough height for the timeline navigation */
+    }
+    
+    /* Make sure year labels are visible */
+    .tl-timeaxis {
+      z-index: 10 !important;
+      height: auto !important;
+      min-height: 50px !important;
+    }
+    
+    /* Ensure era labels are visible */
+    .tl-timeera {
+      z-index: 10 !important;
+      height: auto !important;
+    }
+    
+    /* Improve slide content positioning */
+    .tl-slide-content {
+      margin-bottom: 40px !important; /* Add space at bottom to prevent overlap with nav */
+    }
+  }
+
 </style>
 
 <script>
