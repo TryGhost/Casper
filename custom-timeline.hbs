@@ -100,11 +100,12 @@ The Sheet
 .tl-slide .tl-slide-content {
   position: relative;
   background-color: rgba(21, 23, 26, 0.2);
-  border: 1px solid var(--color-border);
+  border: 0px solid rgba(200,200,200, .5);
+  border-width: 1px 0 !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0px;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden; /* needed for the pseudo-element */
 }
 /* Add sheen with a pseudo-element */
