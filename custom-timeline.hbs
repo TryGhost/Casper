@@ -135,14 +135,22 @@ The Sheet
     color: #fff;
   }
 
-  /* Headings in timeline */
-  .tl-headline-title,
-  .tl-headline-title span,
-  .tl-slide-title,
-  .tl-text-content-container h2,
-  .tl-text-content-container p {
-    color: #fff;
-    font-family: var(--font-sans);
+  /* Slide body text in white */
+  .tl-text-content p {
+    color: #fff !important;
+  }
+  /* Apply Ghost font to timeline marker text */
+  .tl-timemarker .tl-headline,
+  .tl-timemarker .tl-timemarker-text,
+  .tl-timemarker .tl-timemarker-content-container,
+  .tl-timemarker .tl-timemarker-content {
+    font-family: var(--font-sans) !important;
+    color: #fff !important;
+  }
+
+  .tl-timeera .tl-headline {
+    font-weight: 700 !important;
+    font-family: var(--font-sans) !important;
   }
 
   /* Timeline navigation */
@@ -195,16 +203,15 @@ The Sheet
     filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.4));
   }
 
-
-/* Inactive timeline markers: dark gray border */
-/* This only works on the top/left edges because of the line but I kinda like it, 3D effect */
-.tl-timemarker:not(.tl-timemarker-active) .tl-timemarker-content-container {
-  border: 1px solid #444 !important; 
-}
-/* Active timeline marker: white border */
-.tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-  border: 1px solid #fff !important;
-}
+  /* Inactive timeline markers: dark gray border */
+  /* This only works on the top/left edges because of the line but I kinda like it, 3D effect */
+  .tl-timemarker:not(.tl-timemarker-active) .tl-timemarker-content-container {
+    border: 1px solid #444 !important; 
+  }
+  /* Active timeline marker: white border */
+  .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
+    border: 1px solid #fff !important;
+  }
 
   /* Timeline axis ticks */
   .tl-timeaxis .tl-timeaxis-tick:before {
@@ -224,6 +231,13 @@ The Sheet
     font-weight: bold !important;
     text-transform: none !important;
     font-weight: normal !important;
+  }
+
+  /* Don't differentiate major ticks */
+    .tl-timeaxis-major .tl-timeaxis-tick-text {
+    transform: translateY(-2px); /* raise the number */
+    margin-top: 0 !important;    /* reset any extra spacing */
+    line-height: 1 !important;
   }
 
   /* Media content */
