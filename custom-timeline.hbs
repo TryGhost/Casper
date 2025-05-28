@@ -68,7 +68,7 @@ The Sheet
   /* Slide background - create a vignette effect */
   .tl-slide .tl-slide-background {
     opacity: 1 !important;
-    position: absolute; /* make sure it’s behind content */
+    position: absolute; /* make sure it's behind content */
     top: 0;
     left: 0;
     right: 0;
@@ -271,6 +271,22 @@ The Sheet
     background-color: rgba(255, 255, 255, 0.2);
   }
 
+  /* Fix for mobile timeline issues - z-index fixes only */
+  @media only screen and (max-width: 768px) {
+    /* Ensure background images stay behind content */
+    .tl-slide .tl-slide-background {
+      z-index: -1 !important; /* Force it behind all content */
+    }
+    
+    /* Fix navigation arrows visibility */
+    .tl-slidenav-next, .tl-slidenav-previous {
+      z-index: 30 !important; /* Ensure arrows are above everything */
+      background-color: rgba(0, 0, 0, 0.3); /* Add slight background for visibility */
+      border-radius: 50%;
+      padding: 5px;
+    }
+  }
+
 </style>
 
 <script>
@@ -318,3 +334,4 @@ The Sheet
   }, 200);
 
 </script>
+
