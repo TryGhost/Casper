@@ -13,7 +13,50 @@ The Sheet
 {{!< default}}
 
 <article class="timeline-container">
-  <div id="timeline-embed"></div>
+  {{!-- Check post visibility and render accordingly --}}
+  {{#if @post}}
+    {{!-- For public posts, render the timeline for everyone --}}
+    {{#if (eq @post.visibility "public")}}
+      <div id="timeline-embed"></div>
+    {{!-- For members-only posts, check if user is a member --}}
+    {{else if (eq @post.visibility "members")}}
+      {{#if @member}}
+        <div id="timeline-embed"></div>
+      {{else}}
+        <div class="timeline-access-message">
+          <h2>This timeline is available to members</h2>
+          <p>Sign up or log in to view this timeline.</p>
+          <div class="timeline-access-cta">
+            <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
+            <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
+          </div>
+        </div>
+      {{/if}}
+    {{!-- For paid-members-only posts, check if user is a paid member --}}
+    {{else if (eq @post.visibility "paid")}}
+      {{#if @member.paid}}
+        <div id="timeline-embed"></div>
+      {{else}}
+        <div class="timeline-access-message">
+          <h2>This timeline is available to paid members</h2>
+          <p>Upgrade your membership to view this timeline.</p>
+          <div class="timeline-access-cta">
+            {{#if @member}}
+              <a href="#/portal/account/plans" class="timeline-upgrade-button">Upgrade now</a>
+            {{else}}
+              <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
+              <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+    {{!-- Default case, just show the timeline --}}
+    {{else}}
+      <div id="timeline-embed"></div>
+    {{/if}}
+  {{else}}
+    <div id="timeline-embed"></div>
+  {{/if}}
 </article>
 
 <link rel="stylesheet" href="/assets/timelinejs/css/timeline.css">
@@ -56,6 +99,71 @@ The Sheet
   #timeline-embed {
     height: 100%;
     width: 100%;
+  }
+
+  /* Styling for access message */
+  .timeline-access-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #3f3f3f, var(--color-darkmode));
+    color: #fff;
+  }
+
+  .timeline-access-message h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .timeline-access-message p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+
+  .timeline-access-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .timeline-signup-button,
+  .timeline-signin-button,
+  .timeline-upgrade-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .timeline-signup-button,
+  .timeline-upgrade-button {
+    background-color: var(--ghost-accent-color);
+    color: #fff;
+  }
+
+  .timeline-signin-button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+
+  .timeline-signup-button:hover,
+  .timeline-upgrade-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .timeline-signin-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
   }
 
   /* Main timeline container */
@@ -285,12 +393,30 @@ The Sheet
       border-radius: 50%;
       padding: 5px;
     }
+
+    /* Adjust access message for mobile */
+    .timeline-access-message h2 {
+      font-size: 1.8rem;
+    }
+
+    .timeline-access-message p {
+      font-size: 1rem;
+    }
+
+    .timeline-access-cta {
+      flex-direction: column;
+    }
   }
 
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // Only initialize the timeline if the timeline-embed element exists
+    // (it won't exist for members/paid content if the user doesn't have access)
+    const timelineEmbed = document.getElementById('timeline-embed');
+    if (!timelineEmbed) return;
+
     const metaTag = document.querySelector('meta[name="custom:sheet_url"]');
     const sheetUrl = metaTag ? metaTag.content : null;
 
@@ -306,7 +432,7 @@ The Sheet
         lang: "/assets/timelinejs/timeline-locale.json",
       });
     } else {
-      document.getElementById("timeline-embed").innerHTML = "Missing timeline URL.";
+      timelineEmbed.innerHTML = "Missing timeline URL.";
     }
   });
 
@@ -322,14 +448,23 @@ The Sheet
   }
 
   const waitForTimeline = setInterval(() => {
+    // Only run if timeline-embed exists
+    const timelineEmbed = document.getElementById('timeline-embed');
+    if (!timelineEmbed) {
+      clearInterval(waitForTimeline);
+      return;
+    }
+
     const ticksReady = document.querySelectorAll('.tl-timeaxis-tick');
     if (ticksReady.length > 0) {
       clearInterval(waitForTimeline);
       removeBCETicks();
 
       const axis = document.querySelector('.tl-timeaxis-content-container');
-      const observer = new MutationObserver(removeBCETicks);
-      observer.observe(axis, { childList: true, subtree: true });
+      if (axis) {
+        const observer = new MutationObserver(removeBCETicks);
+        observer.observe(axis, { childList: true, subtree: true });
+      }
     }
   }, 200);
 
