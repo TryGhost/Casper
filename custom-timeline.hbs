@@ -13,50 +13,63 @@ The Sheet
 {{!< default}}
 
 <article class="timeline-container">
+  {{!-- Debug information to check post data structure --}}
+  <div class="debug-info" style="display: none;">
+    Post exists: {{#if post}}Yes{{else}}No{{/if}}<br>
+    Visibility: {{post.visibility}}<br>
+    Member exists: {{#if member}}Yes{{else}}No{{/if}}<br>
+    Member paid: {{#if member.paid}}Yes{{else}}No{{/if}}
+  </div>
+
   {{!-- Check post visibility and render accordingly --}}
-  {{#if @post}}
+  {{#post}}
     {{!-- For public posts, render the timeline for everyone --}}
-    {{#if (eq @post.visibility "public")}}
+    {{#has visibility="public"}}
       <div id="timeline-embed"></div>
-    {{!-- For members-only posts, check if user is a member --}}
-    {{else if (eq @post.visibility "members")}}
-      {{#if @member}}
-        <div id="timeline-embed"></div>
-      {{else}}
-        <div class="timeline-access-message">
-          <h2>This timeline is available to members</h2>
-          <p>Sign up or log in to view this timeline.</p>
-          <div class="timeline-access-cta">
-            <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
-            <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
-          </div>
-        </div>
-      {{/if}}
-    {{!-- For paid-members-only posts, check if user is a paid member --}}
-    {{else if (eq @post.visibility "paid")}}
-      {{#if @member.paid}}
-        <div id="timeline-embed"></div>
-      {{else}}
-        <div class="timeline-access-message">
-          <h2>This timeline is available to paid members</h2>
-          <p>Upgrade your membership to view this timeline.</p>
-          <div class="timeline-access-cta">
-            {{#if @member}}
-              <a href="#/portal/account/plans" class="timeline-upgrade-button">Upgrade now</a>
-            {{else}}
+    {{else}}
+      {{!-- For members-only posts, check if user is a member --}}
+      {{#has visibility="members"}}
+        {{#if @member}}
+          <div id="timeline-embed"></div>
+        {{else}}
+          <div class="timeline-access-message">
+            <h2>This timeline is available to members</h2>
+            <p>Sign up or log in to view this timeline.</p>
+            <div class="timeline-access-cta">
               <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
               <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
-            {{/if}}
+            </div>
           </div>
-        </div>
-      {{/if}}
-    {{!-- Default case, just show the timeline --}}
-    {{else}}
-      <div id="timeline-embed"></div>
-    {{/if}}
+        {{/if}}
+      {{else}}
+        {{!-- For paid-members-only posts, check if user is a paid member --}}
+        {{#has visibility="paid"}}
+          {{#if @member.paid}}
+            <div id="timeline-embed"></div>
+          {{else}}
+            <div class="timeline-access-message">
+              <h2>This timeline is available to paid members</h2>
+              <p>Upgrade your membership to view this timeline.</p>
+              <div class="timeline-access-cta">
+                {{#if @member}}
+                  <a href="#/portal/account/plans" class="timeline-upgrade-button">Upgrade now</a>
+                {{else}}
+                  <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
+                  <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
+                {{/if}}
+              </div>
+            </div>
+          {{/if}}
+        {{else}}
+          {{!-- Default case, just show the timeline --}}
+          <div id="timeline-embed"></div>
+        {{/has}}
+      {{/has}}
+    {{/has}}
   {{else}}
+    {{!-- If no post context, show the timeline --}}
     <div id="timeline-embed"></div>
-  {{/if}}
+  {{/post}}
 </article>
 
 <link rel="stylesheet" href="/assets/timelinejs/css/timeline.css">
@@ -468,5 +481,9 @@ The Sheet
     }
   }, 200);
 
+  // Enable debug info with a query parameter
+  if (window.location.search.includes('debug=true')) {
+    document.querySelector('.debug-info').style.display = 'block';
+  }
 </script>
 
