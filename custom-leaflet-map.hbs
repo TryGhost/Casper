@@ -14,24 +14,32 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const imageUrl = "{{feature_image}}";
+    
+    // Create an image element to get the natural dimensions
+    const img = new Image();
+    img.onload = function() {
+      // Get the natural dimensions of the image
+      const imageWidth = this.naturalWidth;
+      const imageHeight = this.naturalHeight;
+      
+      const bounds = [[0, 0], [imageHeight, imageWidth]];
 
-    // You can customize or even extract width/height from a custom tag or attribute
-    const imageWidth = 2000;
-    const imageHeight = 1500;
+      const map = L.map("map", {
+        crs: L.CRS.Simple,
+        minZoom: -2,
+        maxZoom: 2,
+        center: [imageHeight / 2, imageWidth / 2],
+        zoom: 0,
+        maxBounds: bounds
+      });
 
-    const bounds = [[0, 0], [imageHeight, imageWidth]];
-
-    const map = L.map("map", {
-      crs: L.CRS.Simple,
-      minZoom: -2,
-      maxZoom: 2,
-      center: [imageHeight / 2, imageWidth / 2],
-      zoom: 0,
-      maxBounds: bounds
-    });
-
-    L.imageOverlay(imageUrl, bounds).addTo(map);
-    map.setMaxBounds(bounds);
+      L.imageOverlay(imageUrl, bounds).addTo(map);
+      map.setMaxBounds(bounds);
+    };
+    
+    // Set the source to trigger the onload event
+    img.src = imageUrl;
   });
 </script>
 {{/post}}
+
