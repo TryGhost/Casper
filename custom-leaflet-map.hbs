@@ -83,6 +83,11 @@
             flex-direction: column;
         }
     }
+
+    /* Map data container - hidden by default */
+    .map-data-container {
+        display: none;
+    }
 </style>
 
 {{!-- Debug information to check post data structure --}}
@@ -98,6 +103,7 @@
     {{#has visibility="public"}}
         <article class="post-full leaflet-map-template">
             <div id="map" style="height: 100vh;"></div>
+            <div class="map-data-container">{{content}}</div>
         </article>
     {{else}}
         {{!-- For members-only posts, check if user is a member --}}
@@ -105,6 +111,7 @@
             {{#if @member}}
                 <article class="post-full leaflet-map-template">
                     <div id="map" style="height: 100vh;"></div>
+                    <div class="map-data-container">{{content}}</div>
                 </article>
             {{else}}
                 <div class="map-access-message">
@@ -122,6 +129,7 @@
                 {{#if @member.paid}}
                     <article class="post-full leaflet-map-template">
                         <div id="map" style="height: 100vh;"></div>
+                        <div class="map-data-container">{{content}}</div>
                     </article>
                 {{else}}
                     <div class="map-access-message">
@@ -141,6 +149,7 @@
                 {{!-- Default case, just show the map --}}
                 <article class="post-full leaflet-map-template">
                     <div id="map" style="height: 100vh;"></div>
+                    <div class="map-data-container">{{content}}</div>
                 </article>
             {{/has}}
         {{/has}}
@@ -192,9 +201,122 @@ document.addEventListener("DOMContentLoaded", function () {
     const clampedZoom = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), zoom));
 
     map.setView([h / 2, w / 2], clampedZoom);
+    
+    // Process map data from post content
+    processMapData(map, h, w);
   };
 
   img.src = imageUrl;
+  
+  /**
+   * Process map data from post content
+   * Looks for JSON data in the post content and adds markers and other overlays to the map
+   */
+  function processMapData(map, imageHeight, imageWidth) {
+    const mapDataContainer = document.querySelector('.map-data-container');
+    if (!mapDataContainer) return;
+    
+    try {
+      // Find all pre elements that might contain JSON data
+      const preElements = mapDataContainer.querySelectorAll('pre');
+      
+      preElements.forEach(pre => {
+        try {
+          // Try to parse the content as JSON
+          const content = pre.textContent.trim();
+          if (!content.startsWith('{') && !content.startsWith('[')) return;
+          
+          const mapData = JSON.parse(content);
+          
+          // Process the map data
+          if (mapData) {
+            // Process markers
+            if (mapData.markers && Array.isArray(mapData.markers)) {
+              mapData.markers.forEach(marker => {
+                if (marker.position && Array.isArray(marker.position) && marker.position.length === 2) {
+                  // Convert coordinates to match the image coordinate system if needed
+                  const y = marker.position[0];
+                  const x = marker.position[1];
+                  
+                  let markerOptions = {};
+                  
+                  // Apply custom icon if specified
+                  if (marker.icon) {
+                    markerOptions.icon = L.icon(marker.icon);
+                  }
+                  
+                  // Create the marker
+                  const m = L.marker([y, x], markerOptions).addTo(map);
+                  
+                  // Add popup if specified
+                  if (marker.popup) {
+                    m.bindPopup(marker.popup);
+                  }
+                  
+                  // Add tooltip if specified
+                  if (marker.tooltip) {
+                    m.bindTooltip(marker.tooltip);
+                  }
+                }
+              });
+            }
+            
+            // Process polylines
+            if (mapData.polylines && Array.isArray(mapData.polylines)) {
+              mapData.polylines.forEach(polyline => {
+                if (polyline.points && Array.isArray(polyline.points)) {
+                  const options = polyline.options || {};
+                  L.polyline(polyline.points, options).addTo(map);
+                }
+              });
+            }
+            
+            // Process polygons
+            if (mapData.polygons && Array.isArray(mapData.polygons)) {
+              mapData.polygons.forEach(polygon => {
+                if (polygon.points && Array.isArray(polygon.points)) {
+                  const options = polygon.options || {};
+                  L.polygon(polygon.points, options).addTo(map);
+                }
+              });
+            }
+            
+            // Process circles
+            if (mapData.circles && Array.isArray(mapData.circles)) {
+              mapData.circles.forEach(circle => {
+                if (circle.center && Array.isArray(circle.center) && circle.center.length === 2 && circle.radius) {
+                  const options = circle.options || {};
+                  L.circle(circle.center, { radius: circle.radius, ...options }).addTo(map);
+                }
+              });
+            }
+            
+            // Process rectangles
+            if (mapData.rectangles && Array.isArray(mapData.rectangles)) {
+              mapData.rectangles.forEach(rectangle => {
+                if (rectangle.bounds && Array.isArray(rectangle.bounds) && rectangle.bounds.length === 2) {
+                  const options = rectangle.options || {};
+                  L.rectangle(rectangle.bounds, options).addTo(map);
+                }
+              });
+            }
+            
+            // Process custom view settings
+            if (mapData.view) {
+              if (mapData.view.center && Array.isArray(mapData.view.center) && mapData.view.center.length === 2) {
+                const zoom = mapData.view.zoom !== undefined ? mapData.view.zoom : map.getZoom();
+                map.setView(mapData.view.center, zoom);
+              }
+            }
+          }
+        } catch (e) {
+          console.error('Error parsing map data JSON:', e);
+        }
+      });
+    } catch (e) {
+      console.error('Error processing map data:', e);
+    }
+  }
 });
 
 // Enable debug info with a query parameter
@@ -203,4 +325,3 @@ if (window.location.search.includes('debug=true')) {
 }
 </script>
 {{/post}}
-
