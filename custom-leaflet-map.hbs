@@ -1,9 +1,21 @@
 {{!< default}}
 
 <style>
+    /* Remove site footer and content */
+    .site-footer,
+    .content-title,
+    .post-full-footer,
+    .post-content {
+        display: none !important;
+    }
+    /* Match map style to Ghost */
     #map {
-        background-color: var(--color-darkmode);}
-    
+        background-color: var(--color-darkmode);
+        flex: 1 !important;
+        height: calc(100vh - 88px) !important;/* Adjust header height if needed */
+        width: 100% !important;
+    }
+
     /* Styling for access message */
     .map-access-message {
         display: flex;
