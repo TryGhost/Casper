@@ -12,34 +12,48 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const imageUrl = "{{feature_image}}";
-    
-    // Create an image element to get the natural dimensions
-    const img = new Image();
-    img.onload = function() {
-      // Get the natural dimensions of the image
-      const imageWidth = this.naturalWidth;
-      const imageHeight = this.naturalHeight;
-      
-      const bounds = [[0, 0], [imageHeight, imageWidth]];
 
-      const map = L.map("map", {
-        crs: L.CRS.Simple,
-        minZoom: -2,
-        maxZoom: 2,
-        center: [imageHeight / 2, imageWidth / 2],
-        zoom: 0,
-        maxBounds: bounds
-      });
+document.addEventListener("DOMContentLoaded", function () {
+  const imageUrl = "{{feature_image}}";
 
-      L.imageOverlay(imageUrl, bounds).addTo(map);
-      map.setMaxBounds(bounds);
-    };
-    
-    // Set the source to trigger the onload event
-    img.src = imageUrl;
-  });
+  const img = new Image();
+  img.onload = function () {
+    const w = this.naturalWidth;
+    const h = this.naturalHeight;
+
+    // Full image bounds
+    const imageBounds = [[0, 0], [h, w]];
+
+    // Create the map
+    const map = L.map("map", {
+      crs: L.CRS.Simple,
+      preferCanvas: true,
+      minZoom: -5,
+      maxZoom: 2,
+      zoomSnap: 0,
+      zoomDelta: 0.25,
+      maxBounds: imageBounds
+    });
+
+    // Add the image
+    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+    // Get viewport height and calculate scale to fit height
+    const viewportHeight = window.innerHeight;
+    const scale = viewportHeight / h;
+    const zoom = Math.log2(scale);
+
+    // Clamp to allowed zooms
+    const clampedZoom = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), zoom));
+
+    map.setView([h / 2, w / 2], clampedZoom);
+  };
+
+  img.src = imageUrl;
+});
+
+
+
 </script>
 {{/post}}
 
