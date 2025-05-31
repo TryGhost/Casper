@@ -18,19 +18,23 @@
 
     /* Leaflet tooltip styling */
     .leaflet-tooltip {
-        background-color: rgba(21, 23, 26, 0.8) !important;
-        border-left: 4px solid var(--ghost-accent-color) !important;
+        background-color: rgba(21, 23, 26, 0.9) !important;
         color: #fff !important;
         font-family: var(--font-sans) !important;
         font-size: 2em !important;
         padding: 8px 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
         border-radius: 4px !important;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.4) !important;
-        backdrop-filter: blur(8x) !important;
+        backdrop-filter: blur(8px) !important;
         -webkit-backdrop-filter: blur(8px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.5) !important;
         width: 500px !important;
         white-space: normal !important;
+    }
+    .leaflet-tooltip b {
+      text-transform: uppercase !important;
+      font-weight: bolder !important;
+      color: var(--ghost-accent-color) !important;
     }
     /* Tooltip arrow styling */
     .leaflet-tooltip-top:before,
@@ -58,14 +62,14 @@
 
     /* Leaflet popup styling */
     .leaflet-popup-content-wrapper {
-        background-color: rgba(21, 23, 26, 0.1)  !important;
+        background-color: rgba(21, 23, 26, 0.9)  !important;
         border-left: 4px solid var(--ghost-accent-color)  !important;
         color: #fff  !important;
         font-family: var(--font-sans)  !important;
         border-radius: 4px  !important;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)  !important;
-        backdrop-filter: blur(8px)  !important;
-        -webkit-backdrop-filter: blur(8px)  !important;
+        backdrop-filter: blur(20px)  !important;
+        -webkit-backdrop-filter: blur(20px)  !important;
     }
 
     .leaflet-popup-content {
