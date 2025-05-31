@@ -32,7 +32,27 @@
         width: 500px !important;
         white-space: normal !important;
     }
-    .leaflet-tooltip::before {
+    /* Tooltip arrow styling */
+    .leaflet-tooltip-top:before,
+    .leaflet-tooltip-bottom:before,
+    .leaflet-tooltip-left:before,
+    .leaflet-tooltip-right:before {
+        border-color: transparent;
+    }
+    
+    .leaflet-tooltip-bottom:before {
+        border-bottom-color: var(--ghost-accent-color) !important;
+    }
+    
+    .leaflet-tooltip-top:before {
+        border-top-color: var(--ghost-accent-color) !important;
+    }
+    
+    .leaflet-tooltip-left:before {
+        border-left-color: var(--ghost-accent-color) !important;
+    }
+    
+    .leaflet-tooltip-right:before {
         border-right-color: var(--ghost-accent-color) !important;
     }
 
