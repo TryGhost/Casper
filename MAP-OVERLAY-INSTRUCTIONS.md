@@ -54,6 +54,23 @@ You can include any or all of these elements.
 
 The `icon` property is optional and follows Leaflet's [Icon options](https://leafletjs.com/reference.html#icon).
 
+You can also use predefined custom icons by specifying the `iconType` property:
+
+```json
+{
+  "markers": [
+    {
+      "position": [500, 300],
+      "popup": "This is a red flag marker",
+      "iconType": "redflag"
+    }
+  ]
+}
+```
+
+Available custom icons:
+- `redflag` - A red flag icon
+
 ### Polylines
 
 ```json
@@ -159,6 +176,11 @@ Here's a complete example that includes multiple types of overlays:
     {
       "position": [600, 400],
       "popup": "Another marker"
+    },
+    {
+      "position": [650, 450],
+      "popup": "Red flag marker",
+      "iconType": "redflag"
     }
   ],
   "polylines": [
@@ -220,4 +242,3 @@ If your overlays aren't appearing:
 2. Check the browser console for any error messages
 3. Verify that your coordinates are within the bounds of your image
 4. Enable debug mode by adding `?debug=true` to the URL
-

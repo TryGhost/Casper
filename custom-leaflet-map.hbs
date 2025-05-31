@@ -172,6 +172,7 @@
   href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="{{asset "js/leaflet-custom-icons.js"}}"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -255,6 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
                   // Apply custom icon if specified
                   if (marker.icon) {
                     markerOptions.icon = L.icon(marker.icon);
+                  } else if (marker.iconType && window.customIcons && window.customIcons[marker.iconType]) {
+                    // Use predefined custom icon if iconType is specified
+                    markerOptions.icon = window.customIcons[marker.iconType];
                   }
                   
                   // Create the marker
