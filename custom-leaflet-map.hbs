@@ -28,7 +28,8 @@
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.4) !important;
         backdrop-filter: blur(8px) !important;
         -webkit-backdrop-filter: blur(8px) !important;
-        width: 500px !important;
+        max-width: 500px !important;
+        width: auto !important;
         white-space: normal !important;
     }
     .leaflet-tooltip b {
@@ -154,6 +155,13 @@
 
         .map-access-cta {
             flex-direction: column;
+        }
+        
+        /* Mobile tooltip adjustments */
+        .leaflet-tooltip {
+            max-width: 90% !important;
+            font-size: 1.5em !important;
+            padding: 6px 10px !important;
         }
     }
 
