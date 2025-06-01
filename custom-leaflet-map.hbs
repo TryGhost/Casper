@@ -278,14 +278,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add the image
     L.imageOverlay(imageUrl, imageBounds).addTo(map);
+    
     // Add video overlay (ie. clouds)
-    L.videoOverlay(videoUrl,imageBounds, {
+    const videoOverlay = L.videoOverlay(videoUrl, imageBounds, {
       autoplay: true,
       loop: true,
       muted: true,
       opacity: 0.6,
       keepAspectRatio: false
-    }).addTo(map).getElement().disablePictureInPicture = true;
+    }).addTo(map);
+    
+    // Disable picture-in-picture on the video element once it's loaded
+    const videoElement = videoOverlay.getElement();
+    if (videoElement) {
+      videoElement.disablePictureInPicture = true;
+      // Also add an event listener in case the element is replaced
+      videoOverlay.on('load', function() {
+        const el = videoOverlay.getElement();
+        if (el) {
+          el.disablePictureInPicture = true;
+        }
+      });
+    }
+    
     // Get viewport height and calculate scale to fit height
     const viewportHeight = window.innerHeight;
     const scale = viewportHeight / h;
