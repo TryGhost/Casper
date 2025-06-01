@@ -31,6 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
             popupAnchor: [0, -40],   // point from which the popup should open relative to the iconAnchor
             shadowSize: [60, 60],
             shadowAnchor: [7, 56]
+        }),
+        // Purple flag icon
+        flagyellow: L.icon({
+            iconUrl: '/assets/images/icons/flagpurple.png',
+            shadowUrl: '/assets/images/icons/flagshadow.png',
+            iconSize: [48, 60],     // size of the icon
+            iconAnchor: [10, 54],   // point of the icon which will correspond to marker's location
+            popupAnchor: [0, -40],   // point from which the popup should open relative to the iconAnchor
+            shadowSize: [60, 60],
+            shadowAnchor: [10, 54]
         })
     };
 });
