@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             shadowAnchor: [7, 56]
         }),
         // Purple flag icon
-        flagyellow: L.icon({
+        flagpurple: L.icon({
             iconUrl: '/assets/images/icons/flagpurple.png',
             shadowUrl: '/assets/images/icons/flagshadow.png',
             iconSize: [48, 60],     // size of the icon
