@@ -19,6 +19,16 @@
     .leaflet-overlay-pane video {
       z-index: 999 !important;
     }
+    
+    /* Hide picture-in-picture button */
+    .leaflet-overlay-pane video::-webkit-media-controls-picture-in-picture-button {
+      display: none !important;
+    }
+    
+    /* For Firefox */
+    .leaflet-overlay-pane video::-moz-picture-in-picture-button {
+      display: none !important;
+    }
 
     /* Leaflet tooltip styling */
     .leaflet-tooltip {
@@ -288,18 +298,27 @@ document.addEventListener("DOMContentLoaded", function () {
       keepAspectRatio: false
     }).addTo(map);
     
-    // Disable picture-in-picture on the video element
-    // Use a small delay to ensure the video element is fully initialized
-    setTimeout(function() {
+    // Function to disable picture-in-picture
+    function disablePiP() {
       try {
         const videoElement = videoOverlay.getElement();
         if (videoElement) {
+          // Set the attribute
           videoElement.disablePictureInPicture = true;
+          
+          // Also add the attribute directly to the DOM element
+          videoElement.setAttribute('disablePictureInPicture', '');
         }
       } catch (e) {
         console.error("Error disabling picture-in-picture:", e);
       }
-    }, 100);
+    }
+    
+    // Try immediately
+    disablePiP();
+    
+    // Also try after a short delay to ensure the video is loaded
+    setTimeout(disablePiP, 100);
     
     // Get viewport height and calculate scale to fit height
     const viewportHeight = window.innerHeight;
