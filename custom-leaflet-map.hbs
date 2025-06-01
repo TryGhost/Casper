@@ -288,18 +288,18 @@ document.addEventListener("DOMContentLoaded", function () {
       keepAspectRatio: false
     }).addTo(map);
     
-    // Disable picture-in-picture on the video element once it's loaded
-    const videoElement = videoOverlay.getElement();
-    if (videoElement) {
-      videoElement.disablePictureInPicture = true;
-      // Also add an event listener in case the element is replaced
-      videoOverlay.on('load', function() {
-        const el = videoOverlay.getElement();
-        if (el) {
-          el.disablePictureInPicture = true;
+    // Disable picture-in-picture on the video element
+    // Use a small delay to ensure the video element is fully initialized
+    setTimeout(function() {
+      try {
+        const videoElement = videoOverlay.getElement();
+        if (videoElement) {
+          videoElement.disablePictureInPicture = true;
         }
-      });
-    }
+      } catch (e) {
+        console.error("Error disabling picture-in-picture:", e);
+      }
+    }, 100);
     
     // Get viewport height and calculate scale to fit height
     const viewportHeight = window.innerHeight;
