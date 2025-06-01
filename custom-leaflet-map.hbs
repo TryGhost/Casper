@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
       muted: true,
       opacity: 0.6,
       keepAspectRatio: false
-    }).addTo(map);
+    }).addTo(map).getElement().disablePictureInPicture = true;
     // Get viewport height and calculate scale to fit height
     const viewportHeight = window.innerHeight;
     const scale = viewportHeight / h;
