@@ -16,6 +16,10 @@
         width: 100% !important;
     }
 
+    .leaflet-overlay-pane video {
+      z-index: 999 !important;
+    }
+
     /* Leaflet tooltip styling */
     .leaflet-tooltip {
         background-color: rgba(21, 23, 26, 0.9) !important;
@@ -251,6 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!mapElement) return;
 
   const imageUrl = "{{feature_image}}";
+  const videoUrl = "/assets/images/overlays/Daytime_Clouds_Squar_One.webm"
 
   const img = new Image();
   img.onload = function () {
@@ -273,7 +278,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add the image
     L.imageOverlay(imageUrl, imageBounds).addTo(map);
-
+    // Add video overlay (ie. clouds)
+    L.videoOverlay(videoUrl,imageBounds, {
+      autoplay: true,
+      loop: true,
+      muted: true,
+      opacity: 0.6,
+      keepAspectRatio: false
+    }).addTo(map);
     // Get viewport height and calculate scale to fit height
     const viewportHeight = window.innerHeight;
     const scale = viewportHeight / h;
@@ -286,6 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Process map data from post content
     processMapData(map, h, w);
+
   };
 
   img.src = imageUrl;
