@@ -1,8 +1,12 @@
 # Basilica
+**Basilica** is a modified version of the [Casper](https://github.com/TryGhost/Casper/releases) theme for the [Dungeon Church](https://www.dungeon.church) gaming group website.
 
-This is a modified version of the [Casper](https://github.com/TryGhost/Casper/releases) theme for Dungeon Church.
+## Custom Templates
+This theme contains custom templates for visualizing RPG related information:
+* `custom-timeline.hbs` - Create [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3) timelines with a linked Google Sheet.
+* `custom-leaflet-map.hbs` - Create an interactive [LeafletJS](https://leafletjs.com) map from an image. Supports markers, shapes, overlays, custom icons, etc. see additional [readme](/MAP-OVERLAY-INSTRUCTIONS.md).
 
-Changes to this repo are deployed onto the live production site.
+🚨 Changes to this repo are deployed onto the live production site 🚨
 
 ## First time using a Ghost theme?
 
