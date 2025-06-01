@@ -20,41 +20,14 @@
       z-index: 999 !important;
     }
     
-    /* Hide picture-in-picture button using various approaches */
-    /* Chrome/Safari approach */
+    /* Hide picture-in-picture button */
     .leaflet-overlay-pane video::-webkit-media-controls-picture-in-picture-button {
       display: none !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
     }
     
-    /* Firefox approach */
+    /* For Firefox */
     .leaflet-overlay-pane video::-moz-picture-in-picture-button {
       display: none !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    
-    /* Additional Firefox-specific approach */
-    .leaflet-overlay-pane video::-moz-media-controls-picture-in-picture-button {
-      display: none !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    
-    /* Alternative approach for Firefox */
-    /* We need to be careful with pointer-events as it might affect map interactions */
-    /* Instead, let's use a more targeted approach */
-    .leaflet-overlay-pane video::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40px;  /* Approximate width of the PiP button area */
-      height: 40px; /* Approximate height of the PiP button area */
-      pointer-events: none;
-      background-color: transparent;
-      z-index: 1001;
     }
 
     /* Leaflet tooltip styling */
@@ -330,39 +303,11 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         const videoElement = videoOverlay.getElement();
         if (videoElement) {
-          // Set the attribute (works in Chrome and newer Firefox)
+          // Set the attribute
           videoElement.disablePictureInPicture = true;
           
           // Also add the attribute directly to the DOM element
-          videoElement.setAttribute('disablePictureInPicture', 'true');
-          
-          // Remove controls to prevent PiP button from showing (backup approach)
-          videoElement.controls = false;
-          
-          // Firefox-specific approaches
-          if (navigator.userAgent.indexOf('Firefox') !== -1) {
-            // Add a style element with Firefox-specific CSS
-            const style = document.createElement('style');
-            style.textContent = `
-              .leaflet-overlay-pane video::-moz-picture-in-picture-toggle-button {
-                display: none !important;
-              }
-              video::-moz-picture-in-picture-button {
-                display: none !important;
-              }
-            `;
-            document.head.appendChild(style);
-            
-            // Add event listener to prevent PiP
-            videoElement.addEventListener('enterpictureinpicture', (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              return false;
-            }, true);
-            
-            // Mute the video as a last resort (Firefox doesn't show PiP for muted videos)
-            videoElement.muted = true;
-          }
+          videoElement.setAttribute('disablePictureInPicture', '');
         }
       } catch (e) {
         console.error("Error disabling picture-in-picture:", e);
