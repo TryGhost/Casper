@@ -12,26 +12,57 @@ Keep this template as lightweight as you can!
 
 --}}
 
+<style>
+    .site-content {
+        background-image: url("/assets/images/404-bg.png");
+        background-size: cover;
+        background-repeat: no-repeat !important;
+
+    }
+    .error-message b {
+        color: var(--ghost-accent-color);
+        font-size: 6em;
+        padding: 12px;
+        background: #fff;
+    }
+    .error-description {
+        background: var(--ghost-accent-color);
+        color: var(--color-lightgrey);
+        padding: 12px;
+    }
+    
+    .error-link {
+        background: #fff;
+        padding: 12px;
+    }
+
+    .read-more-wrap.outer {
+        background-color: rgba(21, 23, 26, 0.2);
+        border: 0px solid rgba(200,200,200, .5);
+        border-width: 1px 0 !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 0px;
+        box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
+    }
+
+.site-footer,
+.content-title,
+.post-full-footer,
+.post-content {
+  display: none !important;
+}
+</style>
+
 <section class="outer error-content">
     <div class="inner">
+
         <section class="error-message">
-            <h1 class="error-code">{{statusCode}}</h1>
-            <p class="error-description">{{message}}</p>
+            <b>{{statusCode}}</b>
+            <br><br><br>
+            <i class="error-description">You are in a maze of twisty passages, all alike.</i>
+            <br><br>
             <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
         </section>
     </div>
 </section>
-
-{{!-- Given that people landing on this page didn't find what they
-were looking for, let's give them some alternative stuff to read. --}}
-<aside class="read-more-wrap outer">
-    <div class="read-more inner">
-        {{#get "posts" include="authors" limit="3" as |more_posts|}}
-            {{#if more_posts}}
-                {{#foreach more_posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
-            {{/if}}
-        {{/get}}
-    </div>
-</aside>
