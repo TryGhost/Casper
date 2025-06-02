@@ -17,7 +17,6 @@ Keep this template as lightweight as you can!
         background-image: url("/assets/images/404-bg.png");
         background-size: cover;
         background-repeat: no-repeat !important;
-
     }
     .error-message b {
         color: var(--ghost-accent-color);
@@ -61,7 +60,7 @@ Keep this template as lightweight as you can!
         left: 0;
         right: 0;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(21, 23, 26, 0) 0%, var(--color-darkmode) 100%);
+        background: linear-gradient(to bottom, rgba(21, 23, 26, 0) 0%, #151719 100%);
         z-index: -1;
     }
 
@@ -69,6 +68,8 @@ Keep this template as lightweight as you can!
         text-align: center;
         color: #fff;
         margin-bottom: 40px;
+        position: relative;
+        z-index: 1;
     }
 
     .featured-posts-header h2 {
@@ -86,6 +87,8 @@ Keep this template as lightweight as you can!
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         padding: 0 20px;
+        position: relative;
+        z-index: 1;
     }
 
     @media (max-width: 900px) {
@@ -110,7 +113,6 @@ Keep this template as lightweight as you can!
 
 <section class="outer error-content">
     <div class="inner">
-
         <section class="error-message">
             <b>{{statusCode}}</b>
             <br><br><br>
