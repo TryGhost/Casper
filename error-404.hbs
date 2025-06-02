@@ -13,18 +13,29 @@ Keep this template as lightweight as you can!
 --}}
 
 <style>
+    /* Remove background from site-content */
     .site-content {
+        background: none;
+    }
+    
+    /* Apply background to error-content instead */
+    .error-content {
         background-image: url("/assets/images/404-bg.png");
         background-size: cover;
         background-repeat: no-repeat !important;
-
+        background-position: center;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
     }
+    
     .error-message b {
         color: var(--ghost-accent-color);
         font-size: 6em;
         padding: 12px;
         background: #fff;
     }
+    
     .error-description {
         background: var(--ghost-accent-color);
         color: var(--color-lightgrey);
@@ -46,17 +57,109 @@ Keep this template as lightweight as you can!
         box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
     }
 
-.site-footer,
-.content-title,
-.post-full-footer,
-.post-content {
-  display: none !important;
-}
+    /* Featured posts section styles */
+    .featured-posts-section {
+        position: relative;
+        width: 100%;
+        background: #151719;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .featured-posts-gradient {
+        position: absolute;
+        top: -200px;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: linear-gradient(to bottom, rgba(21, 23, 26, 0) 0%, #151719 100%);
+    }
+
+    .featured-posts-header {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .featured-posts-header h2 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .featured-posts-header p {
+        font-size: 1.6rem;
+        opacity: 0.8;
+    }
+
+    /* Smaller post cards in a row of 3 */
+    .featured-post-feed {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Make post cards smaller */
+    .featured-post-feed .post-card {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Adjust post card image size */
+    .featured-post-feed .post-card-image-link {
+        margin-bottom: 15px;
+    }
+
+    /* Adjust post card title size */
+    .featured-post-feed .post-card-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    /* Adjust post card excerpt */
+    .featured-post-feed .post-card-excerpt {
+        font-size: 1.4rem;
+        margin-top: 8px;
+        -webkit-line-clamp: 2;
+    }
+
+    /* Adjust post card meta */
+    .featured-post-feed .post-card-meta {
+        font-size: 1.2rem;
+        margin-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+        .featured-post-feed .post-card {
+            flex: 0 0 calc(50% - 15px);
+            max-width: calc(50% - 15px);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .featured-post-feed .post-card {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+
+    .site-footer,
+    .content-title,
+    .post-full-footer,
+    .post-content {
+        display: none !important;
+    }
 </style>
 
 <section class="outer error-content">
     <div class="inner">
-
         <section class="error-message">
             <b>{{statusCode}}</b>
             <br><br><br>
@@ -66,3 +169,28 @@ Keep this template as lightweight as you can!
         </section>
     </div>
 </section>
+
+{{!-- Featured Posts Section --}}
+<section class="featured-posts-section outer">
+    <div class="featured-posts-gradient"></div>
+    <div class="inner">
+        <div class="featured-posts-header">
+            <h2>You rolled...</h2>
+        </div>
+        <div class="featured-post-feed">
+            {{#get "posts" filter="featured:true" limit="3" include="tags,authors" as |featured_posts|}}
+                {{#foreach featured_posts}}
+                    {{> "post-card"}}
+                {{else}}
+                    {{!-- If no featured posts, show recent posts instead --}}
+                    {{#get "posts" limit="3" include="tags,authors" as |recent_posts|}}
+                        {{#foreach recent_posts}}
+                            {{> "post-card"}}
+                        {{/foreach}}
+                    {{/get}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>
+
