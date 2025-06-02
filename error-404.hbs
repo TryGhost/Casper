@@ -46,6 +46,60 @@ Keep this template as lightweight as you can!
         box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
     }
 
+    /* Featured posts section styles */
+    .featured-posts-section {
+        position: relative;
+        margin-top: 60px;
+        padding-top: 40px;
+        width: 100%;
+        top: 60vh;
+    }
+
+    .featured-posts-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(21, 23, 26, 0) 0%, var(--color-darkmode) 100%);
+        z-index: -1;
+    }
+
+    .featured-posts-header {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 40px;
+    }
+
+    .featured-posts-header h2 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .featured-posts-header p {
+        font-size: 1.6rem;
+        opacity: 0.8;
+    }
+
+    .featured-post-feed {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    @media (max-width: 900px) {
+        .featured-post-feed {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .featured-post-feed {
+            grid-template-columns: 1fr;
+        }
+    }
+
 .site-footer,
 .content-title,
 .post-full-footer,
@@ -66,3 +120,29 @@ Keep this template as lightweight as you can!
         </section>
     </div>
 </section>
+
+{{!-- Featured Posts Section --}}
+<section class="featured-posts-section outer">
+    <div class="featured-posts-gradient"></div>
+    <div class="inner">
+        <div class="featured-posts-header">
+            <h2>Featured Content</h2>
+            <p>You might be interested in these posts</p>
+        </div>
+        <div class="featured-post-feed">
+            {{#get "posts" filter="featured:true" limit="3" include="tags,authors" as |featured_posts|}}
+                {{#foreach featured_posts}}
+                    {{> "post-card"}}
+                {{else}}
+                    {{!-- If no featured posts, show recent posts instead --}}
+                    {{#get "posts" limit="3" include="tags,authors" as |recent_posts|}}
+                        {{#foreach recent_posts}}
+                            {{> "post-card"}}
+                        {{/foreach}}
+                    {{/get}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>
+
