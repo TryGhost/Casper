@@ -34,6 +34,17 @@ into the {body} of the default.hbs template --}}
     .map-header-container {
         position: relative;
     }
+    /* Gradient fade for the map image */
+    .map-gradient-fade {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #151719 100%);
+        z-index: 100;
+        pointer-events: none;
+    }
 </style>
 
 <div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
@@ -55,6 +66,7 @@ into the {body} of the default.hbs template --}}
     <div class="site-header-inner inner">
         <p class="map-description"></p>
     </div>
+    <div class="map-gradient-fade"></div>
     {{else}}
       <p>(Error: post context has no featured image.)</p>
     {{/if}}
