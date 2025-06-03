@@ -49,32 +49,67 @@ into the {body} of the default.hbs template --}}
         z-index: 100;
         pointer-events: none;
     }
-    /* Quote block styling */
+
+    /* blockquote */
     .map-quote-block {
         position: relative;
         left: 50%;
         width: 100vw;
-        max-width: 100vw;    /* ensure it never shrinks */
+        max-width: 100vw;           /* never shrink below viewport */
         transform: translateX(-50%);
         box-sizing: border-box;
-        padding: 40px 20px;
-        margin: 30px 0;
+        padding: 60px 20px;         /* more padding so big quotes have room */
+        margin: 40px 0;
         background-color: var(--ghost-accent-color);
-        border-left: 5px solid #3eb0ef;
+        color: white;               /* ensure text is readable on accent bg */
         font-size: 2rem;
         line-height: 1.6;
         font-style: italic;
         text-align: center;
+        overflow: hidden;           /* clip anything that goes outside */
     }
     .map-quote-block p {
+        position: relative;         /* bring above pseudo-elements */
+        z-index: 2;
         max-width: 800px;
-        margin: 0 auto;
-    }
-    p.credit-quote-block {
+        margin: 0 auto 0.5em;
+        }
+    .credit-quote-block {
+        position: relative;         /* above pseudo-elements too */
+        z-index: 2;
         text-align: right !important;
-        font-size: 2em;
-        font-style: none;
+        font-size: 1.5em;
+        font-weight: bold;
+        font-style: normal;
+        margin-top: 1rem;
+        padding-bottom:
     }
+    .map-quote-block::before {
+        content: "“";               /* Unicode opening double-quote */
+        position: absolute;
+        top: 5px;                 /* nudge upward or adjust as needed */
+        left: 20px;                 /* nudge inward from left edge */
+        font-family: serif;         /* a classic serif for a dramatic look */
+        font-size: 12rem;           /* very large */
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.4); /* very low-opacity white */
+        z-index: 1;                 /* sit behind the <p> text (which is z-index:2) */
+        pointer-events: none;       /* never capture clicks */
+    }
+
+    .map-quote-block::after {
+        content: "”";               /* Unicode closing double-quote */
+        position: absolute;
+        bottom: 20%;              /* slight nudge downward */
+        right: 20px;                /* slight nudge inward from right edge */
+        font-family: serif;
+        font-size: 12rem;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.4);
+        z-index: 1;
+        pointer-events: none;
+    }
+`
 </style>
 
 <div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
@@ -118,8 +153,8 @@ into the {body} of the default.hbs template --}}
 
     {{!-- Quote block that spans full width --}}
     <div class="map-quote-block">
-        <p>"Even a blind dwarf navigator is worth more than ten sailors with compasses."</p>
-        <p class="credit-quote-block">- Captain Strezza</p>
+        <p>Even a blind dwarf navigator is worth more than ten sailors with a compass.</p>
+        <p class="credit-quote-block"><a href=https://lore.dungeon.church/doc/strezza-pvL6kQtaEA target="_new">Captain Strezza</a></p>
     </div>
     <div class="post-feed">
         {{#foreach posts from="4"}}
