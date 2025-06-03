@@ -2,6 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
+
 <style>
     .map-description {
         display: inline-block;
@@ -15,11 +16,24 @@ into the {body} of the default.hbs template --}}
     .post-card-meta {
         display: none;
     }
+    .content-title-header {
+        padding-top: 15px;
+        text-align: center;
+    }
     .post-card-header {
         text-align: center;
-        padding-top: 10px;
     }
-
+    .post-card-excerpt {
+        text-align: center;
+        margin-top: 0px !important;
+    }
+    .post-card-image-link {
+        margin-bottom: 10px !important;
+    }
+    /* Map header container positioning */
+    .map-header-container {
+        position: relative;
+    }
 </style>
 
 <div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
@@ -52,7 +66,7 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
-    <div class="post-card-header"><h1>Explore Pyora</h1></div>
+    <div class="post-card-header"><h1 class="content-title-header">Explore Pyora</h1></div>
     <div class="post-feed">
         {{#foreach posts}}
             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
