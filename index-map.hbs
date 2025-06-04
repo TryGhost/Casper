@@ -111,7 +111,6 @@ into the {body} of the default.hbs template --}}
         z-index: 1;
         pointer-events: none;
     }
-
 </style>
 
 <div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
@@ -155,9 +154,10 @@ into the {body} of the default.hbs template --}}
 
     {{!-- Quote block that spans full width --}}
     <div class="map-quote-block">
-        <p>Even a blind dwarf navigator is worth more than ten sailors with a compass.</p>
-        <p class="credit-quote-block"><a href=https://lore.dungeon.church/doc/strezza-pvL6kQtaEA target="_new">Captain Strezza</a></p>
+        <p id="quote-text">Even a blind dwarf navigator is worth more than ten sailors with a compass.</p>
+        <p class="credit-quote-block"><a id="quote-link" href="https://lore.dungeon.church/doc/strezza-pvL6kQtaEA" target="_new"><span id="quote-author">Captain Strezza</span></a></p>
     </div>
+    
     <div class="post-feed">
         {{#foreach posts from="4"}}
             {{> "post-card"}}
@@ -166,3 +166,28 @@ into the {body} of the default.hbs template --}}
 
 </div>
 </main>
+
+{{!-- Simple script for random quotes --}}
+<script>
+    // Array of quotes
+    const quotes = [
+        {
+            text: "Even a blind dwarf navigator is worth more than ten sailors with a compass.",
+            author: "Captain Strezza",
+            link: "https://lore.dungeon.church/doc/strezza-pvL6kQtaEA"
+        },
+        {
+            text: "Magic flows like water through the veins of our world. Some merely drink from it; others learn to redirect the current.",
+            author: "Estelar",
+            link: "https://lore.dungeon.church/doc/estelar-the-heretic-OtEcj9hL0Z"
+        }
+    ];
+
+    // Set random quote on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const quote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quote-text').textContent = quote.text;
+        document.getElementById('quote-author').textContent = quote.author;
+        document.getElementById('quote-link').href = quote.link;
+    });
+</script>
