@@ -3,6 +3,11 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
+<style>
+    .article-byline-content {
+        align: center !important;
+    }
+</style>
 
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
@@ -12,6 +17,7 @@ into the {body} tag of the default.hbs template --}}
 
     <header class="article-header gh-canvas">
 
+<!--
         <div class="article-tag post-card-tags">
             {{#primary_tag}}
                 <span class="post-card-primary-tag">
@@ -22,39 +28,17 @@ into the {body} tag of the default.hbs template --}}
                 <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
             {{/if}}
         </div>
+-->
 
         <h1 class="article-title">{{title}}</h1>
+
+        <div class="byline-meta-content">
+            <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM YYYY"}}</time>
+        </div>
 
         {{#if custom_excerpt}}
             <p class="article-excerpt">{{custom_excerpt}}</p>
         {{/if}}
-
-        <div class="article-byline">
-        <section class="article-byline-content">
-
-            <ul class="author-list instapaper_ignore">
-                {{#foreach authors}}
-                <li class="author-list-item">
-                    {{#if profile_image}}
-                    <a href="{{url}}" class="author-avatar" aria-label="Read more of {{name}}">
-                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                    </a>
-                    {{else}}
-                    <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Read more of {{name}}">{{> "icons/avatar"}}</a>
-                    {{/if}}
-                </li>
-                {{/foreach}}
-            </ul>
-
-            <div class="article-byline-meta">
-                <h4 class="author-name">{{authors}}</h4>
-                <div class="byline-meta-content">
-                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM YYYY"}}</time>
-                </div>
-            </div>
-
-        </section>
-        </div>
 
         {{#match @custom.post_image_style "!=" "Hidden"}}
         {{#if feature_image}}
@@ -81,6 +65,31 @@ into the {body} tag of the default.hbs template --}}
 
     <section class="gh-content gh-canvas">
         {{content}}
+        
+        <!--
+        <div class="article-byline">
+        <section class="article-byline-content">
+
+            <ul class="author-list instapaper_ignore">
+                {{#foreach authors}}
+                <li class="author-list-item">
+                    {{#if profile_image}}
+                    <a href="{{url}}" class="author-avatar" aria-label="Read more of {{name}}">
+                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    </a>
+                    {{else}}
+                    <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Read more of {{name}}">{{> "icons/avatar"}}</a>
+                    {{/if}}
+                </li>
+                {{/foreach}}
+            </ul>
+            <div class="article-byline-meta">
+                <h4 class="author-name">{{authors}}</h4>
+            </div>
+        </section>
+        </div>
+        -->
+
     </section>
 
     {{#if comments}}
