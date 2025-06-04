@@ -60,7 +60,7 @@ into the {body} of the default.hbs template --}}
         max-width: 100vw;           /* never shrink below viewport */
         transform: translateX(-50%);
         box-sizing: border-box;
-        padding: 60px 20px;         /* more padding so big quotes have room */
+        padding: 60px 20px 0px;         /* more padding so big quotes have room */
         margin: 40px 0;
         background-color: var(--ghost-accent-color);
         color: white;               /* ensure text is readable on accent bg */
@@ -83,8 +83,8 @@ into the {body} of the default.hbs template --}}
         font-size: 1.5em;
         font-weight: bold;
         font-style: normal;
-        margin-top: 1rem;
-        padding-bottom:
+        margin-top: 1em;
+        padding-bottom: 0em;
     }
     .map-quote-block::before {
         content: "“";               /* Unicode opening double-quote */
@@ -102,7 +102,7 @@ into the {body} of the default.hbs template --}}
     .map-quote-block::after {
         content: "”";               /* Unicode closing double-quote */
         position: absolute;
-        bottom: 20%;              /* slight nudge downward */
+        bottom: -20px;              /* slight nudge downward */
         right: 20px;                /* slight nudge inward from right edge */
         font-family: serif;
         font-size: 12rem;
@@ -111,7 +111,7 @@ into the {body} of the default.hbs template --}}
         z-index: 1;
         pointer-events: none;
     }
-`
+
 </style>
 
 <div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
