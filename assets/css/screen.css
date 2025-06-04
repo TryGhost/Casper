@@ -59,6 +59,34 @@ production stylesheet in assets/built/screen.css
 
 }
 
+/* DUNGEON CHURCH FONT */
+    @font-face {
+    font-family: 'Waning Star';
+    src: url('/assets/ws.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
+    .post-card-title {
+        font-family: "Waning Star"
+    }
+    .article-title {
+        font-family: "Waning Star";
+    }
+    .footer-cta-title {
+        font-family: "Waning Star"
+    }
+    h1 {
+        font-family: "Waning Star"
+    }
+    h2 {
+        font-family: "Waning Star"
+    }
+    h3 {
+        font-family: "Waning Star"
+    }
+    h4 {
+        font-family: "Waning Star"
+    }
 
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
