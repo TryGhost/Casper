@@ -60,12 +60,8 @@ production stylesheet in assets/built/screen.css
 }
 
 /* DUNGEON CHURCH FONT */
-    @font-face {
-    font-family: 'Waning Star';
-    src: url('/assets/ws.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    }
+    /* Waning Star used with Permission */
+  @import url('/assets/ws.woff2');
     .post-card-title {
         font-family: "Waning Star"
     }
@@ -88,6 +84,19 @@ production stylesheet in assets/built/screen.css
         font-family: "Waning Star"
     }
 
+    /* Sans Serif for menus */
+    @import url('https://fonts.googleapis.com/css2?&family=Bebas+Neue');
+    /* navigation links */
+    ul.nav {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.5rem;   
+    }
+
+/* DUNGEON CHURCH OVERRIDES
+    /* hides sign in buttons top right in favor of floating Portal button */
+    .gh-head-members { display: none !important } 
+    
+    
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
 
