@@ -76,6 +76,10 @@ into the {body} of the default.hbs template --}}
         font-style: normal;
         margin-top: 1em;
         padding-bottom: 0em;
+        font-family: 'Waning Star', serif;
+    }
+    .credit-quote-block i {
+        color: rgba(255, 255, 255, 0.4); /* very low-opacity white */
     }
     .map-quote-block::before {
         content: "“";               /* Unicode opening double-quote */
@@ -148,7 +152,7 @@ into the {body} of the default.hbs template --}}
     {{!-- Quote block that spans full width --}}
     <div class="map-quote-block">
         <p id="quote-text">Even a blind dwarf navigator is worth more than ten sailors with a compass.</p>
-        <p class="credit-quote-block"><a id="quote-link" href="https://lore.dungeon.church/doc/strezza-pvL6kQtaEA" target="_new"><span id="quote-author">Captain Strezza</span></a></p>
+        <p class="credit-quote-block"><i>&mdash;</i> <a id="quote-link" href="https://lore.dungeon.church/doc/strezza-pvL6kQtaEA" target="_new"><span id="quote-author">Captain Strezza</span></a></p>
     </div>
     
     <div class="post-feed">
