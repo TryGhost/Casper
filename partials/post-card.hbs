@@ -24,9 +24,9 @@ which templates loop over to generate a list of posts. --}}
             <div class="post-card-access">
                 {{> "icons/lock"}}
                 {{#has visibility="members"}}
-                    Members only
+                    Members Only
                 {{else}}
-                    Supporters only
+                    Supporters Only
                 {{/has}}
             </div>
         {{/has}}
@@ -64,10 +64,7 @@ which templates loop over to generate a list of posts. --}}
         </a>
 
         <footer class="post-card-meta">
-            <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
-            {{#if reading_time}}
-                <span class="post-card-meta-length">{{reading_time}}</span>
-            {{/if}}
+            <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
             {{#if @site.comments_enabled}}
                 {{comment_count}}
             {{/if}}
