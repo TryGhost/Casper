@@ -128,45 +128,14 @@ into the {body} of the default.hbs template --}}
         z-index: 1;
         pointer-events: none;
     }
-
 </style>
-
-<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
-
-{{!-- Use responsive image from the Pyora map post --}}
-{{#get "posts" filter="slug:pyora" limit="1"}}
-  {{#foreach posts}}
-    {{!-- 2) Now `this.feature_image` holds that post's featured image URL --}}
-    {{#if feature_image}}
-     <img class="site-header-cover"
-                srcset="{{img_url feature_image size="s"}} 300w,
-                        {{img_url feature_image size="m"}} 600w,
-                        {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="100vw"
-                src="{{img_url feature_image size="xl"}}"
-                alt="Explore the world of Pyora"
-    />
-    <div class="site-header-inner inner">
-        <p class="map-description"></p>
-    </div>
-    <!-- Add the Explore Pyora overlay text -->
-    <div class="explore-pyora-overlay">Explore Pyora</div>
-    <div class="map-gradient-fade"></div>
-    {{else}}
-      <p>(Error: post context has no featured image.)</p>
-    {{/if}}
-  {{/foreach}}
-{{/get}}
-
-</div>
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
     <div class="post-card-header"><!-- removed header --></div>
 
-    {{!-- Test map container - 100% width and 500px high --}}
+    {{!-- Map container at the top - 100% width and 500px high --}}
     <div class="test-map-container" data-overlay="Sunset_Clouds_Squar_One.webm" data-opacity="1.0">
         {{!-- Get the first map post to use for the test --}}
         {{#get "posts" filter="slug:pyora" limit="1"}}
@@ -174,6 +143,10 @@ into the {body} of the default.hbs template --}}
                 {{> "map" }}
             {{/foreach}}
         {{/get}}
+        
+        <!-- Add the Explore Pyora overlay text -->
+        <div class="explore-pyora-overlay">Explore Pyora</div>
+        <div class="map-gradient-fade"></div>
     </div>
 
     <div class="post-feed">
@@ -222,7 +195,7 @@ into the {body} of the default.hbs template --}}
             author: "Anders Solmor",
             link: "https://lore.dungeon.church/doc/anders-solmor-njTKn6ITMV"
     
-    ];
+    }];
 
     // Set random quote on page load
     document.addEventListener('DOMContentLoaded', function() {
@@ -232,3 +205,4 @@ into the {body} of the default.hbs template --}}
         document.getElementById('quote-link').href = quote.link;
     });
 </script>
+
