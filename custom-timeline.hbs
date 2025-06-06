@@ -7,91 +7,13 @@ Go to Code Injection, and inject the URL of the Google Sheet:
 <meta name="custom:sheet_url" content="https://docs.google.com/spreadsheets/d/e/XXXXX/pubhtml">
 
 In order for this to work, the Sheet must be "Published" not just "Shared"
-
-The Sheet
 -->
 {{!< default}}
 
-<article class="timeline-container">
-  {{!-- Debug information to check post data structure --}}
-  <div class="debug-info" style="display: none;">
-    Post exists: {{#if post}}Yes{{else}}No{{/if}}<br>
-    Visibility: {{post.visibility}}<br>
-    Member exists: {{#if member}}Yes{{else}}No{{/if}}<br>
-    Member paid: {{#if member.paid}}Yes{{else}}No{{/if}}
-  </div>
-
-  {{!-- Check post visibility and render accordingly --}}
-  {{#post}}
-    {{!-- For public posts, render the timeline for everyone --}}
-    {{#has visibility="public"}}
-      <div id="timeline-embed"></div>
-    {{else}}
-      {{!-- For members-only posts, check if user is a member --}}
-      {{#has visibility="members"}}
-        {{#if @member}}
-          <div id="timeline-embed"></div>
-        {{else}}
-          <div class="timeline-access-message">
-            <h2>This timeline is available to members</h2>
-            <p>Sign up or log in to view this timeline.</p>
-            <div class="timeline-access-cta">
-              <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
-              <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
-            </div>
-          </div>
-        {{/if}}
-      {{else}}
-        {{!-- For paid-members-only posts, check if user is a paid member --}}
-        {{#has visibility="paid"}}
-          {{#if @member.paid}}
-            <div id="timeline-embed"></div>
-          {{else}}
-            <div class="timeline-access-message">
-              <h2>This timeline is available to paid members</h2>
-              <p>Upgrade your membership to view this timeline.</p>
-              <div class="timeline-access-cta">
-                {{#if @member}}
-                  <a href="#/portal/account/plans" class="timeline-upgrade-button">Upgrade now</a>
-                {{else}}
-                  <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
-                  <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
-                {{/if}}
-              </div>
-            </div>
-          {{/if}}
-        {{else}}
-          {{!-- Default case, just show the timeline --}}
-          <div id="timeline-embed"></div>
-        {{/has}}
-      {{/has}}
-    {{/has}}
-  {{else}}
-    {{!-- If no post context, show the timeline --}}
-    <div id="timeline-embed"></div>
-  {{/post}}
-</article>
-
-<link rel="stylesheet" href="/assets/timelinejs/css/timeline.css">
-<script src="/assets/timelinejs/js/timeline.js"></script>
+<!-- TimelineJS style Overrides -->
+<link rel="stylesheet" href="{{asset 'timeline.css'}}">
 
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: var(--background-color);
-    font-family: var(--font-sans);
-    color: var(--color);
-    overflow: hidden;
-  }
-
-  .gh-main {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-
   .site-footer,
   .content-title,
   .post-full-footer,
@@ -99,19 +21,11 @@ The Sheet
     display: none !important;
   }
 
-  .tl-attribution {
-    display: none !important;
-  }
-
   .timeline-container {
     flex: 1;
     height: calc(100vh - 88px); /* Adjust header height if needed */
     width: 100%;
-  }
-
-  #timeline-embed {
-    height: 100%;
-    width: 100%;
+    background: var(--color-darkmode) !important;
   }
 
   /* Styling for access message */
@@ -127,14 +41,13 @@ The Sheet
     color: #fff;
   }
 
-  .timeline-access-message h2 {
-    font-size: 2.5rem;
+  .timeline-access-message h1 {
     margin-bottom: 1rem;
     color: #fff;
   }
 
   .timeline-access-message p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     max-width: 600px;
   }
@@ -179,234 +92,7 @@ The Sheet
     transform: translateY(-2px);
   }
 
-  /* Main timeline container */
-  .tl-timeline {
-    background-color: var(--color-darkmode);
-    color: #fff;
-    font-family: var(--font-sans);
-  }
-
-  /* Slide background - create a vignette effect */
-  .tl-slide .tl-slide-background {
-    opacity: 1 !important;
-    position: absolute; /* make sure it's behind content */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0; /* ensure it's behind everything */
-    pointer-events: none;
-  }
-  /* Add vignette overlay */
-  .tl-slide .tl-slide-background::after {
-    content: "";
-    position: absolute;
-    inset: 0; /* shorthand for top/right/bottom/left: 0 */
-    z-index: 1;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0) 40%,
-      rgba(0, 0, 0, 0.3) 80%
-    );
-  }
-
-  /* Slider background - the main content area */
-  .tl-slider-container-mask {
-    background: linear-gradient(to bottom right, #3f3f3f, var(--color-darkmode));
-    width: 80%;
-  }
-
-  /* Individual slides */
-.tl-slide .tl-slide-content {
-  position: relative;
-  background-color: rgba(21, 23, 26, 0.2);
-  border: 0px solid rgba(200,200,200, .5);
-  border-width: 1px 0 !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 0px;
-  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
-  overflow: hidden; /* needed for the pseudo-element */
-}
-/* Add sheen with a pseudo-element */
-.tl-slide .tl-slide-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0.15) 20%,
-    rgba(255, 255, 255, 0.05) 40%,
-    transparent 60%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-  /* Slide text content */
-  .tl-text-content-container {
-    background-color: rgba(21, 23, 26, 0.8);
-    border-left: 4px solid var(--ghost-accent-color);
-    padding-left: 8px;
-    color: #fff;
-  }
-
-  /* Slide body text in white */
-  .tl-text-content p {
-    color: #fff !important;
-  }
-  /* Apply Ghost font to timeline marker text */
-  .tl-timemarker .tl-headline,
-  .tl-timemarker .tl-timemarker-text,
-  .tl-timemarker .tl-timemarker-content-container,
-  .tl-timemarker .tl-timemarker-content {
-    font-family: var(--font-sans) !important;
-    color: #fff !important;
-  }
-
-  .tl-timeera .tl-headline {
-    font-weight: 700 !important;
-    font-family: var(--font-sans) !important;
-  }
-
-  /* Timeline navigation */
-  .tl-timeaxis-background,
-  .tl-timegroup-message {
-    background-color: rgba(21, 23, 26, 0.8);
-    color: #fff;
-  }
-
-  /* Hide menu bar */
-  .tl-menubar {
-    display: none !important;
-  }
-
-  /* Timeline markers */
-  .tl-timemarker.tl-timemarker-content-container {
-    color: var(--color-darkgrey);
-  }
-
-  /* Active timeline marker */
-  .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-    background: var(--ghost-accent-color) !important;
-    background-image: none !important;
-  }
-
-  /* Inactive timeline markers */
-  .tl-timemarker:not(.tl-timemarker-active) .tl-timemarker-content-container {
-    background: linear-gradient(to bottom right, #3f3f3f, var(--color-darkmode));
-    color: #fff !important;
-  }
-
-  /* Timeline marker heading and text */
-  .tl-headline {
-    color: #fff !important;
-  }
-  /* nuke timeline marker fadeout/gradient style on the heading */
-  .tl-headline-fadeout::after,
-  .tl-headline-fadeout::before {
-    display: none !important;
-    content: none !important;
-  }
-
-  /* nuke text on navigation arrows */
-  .tl-slidenav-title, .tl-slidenav-description {
-    display: none !important;
-  }
-  /* no drop shadow, instead shadow */
-  .tl-slidenav-icon {
-    text-shadow: none !important;
-    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.4));
-  }
-
-  /* Inactive timeline markers: dark gray border */
-  /* This only works on the top/left edges because of the line but I kinda like it, 3D effect */
-  .tl-timemarker:not(.tl-timemarker-active) .tl-timemarker-content-container {
-    border: 1px solid #444 !important; 
-  }
-  /* Active timeline marker: white border */
-  .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-    border: 1px solid #fff !important;
-  }
-
-  /* Timeline axis ticks */
-  .tl-timeaxis .tl-timeaxis-tick:before {
-    content: "";
-    display: block;
-    height: 6px; /* same height for all */
-    background: var(--color-midgrey, #888); /* same color for all */
-    width: 1px;
-    margin: 0 auto;
-  }
-
-  .tl-timeaxis .tl-timeaxis-tick {
-    font-family: var(--font-sans, sans-serif) !important;
-    color: #f0f0f0 !important;
-    height: 6px !important;
-    font-size: 12px !important;
-    font-weight: bold !important;
-    text-transform: none !important;
-    font-weight: normal !important;
-  }
-
-  /* Don't differentiate major ticks */
-    .tl-timeaxis-major .tl-timeaxis-tick-text {
-    transform: translateY(-2px); /* raise the number */
-    margin-top: 0 !important;    /* reset any extra spacing */
-    line-height: 1 !important;
-  }
-
-  /* Media content */
-  .tl-media-content-container {
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .tl-caption, .tl-credit {
-    color: #ddd;
-    font-family: var(--font-sans);
-  }
-
-  /* Navigation arrows */
-  .tl-slidenav-next, .tl-slidenav-previous {
-    color: #fff;
-  }
-
-  .tl-slidenav-icon:before {
-    color: var(--ghost-accent-color);
-  }
-
-  /* Timeline navigation */
-  .tl-timenav {
-    background-color: rgba(21, 23, 26, 0.9);
-    border-top: 1px solid var(--color-border);
-  }
-
-  /* Timeline time spans */
-  .tl-timemarker .tl-timemarker-timespan {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-
-  /* Fix for mobile timeline issues - z-index fixes only */
   @media only screen and (max-width: 768px) {
-    /* Ensure background images stay behind content */
-    .tl-slide .tl-slide-background {
-      z-index: -1 !important; /* Force it behind all content */
-    }
-    
-    /* Fix navigation arrows visibility */
-    .tl-slidenav-next, .tl-slidenav-previous {
-      z-index: 30 !important; /* Ensure arrows are above everything */
-      background-color: rgba(0, 0, 0, 0.3); /* Add slight background for visibility */
-      border-radius: 50%;
-      padding: 5px;
-    }
-
     /* Adjust access message for mobile */
     .timeline-access-message h2 {
       font-size: 1.8rem;
@@ -422,6 +108,70 @@ The Sheet
   }
 
 </style>
+
+<article class="timeline-container">
+  {{!-- Debug information to check post data structure --}}
+  <div class="debug-info" style="display: none;">
+    Post exists: {{#if post}}Yes{{else}}No{{/if}}<br>
+    Visibility: {{post.visibility}}<br>
+    Member exists: {{#if member}}Yes{{else}}No{{/if}}<br>
+    Member paid: {{#if member.paid}}Yes{{else}}No{{/if}}
+  </div>
+
+  {{!-- Check post visibility and render accordingly --}}
+  {{#post}}
+    {{!-- For public posts, render the timeline for everyone --}}
+    {{#has visibility="public"}}
+      <div id="timeline-embed"></div>
+    {{else}}
+      {{!-- For members-only posts, check if user is a member --}}
+      {{#has visibility="members"}}
+        {{#if @member}}
+          <div id="timeline-embed"></div>
+        {{else}}
+          <div class="timeline-access-message">
+            <h1>This timeline is available to members</h1>
+            <p>Sign up or log in to view this timeline.</p>
+            <div class="timeline-access-cta">
+              <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
+              <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
+            </div>
+          </div>
+        {{/if}}
+      {{else}}
+        {{!-- For paid-members-only posts, check if user is a paid member --}}
+        {{#has visibility="paid"}}
+          {{#if @member.paid}}
+            <div id="timeline-embed"></div>
+          {{else}}
+            <div class="timeline-access-message">
+              <h1>This timeline is available to paid members</h1>
+              <p>Upgrade your membership to view this timeline.</p>
+              <div class="timeline-access-cta">
+                {{#if @member}}
+                  <a href="#/portal/account/plans" class="timeline-upgrade-button">Upgrade now</a>
+                {{else}}
+                  <a href="#/portal/signup" class="timeline-signup-button">Sign up now</a>
+                  <a href="#/portal/signin" class="timeline-signin-button">Log in</a>
+                {{/if}}
+              </div>
+            </div>
+          {{/if}}
+        {{else}}
+          {{!-- Default case, just show the timeline --}}
+          <div id="timeline-embed"></div>
+        {{/has}}
+      {{/has}}
+    {{/has}}
+  {{else}}
+    {{!-- If no post context, show the timeline --}}
+    <div id="timeline-embed"></div>
+  {{/post}}
+</article>
+
+<link rel="stylesheet" href="/assets/timelinejs/css/timeline.css">
+<script src="/assets/timelinejs/js/timeline.js"></script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
