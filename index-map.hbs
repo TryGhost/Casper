@@ -2,8 +2,12 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-
 <style>
+    /* something is slightly overflowing on x. hack fix. */
+    body {
+        overflow-x: hidden;
+    }
+
     .map-description {
         display: inline-block;
         z-index: 10;
@@ -31,6 +35,7 @@ into the {body} of the default.hbs template --}}
 
     .post-feed {
         padding-top: 50px !important;
+        overflow: hidden !important;
     }
 
     /* Gradient fade for the map image */
@@ -43,6 +48,7 @@ into the {body} of the default.hbs template --}}
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #151719 100%);
         z-index: 100;
         pointer-events: none;
+        overflow: hidden !important;
     }
 
     /* Test map container */
@@ -54,11 +60,12 @@ into the {body} of the default.hbs template --}}
         transform: translateX(-50%);
         height: 500px;
         margin-bottom: 50px;
-        overflow: hidden;
+        overflow-x: clip !important;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     .test-map-container .map-data-container {
         display: none;
+        overflow: hidden !important;
     }
 
     /* blockquote */
@@ -77,7 +84,7 @@ into the {body} of the default.hbs template --}}
         line-height: 1.6;
         font-style: italic;
         text-align: center;
-        overflow: hidden;           /* clip anything that goes outside */
+        overflow: hidden !important;           /* clip anything that goes outside */
     }
 
     .map-quote-block p {
@@ -85,6 +92,7 @@ into the {body} of the default.hbs template --}}
         z-index: 2;
         max-width: 800px;
         margin: 0 auto 0.5em;
+        overflow: hidden !important;
     }
 
     .credit-quote-block {
@@ -97,6 +105,7 @@ into the {body} of the default.hbs template --}}
         margin-top: 1em;
         padding-bottom: 0em;
         font-family: 'Waning Star', serif;
+        overflow: hidden !important;
     }
 
     .credit-quote-block i {
