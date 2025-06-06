@@ -4,13 +4,23 @@ This theme supports adding markers and other overlays to your Leaflet maps direc
 
 ## How to Use
 
-1. Create a post using the "Leaflet Map" template
+1. Create a post using the "Map" template
 2. Upload your map image as the feature image
 3. In the post content, add a code block (using the Ghost editor's "Code" block)
-4. Insert your map data in JSON format (see examples below)
-5. Publish your post
+4. `Optional` Insert your map data in JSON format (see examples below)
+5. `Optional` Add a weather overlay (see below)
+6. Publish your post
 
 The map data will be automatically parsed and the markers/overlays will be added to your map.
+
+## Weather Overlay
+Add the following to a post's Code Injection:
+```html
+<meta name="custom:overlay" content="Daytime_Clouds_Squar_One.webm">
+<meta name="custom:opacity" content="0.8">
+```
+
+See `/assets/images/overlays` for what overlays are available.
 
 ## JSON Format
 

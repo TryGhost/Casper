@@ -22,7 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!mapElement) return;
 
   const imageUrl = "{{feature_image}}";
-  const videoUrl = "/assets/images/overlays/Daytime_Clouds_Squar_One.webm"
+  
+  // Get video overlay from meta tag if it exists
+  const overlayMeta = document.querySelector('meta[name="custom:overlay"]');
+  const overlayFileName = overlayMeta ? overlayMeta.getAttribute('content') : null;
+  const videoUrl = overlayFileName ? `/assets/images/overlays/${overlayFileName}` : null;
+  
+  // Get opacity from meta tag if it exists, otherwise default to 0.6
+  const opacityMeta = document.querySelector('meta[name="custom:opacity"]');
+  const opacity = opacityMeta ? parseFloat(opacityMeta.getAttribute('content')) : 0.6;
 
   const img = new Image();
   img.onload = function () {
@@ -46,36 +54,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add the image
     L.imageOverlay(imageUrl, imageBounds).addTo(map);
     
-    // Add video overlay (ie. clouds)
-    const videoOverlay = L.videoOverlay(videoUrl, imageBounds, {
-      autoplay: true,
-      loop: true,
-      muted: true,
-      opacity: 0.6,
-      keepAspectRatio: false
-    }).addTo(map);
-    
-    // Function to disable picture-in-picture
-    function disablePiP() {
-      try {
-        const videoElement = videoOverlay.getElement();
-        if (videoElement) {
-          // Set the attribute
-          videoElement.disablePictureInPicture = true;
-          
-          // Also add the attribute directly to the DOM element
-          videoElement.setAttribute('disablePictureInPicture', '');
+    // Add video overlay (ie. clouds) only if videoUrl exists
+    if (videoUrl) {
+      const videoOverlay = L.videoOverlay(videoUrl, imageBounds, {
+        autoplay: true,
+        loop: true,
+        muted: true,
+        opacity: opacity,
+        keepAspectRatio: false
+      }).addTo(map);
+      
+      // Function to disable picture-in-picture
+      function disablePiP() {
+        try {
+          const videoElement = videoOverlay.getElement();
+          if (videoElement) {
+            // Set the attribute
+            videoElement.disablePictureInPicture = true;
+            
+            // Also add the attribute directly to the DOM element
+            videoElement.setAttribute('disablePictureInPicture', '');
+          }
+        } catch (e) {
+          console.error("Error disabling picture-in-picture:", e);
         }
-      } catch (e) {
-        console.error("Error disabling picture-in-picture:", e);
       }
+      
+      // Try immediately
+      disablePiP();
+      
+      // Also try after a short delay to ensure the video is loaded
+      setTimeout(disablePiP, 100);
     }
-    
-    // Try immediately
-    disablePiP();
-    
-    // Also try after a short delay to ensure the video is loaded
-    setTimeout(disablePiP, 100);
     
     // Get viewport height and calculate scale to fit height
     const viewportHeight = window.innerHeight;
