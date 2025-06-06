@@ -1,0 +1,74 @@
+    .leaflet-overlay-pane video {
+      z-index: 1 !important;
+    }
+
+    /* Hide picture-in-picture button */
+    .leaflet-overlay-pane video::-webkit-media-controls-picture-in-picture-button {
+      display: none !important;
+    }
+    
+    /* For Firefox */
+    .leaflet-overlay-pane video::-moz-picture-in-picture-button {
+      display: none !important;
+    }
+
+    /* Leaflet tooltip styling */
+    .leaflet-tooltip {
+        background-color: rgba(21, 23, 26, 0.9) !important;
+        color: #fff !important;
+        font-family: var(--font-sans) !important;
+        font-size: 2em !important;
+        padding: 8px 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        width: 400px !important;
+        white-space: normal !important;
+    }
+    .leaflet-tooltip b {
+      text-transform: uppercase !important;
+      font-weight: bolder !important;
+      color: var(--ghost-accent-color) !important;
+    }
+    /* Tooltip arrow styling */
+    .leaflet-tooltip-top:before,
+    .leaflet-tooltip-bottom:before,
+    .leaflet-tooltip-left:before,
+    .leaflet-tooltip-right:before {
+        border-color: transparent;
+    }
+    
+    .leaflet-tooltip-bottom:before {
+        border-bottom-color: var(--ghost-accent-color) !important;
+    }
+    
+    .leaflet-tooltip-top:before {
+        border-top-color: var(--ghost-accent-color) !important;
+    }
+    
+    .leaflet-tooltip-left:before {
+        border-left-color: var(--ghost-accent-color) !important;
+    }
+    
+    .leaflet-tooltip-right:before {
+        border-right-color: var(--ghost-accent-color) !important;
+    }
+
+    /* Leaflet popup styling */
+    .leaflet-popup-content-wrapper {
+        background-color: rgba(21, 23, 26, 0.9)  !important;
+        border-left: 4px solid var(--ghost-accent-color)  !important;
+        color: #fff  !important;
+        font-family: var(--font-sans)  !important;
+        border-radius: 4px  !important;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)  !important;
+        backdrop-filter: blur(20px)  !important;
+        -webkit-backdrop-filter: blur(20px)  !important;
+    }
+
+    .leaflet-popup-content {
+        color: #fff !important;
+        margin: 12px  !important;
+    }
