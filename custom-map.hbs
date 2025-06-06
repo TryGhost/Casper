@@ -30,14 +30,13 @@
         color: #fff;
     }
 
-    .map-access-message h2 {
-        font-size: 2.5rem;
+    .map-access-message h1 {
         margin-bottom: 1rem;
         color: #fff;
     }
 
     .map-access-message p {
-        font-size: 1.2rem;
+        font-size: 2rem;
         margin-bottom: 2rem;
         max-width: 600px;
     }
@@ -130,7 +129,7 @@
                 {{> "map"}}
             {{else}}
                     <div class="map-access-message">
-                        <h2>This map is available to members</h2>
+                        <h1>This map is available to members</h1>
                         <p>Sign up or log in to view this map.</p>
                         <div class="map-access-cta">
                             <a href="#/portal/signup" class="map-signup-button">Sign up now</a>
@@ -145,7 +144,7 @@
                     {{> "map"}}
                 {{else}}
                     <div class="map-access-message">
-                        <h2>This map is available to tithing members</h2>
+                        <h1>This map is available to tithing members</h1>
                         <p>Upgrade your membership to view this map.</p>
                         <div class="map-access-cta">
                             {{#if @member}}
@@ -157,6 +156,7 @@
                         </div>
                     </div>
                 {{/if}}
+            {{!-- Fallback - just show it --}}
             {{else}}
                 {{> "map"}}
             {{/has}}
