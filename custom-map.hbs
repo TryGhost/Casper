@@ -129,7 +129,14 @@
             {{#if @member}}
                 {{> "map"}}
             {{else}}
-                {{> "map"}}
+                    <div class="map-access-message">
+                        <h2>This map is available to members</h2>
+                        <p>Sign up or log in to view this map.</p>
+                        <div class="map-access-cta">
+                            <a href="#/portal/signup" class="map-signup-button">Sign up now</a>
+                            <a href="#/portal/signin" class="map-signin-button">Log in</a>
+                        </div>
+                    </div>
             {{/if}}
         {{else}}
             {{!-- For paid-members-only posts, check if user is a paid member --}}
@@ -138,7 +145,7 @@
                     {{> "map"}}
                 {{else}}
                     <div class="map-access-message">
-                        <h2>This map is available to paid members</h2>
+                        <h2>This map is available to tithing members</h2>
                         <p>Upgrade your membership to view this map.</p>
                         <div class="map-access-cta">
                             {{#if @member}}
