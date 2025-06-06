@@ -1,0 +1,74 @@
+<!-- TimelineJS style Overrides -->
+<link rel="stylesheet" href="{{asset 'timeline.css'}}">
+
+<div id="timeline-embed"></div>
+
+
+<link rel="stylesheet" href="/assets/timelinejs/css/timeline.css">
+<script src="/assets/timelinejs/js/timeline.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Only initialize the timeline if the timeline-embed element exists
+    // (it won't exist for members/paid content if the user doesn't have access)
+    const timelineEmbed = document.getElementById('timeline-embed');
+    if (!timelineEmbed) return;
+
+    const metaTag = document.querySelector('meta[name="custom:sheet_url"]');
+    const sheetUrl = metaTag ? metaTag.content : null;
+
+    if (sheetUrl) {
+      window.timeline = new TL.Timeline('timeline-embed', sheetUrl, {
+        timenav_position: "bottom",
+        initial_zoom: 4,
+        scale_factor: 2,
+        zoom_sequence: [1,2,3],
+        start_at_slide: 0,
+        use_bc: false,
+        hash_bookmark: false,
+        lang: "/assets/timelinejs/timeline-locale.json",
+      });
+    } else {
+      timelineEmbed.innerHTML = "Missing timeline URL.";
+    }
+  });
+
+
+/* NUKE ALL NEGATIVE "BCE" DATES AND TICKS */
+  function removeBCETicks() {
+    document.querySelectorAll('.tl-timeaxis-tick').forEach(tick => {
+      const left = parseFloat(tick.style.left);
+      if (left < 0) {
+        tick.remove();
+      }
+    });
+  }
+
+  const waitForTimeline = setInterval(() => {
+    // Only run if timeline-embed exists
+    const timelineEmbed = document.getElementById('timeline-embed');
+    if (!timelineEmbed) {
+      clearInterval(waitForTimeline);
+      return;
+    }
+
+    const ticksReady = document.querySelectorAll('.tl-timeaxis-tick');
+    if (ticksReady.length > 0) {
+      clearInterval(waitForTimeline);
+      removeBCETicks();
+
+      const axis = document.querySelector('.tl-timeaxis-content-container');
+      if (axis) {
+        const observer = new MutationObserver(removeBCETicks);
+        observer.observe(axis, { childList: true, subtree: true });
+      }
+    }
+  }, 200);
+
+  // Enable debug info with a query parameter
+  if (window.location.search.includes('debug=true')) {
+    document.querySelector('.debug-info').style.display = 'block';
+  }
+  
+</script>
