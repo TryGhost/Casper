@@ -12,6 +12,7 @@ into the {body} of the default.hbs template --}}
         font-weight: 700;
         line-height: 1.1;
     }
+
     /* Explore Pyora overlay text */
     .explore-pyora-overlay {
         position: absolute;
@@ -27,6 +28,7 @@ into the {body} of the default.hbs template --}}
         text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
         pointer-events: none;
     }
+
     .post-feed {
         padding-top: 50px !important;
     }
@@ -41,6 +43,22 @@ into the {body} of the default.hbs template --}}
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #151719 100%);
         z-index: 100;
         pointer-events: none;
+    }
+
+    /* Test map container */
+    .test-map-container {
+        position: relative;
+        left: 50%;
+        width: 100vw;
+        max-width: 100vw;
+        transform: translateX(-50%);
+        height: 500px;
+        margin-bottom: 50px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .test-map-container .map-data-container {
+        display: none;
     }
 
     /* blockquote */
@@ -61,12 +79,14 @@ into the {body} of the default.hbs template --}}
         text-align: center;
         overflow: hidden;           /* clip anything that goes outside */
     }
+
     .map-quote-block p {
         position: relative;         /* bring above pseudo-elements */
         z-index: 2;
         max-width: 800px;
         margin: 0 auto 0.5em;
-        }
+    }
+
     .credit-quote-block {
         position: relative;         /* above pseudo-elements too */
         z-index: 2;
@@ -78,11 +98,13 @@ into the {body} of the default.hbs template --}}
         padding-bottom: 0em;
         font-family: 'Waning Star', serif;
     }
+
     .credit-quote-block i {
         color: rgba(255, 255, 255, 0.4); /* very low-opacity white */
     }
+
     .map-quote-block::before {
-        content: "“";               /* Unicode opening double-quote */
+        content: "\201c";               /* Unicode opening double-quote */
         position: absolute;
         top: 5px;                 /* nudge upward or adjust as needed */
         left: 20px;                 /* nudge inward from left edge */
@@ -95,7 +117,7 @@ into the {body} of the default.hbs template --}}
     }
 
     .map-quote-block::after {
-        content: "”";               /* Unicode closing double-quote */
+        content: "\201d";               /* Unicode closing double-quote */
         position: absolute;
         bottom: -20px;              /* slight nudge downward */
         right: 20px;                /* slight nudge inward from right edge */
@@ -106,6 +128,7 @@ into the {body} of the default.hbs template --}}
         z-index: 1;
         pointer-events: none;
     }
+
 </style>
 
 <div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
@@ -142,6 +165,17 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
     <div class="post-card-header"><!-- removed header --></div>
+
+    {{!-- Test map container - 100% width and 500px high --}}
+    <div class="test-map-container" data-overlay="Sunset_Clouds_Squar_One.webm" data-opacity="1.0">
+        {{!-- Get the first map post to use for the test --}}
+        {{#get "posts" filter="slug:pyora" limit="1"}}
+            {{#foreach posts}}
+                {{> "map" }}
+            {{/foreach}}
+        {{/get}}
+    </div>
+
     <div class="post-feed">
         {{#foreach posts limit="3"}}
             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
@@ -187,7 +221,7 @@ into the {body} of the default.hbs template --}}
             text: "The sea is our lifeblood, pray to Proteus the tides don't turn against us.",
             author: "Anders Solmor",
             link: "https://lore.dungeon.church/doc/anders-solmor-njTKn6ITMV"
-        }
+    
     ];
 
     // Set random quote on page load
@@ -198,4 +232,3 @@ into the {body} of the default.hbs template --}}
         document.getElementById('quote-link').href = quote.link;
     });
 </script>
-

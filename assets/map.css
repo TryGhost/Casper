@@ -1,4 +1,4 @@
-    .leaflet-overlay-pane video {
+.leaflet-overlay-pane video {
       z-index: 1 !important;
     }
 
@@ -10,6 +10,29 @@
     /* For Firefox */
     .leaflet-overlay-pane video::-moz-picture-in-picture-button {
       display: none !important;
+    }
+
+    /* Map container styling */
+    #map {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 400px;
+      background-color: var(--color-darkmode);
+      z-index: 1;
+    }
+
+    /* For the custom-map template */
+    .page-template-custom-map #map {
+      height: calc(100vh - 88px) !important; /* Adjust header height if needed */
+      min-height: calc(100vh - 88px) !important;
+    }
+
+    /* Make the map container fill its parent */
+    .leaflet-map-template {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
     }
 
     /* Leaflet tooltip styling */
@@ -71,4 +94,12 @@
     .leaflet-popup-content {
         color: #fff !important;
         margin: 12px  !important;
+    }
+
+    /* Mobile adjustments */
+    @media only screen and (max-width: 768px) {
+        .leaflet-tooltip {
+            width: 250px !important;
+            padding: 6px 10px !important;
+        }
     }

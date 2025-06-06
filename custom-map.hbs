@@ -110,6 +110,13 @@
     }
 </style>
 
+<!-- Add a class to the body to identify this as the custom-map template -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('page-template-custom-map');
+});
+</script>
+
 {{!-- Debug information to check post data structure --}}
 <div class="debug-info" style="display: none;">
     Post exists: {{#if post}}Yes{{else}}No{{/if}}<br>
