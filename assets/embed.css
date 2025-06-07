@@ -1,0 +1,12 @@
+/* Embed mode styles */
+.embed-mode .gh-head {
+    display: none !important;
+}
+
+.embed-mode #map {
+    height: 100vh !important;
+}
+
+.embed-mode .map-access-message {
+    height: 100vh !important;
+}
