@@ -51,8 +51,8 @@
         white-space: normal !important;
     }
     .leaflet-tooltip b {
-      text-transform: uppercase !important;
-      font-weight: bolder !important;
+      font-size: 1.2em !important;
+      font-family: "Waning Star" !important;
       color: var(--ghost-accent-color) !important;
     }
     /* Tooltip arrow styling */
@@ -83,7 +83,7 @@
     .tooltip-link-bubble {
       display: inline-flex !important;
       align-items: center !important;
-      background-color: var(--ghost-accent-color) !important;
+      background-color: #3f3f3f !important;
       color: #fff !important;
       font-size: 0.7em !important;
       font-weight: bold !important;
