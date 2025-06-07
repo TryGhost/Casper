@@ -225,14 +225,20 @@ document.addEventListener("DOMContentLoaded", function () {
                   if (marker.tooltip) {
                     // If marker has a URL, append appropriate link bubble based on URL
                     if (marker.url) {
-                      let linkBubble = '<span class="tooltip-link-bubble">🔗</span>';
+                      // Get the SVG content from the partial
+                      const linkSvg = `{{> "icons/link"}}`;
+                      
+                      let linkText = '';
                       
                       // Check URL to determine what type of link it is
                       if (marker.url.includes('lore.dungeon.church')) {
-                        linkBubble = '<span class="tooltip-link-bubble">WIKI 🔗</span>';
+                        linkText = 'WIKI';
                       } else if (marker.url.includes('dungeon.church/map')) {
-                        linkBubble = '<span class="tooltip-link-bubble">MAP 🔗</span>';
+                        linkText = 'MAP';
                       }
+                      
+                      // Create the bubble with the appropriate text and SVG
+                      const linkBubble = `<span class="tooltip-link-bubble">${linkText} ${linkSvg}</span>`;
                       
                       m.bindTooltip(marker.tooltip + ' ' + linkBubble, { 
                         permanent: false,

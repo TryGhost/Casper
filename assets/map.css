@@ -81,18 +81,27 @@
 
     /* Link bubble styling */
     .tooltip-link-bubble {
-      display: inline-block !important;
+      display: inline-flex !important;
+      align-items: center !important;
       background-color: var(--ghost-accent-color) !important;
       color: #fff !important;
       font-size: 0.7em !important;
       font-weight: bold !important;
-      padding: 2px 6px !important;
+      padding: 3px 8px !important;
       border-radius: 4px !important;
       margin-left: 8px !important;
       text-transform: uppercase !important;
       white-space: nowrap !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
     }
-
+    
+    .tooltip-link-bubble svg {
+      width: 12px !important;
+      height: 12px !important;
+      margin-left: 4px !important;
+      vertical-align: middle !important;
+    }
+    
     /* Leaflet popup styling */
     .leaflet-popup-content-wrapper {
         background-color: rgba(21, 23, 26, 0.9)  !important;
