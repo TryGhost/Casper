@@ -225,6 +225,16 @@ document.addEventListener("DOMContentLoaded", function () {
                   if (marker.tooltip) {
                     m.bindTooltip(marker.tooltip);
                   }
+                  
+                  // Add URL link if specified
+                  if (marker.url) {
+                    m.on('click', function() {
+                      window.open(marker.url, marker.target || '_blank');
+                    });
+                    
+                    // Add cursor style to indicate clickable marker
+                    m.getElement().style.cursor = 'pointer';
+                  }
                 }
               });
             }

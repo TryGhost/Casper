@@ -48,6 +48,8 @@ You can include any or all of these elements.
       "position": [y, x],
       "popup": "Optional popup text",
       "tooltip": "Optional tooltip text",
+      "url": "https://lore.dungeon.church",
+      "target": "_new",
       "icon": {
         "iconUrl": "path/to/icon.png",
         "iconSize": [25, 41],
