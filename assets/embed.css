@@ -3,7 +3,6 @@
     display: none !important;
 }
 
-
 .embed-mode .site-footer {
     display: none !important;
 }
@@ -14,3 +13,4 @@
 
 .embed-mode .map-access-message {
     height: 100vh !important;
+}
