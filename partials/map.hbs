@@ -223,9 +223,23 @@ document.addEventListener("DOMContentLoaded", function () {
                   
                   // Add tooltip if specified
                   if (marker.tooltip) {
-                    // If marker has a URL, append new window glyph to tooltip text
+                    // If marker has a URL, append appropriate link bubble based on URL
                     if (marker.url) {
-                      m.bindTooltip(marker.tooltip + ' ↗️');
+                      let linkBubble = '<span class="tooltip-link-bubble">🔗</span>';
+                      
+                      // Check URL to determine what type of link it is
+                      if (marker.url.includes('lore.dungeon.church')) {
+                        linkBubble = '<span class="tooltip-link-bubble">WIKI 🔗</span>';
+                      } else if (marker.url.includes('dungeon.church/map')) {
+                        linkBubble = '<span class="tooltip-link-bubble">MAP 🔗</span>';
+                      }
+                      
+                      m.bindTooltip(marker.tooltip + ' ' + linkBubble, { 
+                        permanent: false,
+                        direction: 'top',
+                        className: 'custom-tooltip',
+                        opacity: 1.0
+                      });
                     } else {
                       m.bindTooltip(marker.tooltip);
                     }
