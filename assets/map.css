@@ -102,6 +102,22 @@
       vertical-align: middle !important;
     }
     
+    /* Mobile tooltip hint styling */
+    .mobile-tooltip-hint {
+      font-size: 0.6em !important;
+      opacity: 0.8 !important;
+      margin-top: 5px !important;
+      font-style: italic !important;
+      display: none !important; /* Hidden by default, shown only on mobile */
+    }
+    
+    /* Only show the mobile hint on mobile devices */
+    @media only screen and (max-width: 768px) {
+      .mobile-tooltip-hint {
+        display: block !important;
+      }
+    }
+    
     /* Leaflet popup styling */
     .leaflet-popup-content-wrapper {
         background-color: rgba(21, 23, 26, 0.9)  !important;

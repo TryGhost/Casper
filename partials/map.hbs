@@ -240,7 +240,13 @@ document.addEventListener("DOMContentLoaded", function () {
                       // Create the bubble with the appropriate text and SVG
                       const linkBubble = `<span class="tooltip-link-bubble">${linkText} ${linkSvg}</span>`;
                       
-                      m.bindTooltip(marker.tooltip + ' ' + linkBubble, { 
+                      // Create tooltip content with mobile hint
+                      const tooltipContent = `
+                        <div>${marker.tooltip} ${linkBubble}</div>
+                        <div class="mobile-tooltip-hint">Tap again to open link</div>
+                      `;
+                      
+                      m.bindTooltip(tooltipContent, { 
                         permanent: false,
                         direction: 'top',
                         className: 'custom-tooltip',
@@ -253,8 +259,38 @@ document.addEventListener("DOMContentLoaded", function () {
                   
                   // Add URL link if specified
                   if (marker.url) {
-                    m.on('click', function() {
-                      window.open(marker.url, marker.target || '_blank');
+                    // Track tooltip state for mobile two-step process
+                    let tooltipOpen = false;
+                    
+                    m.on('click', function(e) {
+                      // Detect if it's a mobile device
+                      const isMobile = window.innerWidth <= 768;
+                      
+                      if (isMobile) {
+                        // On mobile: first click opens tooltip, second click follows link
+                        if (!tooltipOpen) {
+                          // First click: open tooltip
+                          tooltipOpen = true;
+                          m.openTooltip();
+                          
+                          // Prevent default click behavior
+                          L.DomEvent.stopPropagation(e);
+                          L.DomEvent.preventDefault(e);
+                          
+                          // Close tooltip when clicking elsewhere on the map
+                          map.once('click', function() {
+                            tooltipOpen = false;
+                            m.closeTooltip();
+                          });
+                        } else {
+                          // Second click: follow the link
+                          tooltipOpen = false;
+                          window.open(marker.url, marker.target || '_blank');
+                        }
+                      } else {
+                        // On desktop: just follow the link
+                        window.open(marker.url, marker.target || '_blank');
+                      }
                     });
                     
                     // Add cursor style to indicate clickable marker
