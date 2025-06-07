@@ -223,7 +223,12 @@ document.addEventListener("DOMContentLoaded", function () {
                   
                   // Add tooltip if specified
                   if (marker.tooltip) {
-                    m.bindTooltip(marker.tooltip);
+                    // If marker has a URL, append link symbol to tooltip text
+                    if (marker.url) {
+                      m.bindTooltip(marker.tooltip + ' 🔗');
+                    } else {
+                      m.bindTooltip(marker.tooltip);
+                    }
                   }
                   
                   // Add URL link if specified
