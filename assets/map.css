@@ -23,8 +23,8 @@
 
     /* For the custom-map template */
     .page-template-custom-map #map {
-      height: calc(100vh - 88px) !important; /* Adjust header height if needed */
-      min-height: calc(100vh - 88px) !important;
+      height: calc(100vh - 88px); /* Adjust header height if needed */
+      min-height: calc(100vh - 88px);
     }
 
     /* Make the map container fill its parent */
