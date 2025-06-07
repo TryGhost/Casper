@@ -82,6 +82,7 @@
     /* Link bubble styling */
     .tooltip-link-bubble {
       display: inline-flex !important;
+      float: right;
       align-items: center !important;
       background-color: #3f3f3f !important;
       color: #fff !important;

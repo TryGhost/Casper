@@ -235,6 +235,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         linkText = 'WIKI';
                       } else if (marker.url.includes('dungeon.church/map')) {
                         linkText = 'MAP';
+                      } else if (marker.url.includes('discord.')) {
+                        linkText = 'DISCORD';
+                      } else if (marker.url.includes('5e.dungeon.church') || marker.url.includes('5e.tools')) {
+                        linkText = '5eTOOLS';
                       }
                       
                       // Create the bubble with the appropriate text and SVG
