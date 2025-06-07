@@ -7,10 +7,34 @@
     display: none !important;
 }
 
+/* Hide Ghost portal trigger button in embed mode */
+.embed-mode .gh-portal-triggerbtn-iframe {
+    display: none !important;
+}
+
+/* Fix map height to be full viewport height in embed mode */
 .embed-mode #map {
     height: 100vh !important;
+    /* Override any calculated heights */
+    min-height: 100vh !important;
+    max-height: 100vh !important;
 }
 
 .embed-mode .map-access-message {
     height: 100vh !important;
+    /* Override any calculated heights */
+    min-height: 100vh !important;
+    max-height: 100vh !important;
 }
+
+/* 
+Embed mode detection script is in embed.js
+To use embed mode:
+1. Include both files in your template:
+   <link rel="stylesheet" href="{{asset "embed.css"}}">
+   <script src="{{asset "embed.js"}}"></script>
+
+2. When embedding in an iframe, the embed mode will be applied automatically.
+   If you want to disable embed mode for a specific embed, add ?embed=false to the URL.
+*/
+
