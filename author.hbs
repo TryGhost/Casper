@@ -6,7 +6,7 @@
 
     <div class="post-feed">
 
-        {{#author}}
+        {{#primary_author}}
         <section class="post-card post-card-large">
 
             {{#if cover_image}}
@@ -82,7 +82,7 @@
             </div>
 
         </section>
-        {{/author}}
+        {{/primary_author}}
 
         {{#foreach posts}}
             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
