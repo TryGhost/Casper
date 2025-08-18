@@ -370,6 +370,10 @@ dd {
     text-align: left;
 }
 
+sub, sup {
+    line-height: 1;
+}
+
 blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em 0 1.6em;
