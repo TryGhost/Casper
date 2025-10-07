@@ -88,10 +88,6 @@ video {
 body {
     line-height: 1;
 }
-ol,
-ul {
-    list-style: none;
-}
 blockquote,
 q {
     quotes: none;
@@ -276,7 +272,7 @@ html {
 }
 body {
     color: var(--color-darkgrey);
-    font-family: var(--font-sans);
+    font-family: var(--gh-font-body, var(--font-sans));
     font-size: 1.6rem;
     line-height: 1.6em;
     font-weight: 400;
@@ -343,15 +339,7 @@ ol ol,
 ul ul,
 ul ol,
 ol ul {
-    margin: 0.5em 0 1em;
-}
-
-ul {
-    list-style: disc;
-}
-
-ol {
-    list-style: decimal;
+    margin: 0.5em 0;
 }
 
 ul,
@@ -380,6 +368,10 @@ dt {
 dd {
     margin: 0 0 5px 0;
     text-align: left;
+}
+
+sub, sup {
+    line-height: 1;
 }
 
 blockquote {
@@ -419,6 +411,7 @@ h5,
 h6 {
     margin-top: 0;
     line-height: 1.15;
+    font-family: var(--gh-font-heading, var(--font-sans));
     font-weight: 600;
     text-rendering: optimizeLegibility;
     letter-spacing: -0.01em;
