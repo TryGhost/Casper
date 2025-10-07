@@ -1,7 +1,7 @@
 {
     "name": "bazper",
     "description": "A personalized Ghost theme for bazilzainal.com",
-    "demo": "https://bazil.dev",
+    "demo": "https://warm.ink",
     "version": "1.1.0",
     "engines": {
         "ghost": ">=5.0.0"
@@ -24,7 +24,7 @@
     "author": {
         "name": "Bazil Zainal",
         "email": "bazilzainal@gmail.com",
-        "url": "https://bazil.dev/"
+        "url": "https://warm.ink/"
     },
     "gpm": {
         "type": "theme",
@@ -39,10 +39,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/bazilzainal/bazper.git"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "bugs": "https://github.com/bazilzainal/bazper/issues",
+    "contributors": "https://github.com/bazilzainal/bazper/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
         "autoprefixer": "10.4.7",
