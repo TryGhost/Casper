@@ -486,12 +486,6 @@ production stylesheet in assets/built/screen.css
     height: 24px;
 }
 
-@media (min-width: 992px) {
-    body:not(.is-dropdown-loaded) .gh-head-menu .nav > li {
-        opacity: 0;
-    }
-}
-
 
 /* Dropdown
 /* ---------------------------------------------------------- */
