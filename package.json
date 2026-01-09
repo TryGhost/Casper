@@ -55,7 +55,7 @@
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",
         "gulp-uglify": "3.0.2",
-        "gulp-zip": "5.1.0",
+        "gulp-zip": "6.1.0",
         "inquirer": "8.2.7",
         "postcss": "8.5.6",
         "postcss-color-mod-function": "4.1.1",
