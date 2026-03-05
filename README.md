@@ -67,7 +67,7 @@ You can add your own SVG icons in the same manner.
 
 # Translations
 
-Please see [@TryGhost/Themes/theme-translations/README.md](https://github.com/TryGhost/Themes/blob/main/packages/theme-translations/README.md) for how to build, edit, or contribute translations. Do not contribute translations to the @TryGhost/Source repo directly.
+Please see [@TryGhost/Themes/theme-translations/README.md](https://github.com/TryGhost/Themes/blob/main/packages/theme-translations/README.md) for how to build, edit, or contribute translations.
 
 # Copyright & License
 
