@@ -65,6 +65,9 @@ Casper uses inline SVG icons, included via Handlebars partials. You can find all
 
 You can add your own SVG icons in the same manner.
 
+# Translations
+
+Please see [@TryGhost/Themes/theme-translations/README.md](https://github.com/TryGhost/Themes/blob/main/packages/theme-translations/README.md) for how to build, edit, or contribute translations. Do not contribute translations to the @TryGhost/Source repo directly.
 
 # Copyright & License
 
