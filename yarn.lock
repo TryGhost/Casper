@@ -1956,6 +1956,11 @@
     "@tryghost/debug" "^0.1.35"
     "@tryghost/logging" "^2.5.0"
 
+"@tryghost/theme-translations@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@tryghost/theme-translations/-/theme-translations-0.0.9.tgz#a112dcb9dd07735d1e4e814da4e8859a37dce4e4"
+  integrity sha512-+aYXW2wqpoixslzAtnCaRl+Ap5wqSszwcSlajSqUwyMHn9cNN/6+t2DBMmws3ODzAU/xFXVPX+R8ngjBUnHKfA==
+
 "@tryghost/tpl@^0.1.35":
   version "0.1.35"
   resolved "https://registry.yarnpkg.com/@tryghost/tpl/-/tpl-0.1.35.tgz#7ad6b84f94529b2e709046255706dcda083267c9"
@@ -5172,10 +5177,10 @@ psl@^1.1.28:
   dependencies:
     punycode "^2.3.1"
 
-pump@3.0.3, pump@^3.0.0:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/pump/-/pump-3.0.3.tgz#151d979f1a29668dc0025ec589a455b53282268d"
-  integrity sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==
+pump@3.0.4, pump@^3.0.0:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/pump/-/pump-3.0.4.tgz#1f313430527fa8b905622ebd22fe1444e757ab3c"
+  integrity sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA==
   dependencies:
     end-of-stream "^1.1.0"
     once "^1.3.1"
