@@ -74,6 +74,9 @@ npx gulp           # starts dev server with livereload
 
 Edit `assets/css/custom.css` for design changes -- it gets concatenated after `screen.css` and compiled into `assets/built/screen.css` automatically. Keep `screen.css` and `global.css` untouched to avoid merge conflicts with upstream.
 
+# Translations
+
+Please see [@TryGhost/Themes/theme-translations/README.md](https://github.com/TryGhost/Themes/blob/main/packages/theme-translations/README.md) for how to build, edit, or contribute translations.
 
 ## Syncing upstream Casper changes
 
