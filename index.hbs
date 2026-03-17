@@ -32,6 +32,9 @@ into the {body} of the default.hbs template --}}
             {{#if @site.description}}
                 <p class="site-description">{{@site.description}}</p>
             {{/if}}
+            {{#if @custom.homepage_subheadline}}
+                <p class="site-subheadline">{{@custom.homepage_subheadline}}</p>
+            {{/if}}
         </div>
     {{/match}}
 

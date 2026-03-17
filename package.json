@@ -2,7 +2,7 @@
     "name": "miuh-ghost-theme",
     "description": "GDPR-compliant Ghost theme based on Casper",
     "demo": "https://demo.ghost.io",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -127,6 +127,11 @@
                     "Hidden"
                 ],
                 "default": "Center aligned",
+                "group": "homepage"
+            },
+            "homepage_subheadline": {
+                "type": "text",
+                "default": "",
                 "group": "homepage"
             },
             "feed_layout": {

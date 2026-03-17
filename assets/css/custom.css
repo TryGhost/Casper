@@ -235,11 +235,20 @@ h1, h2, h3, h4, h5, h6 {
 /* Mobile */
 @media (max-width: 767px) {
     #gh-head .gh-head-logo {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    #gh-head .nav a {
+        font-size: 2.2rem;
     }
 
     #gh-head .gh-head-button {
+        font-size: 1.6rem;
         text-transform: uppercase;
+    }
+
+    #gh-head .gh-head-link {
+        font-size: 1.5rem;
     }
 
     .gh-head-open.has-cover #gh-head,
@@ -256,8 +265,46 @@ h1, h2, h3, h4, h5, h6 {
 /* 4. Post Feed & Cards
 /* ---------------------------------------------------------- */
 
-.site-description:first-child {
+.home-template .site-description:first-child,
+.home-template :is(.site-logo, .site-title) + .site-description {
     font-family: var(--gh-font-heading, var(--font-mono));
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 4.8rem;
+    line-height: 1.12;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.home-template .site-subheadline {
+    margin: 14px auto 0;
+    max-width: 980px;
+    font-family: var(--gh-font-heading, var(--font-serif));
+    font-size: 2.05rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.45;
+    text-align: center;
+    text-wrap: pretty;
+    color: inherit;
+    opacity: 0.78;
+}
+
+@media (max-width: 767px) {
+    .home-template .site-description:first-child,
+    .home-template :is(.site-logo, .site-title) + .site-description {
+        max-width: 92vw;
+        font-size: 2.8rem !important;
+        line-height: 1.2;
+    }
+
+    .home-template .site-subheadline {
+        max-width: 92vw;
+        margin-top: 8px;
+        font-size: 1.7rem;
+        line-height: 1.45;
+    }
 }
 
 .post-card-excerpt {
