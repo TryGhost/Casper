@@ -1,0 +1,474 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} tag of the default.hbs template --}}
+
+
+{{#post}}
+{{!-- Everything inside the #post block pulls data from the post --}}
+
+<main id="site-main" class="site-main">
+<article class="article {{post_class}} {{#match @custom.post_image_style "Full"}}image-full{{else match @custom.post_image_style "=" "Small"}}image-small{{/match}}">
+
+    <header class="article-header gh-canvas">
+
+        <div class="article-tag post-card-tags">
+            {{#primary_tag}}
+                <span class="post-card-primary-tag">
+                    <a href="{{url}}">{{name}}</a>
+                </span>
+            {{/primary_tag}}
+            {{#if featured}}
+                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+            {{/if}}
+        </div>
+
+        <h1 class="article-title">{{title}}</h1>
+
+        {{#if custom_excerpt}}
+            <p class="article-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+
+        <div class="article-byline">
+        <section class="article-byline-content">
+
+            <ul class="author-list instapaper_ignore">
+                {{#foreach authors}}
+                <li class="author-list-item">
+                    {{#if profile_image}}
+                    <a href="{{url}}" class="author-avatar" aria-label="Read more of {{name}}">
+                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    </a>
+                    {{else}}
+                    <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Read more of {{name}}">{{> "icons/avatar"}}</a>
+                    {{/if}}
+                </li>
+                {{/foreach}}
+            </ul>
+
+            <div class="article-byline-meta">
+                <h4 class="author-name">{{authors}}</h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                    {{#if reading_time}}
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                    {{/if}}
+                </div>
+            </div>
+
+        </section>
+        </div>
+
+        {{#match @custom.post_image_style "!=" "Hidden"}}
+        {{#if feature_image}}
+            <figure class="article-image">
+                {{!-- This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                <img
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(min-width: 1400px) 1400px, 92vw"
+                    src="{{img_url feature_image size="xl"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                />
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+        {{/if}}
+        {{/match}}
+
+    </header>
+
+    <section class="gh-content gh-canvas">
+        <script>
+          const fediId = "116070787980056682";
+          const bskyId = "at://did:plc:e4tv6nh6ntv6dpc4varpopri/app.bsky.feed.post/3mett5ijzl4o2"
+        </script>
+        {{content}}
+    </section>
+
+    {{#if comments}}
+        <section class="article-comments gh-canvas">
+            {{comments}}
+        </section>
+    {{/if}}
+
+    <!--Fedi comments-->
+    <section id="comments" class="article-comments gh-canvas gh-content">
+        <h2>Comments</h2>
+        <p>With an account on mastodon.social, you can respond to this <a id="masto-link" href="">post</a> directly. If you have an account on another Mastodon instance or platform on the fediverse, you can copy/paste the link into your platform's search.</p> 
+        <p>Known non-private replies are displayed below.</p>
+
+        <p id="mastodon-comments-list"><button id="load-comment">Load comments</button></p>
+        <div id="comments-wrapper">
+          <noscript><p>Loading comments relies on JavaScript. Try enabling JavaScript and reloading, or visit <a href="">the original post</a> on Mastodon.</p></noscript>
+        </div>
+        <noscript>You need JavaScript to view the comments.</noscript>
+        <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.3/dist/purify.min.js"></script>
+       <script type="text/javascript">
+  fediId;
+  bskyId;
+
+  document.getElementById('masto-link').setAttribute('href', 'https://mastodon.social/@vinz@rotkap.com/' + fediId);
+
+  function escapeHtml(unsafe) {
+    return unsafe
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function stripHtml(html) {
+    const tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  }
+
+  function emojify(input, emojis) {
+    let output = input;
+    emojis.forEach(emoji => {
+      let picture = document.createElement("picture");
+      let source = document.createElement("source");
+      source.setAttribute("srcset", escapeHtml(emoji.url));
+      source.setAttribute("media", "(prefers-reduced-motion: no-preference)");
+      let img = document.createElement("img");
+      img.className = "emoji";
+      img.setAttribute("src", escapeHtml(emoji.static_url));
+      img.setAttribute("alt", `:${emoji.shortcode}:`);
+      img.setAttribute("title", `:${emoji.shortcode}:`);
+      img.setAttribute("width", "20");
+      img.setAttribute("height", "20");
+      picture.appendChild(source);
+      picture.appendChild(img);
+      output = output.replace(`:${emoji.shortcode}:`, picture.outerHTML);
+    });
+    return output;
+  }
+
+  function buildMastodonComment(status) {
+    if (status.account.display_name.length > 0) {
+      status.account.display_name = escapeHtml(status.account.display_name);
+      status.account.display_name = emojify(status.account.display_name, status.account.emojis);
+    } else {
+      status.account.display_name = status.account.username;
+    }
+
+    let instance = status.account.acct.includes("@")
+      ? status.account.acct.split("@")[1]
+      : "mastodon.social";
+
+    const isNestedReply = status.in_reply_to_id !== fediId;
+    const op = status.account.acct === "@vinz@rotkap.com";
+
+    status.content = emojify(status.content, status.emojis);
+
+    let avatarSource = document.createElement("source");
+    avatarSource.setAttribute("srcset", escapeHtml(status.account.avatar));
+    avatarSource.setAttribute("media", "(prefers-reduced-motion: no-preference)");
+
+    let avatarImg = document.createElement("img");
+    avatarImg.className = "avatar";
+    avatarImg.setAttribute("src", escapeHtml(status.account.avatar_static));
+    avatarImg.setAttribute("alt", `@${status.account.username}@${instance} avatar`);
+
+    let avatarPicture = document.createElement("picture");
+    avatarPicture.appendChild(avatarSource);
+    avatarPicture.appendChild(avatarImg);
+
+    let avatar = document.createElement("a");
+    avatar.className = "avatar-link";
+    avatar.setAttribute("href", status.account.url);
+    avatar.setAttribute("rel", "external nofollow");
+    avatar.setAttribute("title", `View profile at @${status.account.username}@${instance}`);
+    avatar.appendChild(avatarPicture);
+
+    let instanceBadge = document.createElement("a");
+    instanceBadge.className = "instance";
+    instanceBadge.setAttribute("href", status.account.url);
+    instanceBadge.setAttribute("title", `@${status.account.username}@${instance}`);
+    instanceBadge.setAttribute("rel", "external nofollow");
+    instanceBadge.textContent = instance;
+
+    let display = document.createElement("span");
+    display.className = "display";
+    display.setAttribute("itemprop", "author");
+    display.setAttribute("itemtype", "http://schema.org/Person");
+    display.innerHTML = status.account.display_name;
+
+    let instanceIcon = document.createElement("span");
+    instanceIcon.className = "instance-icon";
+    instanceIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M426.8 590.9C407.1 590.4 389.3 579.3 380.2 561.8C371.2 544.4 372.3 523.4 383.2 507C394.1 490.6 413 481.5 432.6 483.1C452.3 483.6 470.1 494.7 479.2 512.2C488.2 529.6 487.1 550.6 476.2 567C465.3 583.4 446.4 592.5 426.8 590.9zM376.7 510.3C371.2 521.2 369.3 533.6 371.1 545.7L200.7 518.4C206.2 507.5 208.2 495.1 206.4 483L376.7 510.3zM144.7 545.6C125.1 545.1 107.3 533.9 98.3 516.5C89.2 499 90.4 478.1 101.3 461.7C112.1 445.4 131 436.2 150.6 437.8C170.2 438.3 188 449.5 197 466.9C206.1 484.4 204.9 505.3 194 521.7C183.2 538 164.3 547.2 144.7 545.6zM402.4 484.2C391.5 489.8 382.7 498.6 377 509.5L306.4 438.6L340 421.6L402.4 484.3zM518.1 325C526.8 333.6 537.9 339.3 550 341.4L471.4 494.8C462.7 486.2 451.6 480.5 439.5 478.4L518.1 325zM408.7 283.3L439.2 478.4C427.1 476.5 414.7 478.3 403.8 483.7L371.6 277.4L408.8 283.4zM382.4 392.9L206.2 482.2C204.2 470.1 198.6 459 190 450.2L376.6 355.6L382.4 392.8zM229.7 370.9L189.4 449.6C180.7 441 169.6 435.3 157.5 433.3L203.1 344.3L229.7 371zM156.7 433C144.6 431.2 132.3 433.2 121.3 438.6L94.7 268.3C106.8 270.1 119.2 268.2 130.1 262.7L156.7 433zM303.8 385.2L270.2 402.2L130.8 262.3C141.7 256.7 150.5 247.9 156.2 237L303.8 385.2zM501.3 292.4C503.3 304.5 508.9 315.6 517.5 324.3L428.2 369.5L422.4 332.3L501.3 292.3zM556.9 336.7C537.3 336.2 519.5 325 510.5 307.6C501.4 290.1 502.6 269.2 513.5 252.8C524.3 236.5 543.2 227.3 562.8 228.9C582.4 229.4 600.2 240.6 609.2 258C618.3 275.5 617.1 296.4 606.2 312.8C595.4 329.1 576.5 338.3 556.9 336.7zM316.6 122.7C325.3 131.3 336.4 137 348.4 139L253.1 325.1L226.5 298.4L316.5 122.6zM506.9 256.1C501.4 267 499.4 279.4 501.2 291.4L294.8 258.3L312 224.8L507 256.1zM100.7 263.6C81.1 263.1 63.3 251.9 54.3 234.5C45.2 217 46.4 196.1 57.3 179.7C68.1 163.4 87 154.2 106.6 155.8C126.2 156.3 144 167.5 153 184.9C162.1 202.4 160.9 223.3 150 239.7C139.2 256 120.3 265.2 100.7 263.6zM532.7 230.2C521.8 235.8 513 244.6 507.3 255.5L385.5 133.3C396.4 127.7 405.2 118.9 410.9 108L532.6 230.2zM261.3 216.6L244.1 250.1L156.7 236.1C162.1 225.2 164.1 212.8 162.2 200.7L261.2 216.6zM400.8 232.5L363.6 226.5L350 139.3C362.1 141 374.5 139 385.3 133.4L400.8 232.5zM299.8 90.2C301.8 102.3 307.4 113.4 316 122.1L162.1 200.1C160.1 188 154.5 176.9 145.9 168.2L299.8 90.2zM355.4 134.5C335.7 134 317.9 122.9 308.8 105.4C299.8 88 300.9 67 311.8 50.6C322.7 34.2 341.6 25.1 361.2 26.7C380.9 27.2 398.7 38.3 407.8 55.8C416.8 73.2 415.7 94.2 404.8 110.6C393.9 127 375 136.1 355.4 134.5z"/></svg>';
+
+    let header = document.createElement("header");
+    header.className = "author";
+    header.appendChild(display);
+    header.appendChild(instanceIcon);
+    header.appendChild(instanceBadge);
+
+    let permalink = document.createElement("a");
+    permalink.setAttribute("href", status.url);
+    permalink.setAttribute("itemprop", "url");
+    permalink.setAttribute("title", `View comment at ${instance}`);
+    permalink.setAttribute("rel", "external nofollow");
+    permalink.textContent = new Date(status.created_at).toLocaleString('en-US', {
+      dateStyle: "long",
+      timeStyle: "short",
+    });
+
+    let timestamp = document.createElement("time");
+    timestamp.setAttribute("datetime", status.created_at);
+    timestamp.appendChild(permalink);
+
+    let main = document.createElement("main");
+    main.setAttribute("itemprop", "text");
+    main.innerHTML = status.content;
+
+    let interactions = document.createElement("footer");
+    if (status.favourites_count > 0) {
+      let faves = document.createElement("a");
+      faves.className = "faves";
+      faves.setAttribute("href", `${status.url}/favourites`);
+      faves.setAttribute("title", `Favorites from ${instance}`);
+      faves.textContent = status.favourites_count;
+      interactions.appendChild(faves);
+    }
+
+    let comment = document.createElement("article");
+    comment.id = `comment-${status.id}`;
+    comment.className = isNestedReply ? "comment comment-reply" : "comment";
+    comment.setAttribute("itemprop", "comment");
+    comment.setAttribute("itemtype", "http://schema.org/Comment");
+    comment.appendChild(avatar);
+    comment.appendChild(header);
+    comment.appendChild(timestamp);
+    comment.appendChild(main);
+    comment.appendChild(interactions);
+
+    if (op) {
+      comment.classList.add("op");
+      avatar.classList.add("op");
+      avatar.setAttribute("title", "Blog post author; " + avatar.getAttribute("title"));
+      instanceBadge.classList.add("op");
+      instanceBadge.setAttribute("title", "Blog post author: " + instanceBadge.getAttribute("title"));
+    }
+
+    return {
+      element: comment,
+      date: new Date(status.created_at),
+      rawText: stripHtml(status.content).trim().toLowerCase()
+    };
+  }
+
+  function collectBskyReplies(thread, results = []) {
+    if (!thread.replies || thread.replies.length === 0) return results;
+    for (const reply of thread.replies) {
+      if (reply.$type === "app.bsky.feed.defs#threadViewPost" && reply.post) {
+        const parentUri = reply.post.record?.reply?.parent?.uri;
+        const isNestedReply = parentUri !== bskyId;
+        results.push({ post: reply.post, isNestedReply });
+        collectBskyReplies(reply, results);
+      }
+    }
+    return results;
+  }
+
+  function buildBskyComment({ post, isNestedReply }) {
+    const author = post.author;
+    const record = post.record;
+    const createdAt = record.createdAt;
+    const handle = author.handle;
+    const displayName = escapeHtml(author.displayName || handle);
+    const profileUrl = `https://bsky.app/profile/${handle}`;
+    const rkey = post.uri.split("/").pop();
+    const postUrl = `https://bsky.app/profile/${handle}/post/${rkey}`;
+
+    let avatarImg = document.createElement("img");
+    avatarImg.className = "avatar";
+    avatarImg.setAttribute("src", escapeHtml(author.avatar || ""));
+    avatarImg.setAttribute("alt", `@${handle}@bsky.app avatar`);
+
+    let avatar = document.createElement("a");
+    avatar.className = "avatar-link";
+    avatar.setAttribute("href", profileUrl);
+    avatar.setAttribute("rel", "external nofollow");
+    avatar.setAttribute("title", `View profile at @${handle}@bsky.app`);
+    avatar.appendChild(avatarImg);
+
+    let instanceBadge = document.createElement("a");
+    instanceBadge.className = "instance";
+    instanceBadge.setAttribute("href", profileUrl);
+    instanceBadge.setAttribute("title", `@${handle}@bsky.app`);
+    instanceBadge.setAttribute("rel", "external nofollow");
+    instanceBadge.textContent = "bsky.app";
+
+    let display = document.createElement("span");
+    display.className = "display";
+    display.setAttribute("itemprop", "author");
+    display.setAttribute("itemtype", "http://schema.org/Person");
+    display.innerHTML = displayName;
+
+    let instanceIcon = document.createElement("span");
+    instanceIcon.className = "instance-icon";
+    instanceIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M439.8 358.7C436.5 358.3 433.1 357.9 429.8 357.4C433.2 357.8 436.5 358.3 439.8 358.7zM320 291.1C293.9 240.4 222.9 145.9 156.9 99.3C93.6 54.6 69.5 62.3 53.6 69.5C35.3 77.8 32 105.9 32 122.4C32 138.9 41.1 258 47 277.9C66.5 343.6 136.1 365.8 200.2 358.6C203.5 358.1 206.8 357.7 210.2 357.2C206.9 357.7 203.6 358.2 200.2 358.6C106.3 372.6 22.9 406.8 132.3 528.5C252.6 653.1 297.1 501.8 320 425.1C342.9 501.8 369.2 647.6 505.6 528.5C608 425.1 533.7 372.5 439.8 358.6C436.5 358.2 433.1 357.8 429.8 357.3C433.2 357.7 436.5 358.2 439.8 358.6C503.9 365.7 573.4 343.5 593 277.9C598.9 258 608 139 608 122.4C608 105.8 604.7 77.7 586.4 69.5C570.6 62.4 546.4 54.6 483.2 99.3C417.1 145.9 346.1 240.4 320 291.1z"/></svg>';
+
+    let header = document.createElement("header");
+    header.className = "author";
+    header.appendChild(display);
+    header.appendChild(instanceIcon);
+    header.appendChild(instanceBadge);
+
+    let permalink = document.createElement("a");
+    permalink.setAttribute("href", postUrl);
+    permalink.setAttribute("itemprop", "url");
+    permalink.setAttribute("title", "View comment on Bluesky");
+    permalink.setAttribute("rel", "external nofollow");
+    permalink.textContent = new Date(createdAt).toLocaleString('en-US', {
+      dateStyle: "long",
+      timeStyle: "short",
+    });
+
+    let timestamp = document.createElement("time");
+    timestamp.setAttribute("datetime", createdAt);
+    timestamp.appendChild(permalink);
+
+    let main = document.createElement("main");
+    main.setAttribute("itemprop", "text");
+    main.innerHTML = escapeHtml(record.text)
+        .split(/\n\n+/)
+        .map(para => `<p>${para.replace(/\n/g, "<br>")}</p>`)
+        .join("");
+
+    let interactions = document.createElement("footer");
+    if (post.likeCount > 0) {
+      let faves = document.createElement("a");
+      faves.className = "faves";
+      faves.setAttribute("href", postUrl);
+      faves.setAttribute("title", "Likes on Bluesky");
+      faves.textContent = post.likeCount;
+      interactions.appendChild(faves);
+    }
+
+    const safeId = post.uri.replace(/[^a-zA-Z0-9-_]/g, "_");
+    let comment = document.createElement("article");
+    comment.id = `comment-${safeId}`;
+    comment.className = isNestedReply ? "comment comment-reply bsky" : "comment bsky";
+    comment.setAttribute("itemprop", "comment");
+    comment.setAttribute("itemtype", "http://schema.org/Comment");
+    comment.appendChild(avatar);
+    comment.appendChild(header);
+    comment.appendChild(timestamp);
+    comment.appendChild(main);
+    comment.appendChild(interactions);
+
+    return {
+      element: comment,
+      date: new Date(createdAt),
+      rawText: (record.text || "").trim().toLowerCase()
+    };
+  }
+
+  async function loadComments() {
+    let commentsWrapper = document.getElementById("comments-wrapper");
+    document.getElementById("load-comment").innerHTML = "Loading";
+
+    const fetches = [];
+
+    if (typeof fediId !== "undefined" && fediId) {
+      fetches.push(
+        fetch(`https://mastodon.social/api/v1/statuses/${fediId}/context`)
+          .then(r => r.json())
+          .then(data => (data.descendants || []).map(buildMastodonComment))
+          .catch(() => [])
+      );
+    } else {
+      fetches.push(Promise.resolve([]));
+    }
+
+    if (typeof bskyId !== "undefined" && bskyId) {
+      fetches.push(
+        fetch(`https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=${encodeURIComponent(bskyId)}`)
+          .then(r => r.json())
+          .then(data => {
+            if (!data.thread) return [];
+            return collectBskyReplies(data.thread).map(buildBskyComment);
+          })
+          .catch(() => [])
+      );
+    } else {
+      fetches.push(Promise.resolve([]));
+    }
+
+    const [mastodonComments, bskyComments] = await Promise.all(fetches);
+
+    // Deduplicate: drop Bluesky comments whose plain text exactly matches a Mastodon comment
+    const mastodonTexts = new Set(mastodonComments.map(c => c.rawText));
+    const filteredBskyComments = bskyComments.filter(c => !mastodonTexts.has(c.rawText));
+
+    const allComments = [...mastodonComments, ...filteredBskyComments]
+      .sort((a, b) => a.date - b.date);
+
+    if (allComments.length > 0) {
+      commentsWrapper.innerHTML = "";
+      for (const { element } of allComments) {
+        commentsWrapper.innerHTML += DOMPurify.sanitize(element.outerHTML);
+      }
+    }
+
+    document.getElementById("load-comment").style.opacity = '0';
+  }
+
+  document.getElementById("load-comment").addEventListener("click", loadComments);
+</script>
+    </section>
+
+</article>
+</main>
+
+{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+{{#if @site.members_enabled}}
+{{#unless @member}}
+{{#unless @site.comments_enabled}}
+{{#if access}}
+    <section class="footer-cta outer">
+        <div class="inner">
+            {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
+            <a class="footer-cta-button" href="#/portal" data-portal>
+                <div class="footer-cta-input">Enter your email</div>
+                <span>Subscribe</span>
+            </a>
+        </div>
+    </section>
+{{/if}}
+{{/unless}}
+{{/unless}}
+{{/if}}
+
+
+{{!-- Read more links, just above the footer --}}
+{{#if @custom.show_recent_posts_footer}}
+    {{!-- The {#get} helper below fetches some of the latest posts here
+    so that people have something else to read when they finish this one.
+
+    This query gets the latest 3 posts on the site, but adds a filter to
+    exclude the post we're currently on from being included. --}}
+    {{#get "posts" filter="id:-{{id}}+tags:{{primary_tag.slug}}" limit="3" as |more_posts|}}
+
+        {{#if more_posts}}
+            <aside class="read-more-wrap outer">
+                <div class="read-more inner">
+                    {{#foreach more_posts}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                </div>
+            </aside>
+        {{/if}}
+
+    {{/get}}
+{{/if}}
+
+{{/post}}
