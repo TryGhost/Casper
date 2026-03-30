@@ -2277,11 +2277,11 @@ html.dark-mode .gh-content code {
 }
 
 html.dark-mode hr {
-    border-top-color: color-mod(var(--color-darkmode) l(+8%));
+    border-top-color: var(--color-secondary-text);
 }
 
 html.dark-mode .gh-content hr:after {
-    background: color-mod(var(--color-darkmode) l(+8%));
+    background: var(--color-secondary-text);
     box-shadow: var(--color-darkmode) 0 0 0 5px;
 }
 
