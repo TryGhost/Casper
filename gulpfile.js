@@ -19,6 +19,9 @@ const colorFunction = require('postcss-color-mod-function');
 const cssnano = require('cssnano');
 const easyimport = require('postcss-easy-import');
 
+// translations support
+const { mergeLocales } = require('@tryghost/theme-translations/build');
+
 const REPO = 'TryGhost/Casper';
 const REPO_READONLY = 'TryGhost/Casper';
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
@@ -89,11 +92,19 @@ function zipper(done) {
     ], handleError(done));
 }
 
+function locales(done) {
+    mergeLocales({
+        local: './locales-local',
+        output: './locales'
+    })(done);
+}
+
 const cssWatcher = () => watch('assets/css/**', css);
 const jsWatcher = () => watch('assets/js/**', js);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, jsWatcher, hbsWatcher);
-const build = series(css, js);
+const localesWatcher = () => watch('./locales-local/**/*.json', locales);
+const watcher = parallel(cssWatcher, jsWatcher, hbsWatcher, localesWatcher);
+const build = series(css, js, locales);
 
 exports.build = build;
 exports.zip = series(build, zipper);
@@ -120,7 +131,8 @@ exports.release = async () => {
     }
 
     try {
-        const result = await inquirer.prompt([{
+        const prompt = inquirer.createPromptModule();
+        const result = await prompt([{
             type: 'input',
             name: 'compatibleWithGhost',
             message: 'Which version of Ghost is it compatible with?',
