@@ -174,7 +174,8 @@
     },
     "renovate": {
         "extends": [
-            "@tryghost:theme"
+            "@tryghost:theme",
+            "github>TryGhost/Themes:packages/theme-translations/renovate-config"
         ]
     }
 }
