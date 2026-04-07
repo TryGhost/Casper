@@ -47,9 +47,9 @@
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
         "@tryghost/theme-translations": "~0.0.14",
-        "autoprefixer": "10.4.24",
+        "autoprefixer": "10.4.27",
         "beeper": "2.1.0",
-        "cssnano": "7.1.2",
+        "cssnano": "7.1.4",
         "gscan": "5.2.4",
         "gulp": "5.0.1",
         "gulp-concat": "2.6.1",
@@ -58,7 +58,7 @@
         "gulp-uglify": "3.0.2",
         "gulp-zip": "6.1.0",
         "inquirer": "13.2.2",
-        "postcss": "8.5.6",
+        "postcss": "8.5.8",
         "postcss-color-mod-function": "4.1.1",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.3"
