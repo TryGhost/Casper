@@ -1734,8 +1734,40 @@ iframe.instagram-media + script + :not([id]) {
 
 .article-byline {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 16px;
     margin: min(24px, 5.6vmin) 0 0;
+}
+
+.gh-button-share {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0.5em 1.2em;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 999px;
+    color: rgba(0, 0, 0, 0.85);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.gh-button-share:hover {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode .gh-button-share {
+    color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark-mode .gh-button-share:hover {
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .article-byline-content {
@@ -2441,6 +2473,15 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .article-byline-meta .author-name a {
         color: #fff;
+    }
+
+    html.auto-color .gh-button-share {
+        color: rgba(255, 255, 255, 0.85);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    html.auto-color .gh-button-share:hover {
+        border-color: rgba(255, 255, 255, 0.5);
     }
 
     html.auto-color .no-image .author-social-link a {
