@@ -2277,7 +2277,7 @@ html.dark-mode .gh-content code {
 }
 
 html.dark-mode hr {
-    border-top-color: color-mod(var(--color-darkmode) l(+8%));
+    border-top-color: #424242;
 }
 
 html.dark-mode .gh-content hr:after {
@@ -2471,7 +2471,7 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color hr {
-        border-top-color: color-mod(var(--color-darkmode) l(+8%));
+        border-top-color: #424242;
     }
 
     html.auto-color .gh-content hr:after {

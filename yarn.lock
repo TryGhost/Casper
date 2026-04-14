@@ -1956,7 +1956,7 @@
     "@tryghost/debug" "^0.1.35"
     "@tryghost/logging" "^2.5.0"
 
-"@tryghost/theme-translations@~0.0.14":
+"@tryghost/theme-translations@~0.0.16":
   version "0.0.16"
   resolved "https://registry.yarnpkg.com/@tryghost/theme-translations/-/theme-translations-0.0.16.tgz#5cdcf5153df4cd4f93663f23d4247542e7be79f6"
   integrity sha512-1KQBJfpSjzK+0JPOhtIVmwjRqYo/auFFNC+oqyOGDsI10JIznYzhS2JP6eQutBWgCFEoLaHF3fBrNbrx0UD0ag==
