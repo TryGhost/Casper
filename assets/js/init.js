@@ -3,8 +3,10 @@
     // Mobile Menu Trigger
     var burger = document.querySelector('.gh-burger');
     if (burger) {
+        burger.setAttribute('aria-expanded', 'false');
         burger.addEventListener('click', function() {
-            document.body.classList.toggle('gh-head-open');
+            var isOpen = document.body.classList.toggle('gh-head-open');
+            burger.setAttribute('aria-expanded', String(isOpen));
         });
     }
 })();
