@@ -21,6 +21,8 @@
                     sizes="(max-width: 1000px) 400px, 800px"
                     src="{{img_url cover_image size="m"}}"
                     alt="{{title}}"
+                    fetchpriority="high"
+                    loading="eager"
                 />
             </div>
             {{/if}}
@@ -29,7 +31,7 @@
             <div class="post-card-content-link">
 
                 {{#if profile_image}}
-                    <img class="author-profile-pic" src="{{profile_image}}" alt="{{name}}" />
+                    <img class="author-profile-pic" src="{{profile_image}}" alt="{{name}}" loading="eager" />
                 {{/if}}
 
                 <header class="post-card-header">

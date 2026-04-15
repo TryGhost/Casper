@@ -1275,6 +1275,8 @@ html.no-infinite-scroll .pagination {
     grid-column: wide-start / wide-end;
     width: 100%;
     margin: max(6.4vmin, 40px) 0 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 }
 
 .image-full .article-image {
@@ -1565,6 +1567,20 @@ except for when immediately preceeded by a heading */
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+
+/* Responsive video embeds - no JavaScript needed */
+.kg-embed-card iframe[src*="youtube.com"],
+.kg-embed-card iframe[src*="youtube-nocookie.com"],
+.kg-embed-card iframe[src*="player.vimeo.com"],
+.kg-embed-card iframe[src*="kickstarter.com"],
+.gh-content iframe[src*="youtube.com"],
+.gh-content iframe[src*="youtube-nocookie.com"],
+.gh-content iframe[src*="player.vimeo.com"],
+.gh-content iframe[src*="kickstarter.com"] {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
 }
 
 /* This keeps small iamges centered */
