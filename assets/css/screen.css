@@ -2196,6 +2196,13 @@ html.dark-mode img {
 
 html.dark-mode kbd {
     background: color-mod(var(--color-darkmode) l(+5%));
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}
+
+html.dark-mode mark {
+    background-color: rgba(253, 255, 182, 0.2);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 html.dark-mode figcaption a {
@@ -2321,6 +2328,10 @@ html.dark-mode figcaption {
     color: rgba(255, 255, 255, 0.6);
 }
 
+html.dark-mode figcaption strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 html.dark-mode .gh-content table:not(.gist table) td:first-child {
     background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
@@ -2340,7 +2351,7 @@ html.dark-mode .gh-content table:not(.gist table) td {
 }
 
 html.dark-mode .gh-content :is(input, textarea) {
-    color: color-mod(var(--color-midgrey) l(-30%));
+    color: rgba(255, 255, 255, 0.9);
 }
 
 html.dark-mode .site-archive-header .no-image {
@@ -2390,6 +2401,13 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color kbd {
         background: color-mod(var(--color-darkmode) l(+5%));
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    html.auto-color mark {
+        background-color: rgba(253, 255, 182, 0.2);
+        color: rgba(255, 255, 255, 0.9);
     }
 
     html.auto-color figcaption a {
@@ -2524,6 +2542,10 @@ html.dark-mode .footer-cta-title {
         color: rgba(255, 255, 255, 0.6);
     }
 
+    html.auto-color figcaption strong {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
     html.auto-color .gh-content table:not(.gist table) td:first-child {
         background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
     }
@@ -2543,7 +2565,7 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color .gh-content :is(input, textarea) {
-        color: color-mod(var(--color-midgrey) l(-30%));
+        color: rgba(255, 255, 255, 0.9);
     }
 
     html.auto-color .site-archive-header .no-image {
