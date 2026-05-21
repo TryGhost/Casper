@@ -2127,8 +2127,30 @@ html.dark-mode .gh-button-share:hover {
     display: grid;
     grid-gap: 40px;
     grid-template-columns: auto 1fr auto;
+    align-items: center;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
+}
+
+.site-footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-footer-social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.site-footer-social-links a {
+    display: inline-flex;
+}
+
+.site-footer-social-links svg {
+    width: 16px;
+    height: 16px;
 }
 
 .site-footer .copyright a {
@@ -2150,7 +2172,7 @@ html.dark-mode .gh-button-share:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 0 20px;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -2193,6 +2215,9 @@ html.dark-mode .gh-button-share:hover {
         font-size: 1.5rem;
     }
     .site-footer .copyright {
+        margin-bottom: 16px;
+    }
+    .site-footer-center {
         margin-bottom: 16px;
     }
 }
