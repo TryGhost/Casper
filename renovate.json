@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>TryGhost/renovate-config:theme.json5",
-    "github>TryGhost/Themes:packages/theme-translations/renovate-config"
+    "local>TryGhost/renovate-config:theme.json5"
   ]
 }
