@@ -1965,10 +1965,10 @@
     "@tryghost/debug" "2.2.1"
     "@tryghost/logging" "5.0.1"
 
-"@tryghost/theme-translations@0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@tryghost/theme-translations/-/theme-translations-0.0.20.tgz#11d31b094c12d66eadb564562eeca178d1ca376a"
-  integrity sha512-4/e93jTsF159CP5QukdEJ5P5wCLFncwf4MUOhAAIIC8q8CWF52zM0fTMCrjNlbHNby+dwCdy8VIAimsdrEu0zw==
+"@tryghost/theme-translations@0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@tryghost/theme-translations/-/theme-translations-0.0.21.tgz#271fe43a89ceb1e599a5a1683e4e84b35dc6ce79"
+  integrity sha512-CsU1ezWZClrrtTVAGxLx4CmGlhKp6jX1lkl5gH3Fmc5+1qt04frAiwbAn5QnAavBZJqLzYTwXqt4drF5Fi43zw==
 
 "@tryghost/tpl@2.2.1":
   version "2.2.1"
