@@ -15,13 +15,16 @@
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
+        "build": "gulp build",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
-        "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+        "pretest": "pnpm zip",
+        "pretest:ci": "pnpm zip",
+        "preship": "pnpm test",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
         "postship": "git fetch && gulp release"
     },
+    "packageManager": "pnpm@11.5.1",
     "author": {
         "name": "Ghost Foundation",
         "email": "hello@ghost.org",
