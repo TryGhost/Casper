@@ -34,14 +34,14 @@ One neat trick is that you can also create custom one-off templates by adding th
 
 # Development
 
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [pnpm](https://pnpm.io/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash
 # install dependencies
-yarn install
+pnpm install
 
 # run development server
-yarn dev
+pnpm dev
 ```
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
@@ -50,8 +50,26 @@ The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which
 
 ```bash
 # create .zip file
-yarn zip
+pnpm zip
 ```
+
+# Publishing a release
+
+Releases are shipped in two steps. First bump the version — this updates `package.json` and creates the matching commit and `v<version>` git tag:
+
+```bash
+# pick one of: patch | minor | major (or an explicit version, e.g. 5.13.0)
+pnpm version minor
+```
+
+Then run `ship`, which checks the working tree is clean, pushes the commit and tag, and drafts the GitHub release from the changelog:
+
+```bash
+pnpm ship
+```
+
+> [!NOTE]
+> `pnpm version` must be run first — unlike the old `yarn version`, `pnpm version` is not interactive and `pnpm ship` no longer performs the bump itself.
 
 # PostCSS Features Used
 

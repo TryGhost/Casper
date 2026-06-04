@@ -16,12 +16,14 @@ jobs:
         with:
           persist-credentials: false
 
+      - uses: pnpm/action-setup@ac6db6d3c1f721f886538a378a2d73e85697340a
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: lts/*
-          cache: yarn
-          cache-dependency-path: yarn.lock
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
 
-      - run: yarn install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile
 
-      - run: yarn test:ci
+      - run: pnpm test:ci
