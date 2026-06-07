@@ -1275,6 +1275,8 @@ html.no-infinite-scroll .pagination {
     grid-column: wide-start / wide-end;
     width: 100%;
     margin: max(6.4vmin, 40px) 0 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 }
 
 .image-full .article-image {
@@ -1567,6 +1569,20 @@ except for when immediately preceeded by a heading */
     width: 100%;
 }
 
+/* Responsive video embeds - no JavaScript needed */
+.kg-embed-card iframe[src*="youtube.com"],
+.kg-embed-card iframe[src*="youtube-nocookie.com"],
+.kg-embed-card iframe[src*="player.vimeo.com"],
+.kg-embed-card iframe[src*="kickstarter.com"],
+.gh-content iframe[src*="youtube.com"],
+.gh-content iframe[src*="youtube-nocookie.com"],
+.gh-content iframe[src*="player.vimeo.com"],
+.gh-content iframe[src*="kickstarter.com"] {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+}
+
 /* This keeps small iamges centered */
 .kg-image-card img {
     margin: auto;
@@ -1719,13 +1735,13 @@ iframe.instagram-media + script + :not([id]) {
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
-    background-color: color-mod(var(--color-wash) l(+4%));
+    background-color: color-mod(var(--color-wash) lightness(97%));
 }
 
 .gh-content table:not(.gist table) th,
 .gh-content table:not(.gist table) td {
     padding: 6px 12px;
-    border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
+    border: color-mod(var(--color-wash) lightness(92%) saturation(39%)) 1px solid;
 }
 
 
@@ -1734,8 +1750,40 @@ iframe.instagram-media + script + :not([id]) {
 
 .article-byline {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 16px;
     margin: min(24px, 5.6vmin) 0 0;
+}
+
+.gh-button-share {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0.5em 1.2em;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 999px;
+    color: rgba(0, 0, 0, 0.85);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.gh-button-share:hover {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode .gh-button-share {
+    color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark-mode .gh-button-share:hover {
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .article-byline-content {
@@ -2079,8 +2127,30 @@ iframe.instagram-media + script + :not([id]) {
     display: grid;
     grid-gap: 40px;
     grid-template-columns: auto 1fr auto;
+    align-items: center;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
+}
+
+.site-footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-footer-social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.site-footer-social-links a {
+    display: inline-flex;
+}
+
+.site-footer-social-links svg {
+    width: 16px;
+    height: 16px;
 }
 
 .site-footer .copyright a {
@@ -2102,7 +2172,7 @@ iframe.instagram-media + script + :not([id]) {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 0 20px;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -2145,6 +2215,9 @@ iframe.instagram-media + script + :not([id]) {
         font-size: 1.5rem;
     }
     .site-footer .copyright {
+        margin-bottom: 16px;
+    }
+    .site-footer-center {
         margin-bottom: 16px;
     }
 }
@@ -2193,7 +2266,7 @@ html.dark-mode .post-card-image {
 }
 
 html.dark-mode :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content, .pagination .page-number) {
-    color: color-mod(var(--color-secondary-text) l(-22%));
+    color: var(--color-secondary-text);
 }
 
 html.dark-mode .post-card-featured {
@@ -2277,7 +2350,7 @@ html.dark-mode .gh-content code {
 }
 
 html.dark-mode hr {
-    border-top-color: color-mod(var(--color-darkmode) l(+8%));
+    border-top-color: #424242;
 }
 
 html.dark-mode .gh-content hr:after {
@@ -2299,12 +2372,12 @@ html.dark-mode .gh-content table:not(.gist table) td:last-child {
 
 html.dark-mode .gh-content table:not(.gist table) th {
     color: rgba(255, 255, 255, 0.85);
-    background-color: color-mod(var(--color-darkmode) l(+8%));
+    background-color: color-mod(var(--color-darkmode) lightness(17%));
 }
 
 html.dark-mode .gh-content table:not(.gist table) th,
 html.dark-mode .gh-content table:not(.gist table) td {
-    border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
+    border: color-mod(var(--color-darkmode) lightness(17%)) 1px solid;
 }
 
 html.dark-mode .gh-content :is(input, textarea) {
@@ -2387,7 +2460,7 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content, .pagination .page-number) {
-        color: color-mod(var(--color-secondary-text) l(-22%));
+        color: var(--color-secondary-text);
     }
 
     html.auto-color .post-card-featured {
@@ -2443,6 +2516,15 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 
+    html.auto-color .gh-button-share {
+        color: rgba(255, 255, 255, 0.85);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    html.auto-color .gh-button-share:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
     html.auto-color .no-image .author-social-link a {
         color: rgba(255, 255, 255, 0.75);
     }
@@ -2471,7 +2553,7 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color hr {
-        border-top-color: color-mod(var(--color-darkmode) l(+8%));
+        border-top-color: #424242;
     }
 
     html.auto-color .gh-content hr:after {
@@ -2493,12 +2575,12 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .gh-content table:not(.gist table) th {
         color: rgba(255, 255, 255, 0.85);
-        background-color: color-mod(var(--color-darkmode) l(+8%));
+        background-color: color-mod(var(--color-darkmode) lightness(17%));
     }
 
     html.auto-color .gh-content table:not(.gist table) th,
     html.auto-color .gh-content table:not(.gist table) td {
-        border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
+        border: color-mod(var(--color-darkmode) lightness(17%)) 1px solid;
     }
 
     html.auto-color .gh-content :is(input, textarea) {

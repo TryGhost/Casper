@@ -37,7 +37,7 @@ into the {body} tag of the default.hbs template --}}
                 <li class="author-list-item">
                     {{#if profile_image}}
                     <a href="{{url}}" class="author-avatar" aria-label="Read more of {{name}}">
-                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" loading="eager" />
                     </a>
                     {{else}}
                     <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Read more of {{name}}">{{> "icons/avatar"}}</a>
@@ -57,6 +57,7 @@ into the {body} tag of the default.hbs template --}}
             </div>
 
         </section>
+        <a href="#/share" class="gh-button gh-button-share">{{t "Share"}}</a>
         </div>
 
         {{#match @custom.post_image_style "!=" "Hidden"}}
@@ -72,6 +73,8 @@ into the {body} tag of the default.hbs template --}}
                     sizes="(min-width: 1400px) 1400px, 92vw"
                     src="{{img_url feature_image size="xl"}}"
                     alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    fetchpriority="high"
+                    loading="eager"
                 />
                 {{#if feature_image_caption}}
                     <figcaption>{{feature_image_caption}}</figcaption>
