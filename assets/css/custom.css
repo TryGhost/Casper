@@ -295,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-template .site-description:first-child,
 .home-template :is(.site-logo, .site-title) + .site-description {
-    font-family: var(--gh-font-heading, var(--font-mono));
+    font-family: var(--gh-font-heading, var(--font-sans));
     max-width: 1100px;
     margin-right: auto;
     margin-left: auto;
@@ -349,9 +349,9 @@ h1, h2, h3, h4, h5, h6 {
 .post-card-meta,
 .article-tag a,
 .byline-meta-content {
-    font-family: var(--font-mono);
-    font-size: 1.4rem;
-    letter-spacing: 0.02em;
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
     text-transform: uppercase;
 }
 
@@ -364,9 +364,11 @@ h1, h2, h3, h4, h5, h6 {
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p {
-    font-family: var(--gh-font-body, var(--font-mono));
-    letter-spacing: -0.02em;
-    word-spacing: -0.02em;
+    font-family: var(--gh-font-body, var(--font-serif));
+    font-size: 1.68rem;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    word-spacing: 0.01em;
 }
 
 .has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content > blockquote,
@@ -378,11 +380,11 @@ h1, h2, h3, h4, h5, h6 {
 .has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-card .kg-toggle-content > ol,
 .has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-card .kg-toggle-content > ul,
 .has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .gh-content .kg-toggle-card .kg-toggle-content > p {
-    font-family: var(--gh-font-body, var(--font-mono));
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 .has-sans-body:not([class*=" gh-font-body"]):not([class^="gh-font-body"]) .kg-blockquote-alt {
-    font-family: var(--gh-font-body, var(--font-mono));
+    font-family: var(--gh-font-body, var(--font-sans));
 }
 
 @media (max-width: 650px) {
@@ -395,15 +397,17 @@ h1, h2, h3, h4, h5, h6 {
     .gh-content .kg-toggle-card .kg-toggle-content > ol,
     .gh-content .kg-toggle-card .kg-toggle-content > ul,
     .gh-content .kg-toggle-card .kg-toggle-content > p {
-        font-family: var(--gh-font-body, var(--font-mono));
-        letter-spacing: -0.02em;
-        word-spacing: -0.02em;
+        font-family: var(--gh-font-body, var(--font-serif));
+        font-size: 1.7rem;
+        line-height: 1.7;
+        letter-spacing: 0.005em;
+        word-spacing: 0.005em;
     }
 
     .gh-content .kg-product-card .kg-product-card-description > p,
     .gh-content .kg-product-card .kg-product-card-description > ol,
     .gh-content .kg-product-card .kg-product-card-description > ul {
-        font-family: var(--gh-font-body, var(--font-mono));
+        font-family: var(--gh-font-body, var(--font-sans));
         letter-spacing: -0.02em;
         word-spacing: -0.02em;
     }
