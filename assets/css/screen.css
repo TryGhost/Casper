@@ -1275,8 +1275,6 @@ html.no-infinite-scroll .pagination {
     grid-column: wide-start / wide-end;
     width: 100%;
     margin: max(6.4vmin, 40px) 0 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
 }
 
 .image-full .article-image {
