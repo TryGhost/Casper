@@ -16,7 +16,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: pnpm/action-setup@ac6db6d3c1f721f886538a378a2d73e85697340a
+      - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
