@@ -24,7 +24,7 @@
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
         "postship": "git fetch && gulp release"
     },
-    "packageManager": "pnpm@11.5.3",
+    "packageManager": "pnpm@11.6.0",
     "author": {
         "name": "Ghost Foundation",
         "email": "hello@ghost.org",
