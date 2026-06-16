@@ -86,6 +86,8 @@ function zipper(done) {
             '!pnpm-debug.log',
             '!pnpm-lock.yaml',
             '!pnpm-workspace.yaml',
+            '!AGENTS.md',
+            '!CLAUDE.md',
             '!gulpfile.js'
         ]),
         zip(filename),
