@@ -611,3 +611,58 @@ html.dark-mode .site-footer {
         }
     }
 }
+
+/* Headlines ausblenden */
+.home-template.has-cover .site-description,
+.home-template.has-cover .site-subheadline {
+    display: none;
+}
+
+/* Scanlines auf Startseite ausblenden */
+.home-template.has-cover .gh-head::after {
+    content: none !important;
+}
+
+/* Publication cover overlay */
+.home-template.has-cover .site-header-content {
+    position: relative;
+}
+
+.home-template.has-cover .site-header-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 23, 20, 0.20);
+    /* Overlay-Stärke */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.home-template.has-cover .site-header-inner {
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .home-template.has-cover .site-header-content:not(.left-aligned):not(.no-content) {
+        min-height: 730px;
+    }
+
+    .site-header-cover {
+        object-position: center 33% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-template.has-cover .site-header-content:not(.left-aligned):not(.no-content) {
+        min-height: 200px;
+    }
+
+    .site-header-cover {
+        object-position: center 20% !important;
+    }
+
+    .home-template.has-cover .site-header-content::after {
+        background: rgba(26, 23, 20, 0.12);
+    }
+}
