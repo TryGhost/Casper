@@ -21,8 +21,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0
       cssnano:
-        specifier: 8.0.1
-        version: 8.0.1(postcss@8.5.15)
+        specifier: 8.0.2
+        version: 8.0.2(postcss@8.5.15)
       gscan:
         specifier: 6.4.0
         version: 6.4.0
@@ -1663,11 +1663,11 @@ packages:
     peerDependencies:
       postcss: ^8.5.15
 
-  cssnano@8.0.1:
-    resolution: {integrity: sha512-oSiOnPQNNYjusTUlYJiE6xvFQG4don3N0QavaoV1BxIsC1zjvxOwikXlR7lG1EVmZNDDaJkHbQx1VRB8kaoMHA==}
+  cssnano@8.0.2:
+    resolution: {integrity: sha512-K+a76gA1v0/CsYgcsE95HGGyIuPKxpQSetwSwz4nHEM8fFXqSkzq2JzEXFL8v5+CCjxzVVVhPcTK3Oo8SaF/xA==}
     engines: {node: ^22.11.0 || ^24.11.0 || >=26.0}
     peerDependencies:
-      postcss: ^8.5.14
+      postcss: ^8.5.15
 
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
@@ -5228,7 +5228,7 @@ snapshots:
     dependencies:
       postcss: 8.5.15
 
-  cssnano@8.0.1(postcss@8.5.15):
+  cssnano@8.0.2(postcss@8.5.15):
     dependencies:
       cssnano-preset-default: 8.0.2(postcss@8.5.15)
       lilconfig: 3.1.3
