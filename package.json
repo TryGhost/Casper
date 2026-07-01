@@ -51,7 +51,7 @@
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
         "@tryghost/theme-translations": "0.0.22",
-        "autoprefixer": "10.5.0",
+        "autoprefixer": "10.5.2",
         "beeper": "2.1.0",
         "cssnano": "8.0.2",
         "gscan": "6.4.1",
