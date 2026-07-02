@@ -365,8 +365,8 @@ h1, h2, h3, h4, h5, h6 {
 .gh-content > dl,
 .gh-content > p {
     font-family: var(--gh-font-body, var(--font-serif));
-    font-size: 1.68rem;
-    line-height: 1.75;
+    font-size: 1.9rem;
+    line-height: 1.6;
     letter-spacing: 0.01em;
     word-spacing: 0.01em;
 }

@@ -1,8 +1,8 @@
 # miuh-ghost-theme
 
-A GDPR-compliant (DSGVO) fork of [TryGhost/Casper](https://github.com/TryGhost/Casper) 5.10.1.
+A GDPR-compliant (DSGVO) fork of [TryGhost/Casper](https://github.com/TryGhost/Casper).
 
-All external CDN requests have been removed so the theme can run without any third-party network calls.
+External CDN asset loading has been replaced with local theme assets where Ghost allows it. With the Ghost configuration below, Portal, Search, Comments, jQuery, PhotoSwipe, and the theme scripts are served from the same site instead of public CDNs.
 
 
 ## What changed vs. upstream Casper
@@ -11,10 +11,10 @@ All external CDN requests have been removed so the theme can run without any thi
 
 1. **jQuery loaded locally** -- served from `assets/js/lib/jquery-3.5.1.min.js` instead of `code.jquery.com`.
 2. **Local GDPR assets** in `assets/jsdelivr/`:
-   - `portal.min.js` (v2.58.1)
-   - `sodo-search.min.js` (v1.8.4)
+   - `portal.min.js` (Portal v2.68.58)
+   - `sodo-search.min.js`
    - `sodo-search.min.css`
-   - `comments-ui.min.js` (v1.1.4)
+   - `comments-ui.min.js`
 
 ### Design -- Dark Editorial
 
@@ -35,7 +35,7 @@ All visual customizations live in a single file: **`assets/css/custom.css`**, co
 ### Build changes
 
 - **`gulpfile.js`** -- `require('gulp-zip').default` (required for gulp-zip 6.x); `gulp-concat` combines `screen.css` + `custom.css` before PostCSS processing
-- **`assets/built/`** -- excluded via `.gitignore`, generated at build time
+- **`assets/built/`** -- generated at build time and currently tracked so Ghost can use the theme without a build step after checkout
 
 
 ## Required Ghost configuration
@@ -58,38 +58,14 @@ Without these settings, Ghost will still fetch scripts from external CDNs.
 ## Build
 
 ```bash
-npm install
-npx gulp build     # compiles CSS + JS into assets/built/
-npx gulp zip       # packages theme into dist/miuh-ghost-theme.zip
+corepack enable
+corepack prepare pnpm@11.5.2 --activate
+pnpm install
+pnpm build     # compiles CSS + JS into assets/built/
+pnpm zip       # packages theme into dist/miuh-ghost-theme.zip
 ```
 
 Upload the resulting zip file via Ghost Admin > Settings > Design > Upload theme.
-
-
-## Development
-
-```bash
-npx gulp           # starts dev server with livereload
-```
-
-Edit `assets/css/custom.css` for design changes -- it gets concatenated after `screen.css` and compiled into `assets/built/screen.css` automatically. Keep `screen.css` and `global.css` untouched to avoid merge conflicts with upstream.
-
-# Translations
-
-Please see [@TryGhost/Themes/theme-translations/README.md](https://github.com/TryGhost/Themes/blob/main/packages/theme-translations/README.md) for how to build, edit, or contribute translations.
-
-## Syncing upstream Casper changes
-
-```bash
-# one-time setup
-git remote add upstream https://github.com/TryGhost/Casper.git
-
-# pull latest changes
-git fetch upstream
-git merge upstream/main
-```
-
-Since `screen.css` and `global.css` are unmodified, merges should be conflict-free. Only `custom.css`, `package.json`, `gulpfile.js`, and template files may need manual resolution.
 
 
 ## Updating the local GDPR assets
