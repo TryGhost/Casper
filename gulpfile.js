@@ -87,6 +87,11 @@ function zipper(done) {
             '!pnpm-debug.log',
             '!pnpm-lock.yaml',
             '!pnpm-workspace.yaml',
+            '!yarn.lock',
+            '!renovate.json',
+            '!docs', '!docs/**',
+            '!assets/built/*.map',
+            '!assets/built/global.css',
             '!gulpfile.js'
         ]),
         zip(filename),
