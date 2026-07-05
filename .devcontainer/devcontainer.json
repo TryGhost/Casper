@@ -1,0 +1,26 @@
+{
+    "name": "miuh-ghost-theme",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "remoteUser": "node",
+    "mounts": [
+        "source=${localWorkspaceFolderBasename}-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+        "source=${localWorkspaceFolderBasename}-pnpm-store,target=/home/node/.local/share/pnpm/store,type=volume"
+    ],
+    "containerEnv": {
+        "CHOKIDAR_USEPOLLING": "true"
+    },
+    "forwardPorts": [
+        35729
+    ],
+    "postCreateCommand": ".devcontainer/post-create.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "stylelint.vscode-stylelint",
+                "openai.chatgpt"
+            ]
+        }
+    }
+}

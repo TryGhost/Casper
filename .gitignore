@@ -31,3 +31,7 @@ changelog.md
 changelog.md.bk
 
 docs/
+
+.pnpm-store/
+.codex/
+.agents/

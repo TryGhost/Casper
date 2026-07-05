@@ -68,6 +68,33 @@ pnpm zip       # packages theme into dist/miuh-ghost-theme.zip
 Upload the resulting zip file via Ghost Admin > Settings > Design > Upload theme.
 
 
+## Dev container
+
+The repository includes a VS Code/Docker Dev Container config in `.devcontainer/devcontainer.json`.
+It uses Node 22, activates the pinned pnpm version from `package.json`, and keeps
+`node_modules` in a container volume so host dependencies do not leak into the
+container.
+
+To move development into the container:
+
+```bash
+# optional, but recommended when switching between host and container installs
+rm -rf node_modules
+
+# then open the folder in VS Code and run:
+# Dev Containers: Reopen in Container
+```
+
+After the container is created, use the normal scripts inside the container:
+
+```bash
+pnpm dev
+pnpm build
+pnpm zip
+pnpm test
+```
+
+
 ## Updating the local GDPR assets
 
 When Ghost releases a new version, the bundled portal/search/comments versions may change. To update:
