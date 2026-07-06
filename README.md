@@ -44,6 +44,10 @@ yarn dev
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
+`yarn dev` only builds assets — it doesn't serve the site. To preview your
+changes in a real Ghost instance locally (with demo content), see
+[LOCAL_DEV.md](LOCAL_DEV.md).
+
 The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
 ```bash
