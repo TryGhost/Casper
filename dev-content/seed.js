@@ -44,8 +44,16 @@ const get = (db, sql, params = []) =>
     })
   );
 
+// Look up a role id by name, failing loudly if the role is missing (which
+// would only happen on a non-standard Ghost schema).
+async function getRoleId(db, name) {
+  const role = await get(db, "select id from roles where name = ?", [name]);
+  if (!role) throw new Error(`role "${name}" not found — is this a standard Ghost install?`);
+  return role.id;
+}
+
 async function ensureAuthors(db) {
-  const role = await get(db, "select id from roles where name = 'Author'");
+  const roleId = await getRoleId(db, "Author");
   const pw = bcrypt.hashSync("dev-seed-" + oid(), 10);
   for (const a of authors) {
     const existing = await get(db, "select id from users where email = ?", [a.email]);
@@ -57,7 +65,7 @@ async function ensureAuthors(db) {
       "insert into users (id,name,slug,password,email,profile_image,bio,status,created_at,created_by) values (?,?,?,?,?,?,?,'active',?,'1')",
       [a.id, a.name, a.slug, pw, a.email, a.profile_image, a.bio, t]
     );
-    await run(db, "insert into roles_users (id,role_id,user_id) values (?,?,?)", [oid(), role.id, a.id]);
+    await run(db, "insert into roles_users (id,role_id,user_id) values (?,?,?)", [oid(), roleId, a.id]);
     console.log("  + author:", a.name);
   }
 }
@@ -65,7 +73,7 @@ async function ensureAuthors(db) {
 async function mintToken(db) {
   // Custom-integration admin keys get their permissions from the
   // "Admin Integration" role; without it the key is rejected (403).
-  const role = await get(db, "select id from roles where name = 'Admin Integration'");
+  const roleId = await getRoleId(db, "Admin Integration");
   const secret = crypto.randomBytes(32).toString("hex");
   const keyId = oid();
   const intId = oid();
@@ -75,7 +83,7 @@ async function mintToken(db) {
     [intId, "seed-" + keyId, "seed-" + keyId, "custom", t, "1"]);
   await run(db,
     "insert into api_keys (id,type,secret,role_id,integration_id,created_at,created_by) values (?,?,?,?,?,?,?)",
-    [keyId, "admin", secret, role.id, intId, t, "1"]);
+    [keyId, "admin", secret, roleId, intId, t, "1"]);
   return jwt.sign({}, Buffer.from(secret, "hex"), {
     keyid: keyId, algorithm: "HS256", expiresIn: "10m", audience: "/admin/",
   });
@@ -138,7 +146,11 @@ async function main() {
       status: "published",
       published_at: new Date(p.published + "T09:00:00Z").toISOString(),
       tags: p.tags.map((name) => ({ name })),
-      authors: p.authors.map((slug) => ({ id: byAuthorSlug[slug] })),
+      authors: p.authors.map((slug) => {
+        const id = byAuthorSlug[slug];
+        if (!id) throw new Error(`post "${p.slug}" references unknown author slug "${slug}" (add it to data.js authors)`);
+        return { id };
+      }),
     };
     const existing = bySlug[p.slug];
     if (existing) {
