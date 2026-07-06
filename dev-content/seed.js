@@ -29,10 +29,20 @@ const BASE = process.env.GHOST_URL || "http://ghost:2368";
 const oid = () => crypto.randomBytes(12).toString("hex");
 const stamp = () => new Date().toISOString().replace("T", " ").slice(0, 19);
 
-const run = (db, sql, p = []) =>
-  new Promise((res, rej) => db.run(sql, p, function (e) { e ? rej(e) : res(this); }));
-const get = (db, sql, p = []) =>
-  new Promise((res, rej) => db.get(sql, p, (e, r) => (e ? rej(e) : res(r))));
+const run = (db, sql, params = []) =>
+  new Promise((resolve, reject) =>
+    db.run(sql, params, function (err) {
+      if (err) reject(err);
+      else resolve(this);
+    })
+  );
+const get = (db, sql, params = []) =>
+  new Promise((resolve, reject) =>
+    db.get(sql, params, (err, row) => {
+      if (err) reject(err);
+      else resolve(row);
+    })
+  );
 
 async function ensureAuthors(db) {
   const role = await get(db, "select id from roles where name = 'Author'");
@@ -89,6 +99,10 @@ async function api(method, path, body, token) {
   return j;
 }
 
+// Fetch all rows of an Admin API resource, returning the array directly.
+const listAll = async (resource, fields, token) =>
+  (await api("GET", `/ghost/api/admin/${resource}/?limit=all&fields=${fields}`, null, token))[resource];
+
 async function main() {
   const db = new sqlite3.Database(DB);
 
@@ -99,8 +113,7 @@ async function main() {
 
   // Tags: skip ones that already exist (by slug).
   console.log("Creating tags...");
-  const existingTags = await api("GET", "/ghost/api/admin/tags/?limit=all&fields=slug", null, token);
-  const haveTag = new Set(existingTags.tags.map((t) => t.slug));
+  const haveTag = new Set((await listAll("tags", "slug", token)).map((t) => t.slug));
   for (const t of tags) {
     if (haveTag.has(t.slug)) continue;
     await api("POST", "/ghost/api/admin/tags/", { tags: [t] }, token);
@@ -110,8 +123,8 @@ async function main() {
   // Posts: skip ones that already exist (by slug).
   console.log("Creating posts...");
   // Upsert by slug so re-running self-corrects (e.g. after editing data.js).
-  const existingPosts = await api("GET", "/ghost/api/admin/posts/?limit=all&fields=id,slug,updated_at", null, token);
-  const bySlug = Object.fromEntries(existingPosts.posts.map((p) => [p.slug, p]));
+  const existingPosts = await listAll("posts", "id,slug,updated_at", token);
+  const bySlug = Object.fromEntries(existingPosts.map((p) => [p.slug, p]));
   const byAuthorSlug = Object.fromEntries(authors.map((a) => [a.slug, a.id]));
 
   for (const p of posts) {
@@ -141,8 +154,8 @@ async function main() {
 
   // Home page (static page whose tags drive the homepage sections).
   console.log("Creating home page...");
-  const existingPages = await api("GET", "/ghost/api/admin/pages/?limit=all&fields=slug", null, token);
-  if (existingPages.pages.some((p) => p.slug === homePage.slug)) {
+  const existingPages = await listAll("pages", "slug", token);
+  if (existingPages.some((p) => p.slug === homePage.slug)) {
     console.log("  = skip (exists):", homePage.slug);
   } else {
     await api("POST", "/ghost/api/admin/pages/?source=html", {
