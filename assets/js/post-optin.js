@@ -133,6 +133,14 @@
 
             form.classList.add("is-loading");
 
+            function showError(message) {
+                form.classList.add("is-error");
+                var msgEl = form.querySelector(".message-error");
+                if (message && msgEl) {
+                    msgEl.textContent = message;
+                }
+            }
+
             jQuery
                 .ajax({
                     url: MAILCHIMP_URL,
@@ -141,23 +149,41 @@
                     cache: false,
                     timeout: 10000
                 })
-                .always(function (resp) {
+                // Mailchimp answered — inspect the payload it returned.
+                .done(function (resp) {
                     form.classList.remove("is-loading");
-                    var ok = !!(resp && resp.result === "success");
+
+                    // An email already on the list comes back as result: "error",
+                    // but for an opt-in prompt that's effectively a success — they
+                    // are subscribed either way, so treat it as one.
+                    var alreadySubscribed = !!(
+                        resp &&
+                        resp.msg &&
+                        /already subscribed/i.test(resp.msg)
+                    );
+                    var ok = !!(
+                        resp &&
+                        (resp.result === "success" || alreadySubscribed)
+                    );
 
                     if (ok) {
                         form.classList.add("is-success");
                         rememberSignedUp();
                     } else {
-                        form.classList.add("is-error");
-                        var msgEl = form.querySelector(".message-error");
-                        if (resp && resp.msg && msgEl) {
-                            // Mailchimp prefixes messages e.g. "0 - Already subscribed"
-                            msgEl.innerHTML = String(resp.msg).replace(/^\d+\s*-\s*/, "");
-                        }
+                        // Mailchimp prefixes some messages e.g. "0 - Invalid email".
+                        var msg = resp && resp.msg
+                            ? String(resp.msg).replace(/^\d+\s*-\s*/, "")
+                            : "";
+                        showError(msg);
                     }
 
                     track("Email Opt-In Submitted", { success: ok });
+                })
+                // The request never landed (network error / timeout / blocked).
+                .fail(function () {
+                    form.classList.remove("is-loading");
+                    showError("Something went wrong. Please try again.");
+                    track("Email Opt-In Submitted", { success: false });
                 });
         });
 
