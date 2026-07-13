@@ -1,0 +1,26 @@
+{{!-- In-page email opt-in prompt (social proof variant). Rendered hidden inside
+a <template> in post.hbs and cloned into the top third of the article by
+assets/js/post-optin.js. Clicking "I'm in" opens partials/post-optin-modal.hbs. --}}
+<aside class="optin-prompt" aria-label="Newsletter sign up">
+    <div class="optin-prompt__snapshots" aria-hidden="true">
+        <figure class="optin-prompt__polaroid optin-prompt__polaroid--1">
+            <img src="{{asset "images/post-optin/review-kayaks.jpg"}}" alt="" loading="lazy" />
+            <figcaption>&ldquo;A 3 night kayak extravaganza&rdquo;</figcaption>
+        </figure>
+        <figure class="optin-prompt__polaroid optin-prompt__polaroid--2">
+            <img src="{{asset "images/post-optin/review-beach.jpg"}}" alt="" loading="lazy" />
+            <figcaption>&ldquo;I did not regret a single minute&rdquo;</figcaption>
+        </figure>
+        <figure class="optin-prompt__polaroid optin-prompt__polaroid--3">
+            <img src="{{asset "images/post-optin/review-paddleboard.jpg"}}" alt="" loading="lazy" />
+            <figcaption>&ldquo;Go before the secret gets out&rdquo;</figcaption>
+        </figure>
+    </div>
+    <div class="optin-prompt__content">
+        <h2 class="optin-prompt__title">Discover your wild side</h2>
+        <p class="optin-prompt__text">Join our adventure community. You'll get top tips, stories and the
+            occasional nice surprise, in your inbox every week.</p>
+        <button type="button" class="optin-prompt__cta">I'm in</button>
+    </div>
+    <img class="optin-prompt__arrow" src="{{asset "images/post-optin/arrow-lime.png"}}" alt="" aria-hidden="true" />
+</aside>

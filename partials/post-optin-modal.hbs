@@ -1,0 +1,34 @@
+{{!-- Email opt-in modal. Hidden by default; opened by assets/js/post-optin.js when
+the in-page prompt's "I'm in" button is clicked. Submits to the existing
+Mailchimp list via JSONP (see post-optin.js). --}}
+<div class="optin-modal" id="optin-modal" aria-hidden="true">
+    <div class="optin-modal__backdrop" data-optin-close></div>
+    <div class="optin-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="optin-modal-title">
+        <button type="button" class="optin-modal__close" data-optin-close aria-label="Close">&times;</button>
+        <div class="optin-modal__body">
+            <h2 class="optin-modal__title" id="optin-modal-title">Inspiration in your inbox</h2>
+            <form class="optin-modal__form" novalidate>
+                <input type="email" class="optin-modal__email" name="EMAIL" autocomplete="email"
+                    placeholder="Your email, please" required />
+                <label class="optin-modal__consent">
+                    <input type="checkbox" class="optin-modal__consent-checkbox" name="gdpr" required />
+                    <span>Yes, send me the Much Better Adventures newsletter with trip inspiration, advice, and
+                        offers.</span>
+                </label>
+                <button class="optin-modal__submit" type="submit">
+                    <span class="button-content">Sign me up</span>
+                    <span class="button-loader">{{> "icons/loader"}}</span>
+                </button>
+                <div class="message-success optin-modal__message">
+                    <strong>Great!</strong> Check your inbox to confirm your subscription.
+                </div>
+                <div class="message-error optin-modal__message">
+                    Please enter a valid email address and tick the box to continue.
+                </div>
+                <p class="optin-modal__fineprint">See how we handle your data in our
+                    <a href="https://www.muchbetteradventures.com/privacy-policy" target="_blank"
+                        rel="noopener">Privacy Policy</a>. Unsubscribe any time.</p>
+            </form>
+        </div>
+    </div>
+</div>
