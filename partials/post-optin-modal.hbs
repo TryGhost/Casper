@@ -1,6 +1,6 @@
 {{!-- Email opt-in modal. Hidden by default; opened by assets/js/post-optin.js when
-the in-page prompt's "I'm in" button is clicked. Submits to the existing
-Mailchimp list via JSONP (see post-optin.js). --}}
+the in-page prompt's "I'm in" button is clicked. Submits to HubSpot's Forms API
+(see post-optin.js). --}}
 <div class="optin-modal" id="optin-modal" aria-hidden="true">
     <div class="optin-modal__backdrop" data-optin-close></div>
     <div class="optin-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="optin-modal-title">
@@ -8,7 +8,7 @@ Mailchimp list via JSONP (see post-optin.js). --}}
         <div class="optin-modal__body">
             <h2 class="optin-modal__title" id="optin-modal-title">Inspiration in your inbox</h2>
             <form class="optin-modal__form" novalidate>
-                <input type="email" class="optin-modal__email" name="EMAIL" autocomplete="email"
+                <input type="email" class="optin-modal__email" name="email" autocomplete="email"
                     placeholder="Your email, please" required />
                 <label class="optin-modal__consent">
                     <input type="checkbox" class="optin-modal__consent-checkbox" name="gdpr" required />

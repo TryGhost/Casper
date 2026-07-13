@@ -1,12 +1,12 @@
 /* eslint-env browser */
-/* global jQuery */
 
 /**
  * Email opt-in prompt + modal (ACT-86)
  *
  * On mag article pages, clones the hidden #optin-prompt-tpl into the top third
  * of the article body. Clicking "I'm in" opens the sign-up modal, which submits
- * to the existing Mailchimp list via JSONP and shows inline success/error.
+ * to HubSpot's Forms API (mirroring the shopfront homepage newsletter signup)
+ * and shows inline success/error.
  *
  * Once a visitor has signed up we remember it in localStorage and stop showing
  * the prompt. Segment events (window.analytics) are fired when available and
@@ -17,8 +17,15 @@
     "use strict";
 
     var STORAGE_KEY = "mba_optin_signed_up";
-    var MAILCHIMP_URL =
-        "https://muchbetteradventures.us2.list-manage.com/subscribe/post-json?u=8ef039ed02db26fcd1c723274&id=a887ab1707&c=?";
+
+    // HubSpot newsletter form config. These values are public (visible in HubSpot form embeds).
+    var HUBSPOT_PORTAL_ID = 24999114;
+    var HUBSPOT_FORM_GUID = "fffa7192-9995-4a66-9b69-5db898ac83f1";
+    var HUBSPOT_SUBSCRIPTION_TYPE_IDS = [360468751,119125723];
+    // Must match the consent checkbox copy in partials/post-optin-modal.hbs
+    var CONSENT_TEXT =
+        "Yes, send me the Much Better Adventures newsletter with trip inspiration, advice, and offers.";
+
     var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     function track(event, props) {
@@ -41,6 +48,45 @@
         } catch (e) {
             /* localStorage unavailable — nothing we can do, fail silently */
         }
+    }
+
+    // The hubspotutk cookie is set by HubSpot's tracking script when present on
+    // the site. It ties the submission to a known visitor; optional, like the
+    // shopfront signup.
+    function readCookie(name) {
+        var match = document.cookie.match(
+            new RegExp("(?:^|; )" + name + "=([^;]*)")
+        );
+        return match ? decodeURIComponent(match[1]) : undefined;
+    }
+
+    // HubSpot's legitimateInterest consent accepts a single subscriptionTypeId
+    // per submission, so we build one payload per configured type and submit
+    // them all in parallel (see the form submit handler).
+    function buildHubSpotPayloads(email) {
+        var context = { pageUri: window.location.href };
+        var hutk = readCookie("hubspotutk");
+        if (hutk) {
+            context.hutk = hutk;
+        }
+
+        var submittedAt = Date.now();
+
+        return HUBSPOT_SUBSCRIPTION_TYPE_IDS.map(function (subscriptionTypeId) {
+            return {
+                submittedAt: submittedAt,
+                fields: [{ objectTypeId: "0-1", name: "email", value: email }],
+                context: context,
+                legalConsentOptions: {
+                    legitimateInterest: {
+                        value: true,
+                        subscriptionTypeId: subscriptionTypeId,
+                        legalBasis: "CUSTOMER",
+                        text: CONSENT_TEXT
+                    }
+                }
+            };
+        });
     }
 
     function directParagraphs(el) {
@@ -141,48 +187,76 @@
                 }
             }
 
-            jQuery
-                .ajax({
-                    url: MAILCHIMP_URL,
-                    data: { EMAIL: value, "gdpr[13]": "Y" },
-                    dataType: "jsonp",
-                    cache: false,
-                    timeout: 10000
+            var payloads = buildHubSpotPayloads(value);
+            // No subscription types configured — a misconfiguration. Surface an
+            // error rather than a false success (Promise.all([]) resolves).
+            if (!payloads.length) {
+                console.error("No subscription types configured — a misconfiguration.", payloads);
+                form.classList.remove("is-loading");
+                showError("Something went wrong. Please try again.");
+                track("Email Opt-In Submitted", { success: false });
+                return;
+            }
+
+            var url =
+                "https://api.hsforms.com/submissions/v3/integration/submit/" +
+                HUBSPOT_PORTAL_ID +
+                "/" +
+                HUBSPOT_FORM_GUID;
+
+            Promise.all(
+                payloads.map(function (payload) {
+                    return fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    }).then(function (res) {
+                        if (res.ok) {
+                            return;
+                        }
+                        // Non-OK — inspect the error body for an invalid-email
+                        // rejection so we can surface a friendly message.
+                        return res
+                            .json()
+                            .catch(function () {
+                                return {};
+                            })
+                            .then(function (body) {
+                                var firstError =
+                                    body && body.errors && body.errors[0];
+                                var errorType = firstError && firstError.errorType;
+                                var msg =
+                                    (firstError && firstError.message) ||
+                                    (body && body.message) ||
+                                    "";
+                                if (
+                                    errorType === "INVALID_EMAIL" ||
+                                    /invalid email/i.test(msg)
+                                ) {
+                                    var invalid = new Error(
+                                        "Please enter a valid email address."
+                                    );
+                                    invalid.invalidEmail = true;
+                                    throw invalid;
+                                }
+                                throw new Error(msg || "Failed to submit to HubSpot");
+                            });
+                    });
                 })
-                // Mailchimp answered — inspect the payload it returned.
-                .done(function (resp) {
+            )
+                .then(function () {
                     form.classList.remove("is-loading");
-
-                    // An email already on the list comes back as result: "error",
-                    // but for an opt-in prompt that's effectively a success — they
-                    // are subscribed either way, so treat it as one.
-                    var alreadySubscribed = !!(
-                        resp &&
-                        resp.msg &&
-                        /already subscribed/i.test(resp.msg)
-                    );
-                    var ok = !!(
-                        resp &&
-                        (resp.result === "success" || alreadySubscribed)
-                    );
-
-                    if (ok) {
-                        form.classList.add("is-success");
-                        rememberSignedUp();
-                    } else {
-                        // Mailchimp prefixes some messages e.g. "0 - Invalid email".
-                        var msg = resp && resp.msg
-                            ? String(resp.msg).replace(/^\d+\s*-\s*/, "")
-                            : "";
-                        showError(msg);
-                    }
-
-                    track("Email Opt-In Submitted", { success: ok });
+                    form.classList.add("is-success");
+                    rememberSignedUp();
+                    track("Email Opt-In Submitted", { success: true });
                 })
-                // The request never landed (network error / timeout / blocked).
-                .fail(function () {
+                .catch(function (err) {
                     form.classList.remove("is-loading");
-                    showError("Something went wrong. Please try again.");
+                    showError(
+                        err && err.invalidEmail
+                            ? err.message
+                            : "Something went wrong. Please try again."
+                    );
                     track("Email Opt-In Submitted", { success: false });
                 });
         });
@@ -199,7 +273,7 @@
         var template = document.getElementById("optin-prompt-tpl");
         var modalEl = document.getElementById("optin-modal");
 
-        if (!content || !template || !modalEl || !window.jQuery) {
+        if (!content || !template || !modalEl) {
             return;
         }
 
