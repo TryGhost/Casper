@@ -14,6 +14,12 @@
   },
   "scripts": {
     "dev": "gulp",
+    "local:up": "docker compose up -d",
+    "local:down": "docker compose down",
+    "local:logs": "docker compose logs -f ghost",
+    "local:restart": "docker compose restart ghost",
+    "local:reset": "docker compose down -v",
+    "local:seed": "docker compose run --rm seed",
     "zip": "gulp zip",
     "test": "gscan .",
     "test:ci": "gscan --fatal --verbose .",

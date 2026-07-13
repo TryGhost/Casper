@@ -1,0 +1,22 @@
+# Routing for local development, reproducing the magazine home page.
+#
+# home.hbs is a static-page-driven template: it routes `/` to the page with
+# slug "home" and iterates that page's tags to build the section list. The
+# seed uploads this via the Admin API (Settings -> Labs -> Routes shows it).
+#
+# Posts keep root-level permalinks (/{slug}/); their paginated archive lives
+# at /posts/. Tag/author archives are unchanged.
+
+routes:
+  /:
+    template: home
+    data: page.home
+
+collections:
+  /posts/:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

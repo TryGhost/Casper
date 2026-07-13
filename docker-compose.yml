@@ -1,0 +1,73 @@
+# Local development stack for the MBA Ghost theme.
+#
+# Runs a Ghost server in Docker with this theme folder mounted into it, so you
+# can edit templates/assets on the host and see them in a real Ghost instance.
+#
+# See LOCAL_DEV.md for the full workflow.
+
+services:
+  ghost:
+    # Pin a specific Ghost version by exporting GHOST_VERSION, e.g.
+    #   GHOST_VERSION=5.100.0-alpine docker compose up -d
+    image: ghost:${GHOST_VERSION:-5-alpine}
+    container_name: ghost-mba
+    restart: unless-stopped
+    ports:
+      - "2368:2368"
+    environment:
+      # Run in production mode (the image default). Do NOT set NODE_ENV to
+      # development: that makes Ghost read content from inside its version
+      # directory (content/ relative to the install) instead of the absolute
+      # /var/lib/ghost/content we mount into — so the theme and persisted data
+      # would both be ignored.
+      url: http://localhost:2368
+      # Production defaults to MySQL; pin sqlite so no external DB is needed.
+      # The DB lives under the mounted content dir, so it persists in the volume.
+      database__client: sqlite3
+      database__connection__filename: /var/lib/ghost/content/data/ghost.db
+    volumes:
+      # This theme, mounted live. Edits on the host show up in the container.
+      # Folder name here ("mba-mag") is how Ghost lists the theme in admin.
+      - ./:/var/lib/ghost/content/themes/mba-mag
+      # Shadow .git and node_modules with empty container-owned volumes. Ghost's
+      # entrypoint runs `chown -R` over the theme and can't chown the host's
+      # read-only .git pack files (Docker Desktop / virtiofs), which otherwise
+      # crash-loops the container. Ghost doesn't need either folder anyway.
+      - /var/lib/ghost/content/themes/mba-mag/.git
+      - /var/lib/ghost/content/themes/mba-mag/node_modules
+      # Persist Ghost data (admin account, posts, uploaded images) across
+      # restarts. Remove this volume to start from a clean slate:
+      #   docker compose down -v
+      - ghost-content:/var/lib/ghost/content
+      # Routing for the magazine home page (read on boot). Mounting it here is
+      # simpler than uploading via the API: no restart dance, and it's declared
+      # in one place. Edit dev-content/routes.yaml then `yarn local:restart`.
+      - ./dev-content/routes.yaml:/var/lib/ghost/content/settings/routes.yaml
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:2368/"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 40s
+
+  # One-shot demo-content seeder. Only runs when explicitly requested (it's in
+  # the "seed" profile, so `docker compose up` never starts it):
+  #   yarn local:seed   ->   docker compose run --rm seed
+  # Reuses the Ghost image (same node + sqlite3/jwt/bcryptjs deps), shares the
+  # content volume for DB access, and reaches Ghost over the compose network.
+  seed:
+    image: ghost:${GHOST_VERSION:-5-alpine}
+    profiles: ["seed"]
+    depends_on:
+      ghost:
+        condition: service_healthy
+    environment:
+      NODE_PATH: /var/lib/ghost/current/node_modules
+      GHOST_URL: http://ghost:2368
+    volumes:
+      - ./dev-content:/seed:ro
+      - ghost-content:/var/lib/ghost/content
+    entrypoint: ["node", "/seed/seed.js"]
+
+volumes:
+  ghost-content:
