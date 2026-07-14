@@ -57,6 +57,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--gh-font-heading, var(--font-serif));
 }
 
+.blog-category h2 a {
+    color: inherit;
+}
+
 @media (max-width: 600px) {
     h2 { font-size: 2.4rem; }
     h3 { font-size: 2.0rem; }

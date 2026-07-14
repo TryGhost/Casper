@@ -1,0 +1,38 @@
+{{!< default}}
+
+<main class="site-main outer">
+    <div class="inner">
+
+        {{#post}}
+            <header class="article-header">
+                <h1 class="article-title">{{title}}</h1>
+            </header>
+        {{/post}}
+
+        {{#get "tags" limit="100" order="name asc"}}
+            {{#foreach tags}}
+
+                <section class="blog-category">
+                    <h2>
+                        <a href="{{url}}">{{name}}</a>
+                    </h2>
+
+                    <div class="post-feed">
+                        {{#get "posts"
+                            filter="primary_tag:{{slug}}"
+                            include="authors,tags"
+                            order="published_at desc"}}
+
+                            {{#foreach posts}}
+                                {{> "post-card"}}
+                            {{/foreach}}
+
+                        {{/get}}
+                    </div>
+                </section>
+
+            {{/foreach}}
+        {{/get}}
+
+    </div>
+</main>
