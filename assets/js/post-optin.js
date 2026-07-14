@@ -141,7 +141,7 @@
 
         function onKeydown(e) {
             if (e.key === "Escape" || e.keyCode === 27) {
-                close();
+                close("escape");
             }
         }
 
@@ -154,16 +154,27 @@
             }
         }
 
-        function close() {
+        function close(method) {
+            // Guard against firing a dismissal when the modal isn't actually
+            // open (e.g. a stray close handler) — only a real close counts.
+            if (!modal.classList.contains("is-open")) {
+                return;
+            }
             modal.classList.remove("is-open");
             modal.setAttribute("aria-hidden", "true");
             document.removeEventListener("keydown", onKeydown);
+            track("Email Opt-In Dismissed", {
+                method: typeof method === "string" ? method : "button",
+                signedUp: form.classList.contains("is-success")
+            });
         }
 
         Array.prototype.forEach.call(
             modal.querySelectorAll("[data-optin-close]"),
             function (el) {
-                el.addEventListener("click", close);
+                el.addEventListener("click", function () {
+                    close("button");
+                });
             }
         );
 
