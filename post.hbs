@@ -143,6 +143,14 @@ into the {body} of the default.hbs template --}}
 
         </article>
 
+        {{!-- Email opt-in prompt (ACT-86). The prompt markup lives in a hidden
+        template; assets/js/post-optin.js clones it into the top third of the
+        article body and wires up the sign-up modal below. --}}
+        <template id="optin-prompt-tpl">
+            {{> post-optin-prompt}}
+        </template>
+        {{> post-optin-modal}}
+
     </div>
 </main>
 
