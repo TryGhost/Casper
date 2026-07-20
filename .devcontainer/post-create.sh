@@ -9,11 +9,8 @@ sudo chown -R node:node "$PNPM_HOME" "${PWD}/node_modules"
 sudo corepack enable
 sudo corepack prepare pnpm@11.5.2 --activate
 
-sudo npm install -g @openai/codex
-
 pnpm config set store-dir "$PNPM_HOME/store"
 pnpm install --frozen-lockfile
 
-codex --version
 pnpm --version
 node --version

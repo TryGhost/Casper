@@ -18,8 +18,7 @@
         "vscode": {
             "extensions": [
                 "dbaeumer.vscode-eslint",
-                "stylelint.vscode-stylelint",
-                "openai.chatgpt"
+                "stylelint.vscode-stylelint"
             ]
         }
     }
