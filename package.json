@@ -1,8 +1,8 @@
 {
     "name": "miuh-ghost-theme",
     "description": "GDPR-compliant Ghost theme based on Casper",
-    "demo": "https://demo.ghost.io",
-    "version": "1.4.3",
+    "demo": "https://michaeluhrich.xyz/",
+    "version": "1.4.4",
     "engines": {
         "ghost": ">=5.0.0",
         "node": ">=22.12.0"
@@ -26,9 +26,9 @@
     },
     "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916",
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org/"
+        "name": "Michael Uhrich",
+        "email": "admin@michaeluhrich.xyz",
+        "url": "https://michaeluhrich.xyz/"
     },
     "gpm": {
         "type": "theme",
@@ -46,7 +46,7 @@
         "type": "git",
         "url": "https://github.com/mi-uh/miuh-ghost-theme.git"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
+    "bugs": "https://github.com/mi-uh/miuh-ghost-theme/issues",
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
