@@ -22,8 +22,8 @@ const easyimport = require('postcss-easy-import');
 // translations support
 const { mergeLocales } = require('@tryghost/theme-translations/build');
 
-const REPO = 'TryGhost/Casper';
-const REPO_READONLY = 'TryGhost/Casper';
+const REPO = 'mi-uh/miuh-ghost-theme';
+const REPO_READONLY = REPO;
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
 function serve(done) {
@@ -149,7 +149,7 @@ exports.release = async () => {
         const compatibleWithGhost = result.compatibleWithGhost;
 
         const releasesResponse = await releaseUtils.releases.get({
-            userAgent: 'Casper',
+            userAgent: 'miuh-ghost-theme',
             uri: `https://api.github.com/repos/${REPO_READONLY}/releases`
         });
 
@@ -179,7 +179,7 @@ exports.release = async () => {
             preRelease: false,
             tagName: 'v' + newVersion,
             releaseName: newVersion,
-            userAgent: 'Casper',
+            userAgent: 'miuh-ghost-theme',
             uri: `https://api.github.com/repos/${REPO}/releases`,
             github: {
                 token: githubToken
