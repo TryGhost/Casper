@@ -10,22 +10,22 @@ importers:
     devDependencies:
       '@tryghost/release-utils':
         specifier: 0.9.1
-        version: 0.9.1
+        version: 0.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@tryghost/theme-translations':
         specifier: 0.0.22
         version: 0.0.22
       autoprefixer:
-        specifier: 10.5.2
-        version: 10.5.2(postcss@8.5.16)
+        specifier: 10.5.4
+        version: 10.5.4(postcss@8.5.20)
       beeper:
         specifier: 2.1.0
         version: 2.1.0
       cssnano:
         specifier: 8.0.2
-        version: 8.0.2(postcss@8.5.16)
+        version: 8.0.2(postcss@8.5.20)
       gscan:
         specifier: 6.4.2
-        version: 6.4.2(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))
+        version: 6.4.2(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(supports-color@7.2.0)
       gulp:
         specifier: 5.0.1
         version: 5.0.1
@@ -34,10 +34,10 @@ importers:
         version: 2.6.1
       gulp-livereload:
         specifier: 4.0.2
-        version: 4.0.2
+        version: 4.0.2(supports-color@7.2.0)
       gulp-postcss:
         specifier: 10.0.0
-        version: 10.0.0(postcss@8.5.16)
+        version: 10.0.0(postcss@8.5.20)
       gulp-uglify:
         specifier: 3.0.2
         version: 3.0.2
@@ -48,14 +48,14 @@ importers:
         specifier: 14.0.2
         version: 14.0.2(@types/node@26.1.1)
       postcss:
-        specifier: 8.5.16
-        version: 8.5.16
+        specifier: 8.5.20
+        version: 8.5.20
       postcss-color-mod-function:
         specifier: 4.1.1
-        version: 4.1.1(postcss@8.5.16)
+        version: 4.1.1(postcss@8.5.20)
       postcss-easy-import:
         specifier: 4.0.0
-        version: 4.0.0(postcss@8.5.16)
+        version: 4.0.0(postcss@8.5.20)
       pump:
         specifier: 3.0.4
         version: 3.0.4
@@ -1305,8 +1305,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  autoprefixer@10.5.2:
-    resolution: {integrity: sha512-rD5t5DwOjJdmSORcTq64j8MawTC+tbQ+HHqjR4NDumamy/ambn1UJrlKL+KdwujWxMkFjPM3pPHOEA9tl4767Q==}
+  autoprefixer@10.5.4:
+    resolution: {integrity: sha512-MaU0U/za7N3r6brxD4YB/l4NSrFzLPlANv6wEuQVaIPlD3L4W9rFcQPbL/EilY9BHhHvhfcz3gInDLrEtWT4EA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -2847,8 +2847,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.16:
-    resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
+  postcss@8.5.20:
+    resolution: {integrity: sha512-lW616l85ucIQL+FocMmL7pQFPqBmwejrCMg+iPxyImlrANNJG9NHq/RkyCZopDhd8C3LA03PHRJDjkbGu8vvug==}
     engines: {node: ^10 || ^12 || >=14}
 
   prettyjson@1.2.5:
@@ -3387,10 +3387,10 @@ snapshots:
       semifies: 1.0.0
       source-map: 0.6.1
 
-  '@apm-js-collab/tracing-hooks@0.10.1':
+  '@apm-js-collab/tracing-hooks@0.10.1(supports-color@7.2.0)':
     dependencies:
       '@apm-js-collab/code-transformer': 0.15.0
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       module-details-from-path: 1.0.4
     transitivePeerDependencies:
       - supports-color
@@ -3401,20 +3401,20 @@ snapshots:
 
   '@csstools/convert-colors@1.4.0': {}
 
-  '@elastic/elasticsearch@8.19.1':
+  '@elastic/elasticsearch@8.19.1(supports-color@7.2.0)':
     dependencies:
-      '@elastic/transport': 8.10.2
+      '@elastic/transport': 8.10.2(supports-color@7.2.0)
       apache-arrow: 21.1.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@75lb/nature'
       - supports-color
 
-  '@elastic/transport@8.10.2':
+  '@elastic/transport@8.10.2(supports-color@7.2.0)':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/core': 2.9.0(@opentelemetry/api@1.9.1)
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       hpagent: 1.2.0
       ms: 2.1.3
       secure-json-parse: 3.0.2
@@ -3565,12 +3565,12 @@ snapshots:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/semantic-conventions': 1.43.0
 
-  '@opentelemetry/instrumentation@0.220.0(@opentelemetry/api@1.9.1)':
+  '@opentelemetry/instrumentation@0.220.0(@opentelemetry/api@1.9.1)(supports-color@7.2.0)':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/api-logs': 0.220.0
       import-in-the-middle: 3.3.1
-      require-in-the-middle: 8.0.1
+      require-in-the-middle: 8.0.1(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3605,7 +3605,7 @@ snapshots:
     dependencies:
       '@sentry/conventions': 0.15.1
 
-  '@sentry/node-core@10.65.0(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(@opentelemetry/instrumentation@0.220.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.9.0(@opentelemetry/api@1.9.1))':
+  '@sentry/node-core@10.65.0(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(@opentelemetry/instrumentation@0.220.0(@opentelemetry/api@1.9.1)(supports-color@7.2.0))(@opentelemetry/sdk-trace-base@2.9.0(@opentelemetry/api@1.9.1))':
     dependencies:
       '@sentry/conventions': 0.15.1
       '@sentry/core': 10.65.0
@@ -3614,19 +3614,19 @@ snapshots:
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/core': 2.9.0(@opentelemetry/api@1.9.1)
-      '@opentelemetry/instrumentation': 0.220.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/instrumentation': 0.220.0(@opentelemetry/api@1.9.1)(supports-color@7.2.0)
       '@opentelemetry/sdk-trace-base': 2.9.0(@opentelemetry/api@1.9.1)
 
-  '@sentry/node@10.65.0(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))':
+  '@sentry/node@10.65.0(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(supports-color@7.2.0)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/instrumentation': 0.220.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/instrumentation': 0.220.0(@opentelemetry/api@1.9.1)(supports-color@7.2.0)
       '@opentelemetry/sdk-trace-base': 2.9.0(@opentelemetry/api@1.9.1)
       '@sentry/conventions': 0.15.1
       '@sentry/core': 10.65.0
-      '@sentry/node-core': 10.65.0(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(@opentelemetry/instrumentation@0.220.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.9.0(@opentelemetry/api@1.9.1))
+      '@sentry/node-core': 10.65.0(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(@opentelemetry/instrumentation@0.220.0(@opentelemetry/api@1.9.1)(supports-color@7.2.0))(@opentelemetry/sdk-trace-base@2.9.0(@opentelemetry/api@1.9.1))
       '@sentry/opentelemetry': 10.65.0(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.9.0(@opentelemetry/api@1.9.1))
-      '@sentry/server-utils': 10.65.0
+      '@sentry/server-utils': 10.65.0(supports-color@7.2.0)
       import-in-the-middle: 3.3.1
     transitivePeerDependencies:
       - '@opentelemetry/core'
@@ -3641,11 +3641,11 @@ snapshots:
       '@sentry/conventions': 0.15.1
       '@sentry/core': 10.65.0
 
-  '@sentry/server-utils@10.65.0':
+  '@sentry/server-utils@10.65.0(supports-color@7.2.0)':
     dependencies:
       '@apm-js-collab/code-transformer': 0.15.0
       '@apm-js-collab/code-transformer-bundler-plugins': 0.5.0
-      '@apm-js-collab/tracing-hooks': 0.10.1
+      '@apm-js-collab/tracing-hooks': 0.10.1(supports-color@7.2.0)
       '@sentry/conventions': 0.15.1
       '@sentry/core': 10.65.0
       magic-string: 0.30.21
@@ -3753,13 +3753,13 @@ snapshots:
     dependencies:
       '@stdlib/assert-is-uint8clampedarray': 0.2.3
 
-  '@stdlib/assert-is-arguments@0.2.3':
+  '@stdlib/assert-is-arguments@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/assert-has-own-property': 0.2.3
       '@stdlib/assert-is-array': 0.2.3
-      '@stdlib/assert-is-enumerable-property': 0.2.3
+      '@stdlib/assert-is-enumerable-property': 0.2.3(supports-color@7.2.0)
       '@stdlib/constants-uint32-max': 0.2.3
-      '@stdlib/math-base-assert-is-integer': 0.2.7
+      '@stdlib/math-base-assert-is-integer': 0.2.7(supports-color@7.2.0)
       '@stdlib/utils-native-class': 0.2.3
     transitivePeerDependencies:
       - supports-color
@@ -3784,17 +3784,17 @@ snapshots:
     dependencies:
       '@stdlib/assert-is-object-like': 0.2.3
 
-  '@stdlib/assert-is-collection@0.2.3':
+  '@stdlib/assert-is-collection@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-array-max-typed-array-length': 0.2.3
-      '@stdlib/math-base-assert-is-integer': 0.2.7
+      '@stdlib/math-base-assert-is-integer': 0.2.7(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/assert-is-enumerable-property@0.2.3':
+  '@stdlib/assert-is-enumerable-property@0.2.3(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/assert-is-integer': 0.2.3
-      '@stdlib/assert-is-nan': 0.2.3
+      '@stdlib/assert-is-integer': 0.2.3(supports-color@7.2.0)
+      '@stdlib/assert-is-nan': 0.2.3(supports-color@7.2.0)
       '@stdlib/assert-is-string': 0.2.3
     transitivePeerDependencies:
       - supports-color
@@ -3828,12 +3828,12 @@ snapshots:
     dependencies:
       '@stdlib/utils-native-class': 0.2.3
 
-  '@stdlib/assert-is-integer@0.2.3':
+  '@stdlib/assert-is-integer@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/assert-is-number': 0.2.3
       '@stdlib/constants-float64-ninf': 0.2.3
       '@stdlib/constants-float64-pinf': 0.2.3
-      '@stdlib/math-base-assert-is-integer': 0.2.7
+      '@stdlib/math-base-assert-is-integer': 0.2.7(supports-color@7.2.0)
       '@stdlib/utils-define-nonenumerable-read-only-property': 0.2.3
     transitivePeerDependencies:
       - supports-color
@@ -3843,17 +3843,17 @@ snapshots:
       '@stdlib/array-uint16': 0.2.3
       '@stdlib/array-uint8': 0.2.3
 
-  '@stdlib/assert-is-nan@0.2.3':
+  '@stdlib/assert-is-nan@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/assert-is-number': 0.2.3
-      '@stdlib/math-base-assert-is-nan': 0.2.3
+      '@stdlib/math-base-assert-is-nan': 0.2.3(supports-color@7.2.0)
       '@stdlib/utils-define-nonenumerable-read-only-property': 0.2.3
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/assert-is-nonnegative-integer@0.2.3':
+  '@stdlib/assert-is-nonnegative-integer@0.2.3(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/assert-is-integer': 0.2.3
+      '@stdlib/assert-is-integer': 0.2.3(supports-color@7.2.0)
       '@stdlib/utils-define-nonenumerable-read-only-property': 0.2.3
     transitivePeerDependencies:
       - supports-color
@@ -3909,18 +3909,18 @@ snapshots:
     dependencies:
       '@stdlib/utils-native-class': 0.2.3
 
-  '@stdlib/assert-napi-equal-types@0.2.3':
+  '@stdlib/assert-napi-equal-types@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/assert-napi-status-ok': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/assert-napi-is-type@0.2.3':
+  '@stdlib/assert-napi-is-type@0.2.3(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/assert-napi-equal-types': 0.2.3
+      '@stdlib/assert-napi-equal-types': 0.2.3(supports-color@7.2.0)
       '@stdlib/assert-napi-status-ok': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4064,119 +4064,119 @@ snapshots:
       '@stdlib/string-format': 0.2.3
       '@stdlib/utils-define-nonenumerable-read-only-property': 0.2.3
 
-  '@stdlib/math-base-assert-is-finite@0.2.3':
+  '@stdlib/math-base-assert-is-finite@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float64-ninf': 0.2.3
       '@stdlib/constants-float64-pinf': 0.2.3
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/napi-argv-double': 0.2.2
-      '@stdlib/napi-create-int32': 0.0.3
+      '@stdlib/napi-argv-double': 0.2.2(supports-color@7.2.0)
+      '@stdlib/napi-create-int32': 0.0.3(supports-color@7.2.0)
       '@stdlib/napi-export': 0.3.1
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-assert-is-finitef@0.2.3':
+  '@stdlib/math-base-assert-is-finitef@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float32-ninf': 0.2.3
       '@stdlib/constants-float32-pinf': 0.2.3
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/napi-argv-float': 0.2.3
-      '@stdlib/napi-create-int32': 0.0.3
+      '@stdlib/napi-argv-float': 0.2.3(supports-color@7.2.0)
+      '@stdlib/napi-create-int32': 0.0.3(supports-color@7.2.0)
       '@stdlib/napi-export': 0.3.1
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-assert-is-integer@0.2.7':
+  '@stdlib/math-base-assert-is-integer@0.2.7(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/math-base-special-floor': 0.2.4
+      '@stdlib/math-base-special-floor': 0.2.4(supports-color@7.2.0)
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/napi-argv-double': 0.2.2
-      '@stdlib/napi-create-int32': 0.0.3
+      '@stdlib/napi-argv-double': 0.2.2(supports-color@7.2.0)
+      '@stdlib/napi-create-int32': 0.0.3(supports-color@7.2.0)
       '@stdlib/napi-export': 0.3.1
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-assert-is-nan@0.2.3':
+  '@stdlib/math-base-assert-is-nan@0.2.3(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-assert-is-nanf@0.2.3':
+  '@stdlib/math-base-assert-is-nanf@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/napi-argv-float': 0.2.3
-      '@stdlib/napi-create-int32': 0.0.3
+      '@stdlib/napi-argv-float': 0.2.3(supports-color@7.2.0)
+      '@stdlib/napi-create-int32': 0.0.3(supports-color@7.2.0)
       '@stdlib/napi-export': 0.3.1
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-napi-unary@0.2.7':
+  '@stdlib/math-base-napi-unary@0.2.7(supports-color@7.2.0)':
     dependencies:
       '@stdlib/complex-float32-ctor': 0.1.1
       '@stdlib/complex-float32-reim': 0.1.4
       '@stdlib/complex-float64-ctor': 0.1.2
       '@stdlib/complex-float64-reim': 0.1.4
-      '@stdlib/number-float16-base-to-float64': 0.1.2
-      '@stdlib/number-float16-ctor': 0.1.2
-      '@stdlib/number-float64-base-to-float16': 0.1.2
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/number-float16-base-to-float64': 0.1.2(supports-color@7.2.0)
+      '@stdlib/number-float16-ctor': 0.1.2(supports-color@7.2.0)
+      '@stdlib/number-float64-base-to-float16': 0.1.2(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-special-abs@0.2.3':
+  '@stdlib/math-base-special-abs@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float64-high-word-abs-mask': 0.2.3
-      '@stdlib/math-base-napi-unary': 0.2.7
-      '@stdlib/number-float64-base-to-words': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/math-base-napi-unary': 0.2.7(supports-color@7.2.0)
+      '@stdlib/number-float64-base-to-words': 0.2.3(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-special-absf@0.2.3':
+  '@stdlib/math-base-special-absf@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float32-abs-mask': 0.2.3
-      '@stdlib/math-base-napi-unary': 0.2.7
-      '@stdlib/number-float32-base-to-word': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/math-base-napi-unary': 0.2.7(supports-color@7.2.0)
+      '@stdlib/number-float32-base-to-word': 0.2.3(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/math-base-special-floor@0.2.4':
+  '@stdlib/math-base-special-floor@0.2.4(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/math-base-napi-unary': 0.2.7
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/math-base-napi-unary': 0.2.7(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/napi-argv-double@0.2.2':
+  '@stdlib/napi-argv-double@0.2.2(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/assert-napi-is-type': 0.2.3
+      '@stdlib/assert-napi-is-type': 0.2.3(supports-color@7.2.0)
       '@stdlib/assert-napi-status-ok': 0.2.3
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/napi-argv-float@0.2.3':
+  '@stdlib/napi-argv-float@0.2.3(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/assert-napi-is-type': 0.2.3
+      '@stdlib/assert-napi-is-type': 0.2.3(supports-color@7.2.0)
       '@stdlib/assert-napi-status-ok': 0.2.3
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/napi-argv-int32@0.2.3':
+  '@stdlib/napi-argv-int32@0.2.3(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/assert-napi-is-type': 0.2.3
+      '@stdlib/assert-napi-is-type': 0.2.3(supports-color@7.2.0)
       '@stdlib/assert-napi-status-ok': 0.2.3
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4184,12 +4184,12 @@ snapshots:
     dependencies:
       '@stdlib/assert-napi-status-ok': 0.2.3
 
-  '@stdlib/napi-create-int32@0.0.3':
+  '@stdlib/napi-create-int32@0.0.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/assert-napi-status-ok': 0.2.3
       '@stdlib/napi-argv': 0.2.3
-      '@stdlib/napi-argv-int32': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/napi-argv-int32': 0.2.3(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4197,7 +4197,7 @@ snapshots:
 
   '@stdlib/number-ctor@0.2.3': {}
 
-  '@stdlib/number-float16-base-to-float32@0.1.2':
+  '@stdlib/number-float16-base-to-float32@0.1.2(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float16-exponent-bias': 0.3.1
       '@stdlib/constants-float16-exponent-mask': 0.1.1
@@ -4207,29 +4207,29 @@ snapshots:
       '@stdlib/constants-float32-exponent-bias': 0.2.3
       '@stdlib/constants-float32-exponent-mask': 0.2.3
       '@stdlib/constants-float32-num-significand-bits': 0.1.1
-      '@stdlib/number-float16-ctor': 0.1.2
-      '@stdlib/number-float32-base-to-float16': 0.1.1
-      '@stdlib/number-float64-base-to-float16': 0.1.2
+      '@stdlib/number-float16-ctor': 0.1.2(supports-color@7.2.0)
+      '@stdlib/number-float32-base-to-float16': 0.1.1(supports-color@7.2.0)
+      '@stdlib/number-float64-base-to-float16': 0.1.2(supports-color@7.2.0)
       '@stdlib/number-float64-base-to-float32': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/number-float16-base-to-float64@0.1.2':
+  '@stdlib/number-float16-base-to-float64@0.1.2(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/number-float16-base-to-float32': 0.1.2
-      '@stdlib/number-float16-ctor': 0.1.2
-      '@stdlib/number-float64-base-to-float16': 0.1.2
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/number-float16-base-to-float32': 0.1.2(supports-color@7.2.0)
+      '@stdlib/number-float16-ctor': 0.1.2(supports-color@7.2.0)
+      '@stdlib/number-float64-base-to-float16': 0.1.2(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/number-float16-ctor@0.1.2':
+  '@stdlib/number-float16-ctor@0.1.2(supports-color@7.2.0)':
     dependencies:
       '@stdlib/assert-has-to-primitive-symbol-support': 0.1.1
       '@stdlib/assert-is-number': 0.2.3
       '@stdlib/error-tools-fmtprodmsg': 0.2.3
-      '@stdlib/number-float64-base-to-float16': 0.1.2
+      '@stdlib/number-float64-base-to-float16': 0.1.2(supports-color@7.2.0)
       '@stdlib/string-format': 0.2.3
       '@stdlib/symbol-to-primitive': 0.1.2
       '@stdlib/utils-define-nonenumerable-read-only-property': 0.2.3
@@ -4237,16 +4237,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/number-float32-base-exponent@0.2.4':
+  '@stdlib/number-float32-base-exponent@0.2.4(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float32-exponent-bias': 0.2.3
       '@stdlib/constants-float32-exponent-mask': 0.2.3
-      '@stdlib/number-float32-base-to-word': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/number-float32-base-to-word': 0.2.3(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/number-float32-base-to-float16@0.1.1':
+  '@stdlib/number-float32-base-to-float16@0.1.1(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float16-eps': 0.2.3
       '@stdlib/constants-float16-max': 0.2.3
@@ -4257,36 +4257,36 @@ snapshots:
       '@stdlib/constants-float32-pinf': 0.2.3
       '@stdlib/constants-float32-sign-mask': 0.2.3
       '@stdlib/constants-float32-significand-mask': 0.2.4
-      '@stdlib/math-base-assert-is-finitef': 0.2.3
-      '@stdlib/math-base-assert-is-nanf': 0.2.3
-      '@stdlib/math-base-special-absf': 0.2.3
-      '@stdlib/number-float16-ctor': 0.1.2
-      '@stdlib/number-float32-base-exponent': 0.2.4
+      '@stdlib/math-base-assert-is-finitef': 0.2.3(supports-color@7.2.0)
+      '@stdlib/math-base-assert-is-nanf': 0.2.3(supports-color@7.2.0)
+      '@stdlib/math-base-special-absf': 0.2.3(supports-color@7.2.0)
+      '@stdlib/number-float16-ctor': 0.1.2(supports-color@7.2.0)
+      '@stdlib/number-float32-base-exponent': 0.2.4(supports-color@7.2.0)
       '@stdlib/number-float64-base-to-float32': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/number-float32-base-to-word@0.2.3':
+  '@stdlib/number-float32-base-to-word@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/array-float32': 0.2.3
       '@stdlib/array-uint32': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/number-float64-base-to-float16@0.1.2':
+  '@stdlib/number-float64-base-to-float16@0.1.2(supports-color@7.2.0)':
     dependencies:
       '@stdlib/constants-float16-eps': 0.2.3
       '@stdlib/constants-float16-max': 0.2.3
       '@stdlib/constants-float16-smallest-normal': 0.2.3
       '@stdlib/constants-float64-eps': 0.2.3
       '@stdlib/constants-float64-pinf': 0.2.3
-      '@stdlib/math-base-assert-is-finite': 0.2.3
-      '@stdlib/math-base-special-abs': 0.2.3
-      '@stdlib/number-float16-ctor': 0.1.2
-      '@stdlib/number-float32-base-to-float16': 0.1.1
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/math-base-assert-is-finite': 0.2.3(supports-color@7.2.0)
+      '@stdlib/math-base-special-abs': 0.2.3(supports-color@7.2.0)
+      '@stdlib/number-float16-ctor': 0.1.2(supports-color@7.2.0)
+      '@stdlib/number-float32-base-to-float16': 0.1.1(supports-color@7.2.0)
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4294,7 +4294,7 @@ snapshots:
     dependencies:
       '@stdlib/array-float32': 0.2.3
 
-  '@stdlib/number-float64-base-to-words@0.2.3':
+  '@stdlib/number-float64-base-to-words@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/array-float64': 0.2.3
       '@stdlib/array-uint32': 0.2.3
@@ -4302,7 +4302,7 @@ snapshots:
       '@stdlib/os-byte-order': 0.2.3
       '@stdlib/os-float-word-order': 0.2.3
       '@stdlib/utils-define-nonenumerable-read-only-property': 0.2.3
-      '@stdlib/utils-library-manifest': 0.2.4
+      '@stdlib/utils-library-manifest': 0.2.4(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4378,7 +4378,7 @@ snapshots:
       '@stdlib/string-format': 0.2.3
       '@stdlib/string-replace': 0.2.3
 
-  '@stdlib/utils-copy@0.2.3':
+  '@stdlib/utils-copy@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/array-float32': 0.2.3
       '@stdlib/array-float64': 0.2.3
@@ -4393,17 +4393,17 @@ snapshots:
       '@stdlib/assert-is-array': 0.2.3
       '@stdlib/assert-is-buffer': 0.2.3
       '@stdlib/assert-is-error': 0.2.3
-      '@stdlib/assert-is-nonnegative-integer': 0.2.3
+      '@stdlib/assert-is-nonnegative-integer': 0.2.3(supports-color@7.2.0)
       '@stdlib/buffer-from-buffer': 0.2.3
       '@stdlib/constants-float64-pinf': 0.2.3
       '@stdlib/error-tools-fmtprodmsg': 0.2.3
       '@stdlib/string-format': 0.2.3
       '@stdlib/utils-define-property': 0.2.5
       '@stdlib/utils-get-prototype-of': 0.2.3
-      '@stdlib/utils-index-of': 0.2.3
-      '@stdlib/utils-keys': 0.2.3
+      '@stdlib/utils-index-of': 0.2.3(supports-color@7.2.0)
+      '@stdlib/utils-keys': 0.2.3(supports-color@7.2.0)
       '@stdlib/utils-property-descriptor': 0.2.3
-      '@stdlib/utils-property-names': 0.2.3
+      '@stdlib/utils-property-names': 0.2.3(supports-color@7.2.0)
       '@stdlib/utils-regexp-from-string': 0.2.3
       '@stdlib/utils-type-of': 0.2.3
     transitivePeerDependencies:
@@ -4441,34 +4441,34 @@ snapshots:
       '@stdlib/error-tools-fmtprodmsg': 0.2.3
       '@stdlib/string-format': 0.2.3
 
-  '@stdlib/utils-index-of@0.2.3':
+  '@stdlib/utils-index-of@0.2.3(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/assert-is-collection': 0.2.3
-      '@stdlib/assert-is-integer': 0.2.3
-      '@stdlib/assert-is-nan': 0.2.3
+      '@stdlib/assert-is-collection': 0.2.3(supports-color@7.2.0)
+      '@stdlib/assert-is-integer': 0.2.3(supports-color@7.2.0)
+      '@stdlib/assert-is-nan': 0.2.3(supports-color@7.2.0)
       '@stdlib/assert-is-string': 0.2.3
       '@stdlib/error-tools-fmtprodmsg': 0.2.3
       '@stdlib/string-format': 0.2.3
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/utils-keys@0.2.3':
+  '@stdlib/utils-keys@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/assert-has-own-property': 0.2.3
-      '@stdlib/assert-is-arguments': 0.2.3
-      '@stdlib/assert-is-enumerable-property': 0.2.3
+      '@stdlib/assert-is-arguments': 0.2.3(supports-color@7.2.0)
+      '@stdlib/assert-is-enumerable-property': 0.2.3(supports-color@7.2.0)
       '@stdlib/assert-is-object-like': 0.2.3
-      '@stdlib/utils-index-of': 0.2.3
+      '@stdlib/utils-index-of': 0.2.3(supports-color@7.2.0)
       '@stdlib/utils-noop': 0.2.3
       '@stdlib/utils-type-of': 0.2.3
     transitivePeerDependencies:
       - supports-color
 
-  '@stdlib/utils-library-manifest@0.2.4':
+  '@stdlib/utils-library-manifest@0.2.4(supports-color@7.2.0)':
     dependencies:
       '@stdlib/fs-resolve-parent-path': 0.2.3
       '@stdlib/utils-convert-path': 0.2.3
-      debug: 2.6.9
+      debug: 2.6.9(supports-color@7.2.0)
       resolve: 1.22.12
     transitivePeerDependencies:
       - supports-color
@@ -4485,10 +4485,10 @@ snapshots:
     dependencies:
       '@stdlib/assert-has-own-property': 0.2.3
 
-  '@stdlib/utils-property-names@0.2.3':
+  '@stdlib/utils-property-names@0.2.3(supports-color@7.2.0)':
     dependencies:
       '@stdlib/object-ctor': 0.2.2
-      '@stdlib/utils-keys': 0.2.3
+      '@stdlib/utils-keys': 0.2.3(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4517,25 +4517,25 @@ snapshots:
       '@tryghost/root-utils': 2.3.1
       nconf: 0.13.0
 
-  '@tryghost/debug@2.3.1':
+  '@tryghost/debug@2.3.1(supports-color@7.2.0)':
     dependencies:
       '@tryghost/root-utils': 2.3.1
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@tryghost/elasticsearch@5.3.1':
+  '@tryghost/elasticsearch@5.3.1(supports-color@7.2.0)':
     dependencies:
-      '@elastic/elasticsearch': 8.19.1
-      '@tryghost/debug': 2.3.1
+      '@elastic/elasticsearch': 8.19.1(supports-color@7.2.0)
+      '@tryghost/debug': 2.3.1(supports-color@7.2.0)
       split2: 4.2.0
     transitivePeerDependencies:
       - '@75lb/nature'
       - supports-color
 
-  '@tryghost/errors@1.3.13':
+  '@tryghost/errors@1.3.13(supports-color@7.2.0)':
     dependencies:
-      '@stdlib/utils-copy': 0.2.3
+      '@stdlib/utils-copy': 0.2.3(supports-color@7.2.0)
       uuid: 9.0.1
     transitivePeerDependencies:
       - supports-color
@@ -4547,10 +4547,10 @@ snapshots:
       '@tryghost/errors': 3.3.1
       '@tryghost/request': 3.3.1
 
-  '@tryghost/logging@5.1.1':
+  '@tryghost/logging@5.1.1(supports-color@7.2.0)':
     dependencies:
       '@tryghost/bunyan-rotating-filestream': 0.0.7
-      '@tryghost/elasticsearch': 5.3.1
+      '@tryghost/elasticsearch': 5.3.1(supports-color@7.2.0)
       '@tryghost/http-stream': 2.3.1
       '@tryghost/pretty-stream': 2.3.1
       '@tryghost/root-utils': 2.3.1
@@ -4563,9 +4563,9 @@ snapshots:
       - '@75lb/nature'
       - supports-color
 
-  '@tryghost/mongo-knex@0.10.1':
+  '@tryghost/mongo-knex@0.10.1(supports-color@7.2.0)':
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       lodash: 4.18.1
     transitivePeerDependencies:
       - supports-color
@@ -4578,9 +4578,9 @@ snapshots:
     dependencies:
       date-fns: 2.30.0
 
-  '@tryghost/nql@0.13.1':
+  '@tryghost/nql@0.13.1(supports-color@7.2.0)':
     dependencies:
-      '@tryghost/mongo-knex': 0.10.1
+      '@tryghost/mongo-knex': 0.10.1(supports-color@7.2.0)
       '@tryghost/mongo-utils': 0.6.5
       '@tryghost/nql-lang': 0.6.6
       lodash: 4.18.1
@@ -4599,10 +4599,10 @@ snapshots:
       lodash: 4.18.1
       prettyjson: 1.2.5
 
-  '@tryghost/release-utils@0.9.1':
+  '@tryghost/release-utils@0.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
-      '@tryghost/errors': 1.3.13
-      axios: 1.18.1
+      '@tryghost/errors': 1.3.13(supports-color@7.2.0)
+      axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       emoji-regex: 10.6.0
       execa: 4.1.0
       lodash: 4.18.1
@@ -4624,10 +4624,10 @@ snapshots:
       caller: 1.1.0
       find-root: 1.1.0
 
-  '@tryghost/server@3.1.1':
+  '@tryghost/server@3.1.1(supports-color@7.2.0)':
     dependencies:
-      '@tryghost/debug': 2.3.1
-      '@tryghost/logging': 5.1.1
+      '@tryghost/debug': 2.3.1(supports-color@7.2.0)
+      '@tryghost/logging': 5.1.1(supports-color@7.2.0)
     transitivePeerDependencies:
       - '@75lb/nature'
       - supports-color
@@ -4649,11 +4649,11 @@ snapshots:
       '@tryghost/root-utils': 2.3.1
       semver: 7.8.5
 
-  '@tryghost/zip@3.5.0':
+  '@tryghost/zip@3.5.0(supports-color@7.2.0)':
     dependencies:
       '@tryghost/errors': 3.3.1
       archiver: 8.0.0
-      extract-zip: 2.0.1
+      extract-zip: 2.0.1(supports-color@7.2.0)
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
@@ -4697,9 +4697,9 @@ snapshots:
       mime-types: 3.0.2
       negotiator: 1.0.0
 
-  agent-base@6.0.2:
+  agent-base@6.0.2(supports-color@7.2.0):
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4790,20 +4790,20 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  autoprefixer@10.5.2(postcss@8.5.16):
+  autoprefixer@10.5.4(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
       caniuse-lite: 1.0.30001806
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  axios@1.18.1:
+  axios@1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0):
     dependencies:
-      follow-redirects: 1.16.0
+      follow-redirects: 1.16.0(debug@4.4.3(supports-color@7.2.0))
       form-data: 4.0.6
-      https-proxy-agent: 5.0.1
+      https-proxy-agent: 5.0.1(supports-color@7.2.0)
       proxy-from-env: 2.1.0
     transitivePeerDependencies:
       - debug
@@ -4866,11 +4866,11 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  body-parser@2.3.0:
+  body-parser@2.3.0(supports-color@7.2.0):
     dependencies:
       bytes: 3.1.2
       content-type: 2.0.0
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       http-errors: 2.0.1
       iconv-lite: 0.7.3
       on-finished: 2.4.1
@@ -5135,48 +5135,48 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  cssnano-preset-default@8.0.2(postcss@8.5.16):
+  cssnano-preset-default@8.0.2(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
-      cssnano-utils: 6.0.1(postcss@8.5.16)
-      postcss: 8.5.16
-      postcss-calc: 10.1.1(postcss@8.5.16)
-      postcss-colormin: 8.0.1(postcss@8.5.16)
-      postcss-convert-values: 8.0.1(postcss@8.5.16)
-      postcss-discard-comments: 8.0.1(postcss@8.5.16)
-      postcss-discard-duplicates: 8.0.1(postcss@8.5.16)
-      postcss-discard-empty: 8.0.1(postcss@8.5.16)
-      postcss-discard-overridden: 8.0.1(postcss@8.5.16)
-      postcss-merge-longhand: 8.0.1(postcss@8.5.16)
-      postcss-merge-rules: 8.0.1(postcss@8.5.16)
-      postcss-minify-font-values: 8.0.1(postcss@8.5.16)
-      postcss-minify-gradients: 8.0.1(postcss@8.5.16)
-      postcss-minify-params: 8.0.1(postcss@8.5.16)
-      postcss-minify-selectors: 8.0.2(postcss@8.5.16)
-      postcss-normalize-charset: 8.0.1(postcss@8.5.16)
-      postcss-normalize-display-values: 8.0.1(postcss@8.5.16)
-      postcss-normalize-positions: 8.0.1(postcss@8.5.16)
-      postcss-normalize-repeat-style: 8.0.1(postcss@8.5.16)
-      postcss-normalize-string: 8.0.1(postcss@8.5.16)
-      postcss-normalize-timing-functions: 8.0.1(postcss@8.5.16)
-      postcss-normalize-unicode: 8.0.1(postcss@8.5.16)
-      postcss-normalize-url: 8.0.1(postcss@8.5.16)
-      postcss-normalize-whitespace: 8.0.1(postcss@8.5.16)
-      postcss-ordered-values: 8.0.1(postcss@8.5.16)
-      postcss-reduce-initial: 8.0.1(postcss@8.5.16)
-      postcss-reduce-transforms: 8.0.1(postcss@8.5.16)
-      postcss-svgo: 8.0.1(postcss@8.5.16)
-      postcss-unique-selectors: 8.0.1(postcss@8.5.16)
+      cssnano-utils: 6.0.1(postcss@8.5.20)
+      postcss: 8.5.20
+      postcss-calc: 10.1.1(postcss@8.5.20)
+      postcss-colormin: 8.0.1(postcss@8.5.20)
+      postcss-convert-values: 8.0.1(postcss@8.5.20)
+      postcss-discard-comments: 8.0.1(postcss@8.5.20)
+      postcss-discard-duplicates: 8.0.1(postcss@8.5.20)
+      postcss-discard-empty: 8.0.1(postcss@8.5.20)
+      postcss-discard-overridden: 8.0.1(postcss@8.5.20)
+      postcss-merge-longhand: 8.0.1(postcss@8.5.20)
+      postcss-merge-rules: 8.0.1(postcss@8.5.20)
+      postcss-minify-font-values: 8.0.1(postcss@8.5.20)
+      postcss-minify-gradients: 8.0.1(postcss@8.5.20)
+      postcss-minify-params: 8.0.1(postcss@8.5.20)
+      postcss-minify-selectors: 8.0.2(postcss@8.5.20)
+      postcss-normalize-charset: 8.0.1(postcss@8.5.20)
+      postcss-normalize-display-values: 8.0.1(postcss@8.5.20)
+      postcss-normalize-positions: 8.0.1(postcss@8.5.20)
+      postcss-normalize-repeat-style: 8.0.1(postcss@8.5.20)
+      postcss-normalize-string: 8.0.1(postcss@8.5.20)
+      postcss-normalize-timing-functions: 8.0.1(postcss@8.5.20)
+      postcss-normalize-unicode: 8.0.1(postcss@8.5.20)
+      postcss-normalize-url: 8.0.1(postcss@8.5.20)
+      postcss-normalize-whitespace: 8.0.1(postcss@8.5.20)
+      postcss-ordered-values: 8.0.1(postcss@8.5.20)
+      postcss-reduce-initial: 8.0.1(postcss@8.5.20)
+      postcss-reduce-transforms: 8.0.1(postcss@8.5.20)
+      postcss-svgo: 8.0.1(postcss@8.5.20)
+      postcss-unique-selectors: 8.0.1(postcss@8.5.20)
 
-  cssnano-utils@6.0.1(postcss@8.5.16):
+  cssnano-utils@6.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
 
-  cssnano@8.0.2(postcss@8.5.16):
+  cssnano@8.0.2(postcss@8.5.20):
     dependencies:
-      cssnano-preset-default: 8.0.2(postcss@8.5.16)
+      cssnano-preset-default: 8.0.2(postcss@8.5.20)
       lilconfig: 3.1.3
-      postcss: 8.5.16
+      postcss: 8.5.20
 
   csso@5.0.5:
     dependencies:
@@ -5188,17 +5188,23 @@ snapshots:
 
   date-format@4.0.14: {}
 
-  debug@2.6.9:
+  debug@2.6.9(supports-color@7.2.0):
     dependencies:
       ms: 2.0.0
+    optionalDependencies:
+      supports-color: 7.2.0
 
-  debug@3.2.7:
+  debug@3.2.7(supports-color@7.2.0):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
+      supports-color: 7.2.0
 
-  debug@4.4.3:
+  debug@4.4.3(supports-color@7.2.0):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
+      supports-color: 7.2.0
 
   decompress-response@10.0.0:
     dependencies:
@@ -5329,20 +5335,20 @@ snapshots:
       graceful-fs: 4.2.11
       handlebars: 4.7.9
 
-  express@5.2.1:
+  express@5.2.1(supports-color@7.2.0):
     dependencies:
       accepts: 2.0.0
-      body-parser: 2.3.0
+      body-parser: 2.3.0(supports-color@7.2.0)
       content-disposition: 1.1.0
       content-type: 1.0.5
       cookie: 0.7.2
       cookie-signature: 1.2.2
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       depd: 2.0.0
       encodeurl: 2.0.0
       escape-html: 1.0.3
       etag: 1.8.1
-      finalhandler: 2.1.1
+      finalhandler: 2.1.1(supports-color@7.2.0)
       fresh: 2.0.0
       http-errors: 2.0.1
       merge-descriptors: 2.0.0
@@ -5353,9 +5359,9 @@ snapshots:
       proxy-addr: 2.0.7
       qs: 6.15.3
       range-parser: 1.3.0
-      router: 2.2.0
-      send: 1.2.1
-      serve-static: 2.2.1
+      router: 2.2.0(supports-color@7.2.0)
+      send: 1.2.1(supports-color@7.2.0)
+      serve-static: 2.2.1(supports-color@7.2.0)
       statuses: 2.0.2
       type-is: 2.1.0
       vary: 1.1.2
@@ -5369,9 +5375,9 @@ snapshots:
 
   extend@3.0.2: {}
 
-  extract-zip@2.0.1:
+  extract-zip@2.0.1(supports-color@7.2.0):
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -5424,9 +5430,9 @@ snapshots:
     dependencies:
       to-regex-range: 5.0.1
 
-  finalhandler@2.1.1:
+  finalhandler@2.1.1(supports-color@7.2.0):
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       encodeurl: 2.0.0
       escape-html: 1.0.3
       on-finished: 2.4.1
@@ -5458,7 +5464,9 @@ snapshots:
 
   flatbuffers@25.9.23: {}
 
-  follow-redirects@1.16.0: {}
+  follow-redirects@1.16.0(debug@4.4.3(supports-color@7.2.0)):
+    optionalDependencies:
+      debug: 4.4.3(supports-color@7.2.0)
 
   for-in@1.0.2: {}
 
@@ -5652,19 +5660,19 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  gscan@6.4.2(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1)):
+  gscan@6.4.2(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(supports-color@7.2.0):
     dependencies:
-      '@sentry/node': 10.65.0(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))
+      '@sentry/node': 10.65.0(@opentelemetry/core@2.9.0(@opentelemetry/api@1.9.1))(supports-color@7.2.0)
       '@tryghost/config': 2.3.1
-      '@tryghost/debug': 2.3.1
+      '@tryghost/debug': 2.3.1(supports-color@7.2.0)
       '@tryghost/errors': 3.3.1
-      '@tryghost/logging': 5.1.1
-      '@tryghost/nql': 0.13.1
+      '@tryghost/logging': 5.1.1(supports-color@7.2.0)
+      '@tryghost/nql': 0.13.1(supports-color@7.2.0)
       '@tryghost/pretty-cli': 3.3.1
-      '@tryghost/server': 3.1.1
-      '@tryghost/zip': 3.5.0
+      '@tryghost/server': 3.1.1(supports-color@7.2.0)
+      '@tryghost/zip': 3.5.0(supports-color@7.2.0)
       chalk: 5.6.2
-      express: 5.2.1
+      express: 5.2.1(supports-color@7.2.0)
       express-handlebars: 8.0.1
       glob: 13.0.6
       handlebars: 4.7.9
@@ -5702,14 +5710,14 @@ snapshots:
       through2: 2.0.5
       vinyl: 2.2.1
 
-  gulp-livereload@4.0.2:
+  gulp-livereload@4.0.2(supports-color@7.2.0):
     dependencies:
       chalk: 2.4.2
-      debug: 3.2.7
+      debug: 3.2.7(supports-color@7.2.0)
       fancy-log: 1.3.3
       lodash.assign: 4.2.0
       readable-stream: 3.6.2
-      tiny-lr: 1.1.1
+      tiny-lr: 1.1.1(supports-color@7.2.0)
       vinyl: 2.2.1
     transitivePeerDependencies:
       - supports-color
@@ -5720,12 +5728,12 @@ snapshots:
       chalk: 5.6.2
       easy-transform-stream: 1.0.1
 
-  gulp-postcss@10.0.0(postcss@8.5.16):
+  gulp-postcss@10.0.0(postcss@8.5.20):
     dependencies:
       fancy-log: 2.0.0
       plugin-error: 2.0.1
-      postcss: 8.5.16
-      postcss-load-config: 5.1.0(postcss@8.5.16)
+      postcss: 8.5.20
+      postcss-load-config: 5.1.0(postcss@8.5.20)
       vinyl-sourcemaps-apply: 0.2.1
     transitivePeerDependencies:
       - jiti
@@ -5824,10 +5832,10 @@ snapshots:
       quick-lru: 5.1.1
       resolve-alpn: 1.2.1
 
-  https-proxy-agent@5.0.1:
+  https-proxy-agent@5.0.1(supports-color@7.2.0):
     dependencies:
-      agent-base: 6.0.2
-      debug: 4.4.3
+      agent-base: 6.0.2(supports-color@7.2.0)
+      debug: 4.4.3(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -6203,175 +6211,175 @@ snapshots:
     dependencies:
       ansi-colors: 1.1.0
 
-  postcss-calc@10.1.1(postcss@8.5.16):
+  postcss-calc@10.1.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-selector-parser: 7.1.4
       postcss-value-parser: 4.2.0
 
-  postcss-color-mod-function@4.1.1(postcss@8.5.16):
+  postcss-color-mod-function@4.1.1(postcss@8.5.20):
     dependencies:
       '@csstools/convert-colors': 1.4.0
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-colormin@8.0.1(postcss@8.5.16):
+  postcss-colormin@8.0.1(postcss@8.5.20):
     dependencies:
       '@colordx/core': 5.5.0
       browserslist: 4.28.6
       caniuse-api: 4.0.0
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-convert-values@8.0.1(postcss@8.5.16):
+  postcss-convert-values@8.0.1(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-discard-comments@8.0.1(postcss@8.5.16):
+  postcss-discard-comments@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-selector-parser: 7.1.4
 
-  postcss-discard-duplicates@8.0.1(postcss@8.5.16):
+  postcss-discard-duplicates@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
 
-  postcss-discard-empty@8.0.1(postcss@8.5.16):
+  postcss-discard-empty@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
 
-  postcss-discard-overridden@8.0.1(postcss@8.5.16):
+  postcss-discard-overridden@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
 
-  postcss-easy-import@4.0.0(postcss@8.5.16):
+  postcss-easy-import@4.0.0(postcss@8.5.20):
     dependencies:
       globby: 6.1.0
       is-glob: 4.0.3
       lodash: 4.18.1
       object-assign: 4.1.1
       pify: 3.0.0
-      postcss: 8.5.16
-      postcss-import: 14.1.0(postcss@8.5.16)
+      postcss: 8.5.20
+      postcss-import: 14.1.0(postcss@8.5.20)
       resolve: 1.22.12
 
-  postcss-import@14.1.0(postcss@8.5.16):
+  postcss-import@14.1.0(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.12
 
-  postcss-load-config@5.1.0(postcss@8.5.16):
+  postcss-load-config@5.1.0(postcss@8.5.20):
     dependencies:
       lilconfig: 3.1.3
       yaml: 2.9.0
     optionalDependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
 
-  postcss-merge-longhand@8.0.1(postcss@8.5.16):
+  postcss-merge-longhand@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
-      stylehacks: 8.0.1(postcss@8.5.16)
+      stylehacks: 8.0.1(postcss@8.5.20)
 
-  postcss-merge-rules@8.0.1(postcss@8.5.16):
+  postcss-merge-rules@8.0.1(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
       caniuse-api: 4.0.0
-      cssnano-utils: 6.0.1(postcss@8.5.16)
-      postcss: 8.5.16
+      cssnano-utils: 6.0.1(postcss@8.5.20)
+      postcss: 8.5.20
       postcss-selector-parser: 7.1.4
 
-  postcss-minify-font-values@8.0.1(postcss@8.5.16):
+  postcss-minify-font-values@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-minify-gradients@8.0.1(postcss@8.5.16):
+  postcss-minify-gradients@8.0.1(postcss@8.5.20):
     dependencies:
       '@colordx/core': 5.5.0
-      cssnano-utils: 6.0.1(postcss@8.5.16)
-      postcss: 8.5.16
+      cssnano-utils: 6.0.1(postcss@8.5.20)
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-minify-params@8.0.1(postcss@8.5.16):
+  postcss-minify-params@8.0.1(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
-      cssnano-utils: 6.0.1(postcss@8.5.16)
-      postcss: 8.5.16
+      cssnano-utils: 6.0.1(postcss@8.5.20)
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-minify-selectors@8.0.2(postcss@8.5.16):
+  postcss-minify-selectors@8.0.2(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
       caniuse-api: 4.0.0
       cssesc: 3.0.0
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-selector-parser: 7.1.4
 
-  postcss-normalize-charset@8.0.1(postcss@8.5.16):
+  postcss-normalize-charset@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
 
-  postcss-normalize-display-values@8.0.1(postcss@8.5.16):
+  postcss-normalize-display-values@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-positions@8.0.1(postcss@8.5.16):
+  postcss-normalize-positions@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-repeat-style@8.0.1(postcss@8.5.16):
+  postcss-normalize-repeat-style@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-string@8.0.1(postcss@8.5.16):
+  postcss-normalize-string@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-timing-functions@8.0.1(postcss@8.5.16):
+  postcss-normalize-timing-functions@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-unicode@8.0.1(postcss@8.5.16):
+  postcss-normalize-unicode@8.0.1(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-url@8.0.1(postcss@8.5.16):
+  postcss-normalize-url@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-whitespace@8.0.1(postcss@8.5.16):
+  postcss-normalize-whitespace@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-ordered-values@8.0.1(postcss@8.5.16):
+  postcss-ordered-values@8.0.1(postcss@8.5.20):
     dependencies:
-      cssnano-utils: 6.0.1(postcss@8.5.16)
-      postcss: 8.5.16
+      cssnano-utils: 6.0.1(postcss@8.5.20)
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
-  postcss-reduce-initial@8.0.1(postcss@8.5.16):
+  postcss-reduce-initial@8.0.1(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
       caniuse-api: 4.0.0
-      postcss: 8.5.16
+      postcss: 8.5.20
 
-  postcss-reduce-transforms@8.0.1(postcss@8.5.16):
+  postcss-reduce-transforms@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
   postcss-selector-parser@7.1.4:
@@ -6379,20 +6387,20 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-svgo@8.0.1(postcss@8.5.16):
+  postcss-svgo@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
       svgo: 4.0.2
 
-  postcss-unique-selectors@8.0.1(postcss@8.5.16):
+  postcss-unique-selectors@8.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-selector-parser: 7.1.4
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.16:
+  postcss@8.5.20:
     dependencies:
       nanoid: 3.3.16
       picocolors: 1.1.1
@@ -6490,9 +6498,9 @@ snapshots:
 
   require-directory@2.1.1: {}
 
-  require-in-the-middle@8.0.1:
+  require-in-the-middle@8.0.1(supports-color@7.2.0):
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       module-details-from-path: 1.0.4
     transitivePeerDependencies:
       - supports-color
@@ -6526,9 +6534,9 @@ snapshots:
       glob: 6.0.4
     optional: true
 
-  router@2.2.0:
+  router@2.2.0(supports-color@7.2.0):
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       depd: 2.0.0
       is-promise: 4.0.0
       parseurl: 1.3.3
@@ -6566,9 +6574,9 @@ snapshots:
 
   semver@7.8.5: {}
 
-  send@1.2.1:
+  send@1.2.1(supports-color@7.2.0):
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@7.2.0)
       encodeurl: 2.0.0
       escape-html: 1.0.3
       etag: 1.8.1
@@ -6582,12 +6590,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  serve-static@2.2.1:
+  serve-static@2.2.1(supports-color@7.2.0):
     dependencies:
       encodeurl: 2.0.0
       escape-html: 1.0.3
       parseurl: 1.3.3
-      send: 1.2.1
+      send: 1.2.1(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -6689,10 +6697,10 @@ snapshots:
 
   strip-final-newline@2.0.0: {}
 
-  stylehacks@8.0.1(postcss@8.5.16):
+  stylehacks@8.0.1(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
-      postcss: 8.5.16
+      postcss: 8.5.20
       postcss-selector-parser: 7.1.4
 
   supports-color@5.5.0:
@@ -6757,10 +6765,10 @@ snapshots:
 
   time-stamp@1.1.0: {}
 
-  tiny-lr@1.1.1:
+  tiny-lr@1.1.1(supports-color@7.2.0):
     dependencies:
       body: 5.1.0
-      debug: 3.2.7
+      debug: 3.2.7(supports-color@7.2.0)
       faye-websocket: 0.10.0
       livereload-js: 2.4.0
       object-assign: 4.1.1
