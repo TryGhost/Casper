@@ -75,12 +75,14 @@ helper. No component currently uses it — this is the intended pattern for when
    <div data-ff-variant="treatment">…treatment copy…</div>
    ```
 
-   The `data-ff-variant` attribute is the single hook for both JS selection and any
-   styling — no separate class — so all flag scaffolding shares the greppable `data-ff-`
-   prefix and is easy to strip when the experiment ends. Style the wrapper per the
-   component's layout (there is no shared CSS for it — e.g. use `display: contents` if the
-   wrapper's box would disrupt a flex/grid parent). `control` is the baseline shown when
-   no flag / local dev / crawler.
+   **Always include a `data-ff-variant="control"` block** — it's the baseline shown when
+   no flag / local dev / crawler, and the fallback `applyVariant` keeps if the resolved
+   value matches no block. Without a `control` block, a non-matching resolve would remove
+   everything. The `data-ff-variant` attribute is the single hook for both JS selection and
+   any styling — no separate class — so all flag scaffolding shares the greppable
+   `data-ff-` prefix and is easy to strip when the experiment ends. Style the wrapper per
+   the component's layout (there is no shared CSS for it — e.g. use `display: contents` if
+   the wrapper's box would disrupt a flex/grid parent).
 
 2. After the markup is in the DOM, call the helper:
 
@@ -92,10 +94,11 @@ helper. No component currently uses it — this is the intended pattern for when
    [`assets/js/feature-flags.js`](assets/js/feature-flags.js)) keeps the `data-ff-variant`
    block matching the resolved flag value and **removes the others** — so only the chosen
    variant ever enters the DOM (no flash, no swap), and that read is what logs the Eppo
-   exposure. If the resolved value matches no block, it keeps the fallback (`"control"` by
-   default) so a component never shows every variant nor none. It also handles
-   multi-variant experiments (`data-ff-variant="variant-a"` / `"variant-b"`); to A/B an
-   image, tag the differing image element the same way.
+   exposure. If the resolved value matches no block it falls back to the `control` block
+   (override with `fallbackVariant`). It expects flat sibling blocks with string values;
+   it also handles multi-variant experiments (`data-ff-variant="variant-a"` / `"variant-b"`),
+   and to A/B an image just tag the differing image element the same way. For a simple
+   on/off flag, gate with `isEnabled()` instead of `applyVariant`.
 
 > Prefer gating markup that is itself injected/rendered client-side (so there's nothing
 > in the first paint to flash). Feature flags in this theme are for cosmetic / experience

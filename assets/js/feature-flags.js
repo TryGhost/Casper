@@ -108,10 +108,15 @@
     // the element tagged data-ff-variant="<value>" that matches the resolved value
     // of `flagName` and removes the others. Reading the flag here logs the Eppo
     // exposure via the tracking Proxy. If the resolved value matches no block (e.g.
-    // the flag isn't live, or an unexpected value), the `fallbackVariant` block
-    // (default "control") is kept — so a component never shows every variant nor
-    // none. Works for any component: drop data-ff-variant blocks in a template and
-    // call this once after the markup is in the DOM.
+    // the flag isn't live, or an unexpected value), it falls back to the "control"
+    // block. ALWAYS include a data-ff-variant="control" block as the baseline: it
+    // renders for the un-flagged / local-dev / crawler case and is the safety net
+    // when a variant block is missing (without it, a non-matching resolve removes
+    // everything). `fallbackVariant` overrides which variant is that baseline.
+    // Variant blocks are expected to be flat siblings with string values; boolean
+    // flags should gate with isEnabled() instead. Works for any component: drop
+    // data-ff-variant blocks in a template and call this once after the markup is
+    // in the DOM.
     function applyVariant(root, flagName, fallbackVariant) {
         if (!root) {
             return;
