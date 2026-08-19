@@ -455,13 +455,27 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    vertical-align: middle;
+}
+
+.nav-icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
 .gh-head-menu .nav li {
     margin: 0;
     padding: 0;
 }
 
 .gh-head-menu .nav a {
-    display: inline-block;
     line-height: 1.7;
     color: inherit;
 }
