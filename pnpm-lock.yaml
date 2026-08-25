@@ -21,8 +21,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0
       cssnano:
-        specifier: 8.0.7
-        version: 8.0.7(postcss@8.5.26)
+        specifier: 8.0.8
+        version: 8.0.8(postcss@8.5.26)
       gscan:
         specifier: 6.4.2
         version: 6.4.2(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))(supports-color@7.2.0)
@@ -1625,8 +1625,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.26
 
-  cssnano@8.0.7:
-    resolution: {integrity: sha512-JBvuat1sBQuSBkrfB6epRlszs0MRhn8PguY12oFuYxMYDgK/8vsnlq+0YzjyHEjixwOsiSct0hD3eC59TjgqfA==}
+  cssnano@8.0.8:
+    resolution: {integrity: sha512-lN79/SZ2L0bGBBxGnChGKkbodkXAQUR5Em4LBW3rijpdrvUY8jxKhp2uQ8LgI8sKKbjCnI8peqPSoSZJDuchKw==}
     engines: {node: ^22.11.0 || ^24.11.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.26
@@ -5078,7 +5078,7 @@ snapshots:
     dependencies:
       postcss: 8.5.26
 
-  cssnano@8.0.7(postcss@8.5.26):
+  cssnano@8.0.8(postcss@8.5.26):
     dependencies:
       cssnano-preset-default: 8.0.8(postcss@8.5.26)
       lilconfig: 3.1.3
