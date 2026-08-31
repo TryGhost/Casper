@@ -53,7 +53,7 @@
         "@tryghost/theme-translations": "0.0.22",
         "autoprefixer": "10.5.4",
         "beeper": "2.1.0",
-        "cssnano": "9.0.0",
+        "cssnano": "9.0.1",
         "gscan": "6.4.2",
         "gulp": "5.0.1",
         "gulp-concat": "2.6.1",
