@@ -1601,7 +1601,8 @@ except for when immediately preceeded by a heading */
 }
 
 .kg-image[width][height],
-.kg-gallery-image {
+.kg-gallery-image,
+.gh-feature-image {
     cursor: pointer;
 }
 
