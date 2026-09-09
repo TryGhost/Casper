@@ -91,6 +91,39 @@ into the {body} of the default.hbs template --}}
     })();
     </script>
 
+    <section class="home-section outer">
+        <div class="inner">
+            <div id="ws-article-search"></div>
+        </div>
+        <script data-cfasync="false" src="https://maps.wanderstories.space/ws-article-search.js?v=1.2.6"></script>
+        <script data-cfasync="false">
+        (function () {
+            function initSearch() {
+                if (typeof wsArticleSearch !== 'function') return false;
+                if (!document.getElementById('ws-article-search')) return false;
+                wsArticleSearch({
+                    container: '#ws-article-search',
+                    baseUrl: 'https://maps.wanderstories.space',
+                    pageSize: 12
+                });
+                return true;
+            }
+            function scheduleInit() {
+                if (initSearch()) return;
+                var tries = 0;
+                var timer = setInterval(function () {
+                    if (initSearch() || ++tries > 50) clearInterval(timer);
+                }, 100);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', scheduleInit);
+            } else {
+                scheduleInit();
+            }
+        })();
+        </script>
+    </section>
+
 <div class="outer">
 <div class="inner posts">
     <h1 class="home-posts-title"><a href="{{@site.url}}/all-articles/">New Articles</a></h1>

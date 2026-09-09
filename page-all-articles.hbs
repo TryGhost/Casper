@@ -42,6 +42,36 @@ into the {body} tag of the default.hbs template --}}
     </section>
 
     <div class="inner posts">
+        <section class="home-section" style="margin-bottom: 2rem;">
+            <div id="ws-article-search"></div>
+            <script data-cfasync="false" src="https://maps.wanderstories.space/ws-article-search.js?v=1.2.6"></script>
+            <script data-cfasync="false">
+            (function () {
+                function initSearch() {
+                    if (typeof wsArticleSearch !== 'function') return false;
+                    if (!document.getElementById('ws-article-search')) return false;
+                    wsArticleSearch({
+                        container: '#ws-article-search',
+                        baseUrl: 'https://maps.wanderstories.space',
+                        pageSize: 12
+                    });
+                    return true;
+                }
+                function scheduleInit() {
+                    if (initSearch()) return;
+                    var tries = 0;
+                    var timer = setInterval(function () {
+                        if (initSearch() || ++tries > 50) clearInterval(timer);
+                    }, 100);
+                }
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', scheduleInit);
+                } else {
+                    scheduleInit();
+                }
+            })();
+            </script>
+        </section>
         <div class="post-feed{{#match @custom.feed_layout "List"}} list{{/match}}">
             {{!-- Featured Posts --}}
             {{#get "posts" filter="featured:true" limit="all" include="tags"}}
