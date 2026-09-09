@@ -2,7 +2,7 @@
     "name": "casper-ws",
     "description": "Casper theme customised for Wanderstories",
     "demo": "https://demo.ghost.io",
-    "version": "5.12.1",
+    "version": "5.12.3",
     "engines": {
         "ghost": ">=5.0.0",
         "node": ">=22.12.0"
@@ -24,7 +24,7 @@
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
         "postship": "git fetch && gulp release"
     },
-    "packageManager": "pnpm@11.6.0",
+    "packageManager": "pnpm@12.3.4",
     "author": {
         "name": "Ghost Foundation",
         "email": "hello@ghost.org",
@@ -49,20 +49,20 @@
     "bugs": "https://github.com/TryGhost/Casper/issues",
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "devDependencies": {
-        "@tryghost/release-utils": "0.8.1",
-        "@tryghost/theme-translations": "0.0.21",
-        "autoprefixer": "10.5.0",
+        "@tryghost/release-utils": "0.9.1",
+        "@tryghost/theme-translations": "0.0.22",
+        "autoprefixer": "10.5.5",
         "beeper": "2.1.0",
-        "cssnano": "8.0.1",
-        "gscan": "6.3.0",
+        "cssnano": "9.0.3",
+        "gscan": "6.5.0",
         "gulp": "5.0.1",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "6.1.0",
-        "inquirer": "14.0.2",
-        "postcss": "8.5.15",
+        "inquirer": "14.2.1",
+        "postcss": "8.5.28",
         "postcss-color-mod-function": "4.1.1",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.4"
