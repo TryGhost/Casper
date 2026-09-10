@@ -355,7 +355,7 @@ production stylesheet in assets/built/screen.css
     grid-column-start: 2;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .is-head-stacked .gh-head-inner {
         padding: 0;
     }
