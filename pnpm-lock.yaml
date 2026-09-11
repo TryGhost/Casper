@@ -122,8 +122,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0
       cssnano:
-        specifier: 9.0.3
-        version: 9.0.3(postcss@8.5.28)
+        specifier: 9.0.4
+        version: 9.0.4(postcss@8.5.28)
       gscan:
         specifier: 6.5.0
         version: 6.5.0(@opentelemetry/core@2.11.0(@opentelemetry/api@1.9.1))(supports-color@7.2.0)
@@ -1708,8 +1708,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  cssnano-preset-default@9.0.3:
-    resolution: {integrity: sha512-UxvaUk/pNqHzjctjlaq4SSARlqPOdy7kA9Dho6fb1/xt/bYcar+57BFlSWpF5AvxjIfNK3Qkop5U9VDSUnuTvg==}
+  cssnano-preset-default@9.0.4:
+    resolution: {integrity: sha512-eHy3rfG0/TRGGG6gbgwLLlSs3Xr0xx2ShVwN94le+pydxAC3dXgmJTu8uIqdvBbrmEirUGuK9H5rUnxJRDXdoA==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.28
@@ -1720,8 +1720,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.28
 
-  cssnano@9.0.3:
-    resolution: {integrity: sha512-v4oRMYCXcJtI1MlGcwVgSP/TG/RrznC3iKQeNcFTQZZYWomp2j8CmgT9iiSO2v64K4LJSi6pWdyznmUUutLCKw==}
+  cssnano@9.0.4:
+    resolution: {integrity: sha512-CdXjUnePN8UmFySZ65Oh83DUf/z/VV+yRc86PlMUA4JBJizXiwelynZvfLji+gY/Z94xH+RrCT48wZyqSJdhuw==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.28
@@ -2670,11 +2670,11 @@ packages:
     resolution: {integrity: sha512-zMakqvIDyY40xHOvzXka0kUvf40nYIuwRE8dWhti2WtjQZ31xAgBZBhxsK7vK3QbRXS1Xms/LO7B5cuAsfB2Gg==}
     engines: {node: '>=10.13.0'}
 
-  postcss-calc@11.0.3:
-    resolution: {integrity: sha512-G0KjDwYacZXdyG0ijvvQleSh4AOTTNcjHny34t0Fh6v76dvTOMO1kyr7eKq3MPKD8Q7rxHzUXj4lpzT3cebatw==}
+  postcss-calc@11.1.1:
+    resolution: {integrity: sha512-EazB2CtQwKoBOCi8l334i/gnaObqcv418pLTvw4CmcqPLhPgP8IipVSixQO7lTRDrOBIwL72krecBfi5tpl4EA==}
     engines: {node: ^22.22.3 || ^24.15 || >=26.0}
     peerDependencies:
-      postcss: ^8.5.25
+      postcss: ^8.5.28
 
   postcss-color-mod-function@4.1.1:
     resolution: {integrity: sha512-pX35vgWh0c5gqYd/a5baiTr329GyEt56KBldQIEZwOi9V2eXC+9+e7yjnIKqjidHKxzstEfBJEbOXma8Ang33g==}
@@ -5084,12 +5084,12 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  cssnano-preset-default@9.0.3(postcss@8.5.28):
+  cssnano-preset-default@9.0.4(postcss@8.5.28):
     dependencies:
       browserslist: 4.28.9
       cssnano-utils: 7.0.2(postcss@8.5.28)
       postcss: 8.5.28
-      postcss-calc: 11.0.3(postcss@8.5.28)
+      postcss-calc: 11.1.1(postcss@8.5.28)
       postcss-colormin: 9.0.2(postcss@8.5.28)
       postcss-convert-values: 9.0.2(postcss@8.5.28)
       postcss-discard-comments: 9.0.2(postcss@8.5.28)
@@ -5121,9 +5121,9 @@ snapshots:
     dependencies:
       postcss: 8.5.28
 
-  cssnano@9.0.3(postcss@8.5.28):
+  cssnano@9.0.4(postcss@8.5.28):
     dependencies:
-      cssnano-preset-default: 9.0.3(postcss@8.5.28)
+      cssnano-preset-default: 9.0.4(postcss@8.5.28)
       postcss: 8.5.28
 
   csso@5.0.5:
@@ -6126,7 +6126,7 @@ snapshots:
     dependencies:
       ansi-colors: 1.1.0
 
-  postcss-calc@11.0.3(postcss@8.5.28):
+  postcss-calc@11.1.1(postcss@8.5.28):
     dependencies:
       '@csstools/css-tokenizer': 4.0.0
       postcss: 8.5.28
