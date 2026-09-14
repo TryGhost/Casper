@@ -182,8 +182,8 @@ importers:
         specifier: 9.0.4
         version: 9.0.4(postcss@8.5.28)
       gscan:
-        specifier: 6.6.0
-        version: 6.6.0(supports-color@7.2.0)
+        specifier: 6.6.1
+        version: 6.6.1(supports-color@7.2.0)
       gulp:
         specifier: 5.0.1
         version: 5.0.1
@@ -1151,14 +1151,14 @@ packages:
     engines: {node: '>=0.10.0', npm: '>2.7.0'}
     os: [aix, darwin, freebsd, linux, macos, openbsd, sunos, win32, windows]
 
-  '@tryghost/debug@2.3.13':
-    resolution: {integrity: sha512-3AG+mm2wF9vdSFwH+k9jJaeqLHFigUeEUDyjaJxX5rasb0QPoSmNYxnXfJppbYVEFYOJ1UsqtsSdzG956sNCxQ==}
+  '@tryghost/debug@2.3.14':
+    resolution: {integrity: sha512-CuxfDTsuS8uPnAeJVCaokd7izIDhUzIi/mZo8ytKgKupx/K5UY03Pu0KwWJCuRRV2ZrDYeq00p8bBCM/H8uScg==}
 
   '@tryghost/errors@1.3.13':
     resolution: {integrity: sha512-sXFcuU8Nn3mDcVrLBLFThQZImn+T2w7v/jJGJzdFnSKJstqxd1LyTRlMjpCpgCnqAgHFCaP+uFg7x4CX64VBJQ==}
 
-  '@tryghost/errors@3.3.13':
-    resolution: {integrity: sha512-ZJelL4irZpH+37ZATowbyA3PrSZHc9EsN2ThOXGS1ESThLnq/ETIJdrnXh38I5p/dFB9ZDH7GJfcjmRZvSM69Q==}
+  '@tryghost/errors@3.3.14':
+    resolution: {integrity: sha512-Z49f+Wy6benC35x+x30FAjBWDMllJN7mMg5mWrOtxK67ipAflKlcQgubT03ZTYbbPPc9J8Kx2In7fOcvyp6a5g==}
 
   '@tryghost/mongo-knex@0.11.2':
     resolution: {integrity: sha512-0l7L/J609p+12+rA15Muya1JoIeSfBxIUZRB2FfROtJ2U+FTEOzZ/c0HgxB8eAArJMW2VXECmLCAbNUwygRzfg==}
@@ -1172,8 +1172,8 @@ packages:
   '@tryghost/nql@0.13.4':
     resolution: {integrity: sha512-XE3lEpkqZM3ueOyKz5suwb2W4muWAM/YfYYpXHrnu0H7r46Xuo7FZm1s6Ga2Cut/STtuax5E6NfZ1AFv017X4w==}
 
-  '@tryghost/pretty-cli@3.3.13':
-    resolution: {integrity: sha512-5IPhpQ1d2vXTC8Zb0I9FLOQ6LgE9ebSTAYYQERnR9bHgDvPEUPAUf7mZxPi/Cxi1OVsKKecrd0VJumqZw/EbKg==}
+  '@tryghost/pretty-cli@3.3.14':
+    resolution: {integrity: sha512-zL+CX9BmciOx0mb1mG5lUSQQg+Dg57ntj6m0TAkaaSQon3lovrIbHznwpWkHLyggm9f+BltK5JTOdFqT/5oTpw==}
 
   '@tryghost/release-utils@0.9.1':
     resolution: {integrity: sha512-PjatPNrE5wfc2OcgF9Q67Y9Bu8aUrloKfA7NIN++Ad2r1p+WsLhdE+FurGmoCV2zzDl8ef2R3bYSnLcVc8pmKQ==}
@@ -1184,8 +1184,8 @@ packages:
   '@tryghost/theme-translations@0.0.22':
     resolution: {integrity: sha512-mOF0cNyxhxVkPAcfgNes5hkmoEafr+WucKxKOP0cnmHnKHOvVPltSZ0psgBphD7owROjK1e/zT9qTtLKf7AWHg==}
 
-  '@tryghost/zip@3.5.12':
-    resolution: {integrity: sha512-0wN9tbV0iylqZqaofNapQV+VxhhGVJCM7U5xqiTYmZqi6gR2U6X1dh+VFYoLvWbXaVma1iPEArhn+iETWk3HWw==}
+  '@tryghost/zip@3.5.13':
+    resolution: {integrity: sha512-p6RQqbpXwUqngWdVG+b8v+OXyO0O4reVLqbIJmHJE8IPoFrZcJxrbVxQ2rX70lYleSvsSZ8y8UoCnTZ6QUhR+w==}
 
   '@types/expect@1.20.4':
     resolution: {integrity: sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==}
@@ -1851,8 +1851,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  gscan@6.6.0:
-    resolution: {integrity: sha512-sp8QERPGRSVzztmCkcrDPo0iw0yjDw3uqMng/wdksJdSV5dzzitmCTMVSxfbXrFfyOs/RuK9Ix+Mostt8jSuCw==}
+  gscan@6.6.1:
+    resolution: {integrity: sha512-Yl273hY1brah236M7wnfV/gx4ZH2QuPZpt+/IiZBIxcdSAfcfsjof4Bfyqo921+X/POItxoVtFS9Xt4jFZNXIQ==}
     engines: {node: ^22.17.0 || ^24.0.0}
     hasBin: true
 
@@ -3851,7 +3851,7 @@ snapshots:
       '@stdlib/utils-constructor-name': 0.2.3
       '@stdlib/utils-global': 0.2.3
 
-  '@tryghost/debug@2.3.13(supports-color@7.2.0)':
+  '@tryghost/debug@2.3.14(supports-color@7.2.0)':
     dependencies:
       '@tryghost/root-utils': 2.3.14
       debug: 4.4.3(supports-color@7.2.0)
@@ -3865,7 +3865,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tryghost/errors@3.3.13': {}
+  '@tryghost/errors@3.3.14': {}
 
   '@tryghost/mongo-knex@0.11.2(supports-color@7.2.0)':
     dependencies:
@@ -3892,7 +3892,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tryghost/pretty-cli@3.3.13':
+  '@tryghost/pretty-cli@3.3.14':
     dependencies:
       chalk: 6.0.0
       sywac: 1.3.0
@@ -3915,9 +3915,9 @@ snapshots:
 
   '@tryghost/theme-translations@0.0.22': {}
 
-  '@tryghost/zip@3.5.12(supports-color@7.2.0)':
+  '@tryghost/zip@3.5.13(supports-color@7.2.0)':
     dependencies:
-      '@tryghost/errors': 3.3.13
+      '@tryghost/errors': 3.3.14
       archiver: 8.0.0
       extract-zip: 2.0.1(supports-color@7.2.0)
     transitivePeerDependencies:
@@ -4659,13 +4659,13 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  gscan@6.6.0(supports-color@7.2.0):
+  gscan@6.6.1(supports-color@7.2.0):
     dependencies:
-      '@tryghost/debug': 2.3.13(supports-color@7.2.0)
-      '@tryghost/errors': 3.3.13
+      '@tryghost/debug': 2.3.14(supports-color@7.2.0)
+      '@tryghost/errors': 3.3.14
       '@tryghost/nql': 0.13.4(supports-color@7.2.0)
-      '@tryghost/pretty-cli': 3.3.13
-      '@tryghost/zip': 3.5.12(supports-color@7.2.0)
+      '@tryghost/pretty-cli': 3.3.14
+      '@tryghost/zip': 3.5.13(supports-color@7.2.0)
       chalk: 6.0.0
       handlebars: 4.7.9
       lodash: 4.18.1
