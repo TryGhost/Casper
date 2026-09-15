@@ -167,8 +167,8 @@ importers:
   .:
     devDependencies:
       '@tryghost/release-utils':
-        specifier: 0.9.1
-        version: 0.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+        specifier: 0.9.2
+        version: 0.9.2(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@tryghost/theme-translations':
         specifier: 0.0.22
         version: 0.0.22
@@ -1175,8 +1175,8 @@ packages:
   '@tryghost/pretty-cli@3.3.14':
     resolution: {integrity: sha512-zL+CX9BmciOx0mb1mG5lUSQQg+Dg57ntj6m0TAkaaSQon3lovrIbHznwpWkHLyggm9f+BltK5JTOdFqT/5oTpw==}
 
-  '@tryghost/release-utils@0.9.1':
-    resolution: {integrity: sha512-PjatPNrE5wfc2OcgF9Q67Y9Bu8aUrloKfA7NIN++Ad2r1p+WsLhdE+FurGmoCV2zzDl8ef2R3bYSnLcVc8pmKQ==}
+  '@tryghost/release-utils@0.9.2':
+    resolution: {integrity: sha512-1sj5ae4B77EB8L/DbDG3hPuWgUAwPi6d9nFOr7TahU4OiCD1+sWzLZT8vLaiEo3y7Lylb52hV+8iNE3d/Sr1Iw==}
 
   '@tryghost/root-utils@2.3.14':
     resolution: {integrity: sha512-VmHSaPdjTCQNOTNvpLTmphi+TdorWbGbjgqTeCYFPgsWw3XUlByWaERYe3PV2JOmd2XeAhpG2KCegrmnPWMlKA==}
@@ -1280,8 +1280,8 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
-  axios@1.18.1:
-    resolution: {integrity: sha512-3nTvFlvpn9Zu/RkHUqtc7/+al4UpRW5az71ap5zccp6e8RAYEzhMTecX8Dz1wWDYrPpUoB1HAQEGEAEvUr7S9g==}
+  axios@1.20.0:
+    resolution: {integrity: sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==}
 
   b4a@1.8.1:
     resolution: {integrity: sha512-aiqre1Nr0B/6DgE2N5vwTc+2/oQZ4Wh1t4NznYY4E00y8LCt6NqdRv81so00oo27D8MVKTpUa/MwUUtBLXCoDw==}
@@ -3897,10 +3897,10 @@ snapshots:
       chalk: 6.0.0
       sywac: 1.3.0
 
-  '@tryghost/release-utils@0.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
+  '@tryghost/release-utils@0.9.2(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
       '@tryghost/errors': 1.3.13(supports-color@7.2.0)
-      axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+      axios: 1.20.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       emoji-regex: 10.6.0
       execa: 4.1.0
       lodash: 4.18.1
@@ -4028,7 +4028,7 @@ snapshots:
       postcss: 8.5.28
       postcss-value-parser: 4.2.0
 
-  axios@1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0):
+  axios@1.20.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0):
     dependencies:
       follow-redirects: 1.16.0(debug@4.4.3(supports-color@7.2.0))
       form-data: 4.0.6
