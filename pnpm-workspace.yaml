@@ -1,10 +1,14 @@
+minimumReleaseAge: 4320
+strictDepBuilds: true
+blockExoticSubdeps: true
+
 allowBuilds:
   # Optional dtrace bindings for bunyan (a gscan dependency); not needed to build/test the theme.
   dtrace-provider: false
 
-# pnpm 11.5's default minimumReleaseAge supply-chain policy rejects packages
-# published within the last 24h. @tryghost/theme-translations is a first-party
+# The release-age supply-chain policy rejects packages published within the
+# last 72h. @tryghost/theme-translations is a first-party
 # Ghost dependency we pin exactly, so exclude its current version from the age
-# gate (it would otherwise fail CI for a day after each release bump).
+# gate (it would otherwise fail CI after each release bump).
 minimumReleaseAgeExclude:
   - '@tryghost/theme-translations'
