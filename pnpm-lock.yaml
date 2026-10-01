@@ -179,8 +179,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0
       cssnano:
-        specifier: 9.1.0
-        version: 9.1.0(postcss@8.5.28)
+        specifier: 9.1.1
+        version: 9.1.1(postcss@8.5.28)
       gscan:
         specifier: 6.6.1
         version: 6.6.1(supports-color@7.2.0)
@@ -226,10 +226,6 @@ packages:
   '@csstools/convert-colors@1.4.0':
     resolution: {integrity: sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==}
     engines: {node: '>=4.0.0'}
-
-  '@csstools/css-tokenizer@4.0.1':
-    resolution: {integrity: sha512-bPlN9S9O1A0euCpEWE4qnvB5YDuyYVsUTrxSgmAM1Is0j4tICHoVyOVAXfWMP/kS9ZrjvyIXWV2PmomiAXXqOw==}
-    engines: {node: '>=20.19.0'}
 
   '@csstools/css-tokenizer@4.0.2':
     resolution: {integrity: sha512-OoKoR0f76dCY666JlcbhmVTs2drYj1GUXZTYTcbUgJjh9Nv41aFfZ21bPQTERm5+L5cBDo466NltB2lplS5GBw==}
@@ -1564,8 +1560,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.28
 
-  cssnano@9.1.0:
-    resolution: {integrity: sha512-ae04R4AveAXRs1M29hDNrKcfsLv/Ef2nA21wnCaWKqcMcCEUGBx8uRz4JYvYkArF5agDW1hhv1c9sr1d+6dT8w==}
+  cssnano@9.1.1:
+    resolution: {integrity: sha512-Jm3JBThKaUOo6Q9Buyjez+ww/SsgbwmLgg8H5fIf+wAAv5clG2x1KupoQR2PejzEbRyTVqVu93nORWT/320J/g==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.28
@@ -2892,8 +2888,6 @@ snapshots:
 
   '@csstools/convert-colors@1.4.0': {}
 
-  '@csstools/css-tokenizer@4.0.1': {}
-
   '@csstools/css-tokenizer@4.0.2': {}
 
   '@gulpjs/messages@1.1.0': {}
@@ -4182,8 +4176,8 @@ snapshots:
 
   caniuse-api@4.0.0:
     dependencies:
-      browserslist: 4.29.0
-      caniuse-lite: 1.0.30001810
+      browserslist: 4.29.3
+      caniuse-lite: 1.0.30001813
 
   caniuse-lite@1.0.30001810: {}
 
@@ -4356,7 +4350,7 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.28
 
-  cssnano@9.1.0(postcss@8.5.28):
+  cssnano@9.1.1(postcss@8.5.28):
     dependencies:
       cssnano-preset-default: 9.1.2(postcss@8.5.28)
       postcss: 8.5.28
@@ -5104,7 +5098,7 @@ snapshots:
 
   postcss-calc@11.2.1(postcss@8.5.28):
     dependencies:
-      '@csstools/css-tokenizer': 4.0.1
+      '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.28
 
   postcss-color-mod-function@4.1.1(postcss@8.5.28):
