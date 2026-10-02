@@ -179,8 +179,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0
       cssnano:
-        specifier: 9.1.1
-        version: 9.1.1(postcss@8.5.28)
+        specifier: 9.1.2
+        version: 9.1.2(postcss@8.5.28)
       gscan:
         specifier: 6.6.1
         version: 6.6.1(supports-color@7.2.0)
@@ -1560,8 +1560,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.28
 
-  cssnano@9.1.1:
-    resolution: {integrity: sha512-Jm3JBThKaUOo6Q9Buyjez+ww/SsgbwmLgg8H5fIf+wAAv5clG2x1KupoQR2PejzEbRyTVqVu93nORWT/320J/g==}
+  cssnano@9.1.2:
+    resolution: {integrity: sha512-UJnrkOxzaK21cYEbxnp21vUohm/wg8B8R0eoLe7A6Jnm9nHeIQ0irn3L9HYzml9BFkrF97JwE7d6HV4UU6+1dQ==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.28
@@ -4350,7 +4350,7 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.28
 
-  cssnano@9.1.1(postcss@8.5.28):
+  cssnano@9.1.2(postcss@8.5.28):
     dependencies:
       cssnano-preset-default: 9.1.2(postcss@8.5.28)
       postcss: 8.5.28
