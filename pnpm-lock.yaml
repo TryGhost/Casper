@@ -167,8 +167,8 @@ importers:
   .:
     devDependencies:
       '@tryghost/release-utils':
-        specifier: 0.9.3
-        version: 0.9.3(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+        specifier: 0.9.4
+        version: 0.9.4(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@tryghost/theme-translations':
         specifier: 0.0.22
         version: 0.0.22
@@ -1175,8 +1175,8 @@ packages:
   '@tryghost/pretty-cli@3.3.16':
     resolution: {integrity: sha512-TlU3sx71YONFlE0P7+4uYWRg5ns8Cf9U+afacBLa1+to9XhhAonuZw/Ta2YcLtdlySvTSuL1T342TkRVOtUDlQ==}
 
-  '@tryghost/release-utils@0.9.3':
-    resolution: {integrity: sha512-ygOxIULK/e5783Zs84eM7WSrXtCTC91OgUR9HS4WwRHcLwMKTfCuh0/tW5GOllvzRBbNAWuUQvzANaQf0Bv1Gw==}
+  '@tryghost/release-utils@0.9.4':
+    resolution: {integrity: sha512-mbbURJJYk77h/w/jATVqvePMJO5ZO+ENaZAiLbpE5Xa6NbjKORSyqJmi8skK4v39aE+v6uWw6h/D0ILh/JiPVg==}
 
   '@tryghost/root-utils@2.3.16':
     resolution: {integrity: sha512-goAiGfO2tyXxoyLJbTHktShOnziwSGa9lvBKq6zwvdz4/WGYRdecfovtb0n4aRTTYeKIlnsghg0v1g64LMIRug==}
@@ -3822,7 +3822,7 @@ snapshots:
       chalk: 6.0.0
       sywac: 1.3.0
 
-  '@tryghost/release-utils@0.9.3(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
+  '@tryghost/release-utils@0.9.4(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
       '@tryghost/errors': 1.3.13(supports-color@7.2.0)
       axios: 1.20.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
