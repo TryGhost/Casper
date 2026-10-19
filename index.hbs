@@ -16,6 +16,8 @@ into the {body} of the default.hbs template --}}
                 sizes="100vw"
                 src="{{img_url @site.cover_image size="xl"}}"
                 alt="{{@site.title}}"
+                fetchpriority="high"
+                loading="eager"
             />
         {{/if}}
     {{/if}}

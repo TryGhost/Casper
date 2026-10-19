@@ -355,7 +355,7 @@ production stylesheet in assets/built/screen.css
     grid-column-start: 2;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .is-head-stacked .gh-head-inner {
         padding: 0;
     }
@@ -455,13 +455,27 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    vertical-align: middle;
+}
+
+.nav-icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
 .gh-head-menu .nav li {
     margin: 0;
     padding: 0;
 }
 
 .gh-head-menu .nav a {
-    display: inline-block;
     line-height: 1.7;
     color: inherit;
 }
@@ -660,6 +674,18 @@ production stylesheet in assets/built/screen.css
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
 
+html.gh-navigation-open {
+    overflow: hidden;
+}
+
+.gh-navigation-open body {
+    position: fixed;
+    top: var(--gh-navigation-scroll-top);
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
 .gh-burger {
     position: relative;
     display: none;
@@ -792,7 +818,8 @@ production stylesheet in assets/built/screen.css
         inset: 0;
         z-index: 3999999;
         height: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -1567,13 +1594,28 @@ except for when immediately preceeded by a heading */
     width: 100%;
 }
 
+/* Responsive video embeds - no JavaScript needed */
+.kg-embed-card iframe[src*="youtube.com"],
+.kg-embed-card iframe[src*="youtube-nocookie.com"],
+.kg-embed-card iframe[src*="player.vimeo.com"],
+.kg-embed-card iframe[src*="kickstarter.com"],
+.gh-content iframe[src*="youtube.com"],
+.gh-content iframe[src*="youtube-nocookie.com"],
+.gh-content iframe[src*="player.vimeo.com"],
+.gh-content iframe[src*="kickstarter.com"] {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+}
+
 /* This keeps small iamges centered */
 .kg-image-card img {
     margin: auto;
 }
 
 .kg-image[width][height],
-.kg-gallery-image {
+.kg-gallery-image,
+.gh-feature-image {
     cursor: pointer;
 }
 
@@ -2111,8 +2153,30 @@ html.dark-mode .gh-button-share:hover {
     display: grid;
     grid-gap: 40px;
     grid-template-columns: auto 1fr auto;
+    align-items: center;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
+}
+
+.site-footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-footer-social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.site-footer-social-links a {
+    display: inline-flex;
+}
+
+.site-footer-social-links svg {
+    width: 16px;
+    height: 16px;
 }
 
 .site-footer .copyright a {
@@ -2134,7 +2198,7 @@ html.dark-mode .gh-button-share:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 0 20px;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -2177,6 +2241,9 @@ html.dark-mode .gh-button-share:hover {
         font-size: 1.5rem;
     }
     .site-footer .copyright {
+        margin-bottom: 16px;
+    }
+    .site-footer-center {
         margin-bottom: 16px;
     }
 }
@@ -2351,7 +2418,7 @@ html.dark-mode .gh-content table:not(.gist table) td {
 }
 
 html.dark-mode .gh-content :is(input, textarea) {
-    color: rgba(255, 255, 255, 0.9);
+    color: color-mod(var(--color-midgrey) l(-30%));
 }
 
 html.dark-mode .site-archive-header .no-image {
@@ -2565,7 +2632,7 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color .gh-content :is(input, textarea) {
-        color: rgba(255, 255, 255, 0.9);
+        color: color-mod(var(--color-midgrey) l(-30%));
     }
 
     html.auto-color .site-archive-header .no-image {
