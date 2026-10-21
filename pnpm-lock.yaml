@@ -174,13 +174,13 @@ importers:
         version: 0.0.22
       autoprefixer:
         specifier: 10.6.1
-        version: 10.6.1(postcss@8.5.30)
+        version: 10.6.1(postcss@8.5.31)
       beeper:
         specifier: 2.1.0
         version: 2.1.0
       cssnano:
         specifier: 9.9.0
-        version: 9.9.0(postcss@8.5.30)
+        version: 9.9.0(postcss@8.5.31)
       gscan:
         specifier: 6.6.1
         version: 6.6.1(supports-color@7.2.0)
@@ -195,7 +195,7 @@ importers:
         version: 4.0.2(supports-color@7.2.0)
       gulp-postcss:
         specifier: 10.0.0
-        version: 10.0.0(postcss@8.5.30)
+        version: 10.0.0(postcss@8.5.31)
       gulp-uglify:
         specifier: 3.0.2
         version: 3.0.2
@@ -206,14 +206,14 @@ importers:
         specifier: 14.2.3
         version: 14.2.3(@types/node@26.6.5)
       postcss:
-        specifier: 8.5.30
-        version: 8.5.30
+        specifier: 8.5.31
+        version: 8.5.31
       postcss-color-mod-function:
         specifier: 4.1.1
-        version: 4.1.1(postcss@8.5.30)
+        version: 4.1.1(postcss@8.5.31)
       postcss-easy-import:
         specifier: 4.0.0
-        version: 4.0.0(postcss@8.5.30)
+        version: 4.0.0(postcss@8.5.31)
       pump:
         specifier: 3.0.4
         version: 3.0.4
@@ -2244,8 +2244,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.30:
-    resolution: {integrity: sha512-zkd+e9S1AQHhmaBKye9zlFHWjOwVgqXl1q3ECYy8561K7qxR2cREf/STLskulBFd78k6AOFeA+ff1TtEzk9bAA==}
+  postcss@8.5.31:
+    resolution: {integrity: sha512-YUbWYCgErwnMAVkjUnYa+KlMBzGpHwiIt/DE7f0G33AuX2LH9UcTk6KgWxd3zRU+pN3u/C+Xl3EnMLM4Hea7Sg==}
     engines: {node: ^10 || ^12 || >=14}
 
   process-nextick-args@2.0.1:
@@ -3776,13 +3776,13 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  autoprefixer@10.6.1(postcss@8.5.30):
+  autoprefixer@10.6.1(postcss@8.5.31):
     dependencies:
       browserslist: 4.29.3
       caniuse-lite: 1.0.30001816
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.30
+      postcss: 8.5.31
       postcss-value-parser: 4.2.0
 
   axios@1.20.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0):
@@ -4015,14 +4015,14 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  cssnano@9.9.0(postcss@8.5.30):
+  cssnano@9.9.0(postcss@8.5.31):
     dependencies:
       '@colordx/core': 7.3.0
       '@csstools/css-tokenizer': 4.0.2
       browserslist: 4.29.3
       caniuse-api: 4.0.0
-      postcss: 8.5.30
-      postcss-calc: 11.2.3(postcss@8.5.30)
+      postcss: 8.5.31
+      postcss-calc: 11.2.3(postcss@8.5.31)
 
   debug@2.6.9(supports-color@7.2.0):
     dependencies:
@@ -4390,12 +4390,12 @@ snapshots:
       chalk: 5.6.2
       easy-transform-stream: 1.0.1
 
-  gulp-postcss@10.0.0(postcss@8.5.30):
+  gulp-postcss@10.0.0(postcss@8.5.31):
     dependencies:
       fancy-log: 2.0.0
       plugin-error: 2.0.1
-      postcss: 8.5.30
-      postcss-load-config: 5.1.0(postcss@8.5.30)
+      postcss: 8.5.31
+      postcss-load-config: 5.1.0(postcss@8.5.31)
       vinyl-sourcemaps-apply: 0.2.1
     transitivePeerDependencies:
       - jiti
@@ -4729,45 +4729,45 @@ snapshots:
     dependencies:
       ansi-colors: 1.1.0
 
-  postcss-calc@11.2.3(postcss@8.5.30):
+  postcss-calc@11.2.3(postcss@8.5.31):
     dependencies:
       '@csstools/css-tokenizer': 4.0.2
-      postcss: 8.5.30
+      postcss: 8.5.31
 
-  postcss-color-mod-function@4.1.1(postcss@8.5.30):
+  postcss-color-mod-function@4.1.1(postcss@8.5.31):
     dependencies:
       '@csstools/convert-colors': 1.4.0
-      postcss: 8.5.30
+      postcss: 8.5.31
       postcss-value-parser: 4.2.0
 
-  postcss-easy-import@4.0.0(postcss@8.5.30):
+  postcss-easy-import@4.0.0(postcss@8.5.31):
     dependencies:
       globby: 6.1.0
       is-glob: 4.0.3
       lodash: 4.18.1
       object-assign: 4.1.1
       pify: 3.0.0
-      postcss: 8.5.30
-      postcss-import: 14.1.0(postcss@8.5.30)
+      postcss: 8.5.31
+      postcss-import: 14.1.0(postcss@8.5.31)
       resolve: 1.22.13
 
-  postcss-import@14.1.0(postcss@8.5.30):
+  postcss-import@14.1.0(postcss@8.5.31):
     dependencies:
-      postcss: 8.5.30
+      postcss: 8.5.31
       postcss-value-parser: 4.2.0
       read-cache: 1.0.2
       resolve: 1.22.13
 
-  postcss-load-config@5.1.0(postcss@8.5.30):
+  postcss-load-config@5.1.0(postcss@8.5.31):
     dependencies:
       lilconfig: 3.1.4
       yaml: 2.9.1
     optionalDependencies:
-      postcss: 8.5.30
+      postcss: 8.5.31
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.30:
+  postcss@8.5.31:
     dependencies:
       nanoid: 3.3.20
       picocolors: 1.1.1
