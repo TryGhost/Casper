@@ -355,7 +355,7 @@ production stylesheet in assets/built/screen.css
     grid-column-start: 2;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .is-head-stacked .gh-head-inner {
         padding: 0;
     }
@@ -455,13 +455,27 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    vertical-align: middle;
+}
+
+.nav-icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
 .gh-head-menu .nav li {
     margin: 0;
     padding: 0;
 }
 
 .gh-head-menu .nav a {
-    display: inline-block;
     line-height: 1.7;
     color: inherit;
 }
@@ -660,6 +674,18 @@ production stylesheet in assets/built/screen.css
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
 
+html.gh-navigation-open {
+    overflow: hidden;
+}
+
+.gh-navigation-open body {
+    position: fixed;
+    top: var(--gh-navigation-scroll-top);
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
 .gh-burger {
     position: relative;
     display: none;
@@ -792,7 +818,8 @@ production stylesheet in assets/built/screen.css
         inset: 0;
         z-index: 3999999;
         height: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -985,6 +1012,7 @@ production stylesheet in assets/built/screen.css
     font-size: 2.6rem;
     font-weight: 800;
     line-height: 1.2;
+    letter-spacing: -0.01em;
 }
 
 .post-card-content-link:hover .post-card-title {
@@ -1587,7 +1615,8 @@ except for when immediately preceeded by a heading */
 }
 
 .kg-image[width][height],
-.kg-gallery-image {
+.kg-gallery-image,
+.gh-feature-image {
     cursor: pointer;
 }
 
@@ -2235,6 +2264,13 @@ html.dark-mode img {
 
 html.dark-mode kbd {
     background: color-mod(var(--color-darkmode) l(+5%));
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}
+
+html.dark-mode mark {
+    background-color: rgba(253, 255, 182, 0.2);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 html.dark-mode figcaption a {
@@ -2360,6 +2396,10 @@ html.dark-mode figcaption {
     color: rgba(255, 255, 255, 0.6);
 }
 
+html.dark-mode figcaption strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 html.dark-mode .gh-content table:not(.gist table) td:first-child {
     background-image: linear-gradient(to right, var(--color-darkmode) 50%, color-mod(var(--color-darkmode) a(0%)) 100%);
 }
@@ -2429,6 +2469,13 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color kbd {
         background: color-mod(var(--color-darkmode) l(+5%));
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    html.auto-color mark {
+        background-color: rgba(253, 255, 182, 0.2);
+        color: rgba(255, 255, 255, 0.9);
     }
 
     html.auto-color figcaption a {
@@ -2561,6 +2608,10 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color figcaption {
         color: rgba(255, 255, 255, 0.6);
+    }
+
+    html.auto-color figcaption strong {
+        color: rgba(255, 255, 255, 0.9);
     }
 
     html.auto-color .gh-content table:not(.gist table) td:first-child {
