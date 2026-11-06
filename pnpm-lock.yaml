@@ -182,8 +182,8 @@ importers:
         specifier: 9.9.0
         version: 9.9.0(postcss@8.5.32)
       gscan:
-        specifier: 6.6.1
-        version: 6.6.1(supports-color@7.2.0)
+        specifier: 6.7.0
+        version: 6.7.0(supports-color@7.2.0)
       gulp:
         specifier: 5.0.1
         version: 5.0.1
@@ -1151,14 +1151,14 @@ packages:
     engines: {node: '>=0.10.0', npm: '>2.7.0'}
     os: [aix, darwin, freebsd, linux, macos, openbsd, sunos, win32, windows]
 
-  '@tryghost/debug@2.3.18':
-    resolution: {integrity: sha512-eIKfADnzRXZRHMSooAYFSQbLw+e4boCxhdalq3KbMTlb9QcV5RIbCIBswUtawwK9duZTXsEZdarRj2YrPHtTrg==}
+  '@tryghost/debug@2.3.19':
+    resolution: {integrity: sha512-+Jm8sDYrHHyVB5TLk9ydf0cZVP9YmMXnRqTuqmUF3iRNjvotRaajg9oyYqdjjl7ZG2tM9pB4QNYiA8xhJ+7FYQ==}
 
   '@tryghost/errors@1.3.13':
     resolution: {integrity: sha512-sXFcuU8Nn3mDcVrLBLFThQZImn+T2w7v/jJGJzdFnSKJstqxd1LyTRlMjpCpgCnqAgHFCaP+uFg7x4CX64VBJQ==}
 
-  '@tryghost/errors@3.4.4':
-    resolution: {integrity: sha512-Tfr3H4G4tU4QAaS9GN5+OnSfvsVhwDycZcK7iGoQG2JGUivY3kxDOo/nZzEC/8+PRDsyFYgXCAatAWIfeXiUwg==}
+  '@tryghost/errors@3.4.5':
+    resolution: {integrity: sha512-5yX4K5TZmtz2MJzYWFIUY1Ls0+TvZ6hC331xgq/yUzp7USXL2KfWOJ1+ih8Wlp8bhv0NrozsixgV/O5YoYvUHg==}
 
   '@tryghost/mongo-knex@0.11.2':
     resolution: {integrity: sha512-0l7L/J609p+12+rA15Muya1JoIeSfBxIUZRB2FfROtJ2U+FTEOzZ/c0HgxB8eAArJMW2VXECmLCAbNUwygRzfg==}
@@ -1172,20 +1172,20 @@ packages:
   '@tryghost/nql@0.13.4':
     resolution: {integrity: sha512-XE3lEpkqZM3ueOyKz5suwb2W4muWAM/YfYYpXHrnu0H7r46Xuo7FZm1s6Ga2Cut/STtuax5E6NfZ1AFv017X4w==}
 
-  '@tryghost/pretty-cli@3.4.0':
-    resolution: {integrity: sha512-N19cXnjaHQDnG+bV9U2ipeK2cT2kNECEPtFFsSYBL8RYZuShYqiCbveuyf8J6eowz/Lp3d1j3W0LVMjtOvfHDA==}
+  '@tryghost/pretty-cli@3.4.1':
+    resolution: {integrity: sha512-5Aaah32+aA4W6AAbDadm8S1hr959NINU2fTWXNstAhqaP+NIq+gbpYtl93Hef8CN4L4WTXnRFUGjMyhcvgJSNg==}
 
   '@tryghost/release-utils@0.9.4':
     resolution: {integrity: sha512-mbbURJJYk77h/w/jATVqvePMJO5ZO+ENaZAiLbpE5Xa6NbjKORSyqJmi8skK4v39aE+v6uWw6h/D0ILh/JiPVg==}
 
-  '@tryghost/root-utils@2.3.18':
-    resolution: {integrity: sha512-4BPotmr+7+IGwqbvgCSKpO4/JUNci1YjSMJx22XjgWa38lM+coeNwr/uToGkcBbdxfaZBmFSig086FkCwlvDMg==}
+  '@tryghost/root-utils@2.3.19':
+    resolution: {integrity: sha512-PIFzf2FUBiDe9H7UZ5om1yX/LgIpl7L96dtcgxahGqEhss5/OLVePaPTAray+VV3Nx7o/VM5HTOVPvuGai3mSw==}
 
   '@tryghost/theme-translations@0.0.22':
     resolution: {integrity: sha512-mOF0cNyxhxVkPAcfgNes5hkmoEafr+WucKxKOP0cnmHnKHOvVPltSZ0psgBphD7owROjK1e/zT9qTtLKf7AWHg==}
 
-  '@tryghost/zip@3.5.18':
-    resolution: {integrity: sha512-s9bJh1N3atRcKPC1VF3ESOSQEtmbcVPuofzrYu6XF0FfRncijlc9IijU4KrUqP+rGhkGW1L3c4rbnHl6cB4lHQ==}
+  '@tryghost/zip@4.0.0':
+    resolution: {integrity: sha512-ICRWghmm5LLgv3WmroexWzUY0peg9UsI/e2Aabcz/nWTHX4aqQ4IYqwfSE7MdX6pbUKADwFxh4lodP1f+GCiAw==}
 
   '@types/expect@1.20.4':
     resolution: {integrity: sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==}
@@ -1195,9 +1195,6 @@ packages:
 
   '@types/vinyl@2.0.12':
     resolution: {integrity: sha512-Sr2fYMBUVGYq8kj3UthXFAu5UN6ZW+rYr4NACjZQJvHvj+c8lYv0CahmZ2P/r7iUkN44gGUBwqxZkrKXYPb7cw==}
-
-  '@types/yauzl@2.10.3':
-    resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -1377,9 +1374,6 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
-  buffer-crc32@0.2.13:
-    resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
-
   buffer-crc32@1.0.0:
     resolution: {integrity: sha512-Db1SbgBS/fg/392AblrMJk97KggmvYhr4pB5ZIMTWtaivCPMWLkmb7m21cJvpvgK+J3nsU2CmmixNBZx4vFj/w==}
     engines: {node: '>=8.0.0'}
@@ -1419,8 +1413,8 @@ packages:
     resolution: {integrity: sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
-  chalk@6.0.0:
-    resolution: {integrity: sha512-2uNTXIuTTxk7ciZgAU1BQcgnchcG0xXnrs6jzkQfj9SsRa9M2s5zE8WT96hS6KmG4MzWHSrvH43DF1m4XRkrFg==}
+  chalk@6.0.1:
+    resolution: {integrity: sha512-/Ce6KNm3vIbWdMlNna6RVIZ/ICQxnJxCicet5LBKK9ZffBkqzDw0xh9EiKSljdRtiIQ1S1z4YgcscUUGzNCWrA==}
     engines: {node: '>=22'}
 
   chardet@2.2.0:
@@ -1625,11 +1619,6 @@ packages:
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
-  extract-zip@2.0.1:
-    resolution: {integrity: sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==}
-    engines: {node: '>= 10.17.0'}
-    hasBin: true
-
   fancy-log@1.3.3:
     resolution: {integrity: sha512-k9oEhlyc0FrVh25qYuSELjr8oxsCoc4/LEZfg2iJJrfEk/tZL9bCoJE47gqAvI2m/AUjluCS4+3I0eTx8n3AEw==}
     engines: {node: '>= 0.10'}
@@ -1663,9 +1652,6 @@ packages:
   faye-websocket@0.10.0:
     resolution: {integrity: sha512-Xhj93RXbMSq8urNCUq4p9l0P6hnySJ/7YNRhYNug0bLOuii7pKO7xQFb5mx9xZXWCar88pLPb805PvUkwrLZpQ==}
     engines: {node: '>=0.4.0'}
-
-  fd-slicer@1.1.0:
-    resolution: {integrity: sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -1792,8 +1778,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  gscan@6.6.1:
-    resolution: {integrity: sha512-Yl273hY1brah236M7wnfV/gx4ZH2QuPZpt+/IiZBIxcdSAfcfsjof4Bfyqo921+X/POItxoVtFS9Xt4jFZNXIQ==}
+  gscan@6.7.0:
+    resolution: {integrity: sha512-qbddQc0IYGT4M+Bu629seJQ+XpGG1rXxLItkB+UfHDnYNzpHbv58FXFyD0X2soPprInuiWr0pXVlKUQfKYfFuw==}
     engines: {node: ^22.17.0 || ^24.0.0}
     hasBin: true
 
@@ -1845,8 +1831,8 @@ packages:
     resolution: {integrity: sha512-V2FaKiOhpR3DRXZuYdRLn/qiY0yI5XmqbTKrYbdemJ+xOh2d2MOweI/XFgMzd/9+1twdvMwllnZbWZNJ+BOm4A==}
     engines: {node: '>= 10.13.0'}
 
-  handlebars@4.7.9:
-    resolution: {integrity: sha512-4E71E0rpOaQuJR2A3xDZ+GM1HyWYv1clR58tC8emQNeQe3RH7MAzSbat+V0wG78LQBo6m6bzSG/L4pBuCsgnUQ==}
+  handlebars@4.7.10:
+    resolution: {integrity: sha512-P5VJMVM7qgBn6vjXMw8WG9uVI+ncf2pi72j4de4yz5ZULLj2RGqLYaKOYGsgyrViQ0tePOVlN1tDCCXXtFqXKg==}
     engines: {node: '>=0.4.7'}
     hasBin: true
 
@@ -2609,8 +2595,9 @@ packages:
     resolution: {integrity: sha512-Nt9ZJjXTv5R8MHbqby/wXQ6Gi0Bb3TcYZkR1bzuL4yB2OxWPkXknz513gEF0GoA6tn00UpbPvERW8rzCuWCA6w==}
     engines: {node: '>=10'}
 
-  yauzl@2.10.0:
-    resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
+  yauzl@3.4.0:
+    resolution: {integrity: sha512-jIH9yLR9wqr0wOS0TpBvo/g/2UgZH5qePVbjgRliiF0BYvOZyaBknKsF+x9Iht0O6sqgnB93rCICdOZFecJuDw==}
+    engines: {node: '>=12'}
 
   yazl@3.3.1:
     resolution: {integrity: sha512-BbETDVWG+VcMUle37k5Fqp//7SDOK2/1+T7X8TD96M3D9G8jK5VLUdQVdVjGi8im7FGkazX7kk5hkU8X4L5Bng==}
@@ -3608,9 +3595,9 @@ snapshots:
       '@stdlib/utils-constructor-name': 0.2.3
       '@stdlib/utils-global': 0.2.3
 
-  '@tryghost/debug@2.3.18(supports-color@7.2.0)':
+  '@tryghost/debug@2.3.19(supports-color@7.2.0)':
     dependencies:
-      '@tryghost/root-utils': 2.3.18
+      '@tryghost/root-utils': 2.3.19
       debug: 4.4.3(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
@@ -3622,7 +3609,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tryghost/errors@3.4.4': {}
+  '@tryghost/errors@3.4.5': {}
 
   '@tryghost/mongo-knex@0.11.2(supports-color@7.2.0)':
     dependencies:
@@ -3649,9 +3636,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tryghost/pretty-cli@3.4.0':
+  '@tryghost/pretty-cli@3.4.1':
     dependencies:
-      chalk: 6.0.0
+      chalk: 6.0.1
       sywac: 1.3.0
 
   '@tryghost/release-utils@0.9.4(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
@@ -3665,23 +3652,22 @@ snapshots:
       - debug
       - supports-color
 
-  '@tryghost/root-utils@2.3.18':
+  '@tryghost/root-utils@2.3.19':
     dependencies:
       caller: 1.1.0
       find-root: 1.1.0
 
   '@tryghost/theme-translations@0.0.22': {}
 
-  '@tryghost/zip@3.5.18(supports-color@7.2.0)':
+  '@tryghost/zip@4.0.0':
     dependencies:
-      '@tryghost/errors': 3.4.4
+      '@tryghost/errors': 3.4.5
       archiver: 8.0.0
-      extract-zip: 2.0.1(supports-color@7.2.0)
+      yauzl: 3.4.0
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
       - react-native-b4a
-      - supports-color
 
   '@types/expect@1.20.4': {}
 
@@ -3693,11 +3679,6 @@ snapshots:
     dependencies:
       '@types/expect': 1.20.4
       '@types/node': 26.6.6
-
-  '@types/yauzl@2.10.3':
-    dependencies:
-      '@types/node': 26.6.6
-    optional: true
 
   abort-controller@3.0.0:
     dependencies:
@@ -3880,8 +3861,6 @@ snapshots:
       node-releases: 2.0.62
       update-browserslist-db: 1.3.4(browserslist@4.29.5)
 
-  buffer-crc32@0.2.13: {}
-
   buffer-crc32@1.0.0: {}
 
   buffer@6.0.3:
@@ -3923,7 +3902,7 @@ snapshots:
 
   chalk@5.6.2: {}
 
-  chalk@6.0.0: {}
+  chalk@6.0.1: {}
 
   chardet@2.2.0: {}
 
@@ -4125,16 +4104,6 @@ snapshots:
 
   extend@3.0.2: {}
 
-  extract-zip@2.0.1(supports-color@7.2.0):
-    dependencies:
-      debug: 4.4.3(supports-color@7.2.0)
-      get-stream: 5.2.0
-      yauzl: 2.10.0
-    optionalDependencies:
-      '@types/yauzl': 2.10.3
-    transitivePeerDependencies:
-      - supports-color
-
   fancy-log@1.3.3:
     dependencies:
       ansi-gray: 0.1.1
@@ -4171,10 +4140,6 @@ snapshots:
   faye-websocket@0.10.0:
     dependencies:
       websocket-driver: 0.7.5
-
-  fd-slicer@1.1.0:
-    dependencies:
-      pend: 1.2.0
 
   fill-range@7.1.1:
     dependencies:
@@ -4333,15 +4298,15 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  gscan@6.6.1(supports-color@7.2.0):
+  gscan@6.7.0(supports-color@7.2.0):
     dependencies:
-      '@tryghost/debug': 2.3.18(supports-color@7.2.0)
-      '@tryghost/errors': 3.4.4
+      '@tryghost/debug': 2.3.19(supports-color@7.2.0)
+      '@tryghost/errors': 3.4.5
       '@tryghost/nql': 0.13.4(supports-color@7.2.0)
-      '@tryghost/pretty-cli': 3.4.0
-      '@tryghost/zip': 3.5.18(supports-color@7.2.0)
-      chalk: 6.0.0
-      handlebars: 4.7.9
+      '@tryghost/pretty-cli': 3.4.1
+      '@tryghost/zip': 4.0.0
+      chalk: 6.0.1
+      handlebars: 4.7.10
       lodash: 4.18.1
       semver: 7.8.5
       validator: 13.15.35
@@ -4444,7 +4409,7 @@ snapshots:
     dependencies:
       glogg: 2.2.0
 
-  handlebars@4.7.9:
+  handlebars@4.7.10:
     dependencies:
       minimist: 1.2.8
       neo-async: 2.6.2
@@ -5176,10 +5141,9 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 20.2.9
 
-  yauzl@2.10.0:
+  yauzl@3.4.0:
     dependencies:
-      buffer-crc32: 0.2.13
-      fd-slicer: 1.1.0
+      pend: 1.2.0
 
   yazl@3.3.1:
     dependencies:
