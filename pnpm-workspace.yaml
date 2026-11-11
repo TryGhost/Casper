@@ -10,6 +10,6 @@ pnpmfile: []
 
 # archiver still requests minimatch 10 through readdir-glob 3.
 overrides:
-  "minimatch@>=7 <11.0.1": 11.0.4
+  "minimatch@>=7 <11.0.1": 11.0.5
   # Keep the legacy release-utils error dependency on a patched CommonJS uuid.
   "@tryghost/errors@1>uuid": 14.0.3
