@@ -164,7 +164,7 @@ settings:
 
 overrides:
   minimatch@>=7 <11.0.1: 11.0.4
-  '@tryghost/errors@1>uuid': 11.1.1
+  '@tryghost/errors@1>uuid': 14.0.3
 
 importers:
 
@@ -2518,8 +2518,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@11.1.1:
-    resolution: {integrity: sha512-vIYxrBCC/N/K+Js3qSN88go7kIfNPssr/hHCesKCQNAjmgvYS2oqr69kIufEG+O4+PfezOH4EbIeHCfFov8ZgQ==}
+  uuid@14.0.3:
+    resolution: {integrity: sha512-Sc5u1VVln93y1Xnz4R+CunOZc7R9LUcTmhj7Rc7Eg3HVcf7rVn2FOoa812fe0W8p3jD7xeoGSYbfqCGGH2B6xw==}
     hasBin: true
 
   v8flags@4.0.1:
@@ -3617,7 +3617,7 @@ snapshots:
   '@tryghost/errors@1.3.13(supports-color@7.2.0)':
     dependencies:
       '@stdlib/utils-copy': 0.2.3(supports-color@7.2.0)
-      uuid: 11.1.1
+      uuid: 14.0.3
     transitivePeerDependencies:
       - supports-color
 
@@ -5045,7 +5045,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  uuid@11.1.1: {}
+  uuid@14.0.3: {}
 
   v8flags@4.0.1: {}
 
