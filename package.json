@@ -21,7 +21,7 @@
         "pretest": "pnpm zip",
         "pretest:ci": "pnpm zip",
         "preship": "pnpm test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then git push --follow-tags; else echo \"Uncommitted changes found.\" && exit 1; fi",
         "postship": "git fetch && gulp release"
     },
     "packageManager": "pnpm@12.21.0",
